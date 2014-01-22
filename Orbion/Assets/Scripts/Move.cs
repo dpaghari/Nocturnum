@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class Player : MonoBehaviour {
+public class Move : MonoBehaviour {
 	public float speed = 6.0F;
 	//public float jumpSpeed = 8.0F;
 	public float gravity = 20.0F;
