@@ -14,12 +14,12 @@ public class CanShootReload : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		reloadTime++; 
+
 
 
 		if(Input.GetMouseButton(0)){
 			Debug.Log(currentAmmo);
-			if(currentAmmo > 0){
+			if(currentAmmo > 0 && reloading == false){
 			GetComponent<CanShoot>().Shoot();
 			}
 		
@@ -34,7 +34,7 @@ public class CanShootReload : MonoBehaviour {
 	}
 
 	void reload () {
-
+		reloadTime++; 
 		if(reloadTime > reloadCooldown){
 			currentAmmo = clipSize;
 		}
