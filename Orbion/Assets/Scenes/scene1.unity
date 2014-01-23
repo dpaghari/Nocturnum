@@ -346,6 +346,8 @@ GameObject:
   - 23: {fileID: 842112218}
   - 143: {fileID: 842112223}
   - 114: {fileID: 842112222}
+  - 114: {fileID: 842112224}
+  - 114: {fileID: 842112225}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -414,17 +416,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 842112217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
+  m_Script: {fileID: 11500000, guid: bcd85ed508beb0d47b00eae36bdde9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 20
   bullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
-  building: {fileID: 5400000, guid: 72a8969feecc238468ed2816b90049bd, type: 2}
-  bullet_speed: 5
+  bullet_speed: 10
   firingTimer: 0
-  firingRate: 20
-  canBuild: 0
+  firingRate: 40
 --- !u!143 &842112223
 CharacterController:
   m_ObjectHideFlags: 0
@@ -439,6 +437,35 @@ CharacterController:
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &842112224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842112217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  gravity: 20
+--- !u!114 &842112225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842112217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43a4a521ceb6d3499ec7a1afcf7c7b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipSize: 5
+  currentAmmo: 5
+  reloadTime: 0
+  reloadCooldown: 200
+  reloading: 0
 --- !u!1001 &1047921347
 Prefab:
   m_ObjectHideFlags: 0
