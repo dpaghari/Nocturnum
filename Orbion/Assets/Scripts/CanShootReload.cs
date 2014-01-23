@@ -5,7 +5,7 @@ using System.Collections;
 public class CanShootReload : MonoBehaviour {
 
 	public int clipSize = 5;
-	public int currentAmmo = 5;
+	public int currentAmmo;
 	public float reloadTime = 0.0F;
 	public float reloadCooldown = 200.0F;
 	public bool reloading = false;
@@ -19,17 +19,25 @@ public class CanShootReload : MonoBehaviour {
 
 		if(Input.GetMouseButton(0)){
 			Debug.Log(currentAmmo);
-			if(currentAmmo > 0 && reloading == false){
+			if(currentAmmo > 0 && !reloading){
 			GetComponent<CanShoot>().Shoot();
 			}
 		
 		}
 
-		if(currentAmmo == 0 || (Input.GetKeyDown("r") && currentAmmo != clipSize)) 
+		if(currentAmmo <= 0)  
 		   reloading = true;
 
-		if(reloading)
+		if(Input.GetKeyDown("r") && currentAmmo < clipSize && currentAmmo > 0)
+		   reloading = true;
+
+
+
+		if(reloading == true){
+
 			reload ();
+
+		}
 	
 	}
 
@@ -37,8 +45,10 @@ public class CanShootReload : MonoBehaviour {
 		reloadTime++; 
 		if(reloadTime > reloadCooldown){
 			currentAmmo = clipSize;
+			reloading = false;
+			reloadTime = 0.0F;
 		}
 
-		reloading = false;
+
 	}
 }
