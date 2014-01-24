@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: player_prefab
   m_TagString: Player
@@ -168,6 +169,19 @@ MonoBehaviour:
   bullet_speed: 10
   firingTimer: 32
   firingRate: 40
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b72249153613934ab5e17905b67cd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
+  weaponLabBuilding: {fileID: 5400000, guid: 72a8969feecc238468ed2816b90049bd, type: 2}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

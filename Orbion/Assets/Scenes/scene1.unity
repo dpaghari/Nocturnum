@@ -366,6 +366,7 @@ GameObject:
   - 65: {fileID: 813109901}
   - 23: {fileID: 813109900}
   - 54: {fileID: 813109899}
+  - 114: {fileID: 813109904}
   m_Layer: 0
   m_Name: building
   m_TagString: Untagged
@@ -387,7 +388,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!23 &813109900
 Renderer:
@@ -443,6 +444,20 @@ Transform:
   m_LocalScale: {x: 3, y: 2, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &813109904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 72a8969feecc238468ed2816b90049bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1047921347}
+  m_GameObject: {fileID: 813109898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1ad36c00ea69845b39339a0ea06ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  energyCost: 0
 --- !u!1001 &1047921347
 Prefab:
   m_ObjectHideFlags: 0
@@ -566,6 +581,7 @@ GameObject:
   - 114: {fileID: 1576953294}
   - 114: {fileID: 1576953293}
   - 114: {fileID: 1576953292}
+  - 114: {fileID: 1576953300}
   m_Layer: 0
   m_Name: player_prefab
   m_TagString: Player
@@ -691,6 +707,20 @@ Transform:
   m_Children:
   - {fileID: 405661494}
   m_Father: {fileID: 0}
+--- !u!114 &1576953300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254599073}
+  m_GameObject: {fileID: 1576953291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b72249153613934ab5e17905b67cd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
+  weaponLabBuilding: {fileID: 5400000, guid: 72a8969feecc238468ed2816b90049bd, type: 2}
 --- !u!1 &1599809414
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +747,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .0199999996
+  m_Intensity: .00999999978
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
