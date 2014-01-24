@@ -7,7 +7,7 @@ public class CanShoot : MonoBehaviour {
 	private Rigidbody clone;
 	public float bullet_speed = 5.0F;								// Default Bullet Speed
 	public float firingTimer = 0.0F;								// Counter for the next shot
-	public float firingRate = 20.0F;								// Cooldown for each shot
+	public float firingRate = 15.0F;								// Cooldown for each shot
 
 	
 	// Update is called once per frame

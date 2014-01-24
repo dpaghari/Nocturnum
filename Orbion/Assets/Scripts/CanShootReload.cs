@@ -3,9 +3,11 @@ using System.Collections;
 
 
 public class CanShootReload : MonoBehaviour {
+	// Variables for UI
+	public int clipSize = 12;
+	public int currentAmmo = 12;									
 
-	public int clipSize = 5;
-	public int currentAmmo;
+
 	public float reloadTime = 0.0F;
 	public float reloadCooldown = 200.0F;
 	public bool reloading = false;
@@ -18,7 +20,7 @@ public class CanShootReload : MonoBehaviour {
 
 
 		if(Input.GetMouseButton(0)){
-			Debug.Log(currentAmmo);
+
 			if(currentAmmo > 0 && !reloading){
 			GetComponent<CanShoot>().Shoot();
 			}
