@@ -18,17 +18,23 @@ public class CanBuild : MonoBehaviour {
 
 	void OnGUI() {
 		if(menuUp){
+			GetComponent<CanShoot>().ResetFiringTimer();
 			GUI.Box(new Rect (10,10,100,90), "Loader Menu");
 
 			if(GUI.Button(new Rect(20,40,80,20), "Generator")) {
 				toBuild = Buildings.generator;
 				menuUp = false;
+				//ResourceManager.Instance.RemoveLight(generatorBuilding.cost);
+				//ResourceManager.Instance.AddUsedEnergy(generatorBuilding.energyCost);
+				//ResourceManager.Instance.AddMaxEnergy(50);
 			}
 			
 			// Make the second button.
 			if(GUI.Button(new Rect(20,70,80,20), "Weapon Lab")) {
 				toBuild = Buildings.weaponLab;
 				menuUp = false;
+				//ResourceManager.Instance.RemoveLight(weaponLabBuilding.cost);
+				//ResourceManager.Instance.AddUsedEnergy(weaponLabBuilding.energyCost);
 			}
 		}
 	}
