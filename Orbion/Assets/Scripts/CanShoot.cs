@@ -38,4 +38,8 @@ public class CanShoot : MonoBehaviour {
 				
 		}
 	}
+
+	public void ResetFiringTimer(){
+		firingTimer = 0.0f;
+	}
 }
