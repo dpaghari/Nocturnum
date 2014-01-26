@@ -10,9 +10,9 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
-  - 65: {fileID: 6500000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: enemy_prefab
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  gravity: 20
+  target: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

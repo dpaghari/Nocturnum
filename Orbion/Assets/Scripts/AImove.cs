@@ -5,7 +5,7 @@ public class AImove : MonoBehaviour {
 	public float speed = 6.0F;
 	//public float jumpSpeed = 8.0F;
 	//public float gravity = 20.0F;
-	private Vector3 moveDirection = Vector3.zero;
+	//private Vector3 moveDirection = Vector3.zero;
 	private float distance = 0;
 	public GameObject target;
 	//public float smoothTime = 0.3F;
@@ -17,12 +17,15 @@ public class AImove : MonoBehaviour {
 	void Update() {
 		this.target = GameObject.Find ("player_prefab");
 		distance = Vector3.Distance(transform.position,target.transform.position);
-		if(distance > 5.0){
+		if (distance > 5.0) {
 			Vector3 targ = target.transform.position;
-		
 			Vector3 direction = targ - transform.position;
-			direction.Normalize();
+			direction.Normalize ();
 			transform.position += direction * speed * Time.deltaTime;
+		} else if (distance <= 5.0) {
+
+			//canShoot
+
 		}
 		/*
 			Ray ray = this.transform.position;
