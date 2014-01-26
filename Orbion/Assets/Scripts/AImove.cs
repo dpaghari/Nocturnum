@@ -6,6 +6,7 @@ public class AImove : MonoBehaviour {
 	//public float jumpSpeed = 8.0F;
 	//public float gravity = 20.0F;
 	private Vector3 moveDirection = Vector3.zero;
+	private float distance = 0;
 	public GameObject target;
 	//public float smoothTime = 0.3F;
 	//public float xOffset = 1.0F;
@@ -15,12 +16,14 @@ public class AImove : MonoBehaviour {
 	
 	void Update() {
 		this.target = GameObject.Find ("player_prefab");
-		Vector3 targ = target.transform.position;
+		distance = Vector3.Distance(transform.position,target.transform.position);
+		if(distance > 5.0){
+			Vector3 targ = target.transform.position;
 		
-		Vector3 direction = targ - transform.position;
-		direction.Normalize();
-		transform.position += direction * speed * Time.deltaTime;
-		//CharacterController controller = GetComponent<CharacterController>();
+			Vector3 direction = targ - transform.position;
+			direction.Normalize();
+			transform.position += direction * speed * Time.deltaTime;
+		}
 		/*
 			Ray ray = this.transform.position;
 			RaycastHit hit = target.position;
