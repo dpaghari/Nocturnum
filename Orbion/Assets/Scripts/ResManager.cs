@@ -12,18 +12,18 @@ public class ResManager : Singleton<ResManager> {
 
 	//Have both Add and Remove functions since costs are likely to be stored
 	//as a positive number so adding a negative cost reads awkwardly.
-	public void AddLight( float amt) { LightRes += amt;}
-	public void RmLight( float amt) { LightRes -= amt;}
-	public void AddMaxEnergy( int amt) { MaxEnergy += amt;}
-	public void RmMaxEnergy( int amt) { MaxEnergy -= amt;}
-	public void AddUsedEnergy( int amt) { UsedEnergy += amt;}
-	public void RmUsedEnergy( int amt) { UsedEnergy -= amt;}
+	public static void AddLight( float amt) { Instance.LightRes += amt;}
+	public static void RmLight( float amt) { Instance.LightRes -= amt;}
+	public static void AddMaxEnergy( int amt) { Instance.MaxEnergy += amt;}
+	public static void RmMaxEnergy( int amt) { Instance.MaxEnergy -= amt;}
+	public static void AddUsedEnergy( int amt) { Instance.UsedEnergy += amt;}
+	public static void RmUsedEnergy( int amt) { Instance.UsedEnergy -= amt;}
 
 
 	public void Reset () {
-		LightRes = 0;
-		MaxEnergy = 0;
-		UsedEnergy = 0;
+		Instance.LightRes = 0;
+		Instance.MaxEnergy = 0;
+		Instance.UsedEnergy = 0;
 	}
 
 

@@ -50,7 +50,7 @@ public class TechManager : Singleton<TechManager> {
 
 
 
-	private bool CheckBuilding( Tech building){
+	private static bool CheckBuilding( Tech building){
 		if( IsBuilding( building)) return true;
 
 		Debug.LogError( string.Format("{0} is not a building.", building.ToString()));
@@ -59,7 +59,7 @@ public class TechManager : Singleton<TechManager> {
 
 
 
-	private bool CheckUpgrade ( Tech upgrade){
+	private static bool CheckUpgrade ( Tech upgrade){
 		if( IsUpgrade( upgrade)) return true;
 
 		Debug.LogError( string.Format ("{0} is not an upgrade.", upgrade.ToString()));
@@ -68,45 +68,45 @@ public class TechManager : Singleton<TechManager> {
 
 
 
-	public int GetNumBuilding( Tech building){
-		if( CheckBuilding( building)) return NumBuildings[(int)building];
+	public static int GetNumBuilding( Tech building){
+		if( CheckBuilding( building)) return Instance.NumBuildings[(int)building];
 		return -1;
 	}
 
 
 	
-	public bool HasBuilding( Tech building){
+	public static bool HasBuilding( Tech building){
 		return GetNumBuilding( building) > 0;
 	}
 	
 
 
-	public void SetNumBuilding( Tech building, int amt){
-		if( CheckBuilding( building)) NumBuildings[(int)building] = amt;
+	public static void SetNumBuilding( Tech building, int amt){
+		if( CheckBuilding( building)) Instance.NumBuildings[(int)building] = amt;
 	}
 
 
 
-	public void AddNumBuilding( Tech building, int amt){
-		if( CheckBuilding( building)) NumBuildings[(int)building] += amt;
+	public static void AddNumBuilding( Tech building, int amt){
+		SetNumBuilding(building, GetNumBuilding(building) + amt);
 	}
 
 
 
-	public void RmNumBuilding( Tech building, int amt){
-		if( CheckBuilding( building)) NumBuildings[(int)building] -= amt;
+	public static void RmNumBuilding( Tech building, int amt){
+		SetNumBuilding(building, GetNumBuilding(building) - amt);
 	}
 	
 
 
-	public int GetUpgradeLv( Tech upgrade){
-		if( CheckUpgrade( upgrade)) return UpgrLevels[(int)upgrade];
+	public static int GetUpgradeLv( Tech upgrade){
+		if( CheckUpgrade( upgrade)) return Instance.UpgrLevels[(int)upgrade];
 		return -1;
 	}
 
 
 
-	public bool HasUpgrade( Tech upgrade){
+	public static bool HasUpgrade( Tech upgrade){
 		return GetUpgradeLv( upgrade) > 0;
 	}
 
@@ -119,8 +119,8 @@ public class TechManager : Singleton<TechManager> {
 	//		check if we have them, then if we do
 	//			check if they themselves are an available tech
 	//		otherwise, we don't have them and its false
-	public bool IsTechAvaliable( Tech theTech){
-		Tech theReq = PlayerTech.GetReq( theTech);
+	public static bool IsTechAvaliable( Tech theTech){
+		Tech theReq = Instance.PlayerTech.GetReq( theTech);
 		if ( theReq == Tech.none) return true;
 
 		if ( IsBuilding( theReq) && !HasBuilding( theReq))
@@ -138,7 +138,7 @@ public class TechManager : Singleton<TechManager> {
 	//For now it just instantly adds to the level.
 	//By default, makes an error if try to research an upgrade that isn't availiable.
 	//Pass force = true to bypass this.
-	public void Research( Tech upgrade, bool force = false){
+	public static void Research( Tech upgrade, bool force = false){
 		if( CheckUpgrade( upgrade)){
 
 			if( !IsTechAvaliable( upgrade) && !force){
@@ -147,18 +147,18 @@ public class TechManager : Singleton<TechManager> {
 				return;
 			}
 
-			UpgrLevels[(int)upgrade] += 1;
+			Instance.UpgrLevels[(int)upgrade] += 1;
 		}
 	}
 
 
 
-	public void Reset(){
+	public static void Reset(){
 		for( int techIndex = 0; techIndex < (int)Tech._upgradesEND + 1; techIndex++){
-			NumBuildings[techIndex] = 0;
-			UpgrLevels[techIndex] = 0;
+			Instance.NumBuildings[techIndex] = 0;
+			Instance.UpgrLevels[techIndex] = 0;
 		}
-		PlayerTech = TechTree.MakeDefault();
+		Instance.PlayerTech = TechTree.MakeDefault();
 	}
 
 
