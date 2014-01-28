@@ -19,19 +19,21 @@ public class CanShoot : MonoBehaviour {
 
 	}
 
-	public void Shoot(){													// creates an instance of bullet_prefab and shoots it towards mouse cursor
+	public void Shoot(Vector3 targ){													// creates an instance of bullet_prefab and shoots it towards mouse cursor
 
 													
 		if(firingTimer > firingRate){
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			/*Ray ray = Camera.main.ScreenPointToRay(targ);
 			RaycastHit hit;
 			// Casts the ray and get the first game object hit
 			Physics.Raycast(ray, out hit);
+			*/
 			Vector3 adjustY = Vector3.zero;
 			adjustY.y += 1;
-			Vector3 bullet_dir = hit.point + adjustY - transform.position;
+
+			Vector3 bullet_dir = targ + adjustY - transform.position;
 			bullet_dir = bullet_dir.normalized;
-			clone = Instantiate(bullet, transform.position + bullet_dir * 2, Quaternion.LookRotation(hit.point + adjustY - transform.position, Vector3.up)) as Rigidbody;
+			clone = Instantiate(bullet, transform.position + bullet_dir * 2, Quaternion.LookRotation(targ + adjustY - transform.position, Vector3.up)) as Rigidbody;
 			clone.rigidbody.velocity = bullet_dir * bullet_speed * 20;
 			firingTimer = 0.0f;
 			GetComponent<CanShootReload>().currentAmmo--;
