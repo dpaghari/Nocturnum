@@ -26,7 +26,6 @@ public class CanBuild : MonoBehaviour {
 				menuUp = false;
 				//ResourceManager.Instance.RemoveLight(generatorBuilding.cost);
 				//ResourceManager.Instance.AddUsedEnergy(generatorBuilding.energyCost);
-				//ResourceManager.Instance.AddMaxEnergy(50);
 			}
 			
 			// Make the second button.
@@ -69,4 +68,5 @@ public class CanBuild : MonoBehaviour {
 			menuUp = true;
 		}
 	}
+
 }
