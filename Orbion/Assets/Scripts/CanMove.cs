@@ -3,11 +3,15 @@ using System.Collections;
 
 
 public class CanMove : MonoBehaviour {
-	public float speed = 6.0F;
-	public float gravity = 20.0F;
-	private Vector3 moveDirection = Vector3.zero;
+	public float Force = 6.0F;
+	public float MaxSpeed;
+	//public float gravity = 20.0F;
+	//private Vector3 moveDirection = Vector3.zero;
 
+
+	
 	void Update() {
+		/*
 		CharacterController controller = GetComponent<CharacterController>();
 		if (controller.isGrounded) {
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -18,14 +22,22 @@ public class CanMove : MonoBehaviour {
 
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
+		*/
+	}
+
+
+	void LateUpdate() {
 
 	}
 
-	void Move(Vector3 targ){
+	public void Move(Vector3 dir, ForceMode mode = ForceMode.Force){
+		rigidbody.AddRelativeForce(dir * Force, mode);
+
+		if( rigidbody.velocity.magnitude > MaxSpeed)
+			rigidbody.velocity = rigidbody.velocity.normalized * MaxSpeed;
 
 
-
-
+		
 	}
 
 

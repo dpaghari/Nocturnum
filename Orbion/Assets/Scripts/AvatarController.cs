@@ -3,9 +3,27 @@ using System.Collections;
 
 public class AvatarController : MonoBehaviour {
 
+	public CanMove moveScript;
+	public CanShootReload shootScript;
+
 	// Use this for initialization
 	void Start () {
 	
+	}
+
+	void FixedUpdate() {
+		if(Input.GetKey(KeyCode.W))
+			moveScript.Move(Vector3.forward);
+		
+		if(Input.GetKey(KeyCode.S))
+			moveScript.Move(Vector3.back);
+		
+		if(Input.GetKey(KeyCode.D))
+			moveScript.Move(Vector3.right);
+		
+		if(Input.GetKey(KeyCode.A))
+			moveScript.Move(Vector3.left);
+
 	}
 	
 	// Update is called once per frame
@@ -23,6 +41,8 @@ public class AvatarController : MonoBehaviour {
 			GetComponent<CanShootReload>().callShoot(hit.point);
 
 		}
+
+
 	
 	}
 }
