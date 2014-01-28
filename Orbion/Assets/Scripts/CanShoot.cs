@@ -12,11 +12,8 @@ public class CanShoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		firingTimer++;
-									
+		firingTimer++;								
 		//Shoot();
-
-
 	}
 
 	public void Shoot(Vector3 targ){													// creates an instance of bullet_prefab and shoots it towards mouse cursor

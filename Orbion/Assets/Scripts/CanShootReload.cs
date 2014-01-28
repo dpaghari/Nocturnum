@@ -1,20 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
 public class CanShootReload : MonoBehaviour {
 	// Variables for UI
 	public int clipSize = 12;
 	public int currentAmmo = 12;									
-
-
 	public float reloadTime = 0.0F;
 	public float reloadCooldown = 200.0F;
 	public bool reloading = false;
 
-
-	
 	// Update is called once per frame
 	void Update () {
 		
