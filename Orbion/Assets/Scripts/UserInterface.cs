@@ -84,11 +84,15 @@ public class UserInterface : MonoBehaviour {
 		}
 
 		//Light
-		GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + player_Light);
+		string lumenString = string.Format("Light: {0}", ResManager.Lumen);
+		GUI.Label(new Rect(5, Screen.height-25, 150, 50), lumenString);
+		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + player_Light);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + resRef.GetComponent<ResManager>().LightRes);
 
 		//Energy
-		GUI.Label(new Rect(110, Screen.height-25, 150, 50), "Energy: " + player_Energy);
+		string energyString = string.Format("Energy: {0}/{1}", ResManager.UsedEnergy, ResManager.MaxEnergy);
+		GUI.Label(new Rect(110, Screen.height-25, 150, 50), energyString);
+		//GUI.Label(new Rect(110, Screen.height-25, 150, 50), "Energy: " + player_Energy);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Energy: " + resRef.GetComponent<ResManager>().UsedEnergy + "/" + resRef.GetComponent<ResManager>().MaxEnergy);
 	}
 }

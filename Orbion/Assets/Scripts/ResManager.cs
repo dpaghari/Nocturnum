@@ -5,25 +5,29 @@ public class ResManager : Singleton<ResManager> {
 
 	protected ResManager() {} // guarantee this will be always a singleton only - can't use the constructor!
 
-	public float LightRes {get; protected set;} // not named Light because that's a Unity class
-	public int MaxEnergy {get; protected set;}
-	public int UsedEnergy {get; protected set;}
+	private float _Lumen = 0;
+	private int _MaxEnergy = 0;
+	private int _UsedEnergy = 0;
 
+
+	public static float Lumen{ get { return Instance._Lumen;}}
+	public static int MaxEnergy{ get { return Instance._MaxEnergy;}}
+	public static int UsedEnergy{ get { return Instance._UsedEnergy;}}
 
 	//Have both Add and Remove functions since costs are likely to be stored
 	//as a positive number so adding a negative cost reads awkwardly.
-	public static void AddLight( float amt) { Instance.LightRes += amt;}
-	public static void RmLight( float amt) { Instance.LightRes -= amt;}
-	public static void AddMaxEnergy( int amt) { Instance.MaxEnergy += amt;}
-	public static void RmMaxEnergy( int amt) { Instance.MaxEnergy -= amt;}
-	public static void AddUsedEnergy( int amt) { Instance.UsedEnergy += amt;}
-	public static void RmUsedEnergy( int amt) { Instance.UsedEnergy -= amt;}
+	public static void AddLumen( float amt) { Instance._Lumen += amt;}
+	public static void RmLumen( float amt) { Instance._Lumen -= amt;}
+	public static void AddMaxEnergy( int amt) { Instance._MaxEnergy += amt;}
+	public static void RmMaxEnergy( int amt) { Instance._MaxEnergy -= amt;}
+	public static void AddUsedEnergy( int amt) { Instance._UsedEnergy += amt;}
+	public static void RmUsedEnergy( int amt) { Instance._UsedEnergy -= amt;}
 
 
-	public void Reset () {
-		Instance.LightRes = 0;
-		Instance.MaxEnergy = 0;
-		Instance.UsedEnergy = 0;
+	public static void Reset () {
+		Instance._Lumen = 0;
+		Instance._MaxEnergy = 0;
+		Instance._UsedEnergy = 0;
 	}
 
 

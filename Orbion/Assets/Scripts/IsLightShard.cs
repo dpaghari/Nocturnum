@@ -24,7 +24,7 @@ public class IsLightShard : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collide){
 		if(collide.gameObject.tag == "Player"){
-			ResManager.AddLight(lightValue);
+			ResManager.AddLumen(lightValue);
 			Destroy (this.gameObject);
 		}
 	}
