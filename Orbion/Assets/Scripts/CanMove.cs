@@ -26,7 +26,7 @@ public class CanMove : MonoBehaviour {
 	}
 
 	public void Move(Vector3 dir, ForceMode mode = ForceMode.Force){
-		rigidbody.AddRelativeForce(dir * Force, mode);
+		rigidbody.AddForce(dir * Force, mode);
 
 		if( rigidbody.velocity.magnitude > MaxSpeed)
 			rigidbody.velocity = rigidbody.velocity.normalized * MaxSpeed;
