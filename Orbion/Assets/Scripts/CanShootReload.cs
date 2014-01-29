@@ -1,18 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CanShootReload : MonoBehaviour {
+public class CanShootReload : CanShoot {
 	// Variables for UI
 	public int clipSize = 12;
 	public int currentAmmo = 12;									
-	public float reloadTime = 0.0F;
+
 	public float reloadCooldown = 200.0F;
 	public bool reloading = false;
 
+	protected float reloadTime = 0.0F;
+
+
+	protected override void Start (){
+		base.Start ();
+		reloadTime = reloadCooldown;
+	}
+
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
+		//the base classes' update isn't called in a child class
+		base.Update();
 		
-		
+
+		if( FinishReloadCooldown()) {
+			reloadTime = 0;
+			currentAmmo = clipSize;
+			reloading = false;
+		}
+
+
+		if( reloading)
+			reloadTime += Time.deltaTime;
+		/*
 		if(currentAmmo <= 0)  														// if object is out of ammo
 		   reloading = true;
 
@@ -25,7 +45,7 @@ public class CanShootReload : MonoBehaviour {
 			reload ();
 
 		}
-	
+		*/
 	}
 
 
@@ -36,20 +56,50 @@ public class CanShootReload : MonoBehaviour {
 	 *   as the target position.
 
 	*/
+	/*
 	public void callShoot(Vector3 targ){											// call Shoot() from CanShoot component with target vec3
 		if(currentAmmo > 0 && !reloading){
 			GetComponent<CanShoot>().Shoot(targ);
 		}
 	}
-	 
-	void reload () {
+	*/
+
+
+	//if you try to fire with no ammo and you're not realoding, it will reload for you
+	public override void Shoot (Vector3 targ)
+	{
+		if(FinishCooldown() && !reloading){
+			if(currentAmmo > 0 ){
+				base.Shoot(targ);
+				currentAmmo--;
+			}
+
+			else {
+				Reload();
+			}
+		}
+
+	}
+
+	public void Reload () {
+		if (reloading || currentAmmo == clipSize) return;
+
+		reloading = true;
+		reloadTime = 0;
+
+		/*
 		reloadTime++; 
-		if(reloadTime > reloadCooldown){
+		if(reloadTime >= reloadCooldown){
 			currentAmmo = clipSize;
 			reloading = false;
 			reloadTime = 0.0F;
 		}
-
+		*/
 
 	}
+
+	protected bool FinishReloadCooldown(){
+		return reloadTime >= reloadCooldown;
+	}
+
 }

@@ -3,23 +3,42 @@ using System.Collections;
 
 public class CanShoot : MonoBehaviour {
 
-	public Rigidbody bullet;										// takes in bullet_prefab
-	private Rigidbody clone;
-	public float bullet_speed = 5.0F;								// Default Bullet Speed
-	public float firingTimer = 0.0F;								// Counter for the next shot
-	public float firingRate = 15.0F;								// Cooldown for each shot
+	//the object to shoot
+	public Rigidbody bullet;
 
+	//the speed at which to shoot the object
+	public float bullet_speed = 5.0F;	
+
+	//the cooldown in seconds between shots
+	public float firingRate = 1F;	
+
+
+
+	//used to keep track of our shooting cooldown
+	protected float firingTimer = 0.0F;
 	
-	// Update is called once per frame
-	void Update () {
-		firingTimer++;								
-		//Shoot();
+	//holds a reference to the bullet that will be made
+	private Rigidbody clone;
+	
+	protected virtual void Start () {
+		firingTimer = firingRate;
 	}
 
-	public void Shoot(Vector3 targ){													// creates an instance of bullet_prefab and shoots it towards mouse cursor
+	// Update is called once per frame
+	protected virtual void Update () {
+		//firingTimer++;								
+		//Shoot();
+
+		//adding by Time.deltaTime otherwise our firerate is bullets/frame instead of bullets/second
+		if ( firingTimer <= firingRate) firingTimer += Time.deltaTime;
+		
+	}
+
+
+	public virtual void Shoot(Vector3 targ){													// creates an instance of bullet_prefab and shoots it towards mouse cursor
 
 													
-		if(firingTimer > firingRate){
+		if( FinishCooldown()){
 			/*Ray ray = Camera.main.ScreenPointToRay(targ);
 			RaycastHit hit;
 			// Casts the ray and get the first game object hit
@@ -33,7 +52,7 @@ public class CanShoot : MonoBehaviour {
 			clone = Instantiate(bullet, transform.position + bullet_dir * 2, Quaternion.LookRotation(targ + adjustY - transform.position, Vector3.up)) as Rigidbody;
 			clone.rigidbody.velocity = bullet_dir * bullet_speed * 20;
 			firingTimer = 0.0f;
-			GetComponent<CanShootReload>().currentAmmo--;
+
 				
 		}
 	}
@@ -41,4 +60,9 @@ public class CanShoot : MonoBehaviour {
 	public void ResetFiringTimer(){
 		firingTimer = 0.0f;
 	}
+
+	protected bool FinishCooldown(){
+		return firingTimer >= firingRate;
+	}
+
 }

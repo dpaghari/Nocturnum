@@ -24,6 +24,9 @@ public class AvatarController : MonoBehaviour {
 		if(Input.GetKey(KeyCode.A))
 			moveScript.Move(Vector3.left);
 
+		if(Input.GetKeyDown(KeyCode.R))
+			shootScript.Reload();
+
 	}
 	
 	// Update is called once per frame
@@ -38,7 +41,8 @@ public class AvatarController : MonoBehaviour {
 			// Casts the ray and get the first game object hit
 			Physics.Raycast(ray, out hit);
 
-			GetComponent<CanShootReload>().callShoot(hit.point);
+			//GetComponent<CanShootReload>().callShoot(hit.point);
+			shootScript.Shoot(hit.point);
 
 		}
 
