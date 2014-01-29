@@ -14,10 +14,10 @@ public class AImove : MonoBehaviour {
 	//private var thisTransform : Transform;
 	//private var velocity : Vector2;
 
-	public void callShoot(Vector3 targ){											// call Shoot() from CanShoot component with target vec3
+	/*public void callShoot(Vector3 targ){											// call Shoot() from CanShoot component with target vec3
 		GetComponent<CanShoot>().Shoot(targ);
 	}
-
+	*/
 	void Update() {
 		this.target = GameObject.Find ("player_prefab");
 		distance = Vector3.Distance(transform.position,target.transform.position);
@@ -27,7 +27,8 @@ public class AImove : MonoBehaviour {
 			direction.Normalize ();
 			transform.position += direction * speed * Time.deltaTime;
 		} else if (distance <= 5.0) {
-			callShoot(this.target.transform.position);
+			//callShoot(this.target.transform.position);
+			GetComponent<CanShoot>().Shoot(this.target.transform.position);
 		}
 		/*
 			Ray ray = this.transform.position;
