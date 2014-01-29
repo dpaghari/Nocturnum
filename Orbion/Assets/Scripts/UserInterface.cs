@@ -77,7 +77,8 @@ public class UserInterface : MonoBehaviour {
 		GUI.Label(new Rect(5, 5, 150, 50), string.Format ("{0:00}:{1:00}:{2:00}",gameTimeHours, gameTimeMin, gameTimeSec));
 
 		//Ammo
-		if(ammoRef.GetComponent<CanShootReload>().currentAmmo == 0) {
+		//if(ammoRef.GetComponent<CanShootReload>().currentAmmo == 0) {
+		if(GameManager.AvatarContr.shootScript.reloading){
 			GUI.Label(new Rect(5, 40, 150, 50), "Reloading...");
 		} else {
 			GUI.Label(new Rect(5, 40, 150, 50), ammoRef.GetComponent<CanShootReload>().currentAmmo + "/" + ammoRef.GetComponent<CanShootReload>().clipSize);

@@ -24,6 +24,9 @@ public class GameManager : Singleton<GameManager> {
 		}
 	}
 
+	public static AvatarController AvatarContr{
+		get {return Player.GetComponent<AvatarController>(); }
+	}
 
 
 	// Use this for initialization
