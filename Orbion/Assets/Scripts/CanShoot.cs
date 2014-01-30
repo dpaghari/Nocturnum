@@ -45,7 +45,7 @@ public class CanShoot : MonoBehaviour {
 			Physics.Raycast(ray, out hit);
 			*/
 			Vector3 adjustY = Vector3.zero;
-			adjustY.y += 1;
+			//adjustY.y += 1;
 
 			Vector3 bullet_dir = targ + adjustY - transform.position;
 			bullet_dir = bullet_dir.normalized;
