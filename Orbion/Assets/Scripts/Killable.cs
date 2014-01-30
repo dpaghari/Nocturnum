@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Killable : MonoBehaviour {
-	public float currHP; 
-	public float baseHP = 10;
+	public int currHP; 
+	public int baseHP = 30;
 	public GameObject deathTarget;
 	// Use this for initialization
 	void Start () {
@@ -12,12 +12,13 @@ public class Killable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
 	}
 	
-	public void damage (float dmg) {
+	public void damage (int dmg) {
 		currHP -= dmg;
-		Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
-		if (currHP <= 0.0) {
+
+		if (currHP <= 0) {
 			if(this.gameObject.name == "enemy_prefab"){
 				kill();
 			} else {

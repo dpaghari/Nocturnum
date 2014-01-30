@@ -21,9 +21,9 @@ public class IsBullet : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision collision) {
 		
-		if(collision.gameObject.name == "enemy_prefab" || collision.gameObject.name == "player_prefab")
+		if(collision.gameObject.name == "enemy_prefab"/* || collision.gameObject.name == "player_prefab"*/)
 		{
-			collision.gameObject.GetComponent<Killable>().damage(5.0F);	
+			collision.gameObject.GetComponent<Killable>().damage(damage);	
 		}
 	}
 	
