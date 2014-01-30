@@ -26,7 +26,7 @@ public class AImove : MonoBehaviour {
 			Vector3 direction = targ - transform.position;
 			direction.Normalize ();
 			transform.position += direction * speed * Time.deltaTime;
-		} else if (distance <= 5.0) {
+		} else if (distance <= 10.0) {
 			//callShoot(this.target.transform.position);
 			GetComponent<CanShoot>().Shoot(this.target.transform.position);
 		}
