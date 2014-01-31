@@ -30,6 +30,7 @@ public class Killable : MonoBehaviour {
 	void kill () {
 		//destory object
 		Destroy (this.gameObject);
+		Instantiate (deathTarget, this.transform.position, this.transform.rotation);
 		//make death object
 	}
 	
