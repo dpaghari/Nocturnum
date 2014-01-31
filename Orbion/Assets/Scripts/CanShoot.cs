@@ -7,7 +7,7 @@ public class CanShoot : MonoBehaviour {
 	public Rigidbody bullet;
 
 	//the speed at which to shoot the object
-	public float bullet_speed = 5.0F;	
+	public float bullet_speed = 200.0F;	
 
 	//the cooldown in seconds between shots
 	public float firingRate = 1F;	
@@ -44,13 +44,17 @@ public class CanShoot : MonoBehaviour {
 			// Casts the ray and get the first game object hit
 			Physics.Raycast(ray, out hit);
 			*/
-			Vector3 adjustY = Vector3.zero;
+			//Vector3 adjustY = Vector3.zero;
 			//adjustY.y += 1;
 
-			Vector3 bullet_dir = targ + adjustY - transform.position;
+			Vector3 bullet_dir = targ/* + adjustY*/ - transform.position;
 			bullet_dir = bullet_dir.normalized;
-			clone = Instantiate(bullet, transform.position + bullet_dir * 2, Quaternion.LookRotation(targ + adjustY - transform.position, Vector3.up)) as Rigidbody;
-			clone.rigidbody.velocity = bullet_dir * bullet_speed * 20;
+			clone = Instantiate(bullet, transform.position + bullet_dir * 2, Quaternion.LookRotation(targ /*adjustY*/ - transform.position, Vector3.up)) as Rigidbody;
+			//clone.rigidbody.velocity = bullet_dir * bullet_speed * 20;
+			clone.rigidbody.AddForce(bullet_dir * bullet_speed * 20);
+			//clone.GetComponent<IsBullet>().moveScript(bullet_dir);
+
+
 			firingTimer = 0.0f;
 
 				

@@ -70,11 +70,11 @@ Rigidbody:
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_Drag: 5
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &6500000
@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
-  bullet_speed: 5
-  firingRate: 1
+  bullet_speed: 100
+  firingRate: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
