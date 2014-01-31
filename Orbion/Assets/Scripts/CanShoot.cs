@@ -48,7 +48,7 @@ public class CanShoot : MonoBehaviour {
 			//adjustY.y += 1;
 
 			Vector3 bullet_dir = targ/* + adjustY*/ - transform.position;
-			bullet_dir = bullet_dir.normalized;
+			bullet_dir.Normalize();
 			clone = Instantiate(bullet, transform.position + bullet_dir * 2, Quaternion.LookRotation(targ /*adjustY*/ - transform.position, Vector3.up)) as Rigidbody;
 			//clone.rigidbody.velocity = bullet_dir * bullet_speed * 20;
 			clone.rigidbody.AddForce(bullet_dir * bullet_speed * 20);
