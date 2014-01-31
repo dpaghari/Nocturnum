@@ -36,13 +36,20 @@ public class AvatarController : MonoBehaviour {
 		 *  Position
 		*/
 		if(Input.GetMouseButton(0)){
+			//Input.mousePosition.y = 1;
+			Vector3 adjustedMouse = Input.mousePosition;
+			//adjustedMouse.y = transform.position.y;
+			//
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			// Casts the ray and get the first game object hit
 			Physics.Raycast(ray, out hit);
-
+			Vector3 adjustedHit = hit.point;
+			adjustedHit.y= transform.position.y;
 			//GetComponent<CanShootReload>().callShoot(hit.point);
-			shootScript.Shoot(hit.point);
+			//shootScript.Shoot(hit.point);
+			shootScript.Shoot(adjustedHit);
+
 
 		}
 
