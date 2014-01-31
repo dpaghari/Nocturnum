@@ -12,7 +12,7 @@ public class Killable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
+		//Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
 	}
 	
 	public void damage (int dmg) {
