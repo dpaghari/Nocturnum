@@ -95,6 +95,7 @@ public class TechManager : Singleton<TechManager> {
 
 	public static void RmNumBuilding( Tech building, int amt){
 		SetNumBuilding(building, GetNumBuilding(building) - amt);
+		if (GetNumBuilding(building) < 0) SetNumBuilding(building, 0);
 	}
 	
 
