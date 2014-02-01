@@ -16,9 +16,10 @@ public class UserInterface : MonoBehaviour {
 	public GUISkin uiSkin;
 	public GameObject ammoRef;
 	public GameObject resRef;
+	public GameObject healthRef;
 
 	//Temporary variable placeholders for health, energy, and Light
-	public int player_Health;
+	public float player_Health;
 	public int player_Energy;
 	public int player_Light;
 
@@ -26,11 +27,12 @@ public class UserInterface : MonoBehaviour {
 	void Start () {
 		InvokeRepeating ("addTime", 1, 1);
 		ammoRef = GameObject.Find ("player_prefab");
+		healthRef = GameObject.Find ("player_prefab");
 		//Code for when the stuff is attached to a GameObject.
 		//resRef = GameObject.Find("     ");
 
 		//Temporary placeholders for testing numbers.
-		player_Health = 100;
+		player_Health = (float)healthRef.GetComponent<Killable>().currHP/healthRef.GetComponent<Killable>().baseHP;
 		player_Energy = 50;
 		player_Light = 30;
 	}
@@ -50,20 +52,26 @@ public class UserInterface : MonoBehaviour {
 		GUI.skin = uiSkin;
 
 		// Health Bar
-
-
-		if(player_Health > 80){
+		//
+		player_Health = (float)healthRef.GetComponent<Killable>().currHP/healthRef.GetComponent<Killable>().baseHP;
+		if(player_Health > 0.8){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_100.width/6, health_bar_100.height/3), health_bar_100);
-		} else if(player_Health > 60){
+			//Debug.Log (player_Health);
+		} else if(player_Health > 0.6){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_80.width/6, health_bar_80.height/3), health_bar_80);
-		} else if(player_Health > 40){
+			//Debug.Log (player_Health);
+		} else if(player_Health > 0.4){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_60.width/6, health_bar_60.height/3), health_bar_60);
-		} else if(player_Health > 20){
+			//Debug.Log (player_Health);
+		} else if(player_Health > 0.2){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_40.width/6, health_bar_40.height/3), health_bar_40);
+			//Debug.Log (player_Health);
 		} else if(player_Health > 0){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_20.width/6, health_bar_20.height/3), health_bar_20);
+			//Debug.Log (player_Health);
 		} else if(player_Health == 0){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_0.width/6, health_bar_0.height/3), health_bar_0);
+			//Debug.Log (player_Health);
 		}
 
 		//Game Timer
