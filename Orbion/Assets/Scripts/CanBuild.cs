@@ -10,6 +10,8 @@ public class CanBuild : MonoBehaviour {
 	private Rigidbody clone;
 	private Buildings toBuild = Buildings.none;
 	private bool menuUp = false;
+	private int menuCounter = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -21,19 +23,21 @@ public class CanBuild : MonoBehaviour {
 			GetComponent<CanShoot>().ResetFiringTimer();
 			GUI.Box(new Rect (10,10,100,90), "Loader Menu");
 
-			if(GUI.Button(new Rect(20,40,80,20), "Generator")) {
+			if(GUI.Button(new Rect(20,40,80,20), "Generator") && ResManager.Lumen >= generatorBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= generatorBuilding.GetComponent<Buildable>().energyCost) {
+				Debug.Log (weaponLabBuilding.GetComponent<Buildable>().cost.ToString());
 				toBuild = Buildings.generator;
 				menuUp = false;
-				//ResourceManager.Instance.RemoveLight(generatorBuilding.cost);
-				//ResourceManager.Instance.AddUsedEnergy(generatorBuilding.energyCost);
+				ResManager.RmLumen(generatorBuilding.GetComponent<Buildable>().cost);
+				ResManager.AddUsedEnergy(generatorBuilding.GetComponent<Buildable>().energyCost);
 			}
 			
 			// Make the second button.
-			if(GUI.Button(new Rect(20,70,80,20), "Weapon Lab")) {
+			if(GUI.Button(new Rect(20,70,80,20), "Weapon Lab") && ResManager.Lumen >= weaponLabBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= weaponLabBuilding.GetComponent<Buildable>().energyCost) {
 				toBuild = Buildings.weaponLab;
 				menuUp = false;
-				//ResourceManager.Instance.RemoveLight(weaponLabBuilding.cost);
-				//ResourceManager.Instance.AddUsedEnergy(weaponLabBuilding.energyCost);
+				ResManager.RmLumen(weaponLabBuilding.GetComponent<Buildable>().cost);
+				Debug.Log (weaponLabBuilding.GetComponent<Buildable>().cost.ToString());
+				ResManager.AddUsedEnergy(weaponLabBuilding.GetComponent<Buildable>().energyCost);
 			}
 		}
 	}
@@ -52,11 +56,11 @@ public class CanBuild : MonoBehaviour {
 			switch(toBuild){
 			case Buildings.generator:
 				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(generatorBuilding, hit.point + adjustY, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				generatorBuilding = Instantiate(generatorBuilding, hit.point + adjustY, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				break;
 			case Buildings.weaponLab:
 				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(weaponLabBuilding, hit.point + adjustY, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				weaponLabBuilding = Instantiate(weaponLabBuilding, hit.point + adjustY, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				break;
 			default:
 				break;
@@ -64,9 +68,17 @@ public class CanBuild : MonoBehaviour {
 			toBuild = Buildings.none;
 		}
 
-		if (Input.GetKeyDown(KeyCode.B)){
+		if (Input.GetKeyDown(KeyCode.B) && !menuUp){
 			menuUp = true;
+			menuCounter = 50;
 		}
+		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0){
+			menuUp = false;
+		}
+		if (menuCounter > 0) {
+			menuCounter --;
+		}
+
 	}
 
 }
