@@ -20,7 +20,16 @@ public class AvatarController : MonoBehaviour {
 	protected Vector3 GetMouseWorldPos(float yvalue = -Mathf.Infinity){
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
-		Physics.Raycast(ray, out hit);
+
+		//floor layer is currently at 10 update this if that changes
+		int layerMask = 1 << 10; 
+
+		//raycasting onto lightshards were making the angle at which we shoot wonky
+		//so only raycast onto things with the floor layer
+		Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask);
+
+		//[Don't delete] debug code for showing where our mouse position is parsing into. 
+		//Debug.DrawRay (ray.origin, hit.point);
 		Vector3 mousePos = hit.point;
 		if ( yvalue > -Mathf.Infinity) mousePos.y = yvalue;
 		return mousePos;
@@ -85,7 +94,8 @@ public class AvatarController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		//[Don't delete] debug code for showing our shooting angle
+		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
 		if( Input.GetMouseButton( 0)){
 			Scattershot( GetMouseWorldPos( transform.position.y));
