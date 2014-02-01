@@ -7,7 +7,7 @@ public class AvatarController : MonoBehaviour {
 	public CanShootReload shootScript;
 
 
-	private float ScatterSpread = 60f; //max angle that the scatter shot spreads to
+	private float ScatterSpread = 45f; //max angle that the scatter shot spreads to
 
 
 	//Input.mousePosition gives you a screen position, not world position of the map.
