@@ -19,54 +19,59 @@ public class CanShoot : MonoBehaviour {
 	
 	//holds a reference to the bullet that will be made
 	private Rigidbody clone;
+
+
+
+
+	//sets the proportion of completion for the firingTimer
+	//e.g. 0.5 = 50% finished with cooldown
+	public void SetFiringTimer(float ratio){
+		firingTimer = firingRate * ratio;
+	}
+	
+	//Sets the FiringTimer to the beginning of the cooldown count
+	public void ResetFiringTimer(){
+		SetFiringTimer(0);
+	}
+	
+	//returns if we have elapsed the firing cooldown
+	public bool FinishCooldown(){
+		return firingTimer >= firingRate;
+	}
+
+
+
 	
 	protected virtual void Start () {
+		//we want to be able to shoot when created
 		firingTimer = firingRate;
 	}
 
+
 	// Update is called once per frame
 	protected virtual void Update () {
-		//firingTimer++;								
-		//Shoot();
-
 		//adding by Time.deltaTime otherwise our firerate is bullets/frame instead of bullets/second
 		if ( firingTimer <= firingRate) firingTimer += Time.deltaTime;
 		
 	}
 
 
-	public virtual void Shoot(Vector3 targ){													// creates an instance of bullet_prefab and shoots it towards mouse cursor
-
-													
+	//shoots a bullet from object's position with an angle of dir
+	public void ShootDir ( Vector3 dir){
 		if( FinishCooldown()){
-			/*Ray ray = Camera.main.ScreenPointToRay(targ);
-			RaycastHit hit;
-			// Casts the ray and get the first game object hit
-			Physics.Raycast(ray, out hit);
-			*/
-			//Vector3 adjustY = Vector3.zero;
-			//adjustY.y += 1;
-
-			Vector3 bullet_dir = targ/* + adjustY*/ - transform.position;
-			bullet_dir.Normalize();
-			clone = Instantiate(bullet, transform.position + bullet_dir * 2, Quaternion.LookRotation(targ /*adjustY*/ - transform.position, Vector3.up)) as Rigidbody;
-			//clone.rigidbody.velocity = bullet_dir * bullet_speed * 20;
-			clone.rigidbody.AddForce(bullet_dir * bullet_speed * 20);
-			//clone.GetComponent<IsBullet>().moveScript(bullet_dir);
-
-
+			dir.Normalize();
+			clone = Instantiate(bullet, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
+			clone.rigidbody.AddForce(dir * bullet_speed * 20);
 			firingTimer = 0.0f;
-
-				
 		}
 	}
 
-	public void ResetFiringTimer(){
-		firingTimer = 0.0f;
+	//shoots a bullet from the object's position to the target point: targ
+	public virtual void Shoot(Vector3 targ){
+		ShootDir( targ - transform.position );
 	}
 
-	protected bool FinishCooldown(){
-		return firingTimer >= firingRate;
-	}
+
+
 
 }
