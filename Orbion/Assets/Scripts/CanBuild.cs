@@ -12,6 +12,10 @@ public class CanBuild : MonoBehaviour {
 	private bool menuUp = false;
 	private int menuCounter = 0;
 
+	//UI Stuff
+	public GUISkin buildWheelSkin;
+	private float rotAngle = 40;
+	private Vector2 pivotPoint;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +23,11 @@ public class CanBuild : MonoBehaviour {
 	}
 
 	void OnGUI() {
+		GUI.skin = buildWheelSkin;
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
-			GUI.Box(new Rect (10,10,100,90), "Loader Menu");
 
-			if(GUI.Button(new Rect(20,40,80,20), "Generator") && ResManager.Lumen >= generatorBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= generatorBuilding.GetComponent<Buildable>().energyCost) {
+			if(GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator") && ResManager.Lumen >= generatorBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= generatorBuilding.GetComponent<Buildable>().energyCost) {
 				Debug.Log (weaponLabBuilding.GetComponent<Buildable>().cost.ToString());
 				toBuild = Buildings.generator;
 				menuUp = false;
@@ -32,7 +36,10 @@ public class CanBuild : MonoBehaviour {
 			}
 			
 			// Make the second button.
-			if(GUI.Button(new Rect(20,70,80,20), "Weapon Lab") && ResManager.Lumen >= weaponLabBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= weaponLabBuilding.GetComponent<Buildable>().energyCost) {
+			pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
+			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+
+			if(GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Weapon Lab") && ResManager.Lumen >= weaponLabBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= weaponLabBuilding.GetComponent<Buildable>().energyCost) {
 				toBuild = Buildings.weaponLab;
 				menuUp = false;
 				ResManager.RmLumen(weaponLabBuilding.GetComponent<Buildable>().cost);
