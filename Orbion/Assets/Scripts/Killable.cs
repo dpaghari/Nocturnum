@@ -34,8 +34,11 @@ public class Killable : MonoBehaviour {
 		Destroy (this.gameObject);
 		Instantiate (deathTarget, this.transform.position, this.transform.rotation);
 		}
-		if(this.gameObject.tag == "Player")
+		if(this.gameObject.tag == "Player"){
+			ResManager.Reset();
+			TechManager.Reset();
 			Application.LoadLevel("scene1");
+		}
 		//make death object
 	}
 	
