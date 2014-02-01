@@ -57,7 +57,7 @@ public class CanShoot : MonoBehaviour {
 
 
 	//shoots a bullet from object's position with an angle of dir
-	public void ShootDir ( Vector3 dir){
+	public virtual void ShootDir ( Vector3 dir){
 		if( FinishCooldown()){
 			dir.Normalize();
 			clone = Instantiate(bullet, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;

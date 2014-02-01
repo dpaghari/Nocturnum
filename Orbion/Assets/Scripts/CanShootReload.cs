@@ -66,11 +66,11 @@ public class CanShootReload : CanShoot {
 
 
 	//if you try to fire with no ammo and you're not realoding, it will reload for you
-	public override void Shoot (Vector3 targ)
+	public override void ShootDir (Vector3 dir)
 	{
 		if(FinishCooldown() && !reloading){
 			if(currentAmmo > 0 ){
-				base.Shoot(targ);
+				base.ShootDir(dir);
 				currentAmmo--;
 			}
 
