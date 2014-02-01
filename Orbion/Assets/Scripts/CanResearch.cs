@@ -17,8 +17,10 @@ public class CanResearch : MonoBehaviour {
 			GUI.Box(new Rect (10,10,100,90), "Research Menu");
 			
 			if(GUI.Button(new Rect(20,40,80,20), "Scattershot")) {
-				TechManager.Research(Tech.scatter);
-				menuUp = false;
+				if(TechManager.IsTechAvaliable(Tech.scatter)){
+					TechManager.Research(Tech.scatter);
+					menuUp = false;
+				}
 			}
 
 		}
