@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Killable : MonoBehaviour {
-	public int currHP; 
+	public int currHP = 0; 
 	public int baseHP = 30;
 	public GameObject deathTarget;
 	// Use this for initialization
@@ -13,6 +13,10 @@ public class Killable : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
+	}
+
+	public float getHP(){
+		return currHP;
 	}
 	
 	public void damage (int dmg) {
