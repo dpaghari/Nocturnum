@@ -12,7 +12,7 @@ public class AImove : MonoBehaviour {
 
 		if(status == "player_chase"){
 			//Debug.Log (GetComponent<Killable>().getHP ());
-			if(GetComponent<Killable>().getHP() <= 15.0F){
+			if(GetComponent<Killable>().currHP <= 15.0F){
 				status = "flee";
 			}
 
@@ -25,9 +25,25 @@ public class AImove : MonoBehaviour {
 				transform.position += direction * speed * Time.deltaTime;
 			} else/* if (distance < 100.0)*/ {
 				GetComponent<CanShoot>().Shoot(this.target.transform.position);
+			}			
+		} else if(status == "flee"){
+
+			this.target = GameObject.Find ("player_prefab");
+			distance = Vector3.Distance(transform.position,target.transform.position);
+			if (distance > 25.0) {
+				GetComponent<CanShoot>().Shoot(this.target.transform.position);
+				Vector3 targ = target.transform.position;
+				Vector3 direction = targ - transform.position;
+				direction.Normalize ();
+				transform.position += direction * speed * Time.deltaTime;
+			} else/* if (distance < 100.0)*/ {
+				Vector3 targ = target.transform.position;
+				Vector3 direction = targ - transform.position;
+				direction.Normalize ();
+				transform.position -= direction * speed * Time.deltaTime;
 			}
-			
-			
+
+
 		}
 	}
 	

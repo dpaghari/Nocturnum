@@ -14,10 +14,6 @@ public class Killable : MonoBehaviour {
 	void Update () {
 		//Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
 	}
-
-	public float getHP(){
-		return currHP;
-	}
 	
 	public void damage (int dmg) {
 		currHP -= dmg;
