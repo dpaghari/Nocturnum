@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IsBullet : MonoBehaviour {
+public class IsEnemyBullet : MonoBehaviour {
 	public int lifetime = 100;
 	public int damage = 5;
 	public CanMove moveScript;
@@ -11,7 +11,7 @@ public class IsBullet : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
-
+		
 		//moveScript.Move();
 	}
 	
@@ -24,7 +24,7 @@ public class IsBullet : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision collision) {
 		
-		if(collision.gameObject.tag == "Enemy")
+		if(collision.gameObject.tag == "Player")
 		{
 			collision.gameObject.GetComponent<Killable>().damage(damage);	
 		}
