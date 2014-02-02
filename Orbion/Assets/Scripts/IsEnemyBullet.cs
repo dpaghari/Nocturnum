@@ -2,33 +2,29 @@
 using System.Collections;
 
 public class IsEnemyBullet : MonoBehaviour {
-	public int lifetime = 100;
+	/*
+	Handles all enemy bullet types
+	*/
+	// lifetime - How many seconds until the bullet gets destroyed
+	public float lifetime = 10.0F;
 	public int damage = 5;
 	public CanMove moveScript;
 	
 	// Use this for initialization
 	void Start () {
 	}
-	
-	void FixedUpdate(){
-		
-		//moveScript.Move();
-	}
-	
-	// Update is called once per frame
+	// Destroy bullet after lifetime
 	void Update () {
-		lifetime--;
-		if(lifetime < 0)
+		lifetime -= Time.deltaTime;
+		if(lifetime < 0.0F){
 			Destroy (this.gameObject);
+		}
 	}
-	
+	// If you hit a player it calls damage() on it
 	void OnCollisionEnter(Collision collision) {
-		
-		if(collision.gameObject.tag == "Player")
-		{
+		if(collision.gameObject.tag == "Player")	{
 			collision.gameObject.GetComponent<Killable>().damage(damage);	
 		}
 		Destroy (this.gameObject);
 	}
-	
 }

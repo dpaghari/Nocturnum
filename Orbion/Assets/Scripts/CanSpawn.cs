@@ -2,26 +2,27 @@
 using System.Collections;
 
 public class CanSpawn : MonoBehaviour {
-
-	private int respawnTimer = 0;
-	private int resetTime = 300;
+	/*
+	Handles enemy spawning
+	*/
+	// respawnTime - How many seconds until it spawns
+	private float respawnTime = 5.0F;
+	private float respawnCounter = 0.0F;
 	private Rigidbody clone;
 	private Vector3 vec;
 	public Rigidbody enemySpawn;
 
-	// Use this for initialization
+	// Set location
 	void Start () {
 		vec.Set(-6.0F, 1.0F, -30.0F);
 	}
-	
-	// Update is called once per frame
+	// After respawnTime make an enemy at set location
 	void Update () {
-		if(respawnTimer > resetTime){
+		if(respawnCounter > respawnTime){
 			clone = Instantiate(enemySpawn, vec, Quaternion.identity) as Rigidbody;
-			respawnTimer = 0;
+			respawnCounter = 0.0F;
 		} else {
-			respawnTimer++;
+			respawnCounter += Time.deltaTime;
 		}
-	
 	}
 }

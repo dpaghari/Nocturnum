@@ -2,15 +2,21 @@
 using System.Collections;
 
 public class AImove : MonoBehaviour {
+	/*
+	Placeholder AI behavior before implementing behavior trees
+	2 states chase and flee
+	*/
 	public float speed = 6.0F;
-	private float distance = 0;
+	private float distance = 0.0F;
 	public GameObject target;
+	public string status;
 
-	public string status = "player_chase";
+	void Start(){
+		status = "chase";
+	}
 
 	void Update() {
-
-		if(status == "player_chase"){
+		if(status == "chase"){
 			//Debug.Log (GetComponent<Killable>().getHP ());
 			if(GetComponent<Killable>().currHP <= 15.0F){
 				status = "flee";
@@ -23,31 +29,20 @@ public class AImove : MonoBehaviour {
 				Vector3 direction = targ - transform.position;
 				direction.Normalize ();
 				transform.position += direction * speed * Time.deltaTime;
-			} else/* if (distance < 100.0)*/ {
+			} else {
 				GetComponent<CanShoot>().Shoot(this.target.transform.position);
 			}			
 		} else if(status == "flee"){
-
 			this.target = GameObject.Find ("player_prefab");
 			distance = Vector3.Distance(transform.position,target.transform.position);
-			if (distance > 25.0) {
-				GetComponent<CanShoot>().Shoot(this.target.transform.position);
-				Vector3 targ = target.transform.position;
-				Vector3 direction = targ - transform.position;
-				direction.Normalize ();
-				transform.position += direction * speed * Time.deltaTime;
-			} else/* if (distance < 100.0)*/ {
+			if (distance > 45.0) {
+
+			} else {
 				Vector3 targ = target.transform.position;
 				Vector3 direction = targ - transform.position;
 				direction.Normalize ();
 				transform.position -= direction * speed * Time.deltaTime;
 			}
-
-
 		}
-	}
-	
-	void FixedUpdate() {
-		
 	}
 }
