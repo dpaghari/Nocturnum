@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AImove : MonoBehaviour {
+public class AIController : MonoBehaviour {
 	/*
 	Placeholder AI behavior before implementing behavior trees
 	2 states chase and flee
