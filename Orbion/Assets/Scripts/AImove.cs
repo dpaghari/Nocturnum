@@ -13,6 +13,7 @@ public class AImove : MonoBehaviour {
 
 	void Start(){
 		status = "chase";
+		this.renderer.material.color = Color.red;
 	}
 
 	void Update() {

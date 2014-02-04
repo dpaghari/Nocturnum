@@ -16,6 +16,8 @@ public class CanSpawn : MonoBehaviour {
 	void Start () {
 		vec = this.transform.position;
 		Debug.Log (this.transform.position);
+
+		this.renderer.material.color = Color.blue;
 		//vec.Set(-6.0F, 1.0F, -30.0F);
 	}
 	// After respawnTime make an enemy at set location
