@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-public class BehaviorFlee : MonoBehaviour {
-
+public class BehaviorFlee : EnemyBehavior {
 
 	// Use this for initialization
 	void Start () {
