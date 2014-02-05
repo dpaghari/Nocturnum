@@ -11,6 +11,8 @@ public class AIController : MonoBehaviour {
 	public GameObject target;
 	public string status;
 
+	public EnemyBehavior behaviorScript;
+
 	void Start(){
 		status = "chase";
 		this.renderer.material.color = Color.red;

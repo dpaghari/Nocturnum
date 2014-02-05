@@ -8,7 +8,7 @@ public class IsBullet : MonoBehaviour {
 	// lifetime - How many seconds until the bullet gets destroyed
 	public float lifetime = 10.0F;
 	public int damage = 5;
-	public CanMove moveScript;
+	//public CanMove moveScript;
 	
 	void Start () {
 	}
