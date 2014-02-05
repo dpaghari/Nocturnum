@@ -72,6 +72,7 @@ public class CanShootReload : CanShoot {
 			if(currentAmmo > 0 ){
 				base.ShootDir(dir);
 				currentAmmo--;
+				MetricManager.AddShots (1);
 			}
 
 			else {
