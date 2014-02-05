@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof(AudioSource))]
 public class AvatarController : MonoBehaviour {
 
 	public CanMove moveScript;
 	public CanShootReload shootScript;
+	public AudioClip shotSound;
 
 
 	private float ScatterSpread = 45f; //max angle that the scatter shot spreads to
@@ -67,27 +68,37 @@ public class AvatarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 
 
 
 	void FixedUpdate() {
-		if( Input.GetKey( KeyCode.W))
+		if( Input.GetKey( KeyCode.W)){
+
 			moveScript.Move( Vector3.forward);
-		
-		if( Input.GetKey( KeyCode.S))
+		}
+		if( Input.GetKey( KeyCode.S)){
+
 			moveScript.Move( Vector3.back);
-		
-		if( Input.GetKey( KeyCode.D))
+
+		}
+		if( Input.GetKey( KeyCode.D)){
+
 			moveScript.Move( Vector3.right);
-		
-		if( Input.GetKey( KeyCode.A))
+
+		}
+		if( Input.GetKey( KeyCode.A)){
+
 			moveScript.Move( Vector3.left);
 
-		if( Input.GetKeyDown( KeyCode.R))
+		}
+		if( Input.GetKeyDown( KeyCode.R)){
+
 			shootScript.Reload();
 
+		}
+	
 	}
 	
 
@@ -98,8 +109,18 @@ public class AvatarController : MonoBehaviour {
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
 		if( Input.GetMouseButton( 0)){
+			audio.clip = shotSound;
+			audio.PlayOneShot(shotSound,1);
 			Scattershot( GetMouseWorldPos( transform.position.y));
 		}
+
+		/*if((Input.GetKey(KeyCode.A))||(Input.GetKey(KeyCode.W))||(Input.GetKey(KeyCode.S))||(Input.GetKey(KeyCode.D))){
+			audio.clip = shotSound;
+			audio.Play();
+		}
+		else
+			audio.Pause();
+		*/
 
 	}
 }

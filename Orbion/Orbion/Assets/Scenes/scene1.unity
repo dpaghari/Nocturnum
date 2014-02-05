@@ -7760,6 +7760,7 @@ GameObject:
   - 4: {fileID: 906663285}
   - 33: {fileID: 906663284}
   - 23: {fileID: 906663283}
+  - 82: {fileID: 906663286}
   - 54: {fileID: 906663282}
   - 136: {fileID: 906663281}
   - 114: {fileID: 906663280}
@@ -7826,7 +7827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killScript: {fileID: 906663275}
-  duration: 5
+  duration: .200000003
 --- !u!114 &906663275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7868,6 +7869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveScript: {fileID: 906663280}
   shootScript: {fileID: 906663279}
+  shotSound: {fileID: 8300000, guid: 2da0a9f75aec0644fac6823e39502c68, type: 3}
 --- !u!114 &906663278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7987,6 +7989,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!82 &906663286
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1928267949}
+  m_GameObject: {fileID: 906663272}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 2da0a9f75aec0644fac6823e39502c68, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 255
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1069931929
 GameObject:
   m_ObjectHideFlags: 0
@@ -14762,6 +14823,10 @@ Prefab:
     - target: {fileID: 400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: duration
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
