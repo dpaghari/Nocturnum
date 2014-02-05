@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Buildings {none, generator, weaponLab};
+public enum Buildings {none, generator, weaponLab, wall};
 
 public class CanBuild : MonoBehaviour {
 
 	public Rigidbody generatorBuilding;
 	public Rigidbody weaponLabBuilding;
+	public Rigidbody wallBuilding;
 	private Rigidbody clone;
 	private Buildings toBuild = Buildings.none;
 	private bool menuUp = false;
@@ -46,6 +47,14 @@ public class CanBuild : MonoBehaviour {
 				Debug.Log (weaponLabBuilding.GetComponent<Buildable>().cost.ToString());
 				ResManager.AddUsedEnergy(weaponLabBuilding.GetComponent<Buildable>().energyCost);
 			}
+
+			// Make the third button.
+			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			
+			if(GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Wall"))  {
+				toBuild = Buildings.wall;
+				menuUp = false;
+			}
 		}
 	}
 	
@@ -68,6 +77,10 @@ public class CanBuild : MonoBehaviour {
 			case Buildings.weaponLab:
 				GetComponent<CanShoot>().ResetFiringTimer();
 				weaponLabBuilding = Instantiate(weaponLabBuilding, hit.point + adjustY, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				break;
+			case Buildings.wall:
+				GetComponent<CanShoot>().ResetFiringTimer();
+				wallBuilding = Instantiate(wallBuilding, hit.point + adjustY, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				break;
 			default:
 				break;
