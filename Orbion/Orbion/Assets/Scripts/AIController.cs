@@ -11,6 +11,8 @@ public class AIController : MonoBehaviour {
 	public GameObject target;
 	public string status;
 
+	public EnemyBehavior behaviorScript;
+
 	void Start(){
 		status = "chase";
 		this.renderer.material.color = Color.red;
@@ -23,7 +25,7 @@ public class AIController : MonoBehaviour {
 				status = "flee";
 			}
 
-			this.target = GameObject.Find ("player");
+			this.target = GameObject.Find ("player_prefab");
 			distance = Vector3.Distance(transform.position,target.transform.position);
 			if (distance > 20.0) {
 				Vector3 targ = target.transform.position;
@@ -34,7 +36,7 @@ public class AIController : MonoBehaviour {
 				GetComponent<CanShoot>().Shoot(this.target.transform.position);
 			}			
 		} else if(status == "flee"){
-			this.target = GameObject.Find ("player");
+			this.target = GameObject.Find ("player_prefab");
 			distance = Vector3.Distance(transform.position,target.transform.position);
 			if (distance > 45.0) {
 

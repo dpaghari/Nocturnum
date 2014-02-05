@@ -26,8 +26,8 @@ public class UserInterface : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating ("addTime", 1, 1);
-		ammoRef = GameObject.Find ("player");
-		healthRef = GameObject.Find ("player");
+		ammoRef = GameObject.Find ("player_prefab");
+		healthRef = GameObject.Find ("player_prefab");
 		//Code for when the stuff is attached to a GameObject.
 		//resRef = GameObject.Find("     ");
 

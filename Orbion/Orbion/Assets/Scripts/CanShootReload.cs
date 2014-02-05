@@ -6,7 +6,7 @@ public class CanShootReload : CanShoot {
 	public int clipSize = 30;
 	public int currentAmmo = 30;									
 
-	public float reloadCooldown = 5.0F;
+	public float reloadCooldown = 3.0F;
 	public bool reloading = false;
 
 	protected float reloadTime = 0.0F;

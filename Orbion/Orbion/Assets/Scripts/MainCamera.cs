@@ -5,8 +5,7 @@ public class MainCamera : MonoBehaviour
 {
 	
 	public GameObject cameraTarget; // object to look at or follow
-
-	public GameObject Player; // player object for moving
+	//public GameObject Player; // player object for moving
 	
 	public float smoothTime = 0.1f;    // time for dampen
 	public bool cameraFollowX = true; // camera follows on horizontal
@@ -20,7 +19,7 @@ public class MainCamera : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		cameraTarget = GameObject.Find("player");
+		cameraTarget = GameObject.Find("player_prefab");
 		thisTransform = transform;
 	}
 	
