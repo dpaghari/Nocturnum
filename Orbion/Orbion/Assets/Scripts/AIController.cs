@@ -6,19 +6,31 @@ public class AIController : MonoBehaviour {
 	Placeholder AI behavior before implementing behavior trees
 	2 states chase and flee
 	*/
-	public float speed = 6.0F;
+	public float speed;
 	private float distance = 0.0F;
 	public GameObject target;
 	public string status;
+	public bool isWeakened;
+
 
 	public EnemyBehavior behaviorScript;
 
 	void Start(){
+		isWeakened = false;
+
 		status = "chase";
 		this.renderer.material.color = Color.red;
 	}
 
 	void Update() {
+
+
+
+		if(isWeakened)
+			speed = 3.0F;
+		else
+			speed = 10.0F;
+
 		if(status == "chase"){
 			//Debug.Log (GetComponent<Killable>().getHP ());
 			if(GetComponent<Killable>().currHP <= 15.0F){
@@ -48,4 +60,5 @@ public class AIController : MonoBehaviour {
 			}
 		}
 	}
+	
 }
