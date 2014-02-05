@@ -6,8 +6,8 @@ public class Killable : MonoBehaviour {
 	Gives prefabs HP, they can take damage, and die
 	*/
 	//currHP tracks health, baseHP is given unless changed in the prefab
-	public int currHP = 0; 
-	public int baseHP = 30;
+	public int currHP = 100; 
+	public int baseHP = 100;
 	public GameObject deathTarget;
 
 	// Set HP to default

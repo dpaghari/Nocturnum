@@ -23,7 +23,7 @@ public class AIController : MonoBehaviour {
 				status = "flee";
 			}
 
-			this.target = GameObject.Find ("player_prefab");
+			this.target = GameObject.Find ("player");
 			distance = Vector3.Distance(transform.position,target.transform.position);
 			if (distance > 20.0) {
 				Vector3 targ = target.transform.position;
@@ -34,7 +34,7 @@ public class AIController : MonoBehaviour {
 				GetComponent<CanShoot>().Shoot(this.target.transform.position);
 			}			
 		} else if(status == "flee"){
-			this.target = GameObject.Find ("player_prefab");
+			this.target = GameObject.Find ("player");
 			distance = Vector3.Distance(transform.position,target.transform.position);
 			if (distance > 45.0) {
 
