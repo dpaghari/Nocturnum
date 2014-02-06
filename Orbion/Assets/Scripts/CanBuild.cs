@@ -29,7 +29,7 @@ public class CanBuild : MonoBehaviour {
 			GetComponent<CanShoot>().ResetFiringTimer();
 
 			if(GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator") && ResManager.Lumen >= generatorBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= generatorBuilding.GetComponent<Buildable>().energyCost) {
-				Debug.Log (weaponLabBuilding.GetComponent<Buildable>().cost.ToString());
+				//Debug.Log (weaponLabBuilding.GetComponent<Buildable>().cost.ToString());
 				toBuild = Buildings.generator;
 				menuUp = false;
 				ResManager.RmLumen(generatorBuilding.GetComponent<Buildable>().cost);
