@@ -61,7 +61,6 @@ public class CanShoot : MonoBehaviour {
 		if( FinishCooldown()){
 			dir.Normalize();
 			clone = Instantiate(bullet, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
-			clone.rigidbody.AddForce(dir * bullet_speed * 20);
 			firingTimer = 0.0f;
 		}
 	}
