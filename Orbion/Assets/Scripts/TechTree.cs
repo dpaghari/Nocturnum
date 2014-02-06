@@ -80,7 +80,7 @@ public class TechTree : ScriptableObject {
 		TechTree defaultTree = InitTree();
 
 		//set our prereqs here
-		defaultTree.SetReq( Tech.scatter, Tech.weapon);
+		defaultTree.SetReq( Tech.scatter, Tech.ballistics);
 
 		return defaultTree;
 	}
