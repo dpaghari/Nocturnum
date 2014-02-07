@@ -2545,6 +2545,9 @@ GameObject:
   - 23: {fileID: 86045124}
   - 54: {fileID: 86045123}
   - 114: {fileID: 86045128}
+  - 114: {fileID: 86045131}
+  - 114: {fileID: 86045130}
+  - 114: {fileID: 86045129}
   m_Layer: 0
   m_Name: light_grenade
   m_TagString: Untagged
@@ -2562,10 +2565,10 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!23 &86045124
@@ -2635,6 +2638,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flare: {fileID: 100000, guid: 4652cfefd28e6fe40a70bf39bdae36b7, type: 2}
+--- !u!114 &86045129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 44cd9841723b0d6439e8d0154f0cdb4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2027850798}
+  m_GameObject: {fileID: 86045122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245837b1adb0cbb41b9715fee02fed81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveType: 1
+  MoveScript: {fileID: 86045130}
+  Damage: 0
+--- !u!114 &86045130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 44cd9841723b0d6439e8d0154f0cdb4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2027850798}
+  m_GameObject: {fileID: 86045122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 30
+  MaxSpeed: 30
+--- !u!114 &86045131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 44cd9841723b0d6439e8d0154f0cdb4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2027850798}
+  m_GameObject: {fileID: 86045122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab831e380b4ab54796cbcb3f152bac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrBehavior: {fileID: 86045129}
 --- !u!1 &108269003
 GameObject:
   m_ObjectHideFlags: 0
@@ -7976,6 +8021,7 @@ MonoBehaviour:
   moveScript: {fileID: 906663280}
   shootScript: {fileID: 906663279}
   shotSound: {fileID: 8300000, guid: 70f7fe99161f8f54da1cc261c55fbc5a, type: 3}
+  grenade_prefab: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
 --- !u!114 &906663278
 MonoBehaviour:
   m_ObjectHideFlags: 0

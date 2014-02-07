@@ -32,7 +32,7 @@ public class MainCamera : MonoBehaviour
 		}
 		if (cameraFollowZ)
 		{
-			thisTransform.position = new Vector3(thisTransform.position.x, thisTransform.position.y, Mathf.SmoothDamp(thisTransform.position.z, cameraTarget.transform.position.z - 25, ref velocity.z, smoothTime));
+			thisTransform.position = new Vector3(thisTransform.position.x, thisTransform.position.y, Mathf.SmoothDamp(thisTransform.position.z, cameraTarget.transform.position.z - 20, ref velocity.z, smoothTime));
 		}
 		if (!cameraFollowX & cameraFollowHeight)
 		{

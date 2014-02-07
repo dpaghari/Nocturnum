@@ -6,6 +6,10 @@ public class AvatarController : MonoBehaviour {
 	public CanMove moveScript;
 	public CanShootReload shootScript;
 	public AudioClip shotSound;
+	public Rigidbody grenade_prefab;
+
+	private Rigidbody clone;
+	//public CanUseEquip equipScript;
 
 
 	private float ScatterSpread = 45f; //max angle that the scatter shot spreads to
@@ -66,6 +70,21 @@ public class AvatarController : MonoBehaviour {
 		
 	}
 
+	protected void GrenadeShot(Vector3 target){
+		Vector3 dir = target - transform.position;
+		dir.Normalize();
+		
+		if( shootScript.FinishCooldown()){
+
+			clone = Instantiate(grenade_prefab, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
+			shootScript.ResetFiringTimer();
+
+			
+		}
+		
+	}
+
+
 
 
 	// Use this for initialization
@@ -114,6 +133,11 @@ public class AvatarController : MonoBehaviour {
 
 			Scattershot( GetMouseWorldPos( transform.position.y));
 		}
+		if(Input.GetMouseButton(1)){
+			GrenadeShot(GetMouseWorldPos(transform.position.y));
+		}
+
+
 
 		/*if((Input.GetKey(KeyCode.A))||(Input.GetKey(KeyCode.W))||(Input.GetKey(KeyCode.S))||(Input.GetKey(KeyCode.D))){
 			audio.clip = shotSound;

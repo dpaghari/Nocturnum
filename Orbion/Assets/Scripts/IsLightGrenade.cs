@@ -5,6 +5,13 @@ public class IsLightGrenade : MonoBehaviour {
 
 	//public AIController enemyStat;
 	public GameObject flare;
+
+	void Start(){
+
+	}
+
+
+
 	void OnCollisionEnter(Collision other)
 	{
 		
@@ -16,6 +23,11 @@ public class IsLightGrenade : MonoBehaviour {
 		Destroy(gameObject);
 		
 	}
+
+	void FixedUpdate(){
+		//rigidbody.AddForce(Vector3.up * 100, ForceMode.Impulse);
+	}
+
 
 
 }
