@@ -58,6 +58,8 @@ public class AvatarController : MonoBehaviour {
 				Vector3 BulDir = Quaternion.Euler( 0, angleOffset, 0) * leftBound ;
 				shootScript.SetFiringTimer( 1.0f);
 				shootScript.ShootDir( BulDir);
+				audio.clip = shotSound;
+				audio.PlayOneShot(shotSound,1);
 			}
 
 		}
@@ -109,8 +111,7 @@ public class AvatarController : MonoBehaviour {
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
 		if( Input.GetMouseButton( 0)){
-			audio.clip = shotSound;
-			audio.PlayOneShot(shotSound,1);
+
 			Scattershot( GetMouseWorldPos( transform.position.y));
 		}
 
