@@ -11,7 +11,8 @@ public class AIController : MonoBehaviour {
 	public GameObject target;
 	public string status;
 	public bool isWeakened;
-
+	public int weakenTimer = 0;
+	public int weakenCooldown = 20;
 
 	public EnemyBehavior behaviorScript;
 
@@ -26,11 +27,18 @@ public class AIController : MonoBehaviour {
 
 
 
-		if(isWeakened)
+		if(isWeakened){
 			speed = 3.0F;
-		else
-			speed = 10.0F;
+			weakenTimer++;
+			if(weakenTimer > weakenCooldown){
+				isWeakened = false;
+				weakenTimer = 0;
+			}
 
+		}
+		else{
+			speed = 10.0F;
+		}
 		if(status == "chase"){
 			//Debug.Log (GetComponent<Killable>().getHP ());
 			if(GetComponent<Killable>().currHP <= 15.0F){
