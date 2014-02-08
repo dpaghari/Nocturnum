@@ -23,6 +23,8 @@ public enum Tech {
 	wall,
 	_buildingsEND,
 	_upgradesFRONT,
+	bulletBarrier,
+	orbshot,
 	scatter,
 	_upgradesEND
 }

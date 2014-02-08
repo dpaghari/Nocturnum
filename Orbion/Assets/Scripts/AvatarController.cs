@@ -9,6 +9,9 @@ public class AvatarController : MonoBehaviour {
 	public Rigidbody grenade_prefab;
 
 	private Rigidbody clone;
+
+	public Rigidbody normalBullet;
+	public Rigidbody orbBullet;
 	//public CanUseEquip equipScript;
 
 
