@@ -7774,6 +7774,7 @@ GameObject:
   - 114: {fileID: 906663275}
   - 108: {fileID: 906663273}
   - 114: {fileID: 906663274}
+  - 114: {fileID: 906663287}
   m_Layer: 0
   m_Name: player_prefab
   m_TagString: Player
@@ -7872,6 +7873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveScript: {fileID: 906663280}
   shootScript: {fileID: 906663279}
+  absorbScript: {fileID: 906663287}
   shotSound: {fileID: 8300000, guid: 70f7fe99161f8f54da1cc261c55fbc5a, type: 3}
   grenade_prefab: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
@@ -8055,6 +8057,20 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &906663287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1928267949}
+  m_GameObject: {fileID: 906663272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0b851217fa0064ba2663d56f937fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootScript: {fileID: 906663279}
+  shield: {fileID: 5400000, guid: cb3ef8cda438b114fbfbed87a5b211d0, type: 2}
 --- !u!1 &1069931929
 GameObject:
   m_ObjectHideFlags: 0

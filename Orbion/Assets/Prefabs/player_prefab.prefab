@@ -21,6 +21,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 108: {fileID: 10800000}
   - 114: {fileID: 11400012}
+  - 114: {fileID: 11400014}
   m_Layer: 0
   m_Name: player_prefab
   m_TagString: Player
@@ -248,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveScript: {fileID: 11400002}
   shootScript: {fileID: 11400000}
+  absorbScript: {fileID: 11400014}
   shotSound: {fileID: 8300000, guid: 70f7fe99161f8f54da1cc261c55fbc5a, type: 3}
   grenade_prefab: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
@@ -276,6 +278,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killScript: {fileID: 11400004}
   duration: 5
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0b851217fa0064ba2663d56f937fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootScript: {fileID: 11400000}
+  shield: {fileID: 5400000, guid: cb3ef8cda438b114fbfbed87a5b211d0, type: 2}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
