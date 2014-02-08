@@ -26,6 +26,7 @@ public enum Tech {
 	bulletBarrier,
 	orbshot,
 	scatter,
+	light_grenade,
 	_upgradesEND
 }
 

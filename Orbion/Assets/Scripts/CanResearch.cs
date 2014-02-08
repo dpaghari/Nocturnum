@@ -40,6 +40,12 @@ public class CanResearch : MonoBehaviour {
 					menuUp = false;
 				}
 			}
+			if(GUI.Button(new Rect(20,100,80,20), "Light Grenade")) {
+				if(TechManager.IsTechAvaliable(Tech.light_grenade)){
+					TechManager.Research(Tech.light_grenade);
+					menuUp = false;
+				}
+			}
 
 		}
 	
