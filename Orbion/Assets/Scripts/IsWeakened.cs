@@ -8,9 +8,9 @@ public class IsWeakened : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 
-		if(other.tag == "lightsource")
+		/*if(other.tag == "lightsource")
 		GetComponent<AIController>().isWeakened = true;
-
+		*/
 	}
 	void OnTriggerStay(Collider other)
 	{
@@ -20,8 +20,8 @@ public class IsWeakened : MonoBehaviour {
 	}
 	void OnTriggerExit(Collider other)
 	{
-
-		if(other.tag == "lightsource")
+		//Debug.Log("Lols");
+		//if(other.tag == "lightsource")
 		GetComponent<AIController>().isWeakened = false;
 	}
 }

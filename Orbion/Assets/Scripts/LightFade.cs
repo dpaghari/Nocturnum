@@ -15,10 +15,8 @@ public class LightFade : MonoBehaviour {
 			light.intensity -= 0.1f;
 		//}
 		if(light.intensity == 0.0f){
-			
-			//Destroy(light);
-			//createdFlare = false;
-			Destroy(gameObject);
+
+			Destroy(this.gameObject);
 		}
 
 
