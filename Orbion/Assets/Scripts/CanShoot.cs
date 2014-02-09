@@ -12,7 +12,7 @@ public class CanShoot : MonoBehaviour {
 	//the cooldown in seconds between shots
 	public float firingRate = 1F;	
 
-
+	public AudioClip enemyShotSound;
 
 	//used to keep track of our shooting cooldown
 	protected float firingTimer = 0.0F;
@@ -60,6 +60,10 @@ public class CanShoot : MonoBehaviour {
 	public virtual void ShootDir ( Vector3 dir){
 		if( FinishCooldown()){
 			dir.Normalize();
+			if(tag == "Enemy"){
+				audio.clip = enemyShotSound;
+				audio.PlayOneShot(enemyShotSound,1);
+			}
 			clone = Instantiate(bullet, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
 			firingTimer = 0.0f;
 		}
@@ -67,6 +71,7 @@ public class CanShoot : MonoBehaviour {
 
 	//shoots a bullet from the object's position to the target point: targ
 	public virtual void Shoot(Vector3 targ){
+	
 		ShootDir( targ - transform.position );
 	}
 
