@@ -40,12 +40,32 @@ public class CanResearch : MonoBehaviour {
 					menuUp = false;
 				}
 			}
+
 			if(GUI.Button(new Rect(20,100,80,20), "Light Grenade")) {
-				if(TechManager.IsTechAvaliable(Tech.light_grenade)){
-					TechManager.Research(Tech.light_grenade);
+				if(TechManager.IsTechAvaliable(Tech.lightGrenade)){
+					TechManager.Research(Tech.lightGrenade);
 					menuUp = false;
 				}
 			}
+
+			if(GUI.Button(new Rect(20,120,80,20), "Bullet Absorber")) {
+				if(TechManager.IsTechAvaliable(Tech.bulletAbsorber)){
+					TechManager.Research(Tech.bulletAbsorber);
+					menuUp = false;
+				}
+			}
+
+			if(GUI.Button(new Rect(20,140,80,20), "Clip Size")) {
+				if(TechManager.IsTechAvaliable(Tech.clipSize)){
+					TechManager.Research(Tech.clipSize);
+
+					//here until we have a event manager for upgrades
+					GameManager.AvatarContr.shootScript.clipSize += 10 * TechManager.GetUpgradeLv(Tech.clipSize);
+					menuUp = false;
+				}
+			}
+
+
 
 		}
 	

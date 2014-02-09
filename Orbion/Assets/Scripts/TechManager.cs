@@ -23,10 +23,12 @@ public enum Tech {
 	wall,
 	_buildingsEND,
 	_upgradesFRONT,
+	bulletAbsorber,
 	bulletBarrier,
+	clipSize,
+	lightGrenade,
 	orbshot,
 	scatter,
-	light_grenade,
 	_upgradesEND
 }
 
