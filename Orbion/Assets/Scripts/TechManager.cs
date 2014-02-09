@@ -134,23 +134,28 @@ public class TechManager : Singleton<TechManager> {
 
 	//Checks whether theTech is available.
 	//As of now this is determined by:
-	//	if its requirement is none then true
-	//  if its requirement is a building/upgrade
-	//		check if we have them, then if we do
-	//			check if they themselves are an available tech
-	//		otherwise, we don't have them and its false
+	//  for each PreReq in the set,
+	//  	if its requirement is a building/upgrade
+	//			if we don't have it built/upgraded then obviously it's not satisfied
+	//			otherwise, we check if that upgrade is availiable
+	//				if any of them are not, then it is also not satisfied
+	//  if any of the prereqs were not satisfied, theTech is not availiabe
+	//  otherwise all the prereqs are satisfied (or there were no prereqs) and we are availiable
 	public static bool IsTechAvaliable( Tech theTech){
-		Tech theReq = Instance.PlayerTech.GetReq( theTech);
-		if ( theReq == Tech.none) return true;
-
-		if ( IsBuilding( theReq) && !HasBuilding( theReq))
-			return false;
-		else {
-			if ( IsUpgrade( theReq) && !HasUpgrade( theReq))
+		PreReqSet thePreReqs = Instance.PlayerTech.GetReq( theTech);
+		foreach (Tech PreReq in thePreReqs){
+			if ( IsBuilding( PreReq) && !HasBuilding( PreReq))
 				return false;
-		} 
-
-		return IsTechAvaliable( theReq);
+			else {
+				if ( IsUpgrade( PreReq) && !HasUpgrade( PreReq))
+					return false;
+			}
+			
+			if ( ! IsTechAvaliable(PreReq) )
+				return false;
+				
+		}
+		return true;
 	}
 
 

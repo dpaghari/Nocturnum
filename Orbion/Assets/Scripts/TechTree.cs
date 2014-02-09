@@ -4,33 +4,31 @@ using System.Collections.Generic;
 
 
 
-//Currently only supports one prerequisite for any given tech. Also does not differentiate between upgrade levels.
-//This class uses a dictionary to represent our Tech Prerequisites for a given tech.
-//The key represents a tech and the value represents the prereq for that tech.
-//Tech.none represents having no requirement and is the root of our tech tree.
-//This means if we trace any given tech through the PreReqs, we will eventually find Tech.none.
-//If this is not true, then we have a set of requirements that can never be satisfied by the player.
+//Currently does not differentiate between upgrade levels.
+//This class uses a dictionary with Tech as keys to the set of prerequisites.
+//An empty set is something with no requirement. Therefore if we trace through
+//all prereqs of a given tech, we should reach the empty set for every path.
+//If this is not true, then we have a set of requirements that form a loop and
+//can never be satisfied by the player.
 public class TechTree : ScriptableObject {
 	
-	protected Dictionary<Tech, Tech> PreReqs;
+	protected Dictionary<Tech, PreReqSet> PreReqs;
 
 
 
 	public static TechTree InitTree(){
 		TechTree newTree = ScriptableObject.CreateInstance<TechTree>();
-		newTree.PreReqs = new Dictionary<Tech, Tech>();
-
-		//only tech that should be it's own prereq is our root: none.	
-		newTree.PreReqs[Tech.none] = Tech.none; 
+		newTree.PreReqs = new Dictionary<Tech, PreReqSet>();
 
 		return newTree;
 	}
 
 
-
-	//ensures that our dictionary always has a value for our key
-	public Tech GetReq( Tech theTech){
-		if ( !PreReqs.ContainsKey( theTech)) PreReqs[theTech] = Tech.none;
+	//Returns the set of Prerequisites of theTech
+	//Ensures that our dictionary always has a value for our key
+	//so we don't need to explicitly check if a value is null everywhere
+	public PreReqSet GetReq( Tech theTech){
+		if ( !PreReqs.ContainsKey( theTech)) PreReqs[theTech] = new PreReqSet();
 		return PreReqs[theTech];
 	}
 
@@ -39,35 +37,43 @@ public class TechTree : ScriptableObject {
 
 	//helper function for HasLoop
 	protected bool HasLoopRecur ( Tech startingTech, Tech theTech){
-		if ( GetReq( theTech) == startingTech) return true;
-		if ( GetReq( theTech) == Tech.none) return false;
-		return HasLoopRecur ( startingTech, GetReq( theTech));
+		if (startingTech == theTech) return true;
+
+		PreReqSet SetOfPreReqs = GetReq(theTech);
+		foreach (Tech PreReq in SetOfPreReqs)
+			if (HasLoopRecur ( startingTech, PreReq) ) return true;
+
+		return false;
 	}
 
-	//checks whether there is a loop
+	//checks whether there is a loop of requirements
 	protected bool HasLoop( Tech theTech){
-		return HasLoopRecur ( theTech, theTech);
+
+		PreReqSet SetOfPreReqs = GetReq(theTech);
+		foreach (Tech PreReq in SetOfPreReqs)
+			if (HasLoopRecur ( theTech, PreReq) ) return true;
+
+		return false;
 	}
 
 
 
-	//removes theTech's prereq
-	public void RmReq( Tech theTech){
-		PreReqs.Remove( theTech);
+	//removes the thePreReq off of theTech
+	public void RmReq( Tech theTech, Tech thePreReq){
+		GetReq(theTech).Remove(thePreReq);
 	}
 
 
 
-	//Sets theTech's prereq as TheReq. Will overwrite any previous prereq.
+	//Adds thePreReq onto theTech
 	//You are not allowed to add a prereq that creates a loop back to itself.
 	//For example, A req B, B req C, and C req A, which is impossible for the player to satisfy.
-	public void SetReq( Tech theTech, Tech theReq){
-		//PreReqs.Add(theTech, theReq);
-		PreReqs[theTech] = theReq;
+	public void AddReq( Tech theTech, Tech thePreReq){
+		GetReq(theTech).Add(thePreReq);
 		if ( HasLoop(theTech)){
-			string errMsg = string.Format("Requirement loop detected when setting {0} with preq {1}. The prereq was not set.", theTech, theReq);
+			string errMsg = string.Format("Requirement loop detected when setting {0} with {1} as prereq. The prereq was not set.", theTech, thePreReq);
 			Debug.LogError( errMsg);
-			RmReq( theTech);
+			RmReq( theTech, thePreReq);
 		}
 
 	}
@@ -80,11 +86,24 @@ public class TechTree : ScriptableObject {
 		TechTree defaultTree = InitTree();
 
 		//set our prereqs here
-		defaultTree.SetReq( Tech.scatter, Tech.ballistics);
-
+		defaultTree.AddReq( Tech.scatter, Tech.ballistics);
+	
 		return defaultTree;
 	}
 
 
 
+}
+
+
+
+
+
+//A set of Techs used to store the set of prerequisites needed for some Tech
+public class PreReqSet : HashSet<Tech> {
+	
+	public bool IsEmpty(){
+		return base.Count == 0;
+	}
+	
 }
