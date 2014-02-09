@@ -7874,7 +7874,7 @@ MonoBehaviour:
   moveScript: {fileID: 906663280}
   shootScript: {fileID: 906663279}
   absorbScript: {fileID: 906663287}
-  shotSound: {fileID: 8300000, guid: 70f7fe99161f8f54da1cc261c55fbc5a, type: 3}
+  shotSound: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
   grenade_prefab: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
@@ -7891,7 +7891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
-  weaponLabBuilding: {fileID: 5400000, guid: 72a8969feecc238468ed2816b90049bd, type: 2}
+  weaponLabBuilding: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
   wallBuilding: {fileID: 5400000, guid: d7b803cf43d702d4eb3d00d36e2088c1, type: 2}
   buildWheelSkin: {fileID: 11400000, guid: 3dcf84cea41ae8045aafdaacbffa769d, type: 2}
 --- !u!114 &906663279
@@ -7909,6 +7909,7 @@ MonoBehaviour:
   bullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   bullet_speed: 200
   firingRate: .200000003
+  enemyShotSound: {fileID: 0}
   clipSize: 30
   currentAmmo: 30
   reloadCooldown: 3
@@ -8007,7 +8008,7 @@ AudioSource:
   m_GameObject: {fileID: 906663272}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 70f7fe99161f8f54da1cc261c55fbc5a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8071,8 +8072,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootScript: {fileID: 906663279}
   shield: {fileID: 5400000, guid: cb3ef8cda438b114fbfbed87a5b211d0, type: 2}
-  clone: {fileID: 0}
-  player: {fileID: 0}
+  returnBullet: {fileID: 5400000, guid: efd0d6cb006e6ae4594c6db69912e41a, type: 2}
+  dir: {x: 0, y: 0, z: 0}
+  bulletCount: 0
 --- !u!1 &1069931929
 GameObject:
   m_ObjectHideFlags: 0
@@ -14897,6 +14899,10 @@ Prefab:
       propertyPath: duration
       value: .200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 11400014, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 906663272}

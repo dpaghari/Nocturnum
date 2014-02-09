@@ -3,25 +3,27 @@ using System.Collections;
 
 public class isBulletAbsorber : MonoBehaviour {
 
-	//public GameObject playerpos;
-	public int bulletCount = 0;
+	public GameObject player;
+
+
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find("player_prefab");
 
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (bulletCount);
+
 	
 	}
 
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.tag == "enemy_bullet")
 		{
-			bulletCount += 1;
+			player.GetComponent<AbsorbBullet>().bulletCount += 1;
 
 		}
 		

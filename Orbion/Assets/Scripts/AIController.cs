@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof(AudioSource))]
 public class AIController : MonoBehaviour {
 	/*
 	Placeholder AI behavior before implementing behavior trees
@@ -11,6 +11,7 @@ public class AIController : MonoBehaviour {
 	public GameObject target;
 	public string status;
 	public bool isWeakened;
+	public AudioClip enemyShotSound;
 	public int weakenTimer = 0;
 	public int weakenCooldown = 20;
 
@@ -53,6 +54,7 @@ public class AIController : MonoBehaviour {
 				direction.Normalize ();
 				transform.position += direction * speed * Time.deltaTime;
 			} else {
+
 				GetComponent<CanShoot>().Shoot(this.target.transform.position);
 			}			
 		} else if(status == "flee"){
