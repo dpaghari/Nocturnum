@@ -141,7 +141,8 @@ public class AvatarController : MonoBehaviour {
 		if(Input.GetMouseButtonDown(1)){
 			//if (TechManager.HasUpgrade(Tech.light_grenade))
 			//GrenadeShot(GetMouseWorldPos(transform.position.y));
-				absorbScript.AbsorbShot(GetMouseWorldPos( transform.position.y));
+				//absorbScript.AbsorbShot(GetMouseWorldPos( transform.position.y));
+			GetComponent<EquipmentUser>().UseEquip(GetMouseWorldPos( transform.position.y));
 		
 		}
 

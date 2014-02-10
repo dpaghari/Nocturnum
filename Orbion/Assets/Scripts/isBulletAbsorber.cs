@@ -23,8 +23,8 @@ public class isBulletAbsorber : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.tag == "enemy_bullet")
 		{
-			player.GetComponent<AbsorbBullet>().bulletCount += 1;
-
+			//player.GetComponent<AbsorbBullet>().bulletCount += 1;
+			player.GetComponent<EB_BulletAbsorber>().bulletCount += 1;
 		}
 		
 	}
