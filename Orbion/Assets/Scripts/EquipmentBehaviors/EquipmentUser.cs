@@ -50,11 +50,17 @@ public class EquipmentUser : MonoBehaviour {
 
 	void Start () {
 		SetCooldown(1.0f);
+		if (CurrEquip) CurrEquip.OnSwitchEnter();
+	}
+
+	
+	void FixedUpdate(){
+		CurrEquip.FixedUpdateEB();
 	}
 	
 
 	void Update () {
 		if( !FinishCooldown()) CooldownTimer += Time.deltaTime;
-		CurrEquip.Perform();
+		CurrEquip.UpdateEB();
 	}
 }

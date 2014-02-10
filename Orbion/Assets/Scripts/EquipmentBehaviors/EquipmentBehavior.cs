@@ -11,8 +11,11 @@ public abstract class EquipmentBehavior : MonoBehaviour {
 	//i.e what should happen when the button gets pressed
 	abstract public void Action(Vector3 cursor);
 
+	//The fixed update of the behavior
+	abstract public void FixedUpdateEB();
+
 	//The update of the behavior
-	abstract public void Perform();
+	abstract public void UpdateEB();
 
 	//Called when client swaps in this behavior
 	abstract public void OnSwitchEnter();

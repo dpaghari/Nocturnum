@@ -16,7 +16,10 @@ public class EB_LightGrenade : EquipmentBehavior {
 	public override void Action (Vector3 cursor) { GrenadeShot(cursor);}
 	
 	
-	public override void Perform() {return;}
+	public override void FixedUpdateEB() {return;}
+
+
+	public override void UpdateEB() {return;}
 	
 	
 	public override void OnSwitchEnter() {return;}

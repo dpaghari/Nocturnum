@@ -59,10 +59,10 @@ public class EB_BulletAbsorber : EquipmentBehavior {
 
 
 
-	public override void FixedPerform (){return;}
+	public override void FixedUpdateEB (){return;}
 
 
-	public override void Perform ()
+	public override void UpdateEB ()
 	{
 		Debug.Log (bulletCount);
 		if(isOut){
