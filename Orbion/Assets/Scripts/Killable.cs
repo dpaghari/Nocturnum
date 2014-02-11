@@ -38,4 +38,14 @@ public class Killable : MonoBehaviour {
 		}
 		//make death object
 	}
+
+	/// <summary>
+	/// Heal the specified health.
+	/// </summary>
+	/// <param name="health">Health.</param>
+	public void Heal(int health){
+		currHP += health;
+		if(currHP > baseHP)
+			currHP = baseHP;
+	}
 }

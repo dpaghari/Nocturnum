@@ -16,6 +16,9 @@ public class PB_Linear : ProjectileBehavior {
 	//public float MoveForce;
 	public CanMove MoveScript;
 	public int Damage;
+	//public searingLevel;
+	public GameObject dot;
+	private GameObject clone;
 
 
 
@@ -31,6 +34,13 @@ public class PB_Linear : ProjectileBehavior {
 	public override void OnImpactEnter( Collision other){
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
 		if( KillScript) KillScript.damage(Damage);
+
+		//drop a DOT on target if searing is > 0
+		if(1 > 0){
+			clone = Instantiate(dot, other.transform.position, new Quaternion());
+			clone.GetComponent<IsSearingShot>().target = other.gameObject.GetComponent<Rigidbody>();
+		}
+
 		Destroy (gameObject);
 	}
 

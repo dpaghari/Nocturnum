@@ -238,7 +238,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
   weaponLabBuilding: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
+  underConstructionBuilding: {fileID: 5400000, guid: 2ac5e63ddc7dddd4980ad9af353ffff8,
+    type: 2}
   wallBuilding: {fileID: 5400000, guid: d7b803cf43d702d4eb3d00d36e2088c1, type: 2}
+  medBayBuilding: {fileID: 5400000, guid: 6cb3d67fbf45d614c8b12dda813ec6e2, type: 2}
+  incindiaryBuilding: {fileID: 5400000, guid: ab55e9521cba25a439e2d460263b9b51, type: 2}
   buildWheelSkin: {fileID: 11400000, guid: 3dcf84cea41ae8045aafdaacbffa769d, type: 2}
 --- !u!114 &11400008
 MonoBehaviour:
@@ -256,8 +260,8 @@ MonoBehaviour:
   equipScript: {fileID: 11400016}
   shotSound: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
   grenade_prefab: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
-  normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
-  orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
+  normalBullet: {fileID: 0}
+  orbBullet: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
