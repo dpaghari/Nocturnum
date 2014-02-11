@@ -38,8 +38,10 @@ public enum Tech {
 	searing,
 	seeker,
 	shield,
+	spotlightResearch,
 	stealth,
 	reloadSpeed,
+	turretResearch,
 	_upgradesEND
 }
 
