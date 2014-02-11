@@ -22,8 +22,9 @@ GameObject:
   - 108: {fileID: 10800000}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400016}
-  - 114: {fileID: 11400018}
+  - 114: {fileID: 11400014}
   - 114: {fileID: 11400020}
+  - 114: {fileID: 11400018}
   m_Layer: 0
   m_Name: player_prefab
   m_TagString: Player
@@ -252,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveScript: {fileID: 11400002}
   shootScript: {fileID: 11400000}
-  absorbScript: {fileID: 0}
+  equipScript: {fileID: 11400016}
   shotSound: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
   grenade_prefab: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
@@ -281,6 +282,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killScript: {fileID: 11400004}
   duration: 5
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8178ae98b477441a8c3e175026e68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: Infinity
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2248c4709bc554c42a497f5e1cf584d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrEquip: {fileID: 11400020}
+  CurrEquipType: 1
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1

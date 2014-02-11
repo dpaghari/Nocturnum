@@ -5,7 +5,8 @@ public class AvatarController : MonoBehaviour {
 
 	public CanMove moveScript;
 	public CanShootReload shootScript;
-	public AbsorbBullet absorbScript;
+	public EquipmentUser equipScript;
+
 	public AudioClip shotSound;
 	public Rigidbody grenade_prefab;
 
@@ -18,6 +19,7 @@ public class AvatarController : MonoBehaviour {
 
 
 	private float ScatterSpread = 45f; //max angle that the scatter shot spreads to
+
 
 
 	//Input.mousePosition gives you a screen position, not world position of the map.
@@ -44,6 +46,7 @@ public class AvatarController : MonoBehaviour {
 		if ( yvalue > -Mathf.Infinity) mousePos.y = yvalue;
 		return mousePos;
 	}
+
 
 
 	//Shoots a scatter shot of bullets around the center direction: dir
@@ -75,21 +78,6 @@ public class AvatarController : MonoBehaviour {
 		
 	}
 
-	protected void GrenadeShot(Vector3 target){
-		Vector3 dir = target - transform.position;
-		dir.Normalize();
-		
-		if( shootScript.FinishCooldown()){
-
-			clone = Instantiate(grenade_prefab, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
-			shootScript.ResetFiringTimer();
-
-			
-		}
-		
-	}
-
-
 
 
 	// Use this for initialization
@@ -100,6 +88,7 @@ public class AvatarController : MonoBehaviour {
 
 
 	void FixedUpdate() {
+
 		if( Input.GetKey( KeyCode.W)){
 
 			moveScript.Move( Vector3.forward);
@@ -119,12 +108,7 @@ public class AvatarController : MonoBehaviour {
 			moveScript.Move( Vector3.left);
 
 		}
-		if( Input.GetKeyDown( KeyCode.R)){
 
-			shootScript.Reload();
-
-		}
-	
 	}
 	
 
@@ -135,15 +119,40 @@ public class AvatarController : MonoBehaviour {
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
 		if( Input.GetMouseButton( 0)){
-
 			Scattershot( GetMouseWorldPos( transform.position.y));
 		}
+
+
+		//use our current equipment
 		if(Input.GetMouseButtonDown(1)){
-			//if (TechManager.HasUpgrade(Tech.light_grenade))
-			//GrenadeShot(GetMouseWorldPos(transform.position.y));
-				//absorbScript.AbsorbShot(GetMouseWorldPos( transform.position.y));
-			GetComponent<EquipmentUser>().UseEquip(GetMouseWorldPos( transform.position.y));
-		
+			equipScript.UseEquip(GetMouseWorldPos( transform.position.y));	
+		}
+
+
+		if( Input.GetKeyDown( KeyCode.R)){
+			
+			shootScript.Reload();
+			
+		}
+
+
+		//swaps to the next equipingment for testing purposes
+		//has a little more logic since not all the equipment are implemented yet
+		if(Input.GetKeyDown(KeyCode.T)){
+			EquipType nextEquip = equipScript.CurrEquipType;
+			int typeIterator = (int) equipScript.CurrEquipType;
+
+			do{
+			typeIterator ++;
+			if (typeIterator >= (int)EquipType._length)
+				typeIterator = 0;
+			nextEquip = (EquipType) typeIterator;
+			}
+			while (equipScript.GetEquip(nextEquip) == null);
+			
+			Debug.Log(string.Format("Equip switched from {0} to {1}.", equipScript.CurrEquipType, nextEquip));
+			equipScript.ChangeEquip(nextEquip);
+			
 		}
 
 
@@ -157,4 +166,7 @@ public class AvatarController : MonoBehaviour {
 		*/
 
 	}
+
+
+
 }
