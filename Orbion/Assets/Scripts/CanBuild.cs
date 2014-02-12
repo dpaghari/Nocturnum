@@ -68,7 +68,7 @@ public class CanBuild : MonoBehaviour {
 				menuUp = false;
 				ResManager.RmLumen(medBayBuilding.GetComponent<Buildable>().cost);
 				ResManager.AddUsedEnergy(medBayBuilding.GetComponent<Buildable>().energyCost);
-				Debug.Log("hullo");
+//				Debug.Log("hullo");
 			}
 			
 			// Make the fifth button.

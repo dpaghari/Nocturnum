@@ -64,7 +64,7 @@ public class EB_BulletAbsorber : EquipmentBehavior {
 
 	public override void UpdateEB ()
 	{
-		Debug.Log (bulletCount);
+//		Debug.Log (bulletCount);
 		if(isOut){
 			if(clone != null){
 				clone.transform.position = transform.position + dir * 2;
