@@ -16,7 +16,7 @@ public class PB_Linear : ProjectileBehavior {
 	//public float MoveForce;
 	public CanMove MoveScript;
 	public int Damage;
-	//public searingLevel;
+	public int searingLevel;
 	public GameObject dot;
 	private GameObject clone;
 
@@ -36,8 +36,8 @@ public class PB_Linear : ProjectileBehavior {
 		if( KillScript) KillScript.damage(Damage);
 
 		//drop a DOT on target if searing is > 0
-		if(1 > 0){
-			clone = Instantiate(dot, other.transform.position, new Quaternion());
+		if(searingLevel > 0 && other.gameObject.tag == "Enemy"){
+			clone = Instantiate(dot, other.transform.position, new Quaternion()) as GameObject;
 			clone.GetComponent<IsSearingShot>().target = other.gameObject.GetComponent<Rigidbody>();
 		}
 

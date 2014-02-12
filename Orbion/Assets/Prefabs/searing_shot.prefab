@@ -41,6 +41,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9886f4b7efc474491ec8cbcf87be28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifetime: 3
+  DPS: 1
+  target: {fileID: 0}
+  damageTimer: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -103,7 +107,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 5
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -230,7 +234,7 @@ ParticleSystem:
         rgba: 4278190335
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: .5
       maxCurve:
         serializedVersion: 2
         m_Curve:
