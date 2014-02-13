@@ -15,19 +15,22 @@ public class EB_BulletAbsorber : EquipmentBehavior {
 	private bool isOut;
 	private float timer = 0.0f;
 	private float cooldown = 2.0f;
+	private Vector3 shieldHeight;
 
 
 
 	public void AbsorbShot(Vector3 target){
 		dir = target - transform.position;
 		dir.Normalize();
-		
+
 		
 		if(bulletCount < 5){
 			
 			if( shootScript.FinishCooldown() && !isOut){
-				
-				clone = Instantiate(shield, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
+				Vector3 temp = transform.position;
+				temp.y += 1;
+						
+				clone = Instantiate(shield, temp + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
 				//clone.transform.position = transform.position + dir * 2;
 				shootScript.ResetFiringTimer();
 				isOut = true;
@@ -41,6 +44,8 @@ public class EB_BulletAbsorber : EquipmentBehavior {
 			
 			
 			if( shootScript.FinishCooldown() && !isOut){
+				Vector3 temp = transform.position;
+				temp.y += 1;
 				
 				clone2 = Instantiate(returnBullet, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
 				
@@ -59,15 +64,12 @@ public class EB_BulletAbsorber : EquipmentBehavior {
 
 
 
-	public override void FixedUpdateEB (){return;}
-
-
-	public override void UpdateEB ()
-	{
-//		Debug.Log (bulletCount);
+	public override void FixedUpdateEB (){
 		if(isOut){
 			if(clone != null){
-				clone.transform.position = transform.position + dir * 2;
+				Vector3 temp = transform.position;
+				temp.y = 1;
+				clone.transform.position = temp + dir * 2;
 			}
 			timer += Time.deltaTime;
 		}
@@ -78,6 +80,13 @@ public class EB_BulletAbsorber : EquipmentBehavior {
 			isOut = false;
 			timer = 0.0f;
 		}
+	}
+
+
+	public override void UpdateEB ()
+	{
+//		Debug.Log (bulletCount);
+
 	}
 
 

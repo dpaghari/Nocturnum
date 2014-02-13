@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Buildings {none, generator, weaponLab, wall, medBay, incindiary};
+public enum Buildings {none, generator, ballistics, wall, medBay, incindiary};
 
 public class CanBuild : MonoBehaviour {
 	
 	public Rigidbody generatorBuilding;
-	public Rigidbody weaponLabBuilding;
+	public Rigidbody ballisticsBuilding;
 	public Rigidbody underConstructionBuilding;
 	public Rigidbody wallBuilding;
 	public Rigidbody medBayBuilding;
@@ -32,7 +32,7 @@ public class CanBuild : MonoBehaviour {
 			GetComponent<CanShoot>().ResetFiringTimer();
 			
 			if(GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator") && ResManager.Lumen >= generatorBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= generatorBuilding.GetComponent<Buildable>().energyCost) {
-				//Debug.Log (weaponLabBuilding.GetComponent<Buildable>().cost.ToString());
+				//Debug.Log (ballisticsBuilding.GetComponent<Buildable>().cost.ToString());
 				toBuild = Buildings.generator;
 				menuUp = false;
 				ResManager.RmLumen(generatorBuilding.GetComponent<Buildable>().cost);
@@ -43,11 +43,11 @@ public class CanBuild : MonoBehaviour {
 			pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			
-			if(GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Weapon Lab") && ResManager.Lumen >= weaponLabBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= weaponLabBuilding.GetComponent<Buildable>().energyCost) {
-				toBuild = Buildings.weaponLab;
+			if(GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Ballistics") && ResManager.Lumen >= ballisticsBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= ballisticsBuilding.GetComponent<Buildable>().energyCost) {
+				toBuild = Buildings.ballistics;
 				menuUp = false;
-				ResManager.RmLumen(weaponLabBuilding.GetComponent<Buildable>().cost);
-				ResManager.AddUsedEnergy(weaponLabBuilding.GetComponent<Buildable>().energyCost);
+				ResManager.RmLumen(ballisticsBuilding.GetComponent<Buildable>().cost);
+				ResManager.AddUsedEnergy(ballisticsBuilding.GetComponent<Buildable>().energyCost);
 			}
 			
 			// Make the third button.
@@ -105,13 +105,14 @@ public class CanBuild : MonoBehaviour {
 			//Build the right building
 			switch(toBuild){
 			case Buildings.generator:
+				mousePos.y += 1;
 				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(generatorBuilding, hit.point, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				break;
-			case Buildings.weaponLab:
+			case Buildings.ballistics:
 				GetComponent<CanShoot>().ResetFiringTimer();
 				clone = Instantiate(underConstructionBuilding, hit.point, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				clone.gameObject.GetComponent<IsUnderConstruction>().toBuild = weaponLabBuilding;
+				clone.gameObject.GetComponent<IsUnderConstruction>().toBuild = ballisticsBuilding;
 				break;
 			case Buildings.wall:
 				GetComponent<CanShoot>().ResetFiringTimer();

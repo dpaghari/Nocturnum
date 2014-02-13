@@ -17,8 +17,10 @@ public class IsLightGrenade : MonoBehaviour {
 	{
 		
 		if(other.gameObject.tag == "ground"){
-			Debug.Log ("hit ground");
-			Instantiate(flare, transform.position, Quaternion.identity);
+		//	Debug.Log ("hit ground");
+			Vector3 temp = transform.position;
+			temp.y += 1;
+			Instantiate(flare, temp, Quaternion.identity);
 
 
 		}

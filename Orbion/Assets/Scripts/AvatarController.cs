@@ -8,8 +8,6 @@ public class AvatarController : MonoBehaviour {
 	public EquipmentUser equipScript;
 
 	public AudioClip shotSound;
-	public Rigidbody grenade_prefab;
-
 
 	private Rigidbody clone;
 

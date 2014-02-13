@@ -20,6 +20,8 @@ public class CanShoot : MonoBehaviour {
 	//holds a reference to the bullet that will be made
 	private Rigidbody clone;
 
+	// Variable bullet spawn height for diff users
+	public Vector3 bulletHeight;
 
 
 
@@ -64,7 +66,9 @@ public class CanShoot : MonoBehaviour {
 				audio.clip = enemyShotSound;
 				audio.PlayOneShot(enemyShotSound,1);
 			}
-			clone = Instantiate(bullet, transform.position + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
+			Vector3 temp = transform.position;
+			temp.y += bulletHeight.y;
+			clone = Instantiate(bullet, temp + dir * 3, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
 			firingTimer = 0.0f;
 		}
 	}

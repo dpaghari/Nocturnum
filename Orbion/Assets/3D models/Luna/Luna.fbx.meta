@@ -160,7 +160,10 @@ ModelImporter:
     400152: LUNARIG_SH_SpineTopJ
     400154: polySurface658
     4300000: polySurface658
-    7400000: Take 001
+    7400000: Idle
+    7400002: Run
+    7400004: Dead
+    7400006: Shoot
     9500000: //RootNode
     13700000: polySurface658
   materials:
@@ -177,13 +180,741 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 278
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LUNARIG
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ/LUNARIG_SH_lToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ/LUNARIG_SH_rToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3/LUNARIG_SH_lFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3/LUNARIG_SH_lFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3/LUNARIG_SH_lFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3/LUNARIG_SH_lFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3/LUNARIG_SH_lThumbJTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_HeadTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ/LUNARIG_SH_JawTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_lEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_rEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3/LUNARIG_SH_rFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3/LUNARIG_SH_rFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3/LUNARIG_SH_rFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3/LUNARIG_SH_rFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3/LUNARIG_SH_rThumbJTip
+        weight: 1
+      - path: polySurface658
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 278
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LUNARIG
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ/LUNARIG_SH_lToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ/LUNARIG_SH_rToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3/LUNARIG_SH_lFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3/LUNARIG_SH_lFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3/LUNARIG_SH_lFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3/LUNARIG_SH_lFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3/LUNARIG_SH_lThumbJTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_HeadTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ/LUNARIG_SH_JawTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_lEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_rEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3/LUNARIG_SH_rFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3/LUNARIG_SH_rFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3/LUNARIG_SH_rFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3/LUNARIG_SH_rFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3/LUNARIG_SH_rThumbJTip
+        weight: 1
+      - path: polySurface658
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dead
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 278
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LUNARIG
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ/LUNARIG_SH_lToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ/LUNARIG_SH_rToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3/LUNARIG_SH_lFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3/LUNARIG_SH_lFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3/LUNARIG_SH_lFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3/LUNARIG_SH_lFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3/LUNARIG_SH_lThumbJTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_HeadTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ/LUNARIG_SH_JawTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_lEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_rEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3/LUNARIG_SH_rFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3/LUNARIG_SH_rFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3/LUNARIG_SH_rFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3/LUNARIG_SH_rFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3/LUNARIG_SH_rThumbJTip
+        weight: 1
+      - path: polySurface658
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shoot
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 278
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LUNARIG
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_lHipJ/LUNARIG_SH_lKneeJ/LUNARIG_SH_lAnkleJ/LUNARIG_SH_lBallJ/LUNARIG_SH_lToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_rHipJ/LUNARIG_SH_rKneeJ/LUNARIG_SH_rAnkleJ/LUNARIG_SH_rBallJ/LUNARIG_SH_rToeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger1J1/LUNARIG_SH_lFinger1J2/LUNARIG_SH_lFinger1J3/LUNARIG_SH_lFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger2J1/LUNARIG_SH_lFinger2J2/LUNARIG_SH_lFinger2J3/LUNARIG_SH_lFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger3J1/LUNARIG_SH_lFinger3J2/LUNARIG_SH_lFinger3J3/LUNARIG_SH_lFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lPalmJ/LUNARIG_SH_lFinger4J1/LUNARIG_SH_lFinger4J2/LUNARIG_SH_lFinger4J3/LUNARIG_SH_lFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_lClavicleJ/LUNARIG_SH_lShoulderJ/LUNARIG_SH_lElbowJ/LUNARIG_SH_lWristJ/LUNARIG_SH_lThumbJ1/LUNARIG_SH_lThumbJ2/LUNARIG_SH_lThumbJ3/LUNARIG_SH_lThumbJTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_HeadTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_JawJ/LUNARIG_SH_JawTipJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_lEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_Neck01J/LUNARIG_SH_HeadJ/LUNARIG_SH_rEyeJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rForearmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger1J1/LUNARIG_SH_rFinger1J2/LUNARIG_SH_rFinger1J3/LUNARIG_SH_rFinger1JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger2J1/LUNARIG_SH_rFinger2J2/LUNARIG_SH_rFinger2J3/LUNARIG_SH_rFinger2JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger3J1/LUNARIG_SH_rFinger3J2/LUNARIG_SH_rFinger3J3/LUNARIG_SH_rFinger3JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rPalmJ/LUNARIG_SH_rFinger4J1/LUNARIG_SH_rFinger4J2/LUNARIG_SH_rFinger4J3/LUNARIG_SH_rFinger4JTip
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3
+        weight: 1
+      - path: LUNARIG/LUNARIG_MainC/joint1/LUNARIG_SH_ROOTJ/LUNARIG_SH_Spine01J/LUNARIG_SH_Spine02J/LUNARIG_SH_SpineTopJ/LUNARIG_SH_rClavicleJ/LUNARIG_SH_rShoulderJ/LUNARIG_SH_rElbowJ/LUNARIG_SH_rWristJ/LUNARIG_SH_rThumbJ1/LUNARIG_SH_rThumbJ2/LUNARIG_SH_rThumbJ3/LUNARIG_SH_rThumbJTip
+        weight: 1
+      - path: polySurface658
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: .100000001
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
