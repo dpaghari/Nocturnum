@@ -29,7 +29,9 @@ public class Killable : MonoBehaviour {
 		//destory object
 		if(this.gameObject.tag == "Enemy"){
 		Destroy (this.gameObject);
-		Instantiate (deathTarget, this.transform.position, this.transform.rotation);
+			Vector3 temp = transform.position;
+			temp.y += 4;
+		Instantiate (deathTarget, temp, this.transform.rotation);
 		}
 		if(this.gameObject.tag == "Player"){
 			ResManager.Reset();
