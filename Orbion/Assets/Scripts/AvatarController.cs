@@ -90,20 +90,24 @@ public class AvatarController : MonoBehaviour {
 		if( Input.GetKey( KeyCode.W)){
 
 			moveScript.Move( Vector3.forward);
+			animation.CrossFade("Run");
 		}
 		if( Input.GetKey( KeyCode.S)){
 
 			moveScript.Move( Vector3.back);
+			animation.CrossFade("Run");
 
 		}
 		if( Input.GetKey( KeyCode.D)){
 
 			moveScript.Move( Vector3.right);
+			animation.CrossFade("Run");
 
 		}
 		if( Input.GetKey( KeyCode.A)){
 
 			moveScript.Move( Vector3.left);
+			animation.CrossFade("Run");
 
 		}
 
@@ -118,6 +122,7 @@ public class AvatarController : MonoBehaviour {
 		//Uses the CanShootReload component to shoot at the cursor
 		if( Input.GetMouseButton( 0)){
 			Scattershot( GetMouseWorldPos( transform.position.y));
+			animation.CrossFade("Shoot");
 		}
 
 
