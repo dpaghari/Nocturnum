@@ -68,7 +68,7 @@ public class CanShoot : MonoBehaviour {
 			}
 			Vector3 temp = transform.position;
 			temp.y += bulletHeight.y;
-			clone = Instantiate(bullet, temp + dir * 5, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
+			clone = Instantiate(bullet, temp + dir * 2, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
 			firingTimer = 0.0f;
 		}
 	}

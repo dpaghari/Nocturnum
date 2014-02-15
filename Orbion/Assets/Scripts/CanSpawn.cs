@@ -6,8 +6,8 @@ public class CanSpawn : MonoBehaviour {
 	Handles enemy spawning
 	*/
 	// respawnTime - How many seconds until it spawns
-	private float respawnTime = 5.0F;
-	private float respawnCounter = 0.0F;
+	private float respawnTime = 20.0F;
+	private float respawnCounter = 17.0F;
 	private Rigidbody clone;
 	private Vector3 vec;
 	public Rigidbody enemySpawn;

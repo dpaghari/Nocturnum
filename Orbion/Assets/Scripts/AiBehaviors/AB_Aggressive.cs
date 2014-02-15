@@ -20,14 +20,14 @@ public class AB_Aggressive : AiBehavior {
 	
 	override public void FixedUpdateAB(){
 		float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
-		if (distToTarget > AtkRange){
+		if (distToTarget >= AtkRange){
 			moveScript.Move(CurrTarget.position - rigidbody.position);
 		}
 	}
 	
 	override public void UpdateAB(){
 		float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
-		if (distToTarget <= AtkRange){
+		if (distToTarget < AtkRange){
 			shootScript.Shoot(CurrTarget.position);
 		}
 	}
