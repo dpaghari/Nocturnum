@@ -2195,7 +2195,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7a131481b532df14480845a9874a6b3e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2317,7 +2317,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2353,8 +2354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 70
-  MaxSpeed: 20
+  Force: 100
+  MaxSpeed: 50
   MoveScale: 1
 --- !u!114 &11400004
 MonoBehaviour:
