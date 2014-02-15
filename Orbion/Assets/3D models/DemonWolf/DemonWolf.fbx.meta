@@ -62,6 +62,7 @@ ModelImporter:
     7400006: WolfDeath
     7400008: WolfRunCycle
     9500000: //RootNode
+    11100000: //RootNode
     13700000: DemonWolf
   materials:
     importMaterials: 1
@@ -77,7 +78,397 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DemonWolf
+        weight: 1
+      - path: WolfArmature
+        weight: 1
+      - path: WolfArmature/Root
+        weight: 1
+      - path: WolfArmature/Root/Ribs
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L/FrontPaw_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001/FrontPaw_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L/BackPaw_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R/BackPaw_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01/Tail02
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PoseLib
+      takeName: PoseLib
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DemonWolf
+        weight: 1
+      - path: WolfArmature
+        weight: 1
+      - path: WolfArmature/Root
+        weight: 1
+      - path: WolfArmature/Root/Ribs
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L/FrontPaw_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001/FrontPaw_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L/BackPaw_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R/BackPaw_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01/Tail02
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: WolfAttack
+      takeName: WolfAttack
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DemonWolf
+        weight: 1
+      - path: WolfArmature
+        weight: 1
+      - path: WolfArmature/Root
+        weight: 1
+      - path: WolfArmature/Root/Ribs
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L/FrontPaw_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001/FrontPaw_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L/BackPaw_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R/BackPaw_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01/Tail02
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: WolfDeath
+      takeName: WolfDeath
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DemonWolf
+        weight: 1
+      - path: WolfArmature
+        weight: 1
+      - path: WolfArmature/Root
+        weight: 1
+      - path: WolfArmature/Root/Ribs
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L/FrontPaw_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001/FrontPaw_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L/BackPaw_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R/BackPaw_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01/Tail02
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: WolfRunCycle
+      takeName: WolfRunCycle
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DemonWolf
+        weight: 1
+      - path: WolfArmature
+        weight: 1
+      - path: WolfArmature/Root
+        weight: 1
+      - path: WolfArmature/Root/Ribs
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_L/FrontArm_L/FrontPaw_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/FrontShoulder_R/FrontArm_L_001/FrontPaw_L_001
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_L
+        weight: 1
+      - path: WolfArmature/Root/Ribs/Neck01/Neck02/Head/Ear_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_L/BackLowerLeg_L/BackPaw_L
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/BackUpperLeg_R/BackLowerLeg_R/BackPaw_R
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01
+        weight: 1
+      - path: WolfArmature/Root/SpineBack/Hips/Tail01/Tail02
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -113,6 +504,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 

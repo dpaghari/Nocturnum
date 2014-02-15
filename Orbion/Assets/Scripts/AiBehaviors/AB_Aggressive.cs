@@ -21,13 +21,16 @@ public class AB_Aggressive : AiBehavior {
 	override public void FixedUpdateAB(){
 		float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 		if (distToTarget >= AtkRange){
+			transform.forward = new Vector3(CurrTarget.position.x, CurrTarget.position.y, CurrTarget.position.z);
 			moveScript.Move(CurrTarget.position - rigidbody.position);
+
 		}
 	}
 	
 	override public void UpdateAB(){
 		float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 		if (distToTarget < AtkRange){
+			animation.CrossFade("WolfAttack");
 			shootScript.Shoot(CurrTarget.position);
 		}
 	}
