@@ -2,31 +2,57 @@
 using System.Collections;
 
 public class CanSpawn : MonoBehaviour {
-	/*
-	Handles enemy spawning
+	/* Handles Enemy Spawning
+		M to turn it off N to turn it on
 	*/
-	// respawnTime - How many seconds until it spawns
-	private float respawnTime = 20.0F;
-	private float respawnCounter = 17.0F;
+	// respawnTime - How many seconds until it spawn
+	private float respawnTime = 5.0F;
+	private float respawnCounter = 0.0F;
+	// waveIncrease - How many seconds until wave gets stronger
+	// not implemented
+	private float waveIncrease = 40.0F;
+	private float waveCounter = 0.0F;
+	
+	private bool waveOnStatus = true;
+	
 	private Rigidbody clone;
 	private Vector3 vec;
 	public Rigidbody enemySpawn;
-
+	
+	//turn wave on or off
+	public void waveOff(){waveOnStatus = false; respawnCounter = 0.0F;}
+	public void waveOn(){waveOnStatus = true;}
+	
+	
 	// Set location
-	void Start () {
+	void Start(){
 		vec = this.transform.position;
-		//Debug.Log (this.transform.position);
-
 		this.renderer.material.color = Color.blue;
-		//vec.Set(-6.0F, 1.0F, -30.0F);
 	}
-	// After respawnTime make an enemy at set location
-	void Update () {
-		if(respawnCounter > respawnTime){
-			clone = Instantiate(enemySpawn, vec, Quaternion.identity) as Rigidbody;
-			respawnCounter = 0.0F;
-		} else {
-			respawnCounter += Time.deltaTime;
+	
+	// M turns wave on N turns it off
+	void FixedUpdate(){
+		
+		if( Input.GetKey(KeyCode.M)){waveOff();}
+		
+		if( Input.GetKey(KeyCode.N)){waveOn();}
+		
+	}
+	
+	// If wave status on spit out enemies
+	void Update(){
+		
+		if(waveOnStatus){
+			if(respawnCounter > respawnTime){
+				clone = Instantiate(enemySpawn, vec, Quaternion.identity) as Rigidbody;
+				respawnCounter = 0.0F;
+			} else {
+				respawnCounter += Time.deltaTime;
+			}
 		}
 	}
+	
+	
+	
+	
 }
