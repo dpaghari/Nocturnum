@@ -5,23 +5,24 @@ using System.Collections.Generic;
 public enum EquipType{
 	NoEquip = 0,
 	BulletAbsorber,
-	BulletBarrier,
+	GroundSlam,
 	LightGrenade,
+	LightPath,
 	MindControl,
-	Shield,
 	Stealth,
 	_length
 }
 
 
 
+
 //require all our Equipment Behaviors so we don't need to individually add all of them
 [RequireComponent (typeof (EB_NoEquip))]
 [RequireComponent (typeof (EB_BulletAbsorber))]
-//[RequireComponent (typeof (EB_BulletBarrier))]
+//[RequireComponent (typeof (EB_GroundSlam))]
 [RequireComponent (typeof (EB_LightGrenade))]
+//[RequireComponent (typeof (EB_LightPath))]
 //[RequireComponent (typeof (EB_MindControl))]
-//[RequireComponent (typeof (EB_Shield))]
 //[RequireComponent (typeof (EB_Stealth))]
 
 
@@ -69,6 +70,21 @@ public class EquipmentUser : MonoBehaviour {
 
 
 
+	public static Tech EquipTypeToTech(EquipType theEquip){
+		switch (theEquip){
+			case EquipType.BulletAbsorber: return Tech.bulletAbsorber;
+			case EquipType.GroundSlam: return Tech.groundSlam;
+			case EquipType.LightGrenade: return Tech.lightGrenade;
+			case EquipType.LightPath: return Tech.lightPath;
+			case EquipType.MindControl: return Tech.mindControl;
+			case EquipType.Stealth: return Tech.stealth;
+			default: return Tech.none;
+		}
+	}
+	
+
+
+
 	//Changes into a new equip
 	//Resets timer
 	public void ChangeEquip(EquipType newEquipType){
@@ -83,6 +99,7 @@ public class EquipmentUser : MonoBehaviour {
 
 	//Called when the equip button is pressed
 	public void UseEquip (Vector3 cursor){
+		if (!TechManager.IsTechAvaliable( EquipTypeToTech( CurrEquipType))) return;
 		if ( FinishCooldown()){
 			GetCurrEquip().Action(cursor);
 			ResetCooldown();
@@ -91,15 +108,16 @@ public class EquipmentUser : MonoBehaviour {
 
 
 
+
 	void Awake() {
 		Equipments = new EquipmentBehavior[(int)EquipType._length];
 
 		Equipments[(int)EquipType.NoEquip] = gameObject.GetComponent<EB_NoEquip>();
 		Equipments[(int)EquipType.BulletAbsorber] = GetComponent<EB_BulletAbsorber>();
-		//Equipments[(int)EquipType.BulletBarrier] = GetComponent<EB_BulletBarrier>();
+		//Equipments[(int)EquipType.GroundSlam] = GetComponent<EB_GroundSlam>();
 		Equipments[(int)EquipType.LightGrenade] = GetComponent<EB_LightGrenade>();
+		//Equipments[(int)EquipType.LightPath] = GetComponent<EB_LightPath>();
 		//Equipments[(int)EquipType.MindControl]  = GetComponent<EB_MindControl>();
-		//Equipments[(int)EquipType.Shield] = GetComponent<EB_Shield>();
 		//Equipments[(int)EquipType.Stealth] = GetComponent<EB_Stealth>();
 	}
 
