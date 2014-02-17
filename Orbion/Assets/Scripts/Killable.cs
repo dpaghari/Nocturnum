@@ -10,36 +10,44 @@ public class Killable : MonoBehaviour {
 	public int baseHP = 100;
 	public GameObject deathTarget;
 
+
 	// Set HP to default
 	void Start () {
 		currHP = baseHP;
 	}
+
+
 	void Update () {
 		//Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
 	}
+
+
 	// Updates HP based on damage taken, calls kill() on dead objects
 	public void damage (int dmg) {
 		currHP -= dmg;
-		if (currHP <= 0) {
-			kill();
-		}
+		if (currHP <= 0) kill();
 	}
+
+
 	// Kills enemy or player
 	void kill () {
-		//destory object
-		if(this.gameObject.tag == "Enemy"){
-		Destroy (this.gameObject);
-			Vector3 temp = transform.position;
-			temp.y += 4;
-		Instantiate (deathTarget, temp, this.transform.rotation);
-		}
-		if(this.gameObject.tag == "Player"){
+
+		if(gameObject.tag == "Player"){
 			ResManager.Reset();
 			TechManager.Reset();
 			Application.LoadLevel("scene1");
 		}
+		else{
+			Destroy (gameObject);
+			if (deathTarget != null) {
+				Vector3 temp = transform.position;
+				temp.y += 4;
+				Instantiate (deathTarget, temp, this.transform.rotation);
+			}
+		}
 		//make death object
 	}
+
 
 	/// <summary>
 	/// Heal the specified health.
