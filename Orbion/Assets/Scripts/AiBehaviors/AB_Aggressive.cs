@@ -9,14 +9,14 @@ public class AB_Aggressive : AiBehavior {
 
 	public Rigidbody CurrTarget;
 	public float AtkRange;
+	private float range;
 
-	//Target = player if in range, otherwise Target = nearest building
-	//Not implemented
 	override public void OnBehaviorEnter(){
 		//Debug.Log("Entering chase");
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
-		CurrTarget = FindPlayer();
+	
+		CurrTarget = FindTarget();
 	}
 	
 	override public void OnBehaviorExit(){return;}
@@ -37,12 +37,34 @@ public class AB_Aggressive : AiBehavior {
 			shootScript.Shoot(CurrTarget.position);
 		}
 	}
-
+	
+	//Target = player if in range, otherwise Target = nearest building
 	public Rigidbody FindTarget(){
-		return GameManager.Player.rigidbody;
+		if(PlayerInRange()){ 
+			return FindPlayer();
+		} else {
+			return FindNearestBuilding();
+		}
 	}
 
 	public Rigidbody FindPlayer(){
 		return GameManager.Player.rigidbody;
 	}
+
+	//Not implemented
+	public Rigidbody FindNearestBuilding(){
+		return GameManager.Player.rigidbody;
+	}
+
+	public bool PlayerInRange(){
+		float distToTarget = Vector3.Distance( FindPlayer().position, rigidbody.position);
+		range = GetComponent<AC_IdleChase>().SightRange;
+		return (distToTarget <= range); 
+	}
+	
+	//Not implemented
+	public bool BuildingsExist(){
+		return GameObject.Find("Generator");
+	}
+	
 }

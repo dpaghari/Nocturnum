@@ -16,19 +16,15 @@ public class AC_IdleChase : AiController {
 	public float SightRange;
 
 	//If player is out of range and no buildings exist return true
-	//Not implemented
 	public bool ShouldGoIdle( ){
 		if (CurrBehavior is AB_DoNothing) return false;
-		float distToTarget = Vector3.Distance( Chase.FindPlayer().position, rigidbody.position);
-		return (distToTarget > SightRange && !GameObject.Find("Generator"));
+		return (!Chase.PlayerInRange() && !Chase.BuildingsExist());
 	}
 
 	//If player is in range or buildings exist return true
-	//Not implemented
 	public bool ShouldGoChase( ){
 		if (CurrBehavior is AB_Aggressive) return false;
-		float distToTarget = Vector3.Distance( Chase.FindPlayer().position, rigidbody.position);
-		return (distToTarget <= SightRange || GameObject.Find("Generator"));
+		return (Chase.PlayerInRange() || Chase.BuildingsExist());
 	}
 
 	protected override void Start () {
