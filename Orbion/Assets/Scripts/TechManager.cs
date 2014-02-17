@@ -47,6 +47,10 @@ public enum Tech {
 
 
 
+
+
+
+
 public class TechManager : Singleton<TechManager> {
 
 	protected TechManager() {} // guarantee this will be always a singleton only - can't use the constructor!
@@ -56,7 +60,7 @@ public class TechManager : Singleton<TechManager> {
 	protected TechTree PlayerTech;
 	protected int[] UpgrLevels;
 	protected int[] NumBuildings;
-
+	protected UpgradeCostTable UpgradeCosts;
 
 
 	public static bool IsBuilding( Tech theTech){
@@ -134,6 +138,17 @@ public class TechManager : Singleton<TechManager> {
 
 
 
+	public static float GetUpgradeLumenCost( Tech upgrade){
+		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.LumenCost[upgrade];
+		return 0;
+	}
+
+
+	public static int GetUpgradeEnergyCost( Tech upgrade){
+		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.EnergyCost[upgrade];
+		return 0;
+	}
+
 	//Checks whether theTech is available.
 	//As of now this is determined by:
 	//  for each PreReq in the set,
@@ -198,6 +213,7 @@ public class TechManager : Singleton<TechManager> {
 		NumBuildings = new int[ (int)Tech._upgradesEND + 1];
 
 		PlayerTech = TechTree.MakeDefault();
+		UpgradeCosts = UpgradeCostTable.InitTable();
 	}
 
 

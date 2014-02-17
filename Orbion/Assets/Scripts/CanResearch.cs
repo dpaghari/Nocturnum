@@ -11,21 +11,41 @@ public class CanResearch : MonoBehaviour {
 	}
 	
 
+	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
+	bool MeetsRequirement(Tech theUpgr){
+		if( !TechManager.IsTechAvaliable( theUpgr)) return false;
+		if (ResManager.Lumen < TechManager.GetUpgradeLumenCost( theUpgr)) return false;
+
+		float neededMaxEnergy = ResManager.UsedEnergy + TechManager.GetUpgradeEnergyCost( theUpgr);
+		if ( neededMaxEnergy > ResManager.MaxEnergy) return false;
+
+		return true;
+	}
+
+
+	//Calls Research and spends resources
+	void DoResearch(Tech theUpgr){
+		ResManager.RmLumen( TechManager.GetUpgradeLumenCost( theUpgr));
+		ResManager.AddUsedEnergy( TechManager.GetUpgradeEnergyCost( theUpgr));
+		TechManager.Research( theUpgr);
+	}
+
+
 	void OnGUI() {
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 			GUI.Box(new Rect (10,10,100,90), "Research Menu");
 
 			if(GUI.Button(new Rect(20,40,80,20), "Scattershot")) {
-				if(TechManager.IsTechAvaliable(Tech.scatter)){
-					TechManager.Research(Tech.scatter);
+				if(MeetsRequirement(Tech.scatter)){
+					DoResearch(Tech.scatter);
 					menuUp = false;
 				}
 			}
 
 			if(GUI.Button(new Rect(20,60,80,20), "Orbshot")) {
-				if(TechManager.IsTechAvaliable(Tech.orbshot)){
-					TechManager.Research(Tech.orbshot);
+				if(MeetsRequirement(Tech.orbshot)){
+					DoResearch(Tech.orbshot);
 
 					//Just slapping it here for now until we have a way to to manage bullets for the player.
 					//Should make an event manager to broadcast that a upgrade was researched later
@@ -36,22 +56,22 @@ public class CanResearch : MonoBehaviour {
 
 
 			if(GUI.Button(new Rect(20,80,80,20), "Light Grenade")) {
-				if(TechManager.IsTechAvaliable(Tech.lightGrenade)){
-					TechManager.Research(Tech.lightGrenade);
+				if(MeetsRequirement(Tech.lightGrenade)){
+					DoResearch(Tech.lightGrenade);
 					menuUp = false;
 				}
 			}
 
 			if(GUI.Button(new Rect(20,100,80,20), "Bullet Absorber")) {
-				if(TechManager.IsTechAvaliable(Tech.bulletAbsorber)){
-					TechManager.Research(Tech.bulletAbsorber);
+				if(MeetsRequirement(Tech.bulletAbsorber)){
+					DoResearch(Tech.bulletAbsorber);
 					menuUp = false;
 				}
 			}
 
 			if(GUI.Button(new Rect(20,120,80,20), "Clip Size")) {
-				if(TechManager.IsTechAvaliable(Tech.clipSize)){
-					TechManager.Research(Tech.clipSize);
+				if(MeetsRequirement(Tech.clipSize)){
+					DoResearch(Tech.clipSize);
 
 					//here until we have a event manager for upgrades
 					GameManager.AvatarContr.shootScript.clipSize += 10 * TechManager.GetUpgradeLv(Tech.clipSize);
