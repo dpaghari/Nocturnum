@@ -34,28 +34,22 @@ public class CanResearch : MonoBehaviour {
 				}
 			}
 
-			if(GUI.Button(new Rect(20,80,80,20), "Bullet Barrier")) {
-				if(TechManager.IsTechAvaliable(Tech.bulletBarrier)){
-					TechManager.Research(Tech.bulletBarrier);
-					menuUp = false;
-				}
-			}
 
-			if(GUI.Button(new Rect(20,100,80,20), "Light Grenade")) {
+			if(GUI.Button(new Rect(20,80,80,20), "Light Grenade")) {
 				if(TechManager.IsTechAvaliable(Tech.lightGrenade)){
 					TechManager.Research(Tech.lightGrenade);
 					menuUp = false;
 				}
 			}
 
-			if(GUI.Button(new Rect(20,120,80,20), "Bullet Absorber")) {
+			if(GUI.Button(new Rect(20,100,80,20), "Bullet Absorber")) {
 				if(TechManager.IsTechAvaliable(Tech.bulletAbsorber)){
 					TechManager.Research(Tech.bulletAbsorber);
 					menuUp = false;
 				}
 			}
 
-			if(GUI.Button(new Rect(20,140,80,20), "Clip Size")) {
+			if(GUI.Button(new Rect(20,120,80,20), "Clip Size")) {
 				if(TechManager.IsTechAvaliable(Tech.clipSize)){
 					TechManager.Research(Tech.clipSize);
 

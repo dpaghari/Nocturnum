@@ -29,18 +29,19 @@ public class CanBuild : MonoBehaviour {
 	}
 
 
-	//returns true if the player has enough lumen and energy to build the structure
-	bool CanAfford(Rigidbody buildingType){
+	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
+	bool MeetsRequirement(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
-		if (ResManager.Lumen < buildInfo.cost) return false;
-		if (ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy) return false;
+		if ( ResManager.Lumen < buildInfo.cost) return false;
+		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy) return false;
+		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) return false;
 		return true;
 	}
 
 
 	void SetConstruction(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
-		if ( CanAfford( buildingType)){
+		if ( MeetsRequirement( buildingType)){
 			menuUp = false;
 			toBuild = buildingType;
 		}
@@ -89,7 +90,7 @@ public class CanBuild : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+
 		if(Input.GetMouseButton(0) && toBuild != null){
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
@@ -107,7 +108,7 @@ public class CanBuild : MonoBehaviour {
 			Vector3 mousePos = hit.point;
 			
 
-			if (CanAfford(toBuild)) {
+			if (MeetsRequirement(toBuild)) {
 				GetComponent<CanShoot>().ResetFiringTimer();
 				if (toBuild == generatorBuilding){
 					mousePos.y += 1;
