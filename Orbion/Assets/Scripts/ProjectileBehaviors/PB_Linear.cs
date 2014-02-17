@@ -18,6 +18,7 @@ public class PB_Linear : ProjectileBehavior {
 	public int Damage;
 	public int searingLevel;
 	public GameObject dot;
+	public GameObject hitEffect;
 	private GameObject clone;
 
 
@@ -33,7 +34,10 @@ public class PB_Linear : ProjectileBehavior {
 
 	public override void OnImpactEnter( Collision other){
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
-		if( KillScript) KillScript.damage(Damage);
+		if( KillScript) {
+			KillScript.damage(Damage);
+			clone = Instantiate(hitEffect, transform.position, new Quaternion()) as GameObject;
+		}
 
 		//drop a DOT on target if searing is > 0
 		if(searingLevel > 0 && other.gameObject.tag == "Enemy"){
@@ -41,6 +45,16 @@ public class PB_Linear : ProjectileBehavior {
 			clone.GetComponent<IsSearingShot>().target = other.gameObject.GetComponent<Rigidbody>();
 		}
 
+		foreach( Transform child in transform){
+			if(child.gameObject.tag == "playerBullet"){
+				Destroy(child.gameObject);
+			}
+			else{
+				child.gameObject.GetComponent<CFX_AutoDestructShuriken>().OnlyDeactivate = false;
+			}
+		}
+
+		transform.DetachChildren();
 		Destroy (gameObject);
 	}
 
