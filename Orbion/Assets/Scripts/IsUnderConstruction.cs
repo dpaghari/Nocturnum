@@ -3,53 +3,85 @@ using System.Collections;
 
 public class IsUnderConstruction : MonoBehaviour {
 
+	//Time remaining until building is done
 	float constructionCountdown;
-	public float totalConstruction = 1000;
+
+	//Total time in seconds to build
+	public float totalConstruction = 60;
+
+	//The building that we want to create when finished construction timer
 	public Rigidbody toBuild;
+
+	//Used to determine if we're in light
 	private bool lit = false;
+
 	private Rigidbody clone;
-	private Vector3 height;
-	private int rotationSpeed = 1;
+
+	//
+	private float heightScale = 5;
+
+	//Scales how fast we rotate when changing build progress
+	private int rotationSpeed = 20;
+
+	//on some occasions, the construction will think it's not lit when built on light
+	//so we give it an extra time delay before we make it expire
+	private float lightExpireDelay = 0.1f;
+
+
+
+	//Rotates and scales the object when we increase/decrease construction timer.
+	//Extra rotation ratio allows us to increase/decrease the speed we rotate.
+	//Used to make bullet building have different feedback than normal time.
+	void ChangeBuildProgess( float counterTimeChange, float rotationScale = 1f){
+		constructionCountdown += counterTimeChange;
+
+		float yScale =  heightScale *(constructionCountdown / totalConstruction);
+		Vector3 newScale = transform.localScale;
+		newScale.y = yScale;
+		transform.localScale = newScale;
+
+		float rotationAmount = rotationScale * rotationSpeed* Time.deltaTime;
+		Quaternion newRotation = Quaternion.Euler(0, rotationAmount , 0);
+		newRotation *= transform.localRotation;
+		transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.time);
+	}
+
+
 
 	// Use this for initialization
 	void Start () {
-		constructionCountdown = totalConstruction - 100;
+		constructionCountdown = totalConstruction;
 	}
 	
-	// Update is called once per frame
+
+
+
 	void Update () {
-		if(!lit){
-			constructionCountdown += Time.deltaTime * 100;
-			if(constructionCountdown > totalConstruction){
+		if(lit){
+			if(constructionCountdown <= 0){
+				clone = Instantiate(toBuild, this.transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				Destroy(this.gameObject);
+			}
+			ChangeBuildProgess( -Time.deltaTime);
+		}
+		else{
+			if(constructionCountdown > totalConstruction + lightExpireDelay){
 				ResManager.AddLumen(toBuild.gameObject.GetComponent<Buildable>().cost);
 				ResManager.RmUsedEnergy(toBuild.gameObject.GetComponent<Buildable>().energyCost);
 				Destroy(this.gameObject);
 			}
+			ChangeBuildProgess( Time.deltaTime);
 		}
 
-		height = this.gameObject.transform.localScale;
-		height.y = 5 * (constructionCountdown / totalConstruction);
-		this.gameObject.transform.localScale = height;
 	}
+
 
 	void OnTriggerStay(Collider other){
-		if(other.tag == "lightsource"){
-			this.gameObject.transform.Rotate(new Vector3(0, 1, 0));
-			constructionCountdown -= Time.deltaTime * 50;
-			lit = true;
-		}
-		
-
-		if(constructionCountdown <= 1){
-			clone = Instantiate(toBuild, this.transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-			Destroy(this.gameObject);
-		}
+		if(other.tag == "lightsource") lit = true;
 	}
 
+
 	void OnCollisionEnter(Collision other){
-		if(other.gameObject.tag == "playerBullet"){
-			constructionCountdown -= 10;
-			this.gameObject.transform.Rotate(new Vector3(0, 2, 0));
-		}
+		if(other.gameObject.tag == "playerBullet") ChangeBuildProgess( -1f, 10f);
 	}
 }
