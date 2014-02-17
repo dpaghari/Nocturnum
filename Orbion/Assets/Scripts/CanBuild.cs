@@ -115,6 +115,7 @@ public class CanBuild : MonoBehaviour {
 					clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				}
 				else{
+					mousePos.y += 5.25f;
 					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
 				}
