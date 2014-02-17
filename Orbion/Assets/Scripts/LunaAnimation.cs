@@ -25,17 +25,33 @@ public class LunaAnimation : MonoBehaviour {
 		if ( MoveKeyDown() || MoveKeyUp() || Input.GetMouseButton(0)){
 		Vector3 newRotation = Vector3.zero;
 
-		if (Input.GetKey(KeyCode.W))
+		if (Input.GetKey(KeyCode.W)){
 			newRotation += Vector3.forward;
-		if (Input.GetKey(KeyCode.S))
+			
+				animation.CrossFade("Run");
+		}
+		if (Input.GetKey(KeyCode.S)){
 			newRotation += Vector3.back;
+			
+				animation.CrossFade("Run");
+
+		}
 		
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(KeyCode.A)){
 			newRotation += Vector3.left;
-		if (Input.GetKey(KeyCode.D))
+
+				animation.CrossFade("Run");
+
+		}
+		if (Input.GetKey(KeyCode.D)){
 			newRotation += Vector3.right;
 
+				animation.CrossFade("Run");
+
+		}
+
 		if (Input.GetMouseButton(0)){
+			//animation.CrossFade("Shooting");
 			Vector3 temp;
 			temp = Utility.GetMouseWorldPos(transform.position.y) - transform.position;
 			newRotation = temp;
