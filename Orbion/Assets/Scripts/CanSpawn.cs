@@ -16,8 +16,11 @@ public class CanSpawn : MonoBehaviour {
 	private bool waveOnStatus = true;
 	
 	private Rigidbody clone;
+	private Rigidbody clone2;
+
 	private Vector3 vec;
-	public Rigidbody enemySpawn;
+	public Rigidbody meleeEnemy;
+	public Rigidbody rangedEnemy;
 	
 	//turn wave on or off
 	public void waveOff(){waveOnStatus = false; respawnCounter = 0.0F;}
@@ -44,7 +47,8 @@ public class CanSpawn : MonoBehaviour {
 		
 		if(waveOnStatus){
 			if(respawnCounter > respawnTime){
-				clone = Instantiate(enemySpawn, vec, Quaternion.identity) as Rigidbody;
+				clone = Instantiate(meleeEnemy, vec, Quaternion.identity) as Rigidbody;
+				clone2 = Instantiate(rangedEnemy, vec, Quaternion.identity) as Rigidbody;
 				respawnCounter = 0.0F;
 			} else {
 				respawnCounter += Time.deltaTime;
