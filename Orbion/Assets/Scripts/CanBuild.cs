@@ -11,8 +11,9 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody wallBuilding;
 	public Rigidbody medBayBuilding;
 	public Rigidbody incindiaryBuilding;
+
 	private Rigidbody clone;
-	private Buildings toBuild = Buildings.none;
+	private Rigidbody toBuild = null;
 	private bool menuUp = false;
 	private int menuCounter = 0;
 	
@@ -21,72 +22,75 @@ public class CanBuild : MonoBehaviour {
 	private float rotAngle = 40;
 	private Vector2 pivotPoint;
 	
+
 	// Use this for initialization
 	void Start () {
 		
 	}
+
+
+	//returns true if the player has enough lumen and energy to build the structure
+	bool CanAfford(Rigidbody buildingType){
+		Buildable buildInfo = buildingType.GetComponent<Buildable>();
+		if (ResManager.Lumen < buildInfo.cost) return false;
+		if (ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy) return false;
+		return true;
+	}
+
+
+	void SetConstruction(Rigidbody buildingType){
+		Buildable buildInfo = buildingType.GetComponent<Buildable>();
+		if ( CanAfford( buildingType)){
+			menuUp = false;
+			toBuild = buildingType;
+		}
+	}
+
 	
 	void OnGUI() {
 		GUI.skin = buildWheelSkin;
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 			
-			if(GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator") && ResManager.Lumen >= generatorBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= generatorBuilding.GetComponent<Buildable>().energyCost) {
-				//Debug.Log (ballisticsBuilding.GetComponent<Buildable>().cost.ToString());
-				toBuild = Buildings.generator;
-				menuUp = false;
-				ResManager.RmLumen(generatorBuilding.GetComponent<Buildable>().cost);
-				ResManager.AddUsedEnergy(generatorBuilding.GetComponent<Buildable>().energyCost);
+			if( GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator")) {
+				SetConstruction(generatorBuilding);
 			}
 			
 			// Make the second button.
 			pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			
-			if(GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Ballistics") && ResManager.Lumen >= ballisticsBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= ballisticsBuilding.GetComponent<Buildable>().energyCost) {
-				toBuild = Buildings.ballistics;
-				menuUp = false;
-				ResManager.RmLumen(ballisticsBuilding.GetComponent<Buildable>().cost);
-				ResManager.AddUsedEnergy(ballisticsBuilding.GetComponent<Buildable>().energyCost);
+			if( GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Ballistics")) {
+				SetConstruction(ballisticsBuilding);
 			}
 			
+
 			// Make the third button.
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			
-			if(GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Wall") && ResManager.Lumen >= wallBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= wallBuilding.GetComponent<Buildable>().energyCost)  {
-				toBuild = Buildings.wall;
-				menuUp = false;
-				ResManager.RmLumen(wallBuilding.GetComponent<Buildable>().cost);
-				ResManager.AddUsedEnergy(wallBuilding.GetComponent<Buildable>().energyCost);
+			if( GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Wall"))  {
+				SetConstruction(wallBuilding);
 			}
 			
+
 			// Make the fourth button.
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			
-			if(GUI.Button(new Rect(Screen.width/2-210,Screen.height/2-180,128,128), "Med Bay") && ResManager.Lumen >= medBayBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= medBayBuilding.GetComponent<Buildable>().energyCost)  {
-				toBuild = Buildings.medBay;
-				menuUp = false;
-				ResManager.RmLumen(medBayBuilding.GetComponent<Buildable>().cost);
-				ResManager.AddUsedEnergy(medBayBuilding.GetComponent<Buildable>().energyCost);
-//				Debug.Log("hullo");
+			if( GUI.Button(new Rect(Screen.width/2-210,Screen.height/2-180,128,128), "Med Bay"))  {
+				SetConstruction(medBayBuilding);
 			}
 			
+
 			// Make the fifth button.
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
-			
-			if(GUI.Button(new Rect(Screen.width/2-180,Screen.height/2-200,128,128), "Incindiary") && ResManager.Lumen >= incindiaryBuilding.GetComponent<Buildable>().cost && ResManager.MaxEnergy - ResManager.UsedEnergy >= incindiaryBuilding.GetComponent<Buildable>().energyCost)  {
-				toBuild = Buildings.incindiary;
-				menuUp = false;
-				ResManager.RmLumen(incindiaryBuilding.GetComponent<Buildable>().cost);
-				ResManager.AddUsedEnergy(incindiaryBuilding.GetComponent<Buildable>().energyCost);
+			if( GUI.Button(new Rect(Screen.width/2-180,Screen.height/2-200,128,128), "Incindiary")) {
+				SetConstruction(incindiaryBuilding);
 			}
 		}
 	}
 	
+
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.GetMouseButton(0) && toBuild != Buildings.none){
+		if(Input.GetMouseButton(0) && toBuild != null){
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			// Casts the ray and get the first game object hit
@@ -102,46 +106,40 @@ public class CanBuild : MonoBehaviour {
 			//Debug.DrawRay (ray.origin, hit.point);
 			Vector3 mousePos = hit.point;
 			
-			//Build the right building
-			switch(toBuild){
-			case Buildings.generator:
-				mousePos.y += 1;
+
+			if (CanAfford(toBuild)) {
 				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				break;
-			case Buildings.ballistics:
-				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(underConstructionBuilding, hit.point, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				clone.gameObject.GetComponent<IsUnderConstruction>().toBuild = ballisticsBuilding;
-				break;
-			case Buildings.wall:
-				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(underConstructionBuilding, hit.point, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				clone.gameObject.GetComponent<IsUnderConstruction>().toBuild = wallBuilding;
-				break;
-			case Buildings.medBay:
-				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(underConstructionBuilding, hit.point, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				clone.gameObject.GetComponent<IsUnderConstruction>().toBuild = medBayBuilding;
-				break;
-			case Buildings.incindiary:
-				GetComponent<CanShoot>().ResetFiringTimer();
-				clone = Instantiate(underConstructionBuilding, hit.point, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				clone.gameObject.GetComponent<IsUnderConstruction>().toBuild = incindiaryBuilding;
-				break;
-			default:
-				break;
+				if (toBuild == generatorBuilding){
+					mousePos.y += 1;
+					clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				}
+				else{
+					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
+				}
+				
+				Buildable buildInfo = toBuild.GetComponent<Buildable>();
+				ResManager.RmLumen(buildInfo.cost);
+				ResManager.AddUsedEnergy(buildInfo.energyCost);
+
+				toBuild = null;
 			}
-			toBuild = Buildings.none;
+
 		}
 		
+
+
 		if (Input.GetKeyDown(KeyCode.B) && !menuUp){
 			menuUp = true;
+			toBuild = null;
 			menuCounter = 50;
 		}
+
 		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0){
 			menuUp = false;
+			toBuild = null;
 		}
+
 		if (menuCounter > 0) {
 			menuCounter --;
 		}
