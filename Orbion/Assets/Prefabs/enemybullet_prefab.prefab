@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Force: 5
   MaxSpeed: 15
+  MoveScale: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,6 +164,9 @@ MonoBehaviour:
   MoveType: 1
   MoveScript: {fileID: 11400002}
   Damage: 10
+  searingLevel: 0
+  dot: {fileID: 0}
+  hitEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
