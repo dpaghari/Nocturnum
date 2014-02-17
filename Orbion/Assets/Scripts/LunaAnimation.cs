@@ -64,7 +64,7 @@ public class LunaAnimation : MonoBehaviour {
 
 
 
-	if(Input.GetKeyUp("w")||Input.GetKeyUp("a")||Input.GetKeyUp("d") || Input.GetKeyUp("s")) {
+	if(Input.GetKeyUp("w")||Input.GetKeyUp("a")||Input.GetKeyUp("d") || Input.GetKeyUp("s")){
 			animation.CrossFade("Idle");
 	 }
 
