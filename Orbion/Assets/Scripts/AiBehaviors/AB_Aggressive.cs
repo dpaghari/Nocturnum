@@ -10,10 +10,13 @@ public class AB_Aggressive : AiBehavior {
 	public Rigidbody CurrTarget;
 	public float AtkRange;
 
+	//Target = player if in range, otherwise Target = nearest building
+	//Not implemented
 	override public void OnBehaviorEnter(){
+		//Debug.Log("Entering chase");
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
-		CurrTarget = FindTarget();
+		CurrTarget = FindPlayer();
 	}
 	
 	override public void OnBehaviorExit(){return;}
@@ -36,6 +39,10 @@ public class AB_Aggressive : AiBehavior {
 	}
 
 	public Rigidbody FindTarget(){
+		return GameManager.Player.rigidbody;
+	}
+
+	public Rigidbody FindPlayer(){
 		return GameManager.Player.rigidbody;
 	}
 }

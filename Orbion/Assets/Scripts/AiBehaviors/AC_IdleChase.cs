@@ -15,20 +15,21 @@ public class AC_IdleChase : AiController {
 
 	public float SightRange;
 
-	
+	//If player is out of range and no buildings exist return true
+	//Not implemented
 	public bool ShouldGoIdle( ){
 		if (CurrBehavior is AB_DoNothing) return false;
-		float distToTarget = Vector3.Distance( Chase.FindTarget().position, rigidbody.position);
-		return distToTarget > SightRange;
+		float distToTarget = Vector3.Distance( Chase.FindPlayer().position, rigidbody.position);
+		return (distToTarget > SightRange && !GameObject.Find("Generator"));
 	}
 
-
+	//If player is in range or buildings exist return true
+	//Not implemented
 	public bool ShouldGoChase( ){
 		if (CurrBehavior is AB_Aggressive) return false;
-		float distToTarget = Vector3.Distance( Chase.FindTarget().position, rigidbody.position);
-		return distToTarget <= SightRange;
+		float distToTarget = Vector3.Distance( Chase.FindPlayer().position, rigidbody.position);
+		return (distToTarget <= SightRange || GameObject.Find("Generator"));
 	}
-
 
 	protected override void Start () {
 		Idle = GetComponent<AB_DoNothing>();
@@ -37,10 +38,10 @@ public class AC_IdleChase : AiController {
 		base.Start();
 	}
 
-
 	protected override void FixedUpdate () { base.FixedUpdate ();}
 
-
+	//If player is out of range and no buildings exist switch to idle
+	//If player is in range or buildings exist switch to chase
 	protected override void Update ()
 	{
 		if( ShouldGoIdle()) SwitchBehavior(Idle);
