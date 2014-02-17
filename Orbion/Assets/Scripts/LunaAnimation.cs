@@ -22,7 +22,7 @@ public class LunaAnimation : MonoBehaviour {
 
 		//Want to update it if a key was let go else it won't 
 		//change a diagonal if one of the keys were let go
-		if ( MoveKeyDown() || MoveKeyUp() ){
+		if ( MoveKeyDown() || MoveKeyUp() || Input.GetMouseButton(0)){
 		Vector3 newRotation = Vector3.zero;
 
 		if (Input.GetKey(KeyCode.W))
@@ -35,6 +35,11 @@ public class LunaAnimation : MonoBehaviour {
 		if (Input.GetKey(KeyCode.D))
 			newRotation += Vector3.right;
 
+		if (Input.GetMouseButton(0)){
+			Vector3 temp;
+			temp = Utility.GetMouseWorldPos(transform.position.y) - transform.position;
+			newRotation = temp;
+		}
 		//only change our position if there is an update to it
 		if (newRotation != Vector3.zero) transform.forward = newRotation;
 		}
