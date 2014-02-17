@@ -22,7 +22,7 @@ public class LunaAnimation : MonoBehaviour {
 
 		//Want to update it if a key was let go else it won't 
 		//change a diagonal if one of the keys were let go
-		if ( MoveKeyDown() || MoveKeyUp() || Input.GetMouseButton(0)){
+		if ( MoveKeyDown() || MoveKeyUp() || Input.GetMouseButton(0) || Input.GetMouseButtonUp(0)){
 		Vector3 newRotation = Vector3.zero;
 
 		if (Input.GetKey(KeyCode.W)){
@@ -64,7 +64,7 @@ public class LunaAnimation : MonoBehaviour {
 
 
 
-	if(Input.GetKeyUp("w")||Input.GetKeyUp("a")||Input.GetKeyUp("d") || Input.GetKeyUp("s")){
+	if(Input.GetKeyUp("w")||Input.GetKeyUp("a")||Input.GetKeyUp("d") || Input.GetKeyUp("s") || Input.GetMouseButtonUp(0)){
 			animation.CrossFade("Idle");
 	 }
 
