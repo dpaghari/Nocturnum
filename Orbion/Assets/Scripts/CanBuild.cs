@@ -47,6 +47,17 @@ public class CanBuild : MonoBehaviour {
 		}
 	}
 
+	// Grabs Lumen and Energy.
+	int getLumen(Rigidbody buildingType){
+		Buildable buildInfo = buildingType.GetComponent<Buildable>();
+		return buildInfo.cost;
+	}
+	
+	int getEnergy(Rigidbody buildingType){
+		Buildable buildInfo = buildingType.GetComponent<Buildable>();
+		return buildInfo.energyCost;
+	}
+
 	
 	void OnGUI() {
 		GUI.skin = buildWheelSkin;
@@ -60,28 +71,28 @@ public class CanBuild : MonoBehaviour {
 			// Make the second button.
 			pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Ballistics")) {
+			if( GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Ballistics\n" + "Lumen: " + getLumen(ballisticsBuilding) + "\n" + "Energy: " + getEnergy(ballisticsBuilding))) {
 				SetConstruction(ballisticsBuilding);
 			}
 			
 
 			// Make the third button.
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Wall"))  {
+			if( GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Wall\n" + "Lumen: " + getLumen(wallBuilding) + "\n" + "Energy: " + getEnergy(wallBuilding)))  {
 				SetConstruction(wallBuilding);
 			}
 			
 
 			// Make the fourth button.
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2-210,Screen.height/2-180,128,128), "Med Bay"))  {
+			if( GUI.Button(new Rect(Screen.width/2-210,Screen.height/2-180,128,128), "Med Bay\n" + "Lumen: " + getLumen(medBayBuilding) + "\n" + "Energy: " + getEnergy(medBayBuilding)))  {
 				SetConstruction(medBayBuilding);
 			}
 			
 
 			// Make the fifth button.
 			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
-			if( GUI.Button(new Rect(Screen.width/2-180,Screen.height/2-200,128,128), "Incindiary")) {
+			if( GUI.Button(new Rect(Screen.width/2-240,Screen.height/2-180,128,128), "Incendiary\n" + "Lumen: " + getLumen(incindiaryBuilding) + "\n" + "Energy: " + getEnergy(incindiaryBuilding))) {
 				SetConstruction(incindiaryBuilding);
 			}
 		}

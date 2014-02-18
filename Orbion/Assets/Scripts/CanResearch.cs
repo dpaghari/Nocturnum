@@ -5,6 +5,11 @@ public class CanResearch : MonoBehaviour {
 
 	private bool menuUp = false;
 
+	//UI Stuff
+	public GUISkin upgradeWheelSkin;
+	private float rotAngle = 40;
+	private Vector2 pivotPoint;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -32,18 +37,20 @@ public class CanResearch : MonoBehaviour {
 
 
 	void OnGUI() {
+		GUI.skin = upgradeWheelSkin;
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
-			GUI.Box(new Rect (10,10,100,90), "Research Menu");
 
-			if(GUI.Button(new Rect(20,40,80,20), "Scattershot")) {
+			if(GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Scattershot")) {
 				if(MeetsRequirement(Tech.scatter)){
 					DoResearch(Tech.scatter);
 					menuUp = false;
 				}
 			}
 
-			if(GUI.Button(new Rect(20,60,80,20), "Orbshot")) {
+			pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
+			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Orbshot")) {
 				if(MeetsRequirement(Tech.orbshot)){
 					DoResearch(Tech.orbshot);
 
@@ -54,22 +61,24 @@ public class CanResearch : MonoBehaviour {
 				}
 			}
 
-
-			if(GUI.Button(new Rect(20,80,80,20), "Light Grenade")) {
+			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Light \n" + "Grenade")) {
 				if(MeetsRequirement(Tech.lightGrenade)){
 					DoResearch(Tech.lightGrenade);
 					menuUp = false;
 				}
 			}
 
-			if(GUI.Button(new Rect(20,100,80,20), "Bullet Absorber")) {
+			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2-210,Screen.height/2-180,128,128), "Bullet \n" + "Absorber")) {
 				if(MeetsRequirement(Tech.bulletAbsorber)){
 					DoResearch(Tech.bulletAbsorber);
 					menuUp = false;
 				}
 			}
 
-			if(GUI.Button(new Rect(20,120,80,20), "Clip Size")) {
+			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2-240,Screen.height/2-180,128,128), "Clip Size")) {
 				if(MeetsRequirement(Tech.clipSize)){
 					DoResearch(Tech.clipSize);
 
