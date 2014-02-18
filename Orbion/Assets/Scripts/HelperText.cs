@@ -4,7 +4,7 @@ using System.Collections;
 public class HelperText : MonoBehaviour {
 	public GUISkin uiSkin;
 	
-	string tutorialText = "Survive against the enemies.\n" + "Use the left mouse button to shoot, and walk over Lumen to collect it";
+	string tutorialText = "Survive against the enemies.\n" + "Use WASD to move and the left mouse button to shoot.\n" + "Walk over Lumen to collect it";
 	public GameObject timerRef;
 	
 	// Use this for initialization
