@@ -9,6 +9,9 @@ public class AB_Aggressive : AiBehavior {
 
 	public Rigidbody CurrTarget;
 	public float AtkRange;
+	//range to go aggressive
+	public float SightRange;
+	
 	private float range;
 
 	override public void OnBehaviorEnter(){
@@ -58,8 +61,7 @@ public class AB_Aggressive : AiBehavior {
 
 	public bool PlayerInRange(){
 		float distToTarget = Vector3.Distance( FindPlayer().position, rigidbody.position);
-		range = GetComponent<AC_IdleChase>().SightRange;
-		return (distToTarget <= range); 
+		return (distToTarget <= SightRange); 
 	}
 	
 	//Not implemented

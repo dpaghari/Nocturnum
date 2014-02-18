@@ -6,9 +6,13 @@ public class MetricManager : Singleton<MetricManager> {
 	protected MetricManager() {} // guarantee this will be always a singleton only - can't use the constructor!
 	
 	private int _shotsFired = 0;
+	private int _enemiesKilled = 0;
 
 	public static void AddShots(int amt){ Instance._shotsFired += amt;}
-	public static int ShotsFired{ get { return Instance._shotsFired;}}
+	public static int getShotsFired{ get { return Instance._shotsFired;}}
+
+	public static void AddEnemiesKilled(int amt){ Instance._enemiesKilled += amt;}
+	public static int getEnemiesKilled{ get { return Instance._enemiesKilled;}}
 
 	/*
 	// Use this for initialization

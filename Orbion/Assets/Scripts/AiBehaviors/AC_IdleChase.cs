@@ -13,8 +13,6 @@ public class AC_IdleChase : AiController {
 	public AB_DoNothing Idle {get; protected set;}
 	public AB_Aggressive Chase {get; protected set;}
 
-	public float SightRange;
-
 	//If player is out of range and no buildings exist return true
 	public bool ShouldGoIdle( ){
 		if (CurrBehavior is AB_DoNothing) return false;

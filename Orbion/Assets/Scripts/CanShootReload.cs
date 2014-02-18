@@ -73,6 +73,7 @@ public class CanShootReload : CanShoot {
 				base.ShootDir(dir);
 				currentAmmo--;
 				MetricManager.AddShots (1);
+				//Debug.Log(MetricManager.getShotsFired);
 			}
 
 			else {

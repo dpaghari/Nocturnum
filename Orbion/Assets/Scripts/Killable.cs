@@ -39,6 +39,8 @@ public class Killable : MonoBehaviour {
 		}
 		else{
 			Destroy (gameObject);
+			MetricManager.AddEnemiesKilled(1);
+			//Debug.Log(MetricManager.getEnemiesKilled);
 			if (deathTarget != null) {
 				Vector3 temp = transform.position;
 				temp.y += 4;
