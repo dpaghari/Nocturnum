@@ -27,10 +27,15 @@ public class AB_Aggressive : AiBehavior {
 	override public void FixedUpdateAB(){
 		float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 		if (distToTarget >= AtkRange){
-			transform.forward = new Vector3(CurrTarget.position.x, CurrTarget.position.y, CurrTarget.position.z);
-			//Vector3 dir = rigidbody.position - CurrTarget.position;
-			//rigidbody.MoveRotation(Quaternion.FromToRotation(Vector3.zero, dir));
+			transform.LookAt(CurrTarget.transform);
 			moveScript.Move(CurrTarget.position - rigidbody.position);
+
+
+			//Vector3 dir = rigidbody.position - CurrTarget.position;
+			//transform.forward = dir;
+
+			//rigidbody.MoveRotation(Quaternion.FromToRotation(Vector3.zero, dir));
+			//moveScript.Move(CurrTarget.position - rigidbody.position);
 
 		}
 	}
