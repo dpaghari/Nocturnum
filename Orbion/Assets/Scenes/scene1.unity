@@ -2048,7 +2048,7 @@ MonoBehaviour:
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
 --- !u!114 &424032633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,8 +2075,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.5}
-  m_Center: {x: .0399999991, y: 1, z: -.400000006}
+  m_Size: {x: .800000012, y: 1.5, z: 2}
+  m_Center: {x: 0, y: .75, z: -.449999988}
 --- !u!54 &424032635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2611,7 +2611,7 @@ MonoBehaviour:
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
 --- !u!114 &467504302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2638,8 +2638,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.5}
-  m_Center: {x: .0399999991, y: 1, z: -.400000006}
+  m_Size: {x: .800000012, y: 1.5, z: 2}
+  m_Center: {x: 0, y: .75, z: -.449999988}
 --- !u!54 &467504304
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3109,8 +3109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 100
-  baseHP: 100
+  currHP: 1000
+  baseHP: 1000
   deathTarget: {fileID: 0}
 --- !u!111 &599419734
 Animation:
@@ -3217,7 +3217,7 @@ MonoBehaviour:
   bullet_speed: 200
   firingRate: .200000003
   projectileStartPosition: 2
-  enemyShotSound: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
+  enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 1, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   clipSize: 30
@@ -3286,7 +3286,7 @@ MonoBehaviour:
   moveScript: {fileID: 599419742}
   shootScript: {fileID: 599419740}
   equipScript: {fileID: 599419736}
-  shotSound: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
+  shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
 --- !u!82 &599419745
@@ -3298,7 +3298,7 @@ AudioSource:
   m_GameObject: {fileID: 599419731}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5371,7 +5371,7 @@ MonoBehaviour:
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
 --- !u!114 &1015699351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5398,8 +5398,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.5}
-  m_Center: {x: .0399999991, y: 1, z: -.400000006}
+  m_Size: {x: .800000012, y: 1.5, z: 2}
+  m_Center: {x: 0, y: .75, z: -.449999988}
 --- !u!54 &1015699353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5728,7 +5728,7 @@ MonoBehaviour:
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
 --- !u!114 &1044292323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5755,8 +5755,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.5}
-  m_Center: {x: .0399999991, y: 1, z: -.400000006}
+  m_Size: {x: .800000012, y: 1.5, z: 2}
+  m_Center: {x: 0, y: .75, z: -.449999988}
 --- !u!54 &1044292325
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6223,7 +6223,7 @@ MonoBehaviour:
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
 --- !u!114 &1058116104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6250,8 +6250,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.5}
-  m_Center: {x: .0399999991, y: 1, z: -.400000006}
+  m_Size: {x: .800000012, y: 1.5, z: 2}
+  m_Center: {x: 0, y: .75, z: -.449999988}
 --- !u!54 &1058116106
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6551,7 +6551,7 @@ MonoBehaviour:
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
 --- !u!114 &1069956541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6578,8 +6578,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.5}
-  m_Center: {x: .0399999991, y: 1, z: -.400000006}
+  m_Size: {x: .800000012, y: 1.5, z: 2}
+  m_Center: {x: 0, y: .75, z: -.449999988}
 --- !u!54 &1069956543
 Rigidbody:
   m_ObjectHideFlags: 0

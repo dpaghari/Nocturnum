@@ -2209,7 +2209,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2342,7 +2342,7 @@ MonoBehaviour:
   bullet_speed: 200
   firingRate: .200000003
   projectileStartPosition: 2
-  enemyShotSound: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
+  enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 1, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   clipSize: 30
@@ -2374,8 +2374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 100
-  baseHP: 100
+  currHP: 1000
+  baseHP: 1000
   deathTarget: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
@@ -2410,7 +2410,7 @@ MonoBehaviour:
   moveScript: {fileID: 11400002}
   shootScript: {fileID: 11400000}
   equipScript: {fileID: 11400016}
-  shotSound: {fileID: 8300000, guid: e67d152f9d8761f42a186bb7ccfa862a, type: 3}
+  shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
 --- !u!114 &11400010
