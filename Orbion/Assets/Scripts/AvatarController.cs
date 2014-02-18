@@ -9,11 +9,13 @@ public class AvatarController : MonoBehaviour {
 
 
 	public AudioClip shotSound;
-
+	public AudioClip bgm;
 	private Rigidbody clone;
 
 	public Rigidbody normalBullet;
 	public Rigidbody orbBullet;
+
+
 	//public CanUseEquip equipScript;
 
 
@@ -91,6 +93,7 @@ public class AvatarController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		//audio.PlayOneShot(bgm, 0.5f);
 		//[Don't delete] debug code for showing our shooting angle
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
