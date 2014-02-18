@@ -64,7 +64,7 @@ public class CanBuild : MonoBehaviour {
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 			
-			if( GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator")) {
+			if( GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator\n" + "Lumen: " + getLumen(generatorBuilding) + "\n" + "Energy: " + getEnergy(generatorBuilding))) {
 				SetConstruction(generatorBuilding);
 			}
 			
