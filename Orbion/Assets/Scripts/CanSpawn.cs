@@ -30,7 +30,6 @@ public class CanSpawn : MonoBehaviour {
 	// Set location
 	void Start(){
 		vec = this.transform.position;
-		this.renderer.material.color = Color.blue;
 	}
 	
 	// M turns wave on and off
