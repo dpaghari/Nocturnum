@@ -17,6 +17,10 @@ public class LunaAnimation : MonoBehaviour {
 		return Input.GetKeyUp( KeyCode.W) || Input.GetKeyUp( KeyCode.S) || Input.GetKeyUp( KeyCode.A) || Input.GetKeyUp( KeyCode.D);
 	}
 
+	bool MoveKeyStay(){
+		return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||  Input.GetKey(KeyCode.S) ||  Input.GetKey(KeyCode.D);
+	}
+
 	// Update is called once per frame
 	void Update () {
 
@@ -28,43 +32,44 @@ public class LunaAnimation : MonoBehaviour {
 		if (Input.GetKey(KeyCode.W)){
 			newRotation += Vector3.forward;
 			
-				animation.CrossFade("Run");
+				//animation.CrossFade("Run");
 		}
 		if (Input.GetKey(KeyCode.S)){
 			newRotation += Vector3.back;
 			
-				animation.CrossFade("Run");
+				//animation.CrossFade("Run");
 
 		}
 		
 		if (Input.GetKey(KeyCode.A)){
 			newRotation += Vector3.left;
 
-				animation.CrossFade("Run");
+				//animation.CrossFade("Run");
 
 		}
 		if (Input.GetKey(KeyCode.D)){
 			newRotation += Vector3.right;
 
-				animation.CrossFade("Run");
+				//animation.CrossFade("Run");
 
 		}
 
 		if (Input.GetMouseButton(0)){
-			//animation.CrossFade("Shooting");
+			animation.CrossFade("Shooting");
 			Vector3 temp;
 			temp = Utility.GetMouseWorldPos(transform.position.y) - transform.position;
 			newRotation = temp;
 		}
+
+
+		if (MoveKeyStay()) animation.CrossFade("Run");
+
 		//only change our position if there is an update to it
 		if (newRotation != Vector3.zero) transform.forward = newRotation;
 		}
 
 
-
-
-
-	if(Input.GetKeyUp("w")||Input.GetKeyUp("a")||Input.GetKeyUp("d") || Input.GetKeyUp("s") || Input.GetMouseButtonUp(0)){
+		if (! MoveKeyStay() && ! Input.GetMouseButton(0) ){
 			animation.CrossFade("Idle");
 	 }
 
