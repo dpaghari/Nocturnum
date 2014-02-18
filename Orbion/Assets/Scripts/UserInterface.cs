@@ -9,6 +9,8 @@ public class UserInterface : MonoBehaviour {
 	public Texture2D health_bar_40;
 	public Texture2D health_bar_20;
 	public Texture2D health_bar_0;
+	public Texture2D icon_lumen;
+	public Texture2D icon_energy;
 	public Texture2D ammo_bar;
 	private double gameTimeSec = 0.0;
 	private double gameTimeMin = 0.0;
@@ -96,14 +98,16 @@ public class UserInterface : MonoBehaviour {
 		}*/
 
 		//Light
-		string lumenString = string.Format("Light: {0}", ResManager.Lumen);
-		GUI.Label(new Rect(5, Screen.height-25, 150, 50), lumenString);
+		string lumenString = string.Format("{0}", ResManager.Lumen);
+		GUI.Label(new Rect(Screen.width/2-70, 10, 150, 50), lumenString);
+		GUI.DrawTexture(new Rect(Screen.width/2-120, 5, icon_lumen.width, icon_lumen.height), icon_lumen);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + player_Light);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + resRef.GetComponent<ResManager>().LightRes);
 
 		//Energy
-		string energyString = string.Format("Energy: {0}/{1}", ResManager.UsedEnergy, ResManager.MaxEnergy);
-		GUI.Label(new Rect(130, Screen.height-25, 220, 50), energyString);
+		string energyString = string.Format("{0}/{1}", ResManager.UsedEnergy, ResManager.MaxEnergy);
+		GUI.Label(new Rect(Screen.width/2+60, 10, 220, 50), energyString);
+		GUI.DrawTexture(new Rect(Screen.width/2+10, 5, icon_energy.width, icon_energy.height), icon_energy);
 		//GUI.Label(new Rect(110, Screen.height-25, 150, 50), "Energy: " + player_Energy);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Energy: " + resRef.GetComponent<ResManager>().UsedEnergy + "/" + resRef.GetComponent<ResManager>().MaxEnergy);
 	}
