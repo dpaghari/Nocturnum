@@ -18,7 +18,7 @@ public class IsLightShard : MonoBehaviour {
 
 	void OnTriggerStay(Collider collide){
 		if(collide.tag == "Player"){
-			//this.gameObject.GetComponent<Rigidbody>().AddForce((collide.gameObject.transform.position - this.transform.position).normalized * 30);
+			//this.gameObject.GetComponent<Rigidbody>().AddForce((collide.gameObject.transform.position - this.transform.position).normalized * 3);
 			Vector3 targ = collide.transform.position;
 			Vector3 direction = targ - transform.position;
 			direction.Normalize ();

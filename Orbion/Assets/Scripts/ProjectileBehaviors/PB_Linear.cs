@@ -59,7 +59,7 @@ public class PB_Linear : ProjectileBehavior {
 				Destroy(child.gameObject);
 			}
 			else{
-				child.gameObject.GetComponent<CFX_AutoDestructShuriken>().OnlyDeactivate = false;
+				child.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
 			}
 		}
 

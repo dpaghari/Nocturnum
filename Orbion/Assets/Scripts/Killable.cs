@@ -26,6 +26,9 @@ public class Killable : MonoBehaviour {
 	public void damage (int dmg) {
 		currHP -= dmg;
 		if (currHP <= 0) kill();
+		if(gameObject.GetComponent<IsDamagedEffect>() != null){
+			gameObject.GetComponent<IsDamagedEffect>().addDamage();
+		}
 	}
 
 

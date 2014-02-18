@@ -26,6 +26,9 @@ public class CanShoot : MonoBehaviour {
 	// Variable bullet spawn height for diff users
 	public Vector3 bulletHeight;
 
+	// effect to play when you shoot
+	public GameObject shootEffect;
+
 
 
 	//sets the proportion of completion for the firingTimer
@@ -73,6 +76,7 @@ public class CanShoot : MonoBehaviour {
 			temp.y += bulletHeight.y;
 			clone = Instantiate(bullet, temp + dir * projectileStartPosition, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
 			firingTimer = 0.0f;
+			clone = Instantiate(shootEffect, temp + dir * 2, Quaternion.AngleAxis(-90, Vector3.forward)) as Rigidbody;
 		}
 	}
 
