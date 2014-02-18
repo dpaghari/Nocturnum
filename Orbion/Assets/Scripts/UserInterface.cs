@@ -53,7 +53,7 @@ public class UserInterface : MonoBehaviour {
 
 		// Health Bar
 		//
-		player_Health = (float)healthRef.GetComponent<Killable>().currHP/healthRef.GetComponent<Killable>().baseHP;
+		/*player_Health = (float)healthRef.GetComponent<Killable>().currHP/healthRef.GetComponent<Killable>().baseHP;
 		if(player_Health > 0.8){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_100.width/6, health_bar_100.height/3), health_bar_100);
 			//Debug.Log (player_Health);
@@ -72,7 +72,7 @@ public class UserInterface : MonoBehaviour {
 		} else if(player_Health == 0){
 			GUI.DrawTexture(new Rect(Screen.width/2-80, Screen.height-85, health_bar_0.width/6, health_bar_0.height/3), health_bar_0);
 			//Debug.Log (player_Health);
-		}
+		}*/
 
 		//Game Timer
 		if(gameTimeSec > 59){
@@ -87,13 +87,13 @@ public class UserInterface : MonoBehaviour {
 
 		//Ammo
 		//if(ammoRef.GetComponent<CanShootReload>().currentAmmo == 0) {
-		GUI.Label(new Rect(2, Screen.height/2-85, 150, 50), "Ammo");
+		/*GUI.Label(new Rect(2, Screen.height/2-85, 150, 50), "Ammo");
 		GUI.DrawTexture(new Rect(0, Screen.height/2-60, ammo_bar.width, ammo_bar.height), ammo_bar);
 		if(GameManager.AvatarContr.shootScript.reloading){
 			GUI.Label(new Rect(2, Screen.height/2+70, 150, 50), "Reloading...");
 		} else {
 			GUI.Label(new Rect(2, Screen.height/2+70, 150, 50), ammoRef.GetComponent<CanShootReload>().currentAmmo + "/" + ammoRef.GetComponent<CanShootReload>().clipSize);
-		}
+		}*/
 
 		//Light
 		string lumenString = string.Format("Light: {0}", ResManager.Lumen);
