@@ -5217,6 +5217,22 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .866025388
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: near clip plane
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: far clip plane
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: orthographic size
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
   m_RootGameObject: {fileID: 1662365998}
@@ -5873,11 +5889,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
-  far clip plane: 1000
+  near clip plane: -25
+  far clip plane: 50
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
