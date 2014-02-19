@@ -15,6 +15,7 @@ public class AC_IdleChase : AiController {
 
 	//If player is out of range and no buildings exist return true
 	public bool ShouldGoIdle( ){
+		animation.CrossFade("Idle");
 		if (CurrBehavior is AB_DoNothing) return false;
 		return (!Chase.PlayerInRange() && !Chase.BuildingsExist());
 	}

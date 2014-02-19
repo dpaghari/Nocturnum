@@ -5,7 +5,8 @@ using System.Collections;
 public class AB_DoNothing : AiBehavior {
 
 	override public void OnBehaviorEnter(){
-		//Debug.Log("Entering idle"); 
+		//Debug.Log("Entering idle");
+		animation.CrossFade("Idle");
 		return;
 	}
 	

@@ -862,6 +862,7 @@ Animation:
   - {fileID: 7400004, guid: 7822cd43c2f1c8e4fa0ea22f085cbe1c, type: 3}
   - {fileID: 7400006, guid: 7822cd43c2f1c8e4fa0ea22f085cbe1c, type: 3}
   - {fileID: 7400008, guid: 7822cd43c2f1c8e4fa0ea22f085cbe1c, type: 3}
+  - {fileID: 7400002, guid: 7822cd43c2f1c8e4fa0ea22f085cbe1c, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -889,8 +890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 8
-  MaxSpeed: 8
+  Force: 9
+  MaxSpeed: 9
   MoveScale: 1
 --- !u!114 &11400004
 MonoBehaviour:
@@ -918,7 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeakenDuration: .200000003
-  SlowedRatio: .699999988
+  SlowedRatio: .400000006
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -948,8 +949,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 50
-  baseHP: 50
+  currHP: 75
+  baseHP: 75
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
 --- !u!114 &11400014
 MonoBehaviour:
