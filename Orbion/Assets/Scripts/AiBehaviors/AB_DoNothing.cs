@@ -6,7 +6,7 @@ public class AB_DoNothing : AiBehavior {
 
 	override public void OnBehaviorEnter(){
 		//Debug.Log("Entering idle");
-		animation.CrossFade("Idle");
+		//animation.CrossFade("Idle");
 		return;
 	}
 	
