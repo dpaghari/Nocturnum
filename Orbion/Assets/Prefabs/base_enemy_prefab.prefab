@@ -946,9 +946,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrTarget: {fileID: 0}
   AtkRange: 4
-  SightRange: 20
+  CurrTarget: {fileID: 0}
+  TargetSearchRadius: 30
+  PlayerPriorityRange: 10
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1

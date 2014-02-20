@@ -13,32 +13,38 @@ public class AC_IdleChase : AiController {
 	public AB_DoNothing Idle {get; protected set;}
 	public AB_Aggressive Chase {get; protected set;}
 
-	//If player is out of range and no buildings exist return true
+
+	//Go idle if we're Aggressive but have no target
 	public bool ShouldGoIdle( ){
-		//animation.CrossFade("Idle");
+		animation.CrossFade("Idle");
 		if (CurrBehavior is AB_DoNothing) return false;
-		return (!Chase.PlayerInRange() && !Chase.BuildingsExist());
+		if (Chase.CurrTarget == null) return true;
+		return false;
 	}
 
-	//If player is in range or buildings exist return true
+
+	//If we're not already aggresive and we can find a target, be aggressive
 	public bool ShouldGoChase( ){
 		if (CurrBehavior is AB_Aggressive) return false;
-		return (Chase.PlayerInRange() || Chase.BuildingsExist());
+		if (Chase.FindTarget(Chase.TargetSearchRadius) != null) return true;
+		return false;
 	}
 
-	protected override void Start () {
+
+	protected override void Start (){
 		Idle = GetComponent<AB_DoNothing>();
 		Chase = GetComponent<AB_Aggressive>();
 		CurrBehavior = Idle;
 		base.Start();
 	}
 
+
 	protected override void FixedUpdate () { base.FixedUpdate ();}
+
 
 	//If player is out of range and no buildings exist switch to idle
 	//If player is in range or buildings exist switch to chase
-	protected override void Update ()
-	{
+	protected override void Update (){
 		if( ShouldGoIdle()) SwitchBehavior(Idle);
 		else if ( ShouldGoChase()) SwitchBehavior(Chase);
 
