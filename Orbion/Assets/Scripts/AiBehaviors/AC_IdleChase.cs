@@ -16,7 +16,6 @@ public class AC_IdleChase : AiController {
 
 	//Go idle if we're Aggressive but have no target
 	public bool ShouldGoIdle( ){
-		animation.CrossFade("Idle");
 		if (CurrBehavior is AB_DoNothing) return false;
 		if (Chase.CurrTarget == null) return true;
 		return false;

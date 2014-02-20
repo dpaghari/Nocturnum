@@ -32,6 +32,7 @@ public class AB_Aggressive : AiBehavior {
 		if(CurrTarget != null){
 			transform.LookAt(CurrTarget.transform);
 			moveScript.Move(CurrTarget.position - rigidbody.position);
+			animation.CrossFade("WolfRunCycle");
 		}
 	}
 	

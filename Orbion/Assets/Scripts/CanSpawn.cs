@@ -65,7 +65,9 @@ public class CanSpawn : MonoBehaviour {
 		if(waveOnStatus){
 			if(respawnCounter > respawnTime){
 				clone = Instantiate(meleeEnemy, vec, Quaternion.identity) as Rigidbody;
+				clone.GetComponent<AB_Aggressive>().TargetSearchRadius = Mathf.Infinity;
 				clone2 = Instantiate(rangedEnemy, vec, Quaternion.identity) as Rigidbody;
+				clone2.GetComponent<AB_Aggressive>().TargetSearchRadius = Mathf.Infinity;
 				totalEnemies += 2;
 				respawnCounter = 0.0F;
 			} else {

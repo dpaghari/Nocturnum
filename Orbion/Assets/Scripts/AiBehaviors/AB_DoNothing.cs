@@ -14,5 +14,7 @@ public class AB_DoNothing : AiBehavior {
 	
 	override public void FixedUpdateAB(){return;}
 	
-	override public void UpdateAB(){return;}
+	override public void UpdateAB(){
+		animation.CrossFade("Idle");
+	}
 }
