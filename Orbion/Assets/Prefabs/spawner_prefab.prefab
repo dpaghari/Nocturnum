@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
+  - 114: {fileID: 11400000}
   - 23: {fileID: 2300000}
   - 108: {fileID: 10800000}
-  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: spawner_prefab
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
@@ -104,10 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c6194e85989f44084992e19ae89bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 1.5
-  enemyCap: 4
   meleeEnemy: {fileID: 5400000, guid: 752bb7fe9d0e32441b75088d42fc3d8e, type: 2}
   rangedEnemy: {fileID: 5400000, guid: 6c7fd8c02254ffb4fa8eb35173f6d52c, type: 2}
+  totalEnemies: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

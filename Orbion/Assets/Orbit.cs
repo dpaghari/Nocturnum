@@ -15,6 +15,6 @@ public class Orbit : MonoBehaviour {
 	}
 
 	void LateUpdate(){
-		transform.rotation = Quaternion.identity;
+		//transform.rotation = Quaternion.identity;
 	}
 }
