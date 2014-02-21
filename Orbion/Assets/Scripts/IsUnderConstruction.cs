@@ -59,7 +59,7 @@ public class IsUnderConstruction : MonoBehaviour {
 	void Update () {
 		if(lit){
 			if(constructionCountdown <= 0){
-				clone = Instantiate(toBuild, this.transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				clone = Instantiate(toBuild, this.transform.position, Quaternion.identity) as Rigidbody;
 				Destroy(this.gameObject);
 			}
 			ChangeBuildProgess( -Time.deltaTime);

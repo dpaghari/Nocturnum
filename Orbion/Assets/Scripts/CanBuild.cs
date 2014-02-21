@@ -123,11 +123,12 @@ public class CanBuild : MonoBehaviour {
 				GetComponent<CanShoot>().ResetFiringTimer();
 				if (toBuild == generatorBuilding){
 					mousePos.y += 1;
-					clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					clone = Instantiate(generatorBuilding, mousePos, Quaternion.identity) as Rigidbody;
 				}
 				else{
 					mousePos.y += 5.25f;
-					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					//Quaternion.LookRotation(Vector3.forward, Vector3.up)
+					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.identity) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
 				}
 				
