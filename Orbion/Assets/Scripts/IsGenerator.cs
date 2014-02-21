@@ -19,5 +19,8 @@ public class IsGenerator : MonoBehaviour {
 	void Update () {
 		audio.PlayOneShot(genHum, 1.0f);
 		transform.GetChild(1).transform.Rotate(new Vector3(0, 0, 1));
+
+		transform.GetChild(transform.childCount - 3).transform.Rotate(new Vector3(0, 0, 1));
+
 	}
 }
