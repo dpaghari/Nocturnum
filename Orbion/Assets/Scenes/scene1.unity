@@ -3201,7 +3201,7 @@ MonoBehaviour:
   shootScript: {fileID: 599419740}
   equipScript: {fileID: 599419736}
   shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
-  bgm: {fileID: 8300000, guid: d22ac0c6abce3614a965d5e24880e1bc, type: 3}
+  bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
 --- !u!82 &599419745
@@ -3217,7 +3217,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -3272,11 +3272,11 @@ AudioSource:
   m_GameObject: {fileID: 599419731}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: d22ac0c6abce3614a965d5e24880e1bc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .550000012
+  m_Volume: .70599997
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 107
   DopplerLevel: 1
@@ -8719,6 +8719,7 @@ GameObject:
   - 54: {fileID: 1895276953}
   - 114: {fileID: 1895276952}
   - 96: {fileID: 1895276962}
+  - 82: {fileID: 1895276963}
   m_Layer: 0
   m_Name: LightShard
   m_TagString: Untagged
@@ -8739,6 +8740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightValue: 50
+  collectSound: {fileID: 8300000, guid: a325284345d98014fbdc879d29edc168, type: 3}
 --- !u!54 &1895276953
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9890,6 +9892,65 @@ TrailRenderer:
       rgba: 16777215
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
+--- !u!82 &1895276963
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 719942d30563ef241885a255cb8a8bf7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1265660636}
+  m_GameObject: {fileID: 1895276951}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: a325284345d98014fbdc879d29edc168, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1907523358
 GameObject:
   m_ObjectHideFlags: 0

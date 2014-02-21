@@ -5,7 +5,7 @@ public class IsLightGrenade : MonoBehaviour {
 
 	//public AIController enemyStat;
 	public GameObject flare;
-
+	public AudioClip lgsound;
 
 	void Start(){
 
@@ -15,9 +15,10 @@ public class IsLightGrenade : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		
+		audio.PlayOneShot(lgsound, 1.0f);
 		if(other.gameObject.tag == "ground"){
 		//	Debug.Log ("hit ground");
+
 			Vector3 temp = transform.position;
 			temp.y += 1;
 			Instantiate(flare, temp, Quaternion.identity);

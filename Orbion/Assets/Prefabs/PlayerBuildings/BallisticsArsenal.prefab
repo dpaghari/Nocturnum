@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400004}
   m_Layer: 12
   m_Name: BallisticsArsenal
   m_TagString: WeaponLab
@@ -328,6 +329,18 @@ MonoBehaviour:
   currHP: 500
   baseHP: 500
   deathTarget: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5655fce3b104f664e96e4036ab62918e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageEffect: {fileID: 100000, guid: e9c1f344782fe81429b6e31ba556b2c1, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
