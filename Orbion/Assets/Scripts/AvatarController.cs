@@ -45,7 +45,7 @@ public class AvatarController : MonoBehaviour {
 				shootScript.SetFiringTimer( 1.0f);
 				shootScript.ShootDir( BulDir);
 				audio.clip = shotSound;
-				audio.PlayOneShot(shotSound,1);
+				audio.PlayOneShot(shotSound,1.0f);
 			}
 
 		}
