@@ -30,10 +30,13 @@ public class CanBuild : MonoBehaviour {
 
 
 	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
+	//Don't have restrictions on energy if we're making a generator because
+	//it won't let you build another one if you're UsedEnergy > MaxEnergy
 	bool MeetsRequirement(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
 		if ( ResManager.Lumen < buildInfo.cost) return false;
-		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy) return false;
+		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy)
+			if( buildingType != generatorBuilding) return false;
 		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) return false;
 		return true;
 	}
@@ -123,11 +126,12 @@ public class CanBuild : MonoBehaviour {
 				GetComponent<CanShoot>().ResetFiringTimer();
 				if (toBuild == generatorBuilding){
 					mousePos.y += 1;
-					clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					clone = Instantiate(generatorBuilding, mousePos, Quaternion.identity) as Rigidbody;
 				}
 				else{
 					mousePos.y += 5.25f;
-					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					//Quaternion.LookRotation(Vector3.forward, Vector3.up)
+					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.identity) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
 				}
 				

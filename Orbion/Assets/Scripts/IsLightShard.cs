@@ -5,6 +5,7 @@ public class IsLightShard : MonoBehaviour {
 
 	//How much this light shard is worth when the player collects it
 	public int lightValue = 10;
+	public AudioClip collectSound;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class IsLightShard : MonoBehaviour {
 
 	void OnTriggerStay(Collider collide){
 		if(collide.tag == "Player"){
+			audio.PlayOneShot(collectSound, 1.0f);
 			//this.gameObject.GetComponent<Rigidbody>().AddForce((collide.gameObject.transform.position - this.transform.position).normalized * 3);
 			Vector3 targ = collide.transform.position;
 			Vector3 direction = targ - transform.position;
