@@ -2987,6 +2987,7 @@ GameObject:
   - 114: {fileID: 599419751}
   - 82: {fileID: 599419746}
   - 111: {fileID: 599419734}
+  - 82: {fileID: 599419752}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -3135,7 +3136,7 @@ MonoBehaviour:
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   clipSize: 30
   currentAmmo: 30
-  reloadCooldown: 3
+  reloadCooldown: 2
   reloading: 0
 --- !u!114 &599419741
 MonoBehaviour:
@@ -3184,6 +3185,7 @@ MonoBehaviour:
   wallBuilding: {fileID: 5400000, guid: d7b803cf43d702d4eb3d00d36e2088c1, type: 2}
   medBayBuilding: {fileID: 5400000, guid: 6cb3d67fbf45d614c8b12dda813ec6e2, type: 2}
   incindiaryBuilding: {fileID: 5400000, guid: ab55e9521cba25a439e2d460263b9b51, type: 2}
+  initBuild: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
   buildWheelSkin: {fileID: 11400000, guid: 3dcf84cea41ae8045aafdaacbffa769d, type: 2}
 --- !u!114 &599419744
 MonoBehaviour:
@@ -3329,7 +3331,7 @@ BoxCollider:
     type: 2}
   m_PrefabInternal: {fileID: 1060952805}
   m_GameObject: {fileID: 599419731}
-  m_Material: {fileID: 13400000, guid: 7a131481b532df14480845a9874a6b3e, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3400,6 +3402,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b2eda5d8e39f64cbd4702727fcc550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &599419752
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200004, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1060952805}
+  m_GameObject: {fileID: 599419731}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &599877688
 GameObject:
   m_ObjectHideFlags: 0
@@ -5314,7 +5375,16 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: reloadCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200006, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 599419731}
   m_IsPrefabParent: 0
@@ -8722,7 +8792,7 @@ GameObject:
   - 82: {fileID: 1895276963}
   m_Layer: 0
   m_Name: LightShard
-  m_TagString: Untagged
+  m_TagString: lightShard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

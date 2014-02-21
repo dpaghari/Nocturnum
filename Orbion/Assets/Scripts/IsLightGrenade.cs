@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof(AudioSource))]
 public class IsLightGrenade : MonoBehaviour {
 
 	//public AIController enemyStat;

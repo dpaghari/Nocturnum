@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof(AudioSource))]
 public class IsLightShard : MonoBehaviour {
 
 	//How much this light shard is worth when the player collects it
@@ -14,12 +14,17 @@ public class IsLightShard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 
+	}
+	void OnTriggerEnter(Collider collide){
+		if(collide.tag == "Player")
+		audio.PlayOneShot(collectSound, 1.0f);
+	}
 	void OnTriggerStay(Collider collide){
 		if(collide.tag == "Player"){
-			audio.PlayOneShot(collectSound, 1.0f);
+			//audio.PlayOneShot(collectSound);
+
+			//audio.Play();
 			//this.gameObject.GetComponent<Rigidbody>().AddForce((collide.gameObject.transform.position - this.transform.position).normalized * 3);
 			Vector3 targ = collide.transform.position;
 			Vector3 direction = targ - transform.position;
@@ -30,6 +35,9 @@ public class IsLightShard : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collide){
 		if(collide.gameObject.tag == "Player"){
+			//audio.clip = collectSound;
+
+			//audio.PlayOneShot(collectSound, 1.0f);
 			ResManager.AddLumen(lightValue);
 			Destroy (gameObject);
 		}

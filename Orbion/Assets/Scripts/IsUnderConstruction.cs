@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof(AudioSource))]
 public class IsUnderConstruction : MonoBehaviour {
 
 	//Time remaining until building is done
@@ -8,6 +8,8 @@ public class IsUnderConstruction : MonoBehaviour {
 
 	//Total time in seconds to build
 	public float totalConstruction = 60;
+
+	public AudioClip finBuild;
 
 	//The building that we want to create when finished construction timer
 	public Rigidbody toBuild;
@@ -59,9 +61,12 @@ public class IsUnderConstruction : MonoBehaviour {
 	void Update () {
 		if(lit){
 			if(constructionCountdown <= 0){
+
 				clone = Instantiate(toBuild, this.transform.position, Quaternion.identity) as Rigidbody;
+				audio.PlayOneShot(finBuild, 1.0f);
 				Destroy(this.gameObject);
 			}
+
 			ChangeBuildProgess( -Time.deltaTime);
 		}
 		else{

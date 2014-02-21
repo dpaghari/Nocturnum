@@ -10,6 +10,7 @@ public class AvatarController : MonoBehaviour {
 
 	public AudioClip shotSound;
 	public AudioClip bgm;
+	//public AudioClip collectSound;
 	private Rigidbody clone;
 
 	public Rigidbody normalBullet;
@@ -149,7 +150,4 @@ public class AvatarController : MonoBehaviour {
 		*/
 
 	}
-
-
-
 }

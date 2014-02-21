@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum Buildings {none, generator, ballistics, wall, medBay, incindiary};
-
+[RequireComponent(typeof(AudioSource))]
 public class CanBuild : MonoBehaviour {
 	
 	public Rigidbody generatorBuilding;
@@ -11,6 +11,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody wallBuilding;
 	public Rigidbody medBayBuilding;
 	public Rigidbody incindiaryBuilding;
+	public AudioClip initBuild;
 
 	private Rigidbody clone;
 	private Rigidbody toBuild = null;
@@ -130,6 +131,7 @@ public class CanBuild : MonoBehaviour {
 				}
 				else{
 					mousePos.y += 5.25f;
+					audio.PlayOneShot(initBuild, 1.0f);
 					//Quaternion.LookRotation(Vector3.forward, Vector3.up)
 					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.identity) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
