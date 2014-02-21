@@ -16,6 +16,6 @@ public class IsGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.GetChild(1).transform.Rotate(new Vector3(0, 0, 1));
+		transform.GetChild(transform.childCount - 3).transform.Rotate(new Vector3(0, 0, 1));
 	}
 }
