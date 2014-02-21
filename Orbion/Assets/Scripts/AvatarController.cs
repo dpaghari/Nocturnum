@@ -19,7 +19,7 @@ public class AvatarController : MonoBehaviour {
 	//public CanUseEquip equipScript;
 
 
-	private float ScatterSpread = 45f; //max angle that the scatter shot spreads to
+	private float ScatterSpread = 12.5f; //max angle that the scatter shot spreads to
 
 	//Shoots a scatter shot of bullets around the center direction: dir
 	//   going from dir - ScatterSpread/2 to dir + ScatterSpread/2.
