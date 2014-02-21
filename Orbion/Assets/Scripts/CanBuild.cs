@@ -30,10 +30,13 @@ public class CanBuild : MonoBehaviour {
 
 
 	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
+	//Don't have restrictions on energy if we're making a generator because
+	//it won't let you build another one if you're UsedEnergy > MaxEnergy
 	bool MeetsRequirement(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
 		if ( ResManager.Lumen < buildInfo.cost) return false;
-		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy) return false;
+		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy)
+			if( buildingType != generatorBuilding) return false;
 		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) return false;
 		return true;
 	}
