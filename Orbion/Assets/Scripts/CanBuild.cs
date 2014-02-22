@@ -129,18 +129,19 @@ public class CanBuild : MonoBehaviour {
 
 			if (MeetsRequirement(toBuild)) {
 				GetComponent<CanShoot>().ResetFiringTimer();
+				audio.PlayOneShot(initBuild, 1.0f);
 				if (toBuild == generatorBuilding){
-					mousePos.y += 1;
-					clone = Instantiate(generatorBuilding, mousePos, Quaternion.identity) as Rigidbody;
+					//mousePos.y += 1;
+					clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 					builtGenerator = true;
 				}
 				else{
 					mousePos.y += 5.25f;
 
 					//Quaternion.LookRotation(Vector3.forward, Vector3.up)
-					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.identity) as Rigidbody;
+					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
-					audio.PlayOneShot(initBuild, 1.0f);
+
 				}
 				
 				Buildable buildInfo = toBuild.GetComponent<Buildable>();
