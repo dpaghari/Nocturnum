@@ -156,17 +156,31 @@ public class CanSpawn : MonoBehaviour {
 		if(spawnCount >= spawnLoop-1){
 			spawnCount = 0;
 			if(levelItor < totalLevels-1){
+
 				levelItor++;
 				enemyCap = levels [levelItor].numSpawn;
 				spawnLoop = levels [levelItor].timesToRun;
-				if(levelItor == 3){
+				Debug.Log(levelItor);
+
+				if(levelItor+1 == 2){
+					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("1"));
+					found.turnOff ();
+					found = spawnLocations.Find(x => x.nodeName.EndsWith("2"));
+					found.turnOn ();
+				}
+				if(levelItor+1 == 4){
+					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("3"));
+					found.turnOn ();
+					found = spawnLocations.Find(x => x.nodeName.EndsWith("2"));
+					found.turnOff ();
+					found = spawnLocations.Find(x => x.nodeName.EndsWith("1"));
+					found.turnOn ();
+				}
+				if(levelItor+1 == 5){
 					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("2"));
 					found.turnOn ();
 				}
-				if(levelItor == 5){
-					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("3"));
-					found.turnOn ();
-				}
+
 			}
 		} else {
 			spawnCount++;
