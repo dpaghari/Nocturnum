@@ -32,15 +32,18 @@ public class AB_Aggressive : AiBehavior {
 
 	override public void FixedUpdateAB(){
 		if(CurrTarget != null){
-			//transform.LookAt(CurrTarget.transform);
-			moveScript.Move(CurrTarget.position - rigidbody.position);
-			//meshScript.SetDestination(CurrTarget.position);
+			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
+			if(distToTarget > AtkRange){
+				moveScript.Move(CurrTarget.position - rigidbody.position);
+				transform.LookAt(CurrTarget.transform);
+				//meshScript.SetDestination(CurrTarget.position);
 
-			if(this.tag == "Enemy")
-				animation.CrossFade("WolfRunCycle");
+				if(this.tag == "Enemy")
+					animation.CrossFade("WolfRunCycle");
 
-			if(this.tag == "EnemyRanged")
-				animation.CrossFade("bat_fly");
+				if(this.tag == "EnemyRanged")
+					animation.CrossFade("bat_fly");
+			}
 		}
 	}
 	
