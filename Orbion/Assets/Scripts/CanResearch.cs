@@ -9,6 +9,9 @@ public class CanResearch : MonoBehaviour {
 	public GUISkin upgradeWheelSkin;
 	private float rotAngle = 40;
 	private Vector2 pivotPoint;
+	public Texture2D button_clipSize;
+	public Texture2D button_lightGrenade;
+	public Texture2D button_scatterShot;
 
 	// Use this for initialization
 	void Start () {
@@ -51,7 +54,7 @@ public class CanResearch : MonoBehaviour {
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 
-			if(GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), "Scattershot\n" + "Lumen: " + getLumen(Tech.scatter) + "\n" + "Energy: " + getEnergy(Tech.scatter))) {
+			if(GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_scatterShot)) {
 				if(MeetsRequirement(Tech.scatter)){
 					DoResearch(Tech.scatter);
 					menuUp = false;
@@ -60,7 +63,7 @@ public class CanResearch : MonoBehaviour {
 			
 			//pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), "Orbshot\n" + "Lumen: " + getLumen(Tech.orbshot) + "\n" + "Energy: " + getEnergy(Tech.orbshot))) {
+			/*if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), "Orbshot\n" + "Lumen: " + getLumen(Tech.orbshot) + "\n" + "Energy: " + getEnergy(Tech.orbshot))) {
 				if(MeetsRequirement(Tech.orbshot)){
 					DoResearch(Tech.orbshot);
 					
@@ -69,10 +72,10 @@ public class CanResearch : MonoBehaviour {
 					GameManager.AvatarContr.shootScript.bullet = GameManager.AvatarContr.orbBullet;
 					menuUp = false;
 				}
-			}
+			}*/
 			
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), "Light \n" + "Grenade\n"  + "Lumen: " + getLumen(Tech.lightGrenade) + "\n" + "Energy: " + getEnergy(Tech.lightGrenade))) {
+			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_lightGrenade)) {
 				if(MeetsRequirement(Tech.lightGrenade)){
 					DoResearch(Tech.lightGrenade);
 					menuUp = false;
@@ -80,15 +83,15 @@ public class CanResearch : MonoBehaviour {
 			}
 			
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), "Bullet \n" + "Absorber\n"  + "Lumen: " + getLumen(Tech.bulletAbsorber) + "\n" + "Energy: " + getEnergy(Tech.bulletAbsorber))) {
+			/*if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), "Bullet \n" + "Absorber\n"  + "Lumen: " + getLumen(Tech.bulletAbsorber) + "\n" + "Energy: " + getEnergy(Tech.bulletAbsorber))) {
 				if(MeetsRequirement(Tech.bulletAbsorber)){
 					DoResearch(Tech.bulletAbsorber);
 					menuUp = false;
 				}
-			}
+			}*/
 			
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), "Clip Size\n"  + "Lumen: " + getLumen(Tech.clipSize) + "\n" + "Energy: " + getEnergy(Tech.clipSize))) {
+			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_clipSize)) {
 				if(MeetsRequirement(Tech.clipSize)){
 					DoResearch(Tech.clipSize);
 					
