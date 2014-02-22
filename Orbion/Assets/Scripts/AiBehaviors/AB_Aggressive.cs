@@ -35,9 +35,12 @@ public class AB_Aggressive : AiBehavior {
 			transform.LookAt(CurrTarget.transform);
 			moveScript.Move(CurrTarget.position - rigidbody.position);
 			//meshScript.SetDestination(CurrTarget.position);
-			if(this.tag == "Enemy"){
-			animation.CrossFade("WolfRunCycle");
-			}
+
+			if(this.tag == "Enemy")
+				animation.CrossFade("WolfRunCycle");
+
+			if(this.tag == "EnemyRanged")
+				animation.CrossFade("bat_fly");
 		}
 	}
 	
