@@ -93,12 +93,12 @@ public class UserInterface : MonoBehaviour {
 
 		//Ammo
 		//if(ammoRef.GetComponent<CanShootReload>().currentAmmo == 0) {
-		GUI.Label(new Rect(2, Screen.height/2-85, 150, 50), "Ammo");
-		GUI.DrawTexture(new Rect(0, Screen.height/2-60, ammo_bar.width, ammo_bar.height), ammo_bar);
+		//GUI.Label(new Rect(2, Screen.height/2-85, 150, 50), "Ammo");
+		//GUI.DrawTexture(new Rect(0, Screen.height/2-60, ammo_bar.width, ammo_bar.height), ammo_bar);
 		if(GameManager.AvatarContr.shootScript.reloading){
-			GUI.Label(new Rect(2, Screen.height/2+70, 150, 50), "Reloading...");
+			GUI.Label(new Rect(2, Screen.height-30, 150, 50), "Reloading...");
 		} else {
-			GUI.Label(new Rect(2, Screen.height/2+70, 150, 50), ammoRef.GetComponent<CanShootReload>().currentAmmo + "/" + ammoRef.GetComponent<CanShootReload>().clipSize);
+			GUI.Label(new Rect(2, Screen.height-30, 150, 50), ammoRef.GetComponent<CanShootReload>().currentAmmo + "/" + ammoRef.GetComponent<CanShootReload>().clipSize);
 		}
 
 		//Light
