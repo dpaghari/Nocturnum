@@ -5560,7 +5560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e447f4afbcca314795410d6872ec953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeWheelSkin: {fileID: 11400000, guid: bce203509e25d7c4b8349c566db71cee, type: 2}
+  upgradeWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
+  button_clipSize: {fileID: 2800000, guid: bfbceae9c8d62dd48a6dc1f423c167a8, type: 3}
+  button_lightGrenade: {fileID: 2800000, guid: a9c14c5f89710c749a1a3aac0b4b0d90, type: 3}
+  button_scatterShot: {fileID: 2800000, guid: f4ea26635c32cf94b88583bf89684eab, type: 3}
 --- !u!114 &599419742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10092,6 +10095,23 @@ Prefab:
       propertyPath: button_medbay
       value: 
       objectReference: {fileID: 2800000, guid: 368bd042d8e1c8d4e81bc599763605cd, type: 3}
+    - target: {fileID: 11400010, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: button_clipSize
+      value: 
+      objectReference: {fileID: 2800000, guid: bfbceae9c8d62dd48a6dc1f423c167a8, type: 3}
+    - target: {fileID: 11400010, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: button_lightGrenade
+      value: 
+      objectReference: {fileID: 2800000, guid: a9c14c5f89710c749a1a3aac0b4b0d90, type: 3}
+    - target: {fileID: 11400010, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: button_scatterShot
+      value: 
+      objectReference: {fileID: 2800000, guid: f4ea26635c32cf94b88583bf89684eab, type: 3}
+    - target: {fileID: 11400010, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: upgradeWheelSkin
+      value: 
+      objectReference: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 8200006, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
