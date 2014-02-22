@@ -44,8 +44,13 @@ public class PB_Linear : ProjectileBehavior {
 	public override void OnImpactEnter( Collision other){
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
 		if( KillScript) {
-			KillScript.damage(Damage);
-			clone = Instantiate(hitEffect, transform.position, new Quaternion()) as GameObject;
+			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){
+				//heal building
+			}
+			else{
+				KillScript.damage(Damage);
+				clone = Instantiate(hitEffect, transform.position, new Quaternion()) as GameObject;
+			}
 		}
 
 		//drop a DOT on target if searing is > 0
