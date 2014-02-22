@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 18
   PlayerPriorityRange: 13
@@ -3194,7 +3194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 18
   PlayerPriorityRange: 13
@@ -3743,7 +3743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 18
   PlayerPriorityRange: 13
@@ -4682,7 +4682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f836cdd15cf8fd34585858e336d941a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 763645166}
+  target: {fileID: 680245859}
 --- !u!23 &489028847
 Renderer:
   m_ObjectHideFlags: 0
@@ -5563,7 +5563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 18
   PlayerPriorityRange: 13
@@ -6918,7 +6918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b303e25f907c9340ba37f535871bf5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+  target: {fileID: 680245859}
 --- !u!23 &763645164
 Renderer:
   m_ObjectHideFlags: 0
@@ -8154,7 +8154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 18
   PlayerPriorityRange: 13
@@ -9448,7 +9448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 18
   PlayerPriorityRange: 13
@@ -11825,7 +11825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 18
   PlayerPriorityRange: 13
@@ -17118,7 +17118,7 @@ Prefab:
     - target: {fileID: 11400000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      objectReference: {fileID: 680245859}
     - target: {fileID: 10800000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_Intensity
       value: 8
@@ -17175,6 +17175,10 @@ Prefab:
       propertyPath: m_UseLightProbes
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 680245859}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
   m_RootGameObject: {fileID: 763645162}
