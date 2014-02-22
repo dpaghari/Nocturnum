@@ -32,7 +32,9 @@ public class AB_Aggressive : AiBehavior {
 		if(CurrTarget != null){
 			transform.LookAt(CurrTarget.transform);
 			moveScript.Move(CurrTarget.position - rigidbody.position);
+			if(this.tag == "Enemy"){
 			animation.CrossFade("WolfRunCycle");
+			}
 		}
 	}
 	
@@ -42,7 +44,9 @@ public class AB_Aggressive : AiBehavior {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
+				if(this.tag == "Enemy"){
 				animation.CrossFade("WolfAttack");
+				}
 				shootScript.Shoot(CurrTarget.position);
 			}
 		}
