@@ -34,8 +34,9 @@ public class AB_Aggressive : AiBehavior {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if(distToTarget > AtkRange){
+				//transform.LookAt(CurrTarget.transform);
 				moveScript.Move(CurrTarget.position - rigidbody.position);
-				transform.LookAt(CurrTarget.transform);
+
 				//meshScript.SetDestination(CurrTarget.position);
 
 				if(this.tag == "Enemy")
