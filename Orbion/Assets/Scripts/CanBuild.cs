@@ -22,6 +22,10 @@ public class CanBuild : MonoBehaviour {
 	public GUISkin buildWheelSkin;
 	private float rotAngle = 40;
 	private Vector2 pivotPoint;
+
+	//Checks (temporary until we have metrics manager working.
+	public bool builtBallistics = false;
+	public bool builtGenerator = false;
 	
 
 	// Use this for initialization
@@ -128,6 +132,7 @@ public class CanBuild : MonoBehaviour {
 				if (toBuild == generatorBuilding){
 					mousePos.y += 1;
 					clone = Instantiate(generatorBuilding, mousePos, Quaternion.identity) as Rigidbody;
+					builtGenerator = true;
 				}
 				else{
 					mousePos.y += 5.25f;

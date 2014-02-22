@@ -4,12 +4,16 @@ using System.Collections;
 public class HelperText : MonoBehaviour {
 	public GUISkin uiSkin;
 	
-	string tutorialText = "Survive against the enemies.\n" + "Use WASD to move and the left mouse button to shoot.\n" + "Walk over Lumen to collect it";
+	string tutorialText = "Survive against the enemies.";
+	int makeMiddle = Screen.width/2-130;
 	public GameObject timerRef;
+	public GameObject isBuilt;
+	//public bool wait = false;
 	
 	// Use this for initialization
 	void Start () {
 		timerRef = GameObject.Find ("UserInterface");
+		isBuilt = GameObject.Find ("player_prefab");
 	}
 	
 	// Update is called once per frame
@@ -18,25 +22,33 @@ public class HelperText : MonoBehaviour {
 	}
 	
 	void OnGUI () {
-
+		
 		// Super janky temporary tutorial thing. Happy birthday.
 		GUI.skin = uiSkin;
-		GUI.Label(new Rect(Screen.width-250, 5, 250, 100), string.Format ("Enemies Killed: {0}/{1}", MetricManager.getEnemiesKilled, "40"));
-		GUI.Label(new Rect(30, 40, Screen.width/2, 100), tutorialText);
-		if(timerRef.GetComponent<UserInterface>().gameTimeSec < 35 && timerRef.GetComponent<UserInterface>().gameTimeMin == 0){
-			/*if (timerRef.GetComponent<UserInterface>().gameTimeSec > 3 && timerRef.GetComponent<UserInterface>().gameTimeSec < 10 && ResManager.Lumen == 0){
-				tutorialText = "Use left mouse button to shoot, and walk over Lumen to collect it.";
-			} else*/ if(ResManager.Lumen > 0 && ResManager.MaxEnergy == 0){
-				tutorialText = "Press B to open the Build Wheel. Build a generator.";
-			} else if(ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 && ResManager.Lumen > 431){
-				tutorialText = "Now, build a Ballistics Building. You can only build in the light.";
-			} else if(ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 && ResManager.Lumen < 431 && timerRef.GetComponent<UserInterface>().gameTimeSec < 30){
-				tutorialText = "You can also shoot buildings to make them build faster.\n" + "Press V to open the Upgrade Wheel and choose scattershot once your building is done.";
-			} else if(ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 && ResManager.Lumen < 431 && timerRef.GetComponent<UserInterface>().gameTimeSec > 30){
-				tutorialText = "Build your base, get upgrades, and defend against the incoming enemies!";
+		//GUI.Label(new Rect(Screen.width-250, 5, 250, 100), string.Format ("Enemies Killed: {0}/{1}", MetricManager.getEnemiesKilled, "40"));
+		GUI.Label(new Rect(makeMiddle, 40, Screen.width/2, 100), tutorialText);
+		if(timerRef.GetComponent<UserInterface>().gameTimeSec < 59 && timerRef.GetComponent<UserInterface>().gameTimeMin == 0){
+			if (timerRef.GetComponent<UserInterface>().gameTimeSec > 3 && timerRef.GetComponent<UserInterface>().gameTimeSec < 10 && ResManager.Lumen == 0 /*&& !wait*/){
+				makeMiddle = Screen.width/2-170;
+				tutorialText = "Collect Lumen to build structures.";
+			} else if(ResManager.Lumen > 0 && ResManager.MaxEnergy == 0){
+				makeMiddle = Screen.width/2-90;
+				tutorialText = "Press B to build.";
+			} else if(/*ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 &&*/ isBuilt.GetComponent<CanBuild>().builtGenerator && TechManager.GetNumBuilding(Tech.ballistics) == 0){
+				makeMiddle = Screen.width/2-150;
+				tutorialText = "You can only build in the light.";
+			} else if(/*ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 &&*/ isBuilt.GetComponent<CanBuild>().builtGenerator && TechManager.GetNumBuilding(Tech.ballistics) > 0 /*&& isBuilt.GetComponent<CanBuild>().MeetsRequirement(isBuilt.GetComponent<CanBuild>().ballisticsBuilding)*/){
+				makeMiddle = Screen.width/2-160;
+				tutorialText = "Press V to open the upgrade menu.";
 			}
+			Invoke ("clearText", 3);
 		} else {
 			tutorialText = "";
 		}
+	}
+	
+	void clearText(){
+		tutorialText = "";
+		//wait = true;
 	}
 }

@@ -1398,6 +1398,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 332038818}
   - 114: {fileID: 332038817}
+  - 114: {fileID: 332038819}
   m_Layer: 0
   m_Name: UserInterface
   m_TagString: Untagged
@@ -1445,6 +1446,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &332038819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332038816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2a6784285eddc46b5d2b583820260a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiSkin: {fileID: 11400000, guid: 3dcf84cea41ae8045aafdaacbffa769d, type: 2}
+  timerRef: {fileID: 0}
+  isBuilt: {fileID: 0}
 --- !u!1 &333936445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3322,6 +3337,8 @@ MonoBehaviour:
   incindiaryBuilding: {fileID: 5400000, guid: ab55e9521cba25a439e2d460263b9b51, type: 2}
   initBuild: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
   buildWheelSkin: {fileID: 11400000, guid: 3dcf84cea41ae8045aafdaacbffa769d, type: 2}
+  builtBallistics: 0
+  builtGenerator: 0
 --- !u!114 &599419744
 MonoBehaviour:
   m_ObjectHideFlags: 0
