@@ -32,7 +32,7 @@ public class AB_Aggressive : AiBehavior {
 
 	override public void FixedUpdateAB(){
 		if(CurrTarget != null){
-			transform.LookAt(CurrTarget.transform);
+			//transform.LookAt(CurrTarget.transform);
 			moveScript.Move(CurrTarget.position - rigidbody.position);
 			//meshScript.SetDestination(CurrTarget.position);
 
