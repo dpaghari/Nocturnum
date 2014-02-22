@@ -35,7 +35,8 @@ public class AB_Aggressive : AiBehavior {
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if(distToTarget > AtkRange){
 				//transform.LookAt(CurrTarget.transform);
-				transform.rotation = Quaternion.LookRotation(transform.position - CurrTarget.position);
+				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 				moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
 
@@ -57,7 +58,9 @@ public class AB_Aggressive : AiBehavior {
 				if(this.tag == "Enemy"){
 				animation.CrossFade("WolfAttack");
 				}
-				shootScript.Shoot(CurrTarget.position);
+				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+				shootScript.Shoot(lookPosition);
 			}
 		}
 	}
