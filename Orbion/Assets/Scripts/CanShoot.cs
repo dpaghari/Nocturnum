@@ -68,7 +68,7 @@ public class CanShoot : MonoBehaviour {
 	public virtual void ShootDir ( Vector3 dir){
 		if( FinishCooldown()){
 			dir.Normalize();
-			if(tag == "Enemy"){
+			if(tag == "Enemy" || tag == "EnemyRanged"){
 				audio.clip = enemyShotSound;
 				audio.PlayOneShot(enemyShotSound,1);
 			}
