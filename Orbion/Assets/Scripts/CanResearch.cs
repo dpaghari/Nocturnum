@@ -35,60 +35,68 @@ public class CanResearch : MonoBehaviour {
 		TechManager.Research( theUpgr);
 	}
 
+	int getLumen(Tech upgradeType){
+		int upgradeInfo = (int)TechManager.GetUpgradeLumenCost(upgradeType);
+		return upgradeInfo;
+	}
+	
+	int getEnergy(Tech upgradeType){
+		int upgradeInfo = (int)TechManager.GetUpgradeEnergyCost(upgradeType);
+		return upgradeInfo;
+	}
+
 
 	void OnGUI() {
 		GUI.skin = upgradeWheelSkin;
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 
-			if(GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Scattershot")) {
+			if(GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), "Scattershot\n" + "Lumen: " + getLumen(Tech.scatter) + "\n" + "Energy: " + getEnergy(Tech.scatter))) {
 				if(MeetsRequirement(Tech.scatter)){
 					DoResearch(Tech.scatter);
 					menuUp = false;
 				}
 			}
-
-			pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Orbshot")) {
+			
+			//pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), "Orbshot\n" + "Lumen: " + getLumen(Tech.orbshot) + "\n" + "Energy: " + getEnergy(Tech.orbshot))) {
 				if(MeetsRequirement(Tech.orbshot)){
 					DoResearch(Tech.orbshot);
-
+					
 					//Just slapping it here for now until we have a way to to manage bullets for the player.
 					//Should make an event manager to broadcast that a upgrade was researched later
 					GameManager.AvatarContr.shootScript.bullet = GameManager.AvatarContr.orbBullet;
 					menuUp = false;
 				}
 			}
-
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Light \n" + "Grenade")) {
+			
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), "Light \n" + "Grenade\n"  + "Lumen: " + getLumen(Tech.lightGrenade) + "\n" + "Energy: " + getEnergy(Tech.lightGrenade))) {
 				if(MeetsRequirement(Tech.lightGrenade)){
 					DoResearch(Tech.lightGrenade);
 					menuUp = false;
 				}
 			}
-
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2-210,Screen.height/2-180,128,128), "Bullet \n" + "Absorber")) {
+			
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), "Bullet \n" + "Absorber\n"  + "Lumen: " + getLumen(Tech.bulletAbsorber) + "\n" + "Energy: " + getEnergy(Tech.bulletAbsorber))) {
 				if(MeetsRequirement(Tech.bulletAbsorber)){
 					DoResearch(Tech.bulletAbsorber);
 					menuUp = false;
 				}
 			}
-
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2-240,Screen.height/2-180,128,128), "Clip Size")) {
+			
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), "Clip Size\n"  + "Lumen: " + getLumen(Tech.clipSize) + "\n" + "Energy: " + getEnergy(Tech.clipSize))) {
 				if(MeetsRequirement(Tech.clipSize)){
 					DoResearch(Tech.clipSize);
-
+					
 					//here until we have a event manager for upgrades
 					GameManager.AvatarContr.shootScript.clipSize += 10 * TechManager.GetUpgradeLv(Tech.clipSize);
 					menuUp = false;
 				}
 			}
-
-
 
 		}
 	

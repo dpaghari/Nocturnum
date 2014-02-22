@@ -22,6 +22,11 @@ public class CanBuild : MonoBehaviour {
 	public GUISkin buildWheelSkin;
 	private float rotAngle = 40;
 	private Vector2 pivotPoint;
+	public Texture2D button_incendiary;
+	public Texture2D button_wall;
+	public Texture2D button_generator;
+	public Texture2D button_ballistics;
+	public Texture2D button_medbay;
 
 	//Checks (temporary until we have metrics manager working.
 	public bool builtBallistics = false;
@@ -72,35 +77,35 @@ public class CanBuild : MonoBehaviour {
 		if(menuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 			
-			if( GUI.Button(new Rect(Screen.width/2-200,Screen.height/2-120,128,128), "Generator\n" + "Lumen: " + getLumen(generatorBuilding) + "\n" + "Energy: " + getEnergy(generatorBuilding))) {
+			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator)) {
 				SetConstruction(generatorBuilding);
 			}
 			
 			// Make the second button.
-			pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2-190,Screen.height/2-140,128,128), "Ballistics\n" + "Lumen: " + getLumen(ballisticsBuilding) + "\n" + "Energy: " + getEnergy(ballisticsBuilding))) {
+			//pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_ballistics)) {
 				SetConstruction(ballisticsBuilding);
 			}
 			
-
+			
 			// Make the third button.
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2-195,Screen.height/2-160,128,128), "Wall\n" + "Lumen: " + getLumen(wallBuilding) + "\n" + "Energy: " + getEnergy(wallBuilding)))  {
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_wall))  {
 				SetConstruction(wallBuilding);
 			}
 			
-
+			
 			// Make the fourth button.
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2-210,Screen.height/2-180,128,128), "Med Bay\n" + "Lumen: " + getLumen(medBayBuilding) + "\n" + "Energy: " + getEnergy(medBayBuilding)))  {
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), button_medbay))  {
 				SetConstruction(medBayBuilding);
 			}
 			
-
+			
 			// Make the fifth button.
-			GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
-			if( GUI.Button(new Rect(Screen.width/2-240,Screen.height/2-180,128,128), "Incendiary\n" + "Lumen: " + getLumen(incindiaryBuilding) + "\n" + "Energy: " + getEnergy(incindiaryBuilding))) {
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
+			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), button_incendiary)) {
 				SetConstruction(incindiaryBuilding);
 			}
 		}
