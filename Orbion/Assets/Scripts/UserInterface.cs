@@ -11,6 +11,10 @@ public class UserInterface : MonoBehaviour {
 	public Texture2D health_bar_0;
 	public Texture2D icon_lumen;
 	public Texture2D icon_energy;
+	public Texture2D icon_empty;
+	public Texture2D icon_scattershot;
+	public Texture2D icon_clipsize;
+	public Texture2D icon_lightgrenade;
 	public Texture2D ammo_bar;
 	public double gameTimeSec = 0.0;
 	public double gameTimeMin = 0.0;
@@ -110,5 +114,28 @@ public class UserInterface : MonoBehaviour {
 		GUI.DrawTexture(new Rect(Screen.width/2+10, 5, icon_energy.width, icon_energy.height), icon_energy);
 		//GUI.Label(new Rect(110, Screen.height-25, 150, 50), "Energy: " + player_Energy);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Energy: " + resRef.GetComponent<ResManager>().UsedEnergy + "/" + resRef.GetComponent<ResManager>().MaxEnergy);
+	
+		//Equipment on middle
+		if(!TechManager.HasUpgrade(Tech.lightGrenade)){
+			GUI.DrawTexture(new Rect(Screen.width/2-32, Screen.height-37, icon_empty.width, icon_empty.height), icon_empty);
+		} else if(TechManager.HasUpgrade(Tech.lightGrenade)){
+			GUI.DrawTexture(new Rect(Screen.width/2-32, Screen.height-37, icon_lightgrenade.width, icon_lightgrenade.height), icon_lightgrenade);
+		}
+		
+		//Upgrades acquired
+		//Clip Size
+		if(!TechManager.HasUpgrade(Tech.clipSize)){
+			GUI.DrawTexture(new Rect(Screen.width-40, Screen.height-37, icon_empty.width, icon_empty.height), icon_empty);
+		} else if(TechManager.HasUpgrade(Tech.clipSize)){
+			GUI.DrawTexture(new Rect(Screen.width-40, Screen.height-37, icon_clipsize.width, icon_clipsize.height), icon_clipsize);
+		}
+		
+		//Scattershot
+		if(!TechManager.HasUpgrade(Tech.scatter)){
+			GUI.DrawTexture(new Rect(Screen.width-40, Screen.height-64, icon_empty.width, icon_empty.height), icon_empty);
+		} else if(TechManager.HasUpgrade(Tech.scatter)){
+			GUI.DrawTexture(new Rect(Screen.width-40, Screen.height-64, icon_scattershot.width, icon_scattershot.height), icon_scattershot);
+		}
+
 	}
 }
