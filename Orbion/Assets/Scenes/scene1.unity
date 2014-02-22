@@ -2047,7 +2047,7 @@ Light:
   m_SpotAngle: 73.8000031
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_Strength: 1
     m_Bias: 2
@@ -2061,7 +2061,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 0
+  m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6067,8 +6067,8 @@ GameObject:
   - 114: {fileID: 680245860}
   - 114: {fileID: 680245864}
   - 82: {fileID: 680245863}
-  - 111: {fileID: 680245862}
   - 82: {fileID: 680245861}
+  - 95: {fileID: 680245862}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -6164,26 +6164,20 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!111 &680245862
-Animation:
+--- !u!95 &680245862
+Animator:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11100002, guid: 46919a12be9002d4886347f9a0e8b98d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1100497197}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680245858}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400006, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400002, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400004, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400008, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_HasTransformHierarchy: 1
 --- !u!82 &680245863
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10064,7 +10058,8 @@ Prefab:
       propertyPath: m_Volume
       value: .609000027
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11100002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
   m_IsPrefabParent: 0
@@ -12191,7 +12186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: m_RenderingPath
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
@@ -13615,7 +13610,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
   m_OcclusionCulling: 1
@@ -17121,7 +17116,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_Shadows.m_Type
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_Type
@@ -17141,7 +17136,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_Lightmapping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_DrawHalo
