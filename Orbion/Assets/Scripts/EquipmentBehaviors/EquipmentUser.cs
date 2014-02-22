@@ -98,8 +98,10 @@ public class EquipmentUser : MonoBehaviour {
 
 
 	//Called when the equip button is pressed
+	//Not allowed to use equip if the tech ins't availiable or it hasn't been researched
 	public void UseEquip (Vector3 cursor){
 		if (!TechManager.IsTechAvaliable( EquipTypeToTech( CurrEquipType))) return;
+		if (TechManager.GetUpgradeLv( EquipmentUser.EquipTypeToTech(CurrEquipType)) < 1) return;
 		if ( FinishCooldown()){
 			GetCurrEquip().Action(cursor);
 			ResetCooldown();
