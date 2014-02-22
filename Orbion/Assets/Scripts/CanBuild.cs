@@ -136,10 +136,11 @@ public class CanBuild : MonoBehaviour {
 				}
 				else{
 					mousePos.y += 5.25f;
-					audio.PlayOneShot(initBuild, 1.0f);
+
 					//Quaternion.LookRotation(Vector3.forward, Vector3.up)
 					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.identity) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
+					audio.PlayOneShot(initBuild, 1.0f);
 				}
 				
 				Buildable buildInfo = toBuild.GetComponent<Buildable>();

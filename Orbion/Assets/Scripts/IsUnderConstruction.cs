@@ -62,10 +62,12 @@ public class IsUnderConstruction : MonoBehaviour {
 		if(lit){
 			if(constructionCountdown <= 0){
 
+
 				clone = Instantiate(toBuild, this.transform.position, Quaternion.identity) as Rigidbody;
-				audio.PlayOneShot(finBuild, 1.0f);
+
 				Destroy(this.gameObject);
 			}
+			audio.PlayOneShot(finBuild, 1.0f);
 
 			ChangeBuildProgess( -Time.deltaTime);
 		}
