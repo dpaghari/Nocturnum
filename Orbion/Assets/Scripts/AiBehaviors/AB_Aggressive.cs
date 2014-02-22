@@ -6,6 +6,7 @@ public class AB_Aggressive : AiBehavior {
 
 	public CanMove moveScript { get; protected set;}
 	public CanShoot shootScript { get; protected set;}
+	public NavMeshAgent meshScript { get; protected set;}
 
 	public float AtkRange;
 
@@ -21,6 +22,7 @@ public class AB_Aggressive : AiBehavior {
 		//Debug.Log("Entering chase");
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
+		meshScript = GetComponent<NavMeshAgent>();
 	
 		CurrTarget = FindTarget(TargetSearchRadius);
 	}
@@ -32,6 +34,7 @@ public class AB_Aggressive : AiBehavior {
 		if(CurrTarget != null){
 			transform.LookAt(CurrTarget.transform);
 			moveScript.Move(CurrTarget.position - rigidbody.position);
+			//meshScript.SetDestination(CurrTarget.position);
 			if(this.tag == "Enemy"){
 			animation.CrossFade("WolfRunCycle");
 			}
