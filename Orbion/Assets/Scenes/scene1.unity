@@ -12170,15 +12170,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: orthographic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: near clip plane
-      value: -25
+      value: 6.69000006
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: far clip plane
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: orthographic size
@@ -12187,6 +12187,10 @@ Prefab:
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: m_RenderingPath
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: field of view
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
@@ -13601,10 +13605,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -25
-  far clip plane: 50
-  field of view: 60
-  orthographic: 1
+  near clip plane: 6.69000006
+  far clip plane: 60
+  field of view: 75
+  orthographic: 0
   orthographic size: 20
   m_Depth: -1
   m_CullingMask:
