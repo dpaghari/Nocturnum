@@ -16,6 +16,8 @@ public class AvatarController : MonoBehaviour {
 	public Rigidbody normalBullet;
 	public Rigidbody orbBullet;
 
+	public GameObject lightconeObj;
+
 
 	//public CanUseEquip equipScript;
 
@@ -98,8 +100,9 @@ public class AvatarController : MonoBehaviour {
 		//[Don't delete] debug code for showing our shooting angle
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
-		if( Input.GetMouseButton( 0)){
 
+
+		if( Input.GetMouseButton( 0)){
 			Scattershot( Utility.GetMouseWorldPos( transform.position.y));
 			//animation.CrossFade("Shoot");
 
