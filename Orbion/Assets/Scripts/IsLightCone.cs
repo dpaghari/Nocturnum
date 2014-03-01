@@ -17,6 +17,8 @@ public class IsLightCone : MonoBehaviour {
 	}
 
 	void OnTriggerStay ( Collider other){
+		if ( gameObject.light.enabled == false) return;
+
 		CanMove moveScript = other.GetComponent<CanMove>();
 		
 		if (moveScript != null){

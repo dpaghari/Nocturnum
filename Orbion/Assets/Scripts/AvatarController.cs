@@ -59,7 +59,7 @@ public class AvatarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		lightconeObj.light.enabled = false;
 	}
 
 
@@ -100,14 +100,14 @@ public class AvatarController : MonoBehaviour {
 		//[Don't delete] debug code for showing our shooting angle
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
-
+		
+		if (Input.GetMouseButtonDown( 0)) lightconeObj.light.enabled = !lightconeObj.light.enabled;
 
 		if( Input.GetMouseButton( 0)){
-			Scattershot( Utility.GetMouseWorldPos( transform.position.y));
+			//Scattershot( Utility.GetMouseWorldPos( transform.position.y));
 			//animation.CrossFade("Shoot");
 
 		}
-
 
 		//use our current equipment
 		if(Input.GetMouseButtonDown(1)){
