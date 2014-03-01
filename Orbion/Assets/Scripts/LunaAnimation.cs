@@ -24,8 +24,8 @@ public class LunaAnimation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.forward = Utility.GetMouseWorldPos(transform.position.y) - transform.position;
-		/*
+		
+		
 
 		//Want to update it if a key was let go else it won't 
 		//change a diagonal if one of the keys were let go
@@ -64,13 +64,17 @@ public class LunaAnimation : MonoBehaviour {
 			newRotation = temp;
 		}
 
-		*/
+		
 		if (MoveKeyStay()) animation.CrossFade("Run");
 
 		//only change our position if there is an update to it
-		//if (newRotation != Vector3.zero) transform.forward = newRotation;
-		//}
-		
+		if (newRotation != Vector3.zero) transform.forward = newRotation;
+		}
+
+		if (GameManager.AvatarContr.lightconeObj.light.enabled){
+			transform.forward = Utility.GetMouseWorldPos(transform.position.y) - transform.position;
+			//animation.CrossFade("Shooting");
+		}
 
 		if (! MoveKeyStay() && ! Input.GetMouseButton(0) ){
 			animation.CrossFade("Idle");
