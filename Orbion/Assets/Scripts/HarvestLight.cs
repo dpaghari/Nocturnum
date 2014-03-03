@@ -31,8 +31,9 @@ public class HarvestLight : MonoBehaviour {
 		if(canDeposit){
 
 			if(Input.GetMouseButtonDown(1) && hasLumen == true){
-				hasLumen = false;
+
 				ResManager.AddLumen(20);
+				hasLumen = false;
 				Debug.Log(LumenCount);
 
 			}
@@ -45,6 +46,8 @@ public class HarvestLight : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		if(other.tag == "lightwell") 
 			lit = true;
+		else
+			lit = false;
 
 
 		if(other.tag == "Generator"){
