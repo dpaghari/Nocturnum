@@ -88,10 +88,11 @@ public class CanSpawn : MonoBehaviour {
 	
 	// Set spawn locations and levels
 	void Start(){
-		
+		//spawner at the location vector (35,1,35)
 		addSpawner (35.0F, 1.0F, 35.0F); //addSpawner (-35.0F, 1.0F, -35.0F); addSpawner (-55.0F, 1.0F, 15.0F);
 		SpawnInfo initial = spawnLocations.Find(x => x.nodeName.EndsWith("1")); initial.turnOn ();
-		addLevel (1, 2, 1, 45.0F); //addLevel (2, 4, 2, 20.0F); addLevel (3, 5, 2, 25.0F); 
+		//level 1 spawn 2 enemies, repeat once, every 30 seconds
+		addLevel (1, 2, 1, 30.0F); //addLevel (2, 4, 2, 20.0F); addLevel (3, 5, 2, 25.0F); 
 		//addLevel (4, 3, 2, 25.0F); addLevel (5, 4, 2, 30.0F); addLevel (6, 3, 2, 30.0F);
 		enemyCap = levels [levelItor].numSpawn; spawnLoop = levels [levelItor].timesToRun;
 		
