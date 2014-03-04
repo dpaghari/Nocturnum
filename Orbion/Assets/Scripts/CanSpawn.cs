@@ -73,7 +73,7 @@ public class CanSpawn : MonoBehaviour {
 	private int spawnCount = 0;
 	private int spawnLoop;
 	private int totalEnemies = 0;
-	private static int totalLevels = 6;
+	private static int totalLevels = 1;
 	private int levelCount = 0;
 	private int levelItor = 0;
 	public Rigidbody meleeEnemy;
@@ -89,10 +89,10 @@ public class CanSpawn : MonoBehaviour {
 	// Set spawn locations and levels
 	void Start(){
 		
-		addSpawner (35.0F, 1.0F, 35.0F); addSpawner (-35.0F, 1.0F, -35.0F); addSpawner (-55.0F, 1.0F, 15.0F);
+		addSpawner (35.0F, 1.0F, 35.0F); //addSpawner (-35.0F, 1.0F, -35.0F); addSpawner (-55.0F, 1.0F, 15.0F);
 		SpawnInfo initial = spawnLocations.Find(x => x.nodeName.EndsWith("1")); initial.turnOn ();
-		addLevel (1, 3, 2, 15.0F); addLevel (2, 4, 2, 20.0F); addLevel (3, 5, 2, 25.0F); 
-		addLevel (4, 3, 2, 25.0F); addLevel (5, 4, 2, 30.0F); addLevel (6, 3, 2, 30.0F);
+		addLevel (1, 3, 2, 45.0F); //addLevel (2, 4, 2, 20.0F); addLevel (3, 5, 2, 25.0F); 
+		//addLevel (4, 3, 2, 25.0F); addLevel (5, 4, 2, 30.0F); addLevel (6, 3, 2, 30.0F);
 		enemyCap = levels [levelItor].numSpawn; spawnLoop = levels [levelItor].timesToRun;
 		
 	}
@@ -160,7 +160,7 @@ public class CanSpawn : MonoBehaviour {
 				levelItor++;
 				enemyCap = levels [levelItor].numSpawn;
 				spawnLoop = levels [levelItor].timesToRun;
-				Debug.Log(levelItor);
+				//Debug.Log(levelItor);
 
 				if(levelItor+1 == 2){
 					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("1"));
