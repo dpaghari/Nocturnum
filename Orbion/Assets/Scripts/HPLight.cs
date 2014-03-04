@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HPLight : MonoBehaviour {
-	public Killable killScript;
+	public IsLightCone lightScript;
 	public float duration = 0.2F;
 	//public Vector3 lightHeight;
 
@@ -17,19 +17,23 @@ public class HPLight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		 
+		/*  Checks if the player's Suit energy is within a certain level
+		 *  Tells player how much Suit Energy they still have based on the Color
+		 *  of the light
+		 * 
+		*/
 
-		if(killScript.currHP > 70){
+		if(lightScript.SuitEnergy > 10){
 			//float t = Mathf.PingPong(Time.time, duration) / duration;
 			light.color = Color.white;
 		}
-		if(killScript.currHP <= 70 && killScript.currHP > 40){
+		if(lightScript.SuitEnergy <= 5 && lightScript.SuitEnergy > 3){
 			light.color = Color.yellow;
 		}
-		if(killScript.currHP <= 40 && killScript.currHP > 20){
+		if(lightScript.SuitEnergy <= 3 && lightScript.SuitEnergy > 1){
 			light.color = Color.red;
 		}
-		if(killScript.currHP <= 20){
+		if(lightScript.SuitEnergy <= 1){
 			Color color1 = Color.red;
 			Color color2 = Color.clear;
 

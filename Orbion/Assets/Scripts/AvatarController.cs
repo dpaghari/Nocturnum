@@ -6,6 +6,7 @@ public class AvatarController : MonoBehaviour {
 	public CanMove moveScript;
 	public CanShootReload shootScript;
 	public EquipmentUser equipScript;
+	public IsLightCone lightScript;
 
 
 	public AudioClip shotSound;
@@ -101,14 +102,21 @@ public class AvatarController : MonoBehaviour {
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
 		
-		if (Input.GetMouseButtonDown( 0)) lightconeObj.light.enabled = !lightconeObj.light.enabled;
+		if (Input.GetMouseButtonDown(0)){ 
 
+			if(lightScript.SuitEnergy > 0){
+				lightconeObj.light.enabled = !lightconeObj.light.enabled;
+			}
+
+
+		}
+		/*
 		if( Input.GetMouseButton( 0)){
 			//Scattershot( Utility.GetMouseWorldPos( transform.position.y));
 			//animation.CrossFade("Shoot");
 
 		}
-
+		*/
 		//use our current equipment
 		if(Input.GetMouseButtonDown(1)){
 			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));	

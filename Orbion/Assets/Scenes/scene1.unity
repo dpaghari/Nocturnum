@@ -666,7 +666,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: .8167907
+      value: -34.0744934
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2500,7 +2500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbbae08d6b45ae4b8880af6b5110f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killScript: {fileID: 680245860}
+  lightScript: {fileID: 2061892880}
   duration: .200000003
 --- !u!108 &611062472
 Light:
@@ -3025,6 +3025,7 @@ MonoBehaviour:
   moveScript: {fileID: 680245872}
   shootScript: {fileID: 680245870}
   equipScript: {fileID: 680245866}
+  lightScript: {fileID: 2061892880}
   shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
@@ -4502,7 +4503,7 @@ Transform:
   m_PrefabInternal: {fileID: 121942559}
   m_GameObject: {fileID: 1091098361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.8702335, y: -1.20909311e-18, z: .8167907}
+  m_LocalPosition: {x: 16.8702335, y: -1.20909311e-18, z: -34.0744934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1807991854}
@@ -4775,6 +4776,14 @@ Prefab:
       propertyPath: m_Volume
       value: .609000027
       objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: MaxSuitEnergy
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: lightScript
+      value: 
+      objectReference: {fileID: 2061892880}
     m_RemovedComponents:
     - {fileID: 11100002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
@@ -9063,6 +9072,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushForce: 10
   pushForceMode: 1
+  SuitEnergy: 10
+  MaxSuitEnergy: 10
 --- !u!65 &2061892881
 BoxCollider:
   m_ObjectHideFlags: 0
