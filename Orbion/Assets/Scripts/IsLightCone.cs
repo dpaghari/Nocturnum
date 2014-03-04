@@ -51,6 +51,9 @@ public class IsLightCone : MonoBehaviour {
 			Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
 			other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
 		}
+
+		if(other.tag == "Generator")
+			SuitEnergy = MaxSuitEnergy;
 	}
 
 
