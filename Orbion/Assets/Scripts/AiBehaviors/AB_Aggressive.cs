@@ -24,7 +24,8 @@ public class AB_Aggressive : AiBehavior {
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
 	
-		CurrTarget = FindTarget(TargetSearchRadius);
+		//CurrTarget = FindTarget(TargetSearchRadius);
+		CurrTarget = FindPlayer ();
 	}
 	
 	override public void OnBehaviorExit(){return;}
@@ -51,7 +52,9 @@ public class AB_Aggressive : AiBehavior {
 	
 
 	override public void UpdateAB(){
-		CurrTarget = FindTarget(TargetSearchRadius);
+		//CurrTarget = FindTarget(TargetSearchRadius);
+		CurrTarget = FindPlayer ();
+
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
