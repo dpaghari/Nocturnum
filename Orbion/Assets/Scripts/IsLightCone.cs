@@ -10,9 +10,18 @@ public class IsLightCone : MonoBehaviour {
 	private float useRate = 30.0f;
 	private float useCooldown = 0.0f;
 
+	//deals with spacing out the damage
+	public int Damage;
+	private int counter;
+	private bool lightHit = false;
+	public float lightCooldown = 1.0F;
+	private float lightCounter = 0.0F;
+
 	// Use this for initialization
 	void Start () {
 		SuitEnergy = MaxSuitEnergy;
+		Damage = 35;
+		counter = 0;
 	}
 	
 	// Update is called once per frame
@@ -42,6 +51,16 @@ public class IsLightCone : MonoBehaviour {
 		}
 	}
 
+	void FixedUpdate(){
+		if (lightHit) {
+			lightCounter += Time.deltaTime;
+			if(lightCounter >= lightCooldown){
+				lightHit = false;
+				lightCounter = 0.0F;
+			}
+		}
+	}
+
 	void OnTriggerStay ( Collider other){
 		if ( gameObject.light.enabled == false) return;
 
@@ -50,6 +69,12 @@ public class IsLightCone : MonoBehaviour {
 		if (moveScript != null){
 			Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
 			other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
+			Killable killScript = other.GetComponent<Killable>();
+			if (killScript != null && !lightHit){
+				lightHit = true;
+				killScript.damage(Damage);
+				Debug.Log("attack #: " + ++counter);
+			}
 		}
 
 		if(other.tag == "Generator")
@@ -64,3 +89,4 @@ public class IsLightCone : MonoBehaviour {
 			SuitEnergy = MaxSuitEnergy;
 	}
 }
+
