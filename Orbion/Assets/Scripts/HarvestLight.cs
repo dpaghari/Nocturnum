@@ -2,13 +2,18 @@
 using System.Collections;
 
 public class HarvestLight : MonoBehaviour {
-	public int harvestAmt = 5;
-	private bool hasLumen = false;
-	public float harvestRange = 2f;
-	public float unloadRange = 2f;
 
-	private bool lit = false;
-	private bool canDeposit = false;
+	//the amount we harvest and unload
+	public int harvestAmt = 5;
+
+	//used to check if we've harvested
+	private bool hasLumen = false;
+
+	//range required to harvest from a lightwell
+	public float harvestRange = 2f;
+
+	//range required to unload into a generator
+	public float unloadRange = 2f;
 
 
 	static bool IsLightWell(GameObject gobj){
@@ -17,6 +22,7 @@ public class HarvestLight : MonoBehaviour {
 	}
 
 
+	//switches to harvested state if we're in range of a lightwell
 	void TryHarvest(float range){
 		GameObject geyser = Utility.GetClosestWith(transform.position, range, IsLightWell);
 		if( geyser == null) return;
@@ -25,6 +31,8 @@ public class HarvestLight : MonoBehaviour {
 	}
 	
 
+
+	//unloads lumen into the closest generator in range, if any
 	void TryUnload(float range){
 		GameObject generator = Utility.GetClosestWith(transform.position, range, Utility.GoHasComponent<IsGenerator>);
 		if( generator == null) return;
@@ -32,6 +40,7 @@ public class HarvestLight : MonoBehaviour {
 		hasLumen = false;
 	}
 	
+
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +53,6 @@ public class HarvestLight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		
 		if(Input.GetMouseButtonDown(1)){
 			if (hasLumen) 
 				TryUnload(unloadRange);

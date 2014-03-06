@@ -6,15 +6,10 @@ public class IsMainGenerator : MonoBehaviour {
 
 	//the child object that holds our debug text
 	public GameObject debugTextObj;
-
-
-
-	//array of IsGenerator scripts from our generators
-	private IsGenerator[] generators;
-
-	//the textmesh component of our debugTextObj
 	private TextMesh debugText;
-	
+
+	//scripts from the generators in our scene
+	private IsGenerator[] generators;
 
 
 	//total amount of lumen the generators have
