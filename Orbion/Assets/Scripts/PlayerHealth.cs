@@ -42,4 +42,13 @@ public class PlayerHealth : MonoBehaviour {
 			Application.LoadLevel("scene1");
 
 	}
+
+	void OnTriggerStay(Collider other){
+
+		if(other.tag == "Generator"){
+			corruption = 0.0f;
+			//Debug.Log (canDeposit);
+		}
+	
+	}
 }
