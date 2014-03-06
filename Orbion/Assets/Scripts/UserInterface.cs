@@ -38,7 +38,7 @@ public class UserInterface : MonoBehaviour {
 		//resRef = GameObject.Find("     ");
 
 		//Temporary placeholders for testing numbers.
-		player_Health = (float)healthRef.GetComponent<Killable>().currHP/healthRef.GetComponent<Killable>().baseHP;
+		//player_Health = (float)healthRef.GetComponent<Killable>().currHP/healthRef.GetComponent<Killable>().baseHP;
 		player_Energy = 50;
 		player_Light = 30;
 	}

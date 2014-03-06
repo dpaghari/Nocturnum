@@ -15,7 +15,7 @@ public class PB_Melee : ProjectileBehavior {
 	//public ForceMode MoveType;
 	//public float MoveForce;
 	//public CanMove MoveScript;
-	public int Damage;
+	public float Damage = 20.0f;
 	public int searingLevel;
 	public GameObject dot;
 	public GameObject hitEffect;
@@ -42,7 +42,7 @@ public class PB_Melee : ProjectileBehavior {
 	
 	
 	public override void OnImpactEnter( Collision other){
-		Killable KillScript = other.gameObject.GetComponent<Killable>();
+		PlayerHealth KillScript = other.gameObject.GetComponent<PlayerHealth>();
 		if( KillScript) {
 			KillScript.damage(Damage);
 			clone = Instantiate(hitEffect, transform.position, new Quaternion()) as GameObject;
