@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public static class Utility{
 
@@ -28,4 +30,51 @@ public static class Utility{
 		if ( yvalue > -Mathf.Infinity) mousePos.y = yvalue;
 		return mousePos;
 	}
+
+
+
+
+
+	//Example conditions for GetClosestWith func below
+
+	//No Conditions; Every game object is a valid return
+	public static bool NoCondition( GameObject gobj){ return true;}
+
+	//Only consider GameObjects that have a component T
+	public static bool GoHasComponent<T>(GameObject gobj) where T:UnityEngine.Component{
+		
+		if ( gobj.GetComponent<T>() ) return true;
+		return false;
+	}
+
+
+
+	//Finds the clostest GameObject (must have a collider), within radius of the origin, 
+	//   and fulfilling the requirements in Condition
+	//Condition is a function that takes in a GameObject and returns a bool
+	//	if it returns true, its parameter is a valid candidate for this function to return 
+	//	else we ignore it
+	//Example functions are found above
+	public static GameObject GetClosestWith(Vector3 origin, float radius, Func<GameObject, bool> Condition = null){
+		if (Condition == null) Condition = NoCondition;
+		Collider[] hitColliders = Physics.OverlapSphere(origin, radius);
+
+		Collider closest = null;
+		float closestDist = Mathf.Infinity;
+
+		for (int i=0; i < hitColliders.Length; i++) {
+			if( Condition(hitColliders[i].gameObject) == false) continue;
+			
+			float distToOrigin = Vector3.Distance(origin, hitColliders[i].transform.position);
+			if (distToOrigin < closestDist){
+				closest = hitColliders[i];
+				closestDist = distToOrigin;
+			}
+		}
+
+		if (closest == null) return null;
+		return closest.gameObject;
+	}
+
+
 }

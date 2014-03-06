@@ -2,63 +2,63 @@
 using System.Collections;
 
 public class HarvestLight : MonoBehaviour {
-	public int LumenCount = 0;
-	public bool hasLumen = false;
+	public int harvestAmt = 5;
+	private bool hasLumen = false;
+	public float harvestRange = 2f;
+	public float unloadRange = 2f;
+
 	private bool lit = false;
 	private bool canDeposit = false;
-	// Use this for initialization
-	void Start () {
-		Debug.Log(hasLumen);
+
+
+	static bool IsLightWell(GameObject gobj){
+		if (gobj.tag == "lightwell") return true;
+		return false;
+	}
+
+
+	void TryHarvest(float range){
+		GameObject geyser = Utility.GetClosestWith(transform.position, range, IsLightWell);
+		if( geyser == null) return;
+		
+		hasLumen = true;
 	}
 	
+
+	void TryUnload(float range){
+		GameObject generator = Utility.GetClosestWith(transform.position, range, Utility.GoHasComponent<IsGenerator>);
+		if( generator == null) return;
+		generator.GetComponent<IsGenerator>().CurrLumen += harvestAmt;
+		hasLumen = false;
+	}
+	
+
+	// Use this for initialization
+	void Start () {
+		//hasLumen = false;
+		Debug.Log(hasLumen);
+	}
+
+
+
 	// Update is called once per frame
 	void Update () {
 
-
-
-		// If the player is near a Light Geyser and Presses Right Click
-		// Harvest the Lumen
-		if(lit) {
-			if(Input.GetMouseButtonDown(1) && hasLumen == false){
-			hasLumen = true;
-			Debug.Log (hasLumen);
-			}
-		}
-
-
-		//  If the player is near a Generator and Has Harvested Lumen
-		//  and if he presses right click it gives the generator +20 Lumen
-		if(canDeposit){
-
-			if(Input.GetMouseButtonDown(1) && hasLumen == true){
-
-				ResManager.AddLumen(20);
-				hasLumen = false;
-				Debug.Log(LumenCount);
-
-			}
+		
+		if(Input.GetMouseButtonDown(1)){
+			if (hasLumen) 
+				TryUnload(unloadRange);
+			else 
+				TryHarvest(harvestRange); 
 
 		}
-
-
+		
 	}
+
 
 	void OnTriggerStay(Collider other){
-		if(other.tag == "lightwell") 
-			lit = true;
-		else
-			lit = false;
-
-
-		if(other.tag == "Generator"){
-			canDeposit = true;
-			//Debug.Log (canDeposit);
-		}
-		else{
-			canDeposit = false;
-			//Debug.Log (canDeposit);
-		}
 	}
+ 
 
 
 }

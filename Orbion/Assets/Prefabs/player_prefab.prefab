@@ -2590,7 +2590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbbae08d6b45ae4b8880af6b5110f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killScript: {fileID: 11400004}
+  lightScript: {fileID: 0}
   duration: .200000003
 --- !u!114 &11400014
 MonoBehaviour:
@@ -2682,6 +2682,9 @@ MonoBehaviour:
   pushForce: 10
   pushForceMode: 1
   SuitEnergy: 10
+  MaxSuitEnergy: 10
+  Damage: 0
+  lightCooldown: 1
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2693,8 +2696,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cef6da2005b7f4c8dd331065da7900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LumenCount: 0
-  hasLumen: 0
+  harvestAmt: 5
+  harvestRange: .5
+  unloadRange: 10
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
