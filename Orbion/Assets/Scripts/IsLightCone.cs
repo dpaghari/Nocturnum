@@ -26,7 +26,7 @@ public class IsLightCone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(SuitEnergy);
+		//Debug.Log(SuitEnergy);
 
 
 		/*  If the player has the flashlight on and they still have some SuitEnergy

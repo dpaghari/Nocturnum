@@ -15,7 +15,7 @@ public class PB_Linear : ProjectileBehavior {
 	public ForceMode MoveType;
 	//public float MoveForce;
 	public CanMove MoveScript;
-	public int Damage;
+	public float Damage = 15.0f;
 	public int searingLevel;
 	public GameObject dot;
 	public GameObject hitEffect;
@@ -42,7 +42,7 @@ public class PB_Linear : ProjectileBehavior {
 	
 
 	public override void OnImpactEnter( Collision other){
-		Killable KillScript = other.gameObject.GetComponent<Killable>();
+		PlayerHealth KillScript = other.gameObject.GetComponent<PlayerHealth>();
 		if( KillScript) {
 			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){
 				//heal building

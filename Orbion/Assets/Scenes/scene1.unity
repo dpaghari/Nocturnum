@@ -3609,13 +3609,13 @@ GameObject:
   - 114: {fileID: 680245867}
   - 114: {fileID: 680245866}
   - 114: {fileID: 680245865}
-  - 114: {fileID: 680245860}
   - 114: {fileID: 680245864}
   - 82: {fileID: 680245863}
   - 82: {fileID: 680245861}
   - 95: {fileID: 680245879}
   - 114: {fileID: 680245880}
   - 95: {fileID: 680245862}
+  - 114: {fileID: 680245860}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -3641,18 +3641,15 @@ Transform:
 --- !u!114 &680245860
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: 46919a12be9002d4886347f9a0e8b98d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1100497197}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680245858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 431eea725c82877469f9124693bad0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 100
-  baseHP: 100
-  deathTarget: {fileID: 0}
+  corruption: 0
 --- !u!82 &680245861
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8837,6 +8834,7 @@ Prefab:
       objectReference: {fileID: 2061892880}
     m_RemovedComponents:
     - {fileID: 11100002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+    - {fileID: 11400004, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
   m_IsPrefabParent: 0
