@@ -31,16 +31,15 @@ public class Corruption : MonoBehaviour {
 	public void damage(float dmg){
 		if(active){
 			corruption += dmg;
-			if(corruption >= corruptLimit){
-				deactivate();
-			}
+			if(corruption >= corruptLimit) deactivate();
+			if(corruption < 0.0F) corruption = 0.0F;
 
 		}
 	}
 
 	public void deactivate(){
 		active = false;
-		if(corruptType == Corruptable.generator) Debug.Log ("DEAD");
+		if(corruptType == Corruptable.generator) Debug.Log("generator deactivated");
 	}
 
 
