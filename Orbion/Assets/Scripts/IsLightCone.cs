@@ -14,13 +14,12 @@ public class IsLightCone : MonoBehaviour {
 	public int Damage;
 	private int counter;
 	private bool lightHit = false;
-	public float lightCooldown = 1.0F;
+	public float lightCooldown;
 	private float lightCounter = 0.0F;
 
 	// Use this for initialization
 	void Start () {
 		SuitEnergy = MaxSuitEnergy;
-		Damage = 24;
 		counter = 0;
 	}
 	
@@ -64,18 +63,16 @@ public class IsLightCone : MonoBehaviour {
 	void OnTriggerStay ( Collider other){
 		if ( gameObject.light.enabled == false) return;
 
-		CanMove moveScript = other.GetComponent<CanMove>();
-
-		if (moveScript != null){
-			Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
-			other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
+			CanMove moveScript = other.GetComponent<CanMove>();
 			Killable killScript = other.GetComponent<Killable>();
 			if (killScript != null && !lightHit){
+				Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
+				other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
 				lightHit = true;
 				killScript.damage(Damage);
-				Debug.Log("attack #: " + ++counter);
+				//Debug.Log("attack #: " + ++counter);
 			}
-		}
+		
 
 		if(other.tag == "Generator")
 			SuitEnergy = MaxSuitEnergy;
