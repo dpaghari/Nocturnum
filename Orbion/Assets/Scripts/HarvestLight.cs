@@ -26,8 +26,18 @@ public class HarvestLight : MonoBehaviour {
 	void TryHarvest(float range){
 		GameObject geyser = Utility.GetClosestWith(transform.position, range, IsLightWell);
 		if( geyser == null) return;
-		
+		Invoke ("ReturnHasLumen", 2);
+	}
+	
+	void ReturnHasLumen(){
+		GameObject geyser = Utility.GetClosestWith(transform.position, harvestRange, IsLightWell);
+		if( geyser == null) {
+			Debug.Log ("hasLumen = " + hasLumen);
+			return;
+		}
 		hasLumen = true;
+		//Debug.Log ("Eridan was here");
+		Debug.Log ("hasLumen = " + hasLumen);
 	}
 	
 
