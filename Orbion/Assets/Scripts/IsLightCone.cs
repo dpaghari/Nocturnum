@@ -3,6 +3,10 @@ using System.Collections;
 
 public class IsLightCone : MonoBehaviour {
 
+	public Corruptable corruptType = Corruptable.none;
+	
+
+
 	public float pushForce;
 	public ForceMode pushForceMode = ForceMode.Impulse;
 	public float SuitEnergy;
@@ -61,21 +65,30 @@ public class IsLightCone : MonoBehaviour {
 	}
 
 	void OnTriggerStay ( Collider other){
-		if ( gameObject.light.enabled == false) return;
+		//no light or its on cd return
+		if (!gameObject.light.enabled || lightHit) return;
 
-			CanMove moveScript = other.GetComponent<CanMove>();
-			Killable killScript = other.GetComponent<Killable>();
-			if (killScript != null && !lightHit){
-				Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
-				other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
-				lightHit = true;
-				killScript.damage(Damage);
-				//Debug.Log("attack #: " + ++counter);
-			}
+		CanMove moveScript = other.GetComponent<CanMove>();
+		Killable killScript = other.GetComponent<Killable>();
+		Corruption corruptScript = other.GetComponent<Corruption>();
 		
-
-		if(other.tag == "Generator")
-			SuitEnergy = MaxSuitEnergy;
+		//target an enemy do damage
+		if (killScript && moveScript){
+			Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
+			other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
+			lightHit = true;
+			killScript.damage(Damage);
+			Debug.Log("attack enemy #: " + ++counter);
+		}
+		
+		//target a generator remove corruption
+		if(corruptScript){
+			Debug.Log("attack generator #: " + ++counter);
+			corruptScript.damage(Damage);
+			lightHit = true;
+		}
+		//hit a generator refill energy
+		if(other.tag == "Generator") SuitEnergy = MaxSuitEnergy;
 	}
 
 
