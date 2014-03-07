@@ -2,8 +2,10 @@
 using System.Collections;
 
 public class HPLight : MonoBehaviour {
+	public IsGenerator generatorScript;
 	public IsLightCone lightScript;
 	public float duration = 0.2F;
+	//public GameObject playerLight;
 	//public Vector3 lightHeight;
 
 	//public Color color0 = Color.white;
@@ -41,6 +43,7 @@ public class HPLight : MonoBehaviour {
 			light.color = Color.Lerp(color1, color2, t);
 
 		}
+	
 		
 	}
 }
