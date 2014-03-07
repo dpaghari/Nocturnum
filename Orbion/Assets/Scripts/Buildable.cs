@@ -9,12 +9,12 @@ public class Buildable : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		TechManager.AddNumBuilding( TechType, 1);
+		//TechManager.AddNumBuilding( TechType, 1);
 		
 	}
 	void OnDestroy() {
-		TechManager.RmNumBuilding( TechType, 1);
-		ResManager.RmUsedEnergy( energyCost);
+		//TechManager.RmNumBuilding( TechType, 1);
+		//ResManager.RmUsedEnergy( energyCost);
 	}
 
 	// Update is called once per frame

@@ -8,6 +8,8 @@ public class AvatarController : MonoBehaviour {
 	public EquipmentUser equipScript;
 	public IsLightCone lightScript;
 
+	public GameObject pointLight;
+
 
 	public AudioClip shotSound;
 	public AudioClip bgm;

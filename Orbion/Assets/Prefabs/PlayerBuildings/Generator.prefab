@@ -201,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 16.5558739, y: -4.08991645e-17, z: 41.5495186}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -730,8 +730,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genHum: {fileID: 8300000, guid: ba54065e27574364fad9d66362499c74, type: 3}
+  hpScript: {fileID: 11400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   CurrLumen: 0
-  MaxLumen: 100
+  MaxLumen: 10
+  isCharged: 0
+  cantCharge: 0
   ringModel: {fileID: 100006}
   sphereModel: {fileID: 100004}
   debugText: {fileID: 100020}
