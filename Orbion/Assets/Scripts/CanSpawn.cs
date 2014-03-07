@@ -73,7 +73,7 @@ public class CanSpawn : MonoBehaviour {
 	private int spawnCount = 0;
 	private int spawnLoop;
 	private int totalEnemies = 0;
-	private static int totalLevels = 1;
+	private static int totalLevels = 5;
 	private int levelCount = 0;
 	private int levelItor = 0;
 	public Rigidbody meleeEnemy;
@@ -89,11 +89,12 @@ public class CanSpawn : MonoBehaviour {
 	// Set spawn locations and levels
 	void Start(){
 		//spawner at the location vector (35,1,35)
-		addSpawner (35.0F, 1.0F, 35.0F); //addSpawner (-35.0F, 1.0F, -35.0F); addSpawner (-55.0F, 1.0F, 15.0F);
+		addSpawner (35.0F, 1.0F, 35.0F); addSpawner (-35.0F, 1.0F, -35.0F); addSpawner (-55.0F, 1.0F, 15.0F);
 		SpawnInfo initial = spawnLocations.Find(x => x.nodeName.EndsWith("1")); initial.turnOn ();
+
 		//level 1 spawn 2 enemies, repeat once, every 30 seconds
-		addLevel (1, 2, 1, 30.0F); //addLevel (2, 4, 2, 20.0F); addLevel (3, 5, 2, 25.0F); 
-		//addLevel (4, 3, 2, 25.0F); addLevel (5, 4, 2, 30.0F); addLevel (6, 3, 2, 30.0F);
+		addLevel (1, 2, 2, 25.0F); addLevel (2, 2, 2, 30.0F); addLevel (3, 2, 2, 30.0F); 
+		addLevel (4, 2, 2, 25.0F); addLevel (5, 2, 2, 20.0F); //addLevel (6, 2, 2, 30.0F);
 		enemyCap = levels [levelItor].numSpawn; spawnLoop = levels [levelItor].timesToRun;
 		
 	}
@@ -164,21 +165,11 @@ public class CanSpawn : MonoBehaviour {
 				//Debug.Log(levelItor);
 
 				if(levelItor+1 == 2){
-					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("1"));
-					found.turnOff ();
-					found = spawnLocations.Find(x => x.nodeName.EndsWith("2"));
-					found.turnOn ();
-				}
-				if(levelItor+1 == 4){
-					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("3"));
-					found.turnOn ();
-					found = spawnLocations.Find(x => x.nodeName.EndsWith("2"));
-					found.turnOff ();
-					found = spawnLocations.Find(x => x.nodeName.EndsWith("1"));
-					found.turnOn ();
-				}
-				if(levelItor+1 == 5){
 					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("2"));
+					found.turnOn();
+				}
+				if(levelItor+1 == 3){
+					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("3"));
 					found.turnOn ();
 				}
 

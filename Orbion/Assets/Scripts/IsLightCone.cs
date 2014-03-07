@@ -20,7 +20,7 @@ public class IsLightCone : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SuitEnergy = MaxSuitEnergy;
-		Damage = 26;
+		Damage = 24;
 		counter = 0;
 	}
 	
