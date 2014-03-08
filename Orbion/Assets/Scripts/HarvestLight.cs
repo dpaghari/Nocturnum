@@ -28,6 +28,10 @@ public class HarvestLight : MonoBehaviour {
 		if( geyser == null) return;
 		Invoke ("ReturnHasLumen", 2);
 	}
+
+	public bool HoldingLumen(){
+		return hasLumen;
+	}
 	
 	void ReturnHasLumen(){
 		GameObject geyser = Utility.GetClosestWith(transform.position, harvestRange, IsLightWell);

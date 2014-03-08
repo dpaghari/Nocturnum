@@ -7,6 +7,7 @@ public class AvatarController : MonoBehaviour {
 	public CanShootReload shootScript;
 	public EquipmentUser equipScript;
 	public IsLightCone lightScript;
+	public GameObject harvestRef;
 
 	public GameObject pointLight;
 
@@ -20,7 +21,10 @@ public class AvatarController : MonoBehaviour {
 	public Rigidbody orbBullet;
 
 	public GameObject lightconeObj;
-
+	public GameObject lightShardGen;
+	
+	// To keep from spamming light shards if the player r-clicks too much.
+	public bool inMethod = true;
 
 	//public CanUseEquip equipScript;
 
@@ -63,6 +67,7 @@ public class AvatarController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lightconeObj.light.enabled = false;
+		harvestRef = GameObject.Find ("player_prefab");
 	}
 
 
@@ -120,8 +125,19 @@ public class AvatarController : MonoBehaviour {
 		}
 		*/
 		//use our current equipment
-		if(Input.GetMouseButtonDown(1)){
+		if(Input.GetMouseButtonDown(1) && inMethod){
 			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));	
+			
+			GameObject generator = Utility.GetClosestWith(transform.position, 15.0F, Utility.GoHasComponent<IsGenerator>);
+			if( generator == null) return;
+			if (harvestRef.GetComponent<HarvestLight>().HoldingLumen() && lightShardGen != null) {
+				Vector3 temp = transform.position;
+				temp.y += 4;
+				Instantiate (lightShardGen, temp, this.transform.rotation);
+				inMethod = false;
+				Invoke ("ChangeInMethod", 4); // Keeps from spamming light shards at generator.
+			}
+			
 		}
 
 
@@ -162,5 +178,10 @@ public class AvatarController : MonoBehaviour {
 			audio.Pause();
 		*/
 
+	}
+
+	// Changes inMethod to true.
+	void ChangeInMethod(){
+		inMethod = true;
 	}
 }

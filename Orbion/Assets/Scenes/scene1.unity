@@ -2365,6 +2365,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: lightShardGen
+      value: 
+      objectReference: {fileID: 100000, guid: 1e9d8ed24cf15784a92dd54e33fbe1ad, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 1448316567}
@@ -14566,12 +14570,15 @@ MonoBehaviour:
   shootScript: {fileID: 1448316581}
   equipScript: {fileID: 1448316577}
   lightScript: {fileID: 367399484}
+  harvestRef: {fileID: 0}
   pointLight: {fileID: 1605764672}
   shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
   lightconeObj: {fileID: 367399482}
+  lightShardGen: {fileID: 100000, guid: 1e9d8ed24cf15784a92dd54e33fbe1ad, type: 2}
+  inMethod: 1
 --- !u!82 &1448316586
 AudioSource:
   m_ObjectHideFlags: 0
