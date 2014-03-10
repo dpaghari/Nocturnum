@@ -18,7 +18,7 @@ RenderSettings:
   m_FogDensity: .0299999993
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientLight: {r: .0514705777, g: .0514705777, b: .0514705777, a: 1}
+  m_AmbientLight: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -2531,9 +2531,9 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 10800002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-      propertyPath: m_Range
-      value: 20
+    - target: {fileID: 11400028, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: pushForce
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
@@ -3729,12 +3729,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   corruptType: 0
-  pushForce: 300
-  pushForceMode: 1
+  pushForce: 500
+  pushForceMode: 0
   SuitEnergy: 10
   MaxSuitEnergy: 10
-  Damage: 10
-  lightCooldown: .25
+  Damage: 5
+  lightCooldown: .0500000007
 --- !u!65 &367399485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11166,14 +11166,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1099083461
 Light:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099083460}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: .335929483, g: .300713688, b: .397058845, a: 1}
@@ -12688,7 +12688,7 @@ Transform:
   m_PrefabInternal: {fileID: 1831605395}
   m_GameObject: {fileID: 1214069550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.923912, y: .00848421175, z: 16.4070244}
+  m_LocalPosition: {x: -55.8643227, y: .00848421175, z: -4.51720428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 724215150}
@@ -19339,7 +19339,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400004, guid: 5dd210b9ee306b3418c4b17ff08118a6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -34.923912
+      value: -55.8643227
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5dd210b9ee306b3418c4b17ff08118a6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -19347,7 +19347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5dd210b9ee306b3418c4b17ff08118a6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16.4070244
+      value: -4.51720428
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5dd210b9ee306b3418c4b17ff08118a6, type: 2}
       propertyPath: m_LocalRotation.x

@@ -77,8 +77,8 @@ public class IsLightCone : MonoBehaviour {
 			Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
 			other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
 			lightHit = true;
-			killScript.damage(Damage);
-			Debug.Log("attack enemy #: " + ++counter);
+			//killScript.damage(Damage);
+			//Debug.Log("attack enemy #: " + ++counter);
 		}
 		
 		//target a generator remove corruption
