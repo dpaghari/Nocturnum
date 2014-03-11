@@ -18,7 +18,11 @@ public class IsGenerator : MonoBehaviour {
 	public GameObject ringModel;
 	public GameObject sphereModel;
 	public GameObject debugText;
+	public GameObject lightSource;
 	private TextMesh debugTextComp;
+
+
+	private int prevLumen;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +36,8 @@ public class IsGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
 		//Debug.Log (vislight.light.range);
 		if(CurrLumen == MaxLumen && !cantCharge){
 			isCharged = true;
@@ -39,8 +45,13 @@ public class IsGenerator : MonoBehaviour {
 		}
 
 
+		if(CurrLumen != prevLumen){
+		lightSource.light.range += 2;
+
+		}
 		if(isCharged){
 			GameManager.AvatarContr.pointLight.light.range += 1;
+
 
 			isCharged = false;
 		}
@@ -51,6 +62,8 @@ public class IsGenerator : MonoBehaviour {
 		sphereModel.transform.Rotate(new Vector3(0, 0, 1));
 
 		debugTextComp.text = string.Format("{0}/{1}", CurrLumen, MaxLumen);
+
+		prevLumen = CurrLumen;
 
 	}
 }
