@@ -116,11 +116,16 @@ public class CanSpawn : MonoBehaviour {
 					if (nInf.status) {
 						Vector3 vect = new Vector3 (nInf.nodeX, nInf.nodeY, nInf.nodeZ);
 						//unitToggles between melee and ranged
+
+						/*
 						if (unitToggle) {
 							makeMelee (vect);
 						} else {
 							makeRanged (vect);
 						}
+						*/
+						makeMelee (vect); //just making one enemy for now
+
 					}
 					totalEnemies += 1;
 				};
