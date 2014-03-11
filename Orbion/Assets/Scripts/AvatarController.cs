@@ -109,14 +109,16 @@ public class AvatarController : MonoBehaviour {
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
 		
-		if (Input.GetMouseButtonDown(0)){ 
+		if (Input.GetMouseButton(0)){ 
 
 			if(lightScript.SuitEnergy > 0){
-				lightconeObj.light.enabled = !lightconeObj.light.enabled;
+				lightconeObj.light.enabled = true;
 			}
 
 
 		}
+		else
+			lightconeObj.light.enabled = false;
 		/*
 		if( Input.GetMouseButton( 0)){
 			//Scattershot( Utility.GetMouseWorldPos( transform.position.y));
