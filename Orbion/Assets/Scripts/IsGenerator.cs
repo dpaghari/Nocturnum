@@ -51,6 +51,11 @@ public class IsGenerator : MonoBehaviour {
 		}
 		if(isCharged){
 			GameManager.AvatarContr.pointLight.light.range += 1;
+			GameManager.AvatarContr.lightconeObj.light.range += 2;
+			GameManager.AvatarContr.lightconeObj.light.spotAngle += 10;
+			float temp = GameManager.AvatarContr.lightconeObj.GetComponent<BoxCollider>().size.x;
+			temp += 2;
+
 
 
 			isCharged = false;
