@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 
 		if(corruption > 0.0f){
-			Debug.Log (corruption);
+			//Debug.Log (corruption);
 			corruption -= Time.deltaTime;
 
 		}

@@ -4,8 +4,6 @@ using System.Collections;
 public class IsLightCone : MonoBehaviour {
 
 	public Corruptable corruptType = Corruptable.none;
-	
-
 
 	public float pushForce;
 	public ForceMode pushForceMode = ForceMode.Impulse;
@@ -95,8 +93,16 @@ public class IsLightCone : MonoBehaviour {
 	//  If the player enters the collider of a Generator
 	//  it refills their suitenergy
 	void OnTriggerEnter (Collider other){
+		Debug.Log(other);
 		if(other.tag == "Generator")
 			SuitEnergy = MaxSuitEnergy;
+		if(other.tag == "Plant")
+			other.GetComponent<isPlant>().isLit = true;
+		
+	}
+	void OnTriggerExit(Collider other){
+		if(other.tag == "Plant")
+			other.GetComponent<isPlant>().isLit = false;
 	}
 }
 
