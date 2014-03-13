@@ -71,12 +71,10 @@ public class IsLightCone : MonoBehaviour {
 		Corruption corruptScript = other.GetComponent<Corruption>();
 		
 		//target an enemy do damage
-		if (killScript != null && moveScript != null){
-			Vector3 pushDir = (other.rigidbody.position - rigidbody.position).normalized;
+		if ( moveScript != null){
+			Vector3 pushDir = Utility.FindDirNoY(rigidbody.position, other.rigidbody.position);
 			other.rigidbody.AddForce(pushDir * pushForce, pushForceMode);
 			lightHit = true;
-			//killScript.damage(Damage);
-			//Debug.Log("attack enemy #: " + ++counter);
 		}
 		
 		//target a generator remove corruption

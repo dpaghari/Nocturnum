@@ -14,7 +14,8 @@ GameObject:
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  - 114: {fileID: 11400004}
+  m_Layer: 11
   m_Name: PlaceholderFog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c54090cfc88d24093790e3f3e6f28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  currTarget: {fileID: 0}
+  searchRange: 10
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +115,19 @@ MonoBehaviour:
   Force: 2
   MaxSpeed: 1.5
   MoveScale: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d783894cac44b4f9cdd6bfe47f9678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeakenDuration: .5
+  SlowedRatio: .5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
