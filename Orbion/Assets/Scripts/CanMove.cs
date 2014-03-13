@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+[RequireComponent(typeof(Rigidbody))]
 public class CanMove : MonoBehaviour {
 	public float Force = 6.0F;
 	public float MaxSpeed = 20;

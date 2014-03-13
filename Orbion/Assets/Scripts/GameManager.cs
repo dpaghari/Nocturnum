@@ -9,16 +9,20 @@ public class GameManager : Singleton<GameManager> {
 
 	protected GameManager() {} // guarantee this will be always a singleton only - can't use the constructor!
 
+
+
 	private GameObject _Player;
 
 	public static bool HasPlayer() { return Instance._Player != null; }
 
 	public static GameObject Player{
 		get {
-			if (!HasPlayer() ) {
-				Instance._Player = (GameObject.FindObjectOfType(typeof(AvatarController)) as AvatarController).gameObject;
-				if(! HasPlayer() )
-					Debug.Log("Error: Could not find a player object.");
+			if( !HasPlayer()){
+				Object foundObj = GameObject.FindObjectOfType( typeof( AvatarController));
+				if( foundObj)
+					Instance._Player = ( foundObj as AvatarController).gameObject;
+				else
+					Debug.LogWarning("Could not find a Player object.");
 			}
 			return Instance._Player;
 		}
@@ -27,6 +31,30 @@ public class GameManager : Singleton<GameManager> {
 	public static AvatarController AvatarContr{
 		get {return Player.GetComponent<AvatarController>(); }
 	}
+
+
+
+
+	private GameObject _MainGenerator;
+
+	public static bool HasMainGenerator() { return Instance._MainGenerator != null; }
+
+	public static GameObject MainGenerator{
+		get {
+			if( !HasMainGenerator()){
+				Object foundObj = GameObject.FindObjectOfType( typeof( IsMainGenerator));
+				if( foundObj)
+					Instance._MainGenerator = ( foundObj as IsMainGenerator).gameObject;
+				else
+					Debug.LogWarning("Could not find a Main Generator object.");
+			}
+			return Instance._MainGenerator;
+		}
+	}
+
+	public static IsMainGenerator MainGenScript() { return MainGenerator.GetComponent<IsMainGenerator>(); }
+
+
 
 
 	// Use this for initialization

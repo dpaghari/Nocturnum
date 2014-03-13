@@ -35,6 +35,18 @@ public static class Utility{
 
 
 
+	//Returns the difference between 2 vectors but ignores the Y value
+	//since we only need to use x and z for a top down.
+	public static Vector3 FindDirNoY(Vector3 origin, Vector3 target){
+		Vector3 dir = target-origin;
+		dir.y = 0;
+		return dir.normalized;
+	}
+
+
+
+
+
 	//Example conditions for GetClosestWith func below
 
 	//No Conditions; Every game object is a valid return
@@ -46,11 +58,12 @@ public static class Utility{
 		if ( gobj.GetComponent<T>() ) return true;
 		return false;
 	}
+	
 
-
-
-	//Finds the clostest GameObject (must have a collider), within radius of the origin, 
+	//Returns the clostest GameObject (must have a collider), within radius of the origin, 
 	//   and fulfilling the requirements in Condition
+	//Returns null if no GameObjects are found.
+	//
 	//Condition is a function that takes in a GameObject and returns a bool
 	//	if it returns true, its parameter is a valid candidate for this function to return 
 	//	else we ignore it
