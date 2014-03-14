@@ -39,7 +39,7 @@ public class isPlant : MonoBehaviour {
 		if(isLit){					
 			if(GameManager.AvatarContr.lightconeObj.light.enabled == true)
 				activeCounter += Time.deltaTime * 30;
-			Debug.Log(activeCounter);
+			//Debug.Log(activeCounter);
 			if(activeCounter > activeThresh){
 				animation.CrossFade("open");
 				isActive = true;

@@ -91,7 +91,7 @@ public class IsLightCone : MonoBehaviour {
 	//  If the player enters the collider of a Generator
 	//  it refills their suitenergy
 	void OnTriggerEnter (Collider other){
-		Debug.Log(other);
+		//Debug.Log(other);
 		if(other.tag == "Generator")
 			SuitEnergy = MaxSuitEnergy;
 		if(other.tag == "Plant")
