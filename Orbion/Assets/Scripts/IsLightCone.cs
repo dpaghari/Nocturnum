@@ -8,7 +8,7 @@ public class IsLightCone : MonoBehaviour {
 	public float pushForce;
 	public ForceMode pushForceMode = ForceMode.Impulse;
 	public float SuitEnergy;
-	public float MaxSuitEnergy = 10.0f;
+	public float MaxSuitEnergy = 1.0f;
 	private float useRate = 30.0f;
 	private float useCooldown = 0.0f;
 
@@ -37,7 +37,7 @@ public class IsLightCone : MonoBehaviour {
 		if(gameObject.light.enabled == true && SuitEnergy > 0){
 		useCooldown += 1.0f;
 			if(useCooldown >= useRate){
-				SuitEnergy -= Time.deltaTime * 2;
+				SuitEnergy -= Time.deltaTime * 20;
 				useCooldown = 0.0f;
 
 			}

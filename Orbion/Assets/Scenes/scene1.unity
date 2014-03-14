@@ -116,7 +116,8 @@ GameObject:
   - 54: {fileID: 12463957}
   - 114: {fileID: 12463956}
   - 114: {fileID: 12463955}
-  m_Layer: 0
+  - 114: {fileID: 12463958}
+  m_Layer: 11
   m_Name: PlaceholderFog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c54090cfc88d24093790e3f3e6f28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  currTarget: {fileID: 0}
+  searchRange: 10
 --- !u!114 &12463956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +223,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &12463958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 521d9f90d1bb53647998a1096b17718c,
+    type: 2}
+  m_PrefabInternal: {fileID: 2041822151}
+  m_GameObject: {fileID: 12463950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d783894cac44b4f9cdd6bfe47f9678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeakenDuration: .5
+  SlowedRatio: .5
 --- !u!1 &25494449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,9 +3317,13 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 100146, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-      propertyPath: m_TagString
-      value: lightcone
+    - target: {fileID: 11400028, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: SuitEnergy
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400028, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: MaxSuitEnergy
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
@@ -4497,7 +4517,7 @@ GameObject:
   - 114: {fileID: 367399484}
   m_Layer: 8
   m_Name: LightCone
-  m_TagString: lightcone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
