@@ -57,5 +57,19 @@ public class IsFog : MonoBehaviour {
 		Debug.DrawRay(transform.position, dir*2);
 		moveScript.Move(dir);
 	}
+	
+	void OnTriggerStay(Collider collide){
+		if(collide.tag == "Plant"){
+			Vector3 targ = collide.transform.position;
+			Vector3 direction = targ - transform.position;
+			direction.Normalize ();
+			transform.position += direction * 15.0F * Time.deltaTime;
+		}
+	}
+	void OnCollisionEnter(Collision collide){
+		if(collide.gameObject.tag == "Plant"){
+			Destroy (gameObject);
+		}
+	}
 
 }
