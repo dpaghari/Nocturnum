@@ -8096,6 +8096,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: avatarScript
+      value: 
+      objectReference: {fileID: 1448316585}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 1448316567}
@@ -13378,6 +13382,7 @@ GameObject:
   - 95: {fileID: 1214069553}
   - 54: {fileID: 1214069552}
   - 65: {fileID: 1214069551}
+  - 114: {fileID: 1214069555}
   m_Layer: 12
   m_Name: LightGeyser
   m_TagString: lightwell
@@ -13443,6 +13448,19 @@ Transform:
   - {fileID: 1416164124}
   - {fileID: 1702845961}
   m_Father: {fileID: 0}
+--- !u!114 &1214069555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5dd210b9ee306b3418c4b17ff08118a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1831605395}
+  m_GameObject: {fileID: 1214069550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759478afe53c4b842a1f54be6a042e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lumenShard: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
 --- !u!1 &1222766990
 GameObject:
   m_ObjectHideFlags: 0
@@ -15789,6 +15807,8 @@ MonoBehaviour:
   harvestAmt: 5
   harvestRange: .5
   unloadRange: 10
+  avatarScript: {fileID: 1448316585}
+  inMethod: 1
 --- !u!95 &1448316572
 Animator:
   serializedVersion: 2
@@ -16740,6 +16760,7 @@ GameObject:
   - 95: {fileID: 1583300043}
   - 54: {fileID: 1583300042}
   - 65: {fileID: 1583300041}
+  - 114: {fileID: 1583300044}
   m_Layer: 12
   m_Name: LightGeyser
   m_TagString: lightwell
@@ -16805,6 +16826,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1583300044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5dd210b9ee306b3418c4b17ff08118a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 428367287}
+  m_GameObject: {fileID: 1583300039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759478afe53c4b842a1f54be6a042e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lumenShard: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
 --- !u!1 &1584153668
 GameObject:
   m_ObjectHideFlags: 0

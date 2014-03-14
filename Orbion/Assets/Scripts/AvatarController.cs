@@ -22,6 +22,8 @@ public class AvatarController : MonoBehaviour {
 
 	public GameObject lightconeObj;
 	public GameObject lightShardGen;
+
+
 	
 	// To keep from spamming light shards if the player r-clicks too much.
 	public bool inMethod = true;
@@ -100,7 +102,13 @@ public class AvatarController : MonoBehaviour {
 
 	}
 	
-
+	public void SendLightShard(){
+		if(lightShardGen != null){
+			Vector3 temp = transform.position;
+			temp.y += 4;
+			Instantiate (lightShardGen, temp, this.transform.rotation);
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -127,7 +135,7 @@ public class AvatarController : MonoBehaviour {
 		}
 		*/
 		//use our current equipment
-		if(Input.GetMouseButtonDown(1) && inMethod){
+		/*if(Input.GetMouseButtonDown(1) && inMethod){
 			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));	
 			
 			GameObject generator = Utility.GetClosestWith(transform.position, 15.0F, Utility.GoHasComponent<IsGenerator>);
@@ -140,7 +148,7 @@ public class AvatarController : MonoBehaviour {
 				Invoke ("ChangeInMethod", 4); // Keeps from spamming light shards at generator.
 			}
 			
-		}
+		}*/
 
 
 		if( Input.GetKeyDown( KeyCode.R)){

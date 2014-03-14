@@ -45,6 +45,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400004}
   m_Layer: 12
   m_Name: LightGeyser
   m_TagString: lightwell
@@ -297,6 +298,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759478afe53c4b842a1f54be6a042e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lumenShard: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

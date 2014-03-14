@@ -15,6 +15,9 @@ public class HarvestLight : MonoBehaviour {
 	//range required to unload into a generator
 	public float unloadRange = 2f;
 
+	public AvatarController avatarScript;
+	public bool inMethod = true;
+
 
 	static bool IsLightWell(GameObject gobj){
 		if (gobj.tag == "lightwell") return true;
@@ -26,7 +29,10 @@ public class HarvestLight : MonoBehaviour {
 	void TryHarvest(float range){
 		GameObject geyser = Utility.GetClosestWith(transform.position, range, IsLightWell);
 		if( geyser == null) return;
-		Invoke ("ReturnHasLumen", 2);
+		if(inMethod){
+			inMethod = false;
+			Invoke ("ReturnHasLumen", 2);
+		}
 	}
 
 	public bool HoldingLumen(){
@@ -34,12 +40,14 @@ public class HarvestLight : MonoBehaviour {
 	}
 	
 	void ReturnHasLumen(){
+		inMethod = true;
 		GameObject geyser = Utility.GetClosestWith(transform.position, harvestRange, IsLightWell);
 		if( geyser == null) {
 			Debug.Log ("hasLumen = " + hasLumen);
 			return;
 		}
 		hasLumen = true;
+		geyser.GetComponent<GiveLumen>().spawnLumen();
 		//Debug.Log ("Eridan was here");
 		Debug.Log ("hasLumen = " + hasLumen);
 	}
@@ -52,6 +60,7 @@ public class HarvestLight : MonoBehaviour {
 		if( generator == null) return;
 		generator.GetComponent<IsGenerator>().CurrLumen += harvestAmt;
 		hasLumen = false;
+		avatarScript.SendLightShard ();
 	}
 	
 
