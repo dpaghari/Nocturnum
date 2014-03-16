@@ -11,12 +11,12 @@ using System.Collections;
 public class DumbTimer : ScriptableObject {
 
 	//The time to count down from or count up to
-	public float MaxTime {get; protected set;}
+	public float MaxTime { get; protected set; }
 
-	public float CurrTime {get; set;}
+	public float CurrTime { get; set; }
 
 	//Multiplier for how fast/slow the timer is counting. 1 is normal speed.
-	public float TimeScale {get; set;}
+	public float TimeScale {get; set; }
 
 	public float GetStart() { return MaxTime; }
 
@@ -34,7 +34,7 @@ public class DumbTimer : ScriptableObject {
 
 
 
-	public static DumbTimer New(float maxTime, float timeScale = 1.0f){
+	public static DumbTimer New( float maxTime, float timeScale = 1.0f){
 		DumbTimer newTimer = ScriptableObject.CreateInstance<DumbTimer>();
 
 		newTimer.MaxTime = maxTime;
@@ -45,10 +45,22 @@ public class DumbTimer : ScriptableObject {
 	}
 
 
+	public bool Finished(){
+		if( CurrTime <= GetGoal()) return true;
+		return false;
+	}
+
+	
+	public void Reset(){
+		SetProgress(0);
+	}
 
 	public void Update(){
 		CurrTime -= (Time.deltaTime * TimeScale);
+		if( CurrTime < 0) CurrTime = 0;
 	}
+
+
 
 
 
