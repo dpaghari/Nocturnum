@@ -13,7 +13,7 @@ public class Corruption : MonoBehaviour {
 
 	public float corruption = 0.0f;
 	private float corruptLimit = 80.0f;
-	private bool active = true;
+	public bool active = true;
 	public Corruptable corruptType = Corruptable.none;
 
 
