@@ -5,6 +5,12 @@ public class IsLightCone : MonoBehaviour {
 
 	public Corruptable corruptType = Corruptable.none;
 
+
+	public AudioClip flashOn;
+	public AudioClip flashOff;
+	public AudioClip hum;
+
+
 	public float pushForce;
 	public ForceMode pushForceMode = ForceMode.Impulse;
 	public float SuitEnergy;
@@ -28,6 +34,23 @@ public class IsLightCone : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log(SuitEnergy);
+
+		if(!gameObject.light.enabled && Input.GetMouseButtonDown(0)){
+			audio.PlayOneShot(flashOn, 1.0f);
+
+		}
+		if(gameObject.light.enabled && Input.GetMouseButtonUp(0)){
+			audio.PlayOneShot(flashOff, 1.0f);
+			
+		}
+		/*if(gameObject.light.enabled && Input.GetMouseButton(0)){
+			audio.PlayOneShot(hum, 1.0f);
+			
+		}
+*/
+
+
+
 
 
 		/*  If the player has the flashlight on and they still have some SuitEnergy
