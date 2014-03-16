@@ -24,10 +24,10 @@ public class CanSpawn : MonoBehaviour {
 	
 	// Set spawn locations and levels
 	void Start(){
-		Debug.Log(this.gameObject.transform.position);
+		//Debug.Log(this.gameObject.transform.position);
 		pos = this.gameObject.transform.position;
 		pos.y = 3.0F;
-		Debug.Log(pos); 		
+		//Debug.Log(pos); 		
 	}
 	
 	// M turns wave on and off
@@ -58,7 +58,7 @@ public class CanSpawn : MonoBehaviour {
 	}
 	
 	private void makeFog(Vector3 vec){
-		Debug.Log(vec);
+		//Debug.Log(vec);
 		clone = Instantiate (fogEnemy, vec, Quaternion.identity) as Rigidbody;
 	}
 	

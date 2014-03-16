@@ -13,7 +13,7 @@ public class IsFog : MonoBehaviour {
 	private Vector3 dir;
 	private CanMove moveScript;
 	
-	public float lifeTime = 10.0F;
+	public float lifeTime = 30.0F;
 	private float lifeCounter = 0.0F;
 
 
