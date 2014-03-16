@@ -14,6 +14,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 108: {fileID: 10800000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 15
   m_Name: OrbshotBullet1
   m_TagString: Untagged
@@ -110,6 +111,19 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeff69c2f718afc458929e73dcf7fcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fog: {fileID: 5400000, guid: 29350a8c150001a4d9a3f1282ed4fba3, type: 2}
+  fogScript: {fileID: 11400006, guid: 7f2f13039e41c5344b3d129d3acf68f5, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
