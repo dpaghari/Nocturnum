@@ -46,7 +46,7 @@ public class IsLightCone : MonoBehaviour {
 
 
 		// If the player runs out of energy but still had the flashlight on, turn off the flashlight
-		if(gameObject.light.enabled == true && SuitEnergy <= 0){
+		if(gameObject.light.enabled == true && SuitEnergy == 0){
 
 			gameObject.light.enabled = !gameObject.light.enabled;
 		}
@@ -83,8 +83,7 @@ public class IsLightCone : MonoBehaviour {
 			corruptScript.damage(Damage);
 			lightHit = true;
 		}
-		//hit a generator refill energy
-		if(other.tag == "Generator") SuitEnergy = MaxSuitEnergy;
+	
 	}
 
 
@@ -92,8 +91,7 @@ public class IsLightCone : MonoBehaviour {
 	//  it refills their suitenergy
 	void OnTriggerEnter (Collider other){
 		//Debug.Log(other);
-		if(other.tag == "Generator")
-			SuitEnergy = MaxSuitEnergy;
+
 		if(other.tag == "Plant")
 			other.GetComponent<isPlant>().isLit = true;
 		
@@ -101,6 +99,10 @@ public class IsLightCone : MonoBehaviour {
 	void OnTriggerExit(Collider other){
 		if(other.tag == "Plant")
 			other.GetComponent<isPlant>().isLit = false;
+	}
+
+	public void ResetEnergy(){
+				SuitEnergy = MaxSuitEnergy;
 	}
 }
 

@@ -100,6 +100,7 @@ public class AvatarController : MonoBehaviour {
 
 		}
 
+
 	}
 	
 	public void SendLightShard(){
@@ -122,6 +123,8 @@ public class AvatarController : MonoBehaviour {
 			if(lightScript.SuitEnergy > 0){
 				lightconeObj.light.enabled = true;
 			}
+			else
+				lightconeObj.light.enabled = false;
 
 
 		}
@@ -194,4 +197,6 @@ public class AvatarController : MonoBehaviour {
 	void ChangeInMethod(){
 		inMethod = true;
 	}
+
+
 }

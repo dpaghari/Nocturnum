@@ -14,16 +14,13 @@ public class isTurret : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(target);
+		//Debug.Log(target);
 
 		if(plantScript.isActive == true){
 			if(target != null)
 			shootScript.Shoot(target.position);
 		}
-		else{
 
-
-		}
 	}
 
 	void OnTriggerEnter(Collider other){

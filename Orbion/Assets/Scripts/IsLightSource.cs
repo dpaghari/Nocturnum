@@ -14,6 +14,11 @@ public class IsLightSource : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other){
+		if(other.tag == "Player")
+			other.GetComponentInChildren<IsLightCone>().ResetEnergy();
+			//other.GetComponent<IsLightCone>().ResetEnergy();
+		
+
 		WeakensInLight weakenScript = other.GetComponent<WeakensInLight>();
 		if(weakenScript) weakenScript.Weaken();
 	}
