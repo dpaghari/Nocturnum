@@ -56,7 +56,9 @@ public class IsFog : MonoBehaviour {
 	void Update() {
 		currTarget = FindTarget();
 		if(lifeCounter > lifeTime){
+			Debug.Log("dead on timer");
 			Destroy(this.gameObject);
+			lifeCounter = 0.0F;
 		} else {
 			lifeCounter += Time.deltaTime;
 		}
@@ -78,6 +80,7 @@ public class IsFog : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision collide){
 		if(collide.gameObject.tag == "Plant"){
+			Debug.Log("dead on collision");
 			Destroy (gameObject);
 		}
 	}

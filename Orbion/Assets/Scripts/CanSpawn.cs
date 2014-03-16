@@ -26,7 +26,7 @@ public class CanSpawn : MonoBehaviour {
 	void Start(){
 		//Debug.Log(this.gameObject.transform.position);
 		pos = this.gameObject.transform.position;
-		pos.y = 3.0F;
+		pos.y = 1.0F;
 		//Debug.Log(pos); 		
 	}
 	
