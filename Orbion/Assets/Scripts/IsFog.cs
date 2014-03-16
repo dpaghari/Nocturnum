@@ -93,6 +93,7 @@ public class IsFog : MonoBehaviour {
 	void OnCollisionEnter(Collision collide){
 		if(collide.gameObject.tag == "Plant"){
 			Destroy (gameObject);
+			collide.gameObject.GetComponent<IsFogEater>().fogCount++;
 		}
 	}
 
