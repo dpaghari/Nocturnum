@@ -193,6 +193,22 @@ public class AvatarController : MonoBehaviour {
 
 	}
 
+	public void rasAnim(){
+		//Debug.Log ("You're inside gasAnim.");
+		//animation.CrossFade("Shooting");
+		//animation["Shoot"].speed = 0.01f;
+		//transform.animation.Play("Shoot");
+		//animation["Shoot"].speed = 0.25F;
+		//for(int i = 0; i < 500; i++){
+		//animation["Shooting"].speed = 0.001F;
+		
+		animation.Play ("Shooting");
+		//animation["Shooting"].speed = 0.001f;
+		
+		//}
+		//Debug.Log ("You're inside gasAnim. 2");
+	}
+
 	// Changes inMethod to true.
 	void ChangeInMethod(){
 		inMethod = true;

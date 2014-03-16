@@ -91,6 +91,9 @@ public class UserInterface : MonoBehaviour {
 		}
 		GUI.Label(new Rect(5, 5, 150, 50), string.Format ("{0:00}:{1:00}:{2:00}",gameTimeHours, gameTimeMin, gameTimeSec));
 
+		//Fog Counter
+		GUI.Label(new Rect(5, 40, 150, 50), string.Format ("Fog Count {0}", MetricManager.getFogCount));
+
 		//Ammo
 		//if(ammoRef.GetComponent<CanShootReload>().currentAmmo == 0) {
 		//GUI.Label(new Rect(2, Screen.height/2-85, 150, 50), "Ammo");

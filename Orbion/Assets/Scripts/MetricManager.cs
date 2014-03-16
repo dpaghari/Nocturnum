@@ -14,6 +14,13 @@ public class MetricManager : Singleton<MetricManager> {
 	public static void AddEnemiesKilled(int amt){ Instance._enemiesKilled += amt;}
 	public static int getEnemiesKilled{ get { return Instance._enemiesKilled;}}
 
+	private int _totalFog = 0;
+
+
+	public static void AddFog(int amt){ Instance._totalFog += amt;}
+	public static int getFogCount{ get { return Instance._totalFog;}}
+
+
 	/*
 	// Use this for initialization
 	void Start () {
