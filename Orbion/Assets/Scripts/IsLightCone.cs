@@ -103,7 +103,7 @@ public class IsLightCone : MonoBehaviour {
 		//target a generator remove corruption
 		if(corruptScript){
 			Debug.Log("attack generator #: " + ++counter);
-			corruptScript.damage(Damage);
+			corruptScript.corrupt(Damage);
 			lightHit = true;
 		}
 	

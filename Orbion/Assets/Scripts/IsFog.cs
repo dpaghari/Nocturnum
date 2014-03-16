@@ -13,6 +13,8 @@ public class IsFog : MonoBehaviour {
 	private Vector3 dir;
 	private CanMove moveScript;
 	
+	public float lifeTime = 10.0F;
+	private float lifeCounter = 0.0F;
 
 
 	public static bool IsValidTarget( GameObject gobj){
@@ -48,6 +50,11 @@ public class IsFog : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		currTarget = FindTarget();
+		if(lifeCounter > lifeTime){
+			Destroy(this.gameObject);
+		} else {
+			lifeCounter += Time.deltaTime;
+		}
 	}
 
 
