@@ -12,9 +12,6 @@ public class IsFog : MonoBehaviour {
 
 	private Vector3 dir;
 	private CanMove moveScript;
-	
-	public float lifeTime = 30.0F;
-	private float lifeCounter = 0.0F;
 
 	public static bool IsValidTarget( GameObject gobj){
 		
@@ -44,6 +41,8 @@ public class IsFog : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+		MetricManager.AddFog(1);
+		
 		if (currTarget == null)
 			currTarget = GameManager.MainGenerator;
 		dir = Utility.FindDirNoY(transform.position, currTarget.transform.position);
@@ -55,13 +54,6 @@ public class IsFog : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		currTarget = FindTarget();
-		if(lifeCounter > lifeTime){
-			Debug.Log("dead on timer");
-			Destroy(this.gameObject);
-			lifeCounter = 0.0F;
-		} else {
-			lifeCounter += Time.deltaTime;
-		}
 	}
 
 	void FixedUpdate() {
@@ -82,9 +74,9 @@ public class IsFog : MonoBehaviour {
 		if(collide.gameObject.tag == "Plant"){
 
 			collide.gameObject.GetComponent<IsFogEater>().fogCount++;
-
-			Debug.Log("dead on collision");
-
+			//Debug.Log("dead on collision");
+			MetricManager.AddFog(-1);
+			
 			Destroy (gameObject);
 
 		}
