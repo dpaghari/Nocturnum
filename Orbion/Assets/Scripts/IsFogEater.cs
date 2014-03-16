@@ -25,7 +25,7 @@ public class IsFogEater : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log(fogCount);
+		//Debug.Log(fogCount);
 		if(fogCount > 0){
 			timer += Time.deltaTime;
 			isActive = true;
