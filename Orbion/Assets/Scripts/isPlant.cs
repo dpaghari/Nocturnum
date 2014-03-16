@@ -21,7 +21,7 @@ public class isPlant : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		playAnimation(isLit);
+		//playAnimation(isLit);
 	
 
 	}

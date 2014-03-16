@@ -12,23 +12,14 @@ public class IsFog : MonoBehaviour {
 
 	private Vector3 dir;
 	private CanMove moveScript;
-	
-	public float lifeTime = 30.0F;
-	private float lifeCounter = 0.0F;
-
-	//public Corruption corruptScript;
-
 
 	public static bool IsValidTarget( GameObject gobj){
-		//Debug.Log ("FUCK");
 		
 		if ( Utility.GoHasComponent<IsGenerator>( gobj)){
 		
 			Corruption corruptScript = gobj.GetComponent<Corruption>();
-			//Debug.Log ("FUCK");
-			//return true;
+
 			if(corruptScript.active){
-				Debug.Log ("FUCK");
 				return true;	
 			}
 
@@ -37,11 +28,8 @@ public class IsFog : MonoBehaviour {
 		return false;
 	}
 
-
-
 	public GameObject FindTarget(){
 		
-
 		GameObject target = null;
 		
 		target = Utility.GetClosestWith(rigidbody.position, searchRange, IsValidTarget);
@@ -51,11 +39,10 @@ public class IsFog : MonoBehaviour {
 		return target;
 	}
 
-
-
 	// Use this for initialization
 	void Start() {
-		//Debug.Log("FUCK");
+		MetricManager.AddFog(1);
+		
 		if (currTarget == null)
 			currTarget = GameManager.MainGenerator;
 		dir = Utility.FindDirNoY(transform.position, currTarget.transform.position);
@@ -67,14 +54,7 @@ public class IsFog : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		currTarget = FindTarget();
-		if(lifeCounter > lifeTime){
-			Destroy(this.gameObject);
-		} else {
-			lifeCounter += Time.deltaTime;
-		}
 	}
-
-
 
 	void FixedUpdate() {
 		dir = Utility.FindDirNoY(transform.position, currTarget.transform.position);
@@ -92,8 +72,13 @@ public class IsFog : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision collide){
 		if(collide.gameObject.tag == "Plant"){
-			Destroy (gameObject);
+
 			collide.gameObject.GetComponent<IsFogEater>().fogCount++;
+			//Debug.Log("dead on collision");
+			MetricManager.AddFog(-1);
+			
+			Destroy (gameObject);
+
 		}
 	}
 
