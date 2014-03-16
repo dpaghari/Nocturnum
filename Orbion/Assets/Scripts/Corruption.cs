@@ -4,8 +4,7 @@ using System.Collections;
 public enum Corruptable {
 	none = 0,
 	generator,
-	enemyMelee,
-	enemyRanged
+	mainGenerator
 }
 
 
@@ -14,7 +13,7 @@ public class Corruption : MonoBehaviour {
 
 	public float corruption = 0.0f;
 	private float corruptLimit = 80.0f;
-	private bool active = true;
+	public bool active = true;
 	public Corruptable corruptType = Corruptable.none;
 
 
@@ -28,7 +27,7 @@ public class Corruption : MonoBehaviour {
 	
 	}
 
-	public void damage(float dmg){
+	public void corrupt(float dmg){
 		if(active){
 			corruption += dmg;
 			if(corruption >= corruptLimit) deactivate();
