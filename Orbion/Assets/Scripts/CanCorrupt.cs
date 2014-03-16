@@ -26,12 +26,13 @@ public class CanCorrupt : MonoBehaviour {
 		if(	corruptTimer.Finished()){
 			foreach( Corruption corruptScript in targets)
 				if (corruptScript != null) corruptScript.corrupt(corruptDamage);
-			corruptTimer.Reset();
+			corruptTimer.CurrTime = corruptTimer.MaxTime;
 		}
 			
 
-
+		Debug.Log(corruptTimer.CurrTime);
 		corruptTimer.Update();
+
 	}
 
 	void OnTriggerEnter(Collider other){

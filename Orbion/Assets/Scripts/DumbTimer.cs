@@ -29,7 +29,7 @@ public class DumbTimer : ScriptableObject {
 
 	//Sets the completion ratio of the timer. 1.0 is 100% done, 0 is 0% done.
 	public void SetProgress ( float ratio){
-		CurrTime = ( 1 - ratio * MaxTime) ;
+		CurrTime = (1 - ratio) * MaxTime;
 	}
 
 
@@ -39,7 +39,7 @@ public class DumbTimer : ScriptableObject {
 
 		newTimer.MaxTime = maxTime;
 		newTimer.TimeScale = timeScale;
-		newTimer.SetProgress(0);
+		newTimer.Reset();
 
 		return newTimer;
 	}
