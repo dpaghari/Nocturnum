@@ -50,11 +50,11 @@ public class IsFog : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		currTarget = FindTarget();
-		if(lifeCounter > lifeTime){
-			Destroy(this.gameObject);
-		} else {
-			lifeCounter += Time.deltaTime;
-		}
+		//if(lifeCounter > lifeTime){
+		//	Destroy(this.gameObject);
+		//} else {
+		//	lifeCounter += Time.deltaTime;
+		//}
 	}
 
 

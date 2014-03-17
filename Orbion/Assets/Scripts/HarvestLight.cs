@@ -18,6 +18,8 @@ public class HarvestLight : MonoBehaviour {
 	public AvatarController avatarScript;
 	public bool inMethod = true;
 
+	public GameObject orbion;
+
 
 	static bool IsLightWell(GameObject gobj){
 		if (gobj.tag == "lightwell") return true;
@@ -47,6 +49,7 @@ public class HarvestLight : MonoBehaviour {
 			return;
 		}
 		hasLumen = true;
+		orbion.GetComponent("Halo").GetType().GetProperty("enabled").SetValue(orbion.GetComponent("Halo"), true, null);
 		geyser.GetComponent<GiveLumen>().spawnLumen();
 		//Debug.Log ("Eridan was here");
 		Debug.Log ("hasLumen = " + hasLumen);
@@ -60,6 +63,7 @@ public class HarvestLight : MonoBehaviour {
 		if( generator == null) return;
 		generator.GetComponent<IsGenerator>().CurrLumen += harvestAmt;
 		hasLumen = false;
+		orbion.GetComponent("Halo").GetType().GetProperty("enabled").SetValue(orbion.GetComponent("Halo"), false, null);
 		avatarScript.SendLightShard ();
 	}
 	
