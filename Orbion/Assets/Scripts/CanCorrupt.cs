@@ -30,7 +30,7 @@ public class CanCorrupt : MonoBehaviour {
 		}
 			
 
-		Debug.Log(corruptTimer.CurrTime);
+		//Debug.Log(corruptTimer.CurrTime);
 		corruptTimer.Update();
 
 	}

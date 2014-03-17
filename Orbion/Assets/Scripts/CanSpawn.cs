@@ -8,6 +8,8 @@ public class CanSpawn : MonoBehaviour {
 	
 	// respawnTime - How many seconds for each individual enemy to spawn
 	public float respawnTime;
+	//limit of how much fog can be on the screen at once
+	public int respawnLimit = 40;
 	private float respawnCounter = 0.0F;
 	
 	//holds fog prefab
@@ -26,14 +28,14 @@ public class CanSpawn : MonoBehaviour {
 	void Start(){
 		//Debug.Log(this.gameObject.transform.position);
 		pos = this.gameObject.transform.position;
-		pos.y = 1.0F;
+		pos.y = 2.0F;
 		//Debug.Log(pos); 		
 	}
 	
 	// M turns wave on and off
 	void FixedUpdate(){
 		Mtog ();
-		if (waveStatus) {
+		if (waveStatus && MetricManager.getFogCount < respawnLimit) {
 			
 			if(respawnCounter >= respawnTime){
 				makeFog (pos);
