@@ -89,11 +89,12 @@ public class UserInterface : MonoBehaviour {
 			gameTimeMin = 0;
 			gameTimeHours++;
 		}
+		//Time
 		GUI.Label(new Rect(5, 5, 150, 50), string.Format ("{0:00}:{1:00}:{2:00}",gameTimeHours, gameTimeMin, gameTimeSec));
 
 		//Fog Counter
 		GUI.Label(new Rect(5, 40, 150, 50), string.Format ("Fog Count {0}", MetricManager.getFogCount));
-
+		/*
 		//Ammo
 		//if(ammoRef.GetComponent<CanShootReload>().currentAmmo == 0) {
 		//GUI.Label(new Rect(2, Screen.height/2-85, 150, 50), "Ammo");
@@ -139,6 +140,6 @@ public class UserInterface : MonoBehaviour {
 		} else if(TechManager.HasUpgrade(Tech.scatter)){
 			GUI.DrawTexture(new Rect(Screen.width-40, Screen.height-64, icon_scattershot.width, icon_scattershot.height), icon_scattershot);
 		}
-
+		*/
 	}
 }
