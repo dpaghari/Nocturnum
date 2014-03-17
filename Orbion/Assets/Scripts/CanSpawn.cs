@@ -33,7 +33,7 @@ public class CanSpawn : MonoBehaviour {
 	// Set spawn locations and levels
 	void Start(){
 		//Debug.Log(this.gameObject.transform.position);
-		spawnMovement = 40.0F;
+		spawnMovement = 80.0F;
 		pos = this.gameObject.transform.position;
 		pos.y = 2.0F;
 		if(pos.x >= 0.0F && pos.z >= 0.0F){
