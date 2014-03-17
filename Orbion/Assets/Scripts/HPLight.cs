@@ -25,11 +25,11 @@ public class HPLight : MonoBehaviour {
 		 * 
 		*/
 
-		if(lightScript.SuitEnergy > 10){
+		if(lightScript.SuitEnergy >= 5 ){
 			//float t = Mathf.PingPong(Time.time, duration) / duration;
 			light.color = Color.white;
 		}
-		if(lightScript.SuitEnergy <= 5 && lightScript.SuitEnergy > 3){
+		if(lightScript.SuitEnergy < 5 && lightScript.SuitEnergy > 3){
 			light.color = Color.yellow;
 		}
 		if(lightScript.SuitEnergy <= 3 && lightScript.SuitEnergy > 1){

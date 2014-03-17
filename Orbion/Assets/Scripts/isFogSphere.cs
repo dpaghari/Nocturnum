@@ -7,17 +7,20 @@ public class isFogSphere : MonoBehaviour {
 	private float timerCD;
 	private Rigidbody clone;
 
+	public int fogCounter;
 	public Rigidbody fog;
-	public IsFogEater fogScript;
+
 
 	// Use this for initialization
 	void Start () {
 		timer = 0.0f;
 		timerCD = 10.0f;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log(fogScript.fogCount);
 		timer += Time.deltaTime;
 		if(timer > timerCD){
 			timer = 0.0f;
@@ -28,13 +31,14 @@ public class isFogSphere : MonoBehaviour {
 	}
 	public void popSphere(){
 
-		int count = fogScript.fogCount;
 
-		for(int i = 0; i <= count; i++){
+
+		for(int i = 0; i <= fogCounter; i++){
 
 			clone = Instantiate(fog, transform.position, Quaternion.identity) as Rigidbody;
 
 		}
 		Destroy(gameObject);
 	}
+	
 }
