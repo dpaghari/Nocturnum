@@ -3,7 +3,7 @@ using System.Collections;
 
 public class IsLightCone : MonoBehaviour {
 
-	public Corruptable corruptType = Corruptable.none;
+	public CorruptType corruptType = CorruptType.none;
 
 
 	public AudioClip flashOn;
@@ -91,7 +91,7 @@ public class IsLightCone : MonoBehaviour {
 
 		CanMove moveScript = other.GetComponent<CanMove>();
 		Killable killScript = other.GetComponent<Killable>();
-		Corruption corruptScript = other.GetComponent<Corruption>();
+		Corruptable corruptScript = other.GetComponent<Corruptable>();
 		
 		//target an enemy do damage
 		if ( moveScript != null){
@@ -103,7 +103,7 @@ public class IsLightCone : MonoBehaviour {
 		//target a generator remove corruption
 		if(corruptScript){
 			//Debug.Log("attack generator #: " + ++counter);
-			corruptScript.corrupt(Damage);
+			corruptScript.Corrupt(Damage);
 			lightHit = true;
 		}
 	
