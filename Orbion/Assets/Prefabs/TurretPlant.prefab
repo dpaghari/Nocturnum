@@ -225,6 +225,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400006}
   m_Layer: 12
   m_Name: TurretPlant
   m_TagString: Plant
@@ -912,6 +913,20 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 0, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d201227c9b307443839d520632cb558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  fogCount: 0
+  fogSphere: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
