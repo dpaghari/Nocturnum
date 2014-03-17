@@ -7,7 +7,7 @@ public class IsFogEater : MonoBehaviour {
 	public int fogCount;
 	private float timer;
 	private float timerCD;
-	private int sphereCount;
+	public int sphereCount;
 
 	public Rigidbody fogSphere;
 	private Rigidbody clone;
@@ -25,17 +25,31 @@ public class IsFogEater : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//Debug.Log(fogCount);
+		//Debug.Log(sphereCount);
 		if(fogCount > 0){
 			timer += Time.deltaTime;
-			isActive = true;
+
 			if(timer >= timerCD && sphereCount < 1){
 				createSphere();
+
 				sphereCount++;
 				fogCount = 0;
 				timer = 0.0f;
+				isActive = true;
 			}
 		}
+
+		if(isActive){
+			timer += Time.deltaTime;
+			if(timer >= timerCD){
+				animation.CrossFade("close");
+				timer = 0.0f;
+				isActive = false;
+				sphereCount--;
+			
+			}
+		}
+
 	
 	}
 
@@ -46,7 +60,7 @@ public class IsFogEater : MonoBehaviour {
 		temp.y = 3;
 		clone = Instantiate(fogSphere, temp, Quaternion.identity) as Rigidbody;
 		clone.GetComponent<isFogSphere>().fogCounter = fogCount;
-		sphereCount = 0;
+
 
 	}
 }
