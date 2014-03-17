@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 10
-  MaxSpeed: 5
+  Force: 1
+  MaxSpeed: 1
   MoveScale: 1
 --- !u!114 &11400006
 MonoBehaviour:
@@ -210,11 +210,11 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 0
+  moveWithTransform: 1
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 2
+      scalar: 2.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -229,7 +229,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .5
+          value: .400000006
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -237,7 +237,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
     startSpeed:
-      scalar: 1
+      scalar: .5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -459,22 +459,22 @@ ParticleSystem:
         m_Curve:
         - time: 0
           value: .713636339
-          inSlope: 1.74058807
-          outSlope: 1.74058807
+          inSlope: .467773944
+          outSlope: .467773944
           tangentMode: 10
-        - time: .164521217
-          value: 1
-          inSlope: 1.74058807
-          outSlope: -0
+        - time: .453829408
+          value: .92592591
+          inSlope: .467773944
+          outSlope: .348833293
           tangentMode: 21
-        - time: .392592609
+        - time: .666177511
           value: 1
-          inSlope: 0
-          outSlope: -1.64634156
+          inSlope: .348833293
+          outSlope: -2.99560404
           tangentMode: 21
         - time: 1
           value: 0
-          inSlope: -1.64634156
+          inSlope: -2.99560404
           outSlope: 0
           tangentMode: 5
         m_PreInfinity: 2

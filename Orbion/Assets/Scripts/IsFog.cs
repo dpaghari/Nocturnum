@@ -17,7 +17,7 @@ public class IsFog : MonoBehaviour {
 		
 		if ( Utility.GoHasComponent<IsGenerator>( gobj)){
 		
-			Corruption corruptScript = gobj.GetComponent<Corruption>();
+			Corruptable corruptScript = gobj.GetComponent<Corruptable>();
 
 			if(corruptScript.active){
 				return true;	
@@ -70,11 +70,11 @@ public class IsFog : MonoBehaviour {
 			transform.position += direction * 15.0F * Time.deltaTime;
 		}
 	}
-	void OnCollisionEnter(Collision collide){
+	void OnTriggerEnter(Collider collide){
 		if(collide.gameObject.tag == "Plant"){
-
+		
 			collide.gameObject.GetComponent<IsFogEater>().fogCount++;
-			//Debug.Log("dead on collision");
+			Debug.Log("dead by plant");
 			MetricManager.AddFog(-1);
 			
 			Destroy (gameObject);
