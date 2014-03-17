@@ -17,7 +17,7 @@ public class IsFog : MonoBehaviour {
 		
 		if ( Utility.GoHasComponent<IsGenerator>( gobj)){
 		
-			Corruption corruptScript = gobj.GetComponent<Corruption>();
+			Corruptable corruptScript = gobj.GetComponent<Corruptable>();
 
 			if(corruptScript.active){
 				return true;	

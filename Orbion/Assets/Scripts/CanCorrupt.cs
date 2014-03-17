@@ -8,11 +8,11 @@ public class CanCorrupt : MonoBehaviour {
 
 	public float cooldown;
 	public float corruptDamage;
-	private HashSet<Corruption> targets;
+	private HashSet<Corruptable> targets;
 	private DumbTimer corruptTimer;
 
 	void Awake (){
-		targets = new HashSet<Corruption>();
+		targets = new HashSet<Corruptable>();
 		corruptTimer = DumbTimer.New( cooldown);
 	}
 
@@ -24,8 +24,8 @@ public class CanCorrupt : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(	corruptTimer.Finished()){
-			foreach( Corruption corruptScript in targets)
-				if (corruptScript != null) corruptScript.corrupt(corruptDamage);
+			foreach( Corruptable corruptScript in targets)
+				if (corruptScript != null) corruptScript.Corrupt(corruptDamage);
 			corruptTimer.CurrTime = corruptTimer.MaxTime;
 		}
 			
@@ -36,12 +36,12 @@ public class CanCorrupt : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		Corruption corruptScript = other.GetComponent<Corruption>();
+		Corruptable corruptScript = other.GetComponent<Corruptable>();
 		if( corruptScript != null) targets.Add(corruptScript);
 	}
 
 	void OnTriggerExit(Collider other){
-		Corruption corruptScript = other.GetComponent<Corruption>();
+		Corruptable corruptScript = other.GetComponent<Corruptable>();
 		if( corruptScript != null) targets.Remove(corruptScript);
 	}
 
