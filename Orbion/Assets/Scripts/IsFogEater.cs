@@ -19,7 +19,7 @@ public class IsFogEater : MonoBehaviour {
 		isActive = false;
 		fogCount = 0;
 		timer = 0.0f;
-		timerCD = 1.0f;
+		timerCD = 50.0f;
 	}
 	
 	// Update is called once per frame
@@ -45,6 +45,7 @@ public class IsFogEater : MonoBehaviour {
 		Vector3 temp = transform.position;
 		temp.y = 3;
 		clone = Instantiate(fogSphere, temp, Quaternion.identity) as Rigidbody;
+		sphereCount = 0;
 
 	}
 }

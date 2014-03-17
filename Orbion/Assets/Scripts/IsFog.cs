@@ -70,9 +70,9 @@ public class IsFog : MonoBehaviour {
 			transform.position += direction * 15.0F * Time.deltaTime;
 		}
 	}
-	void OnCollisionEnter(Collision collide){
+	void OnTriggerEnter(Collider collide){
 		if(collide.gameObject.tag == "Plant"){
-
+		
 			collide.gameObject.GetComponent<IsFogEater>().fogCount++;
 			//Debug.Log("dead on collision");
 			MetricManager.AddFog(-1);

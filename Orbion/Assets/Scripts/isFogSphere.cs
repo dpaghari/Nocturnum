@@ -33,7 +33,8 @@ public class isFogSphere : MonoBehaviour {
 		for(int i = 0; i <= count; i++){
 
 			clone = Instantiate(fog, transform.position, Quaternion.identity) as Rigidbody;
-			Destroy(gameObject);
+
 		}
+		Destroy(gameObject);
 	}
 }
