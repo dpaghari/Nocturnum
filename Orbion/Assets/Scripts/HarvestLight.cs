@@ -69,9 +69,10 @@ public class HarvestLight : MonoBehaviour {
 	}
 	
 	public void setHoldingTrue(){
+		//GameObject geyser = Utility.GetClosestWith(transform.position, harvestRange, IsLightWell);
 		hasLumen = true;
 		orbion.GetComponent("Halo").GetType().GetProperty("enabled").SetValue(orbion.GetComponent("Halo"), true, null);
-		geyser.GetComponent<GiveLumen>().spawnLumen();
+		//geyser.GetComponent<GiveLumen>().spawnLumen();
 		//Debug.Log ("Eridan was here");
 		Debug.Log ("hasLumen = " + hasLumen);
 	}
