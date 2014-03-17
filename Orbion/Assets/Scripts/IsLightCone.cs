@@ -33,7 +33,7 @@ public class IsLightCone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log(SuitEnergy);
+		Debug.Log(SuitEnergy);
 
 		if(!gameObject.light.enabled && Input.GetMouseButtonDown(0)){
 			audio.PlayOneShot(flashOn, 1.0f);
