@@ -14,11 +14,16 @@ public class IsGenerator : MonoBehaviour {
 	public int MaxLumen = 10;
 	public bool isCharged = false;
 	public bool cantCharge = false;
+	public bool Active {get; protected set;}
+
 	//references to child objects
 	public GameObject ringModel;
 	public GameObject sphereModel;
 	public GameObject debugText;
 	public GameObject lightSource;
+	public GameObject baseModel;
+
+
 	private TextMesh debugTextComp;
 
 
@@ -27,6 +32,7 @@ public class IsGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		debugTextComp = debugText.GetComponent<TextMesh>();
+		Active = true;
 		//player = GameObject.Find("player_prefab");
 	}
 
@@ -61,14 +67,31 @@ public class IsGenerator : MonoBehaviour {
 			isCharged = false;
 		}
 
-		audio.PlayOneShot(genHum, 1.0f);
-
-		ringModel.transform.Rotate(new Vector3(0, 0, 1));
-		sphereModel.transform.Rotate(new Vector3(0, 0, 1));
-
+		if (Active){
+			audio.PlayOneShot(genHum, 1.0f);
+	
+			ringModel.transform.Rotate(new Vector3(0, 0, 1));
+			sphereModel.transform.Rotate(new Vector3(0, 0, 1));
+		}
 		debugTextComp.text = string.Format("{0}/{1}", CurrLumen, MaxLumen);
 
 		prevLumen = CurrLumen;
 
 	}
+
+	
+	public void Activate(){
+		lightSource.light.enabled = true;
+		foreach (Transform child in baseModel.transform)
+			child.gameObject.SetActive(true);
+		Active = true;
+	}
+
+	public void Deactivate(){
+		lightSource.light.enabled = false;
+		foreach (Transform child in baseModel.transform)
+			child.gameObject.SetActive(false);
+		Active = false;
+	}
+
 }

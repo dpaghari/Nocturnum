@@ -9,12 +9,14 @@ public class isFogSphere : MonoBehaviour {
 
 	public int fogCounter;
 	public Rigidbody fog;
+	private float scaler = 0.5f;
 
 
 	// Use this for initialization
 	void Start () {
 		timer = 0.0f;
 		timerCD = 10.0f;
+		transform.localScale += new Vector3(fogCounter * scaler, fogCounter * scaler, fogCounter * scaler);
 
 	}
 	
@@ -25,6 +27,7 @@ public class isFogSphere : MonoBehaviour {
 		if(timer > timerCD){
 			timer = 0.0f;
 			popSphere();
+
 
 		}
 	

@@ -22,6 +22,6 @@ public class SplashInterface : MonoBehaviour {
 	void OnGUI () {
 		GUI.skin = uiSkin;
 
-		GUI.Label(new Rect(Screen.width/2-70, Screen.height/2, 500, 50), "Press Enter to Start.");
+		GUI.Label(new Rect(Screen.width/2-75, Screen.height/2, 500, 50), "Press enter to start.");
 	}
 }

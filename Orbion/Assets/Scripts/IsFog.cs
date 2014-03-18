@@ -14,16 +14,9 @@ public class IsFog : MonoBehaviour {
 	private CanMove moveScript;
 
 	public static bool IsValidTarget( GameObject gobj){
-		
-		if ( Utility.GoHasComponent<IsGenerator>( gobj)){
-		
-			Corruptable corruptScript = gobj.GetComponent<Corruptable>();
-
-			if(corruptScript.active){
-				return true;	
-			}
-
-		}
+		IsGenerator generatorScript = gobj.GetComponent<IsGenerator>();
+		if (generatorScript != null && generatorScript.Active)
+			return true;		
 		//plant condition
 		return false;
 	}

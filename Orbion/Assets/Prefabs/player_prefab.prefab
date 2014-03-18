@@ -512,6 +512,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200012}
+  - 114: {fileID: 11400032}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -2989,7 +2990,7 @@ MonoBehaviour:
   pushForceMode: 0
   SuitEnergy: 10
   MaxSuitEnergy: 10
-  Damage: 5
+  IlluminateAmt: 1
   lightCooldown: .0500000007
 --- !u!114 &11400030
 MonoBehaviour:
@@ -3003,6 +3004,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba722874bc1be74ca3eea4c78a19b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Corruption: -40
+  MinCorruption: -40
+  MaxCorruption: 40
+  corruptType: 3
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
