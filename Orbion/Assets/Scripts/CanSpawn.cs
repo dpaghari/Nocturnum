@@ -9,7 +9,7 @@ public class CanSpawn : MonoBehaviour {
 	// respawnTime - How many seconds for each individual enemy to spawn
 	public float respawnTime;
 	//limit of how much fog can be on the screen at once
-	public int respawnLimit = 40;
+	public int respawnLimit;
 	private float respawnCounter = 0.0F;
 	
 	//holds fog prefab
@@ -25,15 +25,15 @@ public class CanSpawn : MonoBehaviour {
 	private Vector3 pos;
 	
 	private int movementCase;
-	//actual border 140
-	private float mapBorder = 130.0F;
+	//actual border 140 old border 130
+	public float mapBorder;
 
 	public float spawnMovement;
 
 	// Set spawn locations and levels
 	void Start(){
 		//Debug.Log(this.gameObject.transform.position);
-		spawnMovement = 80.0F;
+		//spawnMovement = 40.0F;
 		pos = this.gameObject.transform.position;
 		pos.y = 2.0F;
 		if(pos.x >= 0.0F && pos.z >= 0.0F){
@@ -70,7 +70,7 @@ public class CanSpawn : MonoBehaviour {
 	
 	private void spawnMove(){
 		Vector3 temp = transform.position;
-		//Debug.Log(temp);
+		Debug.Log(temp);
 		switch (movementCase)
 		{
 		case 1:

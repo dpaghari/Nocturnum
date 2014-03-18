@@ -5832,8 +5832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba722874bc1be74ca3eea4c78a19b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corruption: 0
-  active: 1
+  Corruption: 0
+  MinCorruption: -80
+  MaxCorruption: 80
   corruptType: 1
 --- !u!114 &467296699
 MonoBehaviour:
@@ -6700,7 +6701,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 140
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6708,7 +6709,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 140
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6728,15 +6729,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: respawnTime
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: respawnLimit
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: spawnMovement
-      value: 80
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
@@ -14312,8 +14313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba722874bc1be74ca3eea4c78a19b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corruption: 0
-  active: 1
+  Corruption: 0
+  MinCorruption: -80
+  MaxCorruption: 80
   corruptType: 1
 --- !u!114 &1249610943
 MonoBehaviour:
@@ -16434,10 +16436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c6194e85989f44084992e19ae89bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 15
-  respawnLimit: 60
+  respawnTime: 10
+  respawnLimit: 80
   fogEnemy: {fileID: 5400000, guid: 29350a8c150001a4d9a3f1282ed4fba3, type: 2}
-  spawnMovement: 80
+  mapBorder: 80
+  spawnMovement: 40
 --- !u!33 &1418126602
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16453,7 +16456,7 @@ Transform:
   m_PrefabInternal: {fileID: 714524260}
   m_GameObject: {fileID: 1418126598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 140, y: 0, z: 140}
+  m_LocalPosition: {x: 80, y: 0, z: 80}
   m_LocalScale: {x: 2, y: .200000003, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19090,8 +19093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba722874bc1be74ca3eea4c78a19b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corruption: 0
-  active: 1
+  Corruption: 0
+  MinCorruption: -80
+  MaxCorruption: 80
   corruptType: 2
 --- !u!1 &1638071143
 GameObject:
