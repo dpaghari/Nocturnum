@@ -19,7 +19,7 @@ public class IsFogEater : MonoBehaviour {
 		isActive = false;
 		fogCount = 0;
 		timer = 0.0f;
-		timerCD = 30.0f;
+		timerCD = 10.0f;
 	}
 	
 	// Update is called once per frame
@@ -60,6 +60,8 @@ public class IsFogEater : MonoBehaviour {
 		temp.y = 3;
 		clone = Instantiate(fogSphere, temp, Quaternion.identity) as Rigidbody;
 		clone.GetComponent<isFogSphere>().fogCounter = fogCount;
+
+
 
 
 	}
