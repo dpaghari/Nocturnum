@@ -14,11 +14,15 @@ public class IsGenerator : MonoBehaviour {
 	public int MaxLumen = 10;
 	public bool isCharged = false;
 	public bool cantCharge = false;
+	public bool Active {get; protected set;}
+
 	//references to child objects
 	public GameObject ringModel;
 	public GameObject sphereModel;
 	public GameObject debugText;
 	public GameObject lightSource;
+
+
 	private TextMesh debugTextComp;
 
 
@@ -27,6 +31,7 @@ public class IsGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		debugTextComp = debugText.GetComponent<TextMesh>();
+		Active = true;
 		//player = GameObject.Find("player_prefab");
 	}
 
@@ -71,4 +76,16 @@ public class IsGenerator : MonoBehaviour {
 		prevLumen = CurrLumen;
 
 	}
+
+	
+	public void Activate(){
+
+		Active = true;
+	}
+
+	public void Deactivate(){
+
+		Active = false;
+	}
+
 }

@@ -15,9 +15,10 @@ public class Corruptable : MonoBehaviour {
 	//Corruption goes from Min to Max
 	//Something is corrupted if it is greater than 0, and can be corrupted up to the maximum
 	//Something is not corrupted if it is less than or equal to 0, and can be illumnated to the minimum
-	public float Corruption = 0;
+	public float Corruption = -80.0f;
 	public float MinCorruption = -80.0f;
 	public float MaxCorruption = 80.0f;
+
 
 	//Whether the object is currently corrupted
 	public bool IsCorrupted { get; protected set; }
@@ -39,11 +40,29 @@ public class Corruptable : MonoBehaviour {
 	}
 
 	public void EnterCorruption(){
+		switch (corruptType) {
+
+			case CorruptType.generator: 
+				GetComponent<IsGenerator>().Deactivate();
+				break;
+
+			default:
+				break;
+		}
 
 		IsCorrupted = true;
 	}
 
 	public void ExitCorruption(){
+		switch (corruptType) {
+			
+		case CorruptType.generator: 
+			GetComponent<IsGenerator>().Activate();
+			break;
+			
+		default:
+			break;
+		}
 
 		IsCorrupted = false;
 	}
