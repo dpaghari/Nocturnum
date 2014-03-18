@@ -19,6 +19,8 @@ public class Corruptable : MonoBehaviour {
 	public float MinCorruption = -80.0f;
 	public float MaxCorruption = 80.0f;
 
+	public GameObject corruptionEffect;
+
 
 	//Whether the object is currently corrupted
 	public bool IsCorrupted { get; protected set; }
@@ -36,7 +38,8 @@ public class Corruptable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		Vector3 corruptPos = new Vector3(gameObject.transform.position.x, -1 + ((Corruption+MaxCorruption) / (2*MaxCorruption)) * 6, gameObject.transform.position.z);
+		corruptionEffect.transform.position = corruptPos;
 	}
 
 	public void EnterCorruption(){
