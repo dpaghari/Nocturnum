@@ -19,7 +19,7 @@ public class IsLightCone : MonoBehaviour {
 	private float useCooldown = 0.0f;
 
 	//deals with spacing out the damage
-	public int Damage;
+	public float IlluminateAmt = 1f;
 	private int counter;
 	private bool lightHit = false;
 	public float lightCooldown;
@@ -103,7 +103,7 @@ public class IsLightCone : MonoBehaviour {
 		//target a generator remove corruption
 		if(corruptScript){
 			//Debug.Log("attack generator #: " + ++counter);
-			corruptScript.Corrupt(Damage);
+			corruptScript.Corrupt(-IlluminateAmt);
 			lightHit = true;
 		}
 	
