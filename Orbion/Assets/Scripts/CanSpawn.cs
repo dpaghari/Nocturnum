@@ -91,8 +91,8 @@ public class CanSpawn : MonoBehaviour {
 		
 		addSpawner (35.0F, 1.0F, 35.0F); addSpawner (-35.0F, 1.0F, -35.0F); addSpawner (-55.0F, 1.0F, 15.0F);
 		SpawnInfo initial = spawnLocations.Find(x => x.nodeName.EndsWith("1")); initial.turnOn ();
-		addLevel (1, 3, 2, 15.0F); addLevel (2, 4, 2, 20.0F); addLevel (3, 5, 2, 25.0F); 
-		addLevel (4, 3, 2, 25.0F); addLevel (5, 4, 2, 30.0F); addLevel (6, 3, 2, 30.0F);
+		addLevel (1, 3, 2, 30.0F); addLevel (2, 4, 2, 40.0F); addLevel (3, 5, 2, 50.0F); 
+		addLevel (4, 3, 2, 50.0F); addLevel (5, 4, 2, 50.0F); addLevel (6, 3, 2, 50.0F);
 		enemyCap = levels [levelItor].numSpawn; spawnLoop = levels [levelItor].timesToRun;
 		
 	}
