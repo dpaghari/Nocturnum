@@ -126,7 +126,8 @@ public class AB_GeneratorTarget : MonoBehaviour {
 			building = GObuilding.rigidbody;
 			return building;
 		} else {
-			building = FindNearestBuilding (range);		
+			building = FindNearestBuilding (range);
+			return building;		
 		}
 		
 		//If we can't find a player or building, return the other
