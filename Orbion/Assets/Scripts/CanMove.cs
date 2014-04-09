@@ -25,4 +25,12 @@ public class CanMove : MonoBehaviour {
 					
 	}
 
+	public void TurnLeft(Vector3 up, ForceMode mode = ForceMode.Force){
+		rigidbody.AddTorque(up * 5, mode);
+	}
+
+	public void TurnRight(Vector3 up, ForceMode mode = ForceMode.Force){
+		rigidbody.AddTorque(up * -5, mode);
+	}
+
 }
