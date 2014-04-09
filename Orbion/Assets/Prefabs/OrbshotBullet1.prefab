@@ -85,14 +85,14 @@ Light:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_Type: 2
+  m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3
-  m_Range: 10
+  m_Range: 30
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Force: 50
   MaxSpeed: 30
+  MoveScale: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +152,10 @@ MonoBehaviour:
   MoveType: 0
   MoveScript: {fileID: 11400002}
   Damage: 15
+  searingLevel: 0
+  dot: {fileID: 0}
+  hitEffect: {fileID: 0}
+  lifeTime: 3
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

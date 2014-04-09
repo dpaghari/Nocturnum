@@ -21,7 +21,7 @@ public class PB_Linear : ProjectileBehavior {
 	public GameObject hitEffect;
 	private GameObject clone;
 
-	public float lifeTime = 3.0F;
+	public float lifeTime = 2.0F;
 	private float lifeCounter = 0.0F;
 	
 	public void Update(){
