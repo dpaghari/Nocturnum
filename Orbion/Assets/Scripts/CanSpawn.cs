@@ -160,7 +160,7 @@ public class CanSpawn : MonoBehaviour {
 				levelItor++;
 				enemyCap = levels [levelItor].numSpawn;
 				spawnLoop = levels [levelItor].timesToRun;
-				Debug.Log(levelItor);
+//				Debug.Log(levelItor);
 
 				if(levelItor+1 == 2){
 					SpawnInfo found = spawnLocations.Find(x => x.nodeName.EndsWith("1"));

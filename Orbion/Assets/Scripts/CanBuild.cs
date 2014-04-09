@@ -12,6 +12,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody medBayBuilding;
 	public Rigidbody incindiaryBuilding;
 	public Rigidbody turretBuilding;
+	public Rigidbody refractionBuilding;
 	public AudioClip initBuild;
 
 	private Rigidbody clone;
@@ -29,7 +30,7 @@ public class CanBuild : MonoBehaviour {
 	public Texture2D button_ballistics;
 	public Texture2D button_medbay;
 	public Texture2D button_turret;
-
+	public Texture2D button_refraction;
 	//Checks (temporary until we have metrics manager working.
 	public bool builtBallistics = false;
 	public bool builtGenerator = false;
@@ -114,6 +115,11 @@ public class CanBuild : MonoBehaviour {
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
 			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2+92,128,128), button_turret)) {
 				SetConstruction(turretBuilding);
+			}
+			// Make the seventh button.
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
+			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_refraction)) {
+				SetConstruction(refractionBuilding);
 			}
 		}
 	}
