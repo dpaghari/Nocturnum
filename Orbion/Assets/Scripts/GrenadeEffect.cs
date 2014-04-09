@@ -17,10 +17,10 @@ public class GrenadeEffect : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 
 
-		CanMove moveScript = other.GetComponent<CanMove>();
+		//CanMove moveScript = other.GetComponent<CanMove>();
 		Killable killScript = other.GetComponent<Killable>();
 		
-		if(killScript != null && moveScript != null){
+		if(killScript != null /*&& moveScript != null*/){
 			if(other.tag == "Enemy" || other.tag == "EnemyRanged"){
 				if(killScript) killScript.damage(20);
 				
