@@ -17,6 +17,7 @@ public class PB_Linear : ProjectileBehavior {
 	public CanMove MoveScript;
 	public int Damage;
 	public int searingLevel;
+	public int homingLevel;
 	public GameObject dot;
 	public GameObject hitEffect;
 	private GameObject clone;
@@ -34,11 +35,34 @@ public class PB_Linear : ProjectileBehavior {
 
 	public override void FixedPerform(){
 		MoveScript.Move(transform.forward, MoveType);
-		
+
+		GameObject targ = Utility.GetClosestWith(transform.position, 15*homingLevel, IsEnemy);
+		if(targ == null){
+		}else{
+			Vector3 targDir = transform.InverseTransformPoint(targ.transform.position);
+			float targAngle = Mathf.Atan2(targDir.x, targDir.z);
+
+			Debug.Log(targAngle);
+
+			if(targAngle < 0 && targAngle > -1){
+				MoveScript.TurnLeft(Vector3.up, MoveType);
+			}else if(targAngle > 0 && targAngle < 1){
+				MoveScript.TurnRight(Vector3.up, MoveType);
+			}
+
+			//Vector3 newDir = Vector3.RotateTowards(transform.forward, targDir, 0.3f, 0.0f);
+			//transform.rotation = Quaternion.LookRotation(newDir);
+		}
 	}
 
 	public override void Perform(){ return;}
-	
+
+
+	public bool IsEnemy(GameObject enemy){
+		if(enemy.GetComponent<AB_Aggressive>() == null) return false;
+
+		return true;
+	}
 	
 
 	public override void OnImpactEnter( Collision other){
