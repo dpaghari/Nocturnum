@@ -14,7 +14,7 @@ public class EB_LightGrenade : EquipmentBehavior {
 		Vector3 temp = transform.position;
 		temp.y += 5;
 
-		clone = Instantiate(Grenade, temp + dir * 2, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
+		clone = Instantiate(Grenade, temp + dir, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
 	}
 
 

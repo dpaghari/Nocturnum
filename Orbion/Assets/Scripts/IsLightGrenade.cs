@@ -25,6 +25,11 @@ public class IsLightGrenade : MonoBehaviour {
 
 
 		}
+		if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyRanged"){
+		Killable killScript = other.gameObject.GetComponent<Killable>();
+		if(killScript) killScript.damage(30);
+		}
+
 		Destroy(gameObject);
 		
 	}

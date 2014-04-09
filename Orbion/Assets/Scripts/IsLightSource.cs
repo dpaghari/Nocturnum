@@ -13,6 +13,7 @@ public class IsLightSource : MonoBehaviour {
 	
 	}
 
+	
 	void OnTriggerStay(Collider other){
 		WeakensInLight weakenScript = other.GetComponent<WeakensInLight>();
 		if(weakenScript) weakenScript.Weaken();

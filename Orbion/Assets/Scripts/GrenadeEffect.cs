@@ -12,15 +12,20 @@ public class GrenadeEffect : MonoBehaviour {
 	void Update () {
 		
 	}
-	
+
+	void OnTriggerEnter(Collider other){
+	Killable killScript = other.GetComponent<Killable>();
+		if(killScript) killScript.damage(30);
+
+	}
+
+
 	void OnTriggerStay(Collider other){
 
-		if(other.tag == "Enemy" || other.tag == "EnemyRanged")
+		if(other.tag == "Enemy" || other.tag == "EnemyRanged"){
 			other.transform.position = transform.position;
 
 
-
-
-
+		}
 	}
 }

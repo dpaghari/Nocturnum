@@ -183,33 +183,6 @@ Transform:
   m_Children:
   - {fileID: 1977705270}
   m_Father: {fileID: 2116768989}
---- !u!1 &15705925
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100026, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 15705926}
-  m_Layer: 12
-  m_Name: PetalUpper_002
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &15705926
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400020, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 15705925}
-  m_LocalRotation: {x: 9.34678539e-08, y: .0884088948, z: 4.2308077e-09, w: .996084273}
-  m_LocalPosition: {x: -2.02869129, y: 2.16587196e-07, z: 2.98023224e-08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1665822388}
-  m_Father: {fileID: 1368840701}
 --- !u!1 &32091604
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,32 +236,6 @@ Transform:
   m_LocalScale: {x: .999999881, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1497871623}
---- !u!1 &61643214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100016, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 61643215}
-  m_Layer: 12
-  m_Name: PetalTip_003
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &61643215
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400012, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 61643214}
-  m_LocalRotation: {x: -1.26517918e-07, y: .109116711, z: -8.1721403e-08, w: .994028986}
-  m_LocalPosition: {x: -1.40588951, y: 1.06141712e-07, z: 5.96040302e-08}
-  m_LocalScale: {x: .99999994, y: 1, z: .99999994}
-  m_Children: []
-  m_Father: {fileID: 993112898}
 --- !u!1 &65304192
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,8 +408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 9
-  MaxSpeed: 9
+  Force: 12
+  MaxSpeed: 12
   MoveScale: 1
 --- !u!82 &71705087
 AudioSource:
@@ -2361,60 +2308,6 @@ Transform:
   - {fileID: 1516603962}
   - {fileID: 1924686772}
   m_Father: {fileID: 1910534171}
---- !u!1 &259502910
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100046, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 259502911}
-  m_Layer: 12
-  m_Name: PetalBase
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &259502911
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400046, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 259502910}
-  m_LocalRotation: {x: -.251237392, y: -.232081428, z: .0621860847, w: .937630475}
-  m_LocalPosition: {x: -.735576987, y: -.463240415, z: -.802355766}
-  m_LocalScale: {x: 1, y: 1.00000012, z: 1}
-  m_Children:
-  - {fileID: 711281935}
-  m_Father: {fileID: 2063447056}
---- !u!1 &266201874
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100012, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 266201875}
-  m_Layer: 12
-  m_Name: PetalLower_004
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &266201875
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400010, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 266201874}
-  m_LocalRotation: {x: -2.63019313e-08, y: .332341343, z: -1.92923437e-08, w: .943159223}
-  m_LocalPosition: {x: -1.13052845, y: 9.5504447e-08, z: 2.98023224e-08}
-  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1558789651}
-  m_Father: {fileID: 2132254459}
 --- !u!1 &270365198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,33 +2856,6 @@ Transform:
   m_Children:
   - {fileID: 2009745221}
   m_Father: {fileID: 1977705270}
---- !u!1 &336772658
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100036, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 336772659}
-  m_Layer: 12
-  m_Name: PetalLower_001
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &336772659
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400028, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 336772658}
-  m_LocalRotation: {x: 1.86188842e-07, y: .332341343, z: -2.17306475e-08, w: .943159223}
-  m_LocalPosition: {x: -1.13052869, y: 8.53524682e-08, z: 2.98022496e-08}
-  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1440335755}
-  m_Father: {fileID: 398348030}
 --- !u!1 &348111306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,8 +3071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 9
-  MaxSpeed: 9
+  Force: 12
+  MaxSpeed: 12
   MoveScale: 1
 --- !u!82 &360092233
 AudioSource:
@@ -3674,33 +3540,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 984703869}
---- !u!1 &384142217
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100020, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 384142218}
-  m_Layer: 12
-  m_Name: PetalLower_003
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &384142218
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400016, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 384142217}
-  m_LocalRotation: {x: -6.68313893e-09, y: .332341194, z: -4.12106118e-08, w: .943159223}
-  m_LocalPosition: {x: -1.13052857, y: 8.53525179e-08, z: -8.94084025e-08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 993112898}
-  m_Father: {fileID: 389250106}
 --- !u!1 &388876750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,33 +3567,6 @@ Transform:
   m_Children:
   - {fileID: 510424236}
   m_Father: {fileID: 1055583165}
---- !u!1 &389250105
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100022, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 389250106}
-  m_Layer: 12
-  m_Name: PetalBase_003
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &389250106
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400040, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 389250105}
-  m_LocalRotation: {x: .686392903, y: -.169895619, z: -.169895381, w: .68639344}
-  m_LocalPosition: {x: -.735576808, y: .92648077, z: -8.97656093e-07}
-  m_LocalScale: {x: .999999821, y: .99999994, z: .999999821}
-  m_Children:
-  - {fileID: 384142218}
-  m_Father: {fileID: 2063447056}
 --- !u!1 &391874188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,8 +3620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 9
-  MaxSpeed: 9
+  Force: 12
+  MaxSpeed: 12
   MoveScale: 1
 --- !u!82 &391874191
 AudioSource:
@@ -4058,33 +3870,6 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
---- !u!1 &396373343
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 396373344}
-  m_Layer: 12
-  m_Name: PetalUpper_005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &396373344
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 396373343}
-  m_LocalRotation: {x: -1.94227965e-07, y: .088408798, z: -1.39624694e-08, w: .996084273}
-  m_LocalPosition: {x: -2.02869105, y: 1.13450241e-07, z: 2.98023224e-08}
-  m_LocalScale: {x: .999999881, y: .99999994, z: 1}
-  m_Children:
-  - {fileID: 1524506585}
-  m_Father: {fileID: 440139332}
 --- !u!1 &398145261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,33 +3901,6 @@ Transform:
   - {fileID: 442011663}
   - {fileID: 606552539}
   m_Father: {fileID: 1312397754}
---- !u!1 &398348029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100038, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 398348030}
-  m_Layer: 12
-  m_Name: PetalBase_001
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &398348030
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400044, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 398348029}
-  m_LocalRotation: {x: -.686393261, y: -.169895381, z: .16989544, w: .686393023}
-  m_LocalPosition: {x: -.735576928, y: -.926480651, z: 3.74506932e-08}
-  m_LocalScale: {x: .999999881, y: 1, z: 1}
-  m_Children:
-  - {fileID: 336772659}
-  m_Father: {fileID: 2063447056}
 --- !u!1 &401010240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,33 +4308,6 @@ Transform:
   m_Children:
   - {fileID: 425008606}
   m_Father: {fileID: 374711235}
---- !u!1 &440139331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100004, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 440139332}
-  m_Layer: 12
-  m_Name: PetalLower_005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &440139332
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400004, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 440139331}
-  m_LocalRotation: {x: 3.46526178e-07, y: .332341343, z: 6.62634392e-08, w: .943159163}
-  m_LocalPosition: {x: -1.13052833, y: 4.82547478e-08, z: 0}
-  m_LocalScale: {x: .99999994, y: 1, z: .99999994}
-  m_Children:
-  - {fileID: 396373344}
-  m_Father: {fileID: 971682347}
 --- !u!1 &442011662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,133 +4973,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2009745221}
---- !u!1 &544503977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100056, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 544503978}
-  - 111: {fileID: 544503982}
-  - 54: {fileID: 544503981}
-  - 65: {fileID: 544503980}
-  - 135: {fileID: 544503979}
-  - 114: {fileID: 544503984}
-  - 114: {fileID: 544503983}
-  m_Layer: 12
-  m_Name: RaflessiaFlower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &544503978
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400056, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 544503977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.9228401, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1298194310}
-  m_Father: {fileID: 0}
---- !u!135 &544503979
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13500000, guid: c49ac2272127d664fae21b8c3ea5cfe1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 544503977}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &544503980
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6500000, guid: c49ac2272127d664fae21b8c3ea5cfe1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 544503977}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &544503981
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5400000, guid: c49ac2272127d664fae21b8c3ea5cfe1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 544503977}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!111 &544503982
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11100000, guid: c49ac2272127d664fae21b8c3ea5cfe1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 544503977}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400006, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
-  - {fileID: 7400002, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
-  - {fileID: 7400004, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
-  - {fileID: 7400006, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
---- !u!114 &544503983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: c49ac2272127d664fae21b8c3ea5cfe1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 544503977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dabb999fadd35e49804d6fb42968456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootScript: {fileID: 544503984}
-  target: {fileID: 0}
---- !u!114 &544503984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: c49ac2272127d664fae21b8c3ea5cfe1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 544503977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd85ed508beb0d47b00eae36bdde9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
-  bullet_speed: 200
-  firingRate: 1
-  projectileStartPosition: 1
-  enemyShotSound: {fileID: 0}
-  bulletHeight: {x: 0, y: 0, z: 0}
-  shootEffect: {fileID: 0}
 --- !u!1 &546840619
 GameObject:
   m_ObjectHideFlags: 0
@@ -5836,8 +5440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 9
-  MaxSpeed: 9
+  Force: 12
+  MaxSpeed: 12
   MoveScale: 1
 --- !u!82 &609703988
 AudioSource:
@@ -6766,8 +6370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 100
-  MaxSpeed: 50
+  Force: 150
+  MaxSpeed: 100
   MoveScale: 1
 --- !u!114 &680245873
 MonoBehaviour:
@@ -7148,33 +6752,6 @@ Transform:
   m_LocalScale: {x: .999999881, y: .999999762, z: 1}
   m_Children: []
   m_Father: {fileID: 214037908}
---- !u!1 &711281934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100044, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 711281935}
-  m_Layer: 12
-  m_Name: PetalLower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &711281935
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400034, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 711281934}
-  m_LocalRotation: {x: -1.14413773e-07, y: .332341284, z: 2.13174314e-08, w: .943159223}
-  m_LocalPosition: {x: -1.13052845, y: 8.32882137e-08, z: -2.5331974e-07}
-  m_LocalScale: {x: .999999762, y: 1, z: .999999881}
-  m_Children:
-  - {fileID: 782251221}
-  m_Father: {fileID: 259502911}
 --- !u!1 &723307353
 GameObject:
   m_ObjectHideFlags: 0
@@ -7487,33 +7064,6 @@ Transform:
   m_LocalScale: {x: 1.00000024, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 994976497}
---- !u!1 &782251220
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100042, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 782251221}
-  m_Layer: 12
-  m_Name: PetalUpper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &782251221
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400032, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 782251220}
-  m_LocalRotation: {x: 1.42745208e-07, y: .088408865, z: 1.33946187e-08, w: .996084273}
-  m_LocalPosition: {x: -2.02869153, y: 2.27378564e-07, z: 2.98023224e-08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1283590922}
-  m_Father: {fileID: 711281935}
 --- !u!1 &789343211
 GameObject:
   m_ObjectHideFlags: 0
@@ -8477,8 +8027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 9
-  MaxSpeed: 9
+  Force: 12
+  MaxSpeed: 12
   MoveScale: 1
 --- !u!82 &919076782
 AudioSource:
@@ -8979,33 +8529,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -.224891961, y: .0101356357, z: -.727600873}
     m_Extent: {x: 1.62706971, y: .489135265, z: .95517236}
   m_DirtyAABB: 0
---- !u!1 &971682346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100006, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 971682347}
-  m_Layer: 12
-  m_Name: PetalBase_005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &971682347
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400036, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 971682346}
-  m_LocalRotation: {x: .937630534, y: .0621860325, z: -.232081562, w: -.251237184}
-  m_LocalPosition: {x: -.735576868, y: -.463240117, z: .802355945}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 440139332}
-  m_Father: {fileID: 2063447056}
 --- !u!1 &974285390
 GameObject:
   m_ObjectHideFlags: 0
@@ -9217,8 +8740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 5
-  MaxSpeed: 5
+  Force: 7
+  MaxSpeed: 7
   MoveScale: 1
 --- !u!82 &984269112
 AudioSource:
@@ -9536,33 +9059,6 @@ Prefab:
   m_RootGameObject: {fileID: 609703985}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &993112897
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100018, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 993112898}
-  m_Layer: 12
-  m_Name: PetalUpper_003
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &993112898
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400014, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 993112897}
-  m_LocalRotation: {x: 1.68043954e-07, y: .0884088352, z: -1.79062507e-08, w: .996084273}
-  m_LocalPosition: {x: -2.02869129, y: 1.53161608e-07, z: -1.46100005e-12}
-  m_LocalScale: {x: .999999821, y: 1, z: .999999821}
-  m_Children:
-  - {fileID: 61643215}
-  m_Father: {fileID: 384142218}
 --- !u!1 &994161799
 GameObject:
   m_ObjectHideFlags: 0
@@ -9825,8 +9321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 9
-  MaxSpeed: 9
+  Force: 12
+  MaxSpeed: 12
   MoveScale: 1
 --- !u!82 &1029873045
 AudioSource:
@@ -10564,6 +10060,14 @@ Prefab:
       propertyPath: m_Volume
       value: .609000027
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: Force
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: MaxSpeed
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11100002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
@@ -11062,32 +10566,6 @@ Transform:
   m_Children:
   - {fileID: 683536471}
   m_Father: {fileID: 1378536132}
---- !u!1 &1196035170
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100032, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1196035171}
-  m_Layer: 12
-  m_Name: PetalTip_001
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1196035171
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400024, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1196035170}
-  m_LocalRotation: {x: -1.59529137e-07, y: .109116539, z: -1.27402862e-08, w: .994028986}
-  m_LocalPosition: {x: -1.40588939, y: 1.06141727e-07, z: 5.9604659e-08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1440335755}
 --- !u!1 &1213255883
 GameObject:
   m_ObjectHideFlags: 0
@@ -11414,7 +10892,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
       propertyPath: lightValue
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
@@ -11538,32 +11016,6 @@ Transform:
   m_Children:
   - {fileID: 131906042}
   m_Father: {fileID: 131608356}
---- !u!1 &1283590921
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100040, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1283590922}
-  m_Layer: 12
-  m_Name: PetalTip
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1283590922
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400030, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1283590921}
-  m_LocalRotation: {x: -2.06398866e-07, y: .109116651, z: 2.51589043e-08, w: .994028986}
-  m_LocalPosition: {x: -1.40588951, y: 8.30106188e-08, z: -4.47034836e-08}
-  m_LocalScale: {x: .999999881, y: .99999994, z: .999999881}
-  m_Children: []
-  m_Father: {fileID: 782251221}
 --- !u!1 &1285565859
 GameObject:
   m_ObjectHideFlags: 0
@@ -11696,33 +11148,6 @@ Transform:
   m_Children:
   - {fileID: 1797697368}
   m_Father: {fileID: 1988752436}
---- !u!1 &1298194309
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100054, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1298194310}
-  m_Layer: 12
-  m_Name: RaflessiaArmature
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1298194310
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400054, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1298194309}
-  m_LocalRotation: {x: 3.09070316e-08, y: .707106888, z: .707106769, w: 3.09070245e-08}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1788556310}
-  m_Father: {fileID: 544503978}
 --- !u!1 &1300758220
 GameObject:
   m_ObjectHideFlags: 0
@@ -12277,33 +11702,6 @@ Transform:
   m_Children:
   - {fileID: 1491420608}
   m_Father: {fileID: 897018066}
---- !u!1 &1368840700
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100028, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1368840701}
-  m_Layer: 12
-  m_Name: PetalLower_002
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1368840701
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400022, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1368840700}
-  m_LocalRotation: {x: -3.17893836e-08, y: .332341284, z: 2.17751648e-08, w: .943159223}
-  m_LocalPosition: {x: -1.13052857, y: 3.84349548e-08, z: -1.49011612e-07}
-  m_LocalScale: {x: .999999881, y: .999999881, z: .999999821}
-  m_Children:
-  - {fileID: 15705926}
-  m_Father: {fileID: 1636030798}
 --- !u!1 &1374364425
 GameObject:
   m_ObjectHideFlags: 0
@@ -12357,8 +11755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 9
-  MaxSpeed: 9
+  Force: 12
+  MaxSpeed: 12
   MoveScale: 1
 --- !u!82 &1374364428
 AudioSource:
@@ -13029,33 +12427,6 @@ Transform:
   - {fileID: 902370602}
   - {fileID: 2032589485}
   m_Father: {fileID: 1917632621}
---- !u!1 &1440335754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100034, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1440335755}
-  m_Layer: 12
-  m_Name: PetalUpper_001
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1440335755
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400026, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1440335754}
-  m_LocalRotation: {x: -1.1036871e-08, y: .0884087011, z: -4.1849141e-08, w: .996084273}
-  m_LocalPosition: {x: -2.02869129, y: 1.5316192e-07, z: 1.1920929e-07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1196035171}
-  m_Father: {fileID: 336772659}
 --- !u!1 &1449901713
 GameObject:
   m_ObjectHideFlags: 0
@@ -13622,32 +12993,6 @@ Transform:
   m_LocalScale: {x: .999999881, y: 1, z: .999999881}
   m_Children: []
   m_Father: {fileID: 913729031}
---- !u!1 &1524506584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1524506585}
-  m_Layer: 12
-  m_Name: PetalTip_005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1524506585
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1524506584}
-  m_LocalRotation: {x: 2.06344275e-08, y: .109116584, z: 1.69318746e-08, w: .994028986}
-  m_LocalPosition: {x: -1.40588951, y: -1.38499001e-09, z: -1.1920929e-07}
-  m_LocalScale: {x: .999999881, y: .99999994, z: .999999881}
-  m_Children: []
-  m_Father: {fileID: 396373344}
 --- !u!1 &1527941904
 GameObject:
   m_ObjectHideFlags: 0
@@ -13844,33 +13189,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 80856504}
---- !u!1 &1558789650
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100010, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1558789651}
-  m_Layer: 12
-  m_Name: PetalUpper_004
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1558789651
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400008, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1558789650}
-  m_LocalRotation: {x: 1.91503943e-07, y: .088408798, z: 7.75968534e-09, w: .996084273}
-  m_LocalPosition: {x: -2.02869177, y: 1.49634985e-07, z: 2.98023224e-08}
-  m_LocalScale: {x: .99999994, y: .999999821, z: .99999994}
-  m_Children:
-  - {fileID: 2009456079}
-  m_Father: {fileID: 266201875}
 --- !u!1 &1562295984
 GameObject:
   m_ObjectHideFlags: 0
@@ -14163,33 +13481,6 @@ Transform:
   m_Children:
   - {fileID: 1497871623}
   m_Father: {fileID: 398145262}
---- !u!1 &1636030797
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100030, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1636030798}
-  m_Layer: 12
-  m_Name: PetalBase_002
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1636030798
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400042, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1636030797}
-  m_LocalRotation: {x: .251236707, y: -.232081503, z: -.0621859245, w: .937630653}
-  m_LocalPosition: {x: -.735576868, y: .463239431, z: -.802356422}
-  m_LocalScale: {x: 1, y: 1, z: .999999821}
-  m_Children:
-  - {fileID: 1368840701}
-  m_Father: {fileID: 2063447056}
 --- !u!1 &1652064997
 GameObject:
   m_ObjectHideFlags: 0
@@ -14348,32 +13639,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1 &1665822387
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100024, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1665822388}
-  m_Layer: 12
-  m_Name: PetalTip_002
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1665822388
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400018, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1665822387}
-  m_LocalRotation: {x: 1.65086206e-07, y: .109116569, z: -5.48463053e-09, w: .994028986}
-  m_LocalPosition: {x: -1.40589011, y: 1.38129707e-07, z: 0}
-  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
-  m_Children: []
-  m_Father: {fileID: 15705926}
 --- !u!1 &1671679604
 GameObject:
   m_ObjectHideFlags: 0
@@ -14900,33 +14165,6 @@ Prefab:
   m_RootGameObject: {fileID: 360092230}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &1788556309
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100050, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1788556310}
-  m_Layer: 12
-  m_Name: Base
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1788556310
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400050, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1788556309}
-  m_LocalRotation: {x: .50000006, y: -.49999994, z: -.50000006, w: -.49999994}
-  m_LocalPosition: {x: -0, y: 0, z: -.0673121214}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2063447056}
-  m_Father: {fileID: 1298194310}
 --- !u!1 &1797697367
 GameObject:
   m_ObjectHideFlags: 0
@@ -15497,7 +14735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baeacc5f8a9d15245af6f6029ddd40c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightValue: 200
+  lightValue: 250
   collectSound: {fileID: 8300000, guid: a325284345d98014fbdc879d29edc168, type: 3}
 --- !u!54 &1895276953
 Rigidbody:
@@ -17651,32 +16889,6 @@ Transform:
   m_LocalScale: {x: .999999821, y: .99999994, z: .99999994}
   m_Children: []
   m_Father: {fileID: 1555749271}
---- !u!1 &2009456078
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100008, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2009456079}
-  m_Layer: 12
-  m_Name: PetalTip_004
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2009456079
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400006, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2009456078}
-  m_LocalRotation: {x: -2.60959307e-08, y: .109116606, z: -2.74119145e-08, w: .994028986}
-  m_LocalPosition: {x: -1.40588951, y: 1.42824376e-07, z: -1.63912773e-07}
-  m_LocalScale: {x: .99999994, y: .999999881, z: .999999821}
-  m_Children: []
-  m_Father: {fileID: 1558789651}
 --- !u!1 &2009745220
 GameObject:
   m_ObjectHideFlags: 0
@@ -18365,38 +17577,6 @@ Transform:
   m_Children:
   - {fileID: 232608531}
   m_Father: {fileID: 321772176}
---- !u!1 &2063447055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100048, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2063447056}
-  m_Layer: 12
-  m_Name: Stem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2063447056
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400048, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2063447055}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -.736855984, y: 5.56310802e-08, z: 1e-15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 259502911}
-  - {fileID: 398348030}
-  - {fileID: 1636030798}
-  - {fileID: 389250106}
-  - {fileID: 2132254459}
-  - {fileID: 971682347}
-  m_Father: {fileID: 1788556310}
 --- !u!1 &2066804057
 GameObject:
   m_ObjectHideFlags: 0
@@ -18921,33 +18101,6 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
---- !u!1 &2132254458
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100014, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2132254459}
-  m_Layer: 12
-  m_Name: PetalBase_004
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2132254459
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400038, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2132254458}
-  m_LocalRotation: {x: .937630415, y: -.0621861219, z: -.232081577, w: .251237452}
-  m_LocalPosition: {x: -.735576749, y: .463240802, z: .802355587}
-  m_LocalScale: {x: 1, y: 1, z: .999999821}
-  m_Children:
-  - {fileID: 266201875}
-  m_Father: {fileID: 2063447056}
 --- !u!1 &2132880532
 GameObject:
   m_ObjectHideFlags: 0
