@@ -213,11 +213,12 @@ public class CanSpawn : MonoBehaviour {
 	
 	private void makeMelee(Vector3 vec){
 		clone = Instantiate (meleeEnemy, vec, Quaternion.identity) as Rigidbody;
-		clone.GetComponent<AB_Aggressive> ().TargetSearchRadius = Mathf.Infinity;
+		//Debug.Log("WTF");
+		//clone.GetComponent<AB_Aggressive> ().TargetSearchRadius = Mathf.Infinity;
 	}
 	private void makeRanged(Vector3 vec){
 		clone = Instantiate (rangedEnemy, vec, Quaternion.identity) as Rigidbody;
-		clone.GetComponent<AB_Aggressive> ().TargetSearchRadius = Mathf.Infinity;
+		//clone.GetComponent<AB_Aggressive> ().TargetSearchRadius = Mathf.Infinity;
 	}
 	
 	private void addLevel(int nLevel, int nSpawn, int tToRun, float sTime){
