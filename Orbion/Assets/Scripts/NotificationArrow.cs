@@ -9,17 +9,33 @@ Make a delayed death and have it turn invisible
 
 public class NotificationArrow : MonoBehaviour {
 
-	public Texture2D arrow;
+	public Texture2D arrowTexture;
 	public Vector2 size = new Vector2(64, 64);
 	public Vector2 pos = new Vector2(0, 0);
 	public float rotationOffset = 0; //if the base image is not pointing to the right
 	public float duration = 1f;
+	public float visibleMarginRatio = 1; //should at least be 1
+
+	//World Range that prevents this object from instantiating if it is too close to another arrow
+	//public float duplicateRange;
+
 
 	private Vector2 posNoClamp = Vector2.zero;
 	private Rect drawRect = new Rect(0, 0, 0, 0);
 	private Vector2 posOffset = Vector2.zero;
 	private DumbTimer durationTimer;
 
+	//Uses values that UpdateArrowTransform updates, should run after it
+	public bool ShouldDraw(){
+		//If it clamped, then it was forced to the edge and we should draw it
+		if( posNoClamp != pos) return true;
+
+		float undrawableWidth = Camera.main.pixelWidth - 2 * visibleMarginRatio * size.x;
+		float undrawableHeight = Camera.main.pixelHeight - 2 * visibleMarginRatio * size.y;
+		Rect undrawableMargin = new Rect( visibleMarginRatio * size.x,  visibleMarginRatio * size.y , undrawableWidth, undrawableHeight);
+
+		return !undrawableMargin.Overlaps( drawRect);
+	}
 
 	//Prevents the arrow from being drawn outside of the screen
 	void ClampPosToScreen() {
@@ -53,7 +69,7 @@ public class NotificationArrow : MonoBehaviour {
 		ClampPosToScreen();
 
 		drawRect = new Rect( pos.x - posOffset.x, pos.y - posOffset.y, size.x, size.y);
-		GUIUtility.RotateAroundPivot( FindRotation(), pos);
+
 	}
 
 
@@ -71,7 +87,10 @@ public class NotificationArrow : MonoBehaviour {
 
 	void OnGUI() {
 		UpdateArrowTransform();
-		GUI.DrawTexture( drawRect, arrow);
+		if ( ShouldDraw()) {
+			GUIUtility.RotateAroundPivot( FindRotation(), pos);
+			GUI.DrawTexture( drawRect, arrowTexture);
+		}
 	}
 
 }
