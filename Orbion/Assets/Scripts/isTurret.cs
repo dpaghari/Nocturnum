@@ -29,4 +29,11 @@ public class isTurret : MonoBehaviour {
 			
 				
 	}
+	void OnTriggerStay(Collider other){
+		
+		if(other.tag == "Enemy")
+			target = other.rigidbody;
+		
+		
+	}
 }
