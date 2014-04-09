@@ -11,6 +11,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody wallBuilding;
 	public Rigidbody medBayBuilding;
 	public Rigidbody incindiaryBuilding;
+	public Rigidbody turretBuilding;
 	public AudioClip initBuild;
 
 	private Rigidbody clone;
@@ -27,6 +28,7 @@ public class CanBuild : MonoBehaviour {
 	public Texture2D button_generator;
 	public Texture2D button_ballistics;
 	public Texture2D button_medbay;
+	public Texture2D button_turret;
 
 	//Checks (temporary until we have metrics manager working.
 	public bool builtBallistics = false;
@@ -107,6 +109,11 @@ public class CanBuild : MonoBehaviour {
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
 			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), button_incendiary)) {
 				SetConstruction(incindiaryBuilding);
+			}
+			// Make the sixth button.
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
+			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2+92,128,128), button_turret)) {
+				SetConstruction(turretBuilding);
 			}
 		}
 	}
