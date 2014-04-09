@@ -32,6 +32,10 @@ public class GameManager : Singleton<GameManager> {
 	//sticking it here for now
 	private GameObject ArrowPrefab;
 	private static void BuildingAttack( Killable killableScript){
+		//Figure out better way to prevent creating arrows near each other
+		//This way seems to add way too much in an attemp to optimize: requiring colliders, and doing physics calcs
+		//Maybe store references to all arrows created and search against it?
+		//return Utility.GetClosestWith(newArrowPos, searchRange, Utility.GoHasComponent<NotificationArrow>) != null;
 		Instantiate(Instance.ArrowPrefab, killableScript.transform.position, Quaternion.identity);
 	}
 
