@@ -10,9 +10,13 @@ public class Killable : MonoBehaviour {
 	public int baseHP = 100;
 	public GameObject deathTarget;
 
+	//used to check if we should call the event when a building is hurt
+	public Buildable buildScript;
+
 
 	// Set HP to default
 	void Start () {
+		buildScript = gameObject.GetComponent<Buildable>();
 		currHP = baseHP;
 	}
 
@@ -24,6 +28,7 @@ public class Killable : MonoBehaviour {
 
 	// Updates HP based on damage taken, calls kill() on dead objects
 	public void damage (int dmg) {
+		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
 		if (currHP <= 0) kill();
 		if(gameObject.GetComponent<IsDamagedEffect>() != null){

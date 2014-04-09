@@ -29,9 +29,25 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 
+	//sticking it here for now
+	private GameObject ArrowPrefab;
+	private static void BuildingAttack( Killable killableScript){
+		Instantiate(Instance.ArrowPrefab, killableScript.transform.position, Quaternion.identity);
+	}
+
+	void OnEnable(){
+		EventManager.DamagingBuilding += BuildingAttack;
+	}
+	
+	
+	void OnDisable(){
+		EventManager.DamagingBuilding -= BuildingAttack;
+	}
+
+
 	// Use this for initialization
 	void Start () {
-	
+		ArrowPrefab = Resources.LoadAssetAtPath<GameObject>( "Assets/Prefabs/ArrowNotification.prefab");
 	}
 	
 	// Update is called once per frame
