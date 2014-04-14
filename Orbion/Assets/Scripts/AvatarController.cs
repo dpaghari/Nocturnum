@@ -6,7 +6,7 @@ public class AvatarController : MonoBehaviour {
 	public CanMove moveScript;
 	public CanShootReload shootScript;
 	public EquipmentUser equipScript;
-
+	public CanUse useScript;
 
 	public AudioClip shotSound;
 	public AudioClip bgm;
@@ -15,6 +15,9 @@ public class AvatarController : MonoBehaviour {
 
 	public Rigidbody normalBullet;
 	public Rigidbody orbBullet;
+
+
+
 
 
 	//public CanUseEquip equipScript;
@@ -58,8 +61,16 @@ public class AvatarController : MonoBehaviour {
 
 
 
+
+
+
+
 	// Use this for initialization
 	void Start () {
+		moveScript = GetComponent<CanMove>();
+		shootScript = GetComponent<CanShootReload>();
+		equipScript = GetComponent<EquipmentUser>();
+		useScript = GetComponent<CanUse>();
 
 	}
 
@@ -91,6 +102,7 @@ public class AvatarController : MonoBehaviour {
 
 		}
 
+
 	}
 	
 
@@ -121,6 +133,10 @@ public class AvatarController : MonoBehaviour {
 			
 			shootScript.Reload();
 			
+		}
+
+		if( Input.GetKeyDown( KeyCode.E)){
+			useScript.UseAction( useScript.useRange);
 		}
 
 
