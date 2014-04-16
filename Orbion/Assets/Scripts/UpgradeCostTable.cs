@@ -33,7 +33,7 @@ public class UpgradeCostTable : ScriptableObject {
 			{ Tech.buildingLightRange, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.bulletAbsorber, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.clipSize, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.groundSlam, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
+			{ Tech.lightFist, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.lightGrenade, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.lightPath, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.mindControl, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },

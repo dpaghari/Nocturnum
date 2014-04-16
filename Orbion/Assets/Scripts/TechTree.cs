@@ -138,7 +138,7 @@ public class TechTree : ScriptableObject {
 		//defaultTree.AddReq( Tech.refraction, Tech.generator);
 		//defaultTree.AddReq( Tech.seeker, Tech.refraction);
 		//defaultTree.AddReq( Tech.buildingLightRange, Tech.refraction);
-		//defaultTree.AddReq( Tech.groundSlam, Tech.refraction);
+		//defaultTree.AddReq( Tech.lightFist, Tech.refraction);
 
 
 

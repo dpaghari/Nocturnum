@@ -28,7 +28,7 @@ public enum Tech {
 	buildingLightRange,
 	bulletAbsorber,
 	clipSize,
-	groundSlam,
+	lightFist,
 	lightGrenade,
 	lightPath,
 	mindControl,

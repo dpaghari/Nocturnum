@@ -128,6 +128,11 @@ public class AvatarController : MonoBehaviour {
 			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));	
 		}
 
+		if (Input.GetMouseButton (2)) {
+			TechManager.Research(Tech.lightFist);
+			Debug.Log (TechManager.HasUpgrade(Tech.lightFist));
+		}
+
 
 		if( Input.GetKeyDown( KeyCode.R)){
 			

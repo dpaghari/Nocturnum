@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public enum EquipType{
 	NoEquip = 0,
 	BulletAbsorber,
-	GroundSlam,
+	LightFist,
 	LightGrenade,
 	LightPath,
 	MindControl,
@@ -19,7 +19,7 @@ public enum EquipType{
 //require all our Equipment Behaviors so we don't need to individually add all of them
 [RequireComponent (typeof (EB_NoEquip))]
 [RequireComponent (typeof (EB_BulletAbsorber))]
-//[RequireComponent (typeof (EB_GroundSlam))]
+[RequireComponent (typeof (EB_LightFist))]
 [RequireComponent (typeof (EB_LightGrenade))]
 //[RequireComponent (typeof (EB_LightPath))]
 //[RequireComponent (typeof (EB_MindControl))]
@@ -73,7 +73,7 @@ public class EquipmentUser : MonoBehaviour {
 	public static Tech EquipTypeToTech(EquipType theEquip){
 		switch (theEquip){
 			case EquipType.BulletAbsorber: return Tech.bulletAbsorber;
-			case EquipType.GroundSlam: return Tech.groundSlam;
+			case EquipType.LightFist: return Tech.lightFist;
 			case EquipType.LightGrenade: return Tech.lightGrenade;
 			case EquipType.LightPath: return Tech.lightPath;
 			case EquipType.MindControl: return Tech.mindControl;
@@ -116,7 +116,7 @@ public class EquipmentUser : MonoBehaviour {
 
 		Equipments[(int)EquipType.NoEquip] = gameObject.GetComponent<EB_NoEquip>();
 		Equipments[(int)EquipType.BulletAbsorber] = GetComponent<EB_BulletAbsorber>();
-		//Equipments[(int)EquipType.GroundSlam] = GetComponent<EB_GroundSlam>();
+		Equipments[(int)EquipType.LightFist] = GetComponent<EB_LightFist>();
 		Equipments[(int)EquipType.LightGrenade] = GetComponent<EB_LightGrenade>();
 		//Equipments[(int)EquipType.LightPath] = GetComponent<EB_LightPath>();
 		//Equipments[(int)EquipType.MindControl]  = GetComponent<EB_MindControl>();

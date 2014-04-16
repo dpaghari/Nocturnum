@@ -119,7 +119,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 	//otherwise, the target is the closest building/player 
 	//Returns null if nothing is in range
 	public Rigidbody FindTarget(float range){
-		Debug.Log("FINDTARGET");
+		//Debug.Log("FINDTARGET");
 		
 		//If player is within the priority range, no need to search further
 		Rigidbody player = GetPlayerInRange( range);
