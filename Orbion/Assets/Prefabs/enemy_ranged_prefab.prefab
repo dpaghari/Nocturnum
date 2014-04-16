@@ -20,6 +20,7 @@ GameObject:
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400008}
   m_Layer: 11
   m_Name: enemy_ranged_prefab
   m_TagString: EnemyRanged
@@ -1167,6 +1168,17 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
   bulletHeight: {x: 0, y: 0, z: 0}
   shootEffect: {fileID: 100000, guid: 0a8f0138979026948830f1a9dbe60763, type: 2}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

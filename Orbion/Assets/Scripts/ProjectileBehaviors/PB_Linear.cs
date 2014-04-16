@@ -18,6 +18,7 @@ public class PB_Linear : ProjectileBehavior {
 	public int Damage;
 	public int searingLevel;
 	public int homingLevel;
+	public int ricochetLevel;
 	public GameObject dot;
 	public GameObject hitEffect;
 	private GameObject clone;
@@ -59,7 +60,7 @@ public class PB_Linear : ProjectileBehavior {
 
 
 	public bool IsEnemy(GameObject enemy){
-		if(enemy.GetComponent<AB_Aggressive>() == null) return false;
+		if(enemy.GetComponent<IsEnemy>() == null) return false;
 
 		return true;
 	}

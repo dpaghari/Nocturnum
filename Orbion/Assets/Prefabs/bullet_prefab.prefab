@@ -168,8 +168,8 @@ Rigidbody:
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: .5
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -320,6 +320,7 @@ MonoBehaviour:
   MoveScript: {fileID: 11400002}
   Damage: 10
   searingLevel: 0
+  homingLevel: 3
   dot: {fileID: 100000, guid: adbcd9ae3042b1c47836e1b25f2a25e5, type: 2}
   hitEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   lifeTime: 2
