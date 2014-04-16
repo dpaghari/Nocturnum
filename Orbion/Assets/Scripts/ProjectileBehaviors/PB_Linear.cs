@@ -15,12 +15,16 @@ public class PB_Linear : ProjectileBehavior {
 	public ForceMode MoveType;
 	//public float MoveForce;
 	public CanMove MoveScript;
+
+
 	public int Damage;
 	public int searingLevel;
 	public int homingLevel;
 	public GameObject dot;
 	public GameObject hitEffect;
 	private GameObject clone;
+
+	public GameObject target;
 
 	public float lifeTime = 2.0F;
 	private float lifeCounter = 0.0F;
@@ -42,7 +46,7 @@ public class PB_Linear : ProjectileBehavior {
 			Vector3 targDir = transform.InverseTransformPoint(targ.transform.position);
 			float targAngle = Mathf.Atan2(targDir.x, targDir.z);
 
-			Debug.Log(targAngle);
+			//Debug.Log(targAngle);
 
 			if(targAngle < 0 && targAngle > -1){
 				MoveScript.TurnLeft(Vector3.up, MoveType);
@@ -90,6 +94,12 @@ public class PB_Linear : ProjectileBehavior {
 			else{
 				child.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
 			}
+		}
+
+		if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyRanged") {
+			target = GameObject.Find("player_prefab");
+			target.GetComponent<hasOverdrive>().overdriveCount += 1.0f;
+			//ebug.Log(target.GetComponent<hasOverdrive>().overdriveCount);
 		}
 
 		transform.DetachChildren();

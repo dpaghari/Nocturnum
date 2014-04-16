@@ -28,6 +28,7 @@ GameObject:
   - 82: {fileID: 8200002}
   - 111: {fileID: 11100002}
   - 82: {fileID: 8200004}
+  - 114: {fileID: 11400028}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -2597,6 +2598,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useRange: 15
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe01ea4843222849a14431528e7b892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overdriveCount: 0
+  shootScript: {fileID: 11400000}
+  moveScript: {fileID: 11400002}
+  timerScript: {fileID: 0}
+  overdriveActive: 0
+  odtime: 0
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
