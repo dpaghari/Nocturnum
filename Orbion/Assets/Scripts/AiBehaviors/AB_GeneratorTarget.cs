@@ -18,6 +18,9 @@ public class AB_GeneratorTarget : MonoBehaviour {
 	public Rigidbody CurrTarget;
 	
 	private float TargetSearchRadius = Mathf.Infinity;
+
+	private float targetCheckTimer = 5.0F;
+	private float targetCheckCounter = 0.0F;
 	
 	//Given that there are buildings and the player in range,
 	//always attack the player if they're within PlayerPriorityRange
@@ -27,7 +30,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
-		
+		Debug.Log("START OF BEHAVIOR");
 		CurrTarget = FindTarget(TargetSearchRadius);
 	}
 	
@@ -54,7 +57,12 @@ public class AB_GeneratorTarget : MonoBehaviour {
 	
 	
 	protected virtual void Update () {
-		CurrTarget = FindTarget(TargetSearchRadius);
+		if(targetCheckCounter > targetCheckTimer){
+			CurrTarget = FindTarget(TargetSearchRadius);
+			targetCheckCounter = 0.0F;
+		} else {
+			targetCheckCounter += Time.deltaTime;
+		}
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
@@ -111,6 +119,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 	//otherwise, the target is the closest building/player 
 	//Returns null if nothing is in range
 	public Rigidbody FindTarget(float range){
+		Debug.Log("FINDTARGET");
 		
 		//If player is within the priority range, no need to search further
 		Rigidbody player = GetPlayerInRange( range);
