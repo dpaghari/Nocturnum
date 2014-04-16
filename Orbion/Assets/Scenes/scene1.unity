@@ -7997,9 +7997,9 @@ GameObject:
   - 114: {fileID: 680245864}
   - 114: {fileID: 680245879}
   - 82: {fileID: 680245863}
+  - 111: {fileID: 680245862}
   - 82: {fileID: 680245861}
   - 114: {fileID: 680245880}
-  - 95: {fileID: 680245862}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -8096,20 +8096,26 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!95 &680245862
-Animator:
-  serializedVersion: 2
+--- !u!111 &680245862
+Animation:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11100002, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1100497197}
   m_GameObject: {fileID: 680245858}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
+  m_Animations:
+  - {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
+  - {fileID: 7400006, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
+  - {fileID: 7400002, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
+  - {fileID: 7400004, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
+  - {fileID: 7400008, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 1
+  m_CullingType: 0
 --- !u!82 &680245863
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8121,7 +8127,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .609000027
+  m_Volume: .70599997
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8469,7 +8475,7 @@ Animation:
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_CullingType: 1
 --- !u!114 &680245879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8495,7 +8501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe01ea4843222849a14431528e7b892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overdriveCount: 0
+  overdriveCount: 111
   shootScript: {fileID: 680245870}
   moveScript: {fileID: 680245872}
   timerScript: {fileID: 0}
@@ -13252,24 +13258,11 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-      propertyPath: m_CullingType
-      value: 0
+    - target: {fileID: 11400028, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8200002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-      propertyPath: m_Volume
-      value: .609000027
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-      propertyPath: Force
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-      propertyPath: MaxSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11100002, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
   m_IsPrefabParent: 0
