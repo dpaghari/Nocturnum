@@ -139,15 +139,29 @@ public class TechManager : Singleton<TechManager> {
 
 
 	public static float GetUpgradeLumenCost( Tech upgrade){
-		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.LumenCost[upgrade];
+		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.costTable[upgrade].lumen;
 		return 0;
 	}
 
 
 	public static int GetUpgradeEnergyCost( Tech upgrade){
-		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.EnergyCost[upgrade];
+		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.costTable[upgrade].energy;
 		return 0;
 	}
+
+
+	public static float GetUpgradeTime( Tech upgrade){
+		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.costTable[upgrade].researchTime;
+		return 0;
+	}
+
+
+	public static UpgradeCostStruct GetUpgradeCosts( Tech upgrade){
+		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.costTable[upgrade];
+		return new UpgradeCostStruct(0, 0, 0);
+	}
+
+
 
 	//Checks whether theTech is available.
 	//As of now this is determined by:
