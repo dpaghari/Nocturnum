@@ -34,6 +34,8 @@ public class CanBuild : MonoBehaviour {
 	//Checks (temporary until we have metrics manager working.
 	public bool builtBallistics = false;
 	public bool builtGenerator = false;
+	//For slowing down
+	public bool inBuilding = false;
 	
 
 	// Use this for initialization
@@ -60,6 +62,7 @@ public class CanBuild : MonoBehaviour {
 		if ( MeetsRequirement( buildingType)){
 			menuUp = false;
 			toBuild = buildingType;
+
 		}
 	}
 
@@ -78,6 +81,7 @@ public class CanBuild : MonoBehaviour {
 	void OnGUI() {
 		GUI.skin = buildWheelSkin;
 		if(menuUp){
+
 			GetComponent<CanShoot>().ResetFiringTimer();
 			
 			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator)) {
@@ -121,6 +125,19 @@ public class CanBuild : MonoBehaviour {
 			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_refraction)) {
 				SetConstruction(refractionBuilding);
 			}
+			if(Time.timeScale ==1.0f){
+				Time.timeScale = 0.3f;
+				// Checks for if the player is 
+				inBuilding = true;
+		}
+	} else {
+			// is set to false when the player puts down a building or
+			// if the menu button is gone and the player hasn't chosen.
+			// a building. Check for this is in the Update().
+			if (!inBuilding){
+				Time.timeScale = 1.0f;
+				Time.fixedDeltaTime = 0.02f*Time.timeScale;
+			}
 		}
 	}
 	
@@ -152,6 +169,8 @@ public class CanBuild : MonoBehaviour {
 					//mousePos.y += 1;
 					clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 					builtGenerator = true;
+					// Slows down during placing building.
+					inBuilding = false;
 				}
 				else{
 					mousePos.y += 5.25f;
@@ -159,7 +178,8 @@ public class CanBuild : MonoBehaviour {
 					//Quaternion.LookRotation(Vector3.forward, Vector3.up)
 					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
-
+					// Slows down during placing building.
+					inBuilding = false;
 				}
 				
 				Buildable buildInfo = toBuild.GetComponent<Buildable>();
@@ -182,6 +202,8 @@ public class CanBuild : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0){
 			menuUp = false;
 			toBuild = null;
+			// Check for if the player just opens and closes.
+			inBuilding = false;
 		}
 
 		if (menuCounter > 0) {
