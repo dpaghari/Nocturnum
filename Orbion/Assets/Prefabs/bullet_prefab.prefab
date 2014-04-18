@@ -173,7 +173,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!64 &6400000
 MeshCollider:
@@ -318,12 +318,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveType: 0
   MoveScript: {fileID: 11400002}
-  overdriveScript: {fileID: 11400028, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   Damage: 10
   searingLevel: 0
-  homingLevel: 0
+  homingLevel: 2
+  ricochetLevel: 0
   dot: {fileID: 100000, guid: adbcd9ae3042b1c47836e1b25f2a25e5, type: 2}
   hitEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
+  target: {fileID: 0}
   lifeTime: 2
 --- !u!114 &11400006
 MonoBehaviour:

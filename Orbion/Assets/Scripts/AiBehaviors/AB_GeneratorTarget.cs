@@ -49,7 +49,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 					animation.CrossFade("WolfRunCycle");
 				
 				if(this.tag == "EnemyRanged")
-					animation.CrossFade("bat_fly");
+					animation.CrossFade("ZingBatHover");
 			}
 		}
 	}

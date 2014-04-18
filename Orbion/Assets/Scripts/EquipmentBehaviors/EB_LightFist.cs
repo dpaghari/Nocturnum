@@ -9,7 +9,10 @@ public class EB_LightFist : EquipmentBehavior {
 	
 	public override void Action ( Vector3 cursor){
 		//if (!isPunching) {
-			clone = Instantiate (punchObj, transform.position, Quaternion.identity) as Rigidbody;
+		Vector3 temp = transform.position;
+		temp.y += 4;
+
+			clone = Instantiate (punchObj, temp, Quaternion.identity) as Rigidbody;
 			//Debug.Log ("running");
 
 		//}	
