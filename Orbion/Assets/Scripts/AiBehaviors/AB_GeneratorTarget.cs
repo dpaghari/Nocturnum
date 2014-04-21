@@ -19,7 +19,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 	
 	private float TargetSearchRadius = Mathf.Infinity;
 
-	private float targetCheckTimer = 5.0F;
+	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
 	
 	//Given that there are buildings and the player in range,
@@ -30,7 +30,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
-		Debug.Log("START OF BEHAVIOR");
+		//Debug.Log("START OF BEHAVIOR");
 		CurrTarget = FindTarget(TargetSearchRadius);
 	}
 	
@@ -119,11 +119,14 @@ public class AB_GeneratorTarget : MonoBehaviour {
 	//otherwise, the target is the closest building/player 
 	//Returns null if nothing is in range
 	public Rigidbody FindTarget(float range){
-		Debug.Log("FINDTARGET");
+		//Debug.Log("FINDTARGET");
 		
 		//If player is within the priority range, no need to search further
 		Rigidbody player = GetPlayerInRange( range);
-		if(player !=null && PlayerInRange( PlayerPriorityRange)) return player;
+		if(player !=null && PlayerInRange( PlayerPriorityRange)){
+			//Debug.Log("return player priority");
+		 	return FindPlayer();
+		}
 		
 		
 		//Rigidbody building = FindNearestBuilding( range);
@@ -133,18 +136,29 @@ public class AB_GeneratorTarget : MonoBehaviour {
 		//if no generator check for closest building
 		if(GObuilding != null){ 
 			building = GObuilding.rigidbody;
+			//Debug.Log("return generator");
 			return building;
 		} else {
-			building = FindNearestBuilding (range);
-			return building;		
+			//building = FindNearestBuilding (range);
+			//Debug.Log("return nearest building");
+			//return building;
+			//Debug.Log("return player");
+			return FindPlayer();		
 		}
 		
 		//If we can't find a player or building, return the other
 		//If we can't find either, this returns null
-		if(player == null) return building;
-		if(building == null) return player;
 
-		//Debug.Log("wtf");
+		/*
+		if(player == null){ 
+			Debug.Log("return building 3");
+			return building;
+		}
+		if(building == null){
+			Debug.Log("return player 2");
+		 return player;
+		}
+
 		return FindPlayer();
 		
 		
@@ -155,6 +169,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 		float distToBuilding = Vector3.Distance(rigidbody.position, building.position);
 		if(distToBuilding < distToPlayer) closestTarget = building;
 		return closestTarget;
+		*/
 	}
 	
 	
