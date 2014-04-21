@@ -61,6 +61,7 @@ public class TechManager : Singleton<TechManager> {
 	protected int[] UpgrLevels;
 	protected int[] NumBuildings;
 	protected UpgradeCostTable UpgradeCosts;
+	protected ResearchingInfo ResearchProgress;
 
 
 	public static bool IsBuilding( Tech theTech){
@@ -130,6 +131,10 @@ public class TechManager : Singleton<TechManager> {
 		return -1;
 	}
 
+	
+	public static void SetUpgradeLv( Tech upgrade, int newLevel){
+		if( CheckUpgrade( upgrade)) Instance.UpgrLevels[(int)upgrade] = newLevel;
+	}
 
 
 	public static bool HasUpgrade( Tech upgrade){
@@ -197,13 +202,20 @@ public class TechManager : Singleton<TechManager> {
 	public static void Research( Tech upgrade, bool force = false){
 		if( CheckUpgrade( upgrade)){
 
-			if( !IsTechAvaliable( upgrade) && !force){
-				string errMsg = string.Format( "Attempt to research {0} when not availiable.", upgrade);
-				Debug.LogError( errMsg);
-				return;
+			if( !force){
+				
+				if( !IsTechAvaliable( upgrade)){
+					string errMsg = string.Format( "Attempt to research {0} when not availiable.", upgrade);
+					Debug.LogError( errMsg);
+					return;
+				}
+				if( Instance.ResearchProgress.IsResearching( upgrade)){
+					string errMsg = string.Format( "Attempt to research {0} when already in progress.", upgrade);
+					Debug.LogError( errMsg);
+					return;
+				}
 			}
-
-			Instance.UpgrLevels[(int)upgrade] += 1;
+			Instance.ResearchProgress.SetFinishTime( upgrade, Time.time + GetUpgradeTime( upgrade));
 		}
 	}
 
@@ -218,6 +230,11 @@ public class TechManager : Singleton<TechManager> {
 	}
 
 
+	private static void IncrementUpgradeLevel( Tech theUpgrade){
+		SetUpgradeLv( theUpgrade, GetUpgradeLv( theUpgrade) + 1);
+		Debug.Log ( string.Format( "{0} is now level {1}!", theUpgrade, GetUpgradeLv( theUpgrade)));
+	}
+
 
 	void Awake () {
 		//Could reduce the size of arrays by fitting it to # of entries of a type using the FRONT and END,
@@ -228,9 +245,17 @@ public class TechManager : Singleton<TechManager> {
 
 		PlayerTech = TechTree.MakeDefault();
 		UpgradeCosts = UpgradeCostTable.InitTable();
+		ResearchProgress = ResearchingInfo.New();
 	}
 
 
+	void OnEnable (){
+		EventManager.ResearchedUpgrade += IncrementUpgradeLevel;
+	}
+
+	void OnDisable (){
+		EventManager.ResearchedUpgrade -= IncrementUpgradeLevel;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -241,7 +266,7 @@ public class TechManager : Singleton<TechManager> {
 
 	// Update is called once per frame
 	void Update () {
-	
+		ResearchProgress.UpdateStatus();
 	}
 
 

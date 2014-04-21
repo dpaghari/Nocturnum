@@ -19,12 +19,16 @@ public class EventManager : Singleton<EventManager> {
 	public delegate void BuildingEventHandler( Killable killableScript);
 	public static event BuildingEventHandler DamagingBuilding;
 	public static void OnDamagingBuilding( Killable killableScript){
-		if ( DamagingBuilding != null)
-			DamagingBuilding( killableScript);
+		if( DamagingBuilding != null) DamagingBuilding( killableScript);
 	}
 
 
 
+	public delegate void ResearchedEventHandler( Tech theUpgrade);
+	public static event ResearchedEventHandler ResearchedUpgrade;
+	public static void OnResearchedUpgrade( Tech theUpgrade){
+		if( ResearchedUpgrade != null) ResearchedUpgrade( theUpgrade);
+	}
 
 
 
