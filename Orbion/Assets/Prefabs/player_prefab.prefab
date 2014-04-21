@@ -23,11 +23,12 @@ GameObject:
   - 114: {fileID: 11400016}
   - 114: {fileID: 11400022}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400024}
   - 114: {fileID: 11400026}
   - 82: {fileID: 8200002}
-  - 111: {fileID: 11100002}
   - 82: {fileID: 8200004}
+  - 114: {fileID: 11400028}
+  - 114: {fileID: 11400030}
+  - 114: {fileID: 11400024}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -2138,7 +2139,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .680000007
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2196,7 +2197,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .70599997
+  m_Volume: .519999981
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2360,25 +2361,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!111 &11100002
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400006, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400002, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400004, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  - {fileID: 7400008, guid: d113df2ed4bdf794ebd35cb28b7f9fae, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2476,8 +2458,9 @@ MonoBehaviour:
   moveScript: {fileID: 11400002}
   shootScript: {fileID: 11400000}
   equipScript: {fileID: 11400016}
+  overdriveScript: {fileID: 11400028}
   useScript: {fileID: 0}
-  shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
+  shotSound: {fileID: 0}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
@@ -2532,7 +2515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2248c4709bc554c42a497f5e1cf584d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrEquipType: 3
+  CurrEquipType: 2
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2585,6 +2568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b2eda5d8e39f64cbd4702727fcc550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootScript: {fileID: 11400000}
+  overdriveScript: {fileID: 11400028}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2597,6 +2582,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useRange: 15
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe01ea4843222849a14431528e7b892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overdriveCount: 111
+  shootScript: {fileID: 11400000}
+  moveScript: {fileID: 11400002}
+  timerScript: {fileID: 0}
+  dwindleScript: {fileID: 0}
+  overdriveActive: 0
+  odtime: 0
+  overdriveLimit: 0
+--- !u!114 &11400030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c23f70619881345b454438c4ff3dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: 1
+  isPunching: 0
+  punchObj: {fileID: 5400000, guid: 722aa02b8bb0fbb419f4e9625abcf651, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

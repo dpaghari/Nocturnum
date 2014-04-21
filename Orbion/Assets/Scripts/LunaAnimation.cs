@@ -4,6 +4,10 @@ using System.Collections;
 public class LunaAnimation : MonoBehaviour {
 
 
+	public CanShootReload shootScript;
+	public hasOverdrive overdriveScript;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -55,7 +59,9 @@ public class LunaAnimation : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButton(0)){
-			animation.CrossFade("Shooting");
+			
+			//animation.CrossFade("Shooting");
+
 			Vector3 temp;
 			temp = Utility.GetMouseWorldPos(transform.position.y) - transform.position;
 			newRotation = temp;

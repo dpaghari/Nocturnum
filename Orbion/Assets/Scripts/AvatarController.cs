@@ -6,6 +6,7 @@ public class AvatarController : MonoBehaviour {
 	public CanMove moveScript;
 	public CanShootReload shootScript;
 	public EquipmentUser equipScript;
+	public hasOverdrive overdriveScript;
 	public CanUse useScript;
 
 	public AudioClip shotSound;
@@ -37,7 +38,7 @@ public class AvatarController : MonoBehaviour {
 			shootScript.Shoot(dir);		
 
 		if( shootScript.FinishCooldown()){
-			animation.CrossFade("Shooting");
+
 
 			//Vector3 hitAngle = adjustedHit - transform.position;
 			Vector3 leftBound = Quaternion.Euler( 0, -ScatterSpread/2, 0) * dir;
@@ -48,12 +49,16 @@ public class AvatarController : MonoBehaviour {
 				Vector3 BulDir = Quaternion.Euler( 0, angleOffset, 0) * leftBound ;
 				shootScript.SetFiringTimer( 1.0f);
 				shootScript.ShootDir( BulDir);
-				if(!shootScript.reloading){
-					audio.clip = shotSound;
-					audio.PlayOneShot(shotSound,1.0f);
+				if(shootScript.reloading == false){
+					animation.CrossFade("Shooting");
+					if(overdriveScript.overdriveActive == false){
+						audio.clip = shotSound;
+						audio.PlayOneShot(shotSound,1.0f);
+					}
 				}
 
 			}
+		
 
 		}
 		
@@ -71,7 +76,7 @@ public class AvatarController : MonoBehaviour {
 		shootScript = GetComponent<CanShootReload>();
 		equipScript = GetComponent<EquipmentUser>();
 		useScript = GetComponent<CanUse>();
-
+		overdriveScript = GetComponent<hasOverdrive>();
 	}
 
 
@@ -115,7 +120,7 @@ public class AvatarController : MonoBehaviour {
 		//Uses the CanShootReload component to shoot at the cursor
 		if( Input.GetMouseButton( 0)){
 
-
+			//Debug.Log("hi");
 			Scattershot( Utility.GetMouseWorldPos( transform.position.y));
 			//animation.CrossFade("Shoot");
 
@@ -123,9 +128,16 @@ public class AvatarController : MonoBehaviour {
 
 
 
+
+
 		//use our current equipment
 		if(Input.GetMouseButtonDown(1)){
 			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));	
+		}
+
+		if (Input.GetMouseButton (2)) {
+			TechManager.Research(Tech.lightFist);
+			Debug.Log (TechManager.HasUpgrade(Tech.lightFist));
 		}
 
 
