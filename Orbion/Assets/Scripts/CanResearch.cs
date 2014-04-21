@@ -1,6 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+TODO:
+
+20 April 2014 - Will
+Upgrades that have hardcoded research effects probably do not work
+with new event driven upgrade/research system. Fix this later.
+
+*/
+
 public class CanResearch : MonoBehaviour {
 
 	private bool menuUp = false;
@@ -20,12 +29,17 @@ public class CanResearch : MonoBehaviour {
 	
 
 	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
+	//If the tech is also an upgrade, it must not be already researching
 	bool MeetsRequirement(Tech theUpgr){
 		if( !TechManager.IsTechAvaliable( theUpgr)) return false;
 		if (ResManager.Lumen < TechManager.GetUpgradeLumenCost( theUpgr)) return false;
 
 		float neededMaxEnergy = ResManager.UsedEnergy + TechManager.GetUpgradeEnergyCost( theUpgr);
 		if ( neededMaxEnergy > ResManager.MaxEnergy) return false;
+
+		if( TechManager.IsUpgrade( theUpgr))
+			if( TechManager.ResearchProgress().IsResearching( theUpgr))
+				return false;
 
 		return true;
 	}

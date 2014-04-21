@@ -4,6 +4,7 @@ using System.Collections;
 public class ResearchingInfo : ScriptableObject {
 
 	private float[] researchTimes; //stores the in-game time when an upgrade should finish
+	private Tech closestTech = Tech.none;
 
 	public const float NOT_RESEARCHING = Mathf.Infinity;
 	public const int FIRST_UPGRADE = (int) Tech._upgradesFRONT + 1;
@@ -40,11 +41,33 @@ public class ResearchingInfo : ScriptableObject {
 		return Time.time >= GetFinishTime( theUpgrade);
 	}
 
-	//should optimize this
+
+	//returns tech.none if nothing is currently researching
+	private Tech GetClosestTech(){
+		Tech lowestTimeTech = Tech.none;
+		float lowestTime = ResearchingInfo.NOT_RESEARCHING;
+
+		for( int i = ResearchingInfo.FIRST_UPGRADE; i <= ResearchingInfo.LAST_UPGRADE; i++){
+			Tech currTech = (Tech)i;
+			float currTime = GetFinishTime(currTech);
+			if ( currTime < lowestTime){
+				lowestTimeTech = currTech;
+				lowestTime = currTime;
+			}
+		}
+
+		return lowestTimeTech;
+	}
+	
+
 	//If there are no upgrades that are finished, returns Tech.none
 	public Tech GetFinishedUpgrade(){
-		for( int i = ResearchingInfo.FIRST_UPGRADE; i <= ResearchingInfo.LAST_UPGRADE; i++)
-			if( IsFinished( (Tech)i)) return (Tech)i;
+		if( closestTech == Tech.none)
+			closestTech = GetClosestTech();
+
+		if( closestTech != Tech.none && IsFinished( closestTech))
+			return closestTech;
+
 		return Tech.none;
 	}
 
@@ -53,6 +76,7 @@ public class ResearchingInfo : ScriptableObject {
 		while( theFinishedUpgrade != Tech.none){
 			EventManager.OnResearchedUpgrade( theFinishedUpgrade);
 			SetFinishTime( theFinishedUpgrade, ResearchingInfo.NOT_RESEARCHING);
+			closestTech = Tech.none;
 			theFinishedUpgrade = GetFinishedUpgrade();
 		}
 	}

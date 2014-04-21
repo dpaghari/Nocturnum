@@ -61,8 +61,8 @@ public class TechManager : Singleton<TechManager> {
 	protected int[] UpgrLevels;
 	protected int[] NumBuildings;
 	protected UpgradeCostTable UpgradeCosts;
-	protected ResearchingInfo ResearchProgress;
-
+	protected ResearchingInfo researchProgress;
+	public static ResearchingInfo ResearchProgress(){ return Instance.researchProgress;}
 
 	public static bool IsBuilding( Tech theTech){
 		return theTech > Tech._buildingsFRONT && theTech < Tech._buildingsEND;
@@ -168,6 +168,7 @@ public class TechManager : Singleton<TechManager> {
 
 
 
+
 	//Checks whether theTech is available.
 	//As of now this is determined by:
 	//  for each PreReq in the set,
@@ -209,13 +210,13 @@ public class TechManager : Singleton<TechManager> {
 					Debug.LogError( errMsg);
 					return;
 				}
-				if( Instance.ResearchProgress.IsResearching( upgrade)){
+				if( ResearchProgress().IsResearching( upgrade)){
 					string errMsg = string.Format( "Attempt to research {0} when already in progress.", upgrade);
 					Debug.LogError( errMsg);
 					return;
 				}
 			}
-			Instance.ResearchProgress.SetFinishTime( upgrade, Time.time + GetUpgradeTime( upgrade));
+			ResearchProgress().SetFinishTime( upgrade, Time.time + GetUpgradeTime( upgrade));
 		}
 	}
 
@@ -245,7 +246,7 @@ public class TechManager : Singleton<TechManager> {
 
 		PlayerTech = TechTree.MakeDefault();
 		UpgradeCosts = UpgradeCostTable.InitTable();
-		ResearchProgress = ResearchingInfo.New();
+		researchProgress = ResearchingInfo.New();
 	}
 
 
@@ -266,7 +267,7 @@ public class TechManager : Singleton<TechManager> {
 
 	// Update is called once per frame
 	void Update () {
-		ResearchProgress.UpdateStatus();
+		ResearchProgress().UpdateStatus();
 	}
 
 
