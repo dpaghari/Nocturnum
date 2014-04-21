@@ -166,8 +166,10 @@ public class CanBuild : MonoBehaviour {
 				GetComponent<CanShoot>().ResetFiringTimer();
 				audio.PlayOneShot(initBuild, 1.0f);
 				if (toBuild == generatorBuilding){
-					//mousePos.y += 1;
-					clone = Instantiate(generatorBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					mousePos.y += 5.25f;
+					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
+					clone.GetComponent<IsUnderConstruction>().canBuildOutOfLight = true;
 					builtGenerator = true;
 					// Slows down during placing building.
 					inBuilding = false;
