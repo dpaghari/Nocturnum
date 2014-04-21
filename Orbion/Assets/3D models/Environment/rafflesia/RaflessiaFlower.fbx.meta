@@ -66,6 +66,7 @@ ModelImporter:
     7400002: ArmatureAction_001
     7400004: RaflessiaOpen
     7400006: RaflessiaPoseLib
+    7400008: RaflessiaClose
     9500000: //RootNode
     11100000: //RootNode
     13700000: RaflessiaFlower
@@ -83,7 +84,427 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: RaflessiaArmature
+        weight: 1
+      - path: RaflessiaArmature/Base
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper/PetalTip
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001/PetalTip_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002/PetalTip_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003/PetalTip_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004/PetalTip_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005/PetalTip_005
+        weight: 1
+      - path: RaflessiaFlower
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ArmatureAction_001
+      takeName: ArmatureAction_001
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: RaflessiaArmature
+        weight: 1
+      - path: RaflessiaArmature/Base
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper/PetalTip
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001/PetalTip_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002/PetalTip_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003/PetalTip_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004/PetalTip_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005/PetalTip_005
+        weight: 1
+      - path: RaflessiaFlower
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RaflessiaOpen
+      takeName: RaflessiaOpen
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: RaflessiaArmature
+        weight: 1
+      - path: RaflessiaArmature/Base
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper/PetalTip
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001/PetalTip_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002/PetalTip_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003/PetalTip_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004/PetalTip_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005/PetalTip_005
+        weight: 1
+      - path: RaflessiaFlower
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RaflessiaPoseLib
+      takeName: RaflessiaPoseLib
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: RaflessiaArmature
+        weight: 1
+      - path: RaflessiaArmature/Base
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper/PetalTip
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001/PetalTip_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002/PetalTip_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003/PetalTip_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004/PetalTip_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005/PetalTip_005
+        weight: 1
+      - path: RaflessiaFlower
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RaflessiaClose
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: RaflessiaArmature
+        weight: 1
+      - path: RaflessiaArmature/Base
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase/PetalLower/PetalUpper/PetalTip
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_001/PetalLower_001/PetalUpper_001/PetalTip_001
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_002/PetalLower_002/PetalUpper_002/PetalTip_002
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_003/PetalLower_003/PetalUpper_003/PetalTip_003
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_004/PetalLower_004/PetalUpper_004/PetalTip_004
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005
+        weight: 1
+      - path: RaflessiaArmature/Base/Stem/PetalBase_005/PetalLower_005/PetalUpper_005/PetalTip_005
+        weight: 1
+      - path: RaflessiaFlower
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
