@@ -18,10 +18,11 @@ public class AB_Flock : MonoBehaviour {
 	private float targetCheckCounter = 0.0F;
 	
 	//flocking variables
+	public float searchRadius = 5.0F;
 	private Vector2 alignment;
 	private Vector2 cohesion;
 	private Vector2 separation;
-	private int neighbours = 0;
+	private int neighbors;
 	private Vector2 vel = new Vector2(0.0F,0.0F);
 	private float enemySpeed = 5.0F;
 
@@ -38,49 +39,64 @@ public class AB_Flock : MonoBehaviour {
 	
 	
 	public Vector2 computeAlignment(){
-		//check in radius around you
-		//v.x += agent.velocity.x;
-		//v.y += agent.velocity.y;
-		//neighbors++;		
-		//if (neighborCount == 0) return v;
-		//v.x /= neighbors;
-		//v.y /= neighbors;
-		//v.normalize(1);
-		//return v;
+		Vector2 alig = new Vector2(0.0F,0.0F); neighbors = 0;
 
-		return new Vector2(0.0F,0.0F);
+		Collider[] hitColliders = Physics.OverlapSphere(rigidbody.position, searchRadius);
+		//float closestEnemyDist = Mathf.Infinity;
+		for (int i=0; i < hitColliders.Length; i++) {
+			if( hitColliders[i].GetComponent<AB_Flock>() == null) continue;
+			alig.x += hitColliders[i].rigidbody.velocity.x;
+			alig.y += hitColliders[i].rigidbody.velocity.z;
+			neighbors++;			
+		}
+		if (neighbors == 0) return alig;
+		alig.x /= neighbors;
+		alig.y /= neighbors;
+		alig.Normalize();
+		return alig;
 	}
 	public Vector2 computeCohesion(){
-		//check in radius around you
-		//v.x += agent.x;
-		//v.y += agent.y;
-		//neighbors++;		
-		//if (neighborCount == 0) return v;
-		//v.x /= neighbors;
-		//v.y /= neighbors;
-		//v = new Point(v.x - x, v.y - y);
-		//v.normalize(1);
-		//return v;
+		Vector2 cohes = new Vector2(0.0F,0.0F); neighbors = 0;
 
-		return new Vector2(0.0F,0.0F);
+		Collider[] hitColliders = Physics.OverlapSphere(rigidbody.position, searchRadius);
+		//float closestEnemyDist = Mathf.Infinity;
+		for (int i=0; i < hitColliders.Length; i++) {
+			if( hitColliders[i].GetComponent<AB_Flock>() == null) continue;
+			cohes.x += hitColliders[i].transform.position.x;
+			cohes.y += hitColliders[i].transform.position.z;
+			neighbors++;			
+		}
+		if (neighbors == 0) return cohes;
+		cohes.x /= neighbors;
+		cohes.y /= neighbors;
+		cohes.x = cohes.x - transform.position.x;
+		cohes.y = cohes.y - transform.position.z;
+		cohes.Normalize();
+
+		return cohes;
 	}
 	public Vector2 computeSeparation(){
-		//check in radius around you
-		//v.x += agent.x - x;
-		//v.y += agent.y - y;
-		//neighbors++;		
-		//if (neighborCount == 0) return v;
-		//v.x /= neighbors;
-		//v.y /= neighbors;
-		//v.x *= -1.0F;
-		//v.y *= -1.0F;
-		//v.normalize(1);
-		//return v;
+		Vector2 separ = new Vector2(0.0F,0.0F); neighbors = 0;
 
-		return new Vector2(0.0F,0.0F);
+		Collider[] hitColliders = Physics.OverlapSphere(rigidbody.position, searchRadius);
+		//float closestEnemyDist = Mathf.Infinity;
+		for (int i=0; i < hitColliders.Length; i++) {
+			if( hitColliders[i].GetComponent<AB_Flock>() == null) continue;
+			separ.x += hitColliders[i].transform.position.x - transform.position.x;
+			separ.y += hitColliders[i].transform.position.z - transform.position.z;
+			neighbors++;			
+		}
+		if (neighbors == 0) return separ;
+		separ.x /= neighbors;
+		separ.y /= neighbors;
+		separ.x *= -1.0F;
+		separ.y *= -1.0F;
+		separ.Normalize();
+
+		return separ;
 	}
 	
-	public void flockTime(){
+	public Vector3 Flock(){
 	
 		alignment = computeAlignment();
 		cohesion = computeCohesion();
@@ -88,10 +104,12 @@ public class AB_Flock : MonoBehaviour {
 		
 		vel.x += alignment.x + cohesion.x + separation.x;
 		vel.y += alignment.y + cohesion.y + separation.y;
-		//vel = vel.Normalize() * enemySpeed;
+		vel.Normalize(); 
+		vel = vel * enemySpeed;
+
+		return new Vector3(vel.x,0.0F,vel.y);
 	
 	}
-
 
 	protected virtual void FixedUpdate () {
 		if(CurrTarget != null){
@@ -100,9 +118,10 @@ public class AB_Flock : MonoBehaviour {
 				//transform.LookAt(CurrTarget.transform);
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				moveScript.Move(CurrTarget.position - rigidbody.position);
-
-				flockTime();
+				
+				//moveScript.Move(CurrTarget.position - rigidbody.position);
+				moveScript.Move(Flock());
+				Debug.Log (Flock ());
 				//meshScript.SetDestination(CurrTarget.position);
 				
 				if(this.tag == "Enemy")
@@ -148,23 +167,6 @@ public class AB_Flock : MonoBehaviour {
 	public Rigidbody GetPlayerInRange(float range){
 		if (PlayerInRange(range)) return FindPlayer();
 		return null; 
-	}
-	
-	
-	public Rigidbody FindNearestBuilding(float searchRadius){
-		Collider[] hitColliders = Physics.OverlapSphere(rigidbody.position, searchRadius);
-		Rigidbody closestBuilding = null;
-		float closestBuildingDist = Mathf.Infinity;
-		for (int i=0; i < hitColliders.Length; i++) {
-			if( hitColliders[i].GetComponent<Buildable>() == null) continue;
-			
-			float distToAi = Vector3.Distance(rigidbody.position, hitColliders[i].rigidbody.position);
-			if (distToAi < closestBuildingDist){
-				closestBuilding = hitColliders[i].rigidbody;
-				closestBuildingDist = distToAi;
-			}
-		}
-		return closestBuilding;
 	}
 	
 	public Rigidbody FindTarget(float range){
