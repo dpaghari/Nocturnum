@@ -19,7 +19,7 @@ public class IsUnderConstruction : MonoBehaviour {
 
 	private Rigidbody clone;
 
-	//
+	//How tall the construction pillar should be at max
 	private float heightScale = 5;
 
 	//Scales how fast we rotate when changing build progress
@@ -28,6 +28,9 @@ public class IsUnderConstruction : MonoBehaviour {
 	//on some occasions, the construction will think it's not lit when built on light
 	//so we give it an extra time delay before we make it expire
 	private float lightExpireDelay = 0.1f;
+
+	//whether or not construction will continue if it is in the darkness
+	public bool canBuildOutOfLight = false;
 
 
 
@@ -54,12 +57,35 @@ public class IsUnderConstruction : MonoBehaviour {
 	void Start () {
 		constructionCountdown = totalConstruction;
 	}
-	
 
+	//returns true if there is another building too close to this one
+	bool IsBuildingNearby(){
+		GameObject closestBuilding = Utility.GetClosestWith(transform.position, 10, IsBuilding);
+
+		if (closestBuilding == null)
+			return false;
+
+		float minimumDistance = closestBuilding.GetComponent<Buildable>().contactRadius + toBuild.GetComponent<Buildable>().contactRadius;
+		float actualDistance = Vector2.Distance (new Vector2(closestBuilding.transform.position.x, closestBuilding.transform.position.z), new Vector2(transform.position.x, transform.position.z));
+		Debug.Log (actualDistance);
+		Debug.Log (minimumDistance);
+
+		if (actualDistance < minimumDistance) {
+			return true;
+		}
+		return false;
+	}
+
+	//Returns true if given object is a building
+	public bool IsBuilding(GameObject building){
+		if(building.GetComponent<Buildable>() == null) return false;
+		
+		return true;
+	}
 
 
 	void Update () {
-		if(lit){
+		if((lit || canBuildOutOfLight) && !IsBuildingNearby()){
 
 			if(constructionCountdown <= 0){
 				audio.clip = finBuild;

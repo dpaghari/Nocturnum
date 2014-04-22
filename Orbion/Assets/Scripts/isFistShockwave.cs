@@ -25,31 +25,33 @@ public class isFistShockwave : MonoBehaviour {
 			temp.y += 1;
 
 			Instantiate(flare, transform.position, Quaternion.identity);
-			hitGround = true;
-			Destroy(gameObject);
+			//hitGround = true;
+			//Destroy(gameObject);
 		}
 	
 	}
 
 	void OnTriggerEnter(Collider other){
+		Debug.Log(other);
 		
 		
 		CanMove moveScript = other.GetComponent<CanMove>();
 		Killable killScript = other.GetComponent<Killable>();
 
-		if (hitGround) {
+		//if (hitGround) {
 			if (killScript != null && moveScript != null) {
 					if (other.tag == "Enemy" || other.tag == "EnemyRanged") {
 						if(killScript) killScript.damage(20);
 			
 						Vector3 dir = (other.transform.position - transform.position).normalized;
+					Debug.Log("Should push things");
 				
 						other.rigidbody.AddForce (dir * pushForce, pushForceMode);
 						//moveScript.Move(-dir, pushForceMode);
 					}
 			}
 			hitGround = false;
-		}
+		//}
 	}
 	
 	// Update is called once per frame

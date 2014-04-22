@@ -6,6 +6,9 @@ public class Buildable : MonoBehaviour {
 	public int energyCost = 0;
 	public Tech TechType = Tech.none;
 
+	//How close can an edge of an adjacent building be
+	public float contactRadius = 2.0f;
+
 
 	// Use this for initialization
 	void Start () {
