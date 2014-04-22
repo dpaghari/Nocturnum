@@ -36,6 +36,8 @@ public class CanBuild : MonoBehaviour {
 	public bool builtGenerator = false;
 	//For slowing down
 	public bool inBuilding = false;
+
+	private bool isDragBuilding = false;
 	
 
 	// Use this for initialization
@@ -187,12 +189,26 @@ public class CanBuild : MonoBehaviour {
 				Buildable buildInfo = toBuild.GetComponent<Buildable>();
 				ResManager.RmLumen(buildInfo.cost);
 				ResManager.AddUsedEnergy(buildInfo.energyCost);
-
-				toBuild = null;
+					
+				if( toBuild == wallBuilding){
+					inBuilding = true;
+					isDragBuilding = true;
+				}
+				else
+					toBuild = null;
 			}
 
 		}
 		
+		//If we let go of the mouse, we shouldn't be building walls anymore
+		if( Input.GetMouseButtonUp(0) && isDragBuilding){
+			toBuild = null;
+			inBuilding = false;
+			isDragBuilding = false;
+		}
+		
+
+
 
 
 		if (Input.GetKeyDown(KeyCode.B) && !menuUp){
