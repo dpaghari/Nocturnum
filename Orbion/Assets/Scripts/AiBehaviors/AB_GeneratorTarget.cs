@@ -49,7 +49,7 @@ public class AB_GeneratorTarget : MonoBehaviour {
 					animation.CrossFade("WolfRunCycle");
 				
 				if(this.tag == "EnemyRanged")
-					animation.CrossFade("ZingBatHover");
+					animation.CrossFade("ZingBatGlide");
 			}
 		}
 	}
@@ -68,6 +68,10 @@ public class AB_GeneratorTarget : MonoBehaviour {
 			if (distToTarget < AtkRange){
 				if(this.tag == "Enemy"){
 					animation.CrossFade("WolfAttack");
+
+				}
+				if(this.tag == "EnemyRanged"){
+					animation.CrossFade("ZingBatAttack");
 				}
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
