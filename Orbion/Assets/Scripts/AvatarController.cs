@@ -136,7 +136,8 @@ public class AvatarController : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButton (2)) {
-			TechManager.Research(Tech.lightFist);
+			if( !TechManager.ResearchProgress().IsResearching( Tech.lightFist))
+				TechManager.Research(Tech.lightFist);
 			Debug.Log (TechManager.HasUpgrade(Tech.lightFist));
 		}
 
