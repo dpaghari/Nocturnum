@@ -17,7 +17,7 @@ public class CanBuild : MonoBehaviour {
 
 	private Rigidbody clone;
 	private Rigidbody toBuild = null;
-	private bool menuUp = false;
+	public bool MenuUp { get; private set;}
 	private int menuCounter = 0;
 	
 	//UI Stuff
@@ -38,11 +38,13 @@ public class CanBuild : MonoBehaviour {
 	public bool inBuilding = false;
 
 	private bool isDragBuilding = false;
+	private CanResearch researchScript;
 	
 
 	// Use this for initialization
 	void Start () {
-		
+		MenuUp = false;
+		researchScript = GetComponent<CanResearch>();
 	}
 
 
@@ -62,7 +64,7 @@ public class CanBuild : MonoBehaviour {
 	void SetConstruction(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
 		if ( MeetsRequirement( buildingType)){
-			menuUp = false;
+			MenuUp = false;
 			toBuild = buildingType;
 
 		}
@@ -82,7 +84,7 @@ public class CanBuild : MonoBehaviour {
 	
 	void OnGUI() {
 		GUI.skin = buildWheelSkin;
-		if(menuUp){
+		if(MenuUp){
 
 			GetComponent<CanShoot>().ResetFiringTimer();
 			
@@ -211,14 +213,16 @@ public class CanBuild : MonoBehaviour {
 
 
 
-		if (Input.GetKeyDown(KeyCode.B) && !menuUp){
-			menuUp = true;
-			toBuild = null;
-			menuCounter = 50;
+		if (Input.GetKeyDown(KeyCode.B) && !MenuUp){
+			if( researchScript != null && !researchScript.MenuUp){
+				MenuUp = true;
+				toBuild = null;
+				menuCounter = 50;
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0){
-			menuUp = false;
+			MenuUp = false;
 			toBuild = null;
 			// Check for if the player just opens and closes.
 			inBuilding = false;
