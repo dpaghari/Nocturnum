@@ -17,7 +17,7 @@ public class AvatarController : MonoBehaviour {
 	public Rigidbody normalBullet;
 	public Rigidbody orbBullet;
 
-
+	private int startingClipSize;
 
 
 
@@ -66,6 +66,15 @@ public class AvatarController : MonoBehaviour {
 
 
 
+	//Used for upgrades that need direct instructions to perform modifications
+	//As opposed to upgrades that can just read their level from tech maanger
+	//everytime it activates, and behave accordingly
+	private void UpdateUpgrades( Tech theUpgrade){
+		shootScript.clipSize = startingClipSize + 10 * TechManager.GetUpgradeLv(Tech.clipSize);
+	}
+
+
+
 
 
 
@@ -77,6 +86,17 @@ public class AvatarController : MonoBehaviour {
 		equipScript = GetComponent<EquipmentUser>();
 		useScript = GetComponent<CanUse>();
 		overdriveScript = GetComponent<hasOverdrive>();
+
+		startingClipSize = shootScript.clipSize;
+	}
+
+
+	void OnEnable(){
+		EventManager.ResearchedUpgrade += UpdateUpgrades;
+	}
+
+	void OnDisable(){
+		EventManager.ResearchedUpgrade -= UpdateUpgrades;
 	}
 
 

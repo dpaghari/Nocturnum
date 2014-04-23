@@ -75,18 +75,6 @@ public class CanResearch : MonoBehaviour {
 				}
 			}
 			
-			//pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			/*if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), "Orbshot\n" + "Lumen: " + getLumen(Tech.orbshot) + "\n" + "Energy: " + getEnergy(Tech.orbshot))) {
-				if(MeetsRequirement(Tech.orbshot)){
-					DoResearch(Tech.orbshot);
-					
-					//Just slapping it here for now until we have a way to to manage bullets for the player.
-					//Should make an event manager to broadcast that a upgrade was researched later
-					GameManager.AvatarContr.shootScript.bullet = GameManager.AvatarContr.orbBullet;
-					menuUp = false;
-				}
-			}*/
 			
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_lightGrenade)) {
@@ -96,21 +84,11 @@ public class CanResearch : MonoBehaviour {
 				}
 			}
 			
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			/*if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), "Bullet \n" + "Absorber\n"  + "Lumen: " + getLumen(Tech.bulletAbsorber) + "\n" + "Energy: " + getEnergy(Tech.bulletAbsorber))) {
-				if(MeetsRequirement(Tech.bulletAbsorber)){
-					DoResearch(Tech.bulletAbsorber);
-					menuUp = false;
-				}
-			}*/
 			
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_clipSize)) {
 				if(MeetsRequirement(Tech.clipSize)){
 					DoResearch(Tech.clipSize);
-					
-					//here until we have a event manager for upgrades
-					GameManager.AvatarContr.shootScript.clipSize += 10 * TechManager.GetUpgradeLv(Tech.clipSize);
 					menuUp = false;
 				}
 			}
