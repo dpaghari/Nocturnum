@@ -21,7 +21,7 @@ public class isPoisonPlant : MonoBehaviour {
 		ballExists = false;
 		isActive = false;
 		isLit = false;
-		fadeCooldown = 10.0f;
+		fadeCooldown = 5.0f;
 		fadeTimer = 0.0f;
 		activeCounter = 0.0f;
 		activeThresh = 100.0f;
@@ -39,7 +39,7 @@ public class isPoisonPlant : MonoBehaviour {
 	
 	void playAnimation (bool isLit){
 
-		if(isLit){
+		if(!isActive){
 			fadeTimer += Time.deltaTime;
 			if(fadeTimer > fadeCooldown){
 				animation.CrossFade("RaflessiaClose");
@@ -51,6 +51,7 @@ public class isPoisonPlant : MonoBehaviour {
 			if(clone.GetComponent<isPoisonBall>().popped){
 				ballExists = false;
 				clone.GetComponent<isPoisonBall>().destroySelf();
+				isActive = false;
 			}
 		}
 		if(isActive){
@@ -64,7 +65,7 @@ public class isPoisonPlant : MonoBehaviour {
 				//Debug.Log ("Creating a poisonball");
 			}
 
-			isActive = false;
+
 
 
 		}
