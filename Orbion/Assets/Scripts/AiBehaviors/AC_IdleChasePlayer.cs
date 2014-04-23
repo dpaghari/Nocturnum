@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(AB_TargetAll))]
+[RequireComponent(typeof(AB_TargetPlayer))]
 [RequireComponent(typeof(AB_DoNothing))]
 
 //A example of how to do multi behavior controller
 //If player is out of sight, AI does nothing, else it chases the player
 
-public class AC_IdleChase : AiController {
+public class AC_IdleChasePlayer : AiController {
 
 
 	public AB_DoNothing Idle {get; protected set;}
-	public AB_TargetAll Chase {get; protected set;}
+	public AB_TargetPlayer Chase {get; protected set;}
 
 
 	//Go idle if we're Aggressive but have no target
@@ -24,7 +24,7 @@ public class AC_IdleChase : AiController {
 
 	//If we're not already aggresive and we can find a target, be aggressive
 	public bool ShouldGoChase( ){
-		if (CurrBehavior is AB_TargetAll) return false;
+		if (CurrBehavior is AB_TargetPlayer) return false;
 		if (Chase.FindTarget(Chase.TargetSearchRadius) != null) return true;
 		return false;
 	}
@@ -32,7 +32,7 @@ public class AC_IdleChase : AiController {
 
 	protected override void Start (){
 		Idle = GetComponent<AB_DoNothing>();
-		Chase = GetComponent<AB_TargetAll>();
+		Chase = GetComponent<AB_TargetPlayer>();
 		CurrBehavior = Idle;
 		base.Start();
 	}

@@ -12,7 +12,7 @@ with new event driven upgrade/research system. Fix this later.
 
 public class CanResearch : MonoBehaviour {
 
-	private bool menuUp = false;
+	public bool MenuUp { get; private set;}
 
 	//UI Stuff
 	public GUISkin upgradeWheelSkin;
@@ -22,10 +22,9 @@ public class CanResearch : MonoBehaviour {
 	public Texture2D button_lightGrenade;
 	public Texture2D button_scatterShot;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+	private CanBuild buildScript;
+
+
 	
 
 	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
@@ -65,13 +64,13 @@ public class CanResearch : MonoBehaviour {
 
 	void OnGUI() {
 		GUI.skin = upgradeWheelSkin;
-		if(menuUp){
+		if(MenuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 
 			if(GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_scatterShot)) {
 				if(MeetsRequirement(Tech.scatter)){
 					DoResearch(Tech.scatter);
-					menuUp = false;
+					MenuUp = false;
 				}
 			}
 			
@@ -80,7 +79,7 @@ public class CanResearch : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_lightGrenade)) {
 				if(MeetsRequirement(Tech.lightGrenade)){
 					DoResearch(Tech.lightGrenade);
-					menuUp = false;
+					MenuUp = false;
 				}
 			}
 			
@@ -89,7 +88,7 @@ public class CanResearch : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_clipSize)) {
 				if(MeetsRequirement(Tech.clipSize)){
 					DoResearch(Tech.clipSize);
-					menuUp = false;
+					MenuUp = false;
 				}
 			}
 
@@ -97,11 +96,20 @@ public class CanResearch : MonoBehaviour {
 	
 	}
 
+
+	// Use this for initialization
+	void Start () {
+		MenuUp = false;
+		buildScript = GetComponent<CanBuild>();
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetKeyDown(KeyCode.V)){
-			menuUp = !menuUp;
+			if( buildScript != null && !buildScript.MenuUp)
+			   MenuUp = !MenuUp;
 		}
 	
 	}
