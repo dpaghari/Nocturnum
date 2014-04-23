@@ -128,7 +128,7 @@ public class CanBuild : MonoBehaviour {
 				SetConstruction(refractionBuilding);
 			}
 			if(Time.timeScale ==1.0f){
-				Time.timeScale = 0.3f;
+				Time.timeScale = 0.5f;
 				// Checks for if the player is 
 				inBuilding = true;
 		}
