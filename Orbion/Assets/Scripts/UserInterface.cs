@@ -101,6 +101,11 @@ public class UserInterface : MonoBehaviour {
 			GUI.Label(new Rect(2, Screen.height-30, 150, 50), ammoRef.GetComponent<CanShootReload>().currentAmmo + "/" + ammoRef.GetComponent<CanShootReload>().clipSize);
 		}
 
+		//Collectible quest
+		string collectString = string.Format("{0}", ResManager.Collectible);
+		GUI.Label(new Rect(2, Screen.height-90, 300, 100), "Collect 30 Enemy Specimen: ");
+		GUI.Label(new Rect(300, Screen.height-90, 150, 50), collectString);
+
 		//Light
 		string lumenString = string.Format("{0}", ResManager.Lumen);
 		GUI.Label(new Rect(Screen.width/2-70, 10, 150, 50), lumenString);

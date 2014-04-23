@@ -8,17 +8,37 @@ public class ResManager : Singleton<ResManager> {
 	private float _Lumen = 0;
 	private int _MaxEnergy = 0;
 	private int _UsedEnergy = 0;
+	private int _Collectible = 0;
+	private int _MaxCollectible = 30;
 
 
 	public static float Lumen{ get { return Instance._Lumen;}}
+	public static int Collectible{ get { return Instance._Collectible;}}
+	public static int MaxCollectible{ get { return Instance._MaxCollectible;}}
 	public static int MaxEnergy{ get { return Instance._MaxEnergy;}}
 	public static int UsedEnergy{ get { return Instance._UsedEnergy;}}
 
 	//Have both Add and Remove functions since costs are likely to be stored
 	//as a positive number so adding a negative cost reads awkwardly.
 	public static void AddLumen( float amt) { Instance._Lumen += amt;}
+	public static void AddCollectible( int amt) { 
+		Instance._Collectible += amt;
+		if(Instance._Collectible >= Instance._MaxCollectible){
+			ResManager.Reset();
+			TechManager.Reset();
+			Application.LoadLevel("scene1");
+			
+		}
+	
+	}
 	public static void AddMaxEnergy( int amt) { Instance._MaxEnergy += amt;}
 	public static void AddUsedEnergy( int amt) { Instance._UsedEnergy += amt;}
+
+
+	public static void CheckObj(){
+	
+
+	}
 
 	public static void RmLumen( float amt) {
 		Instance._Lumen -= amt;
@@ -37,6 +57,7 @@ public class ResManager : Singleton<ResManager> {
 
 
 	public static void Reset () {
+		Instance._Collectible = 0;
 		Instance._Lumen = 0;
 		Instance._MaxEnergy = 0;
 		Instance._UsedEnergy = 0;

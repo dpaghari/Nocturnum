@@ -9,7 +9,7 @@ public class Killable : MonoBehaviour {
 	public int currHP = 100; 
 	public int baseHP = 100;
 	public GameObject deathTarget;
-
+	public GameObject collectTarget;
 	//used to check if we should call the event when a building is hurt
 	public Buildable buildScript;
 
@@ -52,7 +52,18 @@ public class Killable : MonoBehaviour {
 			if (deathTarget != null) {
 				Vector3 temp = transform.position;
 				temp.y += 4;
-				Instantiate (deathTarget, temp, this.transform.rotation);
+				//if(deathTarget.GetComponent<IsCollectible>() != null){
+					float rand = Random.value;
+					//Debug.Log(rand);
+					if(rand > 0.0 && rand < 0.5){
+					Instantiate (collectTarget, temp, this.transform.rotation);
+					//	Debug.Log("creating collectible");
+					}
+				Instantiate(deathTarget,temp, this.transform.rotation);
+				//}
+				//else
+				//	Instantiate(deathTarget, temp, this.transform.rotation);
+
 			}
 		}
 		//make death object
