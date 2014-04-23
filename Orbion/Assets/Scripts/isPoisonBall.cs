@@ -18,7 +18,7 @@ public class isPoisonBall : MonoBehaviour {
 		void Start () {
 			popped = false;	
 			timer = 0.0f;
-			timerCD = 3.0f;
+			timerCD = 10.0f;
 			cloudCount = 5;
 		}
 		

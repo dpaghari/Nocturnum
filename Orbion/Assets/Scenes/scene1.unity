@@ -309,6 +309,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400016, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: CurrEquipType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
@@ -488,6 +492,7 @@ GameObject:
   - 108: {fileID: 71705088}
   - 82: {fileID: 71705087}
   - 114: {fileID: 71705086}
+  - 114: {fileID: 71705099}
   m_Layer: 11
   m_Name: base_enemy_prefab
   m_TagString: Enemy
@@ -645,8 +650,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 18
-  PlayerPriorityRange: 13
+  TargetSearchRadius: 40
+  PlayerPriorityRange: 40
 --- !u!114 &71705091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +776,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &71705099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 2730c4eab64e3204c8e495eeb70db314,
+    type: 2}
+  m_PrefabInternal: {fileID: 157449016}
+  m_GameObject: {fileID: 71705084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &77610909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,6 +3627,7 @@ GameObject:
   - 108: {fileID: 360092234}
   - 82: {fileID: 360092233}
   - 114: {fileID: 360092232}
+  - 114: {fileID: 360092245}
   m_Layer: 11
   m_Name: base_enemy_prefab
   m_TagString: Enemy
@@ -3767,8 +3785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 18
-  PlayerPriorityRange: 13
+  TargetSearchRadius: 40
+  PlayerPriorityRange: 40
 --- !u!114 &360092237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3893,6 +3911,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &360092245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 2730c4eab64e3204c8e495eeb70db314,
+    type: 2}
+  m_PrefabInternal: {fileID: 2119681697}
+  m_GameObject: {fileID: 360092230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &361211621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4214,6 +4244,7 @@ GameObject:
   - 108: {fileID: 391874192}
   - 82: {fileID: 391874191}
   - 114: {fileID: 391874190}
+  - 114: {fileID: 391874203}
   m_Layer: 11
   m_Name: base_enemy_prefab
   m_TagString: Enemy
@@ -4371,8 +4402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 18
-  PlayerPriorityRange: 13
+  TargetSearchRadius: 40
+  PlayerPriorityRange: 40
 --- !u!114 &391874195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4497,6 +4528,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &391874203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 2730c4eab64e3204c8e495eeb70db314,
+    type: 2}
+  m_PrefabInternal: {fileID: 1262802131}
+  m_GameObject: {fileID: 391874188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &398145261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6232,6 +6275,7 @@ GameObject:
   - 108: {fileID: 609703989}
   - 82: {fileID: 609703988}
   - 114: {fileID: 609703987}
+  - 114: {fileID: 609704000}
   m_Layer: 11
   m_Name: base_enemy_prefab
   m_TagString: Enemy
@@ -6389,8 +6433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 18
-  PlayerPriorityRange: 13
+  TargetSearchRadius: 40
+  PlayerPriorityRange: 40
 --- !u!114 &609703992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6515,6 +6559,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &609704000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 2730c4eab64e3204c8e495eeb70db314,
+    type: 2}
+  m_PrefabInternal: {fileID: 2044718522}
+  m_GameObject: {fileID: 609703985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &611062469
 GameObject:
   m_ObjectHideFlags: 0
@@ -6982,8 +7038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 100
-  baseHP: 100
+  currHP: 300
+  baseHP: 300
   deathTarget: {fileID: 0}
   buildScript: {fileID: 0}
 --- !u!82 &680245861
@@ -7142,7 +7198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2248c4709bc554c42a497f5e1cf584d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrEquipType: 2
+  CurrEquipType: 3
 --- !u!114 &680245867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9306,6 +9362,7 @@ GameObject:
   - 108: {fileID: 919076783}
   - 82: {fileID: 919076782}
   - 114: {fileID: 919076781}
+  - 114: {fileID: 919076794}
   m_Layer: 11
   m_Name: base_enemy_prefab
   m_TagString: Enemy
@@ -9463,8 +9520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 18
-  PlayerPriorityRange: 13
+  TargetSearchRadius: 40
+  PlayerPriorityRange: 40
 --- !u!114 &919076786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9589,6 +9646,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &919076794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 2730c4eab64e3204c8e495eeb70db314,
+    type: 2}
+  m_PrefabInternal: {fileID: 1684920618}
+  m_GameObject: {fileID: 919076779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &923032684
 GameObject:
   m_ObjectHideFlags: 0
@@ -10551,6 +10620,7 @@ GameObject:
   - 108: {fileID: 1029873046}
   - 82: {fileID: 1029873045}
   - 114: {fileID: 1029873044}
+  - 114: {fileID: 1029873057}
   m_Layer: 11
   m_Name: base_enemy_prefab
   m_TagString: Enemy
@@ -10708,8 +10778,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 18
-  PlayerPriorityRange: 13
+  TargetSearchRadius: 40
+  PlayerPriorityRange: 40
 --- !u!114 &1029873049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10834,6 +10904,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1029873057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 2730c4eab64e3204c8e495eeb70db314,
+    type: 2}
+  m_PrefabInternal: {fileID: 2028160570}
+  m_GameObject: {fileID: 1029873042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1047135736
 GameObject:
   m_ObjectHideFlags: 0
@@ -12330,7 +12412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
       propertyPath: lightValue
-      value: 20
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
@@ -13389,6 +13471,7 @@ GameObject:
   - 108: {fileID: 1374364429}
   - 82: {fileID: 1374364428}
   - 114: {fileID: 1374364427}
+  - 114: {fileID: 1374364440}
   m_Layer: 11
   m_Name: base_enemy_prefab
   m_TagString: Enemy
@@ -13546,8 +13629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 18
-  PlayerPriorityRange: 13
+  TargetSearchRadius: 40
+  PlayerPriorityRange: 40
 --- !u!114 &1374364432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13672,6 +13755,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1374364440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 2730c4eab64e3204c8e495eeb70db314,
+    type: 2}
+  m_PrefabInternal: {fileID: 132364401}
+  m_GameObject: {fileID: 1374364425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd098fed3debbb41b7da42780316af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1374901199
 GameObject:
   m_ObjectHideFlags: 0
@@ -17225,7 +17320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baeacc5f8a9d15245af6f6029ddd40c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightValue: 20
+  lightValue: 250
   collectSound: {fileID: 8300000, guid: a325284345d98014fbdc879d29edc168, type: 3}
 --- !u!54 &1895276953
 Rigidbody:

@@ -29,8 +29,8 @@ public class isPoisonPlant : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(clone != null)
-		Debug.Log (clone.GetComponent<isPoisonBall>().popped);
+		//if(clone != null)
+		//Debug.Log (clone.GetComponent<isPoisonBall>().popped);
 
 
 		playAnimation(isLit);

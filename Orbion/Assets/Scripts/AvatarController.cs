@@ -155,7 +155,7 @@ public class AvatarController : MonoBehaviour {
 
 		//swaps to the next equipingment for testing purposes
 		//has a little more logic since not all the equipment are implemented yet
-		/*
+
 		if(Input.GetKeyDown(KeyCode.T)){
 			EquipType nextEquip = equipScript.CurrEquipType;
 			int typeIterator = (int) equipScript.CurrEquipType;
@@ -172,7 +172,7 @@ public class AvatarController : MonoBehaviour {
 			equipScript.ChangeEquip(nextEquip);
 			
 		}
-		*/
+
 
 
 		/*if((Input.GetKey(KeyCode.A))||(Input.GetKey(KeyCode.W))||(Input.GetKey(KeyCode.S))||(Input.GetKey(KeyCode.D))){

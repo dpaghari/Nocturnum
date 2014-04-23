@@ -24,16 +24,18 @@ public class isTurret : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 
-		if(other.tag == "Enemy")
+		if(other.GetComponent<IsEnemy>() != null){
 			target = other.rigidbody;
+		}
 			
 				
 	}
 	void OnTriggerStay(Collider other){
 		
-		if(other.tag == "Enemy")
+		if(other.GetComponent<IsEnemy>() != null){
 			target = other.rigidbody;
-		
+		}
+
 		
 	}
 }

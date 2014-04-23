@@ -19,17 +19,17 @@ public class HPLight : MonoBehaviour {
 	void Update () {
 		 
 
-		if(killScript.currHP > 70){
+		if(killScript.currHP > (killScript.baseHP * 0.75f)){
 			//float t = Mathf.PingPong(Time.time, duration) / duration;
 			light.color = Color.white;
 		}
-		if(killScript.currHP <= 70 && killScript.currHP > 40){
+		if(killScript.currHP <= (killScript.baseHP * 0.75f) && killScript.currHP > (killScript.baseHP * 0.50f)){
 			light.color = Color.yellow;
 		}
-		if(killScript.currHP <= 40 && killScript.currHP > 20){
+		if(killScript.currHP <= (killScript.baseHP * 0.50f) && killScript.currHP > (killScript.baseHP * 0.30f)){
 			light.color = Color.red;
 		}
-		if(killScript.currHP <= 20){
+		if(killScript.currHP <= (killScript.baseHP * 0.30f)){
 			Color color1 = Color.red;
 			Color color2 = Color.clear;
 

@@ -67,8 +67,8 @@ public class IsUnderConstruction : MonoBehaviour {
 
 		float minimumDistance = closestBuilding.GetComponent<Buildable>().contactRadius + toBuild.GetComponent<Buildable>().contactRadius;
 		float actualDistance = Vector2.Distance (new Vector2(closestBuilding.transform.position.x, closestBuilding.transform.position.z), new Vector2(transform.position.x, transform.position.z));
-		Debug.Log (actualDistance);
-		Debug.Log (minimumDistance);
+//		Debug.Log (actualDistance);
+//		Debug.Log (minimumDistance);
 
 		if (actualDistance < minimumDistance) {
 			return true;
