@@ -71,9 +71,19 @@ public class ResearchingInfo : ScriptableObject {
 		return Tech.none;
 	}
 
+
+	//Increment level activated by UpdateStatus instead of event because we want to make sure
+	//the tech maanger's level has updated before all other events run.
+	private void IncrementUpgradeLevel( Tech theUpgrade){
+		TechManager.SetUpgradeLv( theUpgrade, TechManager.GetUpgradeLv( theUpgrade) + 1);
+		Debug.Log ( string.Format( "{0} is now level {1}!", theUpgrade, TechManager.GetUpgradeLv( theUpgrade)));
+	}
+
+
 	public void UpdateStatus(){
 		Tech theFinishedUpgrade = GetFinishedUpgrade();
 		while( theFinishedUpgrade != Tech.none){
+			IncrementUpgradeLevel( theFinishedUpgrade);
 			EventManager.OnResearchedUpgrade( theFinishedUpgrade);
 			SetFinishTime( theFinishedUpgrade, ResearchingInfo.NOT_RESEARCHING);
 			closestTech = Tech.none;

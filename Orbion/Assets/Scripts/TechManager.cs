@@ -231,11 +231,6 @@ public class TechManager : Singleton<TechManager> {
 	}
 
 
-	private static void IncrementUpgradeLevel( Tech theUpgrade){
-		SetUpgradeLv( theUpgrade, GetUpgradeLv( theUpgrade) + 1);
-		Debug.Log ( string.Format( "{0} is now level {1}!", theUpgrade, GetUpgradeLv( theUpgrade)));
-	}
-
 
 	void Awake () {
 		//Could reduce the size of arrays by fitting it to # of entries of a type using the FRONT and END,
@@ -249,14 +244,6 @@ public class TechManager : Singleton<TechManager> {
 		researchProgress = ResearchingInfo.New();
 	}
 
-
-	void OnEnable (){
-		EventManager.ResearchedUpgrade += IncrementUpgradeLevel;
-	}
-
-	void OnDisable (){
-		EventManager.ResearchedUpgrade -= IncrementUpgradeLevel;
-	}
 
 	// Use this for initialization
 	void Start () {
