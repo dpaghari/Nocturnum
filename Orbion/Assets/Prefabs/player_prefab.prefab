@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11400028}
   - 114: {fileID: 11400030}
   - 114: {fileID: 11400024}
+  - 82: {fileID: 8200006}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -2303,6 +2304,64 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!82 &8200006
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 3b9e113143429b54ba2426452862a9ad, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -2411,6 +2470,7 @@ MonoBehaviour:
   currHP: 300
   baseHP: 300
   deathTarget: {fileID: 0}
+  collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
@@ -2432,6 +2492,7 @@ MonoBehaviour:
   incindiaryBuilding: {fileID: 5400000, guid: ab55e9521cba25a439e2d460263b9b51, type: 2}
   turretBuilding: {fileID: 5400000, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
   refractionBuilding: {fileID: 5400000, guid: c75a8e6eb7c779e4f871ab221fa3c2d3, type: 2}
+  spotlightBuilding: {fileID: 5400000, guid: b1ea8356d7acaf849929962787c373d1, type: 2}
   initBuild: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
   buildWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
   button_incendiary: {fileID: 2800000, guid: 39578d898366e8e4cbecce0ff7c6f67d, type: 3}
@@ -2441,6 +2502,7 @@ MonoBehaviour:
   button_medbay: {fileID: 2800000, guid: 368bd042d8e1c8d4e81bc599763605cd, type: 3}
   button_turret: {fileID: 2800000, guid: 2be8794630653e140b946ca12c51c0d5, type: 3}
   button_refraction: {fileID: 2800000, guid: 2be8794630653e140b946ca12c51c0d5, type: 3}
+  button_spotlight: {fileID: 2800000, guid: 2be8794630653e140b946ca12c51c0d5, type: 3}
   builtBallistics: 0
   builtGenerator: 0
   inBuilding: 0
@@ -2464,6 +2526,7 @@ MonoBehaviour:
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
+  fistSound: {fileID: 8300000, guid: 3b9e113143429b54ba2426452862a9ad, type: 3}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2515,7 +2578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2248c4709bc554c42a497f5e1cf584d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrEquipType: 0
+  CurrEquipType: 2
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2615,6 +2678,7 @@ MonoBehaviour:
   Cooldown: 1
   isPunching: 0
   punchObj: {fileID: 5400000, guid: 722aa02b8bb0fbb419f4e9625abcf651, type: 2}
+  fistSound: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

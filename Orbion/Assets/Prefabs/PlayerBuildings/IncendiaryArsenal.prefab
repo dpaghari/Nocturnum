@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.45320654, y: 5.76895074e-18, z: -3.89715672}
+  m_LocalPosition: {x: 6.45320654, y: 0, z: -3.89715672}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400014}
@@ -366,6 +366,7 @@ MonoBehaviour:
   cost: 50
   energyCost: 20
   TechType: 6
+  contactRadius: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,6 +381,8 @@ MonoBehaviour:
   currHP: 500
   baseHP: 500
   deathTarget: {fileID: 0}
+  collectTarget: {fileID: 0}
+  buildScript: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

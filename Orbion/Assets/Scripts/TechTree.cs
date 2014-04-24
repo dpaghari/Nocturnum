@@ -130,6 +130,7 @@ public class TechTree : ScriptableObject {
 
 		//Photon
 		//defaultTree.AddReq( Tech.photon, Tech.fortification);
+		defaultTree.AddReq( Tech.lightFist, Tech.photon);
 		defaultTree.AddReq( Tech.orbshot, Tech.photon);
 		defaultTree.AddReq( Tech.lightPath, Tech.photon);
 

@@ -13,6 +13,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody incindiaryBuilding;
 	public Rigidbody turretBuilding;
 	public Rigidbody refractionBuilding;
+	public Rigidbody spotlightBuilding;
 	public AudioClip initBuild;
 
 	private Rigidbody clone;
@@ -31,6 +32,7 @@ public class CanBuild : MonoBehaviour {
 	public Texture2D button_medbay;
 	public Texture2D button_turret;
 	public Texture2D button_refraction;
+	public Texture2D button_spotlight;
 	//Checks (temporary until we have metrics manager working.
 	public bool builtBallistics = false;
 	public bool builtGenerator = false;
@@ -87,47 +89,55 @@ public class CanBuild : MonoBehaviour {
 		if(MenuUp){
 
 			GetComponent<CanShoot>().ResetFiringTimer();
-			
+			// Generator Button
 			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator)) {
 				SetConstruction(generatorBuilding);
 			}
 			
-			// Make the second button.
+			// Ballistics Button 
 			//pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint
 			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_ballistics)) {
 				SetConstruction(ballisticsBuilding);
 			}
 			
-			
+			// Wall Button
 			// Make the third button.
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_wall))  {
 				SetConstruction(wallBuilding);
 			}
 			
-			
+			// Medbay Button
 			// Make the fourth button.
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), button_medbay))  {
 				SetConstruction(medBayBuilding);
 			}
-			
+			//Incendiary Button
 			
 			// Make the fifth button.
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
 			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), button_incendiary)) {
 				SetConstruction(incindiaryBuilding);
 			}
+			// Turret Button
 			// Make the sixth button.
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
 			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2+92,128,128), button_turret)) {
 				SetConstruction(turretBuilding);
 			}
+			// Refraction Button
 			// Make the seventh button.
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
 			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_refraction)) {
 				SetConstruction(refractionBuilding);
+			}
+			// Spotlight Button
+			// Make the eigth button.
+			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
+			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2+92,128,128), button_spotlight)) {
+				SetConstruction(spotlightBuilding);
 			}
 			if(Time.timeScale ==1.0f){
 				Time.timeScale = 0.5f;

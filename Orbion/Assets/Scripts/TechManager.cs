@@ -88,8 +88,10 @@ public class TechManager : Singleton<TechManager> {
 	private static bool CheckUpgrade ( Tech upgrade){
 		if( IsUpgrade( upgrade)) return true;
 
+
 		Debug.LogError( string.Format ("{0} is not an upgrade.", upgrade.ToString()));
 		return false;
+
 	}
 
 

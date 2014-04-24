@@ -19,7 +19,7 @@ public class isFistShockwave : MonoBehaviour {
 	{
 		//audio.PlayOneShot(lgsound, 1.0f);
 		if(other.gameObject.tag == "ground"){
-				Debug.Log ("hit ground");
+			//Debug.Log ("hit ground");
 
 			Vector3 temp = transform.position;
 			temp.y += 1;
@@ -32,7 +32,7 @@ public class isFistShockwave : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		Debug.Log(other);
+		//Debug.Log(other);
 		
 		
 		CanMove moveScript = other.GetComponent<CanMove>();
@@ -44,7 +44,7 @@ public class isFistShockwave : MonoBehaviour {
 						if(killScript) killScript.damage(20);
 			
 						Vector3 dir = (other.transform.position - transform.position).normalized;
-					Debug.Log("Should push things");
+					//Debug.Log("Should push things");
 				
 						other.rigidbody.AddForce (dir * pushForce, pushForceMode);
 						//moveScript.Move(-dir, pushForceMode);

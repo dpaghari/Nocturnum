@@ -19,7 +19,7 @@ public class isPoisonBall : MonoBehaviour {
 			popped = false;	
 			timer = 0.0f;
 			timerCD = 10.0f;
-			cloudCount = 5;
+			cloudCount = 3;
 		}
 		
 			// Update is called once per frame

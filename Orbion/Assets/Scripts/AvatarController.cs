@@ -18,6 +18,7 @@ public class AvatarController : MonoBehaviour {
 	public Rigidbody orbBullet;
 
 	private int startingClipSize;
+	public AudioClip fistSound;
 
 
 
@@ -152,7 +153,13 @@ public class AvatarController : MonoBehaviour {
 
 		//use our current equipment
 		if(Input.GetMouseButtonDown(1)){
-			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));	
+			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));
+			//Debug.Log(equipScript.GetCurrEquip());
+
+			if(equipScript.GetCurrEquip() == equipScript.GetEquip(EquipType.LightFist)){
+			audio.PlayOneShot(fistSound, 1.0f);
+			}
+
 		}
 
 		if (Input.GetMouseButton (2)) {
