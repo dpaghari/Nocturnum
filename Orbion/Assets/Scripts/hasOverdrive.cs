@@ -20,7 +20,7 @@ public class hasOverdrive : MonoBehaviour {
 	private float odmoveRate;
 	// Use this for initialization
 	void Start () {
-		overdriveLimit = 50.0f;
+		overdriveLimit = 30.0f;
 		fireRate = shootScript.firingRate;
 		moveRate = moveScript.MoveScale;
 		odfireRate = fireRate - 0.3f;
