@@ -46,10 +46,12 @@ public class ResManager : Singleton<ResManager> {
 	}
 
 	public static void RmMaxEnergy( int amt) {
+		if(ResManager.applicationIsQuitting) return;
 		Instance._MaxEnergy -= amt;
 		if (Instance._MaxEnergy < 0) Instance._MaxEnergy = 0;
 	}
 	public static void RmUsedEnergy( int amt) {
+		if(ResManager.applicationIsQuitting) return;
 		Instance._UsedEnergy -= amt;
 		if (Instance._UsedEnergy < 0) Instance._UsedEnergy = 0;
 
