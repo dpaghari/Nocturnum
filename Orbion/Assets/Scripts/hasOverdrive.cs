@@ -23,14 +23,14 @@ public class hasOverdrive : MonoBehaviour {
 		overdriveLimit = 30.0f;
 		fireRate = shootScript.firingRate;
 		moveRate = moveScript.MoveScale;
-		odfireRate = fireRate - 0.3f;
-		odmoveRate = moveRate + 0.5f;
+		odfireRate = fireRate - 0.1f;
+		odmoveRate = moveRate + 0.2f;
 
 		odtime = 10.0f;
 		overdriveCount = 0.0f;
 		overdriveActive = false;
-		timerScript = DumbTimer.New (odtime, 1);
-		dwindleScript = DumbTimer.New (5.0f, 1);
+		timerScript = DumbTimer.New (odtime, 1.0f);
+		dwindleScript = DumbTimer.New (10.0f, 1.0f);
 	}
 	
 	// Update is called once per frame
@@ -61,11 +61,12 @@ public class hasOverdrive : MonoBehaviour {
 			activateOverdrive();
 		}
 
-		if(overdriveCount > 0){
-			//Debug.Log (overdriveCount);
+		if(overdriveCount > 0.0f){
+			Debug.Log (overdriveCount);
 			dwindleScript.Update();
 			if(dwindleScript.Finished() == true){
-				overdriveCount -= 1;
+				overdriveCount -= 1.0f;
+				dwindleScript.Reset();
 			}
 
 		}

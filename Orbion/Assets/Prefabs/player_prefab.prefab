@@ -2467,8 +2467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 300
-  baseHP: 300
+  currHP: 225
+  baseHP: 225
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
@@ -2662,8 +2662,8 @@ MonoBehaviour:
   timerScript: {fileID: 0}
   dwindleScript: {fileID: 0}
   overdriveActive: 0
-  odtime: 0
-  overdriveLimit: 0
+  odtime: 10
+  overdriveLimit: 30
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2675,7 +2675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c23f70619881345b454438c4ff3dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cooldown: 1
+  Cooldown: 3
   isPunching: 0
   punchObj: {fileID: 5400000, guid: 722aa02b8bb0fbb419f4e9625abcf651, type: 2}
   fistSound: {fileID: 0}
