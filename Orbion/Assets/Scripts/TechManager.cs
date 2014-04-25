@@ -98,8 +98,9 @@ public class TechManager : Singleton<TechManager> {
 
 
 	public static int GetNumBuilding( Tech building){
+		if(TechManager.applicationIsQuitting) return int.MinValue;
 		if( CheckBuilding( building)) return Instance.NumBuildings[(int)building];
-		return -1;
+		return int.MinValue;
 	}
 
 
@@ -111,6 +112,7 @@ public class TechManager : Singleton<TechManager> {
 
 
 	public static void SetNumBuilding( Tech building, int amt){
+		if(TechManager.applicationIsQuitting) return;
 		if( CheckBuilding( building)) Instance.NumBuildings[(int)building] = amt;
 	}
 

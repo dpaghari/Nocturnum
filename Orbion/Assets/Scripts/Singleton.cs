@@ -62,7 +62,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 		}
 	}
 	
-	private static bool applicationIsQuitting = false;
+	//Changed from private to protected readonly so managers can ignore static calls( that are dependent on its instance)
+	//when the application is closing. Used to prevent errors when scene is closing.
+	//private static bool applicationIsQuitting = false;
+	protected static bool applicationIsQuitting {get; private set;}
+
 	/// <summary>
 	/// When Unity quits, it destroys objects in a random order.
 	/// In principle, a Singleton is only destroyed when application quits.
