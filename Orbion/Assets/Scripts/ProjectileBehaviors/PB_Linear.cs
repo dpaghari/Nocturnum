@@ -88,23 +88,48 @@ public class PB_Linear : ProjectileBehavior {
 			clone.GetComponent<IsSearingShot>().target = other.gameObject.GetComponent<Rigidbody>();
 		}
 
-		foreach( Transform child in transform){
-			if(child.gameObject.tag == "playerBullet"){
-				Destroy(child.gameObject);
-			}
-			else{
-				child.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
-			}
-		}
+
 
 		if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyRanged") {
 			target = GameObject.Find("player_prefab");
 			target.GetComponent<hasOverdrive>().overdriveCount += 1.0f;
 			//ebug.Log(target.GetComponent<hasOverdrive>().overdriveCount);
 		}
+		if (ricochetLevel > 0) {
+			Physics.IgnoreCollision(gameObject.collider, other.collider);
+			GameObject targ = Utility.GetClosestWith(transform.position, 15*ricochetLevel, IsEnemy);
+			if(targ == null){
+				foreach( Transform child in transform){
+					if(child.gameObject.tag == "playerBullet"){
+						Destroy(child.gameObject);
+					}
+					else{
+						child.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
+					}
+				}
 
-		transform.DetachChildren();
-		Destroy (gameObject);
+				transform.DetachChildren ();
+				Destroy (gameObject);
+			}else{
+				Vector3 targDir = transform.InverseTransformPoint(targ.transform.position);
+				float targAngle = Mathf.Atan2(targDir.x, targDir.z);
+
+				transform.rotation = Quaternion.identity;
+			}
+
+		} else {
+			foreach( Transform child in transform){
+				if(child.gameObject.tag == "playerBullet"){
+					Destroy(child.gameObject);
+				}
+				else{
+					child.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
+				}
+			}
+
+			transform.DetachChildren ();
+			Destroy (gameObject);
+		}
 	}
 
 	public override void OnImpactStay( Collision other){ return;}

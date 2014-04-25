@@ -65,7 +65,13 @@ public class IsUnderConstruction : MonoBehaviour {
 		if (closestBuilding == null)
 			return false;
 
-		float minimumDistance = closestBuilding.GetComponent<Buildable>().contactRadius + toBuild.GetComponent<Buildable>().contactRadius;
+
+		float minimumDistance;
+		if(closestBuilding.GetComponent<Buildable>() != null){
+			minimumDistance = closestBuilding.GetComponent<Buildable>().contactRadius + toBuild.GetComponent<Buildable>().contactRadius;
+		}else{
+			minimumDistance = closestBuilding.GetComponent<IsUnderConstruction>().toBuild.GetComponent<Buildable>().contactRadius + toBuild.GetComponent<Buildable>().contactRadius;
+		}
 		float actualDistance = Vector2.Distance (new Vector2(closestBuilding.transform.position.x, closestBuilding.transform.position.z), new Vector2(transform.position.x, transform.position.z));
 //		Debug.Log (actualDistance);
 //		Debug.Log (minimumDistance);
@@ -77,8 +83,11 @@ public class IsUnderConstruction : MonoBehaviour {
 	}
 
 	//Returns true if given object is a building
-	public bool IsBuilding(GameObject building){
-		if(building.GetComponent<Buildable>() == null) return false;
+	public bool IsBuilding(GameObject theBuilding){
+		if(theBuilding.GetComponent<Buildable>() == null && theBuilding.GetComponent<IsUnderConstruction>() == null) 
+			return false;
+		if (theBuilding == gameObject)
+			return false;
 		
 		return true;
 	}
