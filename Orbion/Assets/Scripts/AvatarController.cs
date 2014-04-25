@@ -72,6 +72,8 @@ public class AvatarController : MonoBehaviour {
 	//everytime it activates, and behave accordingly
 	private void UpdateUpgrades( Tech theUpgrade){
 		shootScript.clipSize = startingClipSize + 10 * TechManager.GetUpgradeLv(Tech.clipSize);
+		//shootScript.bullet.gameObject.GetComponent<PB_Linear>().homingLevel = TechManager.GetUpgradeLv(Tech.seeker);
+		//shootScript.bullet.gameObject.GetComponent<PB_Linear>().ricochetLevel = TechManager.GetUpgradeLv(Tech.ricochet);
 	}
 
 

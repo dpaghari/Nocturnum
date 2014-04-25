@@ -42,6 +42,7 @@ public enum Tech {
 	stealth,
 	reloadSpeed,
 	turretResearch,
+	ricochet,
 	_upgradesEND
 }
 

@@ -19,8 +19,8 @@ public class PB_Linear : ProjectileBehavior {
 
 	public int Damage;
 	public int searingLevel;
-	public int homingLevel;
-	public int ricochetLevel;
+	//public int homingLevel;
+	//public int ricochetLevel;
 	public GameObject dot;
 	public GameObject hitEffect;
 	private GameObject clone;
@@ -43,7 +43,7 @@ public class PB_Linear : ProjectileBehavior {
 	public override void FixedPerform(){
 		MoveScript.Move(transform.forward, MoveType);
 
-		GameObject targ = Utility.GetClosestWith(transform.position, 15*homingLevel, IsEnemy);
+		GameObject targ = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy);
 		if(targ == null){
 		}else{
 			Vector3 targDir = transform.InverseTransformPoint(targ.transform.position);
@@ -99,12 +99,14 @@ public class PB_Linear : ProjectileBehavior {
 			target.GetComponent<hasOverdrive>().overdriveCount += 1.0f;
 			//ebug.Log(target.GetComponent<hasOverdrive>().overdriveCount);
 		}
-		if (ricochetLevel > 0) {
+		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0) {
 			Physics.IgnoreCollision(gameObject.collider, other.collider);
+			//if(lastHitTarget != null)
+			//	Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);
 			lastHitTarget = other.gameObject;
 			gameObject.rigidbody.velocity = Vector3.zero;
 			gameObject.rigidbody.angularVelocity = Vector3.zero;
-			GameObject targ = Utility.GetClosestWith(transform.position, 15*ricochetLevel, IsEnemy);
+			GameObject targ = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.ricochet), IsEnemy);
 			if(targ == null){
 				foreach( Transform child in transform){
 					if(child.gameObject.tag == "playerBullet"){
