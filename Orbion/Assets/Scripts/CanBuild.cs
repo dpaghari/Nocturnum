@@ -41,12 +41,16 @@ public class CanBuild : MonoBehaviour {
 
 	private bool isDragBuilding = false;
 	private CanResearch researchScript;
+
+	private float dragDelay = 0.15f; //note: the delay gets affected by build slow down
+	private DumbTimer dragTimer;
 	
 
 	// Use this for initialization
 	void Start () {
 		MenuUp = false;
 		researchScript = GetComponent<CanResearch>();
+		dragTimer = DumbTimer.New(dragDelay);
 	}
 
 
@@ -159,6 +163,8 @@ public class CanBuild : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		dragTimer.Update();
+
 		if(Input.GetMouseButton(0) && toBuild != null){
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
@@ -176,7 +182,7 @@ public class CanBuild : MonoBehaviour {
 			Vector3 mousePos = hit.point;
 			
 
-			if (MeetsRequirement(toBuild)) {
+			if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
 				GetComponent<CanShoot>().ResetFiringTimer();
 				audio.PlayOneShot(initBuild, 1.0f);
 				if (toBuild == generatorBuilding){
@@ -206,17 +212,23 @@ public class CanBuild : MonoBehaviour {
 					inBuilding = true;
 					isDragBuilding = true;
 				}
-				else
+				else{
 					toBuild = null;
+					dragTimer.SetProgress(1.0f);
+				}
+
+			dragTimer.Reset();
 			}
 
 		}
 		
 		//If we let go of the mouse, we shouldn't be building walls anymore
 		if( Input.GetMouseButtonUp(0) && isDragBuilding){
+			
 			toBuild = null;
 			inBuilding = false;
 			isDragBuilding = false;
+			dragTimer.SetProgress(1.0f);
 		}
 		
 
