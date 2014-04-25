@@ -25,6 +25,8 @@ public class PB_Linear : ProjectileBehavior {
 	public GameObject hitEffect;
 	private GameObject clone;
 
+	private GameObject lastHitTarget;
+
 	public GameObject target;
 
 	public float lifeTime = 2.0F;
@@ -65,6 +67,8 @@ public class PB_Linear : ProjectileBehavior {
 
 	public bool IsEnemy(GameObject enemy){
 		if(enemy.GetComponent<IsEnemy>() == null) return false;
+		if (enemy == lastHitTarget)
+						return false;
 
 		return true;
 	}
@@ -97,6 +101,9 @@ public class PB_Linear : ProjectileBehavior {
 		}
 		if (ricochetLevel > 0) {
 			Physics.IgnoreCollision(gameObject.collider, other.collider);
+			lastHitTarget = other.gameObject;
+			gameObject.rigidbody.velocity = Vector3.zero;
+			gameObject.rigidbody.angularVelocity = Vector3.zero;
 			GameObject targ = Utility.GetClosestWith(transform.position, 15*ricochetLevel, IsEnemy);
 			if(targ == null){
 				foreach( Transform child in transform){
@@ -111,10 +118,10 @@ public class PB_Linear : ProjectileBehavior {
 				transform.DetachChildren ();
 				Destroy (gameObject);
 			}else{
-				Vector3 targDir = transform.InverseTransformPoint(targ.transform.position);
-				float targAngle = Mathf.Atan2(targDir.x, targDir.z);
 
-				transform.rotation = Quaternion.identity;
+				Vector3 targDir =  targ.transform.position - transform.position;
+			
+				transform.rotation = Quaternion.LookRotation(targDir, Vector3.up);
 			}
 
 		} else {
