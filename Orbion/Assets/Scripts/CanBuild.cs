@@ -17,9 +17,18 @@ public class CanBuild : MonoBehaviour {
 	public AudioClip initBuild;
 
 	private Rigidbody clone;
-	private Rigidbody toBuild = null;
-	public bool MenuUp { get; private set;}
-	private int menuCounter = 0;
+
+	//temporarily public until we make function to turn on/off menu
+	//private Rigidbody toBuild = null;
+	public Rigidbody toBuild = null;
+
+	//temporarily public until we make function to turn on/off menu
+	//public bool MenuUp { get; private set;}
+	public bool MenuUp { get; set;}
+
+	//temporarily public until we make function to turn on/off menu
+	//private int menuCounter = 0;
+	public int menuCounter = 0;
 	
 	//UI Stuff
 	public GUISkin buildWheelSkin;
@@ -242,6 +251,7 @@ public class CanBuild : MonoBehaviour {
 				menuCounter = 50;
 			}
 		}
+			
 
 		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0){
 			MenuUp = false;
@@ -253,6 +263,16 @@ public class CanBuild : MonoBehaviour {
 		if (menuCounter > 0) {
 			menuCounter --;
 		}
+
+		if ( Input.GetKeyDown( KeyCode.V) && MenuUp && researchScript != null){
+			MenuUp = false;
+			toBuild = null;
+			// Check for if the player just opens and closes.
+			inBuilding = false;
+
+			researchScript.MenuUp=true;
+		}
+
 		
 	}
 	

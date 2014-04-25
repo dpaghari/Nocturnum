@@ -1,18 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/*
-TODO:
 
-20 April 2014 - Will
-Upgrades that have hardcoded research effects probably do not work
-with new event driven upgrade/research system. Fix this later.
-
-*/
 
 public class CanResearch : MonoBehaviour {
 
-	public bool MenuUp { get; private set;}
+	//set temporarily public until we make function to turn on/off menu
+	//public bool MenuUp { get; private set;}
+	public bool MenuUp { get; set;}
 
 	//UI Stuff
 	public GUISkin upgradeWheelSkin;
@@ -136,6 +131,14 @@ public class CanResearch : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.V)){
 			if( buildScript != null && !buildScript.MenuUp)
 			   MenuUp = !MenuUp;
+		}
+
+		if (Input.GetKeyDown(KeyCode.B) && MenuUp && buildScript != null){
+				MenuUp = false;
+
+				buildScript.MenuUp = true;
+				buildScript.toBuild = null;
+				buildScript.menuCounter = 50;
 		}
 	
 	}
