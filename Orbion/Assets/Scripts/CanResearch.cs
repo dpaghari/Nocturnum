@@ -118,11 +118,8 @@ public class CanResearch : MonoBehaviour {
 
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2,128,128), button_clipSize)) {
-				// Currently just upgrades homing level for free with no requirement
-				//GameManager.Player.GetComponent<CanShoot>().bullet.GetComponent<PB_Linear>().homingLevel += 1;
-
 				if(MeetsRequirement(Tech.seeker)){
-					DoResearch(Tech.clipSize);
+					DoResearch(Tech.seeker);
 					CloseMenu();
 				}
 
@@ -130,15 +127,13 @@ public class CanResearch : MonoBehaviour {
 
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2,128,128), button_clipSize)) {
-				// Currently just upgrades homing level for free with no requirement
-				//GameManager.Player.GetComponent<CanShoot>().bullet.GetComponent<PB_Linear>().ricochetLevel += 1;
-
 				if(MeetsRequirement(Tech.ricochet)){
-					DoResearch(Tech.clipSize);
+					DoResearch(Tech.ricochet);
 					CloseMenu();
 				}
 
 			}
+
 
 		}
 	

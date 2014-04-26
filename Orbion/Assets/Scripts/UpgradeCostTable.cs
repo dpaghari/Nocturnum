@@ -38,14 +38,15 @@ public class UpgradeCostTable : ScriptableObject {
 			{ Tech.lightPath, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.mindControl, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.moveSpeed, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.playerHp, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.orbshot, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
+			{ Tech.playerHp, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.scatter, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.searing, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.seeker, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.spotlightResearch, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.stealth, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.reloadSpeed, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
+			{ Tech.ricochet, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			{ Tech.turretResearch, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 		};
 
