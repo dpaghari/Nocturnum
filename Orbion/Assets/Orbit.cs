@@ -4,6 +4,7 @@ using System.Collections;
 public class Orbit : MonoBehaviour {
 	private int degrees = 10;
 	public Transform target;
+	private Vector3 direction;
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +12,11 @@ public class Orbit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.RotateAround (target.position, Vector3.up, degrees * Time.deltaTime * 10);
+		//transform.RotateAround (target.position, Vector3.up, degrees * Time.deltaTime * 10);
+
+		direction = Utility.GetMouseWorldPos(transform.position.y);
+		direction.Normalize();
+		transform.forward = direction;
 	}
 
 	void LateUpdate(){
