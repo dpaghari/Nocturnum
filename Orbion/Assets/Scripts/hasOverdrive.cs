@@ -73,7 +73,7 @@ public class hasOverdrive : MonoBehaviour {
 		}
 
 		if(overdriveCount > 0.0f){
-			Debug.Log (overdriveCount);
+			//Debug.Log (overdriveCount);
 			dwindleScript.Update();
 			if(dwindleScript.Finished() == true){
 				overdriveCount -= 1.0f;
