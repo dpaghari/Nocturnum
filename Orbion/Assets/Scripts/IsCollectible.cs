@@ -29,7 +29,7 @@ public class IsCollectible : MonoBehaviour {
 			Vector3 targ = collide.transform.position;
 			Vector3 direction = targ - transform.position;
 			direction.Normalize ();
-			transform.position += direction * 15.0F * Time.deltaTime;
+			transform.position += direction * 25.0F * Time.deltaTime;
 		}
 	}
 	

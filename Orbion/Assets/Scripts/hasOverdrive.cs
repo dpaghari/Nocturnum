@@ -9,6 +9,12 @@ public class hasOverdrive : MonoBehaviour {
 	public DumbTimer timerScript;
 	public DumbTimer dwindleScript;
 
+
+
+	public GameObject overdriveEffect;
+	private GameObject clone;
+	private GameObject trailClone;
+
 	public bool overdriveActive;
 	public float odtime;
 
@@ -41,12 +47,17 @@ public class hasOverdrive : MonoBehaviour {
 
 		if (overdriveActive) {
 			timerScript.Update ();
+			if(clone != null)
+			clone.transform.position = transform.position;
 
-
+			//if(trailClone != null)
+			trailClone = Instantiate(overdriveEffect, transform.position, Quaternion.identity) as GameObject;
 		}
 
 		if (timerScript.Finished() == true) {
 			turnoffOverdrive();
+			//Destroy(clone.gameObject);
+			//Destroy (trailClone.gameObject);
 		}
 	
 	}
@@ -77,8 +88,10 @@ public class hasOverdrive : MonoBehaviour {
 
 	void activateOverdrive(){
 		Debug.Log ("Overdrive!");
+
 		if (overdriveActive) {
-			timerScript.Update ();
+			clone = Instantiate(overdriveEffect, transform.position, Quaternion.identity) as GameObject;
+			//timerScript.Update ();
 			shootScript.firingRate = odfireRate;
 			moveScript.MoveScale = odmoveRate;
 		}

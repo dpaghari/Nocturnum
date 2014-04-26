@@ -1052,6 +1052,10 @@ Prefab:
       propertyPath: overdriveCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400028, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: overdriveLimit
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
@@ -12084,7 +12088,7 @@ Transform:
   m_PrefabInternal: {fileID: 1433610057}
   m_GameObject: {fileID: 489028844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.73000002, y: 4.5, z: -.109999999}
+  m_LocalPosition: {x: 1.73000002, y: 4.5, z: -2}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 224881487}
@@ -16484,6 +16488,7 @@ MonoBehaviour:
   moveScript: {fileID: 680245872}
   timerScript: {fileID: 0}
   dwindleScript: {fileID: 0}
+  overdriveEffect: {fileID: 100000, guid: f0c70015ed0e510428268fcf4cdcf026, type: 2}
   overdriveActive: 0
   odtime: 10
   overdriveLimit: 30
@@ -18708,7 +18713,7 @@ Transform:
   m_PrefabInternal: {fileID: 1433610057}
   m_GameObject: {fileID: 763645162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489028845}
@@ -29852,7 +29857,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
       propertyPath: lightValue
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
@@ -34326,7 +34331,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -34358,7 +34363,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.109999999
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: baa54b5d4a1e372438c97a5b424a575b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -44455,7 +44460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baeacc5f8a9d15245af6f6029ddd40c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightValue: 50
+  lightValue: 200
   collectSound: {fileID: 8300000, guid: a325284345d98014fbdc879d29edc168, type: 3}
 --- !u!54 &1895276953
 Rigidbody:
@@ -44467,7 +44472,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: .00999999978
   m_Drag: 1
-  m_AngularDrag: 100000
+  m_AngularDrag: 10
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1

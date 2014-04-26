@@ -2494,6 +2494,8 @@ MonoBehaviour:
   refractionBuilding: {fileID: 5400000, guid: c75a8e6eb7c779e4f871ab221fa3c2d3, type: 2}
   spotlightBuilding: {fileID: 5400000, guid: b1ea8356d7acaf849929962787c373d1, type: 2}
   initBuild: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
+  toBuild: {fileID: 0}
+  menuCounter: 0
   buildWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
   button_incendiary: {fileID: 2800000, guid: 39578d898366e8e4cbecce0ff7c6f67d, type: 3}
   button_wall: {fileID: 2800000, guid: 1b1cdd26f177a9d438e19f345d5bc105, type: 3}
@@ -2656,14 +2658,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe01ea4843222849a14431528e7b892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overdriveCount: 111
+  overdriveCount: 0
   shootScript: {fileID: 11400000}
   moveScript: {fileID: 11400002}
   timerScript: {fileID: 0}
   dwindleScript: {fileID: 0}
+  overdriveEffect: {fileID: 100000, guid: f0c70015ed0e510428268fcf4cdcf026, type: 2}
   overdriveActive: 0
   odtime: 10
-  overdriveLimit: 30
+  overdriveLimit: 10
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
