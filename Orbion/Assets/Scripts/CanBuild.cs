@@ -5,6 +5,18 @@ public enum Buildings {none, generator, ballistics, wall, medBay, incindiary};
 [RequireComponent(typeof(AudioSource))]
 public class CanBuild : MonoBehaviour {
 	
+	public bool MenuUp { get; private set;}
+	private Rigidbody clone;
+	public Rigidbody toBuild {get; private set;}
+	private int menuCounter = 0;
+	private CanResearch researchScript;
+
+
+	private bool isDragBuilding = false;
+	private float dragDelay = 0.15f; //note: the delay gets affected by build slow down
+	private DumbTimer dragTimer;
+
+	//Building prefab references
 	public Rigidbody generatorBuilding;
 	public Rigidbody ballisticsBuilding;
 	public Rigidbody underConstructionBuilding;
@@ -16,20 +28,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody spotlightBuilding;
 	public AudioClip initBuild;
 
-	private Rigidbody clone;
 
-	//temporarily public until we make function to turn on/off menu
-	//private Rigidbody toBuild = null;
-	public Rigidbody toBuild = null;
-
-	//temporarily public until we make function to turn on/off menu
-	//public bool MenuUp { get; private set;}
-	public bool MenuUp { get; set;}
-
-	//temporarily public until we make function to turn on/off menu
-	//private int menuCounter = 0;
-	public int menuCounter = 0;
-	
 	//UI Stuff
 	public GUISkin buildWheelSkin;
 	private float rotAngle = 40;
@@ -42,17 +41,35 @@ public class CanBuild : MonoBehaviour {
 	public Texture2D button_turret;
 	public Texture2D button_refraction;
 	public Texture2D button_spotlight;
+
+
 	//Checks (temporary until we have metrics manager working.
 	public bool builtBallistics = false;
 	public bool builtGenerator = false;
-	//For slowing down
-	public bool inBuilding = false;
 
-	private bool isDragBuilding = false;
-	private CanResearch researchScript;
 
-	private float dragDelay = 0.15f; //note: the delay gets affected by build slow down
-	private DumbTimer dragTimer;
+	//Setting inBuildingMode will slowdown/restore time
+	private float slowDownRatio = 0.5f;
+	private float originalFixedUpdate = 0.02f;
+	private bool _inBuildingMode = false;
+	public bool inBuildingMode{
+		get{ return _inBuildingMode;}
+
+		set{
+			if( value == true){
+				Time.timeScale = slowDownRatio;
+				Time.fixedDeltaTime = originalFixedUpdate * slowDownRatio;
+			}
+			else{
+				Time.timeScale = 1.0f;
+				Time.fixedDeltaTime = originalFixedUpdate;
+			}
+			_inBuildingMode = value;
+		}
+		
+	}
+
+
 	
 
 	// Use this for initialization
@@ -79,9 +96,9 @@ public class CanBuild : MonoBehaviour {
 	void SetConstruction(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
 		if ( MeetsRequirement( buildingType)){
-			MenuUp = false;
+			CloseMenu();
 			toBuild = buildingType;
-
+			inBuildingMode = true;
 		}
 	}
 
@@ -96,129 +113,95 @@ public class CanBuild : MonoBehaviour {
 		return buildInfo.energyCost;
 	}
 
+
+	public void OpenMenu(){
+		MenuUp = true;
+		toBuild = null;
+		menuCounter = 50;
+		inBuildingMode = true;
+	}
+
+	public void CloseMenu(){
+		MenuUp = false;
+		toBuild = null;
+		inBuildingMode = false;
+	}
+
 	
+	void Awake(){
+		originalFixedUpdate = Time.fixedDeltaTime;
+		toBuild = null;
+	}
+
 	void OnGUI() {
 		GUI.skin = buildWheelSkin;
 		if(MenuUp){
-
 			GetComponent<CanShoot>().ResetFiringTimer();
+
 			// Generator Button
-			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator)) {
+			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator))
 				SetConstruction(generatorBuilding);
-			}
 			
 			// Ballistics Button 
-			//pivotPoint = new Vector2(Screen.width / 2, Screen.height / 2);
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint
-			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_ballistics)) {
+			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_ballistics))
 				SetConstruction(ballisticsBuilding);
-			}
 			
 			// Wall Button
-			// Make the third button.
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_wall))  {
+			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_wall))
 				SetConstruction(wallBuilding);
-			}
 			
 			// Medbay Button
-			// Make the fourth button.
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), button_medbay))  {
+			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), button_medbay))
 				SetConstruction(medBayBuilding);
-			}
+
 			//Incendiary Button
-			
-			// Make the fifth button.
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
-			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), button_incendiary)) {
+			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), button_incendiary))
 				SetConstruction(incindiaryBuilding);
-			}
+
 			// Turret Button
-			// Make the sixth button.
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
-			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2+92,128,128), button_turret)) {
+			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2+92,128,128), button_turret))
 				SetConstruction(turretBuilding);
-			}
+
 			// Refraction Button
-			// Make the seventh button.
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
-			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_refraction)) {
+			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_refraction))
 				SetConstruction(refractionBuilding);
-			}
+
 			// Spotlight Button
-			// Make the eigth button.
-			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);;
-			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2+92,128,128), button_spotlight)) {
+			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2+92,128,128), button_spotlight))
 				SetConstruction(spotlightBuilding);
-			}
-			if(Time.timeScale ==1.0f){
-				Time.timeScale = 0.5f;
-				// Checks for if the player is 
-				inBuilding = true;
+
 		}
-	} else {
-			// is set to false when the player puts down a building or
-			// if the menu button is gone and the player hasn't chosen.
-			// a building. Check for this is in the Update().
-			if (!inBuilding){
-				Time.timeScale = 1.0f;
-				Time.fixedDeltaTime = 0.02f*Time.timeScale;
-			}
-		}
+
 	}
-	
 
 	// Update is called once per frame
 	void Update () {
-
 		dragTimer.Update();
 
 		if(Input.GetMouseButton(0) && toBuild != null){
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-			// Casts the ray and get the first game object hit
-			Physics.Raycast(ray, out hit);
-			//floor layer is currently at 10 update this if that changes
-			int layerMask = 1 << 10; 
-			
-			//raycasting onto lightshards were making the angle at which we shoot wonky
-			//so only raycast onto things with the floor layer
-			Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask);
-			
-			//[Don't delete] debug code for showing where our mouse position is parsing into. 
-			//Debug.DrawRay (ray.origin, hit.point);
-			Vector3 mousePos = hit.point;
-			
+
+			Vector3 mousePos = Utility.GetMouseWorldPos(5.25f);
 
 			if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
 				GetComponent<CanShoot>().ResetFiringTimer();
 				audio.PlayOneShot(initBuild, 1.0f);
-				if (toBuild == generatorBuilding){
-					mousePos.y += 5.25f;
-					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
+
+				clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
+				// Slows down during placing building.
+				inBuildingMode = false;
+
+				if( toBuild == generatorBuilding){
 					clone.GetComponent<IsUnderConstruction>().canBuildOutOfLight = true;
 					builtGenerator = true;
-					// Slows down during placing building.
-					inBuilding = false;
 				}
-				else{
-					mousePos.y += 5.25f;
 
-					//Quaternion.LookRotation(Vector3.forward, Vector3.up)
-					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
-					// Slows down during placing building.
-					inBuilding = false;
-				}
-				
 				Buildable buildInfo = toBuild.GetComponent<Buildable>();
 				ResManager.RmLumen(buildInfo.cost);
 				ResManager.AddUsedEnergy(buildInfo.energyCost);
 					
 				if( toBuild == wallBuilding){
-					inBuilding = true;
+					inBuildingMode = true;
 					isDragBuilding = true;
 				}
 				else{
@@ -233,44 +216,34 @@ public class CanBuild : MonoBehaviour {
 		
 		//If we let go of the mouse, we shouldn't be building walls anymore
 		if( Input.GetMouseButtonUp(0) && isDragBuilding){
-			
 			toBuild = null;
-			inBuilding = false;
+			inBuildingMode = false;
 			isDragBuilding = false;
 			dragTimer.SetProgress(1.0f);
 		}
 		
 
-
-
-
-		if (Input.GetKeyDown(KeyCode.B) && !MenuUp){
-			if( researchScript != null && !researchScript.MenuUp){
-				MenuUp = true;
-				toBuild = null;
-				menuCounter = 50;
-			}
-		}
+		if (Input.GetKeyDown(KeyCode.B) && !MenuUp)
+			if( researchScript != null && !researchScript.MenuUp)
+				OpenMenu();
+		
 			
+		// Check for if the player just opens and closes.
+		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0)
+			CloseMenu();
 
-		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0){
-			MenuUp = false;
-			toBuild = null;
-			// Check for if the player just opens and closes.
-			inBuilding = false;
-		}
-
-		if (menuCounter > 0) {
+		if (menuCounter > 0)
 			menuCounter --;
-		}
+
 
 		if ( Input.GetKeyDown( KeyCode.V) && MenuUp && researchScript != null){
-			MenuUp = false;
-			toBuild = null;
-			// Check for if the player just opens and closes.
-			inBuilding = false;
-
-			researchScript.MenuUp=true;
+			Debug.Log("swap to upgrade");
+			CloseMenu();
+			if( toBuild == null)
+				Debug.Log(toBuild);
+			else 
+				Debug.Log("Has toBuild");
+			researchScript.OpenMenu();
 		}
 
 		

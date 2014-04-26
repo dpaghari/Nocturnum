@@ -6,8 +6,7 @@ using System.Collections;
 public class CanResearch : MonoBehaviour {
 
 	//set temporarily public until we make function to turn on/off menu
-	//public bool MenuUp { get; private set;}
-	public bool MenuUp { get; set;}
+	public bool MenuUp { get; private set;}
 
 	//UI Stuff
 	public GUISkin upgradeWheelSkin;
@@ -19,6 +18,26 @@ public class CanResearch : MonoBehaviour {
 
 	private CanBuild buildScript;
 
+	//Setting inBuildingMode will slowdown/restore time
+	private float slowDownRatio = 0.5f;
+	private float originalFixedUpdate = 0.02f;
+	private bool _inUpgradeMenu = false;
+	public bool inUpgradeMenu{
+		get{ return _inUpgradeMenu;}
+		
+		set{
+			if( value == true){
+				Time.timeScale = slowDownRatio;
+				Time.fixedDeltaTime = originalFixedUpdate * slowDownRatio;
+			}
+			else{
+				Time.timeScale = 1.0f;
+				Time.fixedDeltaTime = originalFixedUpdate;
+			}
+			_inUpgradeMenu = value;
+		}
+		
+	}
 
 	
 
@@ -56,6 +75,16 @@ public class CanResearch : MonoBehaviour {
 		return upgradeInfo;
 	}
 
+	public void OpenMenu(){
+		MenuUp = true;
+		inUpgradeMenu = true;
+	}
+	
+	public void CloseMenu(){
+		MenuUp = false;
+		inUpgradeMenu = false;
+	}
+
 
 	void OnGUI() {
 		GUI.skin = upgradeWheelSkin;
@@ -65,7 +94,7 @@ public class CanResearch : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_scatterShot)) {
 				if(MeetsRequirement(Tech.scatter)){
 					DoResearch(Tech.scatter);
-					MenuUp = false;
+					CloseMenu();
 				}
 			}
 			
@@ -74,7 +103,7 @@ public class CanResearch : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_lightGrenade)) {
 				if(MeetsRequirement(Tech.lightGrenade)){
 					DoResearch(Tech.lightGrenade);
-					MenuUp = false;
+					CloseMenu();
 				}
 			}
 			
@@ -83,40 +112,36 @@ public class CanResearch : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_clipSize)) {
 				if(MeetsRequirement(Tech.clipSize)){
 					DoResearch(Tech.clipSize);
-					MenuUp = false;
+					CloseMenu();
 				}
 			}
 
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2,128,128), button_clipSize)) {
-				// Currently just upgrades homing level for free with no requirement
-				//GameManager.Player.GetComponent<CanShoot>().bullet.GetComponent<PB_Linear>().homingLevel += 1;
-				//MenuUp = false;
-
 				if(MeetsRequirement(Tech.seeker)){
-					DoResearch(Tech.clipSize);
-					MenuUp = false;
+					DoResearch(Tech.seeker);
+					CloseMenu();
 				}
 
 			}
 
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
 			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2,128,128), button_clipSize)) {
-				// Currently just upgrades homing level for free with no requirement
-				//GameManager.Player.GetComponent<CanShoot>().bullet.GetComponent<PB_Linear>().ricochetLevel += 1;
-				//MenuUp = false;
-
 				if(MeetsRequirement(Tech.ricochet)){
-					DoResearch(Tech.clipSize);
-					MenuUp = false;
+					DoResearch(Tech.ricochet);
+					CloseMenu();
 				}
 
 			}
+
 
 		}
 	
 	}
 
+	void Awake(){
+		originalFixedUpdate = Time.fixedDeltaTime;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -128,17 +153,19 @@ public class CanResearch : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.V)){
-			if( buildScript != null && !buildScript.MenuUp)
-			   MenuUp = !MenuUp;
+		if ( Input.GetKeyDown(KeyCode.V) && buildScript != null && !buildScript.MenuUp){
+			//prevents player from placing buildings if they open upgrade menu
+			buildScript.CloseMenu(); 
+
+			if( MenuUp)
+				CloseMenu();
+			else
+				OpenMenu();
 		}
 
 		if (Input.GetKeyDown(KeyCode.B) && MenuUp && buildScript != null){
-				MenuUp = false;
-
-				buildScript.MenuUp = true;
-				buildScript.toBuild = null;
-				buildScript.menuCounter = 50;
+			CloseMenu();
+			buildScript.OpenMenu();
 		}
 	
 	}
