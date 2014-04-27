@@ -237,12 +237,7 @@ public class CanBuild : MonoBehaviour {
 
 
 		if ( Input.GetKeyDown( KeyCode.V) && MenuUp && researchScript != null){
-			Debug.Log("swap to upgrade");
 			CloseMenu();
-			if( toBuild == null)
-				Debug.Log(toBuild);
-			else 
-				Debug.Log("Has toBuild");
 			researchScript.OpenMenu();
 		}
 
