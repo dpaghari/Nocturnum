@@ -12452,6 +12452,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df815fdbf4656dc48935134bfd9accda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiScale: 1
+  inputManager: {fileID: 517948579}
+  fixedWidth: -1
+  fixedHeight: 600
+  atlas: {fileID: 0}
+  defaultFont: {fileID: 0}
+  mergeMaterials: 0
+  pixelPerfectMode: 1
+  renderCamera: {fileID: 0}
+  generateNormals: 0
+  consumeMouseEvents: 0
+  overrideCamera: 0
+  renderQueueBase: 3000
+  guides: []
 --- !u!65 &517948578
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -12462,7 +12476,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.66666675, y: 2, z: 0}
+  m_Size: {x: -.00333333341, y: 2, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &517948579
 MonoBehaviour:
@@ -12475,6 +12489,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd6151a8ec1a564aa32a21fda772599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderCamera: {fileID: 0}
+  useTouch: 1
+  useMouse: 1
+  useJoystick: 0
+  joystickClickButton: 351
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
+  axisPollingInterval: .150000006
+  retainFocus: 0
+  touchClickRadius: 25
 --- !u!1001 &518154784
 Prefab:
   m_ObjectHideFlags: 0
