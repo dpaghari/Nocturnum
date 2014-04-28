@@ -12,6 +12,7 @@ public class ResManager : Singleton<ResManager> {
 	private int _MaxCollectible = 30;
 
 
+
 	public static float Lumen{ get { return Instance._Lumen;}}
 	public static int Collectible{ get { return Instance._Collectible;}}
 	public static int MaxCollectible{ get { return Instance._MaxCollectible;}}
@@ -24,10 +25,7 @@ public class ResManager : Singleton<ResManager> {
 	public static void AddCollectible( int amt) { 
 		Instance._Collectible += amt;
 		if(Instance._Collectible >= Instance._MaxCollectible){
-			ResManager.Reset();
-			TechManager.Reset();
-			Application.LoadLevel("scene1");
-			
+			TechManager.hasWolves = true;
 		}
 	
 	}

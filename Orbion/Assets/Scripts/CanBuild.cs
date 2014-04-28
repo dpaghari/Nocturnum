@@ -139,8 +139,10 @@ public class CanBuild : MonoBehaviour {
 			GetComponent<CanShoot>().ResetFiringTimer();
 
 			// Generator Button
-			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator))
+			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator)){
 				SetConstruction(generatorBuilding);
+				//TechManager.hasGenerator = true;
+			}
 			
 			// Ballistics Button 
 			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_ballistics))

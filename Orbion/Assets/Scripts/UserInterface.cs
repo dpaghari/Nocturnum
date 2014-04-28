@@ -24,6 +24,7 @@ public class UserInterface : MonoBehaviour {
 	public GameObject resRef;
 	public GameObject healthRef;
 
+
 	//Temporary variable placeholders for health, energy, and Light
 	public float player_Health;
 	public int player_Energy;
@@ -101,10 +102,37 @@ public class UserInterface : MonoBehaviour {
 			GUI.Label(new Rect(2, Screen.height-30, 150, 50), ammoRef.GetComponent<CanShootReload>().currentAmmo + "/" + ammoRef.GetComponent<CanShootReload>().clipSize);
 		}
 
+
+
+
+		//------------------------------- Mission 1----------------------------------------------------------------//
+
+		//Generator quest
+		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 875, 300, 100), "Build a Generator: ");
+		if(TechManager.hasGenerator)
+			GUI.Label(new Rect(Screen.width - 200 ,Screen.height - 875, 300, 100), "Complete");
+
+		// Upgrade Scattershot
+		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 825, 300, 100), "Upgrade Scattershot: ");
+		if(TechManager.hasScatter)
+			GUI.Label(new Rect(Screen.width - 180 ,Screen.height - 825, 300, 100), "Complete");
+
+		// Build a Turret
+		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 775, 300, 100), "Build a Turret");
+		if(TechManager.hasTurret)
+			GUI.Label(new Rect(Screen.width - 180 ,Screen.height - 775, 300, 100), "Complete");
 		//Collectible quest
 		string collectString = string.Format("{0}", ResManager.Collectible);
-		GUI.Label(new Rect(2, Screen.height-90, 300, 100), "Collect 30 Enemy Specimen: ");
-		GUI.Label(new Rect(300, Screen.height-90, 150, 50), collectString);
+		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 725, 300, 100), "Collect 30 Enemy Specimen: ");
+		if(!TechManager.hasWolves)
+		GUI.Label(new Rect(Screen.width - 100, Screen.height - 725, 150, 50), collectString);
+
+		//---------------------------------------------------------------------------------------------------------//
+
+
+
+
+
 
 		//Light
 		string lumenString = string.Format("{0}", ResManager.Lumen);

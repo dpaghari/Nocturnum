@@ -102,8 +102,13 @@ public class IsUnderConstruction : MonoBehaviour {
 				Vector3 temp = this.transform.position;
 				temp.y -= 2;
 
-
 				clone = Instantiate(toBuild, temp, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				if(toBuild.GetComponent<IsGenerator>() != null){
+					TechManager.hasGenerator = true;
+				}
+				if(toBuild.GetComponent<isTurret>() != null){
+					TechManager.hasTurret = true;
+				}
 
 				Destroy(this.gameObject);
 
