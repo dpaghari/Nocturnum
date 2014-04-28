@@ -6,6 +6,7 @@ public class ProjectileController : MonoBehaviour {
 	//public PB_Linear CurrBehavior;
 
 	void Start () {
+		CurrBehavior.Initialize();
 	}
 	
 	void FixedUpdate() {

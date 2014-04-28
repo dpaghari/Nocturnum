@@ -15,6 +15,8 @@ public class CanResearch : MonoBehaviour {
 	public Texture2D button_clipSize;
 	public Texture2D button_lightGrenade;
 	public Texture2D button_scatterShot;
+	public Texture2D button_seekerShot;
+	public Texture2D button_ricochetShot;
 
 	private CanBuild buildScript;
 
@@ -117,7 +119,7 @@ public class CanResearch : MonoBehaviour {
 			}
 
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2,128,128), button_clipSize)) {
+			if(GUI.Button(new Rect(Screen.width/2+64,Screen.height/2,128,128), button_seekerShot)) {
 				if(MeetsRequirement(Tech.seeker)){
 					DoResearch(Tech.seeker);
 					CloseMenu();
@@ -126,7 +128,7 @@ public class CanResearch : MonoBehaviour {
 			}
 
 			//GUIUtility.RotateAroundPivot(rotAngle, pivotPoint);
-			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2,128,128), button_clipSize)) {
+			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height/2,128,128), button_ricochetShot)) {
 				if(MeetsRequirement(Tech.ricochet)){
 					DoResearch(Tech.ricochet);
 					CloseMenu();

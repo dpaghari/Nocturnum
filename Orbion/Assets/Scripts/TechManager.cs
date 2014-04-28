@@ -72,6 +72,7 @@ public class TechManager : Singleton<TechManager> {
 	public static bool hasScatter = false;
 	public static bool hasTurret = false;
 	public static bool hasWolves = false;
+	public static bool hasBeatenWolf = false;
 
 
 	//------------------------------------------//
