@@ -16,9 +16,13 @@ public class CanSpawnUpdate : MonoBehaviour {
 	//private Rigidbody clone;
 	public Rigidbody meleeEnemy;
 	public Rigidbody rangedEnemy;
+	public Rigidbody bossEnemy;
 	private Rigidbody clone;
 
+	private bool bossSummon = false;
+
 	public Vector3 testVec = new Vector3(20.0F,0.0F,-20.0F);
+	public Vector3 bossVec = new Vector3(120.0F,0.0F,-120.0F);
 	
 	public class LevelInfo{
 		public float timer;
@@ -38,7 +42,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 
-		addLevel (0.25F, 10.0F, 3, 0); addLevel (0.5F, 10.0F, 3, 2); addLevel (0.75F, 10.0F, 4, 2); 
+		addLevel (1.0F, 30.0F, 3, 0); addLevel (3.0F, 20.0F, 3, 2); addLevel (7.0F, 20.0F, 4, 2); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = totalLevels-1; i > 0; i--){
 			
@@ -52,7 +56,12 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 	
 	void Update(){
-
+		if(!bossSummon && TechManager.hasWolves){
+			Debug.Log ("spawn boss");
+			bossSummon = true;
+			spawnBoss (bossVec);
+		}
+		
 		if(currentLevel > 0){
 			if (intervalCounter > currentInterval){
 				Debug.Log("Run level: " + currentLevel);
@@ -117,6 +126,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 		clone = Instantiate (rangedEnemy, _vec, Quaternion.identity) as Rigidbody;
 	}
 
-	
+	public void spawnBoss(Vector3 _vec){
+		clone = Instantiate (bossEnemy, _vec, Quaternion.identity) as Rigidbody;
+	}
 
 }
