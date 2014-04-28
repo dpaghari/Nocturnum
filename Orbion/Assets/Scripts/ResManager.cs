@@ -8,7 +8,7 @@ public class ResManager : Singleton<ResManager> {
 	private float _Lumen = 0;
 	private int _MaxEnergy = 0;
 	private int _UsedEnergy = 0;
-	private int _Collectible = 29;
+	private int _Collectible = 0;
 	private int _MaxCollectible = 30;
 
 

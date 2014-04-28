@@ -57,7 +57,7 @@ public class HelperText : MonoBehaviour {
 				makeMiddle = Screen.width/2-160;
 				tutorialText = "Press V to open the Upgrade Grid.";
 			}
-			else if(TechManager.hasGenerator == true0 && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true && TechManager.hasBeatenWolf){
+			else if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true){
 				
 				tutorialText = "Mission Clear!";
 				missionComplete = true;
