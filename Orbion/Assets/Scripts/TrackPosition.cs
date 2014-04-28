@@ -11,7 +11,12 @@ public class TrackPosition : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	void FixedUpdate(){
+		transform.position = target.transform.position;
+	}
+
+
 	void Update () {
-		transform.position = target.position;
+		//transform.position = target.position;
 	}
 }

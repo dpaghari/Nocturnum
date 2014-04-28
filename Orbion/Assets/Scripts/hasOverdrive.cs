@@ -26,7 +26,7 @@ public class hasOverdrive : MonoBehaviour {
 	private float odmoveRate;
 	// Use this for initialization
 	void Start () {
-		overdriveLimit = 30.0f;
+		overdriveLimit = 50.0f;
 		fireRate = shootScript.firingRate;
 		moveRate = moveScript.MoveScale;
 		odfireRate = fireRate - 0.1f;
@@ -36,7 +36,7 @@ public class hasOverdrive : MonoBehaviour {
 		overdriveCount = 0.0f;
 		overdriveActive = false;
 		timerScript = DumbTimer.New (odtime, 1.0f);
-		dwindleScript = DumbTimer.New (10.0f, 1.0f);
+		dwindleScript = DumbTimer.New (5.0f, 1.0f);
 	}
 	
 	// Update is called once per frame

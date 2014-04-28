@@ -63,6 +63,24 @@ public class TechManager : Singleton<TechManager> {
 	protected int[] NumBuildings;
 	protected UpgradeCostTable UpgradeCosts;
 	protected ResearchingInfo researchProgress;
+
+
+
+	//-----------Mission 1 variables------------//
+	// Temporary should be moved into a Questmanager 
+	public static bool hasGenerator = false;
+	public static bool hasScatter = false;
+	public static bool hasTurret = false;
+	public static bool hasWolves = false;
+
+
+	//------------------------------------------//
+
+
+
+
+
+
 	public static ResearchingInfo ResearchProgress(){ return Instance.researchProgress;}
 
 	public static bool IsBuilding( Tech theTech){
@@ -207,6 +225,10 @@ public class TechManager : Singleton<TechManager> {
 	//Pass force = true to bypass this.
 	public static void Research( Tech upgrade, bool force = false){
 		if( CheckUpgrade( upgrade)){
+			if(upgrade == Tech.scatter){
+				if(!hasScatter)
+				hasScatter = true;
+			}
 
 			if( !force){
 				
@@ -222,6 +244,10 @@ public class TechManager : Singleton<TechManager> {
 				}
 			}
 			ResearchProgress().SetFinishTime( upgrade, Time.time + GetUpgradeTime( upgrade));
+			if(upgrade == Tech.scatter){
+				if(!hasScatter)
+					hasScatter = true;
+			}
 		}
 	}
 
