@@ -32,6 +32,11 @@ public class PB_Linear : ProjectileBehavior {
 	public float lifeTime = 2.0F;
 	private float lifeCounter = 0.0F;
 	
+
+	public override void Initialize(){
+		return;
+	}
+
 	public void Update(){
 		if(lifeCounter > lifeTime){
 			Destroy(this.gameObject);

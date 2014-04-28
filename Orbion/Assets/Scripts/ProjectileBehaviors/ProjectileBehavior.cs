@@ -19,6 +19,8 @@ using System.Collections;
 
 public abstract class ProjectileBehavior : MonoBehaviour {
 
+	abstract public void Initialize();
+
 	//The fixed updated of the behavior
 	abstract public void FixedPerform();
 	

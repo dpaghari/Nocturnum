@@ -32,6 +32,10 @@ public class PB_Melee : ProjectileBehavior {
 		}
 	}
 	
+	public override void Initialize(){
+		return;
+	}
+
 	public override void FixedPerform(){
 		//MoveScript.Move(transform.forward, MoveType);
 		
