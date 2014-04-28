@@ -127,12 +127,12 @@ public class UserInterface : MonoBehaviour {
 		if(!TechManager.hasWolves)
 		GUI.Label(new Rect(Screen.width - 100, Screen.height - 725, 150, 50), collectString);
 
-
+		/*
 		if(TechManager.hasWolves)
 			GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 675, 300, 100), "Defeat the Alpha Wolf");
 		if(TechManager.hasBeatenWolf)
 			GUI.Label(new Rect(Screen.width - 180 ,Screen.height - 675, 300, 100), "Complete");
-	
+	*/
 
 
 		//---------------------------------------------------------------------------------------------------------//
