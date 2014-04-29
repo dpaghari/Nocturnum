@@ -24,6 +24,9 @@ public class UserInterface : MonoBehaviour {
 	public GameObject resRef;
 	public GameObject healthRef;
 
+	public bool questComplete;
+	public bool bossDefeated;
+
 
 	//Temporary variable placeholders for health, energy, and Light
 	public float player_Health;
@@ -32,6 +35,10 @@ public class UserInterface : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		questComplete = false;
+		bossDefeated = false;
+
+
 		InvokeRepeating ("addTime", 1, 1);
 		ammoRef = GameObject.Find ("player_prefab");
 		healthRef = GameObject.Find ("player_prefab");
@@ -50,6 +57,10 @@ public class UserInterface : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true){
+			questComplete = true;
+		}
+
 	}
 
 	void OnGUI () {
@@ -107,6 +118,9 @@ public class UserInterface : MonoBehaviour {
 
 		//------------------------------- Mission 1----------------------------------------------------------------//
 
+
+
+		if(!questComplete){
 		//Generator quest
 		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 875, 300, 100), "Build a Generator: ");
 		if(TechManager.hasGenerator)
@@ -124,15 +138,21 @@ public class UserInterface : MonoBehaviour {
 		//Collectible quest
 		string collectString = string.Format("{0}", ResManager.Collectible);
 		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 725, 300, 100), "Collect 30 Enemy Specimen: ");
-		if(!TechManager.hasWolves)
 		GUI.Label(new Rect(Screen.width - 100, Screen.height - 725, 150, 50), collectString);
-
-		/*
+		}
 		if(TechManager.hasWolves)
 			GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 675, 300, 100), "Defeat the Alpha Wolf");
-		if(TechManager.hasBeatenWolf)
-			GUI.Label(new Rect(Screen.width - 180 ,Screen.height - 675, 300, 100), "Complete");
-	*/
+		if(TechManager.hasBeatenWolf){
+			GUI.Label(new Rect(Screen.width - 140 ,Screen.height - 675, 300, 100), "Complete");
+			bossDefeated = true;
+		}
+
+		if(bossDefeated){
+
+			GUI.Label(new Rect(Screen.width / 2, Screen.height - 670, 500, 300), "MISSION CLEAR!");
+		}
+
+	
 
 
 		//---------------------------------------------------------------------------------------------------------//

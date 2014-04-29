@@ -73,7 +73,8 @@ public class TechManager : Singleton<TechManager> {
 	public static bool hasTurret = false;
 	public static bool hasWolves = false;
 	public static bool hasBeatenWolf = false;
-
+	public static DumbTimer timerScript;
+	public static bool missionComplete = false;
 
 	//------------------------------------------//
 
@@ -260,6 +261,12 @@ public class TechManager : Singleton<TechManager> {
 			Instance.UpgrLevels[techIndex] = 0;
 		}
 		Instance.PlayerTech = TechTree.MakeDefault();
+		missionComplete = false;
+		hasTurret = false;
+		hasGenerator = false;
+		hasWolves = false;
+		hasScatter = false;
+		hasBeatenWolf = false;
 	}
 
 
@@ -279,13 +286,29 @@ public class TechManager : Singleton<TechManager> {
 
 	// Use this for initialization
 	void Start () {
-	
+		timerScript = DumbTimer.New(5.0f, 1.0f);
 	}
 	
 
 
 	// Update is called once per frame
 	void Update () {
+		if(hasGenerator == true && hasScatter == true && hasTurret == true && hasWolves == true && hasBeatenWolf == true){
+			missionComplete = true;
+		}
+		if(missionComplete){
+			timerScript.Update();
+			
+		}
+		if(timerScript.Finished()){
+			
+			
+			ResManager.Reset();
+			TechManager.Reset();
+			Application.LoadLevel("scene1");
+			timerScript.Reset();
+	
+		}
 		ResearchProgress().UpdateStatus();
 	}
 
