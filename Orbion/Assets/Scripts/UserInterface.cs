@@ -147,8 +147,7 @@ public class UserInterface : MonoBehaviour {
 			bossDefeated = true;
 		}
 
-		if(bossDefeated){
-
+		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
 			GUI.Label(new Rect(Screen.width / 2, Screen.height - 670, 500, 300), "MISSION CLEAR!");
 		}
 

@@ -57,14 +57,14 @@ public class CanSpawnUpdate : MonoBehaviour {
 	
 	void Update(){
 		if(!bossSummon && TechManager.hasWolves){
-			Debug.Log ("spawn boss");
+			//Debug.Log ("spawn boss");
 			bossSummon = true;
 			spawnBoss (bossVec);
 		}
 		
 		if(currentLevel > 0){
 			if (intervalCounter > currentInterval){
-				Debug.Log("Run level: " + currentLevel);
+			//	Debug.Log("Run level: " + currentLevel);
 				runLevel(testVec);
 				intervalCounter = 0.0F;
 			} else {
@@ -89,7 +89,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public void nextLevel(){
 		if(currentLevel < totalLevels){
 			currentLevel++;
-			Debug.Log ("Current Level: " + currentLevel);
+//			Debug.Log ("Current Level: " + currentLevel);
 			runLevel (testVec);
 			if(currentLevel == totalLevels){
 				currentTimer = 3600.0F;

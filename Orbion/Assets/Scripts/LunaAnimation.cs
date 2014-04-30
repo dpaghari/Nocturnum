@@ -75,7 +75,7 @@ public class LunaAnimation : MonoBehaviour {
 		}
 
 
-		if (! MoveKeyStay() && ! Input.GetMouseButton(0) ){
+		if (! MoveKeyStay() && ! Input.GetMouseButton(0)){
 			animation.CrossFade("Idle");
 	 }
 
