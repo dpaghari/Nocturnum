@@ -22110,7 +22110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cdd2fdb4f8afc429ae97f934c4a6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cooldown: 1
+  Cooldown: 2
   Grenade: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
 --- !u!114 &680245870
 MonoBehaviour:
@@ -22133,7 +22133,7 @@ MonoBehaviour:
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   clipSize: 30
   currentAmmo: 30
-  reloadCooldown: 2
+  reloadCooldown: 1
   reloading: 0
 --- !u!114 &680245871
 MonoBehaviour:
@@ -36656,68 +36656,6 @@ Transform:
   m_Children:
   - {fileID: 1862856573}
   m_Father: {fileID: 1420581034}
---- !u!1 &1099083460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1099083462}
-  - 108: {fileID: 1099083461}
-  m_Layer: 0
-  m_Name: Directional light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1099083461
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1099083460}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Type: 1
-  m_Color: {r: .335929483, g: .300713688, b: .397058845, a: 1}
-  m_Intensity: .100000001
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: 2
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_ActuallyLightmapped: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_ShadowSamples: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_IndirectIntensity: 1
-  m_AreaSize: {x: 1, y: 1}
---- !u!4 &1099083462
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1099083460}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381661, w: .875426114}
-  m_LocalPosition: {x: -29.0431175, y: 88.5858383, z: -3.10715675}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &1101256016
 GameObject:
   m_ObjectHideFlags: 0
@@ -42121,7 +42059,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 52a01d17becae0945838bcb96349f376, type: 2}
       propertyPath: InitialModule.maxNumParticles
-      value: 5000
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 52a01d17becae0945838bcb96349f376, type: 2}
       propertyPath: InitialModule.startSize.scalar
@@ -42138,6 +42076,10 @@ Prefab:
     - target: {fileID: 19800000, guid: 52a01d17becae0945838bcb96349f376, type: 2}
       propertyPath: ShapeModule.randomDirection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 52a01d17becae0945838bcb96349f376, type: 2}
+      propertyPath: prewarm
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52a01d17becae0945838bcb96349f376, type: 2}
@@ -71189,7 +71131,7 @@ ParticleSystem:
   speed: 1
   randomSeed: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   moveWithTransform: 0
   InitialModule:
@@ -71382,7 +71324,7 @@ ParticleSystem:
       minMaxState: 3
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 5000
+    maxNumParticles: 3000
   ShapeModule:
     serializedVersion: 2
     enabled: 1

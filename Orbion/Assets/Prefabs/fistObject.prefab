@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 54: {fileID: 5400000}
+  - 65: {fileID: 6500000}
   m_Layer: 14
   m_Name: fistObject
   m_TagString: Untagged
@@ -47,6 +48,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -115,8 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1b120f71eda68478581cdc1af6f296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flare: {fileID: 100000, guid: 4652cfefd28e6fe40a70bf39bdae36b7, type: 2}
-  pushForce: 500
+  flare: {fileID: 100004, guid: 40e27ab52c9f0fa4fb3231c178b06225, type: 2}
+  vfx: {fileID: 100008, guid: bb1a2055e3d91bb449355d7a96df80ea, type: 2}
+  pushForce: 700
   pushForceMode: 1
   hitGround: 0
 --- !u!135 &13500000
@@ -129,7 +143,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

@@ -14,6 +14,9 @@ public class IsUnderConstruction : MonoBehaviour {
 	//The building that we want to create when finished construction timer
 	public Rigidbody toBuild;
 
+	public GameObject vfx1;
+	public GameObject vfx2;
+
 	//Used to determine if we're in light
 	private bool lit = false;
 
@@ -55,6 +58,7 @@ public class IsUnderConstruction : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Instantiate(vfx1, transform.position, Quaternion.identity);
 		constructionCountdown = totalConstruction;
 	}
 
@@ -101,7 +105,7 @@ public class IsUnderConstruction : MonoBehaviour {
 				audio.PlayOneShot(finBuild, 1.0f);
 				Vector3 temp = this.transform.position;
 				temp.y -= 2;
-
+				Instantiate(vfx2, temp, Quaternion.identity);
 				clone = Instantiate(toBuild, temp, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				if(toBuild.GetComponent<IsGenerator>() != null){
 					TechManager.hasGenerator = true;

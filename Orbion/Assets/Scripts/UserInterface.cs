@@ -122,33 +122,33 @@ public class UserInterface : MonoBehaviour {
 
 		if(!questComplete){
 		//Generator quest
-		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 875, 300, 100), "Build a Generator: ");
+		GUI.Label(new Rect(Screen.width - 400 ,50, 300, 100), "Build a Generator: ");
 		if(TechManager.hasGenerator)
-			GUI.Label(new Rect(Screen.width - 200 ,Screen.height - 875, 300, 100), "Complete");
+			GUI.Label(new Rect(Screen.width - 200 ,50, 300, 100), "Complete");
 
 		// Upgrade Scattershot
-		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 825, 300, 100), "Upgrade Scattershot: ");
+		GUI.Label(new Rect(Screen.width - 400 ,100, 300, 100), "Upgrade Scattershot: ");
 		if(TechManager.hasScatter)
-			GUI.Label(new Rect(Screen.width - 180 ,Screen.height - 825, 300, 100), "Complete");
+			GUI.Label(new Rect(Screen.width - 180 ,100, 300, 100), "Complete");
 
 		// Build a Turret
-		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 775, 300, 100), "Build a Turret");
+		GUI.Label(new Rect(Screen.width - 400 ,150, 300, 100), "Build a Turret");
 		if(TechManager.hasTurret)
-			GUI.Label(new Rect(Screen.width - 180 ,Screen.height - 775, 300, 100), "Complete");
+			GUI.Label(new Rect(Screen.width - 180 ,150, 300, 100), "Complete");
 		//Collectible quest
 		string collectString = string.Format("{0}", ResManager.Collectible);
-		GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 725, 300, 100), "Collect 30 Enemy Specimen: ");
-		GUI.Label(new Rect(Screen.width - 100, Screen.height - 725, 150, 50), collectString);
+		GUI.Label(new Rect(Screen.width - 400, 200, 300, 100), "Collect 30 Enemy Specimen: ");
+		GUI.Label(new Rect(Screen.width - 100, 200, 150, 50), collectString);
 		}
 		if(TechManager.hasWolves)
-			GUI.Label(new Rect(Screen.width - 400 ,Screen.height - 675, 300, 100), "Defeat the Alpha Wolf");
+			GUI.Label(new Rect(Screen.width - 400 , 250, 300, 100), "Defeat the Alpha Wolf");
 		if(TechManager.hasBeatenWolf){
-			GUI.Label(new Rect(Screen.width - 140 ,Screen.height - 675, 300, 100), "Complete");
+			GUI.Label(new Rect(Screen.width - 140 , 250, 300, 100), "Complete");
 			bossDefeated = true;
 		}
 
 		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
-			GUI.Label(new Rect(Screen.width / 2, Screen.height - 670, 500, 300), "MISSION CLEAR!");
+			GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 500, 300), "MISSION CLEAR!");
 		}
 
 	
