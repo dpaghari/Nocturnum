@@ -20,6 +20,8 @@ public class AvatarController : MonoBehaviour {
 	private int startingClipSize;
 	//public AudioClip fistSound;
 
+	public bool isPaused;
+
 
 
 	//public CanUseEquip equipScript;
@@ -84,6 +86,7 @@ public class AvatarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		isPaused = false;
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShootReload>();
 		equipScript = GetComponent<EquipmentUser>();
@@ -106,24 +109,24 @@ public class AvatarController : MonoBehaviour {
 
 	void FixedUpdate() {
 
-		if( Input.GetKey( KeyCode.W)){
+		if( Input.GetKey( KeyCode.W) && !isPaused){
 
 			moveScript.Move( Vector3.forward);
 			//animation.CrossFade("Run");
 		}
-		if( Input.GetKey( KeyCode.S)){
+		if( Input.GetKey( KeyCode.S) && !isPaused){
 
 			moveScript.Move( Vector3.back);
 			//animation.CrossFade("Run");
 
 		}
-		if( Input.GetKey( KeyCode.D)){
+		if( Input.GetKey( KeyCode.D) && !isPaused){
 
 			moveScript.Move( Vector3.right);
 			//animation.CrossFade("Run");
 
 		}
-		if( Input.GetKey( KeyCode.A)){
+		if( Input.GetKey( KeyCode.A) && !isPaused){
 
 			moveScript.Move( Vector3.left);
 			//animation.CrossFade("Run");
@@ -141,7 +144,7 @@ public class AvatarController : MonoBehaviour {
 		//[Don't delete] debug code for showing our shooting angle
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
 		//Uses the CanShootReload component to shoot at the cursor
-		if( Input.GetMouseButton( 0)){
+		if( Input.GetMouseButton( 0) && !isPaused){
 
 			//Debug.Log("hi");
 			Scattershot( Utility.GetMouseWorldPos( transform.position.y));
@@ -149,7 +152,7 @@ public class AvatarController : MonoBehaviour {
 
 		}
 		//use our current equipment
-		if(Input.GetMouseButtonDown(1)){
+		if(Input.GetMouseButtonDown(1) && !isPaused){
 			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));
 			//Debug.Log(equipScript.GetCurrEquip());
 		}
@@ -162,16 +165,29 @@ public class AvatarController : MonoBehaviour {
 
 		}
 
+		if(Input.GetKeyDown(KeyCode.F10) && !isPaused)
+		{
+			//print("Paused");
+			Time.timeScale = 0.0f;
+			isPaused = true;
+		}
+		else if(Input.GetKeyDown(KeyCode.F10) && isPaused)
+		{
+			//print("Unpaused");
+			Time.timeScale = 1.0f;
+			isPaused = false;    
+		} 
+
 	
 
 
-		if( Input.GetKeyDown( KeyCode.R)){
+		if( Input.GetKeyDown( KeyCode.R) && !isPaused){
 			
 			shootScript.Reload();
 			
 		}
 
-		if( Input.GetKeyDown( KeyCode.E)){
+		if( Input.GetKeyDown( KeyCode.E) && !isPaused){
 			useScript.UseAction( useScript.useRange);
 		}
 
@@ -179,7 +195,7 @@ public class AvatarController : MonoBehaviour {
 		//swaps to the next equipingment for testing purposes
 		//has a little more logic since not all the equipment are implemented yet
 
-		if(Input.GetKeyDown(KeyCode.T)){
+		if(Input.GetKeyDown(KeyCode.T) && !isPaused){
 			EquipType nextEquip = equipScript.CurrEquipType;
 			int typeIterator = (int) equipScript.CurrEquipType;
 
