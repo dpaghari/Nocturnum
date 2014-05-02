@@ -148,17 +148,17 @@ public class AvatarController : MonoBehaviour {
 			//animation.CrossFade("Shoot");
 
 		}
-
-
-
-
-
 		//use our current equipment
 		if(Input.GetMouseButtonDown(1)){
 			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));
 			//Debug.Log(equipScript.GetCurrEquip());
+		}
 
-		
+		if(Input.GetKeyDown(KeyCode.F9)){
+			ResManager.Reset();
+			TechManager.Reset();
+			AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
+			//Application.LoadLevel(Application.loadedLevel);
 
 		}
 
