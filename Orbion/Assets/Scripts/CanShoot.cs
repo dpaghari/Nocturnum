@@ -29,6 +29,8 @@ public class CanShoot : MonoBehaviour {
 	// effect to play when you shoot
 	public GameObject shootEffect;
 
+	public WeakensInLight weakenScript;
+
 
 
 	//sets the proportion of completion for the firingTimer
@@ -51,6 +53,8 @@ public class CanShoot : MonoBehaviour {
 
 	
 	protected virtual void Start () {
+		weakenScript = GetComponent<WeakensInLight>();
+
 		//we want to be able to shoot when created
 		firingTimer = firingRate;
 	}
@@ -68,13 +72,27 @@ public class CanShoot : MonoBehaviour {
 	public virtual void ShootDir ( Vector3 dir){
 		if( FinishCooldown()){
 			dir.Normalize();
-			if(tag == "Enemy" || tag == "EnemyRanged"){
-				audio.clip = enemyShotSound;
-				audio.PlayOneShot(enemyShotSound,1);
-			}
+
 			Vector3 temp = transform.position;
 			temp.y += bulletHeight.y;
 			clone = Instantiate(bullet, temp + dir * projectileStartPosition, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
+		
+			if(tag == "Enemy" || tag == "EnemyRanged"){
+				audio.clip = enemyShotSound;
+				audio.PlayOneShot(enemyShotSound,1);
+				if(weakenScript.IsWeakened){
+					
+					if(clone.GetComponent<PB_Linear>() != null) clone.GetComponent<PB_Linear>().Damage = 5;
+					if(clone.GetComponent<PB_Melee>() != null) clone.GetComponent<PB_Melee>().Damage = 10;
+					Debug.Log ("Weakened");
+				}
+				else{
+					
+					if(clone.GetComponent<PB_Linear>() != null) clone.GetComponent<PB_Linear>().Damage = 10;
+					if(clone.GetComponent<PB_Melee>() != null) clone.GetComponent<PB_Melee>().Damage = 15;
+					Debug.Log ("Weaken Faded");
+				}
+			}
 			firingTimer = 0.0f;
 			clone = Instantiate(shootEffect, temp + dir * 2, Quaternion.AngleAxis(-90, Vector3.forward)) as Rigidbody;
 		}
