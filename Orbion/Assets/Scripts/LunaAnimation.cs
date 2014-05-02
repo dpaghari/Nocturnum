@@ -75,9 +75,10 @@ public class LunaAnimation : MonoBehaviour {
 		}
 
 
-		if (! MoveKeyStay() && ! Input.GetMouseButton(0) ){
+		if (! MoveKeyStay() && ! Input.GetMouseButton(0)){
+			if(!animation.IsPlaying("Groundpunch"))
 			animation.CrossFade("Idle");
-	 }
+	 	}
 
 	
 	}

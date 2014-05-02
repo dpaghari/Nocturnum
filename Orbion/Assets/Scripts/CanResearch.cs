@@ -17,6 +17,7 @@ public class CanResearch : MonoBehaviour {
 	public Texture2D button_scatterShot;
 	public Texture2D button_seekerShot;
 	public Texture2D button_ricochetShot;
+	public Texture2D button_lightFist;
 
 	private CanBuild buildScript;
 
@@ -135,6 +136,15 @@ public class CanResearch : MonoBehaviour {
 				}
 
 			}
+			if(GUI.Button(new Rect(Screen.width/2-192,Screen.height - 280,128,128), button_lightFist)) {
+				if(MeetsRequirement(Tech.lightFist)){
+					Debug.Log("Pressing Lightfist");
+					DoResearch(Tech.lightFist);
+					CloseMenu();
+				}
+				
+			}
+
 
 
 		}

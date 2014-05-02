@@ -6,6 +6,7 @@ public class isFistShockwave : MonoBehaviour {
 
 
 	public GameObject flare;
+	public GameObject vfx;
 	public float pushForce;
 	public ForceMode pushForceMode = ForceMode.Impulse;
 	public bool hitGround;
@@ -22,9 +23,10 @@ public class isFistShockwave : MonoBehaviour {
 			//Debug.Log ("hit ground");
 
 			Vector3 temp = transform.position;
-			temp.y += 1;
+			temp.y += 10;
 
 			Instantiate(flare, transform.position, Quaternion.identity);
+			Instantiate(vfx, transform.position, Quaternion.identity);
 			//hitGround = true;
 			//Destroy(gameObject);
 		}

@@ -9,7 +9,7 @@ public class ResManager : Singleton<ResManager> {
 	private int _MaxEnergy = 0;
 	private int _UsedEnergy = 0;
 	private int _Collectible = 0;
-	private int _MaxCollectible = 30;
+	private int _MaxCollectible = 25;
 
 
 

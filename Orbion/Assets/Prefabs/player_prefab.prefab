@@ -20,6 +20,7 @@ GameObject:
   - 114: {fileID: 11400018}
   - 114: {fileID: 11400020}
   - 114: {fileID: 11400014}
+  - 114: {fileID: 11400030}
   - 114: {fileID: 11400016}
   - 114: {fileID: 11400022}
   - 114: {fileID: 11400004}
@@ -27,7 +28,6 @@ GameObject:
   - 82: {fileID: 8200002}
   - 82: {fileID: 8200004}
   - 114: {fileID: 11400028}
-  - 114: {fileID: 11400030}
   - 114: {fileID: 11400024}
   - 82: {fileID: 8200006}
   m_Layer: 13
@@ -1187,7 +1187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -8.81729126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -2258,7 +2258,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -2362,6 +2362,20 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2d645207519d2ad4e91000d930e5dde0, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 0
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -2416,6 +2430,7 @@ Animation:
   - {fileID: 7400012, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400014, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400016, guid: 5a15b6d221ae451428f089594b078732, type: 3}
+  - {fileID: 7400000, guid: a501272d765b93c46bde9a15b70a5ec4, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2433,14 +2448,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   bullet_speed: 200
-  firingRate: .200000003
+  firingRate: .300000012
   projectileStartPosition: 2
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 1, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
+  weakenScript: {fileID: 0}
   clipSize: 30
   currentAmmo: 30
-  reloadCooldown: 2
+  reloadCooldown: 1
   reloading: 0
 --- !u!114 &11400002
 MonoBehaviour:
@@ -2467,8 +2483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 225
-  baseHP: 225
+  currHP: 200
+  baseHP: 200
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
@@ -2491,7 +2507,7 @@ MonoBehaviour:
   medBayBuilding: {fileID: 5400000, guid: 6cb3d67fbf45d614c8b12dda813ec6e2, type: 2}
   incindiaryBuilding: {fileID: 5400000, guid: ab55e9521cba25a439e2d460263b9b51, type: 2}
   turretBuilding: {fileID: 5400000, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
-  refractionBuilding: {fileID: 5400000, guid: c75a8e6eb7c779e4f871ab221fa3c2d3, type: 2}
+  photonBuilding: {fileID: 5400000, guid: c75a8e6eb7c779e4f871ab221fa3c2d3, type: 2}
   spotlightBuilding: {fileID: 5400000, guid: b1ea8356d7acaf849929962787c373d1, type: 2}
   initBuild: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
   buildWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
@@ -2500,9 +2516,9 @@ MonoBehaviour:
   button_generator: {fileID: 2800000, guid: c8ba5c492e2f43c459ec7ac5db8081dd, type: 3}
   button_ballistics: {fileID: 2800000, guid: 587628a34fb4f284e812bd1cc4d8be42, type: 3}
   button_medbay: {fileID: 2800000, guid: 368bd042d8e1c8d4e81bc599763605cd, type: 3}
-  button_turret: {fileID: 2800000, guid: 2be8794630653e140b946ca12c51c0d5, type: 3}
-  button_refraction: {fileID: 2800000, guid: 2be8794630653e140b946ca12c51c0d5, type: 3}
-  button_spotlight: {fileID: 2800000, guid: 2be8794630653e140b946ca12c51c0d5, type: 3}
+  button_turret: {fileID: 2800000, guid: 98cf072b762e6454ea7ecf607ba7bad4, type: 3}
+  button_photon: {fileID: 2800000, guid: f268aeb61a1ef7e4d894102b5dc657d9, type: 3}
+  button_spotlight: {fileID: 2800000, guid: 6d96b721dfe534e4cbdfc21b33154f78, type: 3}
   builtBallistics: 0
   builtGenerator: 0
 --- !u!114 &11400008
@@ -2525,7 +2541,6 @@ MonoBehaviour:
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
-  fistSound: {fileID: 8300000, guid: 3b9e113143429b54ba2426452862a9ad, type: 3}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2543,6 +2558,7 @@ MonoBehaviour:
   button_scatterShot: {fileID: 2800000, guid: f4ea26635c32cf94b88583bf89684eab, type: 3}
   button_seekerShot: {fileID: 2800000, guid: 0ed0a8dd93e052f4798d9d7571856843, type: 3}
   button_ricochetShot: {fileID: 2800000, guid: 2e3d396a839fed441b68e5933fb67a51, type: 3}
+  button_lightFist: {fileID: 2800000, guid: 001d1524b9b52424c809928bcc7ba368, type: 3}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2591,7 +2607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cdd2fdb4f8afc429ae97f934c4a6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cooldown: 1
+  Cooldown: 2
   Grenade: {fileID: 5400000, guid: 44cd9841723b0d6439e8d0154f0cdb4a, type: 2}
 --- !u!114 &11400020
 MonoBehaviour:
@@ -2665,7 +2681,7 @@ MonoBehaviour:
   overdriveEffect: {fileID: 100000, guid: f0c70015ed0e510428268fcf4cdcf026, type: 2}
   overdriveActive: 0
   odtime: 10
-  overdriveLimit: 10
+  overdriveLimit: 30
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2678,9 +2694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cooldown: 3
-  isPunching: 0
   punchObj: {fileID: 5400000, guid: 722aa02b8bb0fbb419f4e9625abcf651, type: 2}
-  fistSound: {fileID: 0}
+  fistSound: {fileID: 8300000, guid: 3b9e113143429b54ba2426452862a9ad, type: 3}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

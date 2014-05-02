@@ -24,7 +24,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody medBayBuilding;
 	public Rigidbody incindiaryBuilding;
 	public Rigidbody turretBuilding;
-	public Rigidbody refractionBuilding;
+	public Rigidbody photonBuilding;
 	public Rigidbody spotlightBuilding;
 	public AudioClip initBuild;
 
@@ -39,7 +39,7 @@ public class CanBuild : MonoBehaviour {
 	public Texture2D button_ballistics;
 	public Texture2D button_medbay;
 	public Texture2D button_turret;
-	public Texture2D button_refraction;
+	public Texture2D button_photon;
 	public Texture2D button_spotlight;
 
 
@@ -164,9 +164,9 @@ public class CanBuild : MonoBehaviour {
 			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2+92,128,128), button_turret))
 				SetConstruction(turretBuilding);
 
-			// Refraction Button
-			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_refraction))
-				SetConstruction(refractionBuilding);
+			// Photon Button
+			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_photon))
+				SetConstruction(photonBuilding);
 
 			// Spotlight Button
 			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2+92,128,128), button_spotlight))

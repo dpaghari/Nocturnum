@@ -73,7 +73,7 @@ public class TechManager : Singleton<TechManager> {
 	public static bool hasTurret = false;
 	public static bool hasWolves = false;
 	public static bool hasBeatenWolf = false;
-	public static DumbTimer timerScript;
+	public static DumbTimer timerScript = DumbTimer.New(5.0f, 1.0f);
 	public static bool missionComplete = false;
 
 	//------------------------------------------//
@@ -286,7 +286,7 @@ public class TechManager : Singleton<TechManager> {
 
 	// Use this for initialization
 	void Start () {
-		timerScript = DumbTimer.New(5.0f, 1.0f);
+
 	}
 	
 

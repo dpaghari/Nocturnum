@@ -6,6 +6,7 @@ public class IsLightGrenade : MonoBehaviour {
 	//public AIController enemyStat;
 	public GameObject flare;
 	public AudioClip lgsound;
+	public GameObject vfx;
 
 	void Start(){
 
@@ -22,6 +23,7 @@ public class IsLightGrenade : MonoBehaviour {
 			Vector3 temp = transform.position;
 			temp.y += 1;
 			Instantiate(flare, temp, Quaternion.identity);
+			Instantiate(vfx, transform.position,  Quaternion.identity);
 
 
 		}
