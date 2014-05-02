@@ -191,6 +191,10 @@ public class AvatarController : MonoBehaviour {
 			useScript.UseAction( useScript.useRange);
 		}
 
+		if( Input.GetKeyDown(KeyCode.F11)){
+			//AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
+			Application.Quit();
+		}
 
 		//swaps to the next equipingment for testing purposes
 		//has a little more logic since not all the equipment are implemented yet
