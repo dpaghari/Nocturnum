@@ -21,4 +21,15 @@ public class IsDamagedEffect : MonoBehaviour {
 		clone = Instantiate(damageEffect, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.Euler(Random.value * 360, Random.value * 360, Random.value * 360)) as GameObject;
 		clone.transform.parent = transform;
 	}
+
+	public void removeDamage(){
+		foreach (Transform child in transform) {
+			if(child.gameObject.tag == "FxTemporaire"){
+				Destroy(child.gameObject);
+				if(gameObject.GetComponent<Killable>().currHP < gameObject.GetComponent<Killable>().baseHP){
+					return;
+				}
+			}
+		}
+	}
 }

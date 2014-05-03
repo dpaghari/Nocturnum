@@ -9,6 +9,7 @@ public class WeakensInLight : MonoBehaviour {
 	public float SlowedRatio;
 
 	protected CanMove moveScript;
+	protected CanShoot shootScript;
 	protected float WeakenTimer = 0;
 
 
@@ -36,12 +37,14 @@ public class WeakensInLight : MonoBehaviour {
 		//Do not slow down again if we are already weakened
 		if(! IsWeakened){
 			moveScript.MoveScale -= SlowedRatio;
+			shootScript.firingRate  += 0.2f;
 			IsWeakened = true;
 		}
 	}
 
 	public void UndoWeaken(){
 		moveScript.MoveScale += SlowedRatio;
+		shootScript.firingRate -= 0.2f;
 		IsWeakened = false;
 	}
 
@@ -49,6 +52,7 @@ public class WeakensInLight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		moveScript = GetComponent<CanMove>();
+		shootScript = GetComponent<CanShoot>();
 		IsWeakened = false;
 	}
 	

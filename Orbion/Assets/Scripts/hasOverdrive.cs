@@ -36,7 +36,7 @@ public class hasOverdrive : MonoBehaviour {
 		overdriveCount = 0.0f;
 		overdriveActive = false;
 		timerScript = DumbTimer.New (odtime, 1.0f);
-		dwindleScript = DumbTimer.New (5.0f, 1.0f);
+		dwindleScript = DumbTimer.New (3.0f, 1.0f);
 	}
 	
 	// Update is called once per frame
@@ -65,11 +65,14 @@ public class hasOverdrive : MonoBehaviour {
 	void checkOverdrive(){
 
 		if (overdriveCount >= overdriveLimit) {
+			Debug.Log ("You have OVERDRIVE! PRESS SPACE TO ACTIVATE!");
+			//overdriveCount = overdriveLimit;
+			if(Input.GetKeyDown(KeyCode.Space)){
 
-			overdriveActive = true;
-			overdriveCount = 0.0f;
+				overdriveActive = true;
 
-			activateOverdrive();
+				activateOverdrive();
+			}
 		}
 
 		if(overdriveCount > 0.0f){

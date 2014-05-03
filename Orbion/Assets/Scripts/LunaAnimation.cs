@@ -14,14 +14,17 @@ public class LunaAnimation : MonoBehaviour {
 	}
 	
 	bool MoveKeyDown(){
+		//if(!GetComponent<AvatarController>().isPaused)
 		return Input.GetKeyDown( KeyCode.W) || Input.GetKeyDown( KeyCode.S) || Input.GetKeyDown( KeyCode.A) || Input.GetKeyDown( KeyCode.D);
 	}
 
 	bool MoveKeyUp(){
+		//if(!GetComponent<AvatarController>().isPaused)
 		return Input.GetKeyUp( KeyCode.W) || Input.GetKeyUp( KeyCode.S) || Input.GetKeyUp( KeyCode.A) || Input.GetKeyUp( KeyCode.D);
 	}
 
 	bool MoveKeyStay(){
+		//if(!GetComponent<AvatarController>().isPaused)
 		return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||  Input.GetKey(KeyCode.S) ||  Input.GetKey(KeyCode.D);
 	}
 
@@ -34,11 +37,13 @@ public class LunaAnimation : MonoBehaviour {
 		Vector3 newRotation = Vector3.zero;
 
 		if (Input.GetKey(KeyCode.W)){
+			if(!GetComponent<AvatarController>().isPaused)
 			newRotation += Vector3.forward;
 			
 				//animation.CrossFade("Run");
 		}
 		if (Input.GetKey(KeyCode.S)){
+			if(!GetComponent<AvatarController>().isPaused)
 			newRotation += Vector3.back;
 			
 				//animation.CrossFade("Run");
@@ -46,12 +51,14 @@ public class LunaAnimation : MonoBehaviour {
 		}
 		
 		if (Input.GetKey(KeyCode.A)){
+			if(!GetComponent<AvatarController>().isPaused)
 			newRotation += Vector3.left;
 
 				//animation.CrossFade("Run");
 
 		}
 		if (Input.GetKey(KeyCode.D)){
+			if(!GetComponent<AvatarController>().isPaused)
 			newRotation += Vector3.right;
 
 				//animation.CrossFade("Run");
@@ -61,10 +68,11 @@ public class LunaAnimation : MonoBehaviour {
 		if (Input.GetMouseButton(0)){
 			
 			//animation.CrossFade("Shooting");
-
+			if(!GetComponent<AvatarController>().isPaused){
 			Vector3 temp;
 			temp = Utility.GetMouseWorldPos(transform.position.y) - transform.position;
 			newRotation = temp;
+			}
 		}
 
 
