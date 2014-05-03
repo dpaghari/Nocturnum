@@ -28,6 +28,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 64: {fileID: 6400000}
   - 95: {fileID: 9500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: mushroom
   m_TagString: Untagged
@@ -148,6 +149,19 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
+  hiddenDuration: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
