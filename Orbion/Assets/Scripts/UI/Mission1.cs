@@ -7,9 +7,15 @@ public class Mission1 : MonoBehaviour {
 	public dfCheckbox _checkbox_3;
 	public dfCheckbox _checkbox_4;
 	public dfCheckbox _checkbox_5;
+	public dfLabel _label_mission_clear;
+	string collectString;
+	public bool questComplete;
+	public bool bossDefeated;
 
 	// Use this for initialization
 	void Start () {
+		questComplete = false;
+		bossDefeated = false;
 		_checkbox_1.IsChecked = false;
 		_checkbox_2.IsChecked = false;
 		_checkbox_3.IsChecked = false;
@@ -19,7 +25,11 @@ public class Mission1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		string collectString = string.Format("{0}", ResManager.Collectible);
+		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true){
+			questComplete = true;
+		}
+
+		collectString = string.Format("{0}", ResManager.Collectible);
 		_checkbox_4.Label.Text = "Collect 30 Enemy Specimens: " + collectString;
 		if(TechManager.hasGenerator){
 			_checkbox_1.IsChecked = true;
@@ -38,6 +48,11 @@ public class Mission1 : MonoBehaviour {
 			_checkbox_5.Label.Text = "Defeat the Alpha Wolf.";
 			if(TechManager.hasBeatenWolf)
 				_checkbox_5.IsChecked = true;
+				bossDefeated = true;
+		}
+
+		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true /*&& ResManager.Collectible >= 30*/ && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
+			_label_mission_clear.IsVisible = true;
 		}
 	}
 
