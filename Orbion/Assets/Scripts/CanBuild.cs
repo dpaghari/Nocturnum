@@ -182,7 +182,7 @@ public class CanBuild : MonoBehaviour {
 	}
 
 
-	void OnGUI() {
+/*	void OnGUI() {
 		GUI.skin = buildWheelSkin;
 		if(MenuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
@@ -223,11 +223,15 @@ public class CanBuild : MonoBehaviour {
 
 		}
 
-	}
+	}*/
 
 	// Update is called once per frame
 	void Update () {
 		dragTimer.Update();
+
+		if(MenuUp){
+			GetComponent<CanShoot>().ResetFiringTimer();
+		}
 
 		if(Input.GetMouseButtonDown(0) && toBuild != null){
 			if(MeetsRequirement(toBuild)){
