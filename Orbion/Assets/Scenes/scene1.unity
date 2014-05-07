@@ -11706,83 +11706,6 @@ Transform:
   m_Children:
   - {fileID: 1934938243}
   m_Father: {fileID: 1350409973}
---- !u!1 &332038816
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 332038818}
-  - 114: {fileID: 332038817}
-  - 114: {fileID: 332038819}
-  m_Layer: 0
-  m_Name: UserInterface
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &332038817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332038816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a81b51b9713594597d81f8879880c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health_bar_100: {fileID: 2800000, guid: 308c3062ff507f94a998bc7212bbac78, type: 3}
-  health_bar_80: {fileID: 2800000, guid: 6bcad8d3b123dfc4abb15e184afe4c8b, type: 3}
-  health_bar_60: {fileID: 2800000, guid: eb8f91ba5f3805c4ba756af56959b55d, type: 3}
-  health_bar_40: {fileID: 2800000, guid: 546d266af46f77b4cbbb1378a9f4dd3e, type: 3}
-  health_bar_20: {fileID: 2800000, guid: 6e8bf7c099db3a54990f623384b5c78e, type: 3}
-  health_bar_0: {fileID: 2800000, guid: 4bfa66b9c468b2b49a17b4c64f082f6c, type: 3}
-  icon_lumen: {fileID: 2800000, guid: 2f45ddb964439fc469238cde305d6812, type: 3}
-  icon_energy: {fileID: 2800000, guid: d2b335d0af52f0f4ba9a700b6390003d, type: 3}
-  icon_empty: {fileID: 2800000, guid: 7e66520fcab3b884baba81a487278904, type: 3}
-  icon_scattershot: {fileID: 2800000, guid: 83bc3e388352f864fa6de596fe5cd4e8, type: 3}
-  icon_clipsize: {fileID: 2800000, guid: 31aac18f817328e4a8673eddff6c9d13, type: 3}
-  icon_lightgrenade: {fileID: 2800000, guid: 12e22013b08bd304ab84cbc16ab3d36a, type: 3}
-  ammo_bar: {fileID: 2800000, guid: 2bde1864bf507b54086622b3fbe44f90, type: 3}
-  gameTimeSec: 0
-  gameTimeMin: 0
-  uiSkin: {fileID: 11400000, guid: 3dcf84cea41ae8045aafdaacbffa769d, type: 2}
-  ammoRef: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  resRef: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  healthRef: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  questComplete: 1
-  bossDefeated: 0
-  player_Health: 100
-  player_Energy: 0
-  player_Light: 0
---- !u!4 &332038818
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332038816}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
---- !u!114 &332038819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332038816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d2a6784285eddc46b5d2b583820260a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiSkin: {fileID: 11400000, guid: 3dcf84cea41ae8045aafdaacbffa769d, type: 2}
-  timerRef: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  isBuilt: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
 --- !u!1 &332560504
 GameObject:
   m_ObjectHideFlags: 0
@@ -18412,8 +18335,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -77402,7 +77325,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1957376246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.135421753, y: .9453125, z: 0}
+  m_LocalPosition: {x: -.2421875, y: .9453125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475972224}
@@ -77464,9 +77387,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .44921875
+      left: .409179688
       top: .02734375
-      right: .495117188
+      right: .455078125
       bottom: .0598958321
     owner: {fileID: 1957376250}
   renderOrder: 2
@@ -82152,7 +82075,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2101162814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0572891235, y: .947921753, z: 0}
+  m_LocalPosition: {x: .0078125, y: .947921753, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475972224}
@@ -82214,9 +82137,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .521484375
+      left: .502929688
       top: .026041666
-      right: .567382812
+      right: .548828125
       bottom: .05859375
     owner: {fileID: 2101162818}
   renderOrder: 1
