@@ -9727,8 +9727,10 @@ GameObject:
   - 4: {fileID: 293133322}
   - 114: {fileID: 293133324}
   - 65: {fileID: 293133323}
+  - 114: {fileID: 293133326}
+  - 114: {fileID: 293133325}
   m_Layer: 17
-  m_Name: Button
+  m_Name: Button_Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9857,6 +9859,35 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!114 &293133325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 293133321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBuildRef: {fileID: 0}
+--- !u!114 &293133326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 293133321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4b6d41893ad6e499d2ffcefa532575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataSource:
+    Component: {fileID: 293133324}
+    MemberName: Click
+  DataTarget:
+    Component: {fileID: 293133325}
+    MemberName: CallBuildGenerator
 --- !u!1 &293611401
 GameObject:
   m_ObjectHideFlags: 0
@@ -16130,8 +16161,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -63341,7 +63372,9 @@ MonoBehaviour:
   meleeEnemy: {fileID: 5400000, guid: 752bb7fe9d0e32441b75088d42fc3d8e, type: 2}
   rangedEnemy: {fileID: 5400000, guid: 6c7fd8c02254ffb4fa8eb35173f6d52c, type: 2}
   bossEnemy: {fileID: 5400000, guid: 1f29113d880b4994989b7a78de81a29e, type: 2}
-  testVec: {x: 20, y: 0, z: -20}
+  Vec1: {x: 120, y: 0, z: -120}
+  Vec2: {x: 160, y: 0, z: 80}
+  Vec3: {x: -120, y: 0, z: 60}
   bossVec: {x: 120, y: 0, z: -120}
 --- !u!33 &1852365856
 MeshFilter:
