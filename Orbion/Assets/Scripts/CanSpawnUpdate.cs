@@ -123,9 +123,15 @@ public class CanSpawnUpdate : MonoBehaviour {
 		} else {
 			tempVec = Vec3;
 		}
-		for(int i = 0; i < levels[currentLevel-1].numSpawn; i++){
+		int numSpawn = levels[currentLevel-1].numSpawn;
+		rand = Random.value;
+		if(rand > 0.0 && rand < 0.5){
+			numSpawn++;
+		}
+
+		for(int i = 0; i < numSpawn; i++){
 			rand = Random.value;
-			Debug.Log (MetricManager.getEnemies);
+			//Debug.Log (MetricManager.getEnemies);
 			if(MetricManager.getEnemies < summonLimit){
 				if(rand > 0.0 && rand < 0.5){
 					makeMelee(tempVec);
