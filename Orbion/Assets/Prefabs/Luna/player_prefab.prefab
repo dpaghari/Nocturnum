@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11400024}
   - 82: {fileID: 8200006}
   - 114: {fileID: 11400032}
+  - 95: {fileID: 9500002}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -2375,6 +2376,20 @@ Animator:
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_ApplyRootMotion: 0
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
+--- !u!95 &9500002
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
 --- !u!108 &10800000
