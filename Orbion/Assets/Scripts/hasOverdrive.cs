@@ -65,8 +65,9 @@ public class hasOverdrive : MonoBehaviour {
 	void checkOverdrive(){
 
 		if (overdriveCount >= overdriveLimit) {
+
 			Debug.Log ("You have OVERDRIVE! PRESS SPACE TO ACTIVATE!");
-			//overdriveCount = overdriveLimit;
+			overdriveCount = overdriveLimit;
 			if(Input.GetKeyDown(KeyCode.Space)){
 
 				overdriveActive = true;
@@ -75,7 +76,7 @@ public class hasOverdrive : MonoBehaviour {
 			}
 		}
 
-		if(overdriveCount > 0.0f){
+		if(overdriveCount > 0.0f && !overdriveActive){
 			//Debug.Log (overdriveCount);
 			dwindleScript.Update();
 			if(dwindleScript.Finished() == true){

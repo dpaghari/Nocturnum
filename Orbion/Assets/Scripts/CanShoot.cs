@@ -84,13 +84,13 @@ public class CanShoot : MonoBehaviour {
 					
 					if(clone.GetComponent<PB_Linear>() != null) clone.GetComponent<PB_Linear>().Damage = 5;
 					if(clone.GetComponent<PB_Melee>() != null) clone.GetComponent<PB_Melee>().Damage = 10;
-					Debug.Log ("Weakened");
+					//Debug.Log ("Weakened");
 				}
 				else{
 					
 					if(clone.GetComponent<PB_Linear>() != null) clone.GetComponent<PB_Linear>().Damage = 10;
 					if(clone.GetComponent<PB_Melee>() != null) clone.GetComponent<PB_Melee>().Damage = 15;
-					Debug.Log ("Weaken Faded");
+					//Debug.Log ("Weaken Faded");
 				}
 			}
 			firingTimer = 0.0f;
