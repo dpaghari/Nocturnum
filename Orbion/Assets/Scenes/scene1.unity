@@ -17272,8 +17272,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -24365,6 +24365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b72249153613934ab5e17905b67cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildMenuPanel: {fileID: 506195752}
   generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
   ballisticsBuilding: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
   underConstructionBuilding: {fileID: 5400000, guid: 2ac5e63ddc7dddd4980ad9af353ffff8,
@@ -60289,6 +60290,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: _buildMenuPanel
+      value: 
+      objectReference: {fileID: 506195752}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
