@@ -6,6 +6,7 @@ public class Mission1 : MonoBehaviour {
 	public dfCheckbox _checkbox_2;
 	public dfCheckbox _checkbox_3;
 	public dfCheckbox _checkbox_4;
+	public dfCheckbox _checkbox_5;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,7 @@ public class Mission1 : MonoBehaviour {
 		_checkbox_2.IsChecked = false;
 		_checkbox_3.IsChecked = false;
 		_checkbox_4.IsChecked = false;
+		_checkbox_5.IsChecked = false;
 	}
 	
 	// Update is called once per frame
@@ -31,8 +33,12 @@ public class Mission1 : MonoBehaviour {
 		if(ResManager.Collectible >= 30){
 			_checkbox_4.IsChecked = true;
 		}
-		//if(TechManager.hasWolves){
-		//}
+		if(TechManager.hasWolves){
+			_checkbox_5.IsVisible = true;
+			_checkbox_5.Label.Text = "Defeat the Alpha Wolf.";
+			if(TechManager.hasBeatenWolf)
+				_checkbox_5.IsChecked = true;
+		}
 	}
 
 
