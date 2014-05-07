@@ -42,7 +42,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 
-		addLevel (1.0F, 30.0F, 3, 0); addLevel (3.0F, 20.0F, 3, 2); addLevel (7.0F, 20.0F, 4, 2); 
+		addLevel (1.0F, 30.0F, 3, 0); addLevel (5.0F, 20.0F, 3, 2); addLevel (10.0F, 20.0F, 4, 2); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = totalLevels-1; i > 0; i--){
 			
