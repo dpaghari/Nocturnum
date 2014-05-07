@@ -20787,6 +20787,10 @@ Prefab:
       propertyPath: m_Name
       value: StringyTree
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbff719d08ff5bf49955eaf8b9000a7f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbff719d08ff5bf49955eaf8b9000a7f, type: 2}
   m_RootGameObject: {fileID: 984703868}
@@ -22160,6 +22164,10 @@ Prefab:
     - target: {fileID: 400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
@@ -23966,7 +23974,6 @@ GameObject:
   - 111: {fileID: 680245878}
   - 54: {fileID: 680245877}
   - 65: {fileID: 680245876}
-  - 82: {fileID: 680245875}
   - 114: {fileID: 680245874}
   - 114: {fileID: 680245873}
   - 114: {fileID: 680245872}
@@ -23975,17 +23982,19 @@ GameObject:
   - 114: {fileID: 680245869}
   - 114: {fileID: 680245868}
   - 114: {fileID: 680245867}
-  - 114: {fileID: 680245881}
   - 114: {fileID: 680245866}
   - 114: {fileID: 680245865}
   - 114: {fileID: 680245860}
   - 114: {fileID: 680245879}
+  - 114: {fileID: 680245880}
+  - 114: {fileID: 680245881}
+  - 114: {fileID: 680245862}
+  - 114: {fileID: 680245882}
+  - 82: {fileID: 680245875}
   - 82: {fileID: 680245863}
   - 82: {fileID: 680245861}
-  - 114: {fileID: 680245880}
-  - 114: {fileID: 680245862}
   - 82: {fileID: 680245864}
-  - 114: {fileID: 680245882}
+  - 95: {fileID: 680245883}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -24394,7 +24403,7 @@ MonoBehaviour:
   equipScript: {fileID: 680245866}
   overdriveScript: {fileID: 680245880}
   useScript: {fileID: 0}
-  shotSound: {fileID: 0}
+  shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
@@ -24573,6 +24582,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5091501cc0011c5409f0beae583c4502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &680245883
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 680245858}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2d645207519d2ad4e91000d930e5dde0, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1 &680475690
 GameObject:
   m_ObjectHideFlags: 0
@@ -36461,7 +36484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967263
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &984703869
 Transform:
   m_ObjectHideFlags: 0
@@ -60260,6 +60283,10 @@ Prefab:
       propertyPath: bulletHeight.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
@@ -60605,7 +60632,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648422443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .00130208337, y: .00130208337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475972224}
@@ -67339,7 +67366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1852365854
 Light:
   m_ObjectHideFlags: 0

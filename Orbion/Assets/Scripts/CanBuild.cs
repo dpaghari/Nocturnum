@@ -180,13 +180,19 @@ public class CanBuild : MonoBehaviour {
 	void Update () {
 		dragTimer.Update();
 
+		if(Input.GetMouseButtonDown(0) && toBuild != null){
+			if(MeetsRequirement(toBuild)){
+			audio.PlayOneShot(initBuild, 1.0f);
+			}
+		}
+
 		if(Input.GetMouseButton(0) && toBuild != null){
 
 			Vector3 mousePos = Utility.GetMouseWorldPos(5.25f);
 
 			if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
 				GetComponent<CanShoot>().ResetFiringTimer();
-				audio.PlayOneShot(initBuild, 1.0f);
+
 
 				clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;

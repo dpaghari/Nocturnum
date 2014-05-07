@@ -21,6 +21,7 @@ public class PB_Linear : ProjectileBehavior {
 	public int searingLevel;
 	//public int homingLevel;
 	//public int ricochetLevel;
+	private int health = 1;
 	public GameObject dot;
 	public GameObject hitEffect;
 	private GameObject clone;
@@ -126,7 +127,7 @@ public class PB_Linear : ProjectileBehavior {
 						Destroy(child.gameObject);
 					}
 					else{
-						child.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
+						child.gameObject.GetComponent<ParticleSystem>().loop = false;
 					}
 				}
 
@@ -145,7 +146,7 @@ public class PB_Linear : ProjectileBehavior {
 					Destroy(child.gameObject);
 				}
 				else{
-					child.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
+					child.gameObject.GetComponent<ParticleSystem>().loop = false;
 				}
 			}
 
