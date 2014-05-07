@@ -27,6 +27,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody photonBuilding;
 	public Rigidbody spotlightBuilding;
 	public AudioClip initBuild;
+	public AudioClip errBuild;
 
 
 	//UI Stuff
@@ -85,10 +86,21 @@ public class CanBuild : MonoBehaviour {
 	//it won't let you build another one if you're UsedEnergy > MaxEnergy
 	bool MeetsRequirement(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
-		if ( ResManager.Lumen < buildInfo.cost) return false;
-		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy)
-			if( buildingType != generatorBuilding) return false;
-		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) return false;
+		if ( ResManager.Lumen < buildInfo.cost){
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+		}
+		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy){
+			if( buildingType != generatorBuilding){
+				audio.PlayOneShot(errBuild, 0.5f);
+				return false;
+			}
+
+		}
+		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) {
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+		}
 		return true;
 	}
 
