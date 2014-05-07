@@ -79,7 +79,7 @@ public class CanShoot : MonoBehaviour {
 		
 			if(tag == "Enemy" || tag == "EnemyRanged"){
 				audio.clip = enemyShotSound;
-				audio.PlayOneShot(enemyShotSound,1);
+				audio.PlayOneShot(enemyShotSound,0.5f);
 				if(weakenScript.IsWeakened){
 					
 					if(clone.GetComponent<PB_Linear>() != null) clone.GetComponent<PB_Linear>().Damage = 5;

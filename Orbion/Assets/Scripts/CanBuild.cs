@@ -10,6 +10,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody toBuild {get; private set;}
 	private int menuCounter = 0;
 	private CanResearch researchScript;
+	public dfPanel _buildMenuPanel;
 
 
 	private bool isDragBuilding = false;
@@ -27,6 +28,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody photonBuilding;
 	public Rigidbody spotlightBuilding;
 	public AudioClip initBuild;
+	public AudioClip errBuild;
 
 
 	//UI Stuff
@@ -75,6 +77,7 @@ public class CanBuild : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		MenuUp = false;
+		_buildMenuPanel.IsVisible = false;
 		researchScript = GetComponent<CanResearch>();
 		dragTimer = DumbTimer.New(dragDelay);
 	}
@@ -85,10 +88,21 @@ public class CanBuild : MonoBehaviour {
 	//it won't let you build another one if you're UsedEnergy > MaxEnergy
 	bool MeetsRequirement(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
-		if ( ResManager.Lumen < buildInfo.cost) return false;
-		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy)
-			if( buildingType != generatorBuilding) return false;
-		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) return false;
+		if ( ResManager.Lumen < buildInfo.cost){
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+		}
+		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy){
+			if( buildingType != generatorBuilding){
+				audio.PlayOneShot(errBuild, 0.5f);
+				return false;
+			}
+
+		}
+		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) {
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+		}
 		return true;
 	}
 
@@ -116,6 +130,7 @@ public class CanBuild : MonoBehaviour {
 
 	public void OpenMenu(){
 		MenuUp = true;
+		_buildMenuPanel.IsVisible = true;
 		toBuild = null;
 		menuCounter = 50;
 		inBuildingMode = true;
@@ -123,6 +138,7 @@ public class CanBuild : MonoBehaviour {
 
 	public void CloseMenu(){
 		MenuUp = false;
+		_buildMenuPanel.IsVisible = false;
 		toBuild = null;
 		inBuildingMode = false;
 	}
@@ -133,7 +149,40 @@ public class CanBuild : MonoBehaviour {
 		toBuild = null;
 	}
 
-	void OnGUI() {
+	public void ConstructGenerator(){
+		SetConstruction(generatorBuilding);
+	}
+
+	public void ConstructBallistics(){
+		SetConstruction(ballisticsBuilding);
+	}
+
+	public void ConstructWall(){
+		SetConstruction(wallBuilding);
+	}
+
+	public void ConstructMedBay(){
+		SetConstruction(medBayBuilding);
+	}
+
+	public void ConstructIncendiary(){
+		SetConstruction(incindiaryBuilding);
+	}
+
+	public void ConstructTurret(){
+		SetConstruction(turretBuilding);
+	}
+
+	public void ConstructPhoton(){
+		SetConstruction(photonBuilding);
+	}
+
+	public void ConstructSpotlight(){
+		SetConstruction(spotlightBuilding);
+	}
+
+
+/*	void OnGUI() {
 		GUI.skin = buildWheelSkin;
 		if(MenuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
@@ -174,11 +223,21 @@ public class CanBuild : MonoBehaviour {
 
 		}
 
-	}
+	}*/
 
 	// Update is called once per frame
 	void Update () {
 		dragTimer.Update();
+
+		if(MenuUp){
+			GetComponent<CanShoot>().ResetFiringTimer();
+		}
+
+		if(Input.GetMouseButtonDown(0) && toBuild != null){
+			if(MeetsRequirement(toBuild)){
+			audio.PlayOneShot(initBuild, 1.0f);
+			}
+		}
 
 		if(Input.GetMouseButton(0) && toBuild != null){
 
@@ -186,7 +245,7 @@ public class CanBuild : MonoBehaviour {
 
 			if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
 				GetComponent<CanShoot>().ResetFiringTimer();
-				audio.PlayOneShot(initBuild, 1.0f);
+
 
 				clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 				clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;

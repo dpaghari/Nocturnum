@@ -44,15 +44,18 @@ public class Killable : MonoBehaviour {
 		if(gameObject.tag == "Player"){
 			ResManager.Reset();
 			TechManager.Reset();
+			MetricManager.Reset();
 			Application.LoadLevel("scene1");
 		}
 		else{
 			Destroy (gameObject);
 			MetricManager.AddEnemiesKilled(1);
+			if(gameObject.name != "base_enemy_prefab"){
+				MetricManager.AddEnemies(-1);
+			}
 
 			if(GetComponent<isBossEnemy>() != null)
 				TechManager.hasBeatenWolf = true;
-			//Debug.Log(MetricManager.getEnemiesKilled);
 			if (deathTarget != null) {
 				Vector3 temp = transform.position;
 				temp.y += 4;

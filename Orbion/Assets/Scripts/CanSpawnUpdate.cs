@@ -13,6 +13,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	private float counter = 0.0F;
 	private float currentInterval;
 	private float intervalCounter = 0.0F;
+	private int summonLimit = 8;
 	//private Rigidbody clone;
 	public Rigidbody meleeEnemy;
 	public Rigidbody rangedEnemy;
@@ -21,20 +22,22 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	private bool bossSummon = false;
 
-	public Vector3 testVec = new Vector3(20.0F,0.0F,-20.0F);
+	public Vector3 Vec1 = new Vector3(120.0F,0.0F,-120.0F);
+	public Vector3 Vec2 = new Vector3(160.0F,0.0F,80.0F);
+	public Vector3 Vec3 = new Vector3(-120.0F,0.0F,60.0F);
+	
 	public Vector3 bossVec = new Vector3(120.0F,0.0F,-120.0F);
+
 	
 	public class LevelInfo{
 		public float timer;
 		public float spawnTimer;
-		public int numMeleeSpawn;
-		public int numRangedSpawn;
+		public int numSpawn;
 		
-		public LevelInfo(float _timer, float _spawnTimer, int _numMeleeSpawn, int _numRangedSpawn){
+		public LevelInfo(float _timer, float _spawnTimer, int _numSpawn){
 			timer = _timer;
 			spawnTimer = _spawnTimer;
-			numMeleeSpawn = _numMeleeSpawn;
-			numRangedSpawn = _numRangedSpawn;
+			numSpawn = _numSpawn;
 		}
 	}
 
@@ -42,12 +45,11 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 
-		addLevel (1.0F, 30.0F, 3, 0); addLevel (5.0F, 20.0F, 3, 2); addLevel (10.0F, 20.0F, 4, 2); 
+		addLevel (0.75F, 30.0F, 2); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 20.0F, 4);
+		addLevel (8.0F, 20.0F, 5); addLevel (12.0F, 20.0F, 6); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = totalLevels-1; i > 0; i--){
-			
 			TimeLine[i] = levels[i].timer - levels[i-1].timer;
-
 		}
 		currentTimer = TimeLine[currentLevel] * 60.0F;
 	}
@@ -56,6 +58,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 	
 	void Update(){
+		
+
 		if(!bossSummon && TechManager.hasWolves){
 			//Debug.Log ("spawn boss");
 			bossSummon = true;
@@ -65,7 +69,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 		if(currentLevel > 0){
 			if (intervalCounter > currentInterval){
 			//	Debug.Log("Run level: " + currentLevel);
-				runLevel(testVec);
+				runLevel();
 				intervalCounter = 0.0F;
 			} else {
 				intervalCounter += Time.deltaTime;
@@ -79,7 +83,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 				counter += Time.deltaTime;
 			}
 		}
-
+		
 		
 
 	
@@ -90,7 +94,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 		if(currentLevel < totalLevels){
 			currentLevel++;
 //			Debug.Log ("Current Level: " + currentLevel);
-			runLevel (testVec);
+			runLevel();
 			if(currentLevel == totalLevels){
 				currentTimer = 3600.0F;
 			} else {
@@ -102,19 +106,40 @@ public class CanSpawnUpdate : MonoBehaviour {
 		}
 	}
 
-	private void addLevel(float _timer, float _spawnTimer, int _numMeleeSpawn, int _numRangedSpawn){
+	private void addLevel(float _timer, float _spawnTimer, int _numSpawn){
 		if(levelInit < totalLevels){
-			levels[levelInit] = new LevelInfo(_timer, _spawnTimer, _numMeleeSpawn, _numRangedSpawn);
+			levels[levelInit] = new LevelInfo(_timer, _spawnTimer, _numSpawn);
 			levelInit++;
 		}
 	}
 
-	public void runLevel(Vector3 _vec){
-		for(int i = 0; i < levels[currentLevel-1].numMeleeSpawn; i++){
-			makeMelee(_vec);
+	public void runLevel(){
+		float rand = Random.value;
+		Vector3 tempVec;
+		if(rand > 0.0 && rand < 0.33){
+			tempVec = Vec1;
+		} else if(rand >= 0.33 && rand < 0.66){
+			tempVec = Vec2;
+		} else {
+			tempVec = Vec3;
 		}
-		for(int i = 0; i < levels[currentLevel-1].numRangedSpawn; i++){
-			makeRanged(_vec);
+		int numSpawn = levels[currentLevel-1].numSpawn;
+		rand = Random.value;
+		if(rand > 0.0 && rand < 0.5){
+			numSpawn++;
+		}
+
+		for(int i = 0; i < numSpawn; i++){
+			rand = Random.value;
+			//Debug.Log (MetricManager.getEnemies);
+			if(MetricManager.getEnemies < summonLimit){
+				if(rand > 0.0 && rand < 0.5){
+					makeMelee(tempVec);
+				} else {
+					makeRanged(tempVec);
+				}
+				//MetricManager.AddEnemies(1);
+			}
 		}
 	}
 	

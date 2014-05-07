@@ -9,7 +9,8 @@ public class IsUnderConstruction : MonoBehaviour {
 	//Total time in seconds to build
 	public float totalConstruction = 60;
 
-	public AudioClip finBuild;
+	//public AudioClip finBuild;
+	public AudioClip errBuild;
 
 	//The building that we want to create when finished construction timer
 	public Rigidbody toBuild;
@@ -101,12 +102,15 @@ public class IsUnderConstruction : MonoBehaviour {
 		if((lit || canBuildOutOfLight) && !IsBuildingNearby()){
 
 			if(constructionCountdown <= 0){
-				audio.clip = finBuild;
-				audio.PlayOneShot(finBuild, 1.0f);
+
 				Vector3 temp = this.transform.position;
 				temp.y -= 2;
 			
 				clone = Instantiate(toBuild, temp, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+				/*
+				audio.clip = finBuild;
+				audio.PlayOneShot(finBuild, 1.0f);
+				*/
 				if(toBuild.GetComponent<IsGenerator>() != null){
 					TechManager.hasGenerator = true;
 				}
@@ -123,11 +127,23 @@ public class IsUnderConstruction : MonoBehaviour {
 		}
 		else{
 			if(constructionCountdown > totalConstruction + lightExpireDelay){
+
+
+
 				ResManager.AddLumen(toBuild.gameObject.GetComponent<Buildable>().cost);
 				ResManager.RmUsedEnergy(toBuild.gameObject.GetComponent<Buildable>().energyCost);
-				Destroy(this.gameObject);
+
+				if(!audio.isPlaying){
+					
+					Destroy(this.gameObject);	
+					
+				}
 			}
+			audio.PlayOneShot(errBuild, 1.0f);
 			ChangeBuildProgess( Time.deltaTime);
+
+
+
 		}
 
 	}

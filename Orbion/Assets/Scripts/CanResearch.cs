@@ -18,7 +18,7 @@ public class CanResearch : MonoBehaviour {
 	public Texture2D button_seekerShot;
 	public Texture2D button_ricochetShot;
 	public Texture2D button_lightFist;
-
+	public AudioClip errBuild;
 	private CanBuild buildScript;
 
 	//Setting inBuildingMode will slowdown/restore time
@@ -47,15 +47,33 @@ public class CanResearch : MonoBehaviour {
 	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
 	//If the tech is also an upgrade, it must not be already researching
 	bool MeetsRequirement(Tech theUpgr){
-		if( !TechManager.IsTechAvaliable( theUpgr)) return false;
-		if (ResManager.Lumen < TechManager.GetUpgradeLumenCost( theUpgr)) return false;
+		if( !TechManager.IsTechAvaliable( theUpgr)){ 
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+
+		}
+		if (ResManager.Lumen < TechManager.GetUpgradeLumenCost( theUpgr)){ 
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+
+		}
 
 		float neededMaxEnergy = ResManager.UsedEnergy + TechManager.GetUpgradeEnergyCost( theUpgr);
-		if ( neededMaxEnergy > ResManager.MaxEnergy) return false;
+		if ( neededMaxEnergy > ResManager.MaxEnergy) {
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+		}
 
-		if( TechManager.IsUpgrade( theUpgr))
-			if( TechManager.ResearchProgress().IsResearching( theUpgr))
+
+		if( TechManager.IsUpgrade( theUpgr)){
+
+			if( TechManager.ResearchProgress().IsResearching( theUpgr)){
+				audio.PlayOneShot(errBuild, 0.5f);
 				return false;
+
+			}
+
+		}
 
 		return true;
 	}
