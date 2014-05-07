@@ -10,6 +10,7 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody toBuild {get; private set;}
 	private int menuCounter = 0;
 	private CanResearch researchScript;
+	public dfPanel _buildMenuPanel;
 
 
 	private bool isDragBuilding = false;
@@ -76,6 +77,7 @@ public class CanBuild : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		MenuUp = false;
+		_buildMenuPanel.IsVisible = false;
 		researchScript = GetComponent<CanResearch>();
 		dragTimer = DumbTimer.New(dragDelay);
 	}
@@ -128,6 +130,7 @@ public class CanBuild : MonoBehaviour {
 
 	public void OpenMenu(){
 		MenuUp = true;
+		_buildMenuPanel.IsVisible = true;
 		toBuild = null;
 		menuCounter = 50;
 		inBuildingMode = true;
@@ -135,6 +138,7 @@ public class CanBuild : MonoBehaviour {
 
 	public void CloseMenu(){
 		MenuUp = false;
+		_buildMenuPanel.IsVisible = false;
 		toBuild = null;
 		inBuildingMode = false;
 	}
@@ -144,6 +148,39 @@ public class CanBuild : MonoBehaviour {
 		originalFixedUpdate = Time.fixedDeltaTime;
 		toBuild = null;
 	}
+
+	public void ConstructGenerator(){
+		SetConstruction(generatorBuilding);
+	}
+
+	public void ConstructBallistics(){
+		SetConstruction(ballisticsBuilding);
+	}
+
+	public void ConstructWall(){
+		SetConstruction(wallBuilding);
+	}
+
+	public void ConstructMedBay(){
+		SetConstruction(medBayBuilding);
+	}
+
+	public void ConstructIncendiary(){
+		SetConstruction(incindiaryBuilding);
+	}
+
+	public void ConstructTurret(){
+		SetConstruction(turretBuilding);
+	}
+
+	public void ConstructPhoton(){
+		SetConstruction(photonBuilding);
+	}
+
+	public void ConstructSpotlight(){
+		SetConstruction(spotlightBuilding);
+	}
+
 
 	void OnGUI() {
 		GUI.skin = buildWheelSkin;
