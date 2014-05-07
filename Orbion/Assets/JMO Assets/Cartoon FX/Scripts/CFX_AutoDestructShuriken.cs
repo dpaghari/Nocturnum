@@ -5,6 +5,8 @@ using System.Collections;
 public class CFX_AutoDestructShuriken : MonoBehaviour
 {
 	public bool OnlyDeactivate;
+	//private bool dying;
+	//public int timeToLive;
 	
 	void OnEnable()
 	{
@@ -31,5 +33,9 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 				break;
 			}
 		}
+	}
+
+	public void destroyDelay(){
+
 	}
 }

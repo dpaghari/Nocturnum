@@ -16,6 +16,8 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 108: {fileID: 10800000}
+  - 198: {fileID: 0}
+  - 199: {fileID: 0}
   m_Layer: 8
   m_Name: bullet_prefab
   m_TagString: playerBullet
@@ -84,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -.999830723, y: 0, z: 0, w: .0184022225}
-  m_LocalPosition: {x: 7.46968508, y: .375398129, z: 17.6117725}
+  m_LocalPosition: {x: -13.6290894, y: -1.28312249e-20, z: .0173360091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -330,7 +332,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
   m_Name: 
@@ -354,7 +356,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  lengthInSec: 2
+  lengthInSec: .5
   startDelay: .100000001
   speed: 1
   randomSeed: 0
@@ -552,7 +554,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: .0500000007
-    maxNumParticles: 1000
+    maxNumParticles: 1369
   ShapeModule:
     serializedVersion: 2
     enabled: 1
