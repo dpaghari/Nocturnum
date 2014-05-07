@@ -1079,6 +1079,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &26707049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2159,6 +2160,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &60854823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2794,6 +2796,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &71705095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9397,6 +9400,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &263761437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12992,6 +12996,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &360092241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13583,6 +13588,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &368178324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14995,6 +15001,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &391874199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21357,6 +21364,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &609703996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22958,6 +22966,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &648490378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23986,6 +23995,7 @@ GameObject:
   - 114: {fileID: 680245862}
   - 82: {fileID: 680245864}
   - 114: {fileID: 680245882}
+  - 95: {fileID: 680245883}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -24024,6 +24034,7 @@ MonoBehaviour:
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
 --- !u!82 &680245861
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24573,6 +24584,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5091501cc0011c5409f0beae583c4502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &680245883
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500002, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1643625556}
+  m_GameObject: {fileID: 680245858}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1 &680475690
 GameObject:
   m_ObjectHideFlags: 0
@@ -28644,6 +28670,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &801070013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31300,6 +31327,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &868769397
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32491,6 +32519,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &886464204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33768,6 +33797,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &919076790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35347,6 +35377,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &965113178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36252,6 +36283,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!95 &984269117
 Animator:
   serializedVersion: 2
@@ -37826,6 +37858,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1029873053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39147,6 +39180,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1065680395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43783,6 +43817,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1203068930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49855,6 +49890,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1374364436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50993,6 +51029,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1399409638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51459,6 +51496,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1405859917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57714,6 +57752,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1574634218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59800,6 +59839,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1634486189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60605,7 +60645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648422443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .00130208337, y: .00130208337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475972224}
@@ -78539,6 +78579,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &2121416166
 BoxCollider:
   m_ObjectHideFlags: 0

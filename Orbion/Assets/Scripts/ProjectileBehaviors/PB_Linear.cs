@@ -90,8 +90,8 @@ public class PB_Linear : ProjectileBehavior {
 						other.gameObject.GetComponent<IsDamagedEffect>().removeDamage();
 					}
 				}else{
-					Physics.IgnoreCollision(gameObject.collider, other.collider);
-					return;
+					//Physics.IgnoreCollision(gameObject.collider, other.collider);
+					//return;
 				}
 			}
 			else{

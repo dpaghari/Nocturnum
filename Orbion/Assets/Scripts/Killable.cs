@@ -12,6 +12,8 @@ public class Killable : MonoBehaviour {
 	public GameObject collectTarget;
 	//used to check if we should call the event when a building is hurt
 	public Buildable buildScript;
+	public GameObject healEffect;
+	private GameObject clone;
 
 
 	// Set HP to default
@@ -39,7 +41,6 @@ public class Killable : MonoBehaviour {
 
 	// Kills enemy or player
 	void kill () {
-
 		if(gameObject.tag == "Player"){
 			ResManager.Reset();
 			TechManager.Reset();
@@ -79,6 +80,13 @@ public class Killable : MonoBehaviour {
 	/// <param name="health">Health.</param>
 	public void Heal(int health){
 		currHP += health;
+
+		if(gameObject.GetComponent<IsDamagedEffect>() != null){
+			gameObject.GetComponent<IsDamagedEffect>().removeDamage();
+		}
+
+		clone = Instantiate(healEffect, transform.position, Quaternion.identity) as GameObject;
+
 		if(currHP > baseHP)
 			currHP = baseHP;
 	}
