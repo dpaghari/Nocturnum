@@ -4699,7 +4699,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 129383970}
-  renderOrder: 19
+  renderOrder: 22
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -6681,7 +6681,7 @@ MonoBehaviour:
       right: 1
       bottom: 1
     owner: {fileID: 208896299}
-  renderOrder: 18
+  renderOrder: 21
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -7954,7 +7954,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 244678138}
-  renderOrder: 25
+  renderOrder: 28
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -8826,6 +8826,126 @@ Transform:
   m_Children:
   - {fileID: 366563006}
   m_Father: {fileID: 2050909683}
+--- !u!1 &274155536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 274155537}
+  - 114: {fileID: 274155539}
+  - 65: {fileID: 274155538}
+  m_Layer: 17
+  m_Name: Lumen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &274155537
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274155536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0130157471, y: -.078125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293133322}
+--- !u!65 &274155538
+BoxCollider:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274155536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .1640625, y: .0416666679, z: .00100000005}
+  m_Center: {x: .08203125, y: -.020833334, z: 0}
+--- !u!114 &274155539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274155536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e3359ffaefe124a992e17c8830875c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorStyle: 261
+  isEnabled: 1
+  isVisible: 1
+  isInteractive: 1
+  tooltip: 
+  pivot: 0
+  zindex: 3
+  color:
+    serializedVersion: 2
+    rgba: 4294967295
+  disabledColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  size: {x: 63, y: 16}
+  minSize: {x: 0, y: 0}
+  maxSize: {x: 0, y: 0}
+  clipChildren: 0
+  tabIndex: -1
+  canFocus: 0
+  autoFocus: 0
+  layout:
+    anchorStyle: 261
+    margins:
+      left: .0387369804
+      top: .250944018
+      right: .563736975
+      bottom: .384277344
+    owner: {fileID: 274155539}
+  renderOrder: 7
+  isLocalized: 0
+  hotZoneScale: {x: 1, y: 1}
+  atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
+  font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
+  backgroundSprite: 
+  backgroundColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  autoSize: 1
+  autoHeight: 0
+  wordWrap: 0
+  text: 'Lumen: 30'
+  bottomColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  align: 0
+  vertAlign: 0
+  textScale: 1
+  textScaleMode: 2
+  charSpacing: 0
+  colorizeSymbols: 0
+  processMarkup: 0
+  outline: 0
+  outlineWidth: 1
+  enableGradient: 0
+  outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadow: 0
+  shadowColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadowOffset: {x: 1, y: -1}
+  padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  tabSize: 48
+  tabStops: 
 --- !u!1 &274711204
 GameObject:
   m_ObjectHideFlags: 0
@@ -9621,9 +9741,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 293133321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .442710876, y: -.0078125, z: 0}
+  m_LocalPosition: {x: .416671753, y: .0911407471, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1071366082}
+  - {fileID: 673995870}
+  - {fileID: 274155537}
   - {fileID: 898595800}
   m_Father: {fileID: 506195750}
 --- !u!65 &293133323
@@ -9634,10 +9757,10 @@ BoxCollider:
   m_GameObject: {fileID: 293133321}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .260416687, y: .260416687, z: .00100000005}
-  m_Center: {x: .130208343, y: -.130208343, z: 0}
+  m_Size: {x: .3125, y: .3125, z: .00100000005}
+  m_Center: {x: .15625, y: -.15625, z: 0}
 --- !u!114 &293133324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9662,7 +9785,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 100, y: 100}
+  size: {x: 120, y: 120}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -9672,10 +9795,10 @@ MonoBehaviour:
   layout:
     anchorStyle: 321
     margins:
-      left: .385487527
-      top: .0090634441
-      right: .612244904
-      bottom: .311178237
+      left: .362811804
+      top: -.105740182
+      right: .634920657
+      bottom: .256797582
     owner: {fileID: 293133324}
   renderOrder: 3
   isLocalized: 1
@@ -13729,7 +13852,7 @@ MonoBehaviour:
       right: .124542125
       bottom: .58317709
     owner: {fileID: 385218239}
-  renderOrder: 20
+  renderOrder: 23
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   isChecked: 0
@@ -16007,8 +16130,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -16580,7 +16703,7 @@ MonoBehaviour:
       right: .124542125
       bottom: 1.19236982
     owner: {fileID: 488994559}
-  renderOrder: 12
+  renderOrder: 15
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   isChecked: 0
@@ -16918,7 +17041,7 @@ BoxCollider:
   m_GameObject: {fileID: 506195749}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1484375, y: .861979187, z: .00100000005}
   m_Center: {x: .57421875, y: -.430989593, z: 0}
@@ -16935,7 +17058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorStyle: 448
   isEnabled: 1
-  isVisible: 0
+  isVisible: 1
   isInteractive: 1
   tooltip: 
   pivot: 0
@@ -20721,7 +20844,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 632353334}
-  renderOrder: 23
+  renderOrder: 26
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -21937,6 +22060,126 @@ Transform:
   m_Children:
   - {fileID: 1886237179}
   m_Father: {fileID: 878473523}
+--- !u!1 &673995869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 673995870}
+  - 114: {fileID: 673995872}
+  - 65: {fileID: 673995871}
+  m_Layer: 17
+  m_Name: Energy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &673995870
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673995869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .184890747, y: -.078125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293133322}
+--- !u!65 &673995871
+BoxCollider:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673995869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .1484375, y: .0416666679, z: .00100000005}
+  m_Center: {x: .07421875, y: -.020833334, z: 0}
+--- !u!114 &673995872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673995869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e3359ffaefe124a992e17c8830875c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorStyle: 261
+  isEnabled: 1
+  isVisible: 1
+  isInteractive: 1
+  tooltip: 
+  pivot: 0
+  zindex: 2
+  color:
+    serializedVersion: 2
+    rgba: 4294967295
+  disabledColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  size: {x: 57, y: 16}
+  minSize: {x: 0, y: 0}
+  maxSize: {x: 0, y: 0}
+  clipChildren: 0
+  tabIndex: -1
+  canFocus: 0
+  autoFocus: 0
+  layout:
+    anchorStyle: 261
+    margins:
+      left: .588378906
+      top: .25
+      right: 1.11337888
+      bottom: .383333325
+    owner: {fileID: 673995872}
+  renderOrder: 6
+  isLocalized: 0
+  hotZoneScale: {x: 1, y: 1}
+  atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
+  font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
+  backgroundSprite: 
+  backgroundColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  autoSize: 1
+  autoHeight: 0
+  wordWrap: 0
+  text: 'Energy: 0'
+  bottomColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  align: 0
+  vertAlign: 0
+  textScale: 1
+  textScaleMode: 2
+  charSpacing: 0
+  colorizeSymbols: 0
+  processMarkup: 0
+  outline: 0
+  outlineWidth: 1
+  enableGradient: 0
+  outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadow: 0
+  shadowColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadowOffset: {x: 1, y: -1}
+  padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  tabSize: 48
+  tabStops: 
 --- !u!1 &675171390
 GameObject:
   m_ObjectHideFlags: 0
@@ -22455,6 +22698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b72249153613934ab5e17905b67cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildMenuPanel: {fileID: 506195752}
   generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
   ballisticsBuilding: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
   underConstructionBuilding: {fileID: 5400000, guid: 2ac5e63ddc7dddd4980ad9af353ffff8,
@@ -27901,7 +28145,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 849352455}
-  renderOrder: 13
+  renderOrder: 16
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -30480,7 +30724,7 @@ GameObject:
   - 114: {fileID: 898595802}
   - 65: {fileID: 898595801}
   m_Layer: 17
-  m_Name: Label
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30493,7 +30737,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 898595799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0489196777, y: -.0208358765, z: 0}
+  m_LocalPosition: {x: .0494766235, y: -.0208282471, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293133322}
@@ -30505,7 +30749,7 @@ BoxCollider:
   m_GameObject: {fileID: 898595799}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .197916672, y: .0520833358, z: .00100000005}
   m_Center: {x: .0989583358, y: -.0260416679, z: 0}
@@ -30520,7 +30764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e3359ffaefe124a992e17c8830875c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchorStyle: 5
+  anchorStyle: 261
   isEnabled: 1
   isVisible: 1
   isInteractive: 1
@@ -30541,12 +30785,12 @@ MonoBehaviour:
   canFocus: 0
   autoFocus: 0
   layout:
-    anchorStyle: 5
+    anchorStyle: 261
     margins:
-      left: 18.7851562
-      top: 8
-      right: 5.21484375
-      bottom: 72
+      left: .158333331
+      top: .0666666701
+      right: .791666687
+      bottom: .233333334
     owner: {fileID: 898595802}
   renderOrder: 4
   isLocalized: 0
@@ -36737,6 +36981,126 @@ Transform:
   m_LocalScale: {x: .999999881, y: .999999762, z: 1}
   m_Children: []
   m_Father: {fileID: 1786939823}
+--- !u!1 &1071366081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1071366082}
+  - 114: {fileID: 1071366084}
+  - 65: {fileID: 1071366083}
+  m_Layer: 17
+  m_Name: Description
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1071366082
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071366081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0130157471, y: -.234375, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293133322}
+--- !u!65 &1071366083
+BoxCollider:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071366081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .2890625, y: .0520833358, z: .00100000005}
+  m_Center: {x: .14453125, y: -.0260416679, z: 0}
+--- !u!114 &1071366084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071366081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e3359ffaefe124a992e17c8830875c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorStyle: 261
+  isEnabled: 1
+  isVisible: 1
+  isInteractive: 1
+  tooltip: 
+  pivot: 0
+  zindex: 1
+  color:
+    serializedVersion: 2
+    rgba: 4294967295
+  disabledColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  size: {x: 111, y: 20}
+  minSize: {x: 0, y: 0}
+  maxSize: {x: 0, y: 0}
+  clipChildren: 0
+  tabIndex: -1
+  canFocus: 0
+  autoFocus: 0
+  layout:
+    anchorStyle: 261
+    margins:
+      left: .0416666679
+      top: .75
+      right: .966666639
+      bottom: .916666687
+    owner: {fileID: 1071366084}
+  renderOrder: 5
+  isLocalized: 0
+  hotZoneScale: {x: 1, y: 1}
+  atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
+  font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
+  backgroundSprite: 
+  backgroundColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  autoSize: 1
+  autoHeight: 0
+  wordWrap: 0
+  text: +20 to Energy.
+  bottomColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  align: 0
+  vertAlign: 0
+  textScale: 1.25
+  textScaleMode: 2
+  charSpacing: 0
+  colorizeSymbols: 0
+  processMarkup: 0
+  outline: 0
+  outlineWidth: 1
+  enableGradient: 0
+  outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadow: 0
+  shadowColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadowOffset: {x: 1, y: -1}
+  padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  tabSize: 48
+  tabStops: 
 --- !u!1 &1071616975
 GameObject:
   m_ObjectHideFlags: 0
@@ -37308,7 +37672,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 1095072768}
-  renderOrder: 17
+  renderOrder: 20
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -40289,7 +40653,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 1187101030}
-  renderOrder: 27
+  renderOrder: 30
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -43307,7 +43671,7 @@ MonoBehaviour:
       right: .999023438
       bottom: .19140625
     owner: {fileID: 1288063190}
-  renderOrder: 6
+  renderOrder: 9
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -44393,7 +44757,7 @@ MonoBehaviour:
       right: .702148438
       bottom: .5390625
     owner: {fileID: 1317046649}
-  renderOrder: 29
+  renderOrder: 32
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -48317,7 +48681,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 1405918217}
-  renderOrder: 8
+  renderOrder: 11
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -51459,7 +51823,7 @@ MonoBehaviour:
       right: .652014673
       bottom: .193103448
     owner: {fileID: 1498231899}
-  renderOrder: 11
+  renderOrder: 14
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -52391,7 +52755,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 1516085530}
-  renderOrder: 10
+  renderOrder: 13
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -56335,6 +56699,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: _buildMenuPanel
+      value: 
+      objectReference: {fileID: 506195752}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
@@ -58415,7 +58783,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 1692294714}
-  renderOrder: 15
+  renderOrder: 18
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -61783,7 +62151,7 @@ MonoBehaviour:
       right: 1
       bottom: 1
     owner: {fileID: 1819554280}
-  renderOrder: 9
+  renderOrder: 12
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -62599,7 +62967,7 @@ MonoBehaviour:
       right: .124542125
       bottom: .986206889
     owner: {fileID: 1841703673}
-  renderOrder: 7
+  renderOrder: 10
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   isChecked: 0
@@ -63449,7 +63817,7 @@ MonoBehaviour:
       right: .124542125
       bottom: .791119814
     owner: {fileID: 1861685740}
-  renderOrder: 16
+  renderOrder: 19
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   isChecked: 0
@@ -67343,7 +67711,7 @@ MonoBehaviour:
       right: 1
       bottom: 1
     owner: {fileID: 1943311192}
-  renderOrder: 22
+  renderOrder: 25
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -67454,7 +67822,7 @@ MonoBehaviour:
       right: 1
       bottom: 1
     owner: {fileID: 1943896429}
-  renderOrder: 26
+  renderOrder: 29
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -68004,7 +68372,7 @@ MonoBehaviour:
       right: .455078125
       bottom: .0598958321
     owner: {fileID: 1957376250}
-  renderOrder: 5
+  renderOrder: 8
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -70254,7 +70622,7 @@ MonoBehaviour:
       right: .800000012
       bottom: .800000012
     owner: {fileID: 2041429843}
-  renderOrder: 14
+  renderOrder: 17
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -72362,7 +72730,7 @@ MonoBehaviour:
       right: .548828125
       bottom: .05859375
     owner: {fileID: 2101162818}
-  renderOrder: 28
+  renderOrder: 31
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -73396,7 +73764,7 @@ MonoBehaviour:
       right: .124542125
       bottom: .373333335
     owner: {fileID: 2119746497}
-  renderOrder: 24
+  renderOrder: 27
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   isChecked: 0
@@ -75036,7 +75404,7 @@ MonoBehaviour:
       right: Infinity
       bottom: Infinity
     owner: {fileID: 2137575137}
-  renderOrder: 21
+  renderOrder: 24
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
