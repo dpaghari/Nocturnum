@@ -47,7 +47,7 @@ public class CanResearch : MonoBehaviour {
 
 	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
 	//If the tech is also an upgrade, it must not be already researching
-	bool MeetsRequirement(Tech theUpgr){
+	public bool MeetsRequirement(Tech theUpgr){
 		if( !TechManager.IsTechAvaliable( theUpgr)){ 
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
