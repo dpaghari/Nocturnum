@@ -445,7 +445,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .1640625, y: .0416666679, z: .00100000005}
   m_Center: {x: .08203125, y: -.020833334, z: 0}
 --- !u!114 &18925779
 MonoBehaviour:
@@ -2734,7 +2734,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .1640625, y: .0416666679, z: .00100000005}
   m_Center: {x: .08203125, y: -.020833334, z: 0}
 --- !u!114 &70904870
 MonoBehaviour:
@@ -3379,7 +3379,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .169270843, y: .0520833358, z: .00100000005}
   m_Center: {x: .0846354216, y: -.0260416679, z: 0}
 --- !u!114 &79938429
 MonoBehaviour:
@@ -8794,7 +8794,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .247395843, y: .104166672, z: .00100000005}
   m_Center: {x: .123697922, y: -.0520833358, z: 0}
 --- !u!114 &257979219
 MonoBehaviour:
@@ -12691,7 +12691,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .1640625, y: .0416666679, z: .00100000005}
   m_Center: {x: .08203125, y: -.020833334, z: 0}
 --- !u!114 &357277685
 MonoBehaviour:
@@ -13298,7 +13298,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .138020843, y: .0520833358, z: .00100000005}
   m_Center: {x: .0690104216, y: -.0260416679, z: 0}
 --- !u!114 &363424901
 MonoBehaviour:
@@ -13896,7 +13896,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .1640625, y: .0416666679, z: .00100000005}
   m_Center: {x: .08203125, y: -.020833334, z: 0}
 --- !u!114 &368659281
 MonoBehaviour:
@@ -17899,7 +17899,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .174479172, y: .0520833358, z: .00100000005}
   m_Center: {x: .0872395858, y: -.0260416679, z: 0}
 --- !u!114 &478501262
 MonoBehaviour:
@@ -20926,7 +20926,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .1640625, y: .0416666679, z: .00100000005}
   m_Center: {x: .08203125, y: -.020833334, z: 0}
 --- !u!114 &572944813
 MonoBehaviour:
@@ -21050,10 +21050,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 573074962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac4e590fcb1e314aac885aad67e9cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuildRef: {fileID: 0}
+  canResearchRef: {fileID: 0}
 --- !u!114 &573074965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21070,7 +21070,7 @@ MonoBehaviour:
     MemberName: Click
   DataTarget:
     Component: {fileID: 573074964}
-    MemberName: CallBuildIncendiary
+    MemberName: CallSeeker
 --- !u!65 &573074966
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -21081,7 +21081,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .3125, y: .3125, z: .00100000005}
   m_Center: {x: .15625, y: -.15625, z: 0}
 --- !u!114 &573074967
 MonoBehaviour:
@@ -23042,7 +23042,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .309895843, y: .0520833358, z: .00100000005}
   m_Center: {x: .154947922, y: -.0260416679, z: 0}
 --- !u!114 &621409394
 MonoBehaviour:
@@ -25395,6 +25395,7 @@ MonoBehaviour:
   button_ricochetShot: {fileID: 2800000, guid: 2e3d396a839fed441b68e5933fb67a51, type: 3}
   button_lightFist: {fileID: 2800000, guid: 001d1524b9b52424c809928bcc7ba368, type: 3}
   errBuild: {fileID: 8300000, guid: 19965041cf999894589a7d3709e5768b, type: 3}
+  _upgradeWheelPanel: {fileID: 777941628}
 --- !u!114 &680245872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28429,7 +28430,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1484375, y: .861979187, z: .00100000005}
   m_Center: {x: .57421875, y: -.430989593, z: 0}
 --- !u!1001 &778431575
 Prefab:
@@ -30767,7 +30768,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .1640625, y: .0520833358, z: .00100000005}
   m_Center: {x: .08203125, y: -.0260416679, z: 0}
 --- !u!114 &830695057
 MonoBehaviour:
@@ -34077,7 +34078,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .268229187, y: .0520833358, z: .00100000005}
   m_Center: {x: .134114593, y: -.0260416679, z: 0}
 --- !u!114 &894823131
 MonoBehaviour:
@@ -34605,7 +34606,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .151041672, y: .0520833358, z: .00100000005}
   m_Center: {x: .0755208358, y: -.0260416679, z: 0}
 --- !u!114 &903994790
 MonoBehaviour:
@@ -35345,7 +35346,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .158854172, y: .0416666679, z: .00100000005}
   m_Center: {x: .0794270858, y: -.020833334, z: 0}
 --- !u!114 &921181079
 MonoBehaviour:
@@ -36183,7 +36184,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .231770843, y: .0520833358, z: .00100000005}
   m_Center: {x: .115885422, y: -.0260416679, z: 0}
 --- !u!114 &944925075
 MonoBehaviour:
@@ -37660,7 +37661,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .158854172, y: .0416666679, z: .00100000005}
   m_Center: {x: .0794270858, y: -.020833334, z: 0}
 --- !u!114 &981878238
 MonoBehaviour:
@@ -55872,7 +55873,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .1640625, y: .0416666679, z: .00100000005}
   m_Center: {x: .08203125, y: -.020833334, z: 0}
 --- !u!114 &1473759038
 MonoBehaviour:
@@ -58483,7 +58484,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .158854172, y: .0416666679, z: .00100000005}
   m_Center: {x: .0794270858, y: -.020833334, z: 0}
 --- !u!114 &1539302506
 MonoBehaviour:
@@ -58714,10 +58715,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1550414241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac4e590fcb1e314aac885aad67e9cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuildRef: {fileID: 0}
+  canResearchRef: {fileID: 0}
 --- !u!114 &1550414244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58734,7 +58735,7 @@ MonoBehaviour:
     MemberName: Click
   DataTarget:
     Component: {fileID: 1550414243}
-    MemberName: CallBuildSpotlight
+    MemberName: CallLightFist
 --- !u!65 &1550414245
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -58745,7 +58746,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .3125, y: .3125, z: .00100000005}
   m_Center: {x: .15625, y: -.15625, z: 0}
 --- !u!114 &1550414246
 MonoBehaviour:
@@ -59506,7 +59507,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .299479187, y: .0520833358, z: .00100000005}
   m_Center: {x: .149739593, y: -.0260416679, z: 0}
 --- !u!114 &1567277743
 MonoBehaviour:
@@ -60972,7 +60973,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .158854172, y: .0416666679, z: .00100000005}
   m_Center: {x: .0794270858, y: -.020833334, z: 0}
 --- !u!114 &1601693834
 MonoBehaviour:
@@ -61096,10 +61097,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603750215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac4e590fcb1e314aac885aad67e9cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuildRef: {fileID: 0}
+  canResearchRef: {fileID: 0}
 --- !u!114 &1603750218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61116,7 +61117,7 @@ MonoBehaviour:
     MemberName: Click
   DataTarget:
     Component: {fileID: 1603750217}
-    MemberName: CallBuildWall
+    MemberName: CallLightGrenade
 --- !u!65 &1603750219
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -61127,7 +61128,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .3125, y: .3125, z: .00100000005}
   m_Center: {x: .15625, y: -.15625, z: 0}
 --- !u!114 &1603750220
 MonoBehaviour:
@@ -62835,6 +62836,10 @@ Prefab:
       propertyPath: _buildMenuPanel
       value: 
       objectReference: {fileID: 506195752}
+    - target: {fileID: 11400010, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: _upgradeWheelPanel
+      value: 
+      objectReference: {fileID: 777941628}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
@@ -63180,7 +63185,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648422443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00130208337, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475972224}
@@ -66232,7 +66237,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .158854172, y: .0416666679, z: .00100000005}
   m_Center: {x: .0794270858, y: -.020833334, z: 0}
 --- !u!114 &1729504996
 MonoBehaviour:
@@ -73910,10 +73915,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1932357934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac4e590fcb1e314aac885aad67e9cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuildRef: {fileID: 0}
+  canResearchRef: {fileID: 0}
 --- !u!114 &1932357937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73930,7 +73935,7 @@ MonoBehaviour:
     MemberName: Click
   DataTarget:
     Component: {fileID: 1932357936}
-    MemberName: CallBuildBallistics
+    MemberName: CallClipSize
 --- !u!65 &1932357938
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -73941,7 +73946,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .3125, y: .3125, z: .00100000005}
   m_Center: {x: .15625, y: -.15625, z: 0}
 --- !u!114 &1932357939
 MonoBehaviour:
@@ -76013,10 +76018,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1979354464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac4e590fcb1e314aac885aad67e9cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuildRef: {fileID: 0}
+  canResearchRef: {fileID: 0}
 --- !u!114 &1979354467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76033,7 +76038,7 @@ MonoBehaviour:
     MemberName: Click
   DataTarget:
     Component: {fileID: 1979354466}
-    MemberName: CallBuildGenerator
+    MemberName: CallScattershot
 --- !u!65 &1979354468
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -76044,7 +76049,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .3125, y: .3125, z: .00100000005}
   m_Center: {x: .15625, y: -.15625, z: 0}
 --- !u!114 &1979354469
 MonoBehaviour:
@@ -79102,10 +79107,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2068820946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac4e590fcb1e314aac885aad67e9cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuildRef: {fileID: 0}
+  canResearchRef: {fileID: 0}
 --- !u!114 &2068820949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79122,7 +79127,7 @@ MonoBehaviour:
     MemberName: Click
   DataTarget:
     Component: {fileID: 2068820948}
-    MemberName: CallBuildMedBay
+    MemberName: CallRicochet
 --- !u!65 &2068820950
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -79133,7 +79138,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .3125, y: .3125, z: .00100000005}
   m_Center: {x: .15625, y: -.15625, z: 0}
 --- !u!114 &2068820951
 MonoBehaviour:
@@ -79544,7 +79549,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .260416687, y: .104166672, z: .00100000005}
   m_Center: {x: .130208343, y: -.0520833358, z: 0}
 --- !u!114 &2073709285
 MonoBehaviour:
@@ -79857,7 +79862,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .158854172, y: .0416666679, z: .00100000005}
   m_Center: {x: .0794270858, y: -.020833334, z: 0}
 --- !u!114 &2083016355
 MonoBehaviour:
@@ -79977,7 +79982,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
+  m_Size: {x: .174479172, y: .0520833358, z: .00100000005}
   m_Center: {x: .0872395858, y: -.0260416679, z: 0}
 --- !u!114 &2083426854
 MonoBehaviour:

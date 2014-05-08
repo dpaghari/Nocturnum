@@ -20,6 +20,7 @@ public class CanResearch : MonoBehaviour {
 	public Texture2D button_lightFist;
 	public AudioClip errBuild;
 	private CanBuild buildScript;
+	public dfPanel _upgradeWheelPanel;
 
 	//Setting inBuildingMode will slowdown/restore time
 	private float slowDownRatio = 0.5f;
@@ -98,16 +99,65 @@ public class CanResearch : MonoBehaviour {
 
 	public void OpenMenu(){
 		MenuUp = true;
+		_upgradeWheelPanel.IsVisible = true;
 		inUpgradeMenu = true;
 	}
 	
 	public void CloseMenu(){
 		MenuUp = false;
+		_upgradeWheelPanel.IsVisible = false;
 		inUpgradeMenu = false;
 	}
 
 
-	void OnGUI() {
+
+
+
+
+	public void GetClipSize(){
+		if(MeetsRequirement(Tech.clipSize)){
+			DoResearch(Tech.clipSize);
+			CloseMenu();
+		}
+	}
+
+	public void GetScattershot(){
+		if(MeetsRequirement(Tech.scatter)){
+			DoResearch(Tech.scatter);
+			CloseMenu();
+		}
+	}
+
+	public void GetLightGrenade(){
+		if(MeetsRequirement(Tech.lightGrenade)){
+			DoResearch(Tech.lightGrenade);
+			CloseMenu();
+		}
+	}
+
+	public void GetRicochet(){
+		if(MeetsRequirement(Tech.ricochet)){
+			DoResearch(Tech.ricochet);
+			CloseMenu();
+		}
+	}
+
+	public void GetLightFist(){
+		if(MeetsRequirement(Tech.lightFist)){
+			Debug.Log("Pressing Lightfist");
+			DoResearch(Tech.lightFist);
+			CloseMenu();
+		}
+	}
+
+	public void GetSeeker(){
+		if(MeetsRequirement(Tech.seeker)){
+			DoResearch(Tech.seeker);
+			CloseMenu();
+		}
+	}
+
+	/*void OnGUI() {
 		GUI.skin = upgradeWheelSkin;
 		if(MenuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
@@ -167,7 +217,7 @@ public class CanResearch : MonoBehaviour {
 
 		}
 	
-	}
+	}*/
 
 	void Awake(){
 		originalFixedUpdate = Time.fixedDeltaTime;
@@ -176,13 +226,16 @@ public class CanResearch : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		MenuUp = false;
+		_upgradeWheelPanel.IsVisible = false;
 		buildScript = GetComponent<CanBuild>();
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-
+		if(MenuUp){
+			GetComponent<CanShoot>().ResetFiringTimer();
+		}
 		if ( Input.GetKeyDown(KeyCode.V) && buildScript != null && !buildScript.MenuUp){
 			//prevents player from placing buildings if they open upgrade menu
 			buildScript.CloseMenu(); 
