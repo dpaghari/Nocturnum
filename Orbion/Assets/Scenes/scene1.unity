@@ -1079,6 +1079,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &26707049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1205,10 +1206,10 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .333333343
-      top: .0666666701
-      right: .850000024
-      bottom: .233333334
+      left: .266666681
+      top: .0666992217
+      right: .783333361
+      bottom: .233365878
     owner: {fileID: 27305552}
   renderOrder: 34
   isLocalized: 0
@@ -1258,7 +1259,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 27305550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .104171753, y: -.0208358765, z: 0}
+  m_LocalPosition: {x: .0833358765, y: -.0208333135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1950868027}
@@ -2191,6 +2192,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &60854823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2781,6 +2783,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &71705095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3273,29 +3276,29 @@ Transform:
   m_LocalPosition: {x: 30, y: 1, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 648490368}
-  - {fileID: 1029873043}
-  - {fileID: 1065680385}
-  - {fileID: 1203068920}
-  - {fileID: 1374364426}
-  - {fileID: 1399409628}
-  - {fileID: 1405859907}
-  - {fileID: 26707039}
+  - {fileID: 2121416156}
   - {fileID: 71705085}
-  - {fileID: 360092231}
-  - {fileID: 868769387}
+  - {fileID: 648490368}
+  - {fileID: 391874189}
   - {fileID: 886464194}
+  - {fileID: 1029873043}
+  - {fileID: 368178314}
+  - {fileID: 1405859907}
+  - {fileID: 60854813}
+  - {fileID: 1574634208}
+  - {fileID: 360092231}
+  - {fileID: 1374364426}
+  - {fileID: 26707039}
+  - {fileID: 263761427}
+  - {fileID: 801070003}
+  - {fileID: 868769387}
+  - {fileID: 609703986}
   - {fileID: 919076780}
   - {fileID: 965113168}
-  - {fileID: 801070003}
-  - {fileID: 391874189}
-  - {fileID: 60854813}
-  - {fileID: 263761427}
-  - {fileID: 609703986}
-  - {fileID: 368178314}
-  - {fileID: 2121416156}
+  - {fileID: 1203068920}
   - {fileID: 1634486179}
-  - {fileID: 1574634208}
+  - {fileID: 1065680385}
+  - {fileID: 1399409628}
   - {fileID: 984269107}
   m_Father: {fileID: 0}
 --- !u!1 &85719122
@@ -8707,6 +8710,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &263761437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9967,9 +9971,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .0406923182
+      left: .0408163257
       top: -.105740182
-      right: .312801152
+      right: .31292516
       bottom: .256797582
     owner: {fileID: 293133324}
   renderOrder: 13
@@ -10752,9 +10756,9 @@ MonoBehaviour:
     anchorStyle: 261
     margins:
       left: .0408163257
-      top: .696374595
+      top: .694864035
       right: .31292516
-      bottom: 1.0589124
+      bottom: 1.05740178
     owner: {fileID: 318833558}
   renderOrder: 28
   isLocalized: 1
@@ -12476,6 +12480,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &360092241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13067,6 +13072,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &368178324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13913,7 +13919,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378943741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0118865967, y: -.078125, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.0781300664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2072568058}
@@ -14599,6 +14605,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &391874199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16683,7 +16690,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 475369118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .104164124, y: -.0208282471, z: 0}
+  m_LocalPosition: {x: .111984253, y: -.0208358765, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1159756663}
@@ -16733,10 +16740,10 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .333333343
-      top: .0666666701
-      right: .591666639
-      bottom: .233333334
+      left: .358333319
+      top: .0666992217
+      right: .616666675
+      bottom: .233365878
     owner: {fileID: 475369121}
   renderOrder: 9
   isLocalized: 0
@@ -18572,7 +18579,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534870697}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0135421753, y: -.234375, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.216148376, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1637494071}
@@ -18586,8 +18593,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .46875, y: .0520833358, z: .00100000005}
-  m_Center: {x: .234375, y: -.0260416679, z: 0}
+  m_Size: {x: .286458343, y: .104166672, z: .00100000005}
+  m_Center: {x: .143229172, y: -.0520833358, z: 0}
 --- !u!114 &534870700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18612,7 +18619,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 180, y: 20}
+  size: {x: 110, y: 40}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -18622,10 +18629,10 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .0433593765
-      top: .75
-      right: 1.5433594
-      bottom: .916666687
+      left: .0416666679
+      top: .691666663
+      right: .958333313
+      bottom: 1.02499998
     owner: {fileID: 534870700}
   renderOrder: 25
   isLocalized: 0
@@ -18639,7 +18646,9 @@ MonoBehaviour:
   autoSize: 1
   autoHeight: 0
   wordWrap: 1
-  text: Shoots nearby enemies.
+  text: 'Shoots nearby
+
+    enemies.'
   bottomColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -19493,7 +19502,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 562275104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .184898376, y: -.078125, z: 0}
+  m_LocalPosition: {x: .169273376, y: -.0781326294, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1159756663}
@@ -19543,9 +19552,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .588378906
+      left: .543652356
       top: .25
-      right: 1.11337888
+      right: 1.01865232
       bottom: .383333325
     owner: {fileID: 562275107}
   renderOrder: 11
@@ -19668,7 +19677,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565751797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130233765, y: -.078125, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.0781326294, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1159756663}
@@ -20754,7 +20763,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 602851667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130233765, y: -.0794219971, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 318833554}
@@ -21142,6 +21151,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &609703996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22613,6 +22623,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &648490378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23302,7 +23313,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673995869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .184898376, y: -.078125, z: 0}
+  m_LocalPosition: {x: .161460876, y: -.078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293133322}
@@ -23352,9 +23363,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .588378906
+      left: .519628882
       top: .25
-      right: 1.11337888
+      right: 1.02796221
       bottom: .383333325
     owner: {fileID: 673995872}
   renderOrder: 16
@@ -23538,7 +23549,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 675856489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0494766235, y: -.0208282471, z: 0}
+  m_LocalPosition: {x: .0677032471, y: -.0208282471, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 877740563}
@@ -23588,9 +23599,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .158333331
+      left: .216666669
       top: .0666666701
-      right: .791666687
+      right: .850000024
       bottom: .233333334
     owner: {fileID: 675856492}
   renderOrder: 4
@@ -23704,6 +23715,7 @@ MonoBehaviour:
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
 --- !u!82 &680245861
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26146,7 +26158,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747717270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .184898376, y: -.078125, z: 0}
+  m_LocalPosition: {x: .161460876, y: -.0781300664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2072568058}
@@ -26196,9 +26208,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .588378906
+      left: .516666651
       top: .25
-      right: 1.11337888
+      right: 1.05833328
       bottom: .383333325
     owner: {fileID: 747717273}
   renderOrder: 21
@@ -28063,6 +28075,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &801070013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28150,7 +28163,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 802268904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .184898376, y: -.078125, z: 0}
+  m_LocalPosition: {x: .1640625, y: -.0781300664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1950868027}
@@ -28200,9 +28213,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .588378906
+      left: .523665369
       top: .25
-      right: 1.11337888
+      right: 1.03199875
       bottom: .383333325
     owner: {fileID: 802268907}
   renderOrder: 36
@@ -30615,6 +30628,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &868769397
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30956,7 +30970,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 873162523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .182815552, y: -.078125, z: 0}
+  m_LocalPosition: {x: .158859253, y: -.078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1637494071}
@@ -31006,9 +31020,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .588378906
+      left: .511621118
       top: .25
-      right: 1.11337888
+      right: 1.05328774
       bottom: .383333325
     owner: {fileID: 873162526}
   renderOrder: 26
@@ -32144,6 +32158,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &886464204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32606,7 +32621,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 898595799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .104171753, y: -.0208282471, z: 0}
+  m_LocalPosition: {x: .0807342529, y: -.0208282471, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293133322}
@@ -32656,9 +32671,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .333333343
+      left: .258333325
       top: .0666666701
-      right: .858333349
+      right: .783333361
       bottom: .233333334
     owner: {fileID: 898595802}
   renderOrder: 14
@@ -33384,6 +33399,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &919076790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34127,15 +34143,15 @@ Transform:
   m_LocalPosition: {x: 30, y: 1, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 997800412}
-  - {fileID: 1155114899}
-  - {fileID: 1363413205}
   - {fileID: 1462551090}
   - {fileID: 873574023}
+  - {fileID: 2097507383}
   - {fileID: 907845399}
+  - {fileID: 997800412}
   - {fileID: 209060148}
   - {fileID: 1581310892}
-  - {fileID: 2097507383}
+  - {fileID: 1363413205}
+  - {fileID: 1155114899}
   m_Father: {fileID: 0}
 --- !u!1001 &944416042
 Prefab:
@@ -35046,6 +35062,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &965113178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35951,6 +35968,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!95 &984269117
 Animator:
   serializedVersion: 2
@@ -37123,7 +37141,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1023229776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130233765, y: -.234375, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.21354419, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2072568058}
@@ -37174,9 +37192,9 @@ MonoBehaviour:
     anchorStyle: 261
     margins:
       left: .0416666679
-      top: .75
+      top: .683365881
       right: .966666639
-      bottom: 1.08333337
+      bottom: 1.01669919
     owner: {fileID: 1023229779}
   renderOrder: 20
   isLocalized: 0
@@ -37615,6 +37633,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1029873053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38223,7 +38242,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053199157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .104171753, y: -.0208358765, z: 0}
+  m_LocalPosition: {x: .0833358765, y: -.0208358765, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 318833554}
@@ -38273,9 +38292,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .333333343
+      left: .266666681
       top: .0666666701
-      right: .875
+      right: .808333337
       bottom: .233333334
     owner: {fileID: 1053199160}
   renderOrder: 29
@@ -38984,6 +39003,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1065680395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39151,7 +39171,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1071366081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130233765, y: -.234375, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.21875, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293133322}
@@ -39202,9 +39222,9 @@ MonoBehaviour:
     anchorStyle: 261
     margins:
       left: .0416666679
-      top: .75
+      top: .699999988
       right: .891666651
-      bottom: 1.08333337
+      bottom: 1.0333333
     owner: {fileID: 1071366084}
   renderOrder: 15
   isLocalized: 0
@@ -42033,7 +42053,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1159756662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .778648376, y: .0911407471, z: 0}
+  m_LocalPosition: {x: .78125, y: .0911407471, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1868981571}
@@ -42116,9 +42136,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 269
     margins:
-      left: .678004563
+      left: .680272102
       top: -.105740182
-      right: .950113356
+      right: .952380955
       bottom: .256797582
     owner: {fileID: 1159756667}
   renderOrder: 8
@@ -42711,7 +42731,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1181806173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130233765, y: -.234375, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.221351624, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 318833554}
@@ -42725,8 +42745,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .552083373, y: .0520833358, z: .00100000005}
-  m_Center: {x: .276041687, y: -.0260416679, z: 0}
+  m_Size: {x: .2734375, y: .104166672, z: .00100000005}
+  m_Center: {x: .13671875, y: -.0520833358, z: 0}
 --- !u!114 &1181806176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42751,7 +42771,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 212, y: 20}
+  size: {x: 105, y: 40}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -42762,9 +42782,9 @@ MonoBehaviour:
     anchorStyle: 261
     margins:
       left: .0416666679
-      top: .75
-      right: 1.80833328
-      bottom: .916666687
+      top: .708333313
+      right: .916666687
+      bottom: 1.04166663
     owner: {fileID: 1181806176}
   renderOrder: 30
   isLocalized: 0
@@ -42778,7 +42798,9 @@ MonoBehaviour:
   autoSize: 1
   autoHeight: 0
   wordWrap: 1
-  text: Point at enemies by rotating.
+  text: 'Provides
+
+    rotatable light.'
   bottomColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -43862,6 +43884,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1203068930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49373,6 +49396,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1374364436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49885,7 +49909,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1381036684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130157471, y: -.078125, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1637494071}
@@ -50631,6 +50655,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1399409638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51097,6 +51122,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1405859917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54032,7 +54058,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1489327490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .104690552, y: -.0208358765, z: 0}
+  m_LocalPosition: {x: .104171753, y: -.0208358765, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1637494071}
@@ -54082,9 +54108,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .335026056
+      left: .333333343
       top: .0666666701
-      right: .726692736
+      right: .725000024
       bottom: .233333334
     owner: {fileID: 1489327493}
   renderOrder: 24
@@ -55525,7 +55551,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1517034043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .104164124, y: -.0208358765, z: 0}
+  m_LocalPosition: {x: .0546875, y: -.0208333135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2072568058}
@@ -55575,10 +55601,10 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .333333343
-      top: .0666666701
-      right: .975000024
-      bottom: .233333334
+      left: .174999997
+      top: .0666992217
+      right: .816666663
+      bottom: .233365878
     owner: {fileID: 1517034046}
   renderOrder: 19
   isLocalized: 0
@@ -57184,6 +57210,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1574634218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58676,9 +58703,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .588378906
+      left: .524999976
       top: .25
-      right: 1.11337888
+      right: 1.0333333
       bottom: .383333325
     owner: {fileID: 1620277366}
   renderOrder: 31
@@ -58729,7 +58756,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620277364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .184898376, y: -.078125, z: 0}
+  m_LocalPosition: {x: .1640625, y: -.078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 318833554}
@@ -59199,6 +59226,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &1634486189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59402,7 +59430,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637494070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .783859253, y: -.598960876, z: 0}
+  m_LocalPosition: {x: .78125, y: -.598960876, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 534870698}
@@ -59485,9 +59513,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .682539701
+      left: .680272102
       top: .694864035
-      right: .954648554
+      right: .952380955
       bottom: 1.05740178
     owner: {fileID: 1637494075}
   renderOrder: 23
@@ -61040,7 +61068,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1669246009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .184890747, y: -.078125, z: 0}
+  m_LocalPosition: {x: .1640625, y: -.078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 877740563}
@@ -61090,9 +61118,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .588378906
+      left: .527636707
       top: .25
-      right: 1.11337888
+      right: 1.00263667
       bottom: .383333325
     owner: {fileID: 1669246012}
   renderOrder: 6
@@ -68276,7 +68304,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892792362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130233765, y: -.078125, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.0781300664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1950868027}
@@ -71651,7 +71679,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1950868026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .046875, y: -.2578125, z: 0}
+  m_LocalPosition: {x: .046875, y: -.252609253, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2140446297}
@@ -71735,9 +71763,9 @@ MonoBehaviour:
     anchorStyle: 261
     margins:
       left: .0408163257
-      top: .298893034
+      top: .293051362
       right: .31292516
-      bottom: .661430776
+      bottom: .655589104
     owner: {fileID: 1950868031}
   renderOrder: 33
   isLocalized: 1
@@ -73288,15 +73316,15 @@ Transform:
   m_LocalPosition: {x: 30, y: 1, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 22608822}
-  - {fileID: 1162939487}
-  - {fileID: 1204229055}
-  - {fileID: 959480867}
-  - {fileID: 984682404}
-  - {fileID: 793552817}
   - {fileID: 685081283}
-  - {fileID: 522775980}
+  - {fileID: 959480867}
+  - {fileID: 1204229055}
+  - {fileID: 22608822}
+  - {fileID: 984682404}
   - {fileID: 2116047768}
+  - {fileID: 522775980}
+  - {fileID: 1162939487}
+  - {fileID: 793552817}
   m_Father: {fileID: 0}
 --- !u!1 &2003851342
 GameObject:
@@ -75686,7 +75714,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2072568057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .778648376, y: -.2578125, z: 0}
+  m_LocalPosition: {x: .78125, y: -.252609253, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1023229777}
@@ -75769,10 +75797,10 @@ MonoBehaviour:
   layout:
     anchorStyle: 261
     margins:
-      left: .678996623
-      top: .299093664
-      right: .951105416
-      bottom: .661631405
+      left: .680272102
+      top: .293051362
+      right: .952380955
+      bottom: .655589104
     owner: {fileID: 2072568062}
   renderOrder: 18
   isLocalized: 1
@@ -77940,6 +77968,7 @@ MonoBehaviour:
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
 --- !u!65 &2121416166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79630,7 +79659,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2140446296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0130233765, y: -.234375, z: 0}
+  m_LocalPosition: {x: .0130233765, y: -.216140747, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1950868027}
@@ -79644,8 +79673,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .630208373, y: .0520833358, z: .00100000005}
-  m_Center: {x: .315104187, y: -.0260416679, z: 0}
+  m_Size: {x: .359375, y: .104166672, z: .00100000005}
+  m_Center: {x: .1796875, y: -.0520833358, z: 0}
 --- !u!114 &2140446299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79670,7 +79699,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 242, y: 20}
+  size: {x: 138, y: 40}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -79681,9 +79710,9 @@ MonoBehaviour:
     anchorStyle: 261
     margins:
       left: .0416666679
-      top: .75
-      right: 2.0583334
-      bottom: .916666687
+      top: .691666663
+      right: 1.19166672
+      bottom: 1.02499998
     owner: {fileID: 2140446299}
   renderOrder: 35
   isLocalized: 0
@@ -79697,7 +79726,9 @@ MonoBehaviour:
   autoSize: 1
   autoHeight: 0
   wordWrap: 1
-  text: Heals HP over time when nearby
+  text: 'Heals HP over time
+
+    when nearby'
   bottomColor:
     serializedVersion: 2
     rgba: 4294967295
