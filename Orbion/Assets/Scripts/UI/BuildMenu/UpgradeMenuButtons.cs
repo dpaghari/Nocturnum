@@ -6,14 +6,14 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	//private bool menuUp;
 	public GameObject canResearchRef;
 	public bool researchTimeOn;
-	public float researchDelay;
+	public float scatterTime;
 
 	// Use this for initialization
 	void Start () {
 		//menuUp = false;
 		//_panel.IsVisible = false;
 		canResearchRef = GameObject.Find ("player_prefab");
-		researchDelay = 12.0f;
+		scatterTime = 11.5f;
 	}
 	
 	// Update is called once per frame
@@ -33,7 +33,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public void CallScattershot(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.scatter)){
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
-			StartCoroutine( showCooldown() );
+			StartCoroutine( showCooldown(scatterTime) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
 		}
@@ -54,7 +54,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 		canResearchRef.GetComponent<CanResearch>().GetRicochet();
 	}
 
-	private IEnumerator showCooldown()
+	private IEnumerator showCooldown(float t)
 	{
 		
 		researchTimeOn = true;
@@ -65,13 +65,13 @@ public class UpgradeMenuButtons : MonoBehaviour {
 		sprite.IsVisible = true;
 		
 		var startTime = Time.realtimeSinceStartup;
-		var endTime = startTime + researchDelay;
+		var endTime = startTime + t;
 		
 		while( Time.realtimeSinceStartup < endTime )
 		{
 			
 			var elapsed = Time.realtimeSinceStartup - startTime;
-			var lerp = 1f - elapsed / researchDelay;
+			var lerp = 1f - elapsed / t;
 			
 			sprite.FillAmount = lerp;
 			

@@ -8,7 +8,7 @@ public class ResearchTime : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		researchDelay = 3.0f;
+		researchDelay = 5.0f;
 	
 	}
 	
