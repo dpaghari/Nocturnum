@@ -51,7 +51,7 @@ public class GameManager : Singleton<GameManager> {
 
 	// Use this for initialization
 	void Start () {
-		ArrowPrefab = Resources.LoadAssetAtPath<GameObject>( "Assets/Prefabs/ArrowNotification.prefab");
+		ArrowPrefab =  Resources.Load( "ArrowNotification", typeof(GameObject)) as GameObject;
 	}
 	
 	// Update is called once per frame
