@@ -6,14 +6,12 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	//private bool menuUp;
 	public GameObject canResearchRef;
 	public bool researchTimeOn;
-	public float scatterTime;
 
 	// Use this for initialization
 	void Start () {
 		//menuUp = false;
 		//_panel.IsVisible = false;
 		canResearchRef = GameObject.Find ("player_prefab");
-		scatterTime = 11.5f;
 	}
 	
 	// Update is called once per frame
@@ -33,25 +31,54 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public void CallScattershot(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.scatter)){
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
-			StartCoroutine( showCooldown(scatterTime) );
+			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.scatter)) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
 		}
 	}
+
 	public void CallClipSize(){
-		canResearchRef.GetComponent<CanResearch>().GetClipSize();
+		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.clipSize)){
+			canResearchRef.GetComponent<CanResearch>().GetClipSize();
+			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.clipSize)) );
+		} else {
+			canResearchRef.GetComponent<CanResearch>().GetClipSize();
+		}
 	}
+
 	public void CallLightFist(){
-		canResearchRef.GetComponent<CanResearch>().GetLightFist();
+		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightFist)){
+			canResearchRef.GetComponent<CanResearch>().GetLightFist();
+			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightFist)) );
+		} else {
+			canResearchRef.GetComponent<CanResearch>().GetLightFist();
+		}
 	}
+
 	public void CallLightGrenade(){
-		canResearchRef.GetComponent<CanResearch>().GetLightGrenade();
+		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightGrenade)){
+			canResearchRef.GetComponent<CanResearch>().GetLightGrenade();
+			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightGrenade)) );
+		} else {
+			canResearchRef.GetComponent<CanResearch>().GetLightGrenade();
+		}
 	}
+
 	public void CallSeeker(){
-		canResearchRef.GetComponent<CanResearch>().GetSeeker();
+		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.seeker)){
+			canResearchRef.GetComponent<CanResearch>().GetSeeker();
+			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.seeker)) );
+		} else {
+			canResearchRef.GetComponent<CanResearch>().GetSeeker();
+		}
 	}
 	public void CallRicochet(){
-		canResearchRef.GetComponent<CanResearch>().GetRicochet();
+		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.ricochet)){
+			canResearchRef.GetComponent<CanResearch>().GetRicochet();
+			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.ricochet)) );
+		} else {
+			canResearchRef.GetComponent<CanResearch>().GetRicochet();
+		}
 	}
 
 	private IEnumerator showCooldown(float t)
