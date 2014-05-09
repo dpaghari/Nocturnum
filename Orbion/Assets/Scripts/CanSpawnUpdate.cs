@@ -45,7 +45,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 
-		addLevel (0.75F, 30.0F, 2); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 20.0F, 4);
+		addLevel (0.1F, 30.0F, 2); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 20.0F, 4);
 		addLevel (8.0F, 20.0F, 5); addLevel (12.0F, 20.0F, 6); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = totalLevels-1; i > 0; i--){
@@ -135,8 +135,10 @@ public class CanSpawnUpdate : MonoBehaviour {
 			if(MetricManager.getEnemies < summonLimit){
 				if(rand > 0.0 && rand < 0.5){
 					makeMelee(tempVec);
+					//SpawnManager.makeMelee(tempVec);
 				} else {
 					makeRanged(tempVec);
+					//SpawnManager.makeRanged(tempVec);
 				}
 				//MetricManager.AddEnemies(1);
 			}
