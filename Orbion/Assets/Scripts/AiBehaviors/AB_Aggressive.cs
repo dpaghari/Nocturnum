@@ -37,8 +37,8 @@ public class AB_Aggressive : AiBehavior {
 				//transform.LookAt(CurrTarget.transform);
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				moveScript.Move(CurrTarget.position - rigidbody.position);
-				//meshScript.SetDestination(CurrTarget.position);
+				//moveScript.Move(CurrTarget.position - rigidbody.position);
+				meshScript.SetDestination(CurrTarget.position);
 
 				if(this.tag == "Enemy")
 					animation.CrossFade("WolfRunCycle");
