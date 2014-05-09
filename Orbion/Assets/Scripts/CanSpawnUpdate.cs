@@ -28,6 +28,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 	
 	public Vector3 bossVec = new Vector3(120.0F,0.0F,-120.0F);
 
+	//1-easy 2-med 3-hard
+	public int difficulty = 1;
 	
 	public class LevelInfo{
 		public float timer;
@@ -45,8 +47,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 
-		addLevel (0.1F, 30.0F, 2); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 20.0F, 4);
-		addLevel (8.0F, 20.0F, 5); addLevel (12.0F, 20.0F, 6); 
+		addLevel (0.1F, 30.0F, 3); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 20.0F, 4);
+		addLevel (8.0F, 20.0F, 4); addLevel (12.0F, 20.0F, 5); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = totalLevels-1; i > 0; i--){
 			TimeLine[i] = levels[i].timer - levels[i-1].timer;
@@ -100,7 +102,13 @@ public class CanSpawnUpdate : MonoBehaviour {
 			} else {
 				currentTimer = TimeLine[currentLevel] * 60.0F;
 			}
-			currentInterval = levels[currentLevel-1].spawnTimer;
+			if(difficulty == 1){
+				currentInterval = levels[currentLevel-1].spawnTimer + 5.0F;		
+			} else if(difficulty == 2){
+				currentInterval = levels[currentLevel-1].spawnTimer;			
+			} else {
+				currentInterval = levels[currentLevel-1].spawnTimer - 5.0F;
+			} 
 			counter = 0.0F;
 			intervalCounter = 0.0F;
 		}
@@ -123,12 +131,16 @@ public class CanSpawnUpdate : MonoBehaviour {
 		} else {
 			tempVec = Vec3;
 		}
-		int numSpawn = levels[currentLevel-1].numSpawn;
-		rand = Random.value;
-		if(rand > 0.0 && rand < 0.5){
-			numSpawn++;
-		}
+		int numSpawn;
 
+		if(difficulty == 1){
+			numSpawn = levels[currentLevel-1].numSpawn-1;
+		} else if(difficulty == 2){
+			numSpawn = levels[currentLevel-1].numSpawn;
+		} else {
+			numSpawn = levels[currentLevel-1].numSpawn+1;
+		} 
+		
 		for(int i = 0; i < numSpawn; i++){
 			rand = Random.value;
 			//Debug.Log (MetricManager.getEnemies);

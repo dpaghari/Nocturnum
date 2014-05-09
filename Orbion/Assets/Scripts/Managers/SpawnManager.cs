@@ -4,8 +4,7 @@ using System.Collections;
 public class SpawnManager : Singleton<SpawnManager> {
 	
 	protected SpawnManager() {} // guarantee this will be always a singleton only - can't use the constructor!
-/*
-	public GameObject fuck;
+	/*
 	public static Rigidbody meleeEnemy;
 	public static Rigidbody rangedEnemy;
 	public static Rigidbody bossEnemy;
@@ -22,6 +21,5 @@ public class SpawnManager : Singleton<SpawnManager> {
 	public static void spawnBoss(Vector3 _vec){
 		clone = Instantiate (bossEnemy, _vec, Quaternion.identity) as Rigidbody;
 	}
-
-*/
+	*/
 }
