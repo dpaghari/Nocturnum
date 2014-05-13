@@ -46,8 +46,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public LevelInfo[] levels = new LevelInfo[totalLevels];
 
 	void Start(){
-
-		addLevel (0.1F, 30.0F, 3); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 20.0F, 4);
+		//Debug.Log(difficulty);//0.75 2.0 4.0 8.0 12.0
+		addLevel (0.75F, 30.0F, 3); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 25.0F, 4);
 		addLevel (8.0F, 20.0F, 4); addLevel (12.0F, 20.0F, 5); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = totalLevels-1; i > 0; i--){
@@ -108,7 +108,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 				currentInterval = levels[currentLevel-1].spawnTimer;			
 			} else {
 				currentInterval = levels[currentLevel-1].spawnTimer - 5.0F;
-			} 
+			}
+			//Debug.Log(currentInterval); 
 			counter = 0.0F;
 			intervalCounter = 0.0F;
 		}
@@ -139,7 +140,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 			numSpawn = levels[currentLevel-1].numSpawn;
 		} else {
 			numSpawn = levels[currentLevel-1].numSpawn+1;
-		} 
+		}
+		//Debug.Log(numSpawn); 
 		
 		for(int i = 0; i < numSpawn; i++){
 			rand = Random.value;
