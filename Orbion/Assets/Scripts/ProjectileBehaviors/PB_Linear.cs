@@ -50,7 +50,7 @@ public class PB_Linear : ProjectileBehavior {
 		MoveScript.Move(transform.forward, MoveType);
 
 		GameObject targ = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy);
-		if(targ == null){
+		if(targ == null || TechManager.GetNumBuilding(Tech.incendiary) == 0){
 		}else{
 			Vector3 targDir = transform.InverseTransformPoint(targ.transform.position);
 			float targAngle = Mathf.Atan2(targDir.x, targDir.z);
@@ -113,7 +113,7 @@ public class PB_Linear : ProjectileBehavior {
 			target.GetComponent<hasOverdrive>().overdriveCount += 1.0f;
 			//ebug.Log(target.GetComponent<hasOverdrive>().overdriveCount);
 		}
-		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0) {
+		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0 && TechManager.GetNumBuilding(Tech.photon) > 0) {
 			Physics.IgnoreCollision(gameObject.collider, other.collider);
 			//if(lastHitTarget != null)
 			//	Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);
