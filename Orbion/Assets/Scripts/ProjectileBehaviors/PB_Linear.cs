@@ -34,20 +34,21 @@ public class PB_Linear : ProjectileBehavior {
 	private float lifeCounter = 0.0F;
 
 	//gap in time before we can find another target to home into
-	private const float seekerFindTargetRate = 0.5f;
+	private const float seekerFindTargetRate = 0.25f;
 	private GameObject seekerTarget;
 
 	
 	public IEnumerator FindSeekerTarget(){
-		while( seekerTarget == null){
-			seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy, Utility.Enemy_PLM);
+		while( true){
+			if(seekerTarget == null)
+				seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy, Utility.Enemy_PLM);
 			yield return new WaitForSeconds(seekerFindTargetRate);
 		}
 	}
 
 
 	public override void Initialize(){
-		seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy);
+		StartCoroutine( FindSeekerTarget());
 	}
 
 	public void Update(){
@@ -59,7 +60,6 @@ public class PB_Linear : ProjectileBehavior {
 	}
 
 	public override void FixedPerform(){
-		StartCoroutine( FindSeekerTarget());
 		MoveScript.Move(transform.forward, MoveType);
 
 		if( seekerTarget != null){

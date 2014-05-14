@@ -12,6 +12,7 @@ public class AC_IdleChasePlayer : AiController {
 
 	public AB_DoNothing Idle {get; protected set;}
 	public AB_TargetPlayer Chase {get; protected set;}
+	private float updateBehaviorRate = 0.15f;
 
 
 	//Go idle if we're Aggressive but have no target
@@ -30,23 +31,36 @@ public class AC_IdleChasePlayer : AiController {
 	}
 
 
+	public IEnumerator UpdateBehavior(){
+		while(true){
+			if( ShouldGoIdle()) SwitchBehavior( Idle);
+			else if ( ShouldGoChase()) SwitchBehavior( Chase);
+			
+			yield return new WaitForSeconds( updateBehaviorRate);
+		}
+		
+	}
+
+
 	protected override void Start (){
 		Idle = GetComponent<AB_DoNothing>();
 		Chase = GetComponent<AB_TargetPlayer>();
 		CurrBehavior = Idle;
 		base.Start();
+
+		StartCoroutine( UpdateBehavior());
 	}
 
 
 	protected override void FixedUpdate () { base.FixedUpdate ();}
 
 
+
+
+
 	//If player is out of range and no buildings exist switch to idle
 	//If player is in range or buildings exist switch to chase
 	protected override void Update (){
-		if( ShouldGoIdle()) SwitchBehavior(Idle);
-		else if ( ShouldGoChase()) SwitchBehavior(Chase);
-
 		base.Update ();
 	}
 }
