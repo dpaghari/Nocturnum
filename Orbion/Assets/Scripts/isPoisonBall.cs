@@ -18,7 +18,7 @@ public class isPoisonBall : MonoBehaviour {
 		void Start () {
 			popped = false;	
 			timer = 0.0f;
-			timerCD = 10.0f;
+			timerCD = 3.0f;
 			cloudCount = 3;
 		}
 		
@@ -40,8 +40,9 @@ public class isPoisonBall : MonoBehaviour {
 
 
 				for(int i = 0; i <= cloudCount; i++){
-			
-						clone = Instantiate(poisonCloud, transform.position, Quaternion.identity) as Rigidbody;
+			Vector3 temp = transform.position;
+			temp.y -= 5;
+						clone = Instantiate(poisonCloud, temp, Quaternion.identity) as Rigidbody;
 						clone.GetComponent<isPoisonCloud>().beginLifetime();
 				}
 				
