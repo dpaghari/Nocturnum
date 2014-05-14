@@ -27,6 +27,7 @@ public class IsCollectible : MonoBehaviour {
 			//audio.Play();
 			//this.gameObject.GetComponent<Rigidbody>().AddForce((collide.gameObject.transform.position - this.transform.position).normalized * 3);
 			Vector3 targ = collide.transform.position;
+			targ.y += 2;
 			Vector3 direction = targ - transform.position;
 			direction.Normalize ();
 			transform.position += direction * 25.0F * Time.deltaTime;
