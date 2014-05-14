@@ -87,10 +87,11 @@ public class Killable : MonoBehaviour {
 		if(gameObject.GetComponent<IsDamagedEffect>() != null){
 			gameObject.GetComponent<IsDamagedEffect>().removeDamage();
 		}
-
-		clone = Instantiate(healEffect, transform.position, Quaternion.identity) as GameObject;
+		
 
 		if(currHP > baseHP)
 			currHP = baseHP;
+		else
+			clone = Instantiate(healEffect, transform.position, Quaternion.identity) as GameObject;
 	}
 }
