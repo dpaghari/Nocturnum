@@ -32,10 +32,23 @@ public class PB_Linear : ProjectileBehavior {
 
 	public float lifeTime = 2.0F;
 	private float lifeCounter = 0.0F;
+
+	//gap in time before we can find another target to home into
+	private const float seekerFindTargetRate = 0.25f;
+	private GameObject seekerTarget;
+
 	
+	public IEnumerator FindSeekerTarget(){
+		while( true){
+			if(seekerTarget == null)
+				seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy, Utility.Enemy_PLM);
+			yield return new WaitForSeconds(seekerFindTargetRate);
+		}
+	}
+
 
 	public override void Initialize(){
-		return;
+		StartCoroutine( FindSeekerTarget());
 	}
 
 	public void Update(){
@@ -49,23 +62,22 @@ public class PB_Linear : ProjectileBehavior {
 	public override void FixedPerform(){
 		MoveScript.Move(transform.forward, MoveType);
 
-		GameObject targ = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy);
-		if(targ == null || TechManager.GetNumBuilding(Tech.incendiary) == 0){
-		}else{
-			Vector3 targDir = transform.InverseTransformPoint(targ.transform.position);
+		if( seekerTarget != null){
+			Vector3 targDir = transform.InverseTransformPoint(seekerTarget.transform.position);
 			float targAngle = Mathf.Atan2(targDir.x, targDir.z);
-
+			
 			//Debug.Log(targAngle);
-
+			
 			if(targAngle < 0 && targAngle > -1){
 				MoveScript.TurnLeft(Vector3.up, MoveType);
 			}else if(targAngle > 0 && targAngle < 1){
 				MoveScript.TurnRight(Vector3.up, MoveType);
 			}
-
+			
 			//Vector3 newDir = Vector3.RotateTowards(transform.forward, targDir, 0.3f, 0.0f);
 			//transform.rotation = Quaternion.LookRotation(newDir);
 		}
+
 	}
 
 	public override void Perform(){ return;}
@@ -113,7 +125,7 @@ public class PB_Linear : ProjectileBehavior {
 			target.GetComponent<hasOverdrive>().overdriveCount += 1.0f;
 			//ebug.Log(target.GetComponent<hasOverdrive>().overdriveCount);
 		}
-		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0 && TechManager.GetNumBuilding(Tech.photon) > 0) {
+		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0) {
 			Physics.IgnoreCollision(gameObject.collider, other.collider);
 			//if(lastHitTarget != null)
 			//	Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);

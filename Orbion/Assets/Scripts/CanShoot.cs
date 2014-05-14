@@ -78,7 +78,7 @@ public class CanShoot : MonoBehaviour {
 			clone = Instantiate(bullet, temp + dir * projectileStartPosition, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
 		
 			if(tag == "Enemy" || tag == "EnemyRanged"){
-				audio.clip = enemyShotSound;
+				//audio.clip = enemyShotSound;
 				audio.PlayOneShot(enemyShotSound,0.5f);
 				if(weakenScript.IsWeakened){
 					

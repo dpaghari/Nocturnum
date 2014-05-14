@@ -86,20 +86,11 @@ public class AB_TargetPlayer : AiBehavior {
 
 	//Not implemented
 	public Rigidbody FindNearestBuilding(float searchRadius){
-		//return GameManager.Player.rigidbody;
-		Collider[] hitColliders = Physics.OverlapSphere(rigidbody.position, searchRadius);
-		Rigidbody closestBuilding = null;
-		float closestBuildingDist = Mathf.Infinity;
-		for (int i=0; i < hitColliders.Length; i++) {
-			if( hitColliders[i].GetComponent<Buildable>() == null) continue;
+		GameObject closestBuilding = Utility.GetClosestWith(rigidbody.position, searchRadius, null, Utility.Building_PLM);
+		if( closestBuilding != null)
+			return closestBuilding.rigidbody;
 
-			float distToAi = Vector3.Distance(rigidbody.position, hitColliders[i].rigidbody.position);
-			if (distToAi < closestBuildingDist){
-				closestBuilding = hitColliders[i].rigidbody;
-				closestBuildingDist = distToAi;
-			}
-		}
-		return closestBuilding;
+		return null;
 	}
 
 
@@ -112,11 +103,12 @@ public class AB_TargetPlayer : AiBehavior {
 
 		//If player is within the priority range, no need to search further
 		Rigidbody player = GetPlayerInRange( range);
+		
 		if(player !=null && PlayerInRange( PlayerPriorityRange)) return player;
-
+		
 
 		Rigidbody building = FindNearestBuilding( range);
-
+		
 		//If we can't find a player or building, return the other
 		//If we can't find either, this returns null
 		if(player == null) return building;

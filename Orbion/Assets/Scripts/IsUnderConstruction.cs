@@ -132,14 +132,11 @@ public class IsUnderConstruction : MonoBehaviour {
 
 				ResManager.AddLumen(toBuild.gameObject.GetComponent<Buildable>().cost);
 				ResManager.RmUsedEnergy(toBuild.gameObject.GetComponent<Buildable>().energyCost);
+				Destroy(this.gameObject);	
+					
 
-				if(!audio.isPlaying){
-					
-					Destroy(this.gameObject);	
-					
-				}
 			}
-			audio.PlayOneShot(errBuild, 1.0f);
+
 			ChangeBuildProgess( Time.deltaTime);
 
 
