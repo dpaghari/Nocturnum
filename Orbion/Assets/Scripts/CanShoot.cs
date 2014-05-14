@@ -12,6 +12,10 @@ public class CanShoot : MonoBehaviour {
 	//the cooldown in seconds between shots
 	public float firingRate = 1F;
 
+	public float spreadAngle = 45f;
+
+	public int numOfBulletShot = 1;
+
 	//range of attack
 	public float projectileStartPosition = 1.0F;	
 
@@ -98,13 +102,33 @@ public class CanShoot : MonoBehaviour {
 		}
 	}
 
+
+
 	//shoots a bullet from the object's position to the target point: targ
+	/*
 	public virtual void Shoot(Vector3 targ){
 	
 		ShootDir( targ - transform.position );
 	}
+	*/
+
+	public virtual void Scattershot( Vector3 target, int numberOfShots){
+		if( FinishCooldown()){
+			Vector3 dir = target - transform.position;
+			Vector3 leftBound = Quaternion.Euler( 0, -spreadAngle/2, 0) * dir;
+			for ( int i = 1; i <= numberOfShots; i++){
+				float angleOffset = i * ( spreadAngle / ( numberOfShots + 1));
+				Vector3 BulDir = Quaternion.Euler( 0, angleOffset, 0) * leftBound ;
+				SetFiringTimer( 1.0f);
+				ShootDir( BulDir);
+			}
+		}
+	}
 
 
+	public virtual void Shoot(Vector3 target){
+		Scattershot (target, numOfBulletShot);
+	}
 
 
 }

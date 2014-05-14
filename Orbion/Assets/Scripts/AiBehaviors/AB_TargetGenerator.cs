@@ -66,13 +66,20 @@ public class AB_TargetGenerator : MonoBehaviour {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
-				if(this.tag == "Enemy"){
-					animation.CrossFade("WolfAttack");
 
+				if( shootScript.FinishCooldown()){
+					if(this.tag == "Enemy")
+						animation.CrossFade("WolfAttack");
+					if(this.tag == "EnemyRanged")
+						animation.CrossFade("ZingBatAttack");
 				}
-				if(this.tag == "EnemyRanged"){
-					animation.CrossFade("ZingBatAttack");
+				else{
+					if(this.tag == "Enemy")
+						animation.CrossFade("WolfRunCycle");
+					if(this.tag == "EnemyRanged")
+						animation.CrossFade("ZingBatGlide");
 				}
+
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 				shootScript.Shoot(lookPosition);
