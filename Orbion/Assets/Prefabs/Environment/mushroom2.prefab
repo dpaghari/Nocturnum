@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: MushroomTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400002}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: MushroomMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: MushroomBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,8 +54,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 137: {fileID: 13700000}
-  - 64: {fileID: 6400000}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: mushroom-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +69,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400008}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,10 +85,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400010}
   - 111: {fileID: 11100000}
-  - 33: {fileID: 3300000}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
-  m_Layer: 15
+  - 114: {fileID: 11400000}
+  m_Layer: 18
   m_Name: mushroom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +101,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -.00888390467, y: -.157099798, z: -.0557558388, w: .985967577}
+  m_LocalRotation: {x: -.00888390373, y: -.157099798, z: -.0557558388, w: .985967577}
   m_LocalPosition: {x: -1.90540087, y: 2.01165676e-07, z: 2.70000019e-14}
   m_LocalScale: {x: 1, y: .99999994, z: 1.00000012}
   m_Children: []
@@ -113,7 +112,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 1.66761005e-08, y: 3.37018982e-08, z: .137467295, w: .990506291}
+  m_LocalRotation: {x: 1.66760952e-08, y: 3.37018982e-08, z: .137467295, w: .990506291}
   m_LocalPosition: {x: -3.04021406, y: 2.68220901e-07, z: -1.20000005e-14}
   m_LocalScale: {x: .99999994, y: .99999994, z: 1}
   m_Children:
@@ -125,8 +124,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: -.457681388, y: -.539006233, z: .539006233, w: -.457681477}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: .457681179, y: .539006531, z: -.539006114, w: .457681596}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
   m_Children:
   - {fileID: 400002}
@@ -138,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: .42034924, y: 0, z: 2.41185665}
+  m_LocalPosition: {x: 1.07442856, y: 0, z: 5.78999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400010}
@@ -148,7 +147,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
   m_LocalPosition: {x: .976035476, y: -4.63293648, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -160,20 +159,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_LocalRotation: {x: 0, y: -.542758763, z: 0, w: .839888692}
-  m_LocalPosition: {x: -35.6658974, y: -107.932266, z: 30.2086334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.97312355, z: -10.8811235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
   - {fileID: 400006}
   m_Father: {fileID: 0}
---- !u!33 &3300000
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100010}
-  m_Mesh: {fileID: 4300000, guid: fdaa90a0cd6cb4347ac8192a46a9644c, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -189,19 +181,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &6400000
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 0}
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -222,7 +201,7 @@ Animation:
   m_GameObject: {fileID: 100010}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: fdaa90a0cd6cb4347ac8192a46a9644c, type: 3}
+  m_Animation: {fileID: 7400000, guid: fdaa90a0cd6cb4347ac8192a46a9644c, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: fdaa90a0cd6cb4347ac8192a46a9644c, type: 3}
   - {fileID: 7400002, guid: fdaa90a0cd6cb4347ac8192a46a9644c, type: 3}
@@ -230,6 +209,26 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cd1e3bd2adbbc46b739c1c13ffc1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLit: 0
+  isActive: 0
+  ballExists: 0
+  fadeTimer: 0
+  fadeCooldown: 100
+  activeCounter: 0
+  activeThresh: 100
+  poisonBall: {fileID: 5400000, guid: f73c024a094a784418af7516c1a1e036, type: 2}
+  poisonScript: {fileID: 11400000, guid: f73c024a094a784418af7516c1a1e036, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -262,8 +261,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 400004}
   m_AABB:
-    m_Center: {x: -11.4627266, y: -.418075562, z: 1.26966858}
-    m_Extent: {x: 11.8044224, y: 9.81849289, z: 9.96027946}
+    m_Center: {x: -3.63000011, y: -.125422716, z: .380900145}
+    m_Extent: {x: 3.54132724, y: 2.94554758, z: 2.98808408}
   m_DirtyAABB: 0
 --- !u!1001 &100100000
 Prefab:

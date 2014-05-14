@@ -42,7 +42,7 @@ public class isPoisonPlant : MonoBehaviour {
 		if(!isActive){
 			fadeTimer += Time.deltaTime;
 			if(fadeTimer > fadeCooldown){
-				animation.CrossFade("RaflessiaClose");
+				//animation.CrossFade("RaflessiaClose");
 			    fadeTimer = 0.0f;
 				isLit = false;
 			}
@@ -70,5 +70,18 @@ public class isPoisonPlant : MonoBehaviour {
 
 		}
 
+	}
+
+	void OnCollisionEnter(Collision other){
+		
+		if(other.gameObject.tag == "playerBullet" || other.gameObject.tag == "enemy_bullet"){
+			//if(plantScript.isActive == false){
+			isLit = true;
+			isActive = true;
+			//Debug.Log ("yo");
+			//}
+		}
+		
+		
 	}
 }

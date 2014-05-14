@@ -433,7 +433,6 @@ GameObject:
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
   - 95: {fileID: 9500000}
   m_Layer: 18
   m_Name: raflessia
@@ -858,27 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc5538bd6c41e542a82a7d92eea8546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantScript: {fileID: 11400002}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cd1e3bd2adbbc46b739c1c13ffc1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLit: 0
-  isActive: 0
-  ballExists: 0
-  fadeTimer: 0
-  fadeCooldown: 100
-  activeCounter: 0
-  activeThresh: 100
-  poisonBall: {fileID: 5400000, guid: f73c024a094a784418af7516c1a1e036, type: 2}
-  poisonScript: {fileID: 11400000, guid: f73c024a094a784418af7516c1a1e036, type: 2}
+  plantScript: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

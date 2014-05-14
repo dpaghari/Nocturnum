@@ -25,8 +25,8 @@ public class FlowerAnimation : MonoBehaviour {
 			}
 
 			//if(plantScript.isActive == false){
-			plantScript.isLit = true;
-			plantScript.isActive = true;
+			//plantScript.isLit = true;
+			//plantScript.isActive = true;
 			//Debug.Log ("yo");
 			//}
 		}
