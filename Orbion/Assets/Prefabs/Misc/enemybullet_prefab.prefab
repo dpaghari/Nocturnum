@@ -16,9 +16,9 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  m_Layer: 9
+  m_Layer: 19
   m_Name: enemybullet_prefab
-  m_TagString: enemy_bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 5
-  MaxSpeed: 15
+  Force: 30
+  MaxSpeed: 30
   MoveScale: 1
 --- !u!114 &11400004
 MonoBehaviour:
@@ -163,12 +163,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveType: 1
   MoveScript: {fileID: 11400002}
-  Damage: 10
+  Damage: 20
   searingLevel: 0
   dot: {fileID: 0}
   hitEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   target: {fileID: 0}
-  lifeTime: 3
+  lifeTime: .25
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
