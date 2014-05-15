@@ -17825,8 +17825,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -55555,7 +55555,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: m_CullingMask.m_Bits
@@ -55563,6 +55563,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: m_OcclusionCulling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: chromaticAberration
+      value: .949999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: blur
+      value: .930000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: intensity
+      value: 5.98999977
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: mode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -66857,16 +66873,16 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1400419887}
   m_GameObject: {fileID: 1662365998}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bef3d242a13c447ac90c2d2dc213b1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: 1.03999996
-  chromaticAberration: .439999998
+  intensity: 5.98999977
+  chromaticAberration: .949999988
   axialAberration: .5
-  blur: .99000001
+  blur: .930000007
   blurSpread: .75
   luminanceDependency: .25
   blurDistance: 2.5
