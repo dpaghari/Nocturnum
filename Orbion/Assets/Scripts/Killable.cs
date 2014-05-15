@@ -25,6 +25,10 @@ public class Killable : MonoBehaviour {
 
 	}
 
+	public void increaseHealth(int temp){
+		baseHP += temp;
+		currHP += temp;
+	}
 
 	void Update () {
 		if(GameManager.PlayerDead){
