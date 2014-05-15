@@ -51,7 +51,7 @@ public class Killable : MonoBehaviour {
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
 		if (currHP <= 0){
-			GameManager.PlayerDead = true;
+
 			kill();
 		}
 		if(gameObject.GetComponent<IsDamagedEffect>() != null){
@@ -63,6 +63,7 @@ public class Killable : MonoBehaviour {
 	// Kills enemy or player
 	void kill () {
 		if(gameObject.tag == "Player"){
+			GameManager.PlayerDead = true;
 			GameManager.KeysEnabled = false;
 			animation.Play("Dead");
 		}

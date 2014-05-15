@@ -55567,11 +55567,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: chromaticAberration
-      value: .949999988
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: blur
-      value: .930000007
+      value: .460000008
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: intensity
@@ -55580,6 +55580,10 @@ Prefab:
     - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
       propertyPath: mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: blurSpread
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
@@ -66880,10 +66884,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   intensity: 5.98999977
-  chromaticAberration: .949999988
+  chromaticAberration: .5
   axialAberration: .5
-  blur: .930000007
-  blurSpread: .75
+  blur: .460000008
+  blurSpread: .5
   luminanceDependency: .25
   blurDistance: 2.5
   vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
