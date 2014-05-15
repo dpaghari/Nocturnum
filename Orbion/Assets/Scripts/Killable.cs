@@ -14,16 +14,21 @@ public class Killable : MonoBehaviour {
 	public Buildable buildScript;
 	public GameObject healEffect;
 	private GameObject clone;
-
+	public DumbTimer timerScript;
+	private bool isDead;
 
 	// Set HP to default
 	void Start () {
+		timerScript = DumbTimer.New(1.2f, 1.0f);
 		buildScript = gameObject.GetComponent<Buildable>();
 		currHP = baseHP;
+		isDead = false;
 	}
 
 
 	void Update () {
+		if(isDead)
+		timerScript.Update();
 		//Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
 	}
 
@@ -32,7 +37,10 @@ public class Killable : MonoBehaviour {
 	public void damage (int dmg) {
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
-		if (currHP <= 0) kill();
+		if (currHP <= 0){
+			isDead = true;
+			kill();
+		}
 		if(gameObject.GetComponent<IsDamagedEffect>() != null){
 			gameObject.GetComponent<IsDamagedEffect>().addDamage();
 		}
@@ -42,10 +50,16 @@ public class Killable : MonoBehaviour {
 	// Kills enemy or player
 	void kill () {
 		if(gameObject.tag == "Player"){
-			ResManager.Reset();
-			TechManager.Reset();
-			MetricManager.Reset();
-			Application.LoadLevel("scene1");
+			GameManager.KeysEnabled = false;
+			animation.Play("Dead");
+			if(timerScript.Finished() == true){
+				ResManager.Reset();
+				TechManager.Reset();
+				MetricManager.Reset();
+				Application.LoadLevel("scene1");
+				GameManager.KeysEnabled = true;
+				timerScript.Reset();
+			}
 		}
 		else{
 			Destroy (gameObject);

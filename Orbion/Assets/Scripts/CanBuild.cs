@@ -13,6 +13,7 @@ public class CanBuild : MonoBehaviour {
 	public dfPanel _buildMenuPanel;
 
 
+
 	private bool isDragBuilding = false;
 	private float dragDelay = 0.15f; //note: the delay gets affected by build slow down
 	private DumbTimer dragTimer;
@@ -233,73 +234,82 @@ public class CanBuild : MonoBehaviour {
 			GetComponent<CanShoot>().ResetFiringTimer();
 		}
 
-		if(Input.GetMouseButtonDown(0) && toBuild != null){
-			if(MeetsRequirement(toBuild)){
-			audio.PlayOneShot(initBuild, 1.0f);
-			}
-		}
+		//   INPUT
+		//---------------------------------------------------------------------------------------------------//
 
-		if(Input.GetMouseButton(0) && toBuild != null){
-
-			Vector3 mousePos = Utility.GetMouseWorldPos(5.25f);
-
-			if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
-				GetComponent<CanShoot>().ResetFiringTimer();
-
-
-				clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
-				// Slows down during placing building.
-				inBuildingMode = false;
-
-				if( toBuild == generatorBuilding){
-					clone.GetComponent<IsUnderConstruction>().canBuildOutOfLight = true;
-					builtGenerator = true;
+		if(GameManager.KeysEnabled){
+			if(Input.GetMouseButtonDown(0) && toBuild != null){
+				if(MeetsRequirement(toBuild)){
+				audio.PlayOneShot(initBuild, 1.0f);
 				}
-
-				Buildable buildInfo = toBuild.GetComponent<Buildable>();
-				ResManager.RmLumen(buildInfo.cost);
-				ResManager.AddUsedEnergy(buildInfo.energyCost);
-					
-				if( toBuild == wallBuilding){
-					inBuildingMode = true;
-					isDragBuilding = true;
-				}
-				else{
-					toBuild = null;
-					dragTimer.SetProgress(1.0f);
-				}
-
-			dragTimer.Reset();
 			}
 
-		}
-		
-		//If we let go of the mouse, we shouldn't be building walls anymore
-		if( Input.GetMouseButtonUp(0) && isDragBuilding){
-			toBuild = null;
-			inBuildingMode = false;
-			isDragBuilding = false;
-			dragTimer.SetProgress(1.0f);
-		}
-		
+			if(Input.GetMouseButton(0) && toBuild != null){
 
-		if (Input.GetKeyDown(KeyCode.B) && !MenuUp)
-			if( researchScript != null && !researchScript.MenuUp)
-				OpenMenu();
-		
+				Vector3 mousePos = Utility.GetMouseWorldPos(5.25f);
+
+				if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
+					GetComponent<CanShoot>().ResetFiringTimer();
+
+
+					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
+					// Slows down during placing building.
+					inBuildingMode = false;
+
+					if( toBuild == generatorBuilding){
+						clone.GetComponent<IsUnderConstruction>().canBuildOutOfLight = true;
+						builtGenerator = true;
+					}
+
+					Buildable buildInfo = toBuild.GetComponent<Buildable>();
+					ResManager.RmLumen(buildInfo.cost);
+					ResManager.AddUsedEnergy(buildInfo.energyCost);
+						
+					if( toBuild == wallBuilding){
+						inBuildingMode = true;
+						isDragBuilding = true;
+					}
+					else{
+						toBuild = null;
+						dragTimer.SetProgress(1.0f);
+					}
+
+				dragTimer.Reset();
+				}
+
+			}
 			
-		// Check for if the player just opens and closes.
-		if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0)
-			CloseMenu();
+			//If we let go of the mouse, we shouldn't be building walls anymore
+			if( Input.GetMouseButtonUp(0) && isDragBuilding){
+				toBuild = null;
+				inBuildingMode = false;
+				isDragBuilding = false;
+				dragTimer.SetProgress(1.0f);
+			}
 
-		if (menuCounter > 0)
-			menuCounter --;
+			if(Input.GetKeyDown(KeyCode.Escape))
+				CloseMenu ();
 
 
-		if ( Input.GetKeyDown( KeyCode.V) && MenuUp && researchScript != null){
-			CloseMenu();
-			researchScript.OpenMenu();
+
+			if (Input.GetKeyDown(KeyCode.B) && !MenuUp)
+				if( researchScript != null && !researchScript.MenuUp)
+					OpenMenu();
+			
+				
+			// Check for if the player just opens and closes.
+			if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0)
+				CloseMenu();
+
+			if (menuCounter > 0)
+				menuCounter --;
+
+
+			if ( Input.GetKeyDown( KeyCode.V) && MenuUp && researchScript != null){
+				CloseMenu();
+				researchScript.OpenMenu();
+			}
 		}
 
 		

@@ -236,19 +236,24 @@ public class CanResearch : MonoBehaviour {
 		if(MenuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
 		}
-		if ( Input.GetKeyDown(KeyCode.V) && buildScript != null && !buildScript.MenuUp){
-			//prevents player from placing buildings if they open upgrade menu
-			buildScript.CloseMenu(); 
+		if(GameManager.KeysEnabled){
+			if ( Input.GetKeyDown(KeyCode.V) && buildScript != null && !buildScript.MenuUp){
+				//prevents player from placing buildings if they open upgrade menu
+				buildScript.CloseMenu(); 
 
-			if( MenuUp)
+				if( MenuUp)
+					CloseMenu();
+				else
+					OpenMenu();
+			}
+
+			if (Input.GetKeyDown(KeyCode.B) && MenuUp && buildScript != null){
 				CloseMenu();
-			else
-				OpenMenu();
-		}
+				buildScript.OpenMenu();
+			}
+			if(Input.GetKeyDown(KeyCode.Escape))
+				CloseMenu();
 
-		if (Input.GetKeyDown(KeyCode.B) && MenuUp && buildScript != null){
-			CloseMenu();
-			buildScript.OpenMenu();
 		}
 	
 	}

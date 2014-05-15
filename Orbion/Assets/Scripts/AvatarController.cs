@@ -109,28 +109,31 @@ public class AvatarController : MonoBehaviour {
 
 	void FixedUpdate() {
 
-		if( Input.GetKey( KeyCode.W) && !isPaused){
 
-			moveScript.Move( Vector3.forward);
-			//animation.CrossFade("Run");
-		}
-		if( Input.GetKey( KeyCode.S) && !isPaused){
+		if(GameManager.KeysEnabled){
+			if( Input.GetKey( KeyCode.W) && !isPaused){
 
-			moveScript.Move( Vector3.back);
-			//animation.CrossFade("Run");
+				moveScript.Move( Vector3.forward);
+				//animation.CrossFade("Run");
+			}
+			if( Input.GetKey( KeyCode.S) && !isPaused){
 
-		}
-		if( Input.GetKey( KeyCode.D) && !isPaused){
+				moveScript.Move( Vector3.back);
+				//animation.CrossFade("Run");
 
-			moveScript.Move( Vector3.right);
-			//animation.CrossFade("Run");
+			}
+			if( Input.GetKey( KeyCode.D) && !isPaused){
 
-		}
-		if( Input.GetKey( KeyCode.A) && !isPaused){
+				moveScript.Move( Vector3.right);
+				//animation.CrossFade("Run");
 
-			moveScript.Move( Vector3.left);
-			//animation.CrossFade("Run");
+			}
+			if( Input.GetKey( KeyCode.A) && !isPaused){
 
+				moveScript.Move( Vector3.left);
+				//animation.CrossFade("Run");
+
+			}
 		}
 
 
@@ -143,77 +146,81 @@ public class AvatarController : MonoBehaviour {
 		//audio.PlayOneShot(bgm, 0.5f);
 		//[Don't delete] debug code for showing our shooting angle
 		//Debug.DrawRay(transform.position, GetMouseWorldPos(transform.position.y) - transform.position);
-		//Uses the CanShootReload component to shoot at the cursor
-		if( Input.GetMouseButton( 0) && !isPaused){
-
-			//Debug.Log("hi");
-			Scattershot( Utility.GetMouseWorldPos( transform.position.y));
-			//animation.CrossFade("Shoot");
-
-		}
-		//use our current equipment
-		if(Input.GetMouseButtonDown(1) && !isPaused){
-			equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));
-			//Debug.Log(equipScript.GetCurrEquip());
-		}
-
-		if(Input.GetKeyDown(KeyCode.F9)){
-			ResManager.Reset();
-			TechManager.Reset();
-			AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
-			//Application.LoadLevel(Application.loadedLevel);
-
-		}
-
-		if(Input.GetKeyDown(KeyCode.F10) && !isPaused)
-		{
-			//print("Paused");
-			Time.timeScale = 0.0f;
-			isPaused = true;
-		}
-		else if(Input.GetKeyDown(KeyCode.F10) && isPaused)
-		{
-			//print("Unpaused");
-			Time.timeScale = 1.0f;
-			isPaused = false;    
-		} 
-
-	
 
 
-		if( Input.GetKeyDown( KeyCode.R) && !isPaused){
-			
-			shootScript.Reload();
-			
-		}
+		if(GameManager.KeysEnabled){
+			//Uses the CanShootReload component to shoot at the cursor
+			if( Input.GetMouseButton( 0) && !isPaused){
 
-		if( Input.GetKeyDown( KeyCode.E) && !isPaused){
-			useScript.UseAction( useScript.useRange);
-		}
+				//Debug.Log("hi");
+				Scattershot( Utility.GetMouseWorldPos( transform.position.y));
+				//animation.CrossFade("Shoot");
 
-		if( Input.GetKeyDown(KeyCode.F11)){
-			//AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
-			Application.Quit();
-		}
-
-		//swaps to the next equipingment for testing purposes
-		//has a little more logic since not all the equipment are implemented yet
-
-		if(Input.GetKeyDown(KeyCode.T) && !isPaused){
-			EquipType nextEquip = equipScript.CurrEquipType;
-			int typeIterator = (int) equipScript.CurrEquipType;
-
-			do{
-			typeIterator ++;
-			if (typeIterator >= (int)EquipType._length)
-				typeIterator = 0;
-			nextEquip = (EquipType) typeIterator;
 			}
-			while (equipScript.GetEquip(nextEquip) == null);
-			
-			Debug.Log(string.Format("Equip switched from {0} to {1}.", equipScript.CurrEquipType, nextEquip));
-			equipScript.ChangeEquip(nextEquip);
-			
+			//use our current equipment
+			if(Input.GetMouseButtonDown(1) && !isPaused){
+				equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));
+				//Debug.Log(equipScript.GetCurrEquip());
+			}
+
+			if(Input.GetKeyDown(KeyCode.F9)){
+				ResManager.Reset();
+				TechManager.Reset();
+				AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
+				//Application.LoadLevel(Application.loadedLevel);
+
+			}
+
+			if(Input.GetKeyDown(KeyCode.F10) && !isPaused)
+			{
+				//print("Paused");
+				Time.timeScale = 0.0f;
+				isPaused = true;
+			}
+			else if(Input.GetKeyDown(KeyCode.F10) && isPaused)
+			{
+				//print("Unpaused");
+				Time.timeScale = 1.0f;
+				isPaused = false;    
+			} 
+
+		
+
+
+			if( Input.GetKeyDown( KeyCode.R) && !isPaused){
+				
+				shootScript.Reload();
+				
+			}
+
+			if( Input.GetKeyDown( KeyCode.E) && !isPaused){
+				useScript.UseAction( useScript.useRange);
+			}
+
+			if( Input.GetKeyDown(KeyCode.F11)){
+				//AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
+				Application.Quit();
+			}
+
+			//swaps to the next equipingment for testing purposes
+			//has a little more logic since not all the equipment are implemented yet
+
+			if(Input.GetKeyDown(KeyCode.T) && !isPaused){
+				EquipType nextEquip = equipScript.CurrEquipType;
+				int typeIterator = (int) equipScript.CurrEquipType;
+
+				do{
+				typeIterator ++;
+				if (typeIterator >= (int)EquipType._length)
+					typeIterator = 0;
+				nextEquip = (EquipType) typeIterator;
+				}
+				while (equipScript.GetEquip(nextEquip) == null);
+				
+				Debug.Log(string.Format("Equip switched from {0} to {1}.", equipScript.CurrEquipType, nextEquip));
+				equipScript.ChangeEquip(nextEquip);
+				
+			}
 		}
 
 
