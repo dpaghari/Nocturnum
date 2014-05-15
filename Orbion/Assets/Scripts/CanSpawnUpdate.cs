@@ -14,9 +14,12 @@ public class CanSpawnUpdate : MonoBehaviour {
 	private float currentInterval;
 	private float intervalCounter = 0.0F;
 	private int summonLimit = 8;
+	private int healthIncrease = 0;
 	//private Rigidbody clone;
 	public Rigidbody meleeEnemy;
+	public Rigidbody meleeFastEnemy;
 	public Rigidbody rangedEnemy;
+	public Rigidbody rangedMultiEnemy;
 	public Rigidbody bossEnemy;
 	private Rigidbody clone;
 
@@ -147,28 +150,46 @@ public class CanSpawnUpdate : MonoBehaviour {
 			rand = Random.value;
 			//Debug.Log (MetricManager.getEnemies);
 			if(MetricManager.getEnemies < summonLimit){
-				if(rand > 0.0 && rand < 0.5){
+				if(rand > 0.0 && rand < 0.3){
 					makeMelee(tempVec);
 					//SpawnManager.makeMelee(tempVec);
-				} else {
+				} else if(rand >= 0.3 && rand < 0.7){
 					makeRanged(tempVec);
 					//SpawnManager.makeRanged(tempVec);
+				} else if(rand >= 0.7 && rand < 0.9){
+					makeFastMelee(tempVec);
+				} else {
+					makeMultiRanged(tempVec);
 				}
 				//MetricManager.AddEnemies(1);
 			}
 		}
+		healthIncrease += 5;
 	}
 	
 	public void makeMelee(Vector3 _vec){
 		clone = Instantiate (meleeEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
+	}
+
+	public void makeFastMelee(Vector3 _vec){
+		clone = Instantiate (meleeFastEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
 	}
 	
 	public void makeRanged(Vector3 _vec){
 		clone = Instantiate (rangedEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
+	}
+
+	public void makeMultiRanged(Vector3 _vec){
+		clone = Instantiate (rangedMultiEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
 	}
 
 	public void spawnBoss(Vector3 _vec){
 		clone = Instantiate (bossEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
 	}
 
 }
