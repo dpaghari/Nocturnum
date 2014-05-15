@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CanSpawnUpdate : MonoBehaviour {
 
 	//Setup how many levels and at what intervals(Timeline)
-	private const int totalLevels = 3;
+	private const int totalLevels = 5;
 	private int currentLevel = 0;
 	private int levelInit = 0;
 	private float[] TimeLine = new float[totalLevels];	
@@ -50,8 +50,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 		//Debug.Log(difficulty);//0.75 2.0 4.0 8.0 12.0
-		addLevel (0.75F, 30.0F, 3); addLevel (2.0F, 25.0F, 3); addLevel (4.0F, 25.0F, 4);
-		addLevel (8.0F, 20.0F, 4); addLevel (12.0F, 20.0F, 5); 
+		addLevel (0.75F, 30.0F, 3); addLevel (2.0F, 20.0F, 3); addLevel (4.0F, 20.0F, 4);
+		addLevel (8.0F, 20.0F, 5); addLevel (12.0F, 15.0F, 5); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = totalLevels-1; i > 0; i--){
 			TimeLine[i] = levels[i].timer - levels[i-1].timer;
