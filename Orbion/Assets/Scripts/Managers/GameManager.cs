@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager> {
 	protected GameManager() {} // guarantee this will be always a singleton only - can't use the constructor!
 
 	public static bool KeysEnabled;
+	public static bool PlayerDead;
 
 	private GameObject _Player;
 
@@ -53,6 +54,7 @@ public class GameManager : Singleton<GameManager> {
 
 	// Use this for initialization
 	void Start () {
+		PlayerDead = false;
 		KeysEnabled = true;
 		ArrowPrefab =  Resources.Load( "ArrowNotification", typeof(GameObject)) as GameObject;
 	}

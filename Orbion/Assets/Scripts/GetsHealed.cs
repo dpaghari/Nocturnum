@@ -20,7 +20,7 @@ public class GetsHealed : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		if(timerScript.Finished() == true){
 			if(other.tag == "MedBay"){
-				this.gameObject.GetComponent<Killable>().Heal(1);
+				this.gameObject.GetComponent<Killable>().Heal(10);
 				timerScript.Reset();
 			}	
 		}
