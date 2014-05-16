@@ -32,7 +32,12 @@ public class ResManager : Singleton<ResManager> {
 	
 	}
 
-	public static void AddEnergy(int amt) {Instance._Energy += amt;}
+	public static void AddEnergy(int amt) {
+		if(ResManager.applicationIsQuitting) return;
+
+		Instance._Energy += amt;
+	
+	}
 	//public static void AddMaxEnergy( int amt) { Instance._MaxEnergy += amt;}
 	//public static void AddUsedEnergy( int amt) { Instance._UsedEnergy += amt;}
 
@@ -69,6 +74,8 @@ public class ResManager : Singleton<ResManager> {
 
 	}
 	*/
+
+
 
 	public static void Reset () {
 		Instance._Collectible = 0;

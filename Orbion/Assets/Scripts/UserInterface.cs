@@ -47,7 +47,7 @@ public class UserInterface : MonoBehaviour {
 
 		//Temporary placeholders for testing numbers.
 		player_Health = (float)healthRef.GetComponent<Killable>().currHP/healthRef.GetComponent<Killable>().baseHP;
-		player_Energy = 50;
+		//player_Energy = 50;
 		player_Light = 30;
 	}
 
@@ -167,14 +167,14 @@ public class UserInterface : MonoBehaviour {
 		GUI.DrawTexture(new Rect(Screen.width/2-120, 5, icon_lumen.width, icon_lumen.height), icon_lumen);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + player_Light);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + resRef.GetComponent<ResManager>().LightRes);
-
+		/*
 		//Energy
 		string energyString = string.Format("{0}/{1}", ResManager.Energy, ResManager.Energy);
 		GUI.Label(new Rect(Screen.width/2+60, 10, 220, 50), energyString);
 		GUI.DrawTexture(new Rect(Screen.width/2+10, 5, icon_energy.width, icon_energy.height), icon_energy);
 		//GUI.Label(new Rect(110, Screen.height-25, 150, 50), "Energy: " + player_Energy);
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Energy: " + resRef.GetComponent<ResManager>().UsedEnergy + "/" + resRef.GetComponent<ResManager>().MaxEnergy);
-	
+*/
 		//Equipment on middle
 		if(!TechManager.HasUpgrade(Tech.lightGrenade)){
 			GUI.DrawTexture(new Rect(Screen.width/2-32, Screen.height-37, icon_empty.width, icon_empty.height), icon_empty);

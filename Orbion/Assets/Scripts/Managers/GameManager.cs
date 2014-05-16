@@ -51,6 +51,13 @@ public class GameManager : Singleton<GameManager> {
 		EventManager.DamagingBuilding -= BuildingAttack;
 	}
 
+	void OnLevelWasLoaded(int level) {
+		ResManager.Reset();
+		TechManager.Reset();
+		MetricManager.Reset();
+		KeysEnabled = true;
+		
+	}
 
 	// Use this for initialization
 	void Start () {
