@@ -2450,6 +2450,8 @@ MonoBehaviour:
   bullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   bullet_speed: 200
   firingRate: .200000003
+  spreadAngle: 12.5
+  numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 3, z: 0}
@@ -2490,6 +2492,7 @@ MonoBehaviour:
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
   healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
+  timerScript: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2501,6 +2504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b72249153613934ab5e17905b67cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildMenuPanel: {fileID: 0}
   generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
   ballisticsBuilding: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
   underConstructionBuilding: {fileID: 5400000, guid: 2ac5e63ddc7dddd4980ad9af353ffff8,
@@ -2564,6 +2568,7 @@ MonoBehaviour:
   button_ricochetShot: {fileID: 2800000, guid: 2e3d396a839fed441b68e5933fb67a51, type: 3}
   button_lightFist: {fileID: 2800000, guid: 001d1524b9b52424c809928bcc7ba368, type: 3}
   errBuild: {fileID: 8300000, guid: 19965041cf999894589a7d3709e5768b, type: 3}
+  _upgradeWheelPanel: {fileID: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2642,6 +2647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26be2e5b903c93a449ec78024a718841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerScript: {fileID: 0}
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
