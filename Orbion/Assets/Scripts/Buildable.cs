@@ -18,7 +18,7 @@ public class Buildable : MonoBehaviour {
 	}
 	void OnDestroy() {
 		TechManager.RmNumBuilding( TechType, 1);
-		ResManager.RmUsedEnergy( energyCost);
+		ResManager.AddEnergy( energyCost);
 	}
 
 	// Update is called once per frame

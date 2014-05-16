@@ -10,7 +10,8 @@ public class ShowEnergy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		string energyString = string.Format("{0}/{1}", ResManager.UsedEnergy, ResManager.MaxEnergy);
+		string energyString = string.Format("{0}", ResManager.Energy);
+		//string energyString = string.Format(ResManager.Energy);
 		_label.Text = "Energy: " + energyString;
 	}
 }

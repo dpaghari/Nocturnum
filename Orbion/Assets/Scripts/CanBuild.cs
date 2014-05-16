@@ -94,13 +94,15 @@ public class CanBuild : MonoBehaviour {
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
 		}
-		if ( ResManager.UsedEnergy + buildInfo.energyCost > ResManager.MaxEnergy){
+		/*
+		if ( ResManager.Energy + buildInfo.energyCost > ResManager.MaxEnergy){
 			if( buildingType != generatorBuilding){
 				audio.PlayOneShot(errBuild, 0.5f);
 				return false;
 			}
 
 		}
+		*/
 		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) {
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
@@ -277,7 +279,7 @@ public class CanBuild : MonoBehaviour {
 
 					Buildable buildInfo = toBuild.GetComponent<Buildable>();
 					ResManager.RmLumen(buildInfo.cost);
-					ResManager.AddUsedEnergy(buildInfo.energyCost);
+					ResManager.RmEnergy(buildInfo.energyCost);
 						
 					if( toBuild == wallBuilding){
 						inBuildingMode = true;
