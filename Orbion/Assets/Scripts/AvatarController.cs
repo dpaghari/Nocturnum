@@ -99,7 +99,7 @@ public class AvatarController : MonoBehaviour {
 	void Update () {
 		//audio.PlayOneShot(bgm, 0.5f);
 		//[Don't delete] debug code for showing our shooting angle
-		Debug.DrawRay(transform.position, Utility.GetMouseWorldPos(transform.position.y) - transform.position);
+		//Debug.DrawRay(transform.position, Utility.GetMouseWorldPos(transform.position.y) - transform.position);
 
 
 		if(GameManager.KeysEnabled){

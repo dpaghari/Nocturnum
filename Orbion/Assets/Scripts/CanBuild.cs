@@ -11,6 +11,7 @@ public class CanBuild : MonoBehaviour {
 	private int menuCounter = 0;
 	private CanResearch researchScript;
 	public dfPanel _buildMenuPanel;
+	private GameObject currHologram;
 
 
 
@@ -116,7 +117,9 @@ public class CanBuild : MonoBehaviour {
 			CloseMenu();
 			toBuild = buildingType;
 			inBuildingMode = true;
+			currHologram = Instantiate(buildInfo.hologram, Utility.GetMouseWorldPos(0), Quaternion.identity) as GameObject;
 		}
+		
 	}
 
 	// Grabs Lumen and Energy.
@@ -137,6 +140,7 @@ public class CanBuild : MonoBehaviour {
 		toBuild = null;
 		menuCounter = 50;
 		inBuildingMode = true;
+		if( currHologram) GameObject.Destroy( currHologram);
 	}
 
 	public void CloseMenu(){
@@ -232,8 +236,17 @@ public class CanBuild : MonoBehaviour {
 	void Update () {
 		dragTimer.Update();
 
+
 		if(MenuUp){
 			GetComponent<CanShoot>().ResetFiringTimer();
+		}
+
+		if( currHologram){
+			currHologram.transform.position = Utility.GetMouseWorldPos(0);
+
+			IsBuildHologram holoScript = currHologram.GetComponent<IsBuildHologram>();
+			if( holoScript) holoScript.UpdateColor();
+			
 		}
 
 		//   INPUT
@@ -253,7 +266,7 @@ public class CanBuild : MonoBehaviour {
 				if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
 					GetComponent<CanShoot>().ResetFiringTimer();
 
-
+					if( currHologram) GameObject.Destroy( currHologram);
 					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
 					// Slows down during placing building.
