@@ -8,11 +8,11 @@ public class IsGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ResManager.AddMaxEnergy(energyGeneration);
+		ResManager.AddEnergy(energyGeneration);
 	}
 
 	void OnDestroy() {
-		ResManager.RmMaxEnergy(energyGeneration);
+		ResManager.RmEnergy(energyGeneration);
 	}
 	
 	// Update is called once per frame

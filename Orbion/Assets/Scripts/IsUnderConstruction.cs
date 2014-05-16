@@ -131,7 +131,7 @@ public class IsUnderConstruction : MonoBehaviour {
 
 
 				ResManager.AddLumen(toBuild.gameObject.GetComponent<Buildable>().cost);
-				ResManager.RmUsedEnergy(toBuild.gameObject.GetComponent<Buildable>().energyCost);
+				ResManager.AddEnergy(toBuild.gameObject.GetComponent<Buildable>().energyCost);
 				Destroy(this.gameObject);	
 					
 

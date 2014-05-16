@@ -169,7 +169,7 @@ public class UserInterface : MonoBehaviour {
 		//GUI.Label(new Rect(5, Screen.height-25, 150, 50), "Light: " + resRef.GetComponent<ResManager>().LightRes);
 
 		//Energy
-		string energyString = string.Format("{0}/{1}", ResManager.UsedEnergy, ResManager.MaxEnergy);
+		string energyString = string.Format("{0}/{1}", ResManager.Energy, ResManager.Energy);
 		GUI.Label(new Rect(Screen.width/2+60, 10, 220, 50), energyString);
 		GUI.DrawTexture(new Rect(Screen.width/2+10, 5, icon_energy.width, icon_energy.height), icon_energy);
 		//GUI.Label(new Rect(110, Screen.height-25, 150, 50), "Energy: " + player_Energy);

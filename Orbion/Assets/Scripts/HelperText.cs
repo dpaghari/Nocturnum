@@ -36,7 +36,7 @@ public class HelperText : MonoBehaviour {
 			if (timerRef.GetComponent<UserInterface>().gameTimeSec > 3 && timerRef.GetComponent<UserInterface>().gameTimeSec < 10 && ResManager.Lumen == 0 /*&& !wait*/){
 				makeMiddle = Screen.width/2-170;
 				tutorialText = "Collect Lumen to build structures.";
-			} else if(ResManager.Lumen > 0 && ResManager.MaxEnergy == 0){
+			} else if(ResManager.Lumen > 0 && ResManager.Energy == 0){
 				makeMiddle = Screen.width/2-130;
 				tutorialText = "Press B to access Build Grid.";
 			} else if(/*ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 &&*/ isBuilt.GetComponent<CanBuild>().builtGenerator && TechManager.GetNumBuilding(Tech.ballistics) == 0){

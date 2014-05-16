@@ -59,8 +59,8 @@ public class CanResearch : MonoBehaviour {
 
 		}
 
-		float neededMaxEnergy = ResManager.UsedEnergy + TechManager.GetUpgradeEnergyCost( theUpgr);
-		if ( neededMaxEnergy > ResManager.MaxEnergy) {
+		float neededMaxEnergy =/* ResManager.Energy +*/ TechManager.GetUpgradeEnergyCost( theUpgr);
+		if ( neededMaxEnergy > ResManager.Energy) {
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
 		}
@@ -83,7 +83,7 @@ public class CanResearch : MonoBehaviour {
 	//Calls Research and spends resources
 	void DoResearch(Tech theUpgr){
 		ResManager.RmLumen( TechManager.GetUpgradeLumenCost( theUpgr));
-		ResManager.AddUsedEnergy( TechManager.GetUpgradeEnergyCost( theUpgr));
+		ResManager.RmEnergy( TechManager.GetUpgradeEnergyCost( theUpgr));
 		TechManager.Research( theUpgr);
 	}
 
