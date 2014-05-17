@@ -6,6 +6,7 @@ public class HandleDisabling : MonoBehaviour
 		public dfLabel notEnoughLumen;
 		public dfLabel notEnoughEnergy;
 		public dfLabel preReqsNotMet;
+		public dfLabel preReqsList;
 		public dfButton buttonDisabled;
 		public GameObject canResearchRef;
 		public GameObject canBuildRef;
@@ -14,59 +15,72 @@ public class HandleDisabling : MonoBehaviour
 		bool haveEnergy;
 		bool havePreReqs;
 		public Rigidbody buildingType;
+		float neededMaxEnergyBuilding;
+		float neededLumenCost;
+	float neededMaxEnergyUpgrades;
+	float neededLumenCostUpgrade;
 
 		// Use this for initialization
 		void Start ()
 		{
-				notEnoughLumen.IsVisible = false;
+				/*notEnoughLumen.IsVisible = false;
 				notEnoughEnergy.IsVisible = false;
 				preReqsNotMet.IsVisible = false;
-				buttonDisabled.Enable ();
+				buttonDisabled.Enable ();*/
 				haveLumen = true;
 				haveEnergy = true;
 				havePreReqs = true;
 				canResearchRef = GameObject.Find ("player_prefab");
 				canBuildRef = GameObject.Find ("player_prefab");
-
+				neededMaxEnergyBuilding = 0.0f;
+				neededLumenCost = 0.0f;
+		neededMaxEnergyUpgrades = 0.0f;
+		neededLumenCostUpgrade = 0.0f;
+		if (buildingType != null && TechManager.IsBuilding (name)) {
+						Buildable buildInfo = buildingType.GetComponent<Buildable> ();
+						neededMaxEnergyBuilding = buildInfo.energyCost;
+						neededLumenCost = buildInfo.cost;
+				}
+		if (TechManager.IsUpgrade (name)) {
+			neededMaxEnergyUpgrades = TechManager.GetUpgradeEnergyCost (name);
+			neededLumenCostUpgrade = TechManager.GetUpgradeLumenCost(name);
 		}
+	}
 	
-		// Update is called once per frame
+
+
+// Update is called once per frame
 		void Update ()
 		{
 				if (!TechManager.IsTechAvaliable (name)) {
 						preReqsNotMet.IsVisible = true;
 						buttonDisabled.Disable ();
 						havePreReqs = false;
+				preReqsList.IsVisible = true;
 				} else {
-						havePreReqs = true;
-						preReqsNotMet.IsVisible = false;
-				}
-		
-				Buildable buildInfo = buildingType.GetComponent<Buildable> ();
-				if (ResManager.Lumen < buildInfo.cost) {
-						notEnoughLumen.IsVisible = true;
-						buttonDisabled.Disable ();
-						haveLumen = false;
-				} else if (ResManager.Lumen < TechManager.GetUpgradeLumenCost (name)) {
-						notEnoughLumen.IsVisible = true;
-						buttonDisabled.Disable ();
-						haveLumen = false;
+			preReqsNotMet.IsVisible = false;
+			preReqsList.IsVisible = false;
+			havePreReqs = true;
+
+		}
+
+		if (ResManager.Lumen < neededLumenCost || ResManager.Lumen < neededLumenCostUpgrade) {
+								notEnoughLumen.IsVisible = true;
+								buttonDisabled.Disable ();
+								haveLumen = false;
 				} else {
 						haveLumen = true;
 						notEnoughLumen.IsVisible = false;
 				}
 
-				float neededMaxEnergyBuilding = buildInfo.energyCost;
-				float neededMaxEnergyUpgrades = TechManager.GetUpgradeEnergyCost (name);
-				if (neededMaxEnergyBuilding > ResManager.Energy) {
-						notEnoughEnergy.IsVisible = true;
-						buttonDisabled.Disable ();
-						haveEnergy = false;
-				} else if (neededMaxEnergyUpgrades > ResManager.Energy) {
-						notEnoughLumen.IsVisible = true;
-						buttonDisabled.Disable ();
-						haveLumen = false;
-				} else {
+
+				
+		if (neededMaxEnergyBuilding > ResManager.Energy || neededMaxEnergyUpgrades > ResManager.Energy) {
+								notEnoughEnergy.IsVisible = true;
+								buttonDisabled.Disable ();
+								haveEnergy = false;
+						}
+				 else {
 						haveEnergy = true;
 						notEnoughEnergy.IsVisible = false;
 				}
@@ -78,5 +92,6 @@ public class HandleDisabling : MonoBehaviour
 						notEnoughEnergy.IsVisible = false;
 						preReqsNotMet.IsVisible = false;
 				}
+
 		}
 }
