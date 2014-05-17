@@ -76,16 +76,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400056}
-  - 111: {fileID: 11100000}
-  - 54: {fileID: 5400000}
-  - 65: {fileID: 6500000}
-  - 135: {fileID: 13500000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
-  - 114: {fileID: 11400004}
-  - 82: {fileID: 8200000}
   m_Layer: 12
-  m_Name: turret
+  m_Name: turretHolo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +155,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 37c976543207ce842b1f9f94fdf241aa, type: 2}
+  - {fileID: 2100000, guid: 88420bf5fc9c5ac40844c5b43b8c60bc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -183,7 +176,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4e5680bed6ba23740ace759684891d70, type: 2}
+  - {fileID: 2100000, guid: 88420bf5fc9c5ac40844c5b43b8c60bc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -204,7 +197,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e95dc7a479218ea4789ca014fb9919c6, type: 2}
+  - {fileID: 2100000, guid: 88420bf5fc9c5ac40844c5b43b8c60bc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -225,7 +218,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4e5680bed6ba23740ace759684891d70, type: 2}
+  - {fileID: 2100000, guid: 88420bf5fc9c5ac40844c5b43b8c60bc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -262,105 +255,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_Mesh: {fileID: 4300000, guid: c0d7973dc10a9494cafe287c16d4985c, type: 3}
---- !u!54 &5400000
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!65 &6500000
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &8200000
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 0b735f431d834d74ea47a69c37dcd49c, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!111 &11100000
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,60 +263,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd85ed508beb0d47b00eae36bdde9fb, type: 3}
+  m_Script: {fileID: 11500000, guid: da37a17fb5bd35346ac74a11b448b688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5400000, guid: c487befd69637a040973b932898f73d5, type: 2}
-  bullet_speed: 300
-  firingRate: 1
-  spreadAngle: 45
-  numOfBulletShot: 1
-  projectileStartPosition: 3
-  enemyShotSound: {fileID: 0}
-  bulletHeight: {x: 0, y: 2, z: 0}
-  shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dabb999fadd35e49804d6fb42968456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootScript: {fileID: 11400000}
-  target: {fileID: 0}
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1ad36c00ea69845b39339a0ea06ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 50
-  energyCost: 20
-  TechType: 11
-  hologram: {fileID: 100056, guid: b7665e22ac7e90a408b7a4a13cea22fd, type: 2}
-  contactRadius: 3
---- !u!135 &13500000
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 25
-  m_Center: {x: 0, y: 0, z: 0}
+  RealBuilding: {fileID: 5400000, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
+  defaultColor: {r: .274509817, g: .666666687, b: 1, a: .235294119}
+  cannotBuildColor: {r: 1, g: .253820121, b: .253820121, a: .235294119}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

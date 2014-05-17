@@ -54,7 +54,8 @@ public class IsBuildHologram : MonoBehaviour {
 
 		if( childrenMR != null)
 			foreach( MeshRenderer mr in childrenMR)
-				mr.material.color = newColor;
+				for( int i =0; i < mr.materials.Length; i++)
+					mr.materials[i].color = newColor;
 			
 	}
 
