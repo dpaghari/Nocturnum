@@ -1797,10 +1797,10 @@ BoxCollider:
   m_GameObject: {fileID: 32258135}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .078125, y: .0416666679, z: .00100000005}
-  m_Center: {x: .0390625, y: -.020833334, z: 0}
+  m_Size: {x: .0989583358, y: .0520833358, z: .00100000005}
+  m_Center: {x: .0494791679, y: -.0260416679, z: 0}
 --- !u!114 &32258138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,7 +1814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorStyle: 271
   isEnabled: 1
-  isVisible: 0
+  isVisible: 1
   isInteractive: 1
   tooltip: 
   pivot: 0
@@ -1825,7 +1825,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 30, y: 16}
+  size: {x: 38, y: 20}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -1835,10 +1835,10 @@ MonoBehaviour:
   layout:
     anchorStyle: 271
     margins:
-      left: .443566889
-      top: .18773675
-      right: .537316918
-      bottom: .672585249
+      left: .443749994
+      top: .181818187
+      right: .5625
+      bottom: .787878811
     owner: {fileID: 32258138}
   renderOrder: 175
   isLocalized: 0
@@ -1858,7 +1858,7 @@ MonoBehaviour:
     rgba: 4294967295
   align: 0
   vertAlign: 0
-  textScale: 1
+  textScale: 1.25
   textScaleMode: 2
   charSpacing: 0
   colorizeSymbols: 0
@@ -20794,6 +20794,7 @@ GameObject:
   - 4: {fileID: 505619783}
   - 114: {fileID: 505619785}
   - 65: {fileID: 505619784}
+  - 114: {fileID: 505619786}
   m_Layer: 17
   m_Name: Panel_TutorialText
   m_TagString: Untagged
@@ -20877,6 +20878,18 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
+--- !u!114 &505619786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505619782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c270c5b07fcaad4e8cf4345689b60b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialLine: {fileID: 32258138}
 --- !u!1 &506195749
 GameObject:
   m_ObjectHideFlags: 0
