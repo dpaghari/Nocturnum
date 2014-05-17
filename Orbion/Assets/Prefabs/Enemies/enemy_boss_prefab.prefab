@@ -1027,6 +1027,7 @@ MonoBehaviour:
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
   healEffect: {fileID: 0}
+  timerScript: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1040,7 +1041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5400000, guid: 89e3d85fc5185a2419b6631beda7a6df, type: 2}
   bullet_speed: 200
-  firingRate: 1
+  firingRate: .5
   spreadAngle: 45
   numOfBulletShot: 1
   projectileStartPosition: 3
@@ -1059,8 +1060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d783894cac44b4f9cdd6bfe47f9678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeakenDuration: .200000003
-  SlowedRatio: .5
+  WeakenDuration: .100000001
+  SlowedRatio: .100000001
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

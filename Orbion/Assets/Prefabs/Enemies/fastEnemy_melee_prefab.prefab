@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeakenDuration: .200000003
-  SlowedRatio: .5
+  SlowedRatio: .300000012
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,6 +1072,8 @@ MonoBehaviour:
   bullet: {fileID: 5400000, guid: 04927118dcf297a4398ead34e5175e59, type: 2}
   bullet_speed: 200
   firingRate: 1
+  spreadAngle: 45
+  numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -1094,6 +1096,7 @@ MonoBehaviour:
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
   healEffect: {fileID: 0}
+  timerScript: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

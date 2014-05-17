@@ -44,7 +44,7 @@ public class EB_LightFist : EquipmentBehavior {
 	IEnumerator WaitAndCallback(float waitTime){
 		yield return new WaitForSeconds(waitTime - 0.6f); 
 		Vector3 temp = transform.position;
-		temp.y += 2;
+		temp.y += 1;
 		clone = Instantiate (punchObj, transform.position, Quaternion.identity) as Rigidbody;
 		Instantiate(flare, temp, Quaternion.identity);
 		Instantiate(vfx, temp, Quaternion.identity);

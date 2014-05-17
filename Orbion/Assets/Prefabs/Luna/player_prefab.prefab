@@ -31,6 +31,7 @@ GameObject:
   - 82: {fileID: 8200002}
   - 82: {fileID: 8200004}
   - 82: {fileID: 8200006}
+  - 95: {fileID: 9500002}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -1188,7 +1189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8.81729126}
+  m_LocalPosition: {x: 9.12923241, y: 0, z: -8.81729126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -2377,6 +2378,20 @@ Animator:
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!95 &9500002
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2d645207519d2ad4e91000d930e5dde0, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -2453,9 +2468,9 @@ MonoBehaviour:
   firingRate: .200000003
   spreadAngle: 12.5
   numOfBulletShot: 1
-  projectileStartPosition: 3
+  projectileStartPosition: 4
   enemyShotSound: {fileID: 0}
-  bulletHeight: {x: 0, y: 3, z: 0}
+  bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
   clipSize: 30
