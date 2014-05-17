@@ -14,6 +14,6 @@ public class ShowEnergy : MonoBehaviour {
 		energyString = string.Format("{0}", ResManager.Energy);
 		//string energyString = string.Format(ResManager.Energy);
 		_label.Text = "Energy: " + energyString;
-		Debug.Log(ResManager.Energy);
+		//Debug.Log(ResManager.Energy);
 	}
 }

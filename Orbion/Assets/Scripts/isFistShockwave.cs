@@ -5,14 +5,16 @@ public class isFistShockwave : MonoBehaviour {
 
 
 
-	public GameObject flare;
-	public GameObject vfx;
+
 	public float pushForce;
 	public ForceMode pushForceMode = ForceMode.Impulse;
-	public bool hitGround;
+	public int fistDamage;
+	//public DumbTimer timerScript;
 	// Use this for initialization
 	void Start () {
-		hitGround = false;
+		//timerScript = DumbTimer.New(0.2f, 1.0f);
+
+		fistDamage = 20;
 	
 	}
 
@@ -22,12 +24,9 @@ public class isFistShockwave : MonoBehaviour {
 		if(other.gameObject.tag == "ground"){
 			//Debug.Log ("hit ground");
 
-			Vector3 temp = transform.position;
-			temp.y += 10;
 
-			Instantiate(flare, transform.position, Quaternion.identity);
-			Instantiate(vfx, transform.position, Quaternion.identity);
-			//hitGround = true;
+
+
 			//Destroy(gameObject);
 		}
 	
@@ -40,24 +39,30 @@ public class isFistShockwave : MonoBehaviour {
 		CanMove moveScript = other.GetComponent<CanMove>();
 		Killable killScript = other.GetComponent<Killable>();
 
-		//if (hitGround) {
+
 			if (killScript != null && moveScript != null) {
 					if (other.tag == "Enemy" || other.tag == "EnemyRanged") {
-						if(killScript) killScript.damage(20);
+								
+							if(killScript) killScript.damage(fistDamage);
+
+							Vector3 dir = (other.transform.position - transform.position).normalized;
+							//Debug.Log("Should push things");
+							
+							other.rigidbody.AddForce (dir * pushForce, pushForceMode);
+					
 			
-						Vector3 dir = (other.transform.position - transform.position).normalized;
-					//Debug.Log("Should push things");
-				
-						other.rigidbody.AddForce (dir * pushForce, pushForceMode);
-						//moveScript.Move(-dir, pushForceMode);
+						
 					}
 			}
-			hitGround = false;
-		//}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	
+
+
+
 	
 	}
 }

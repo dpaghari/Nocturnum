@@ -144,7 +144,7 @@ public class CanResearch : MonoBehaviour {
 
 	public void GetLightFist(){
 		if(MeetsRequirement(Tech.lightFist)){
-			Debug.Log("Pressing Lightfist");
+			//Debug.Log("Pressing Lightfist");
 			DoResearch(Tech.lightFist);
 			CloseMenu();
 		}
