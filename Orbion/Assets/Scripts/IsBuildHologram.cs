@@ -6,7 +6,22 @@ public class IsBuildHologram : MonoBehaviour {
 	public Rigidbody RealBuilding;
 	public Color defaultColor;
 	public Color cannotBuildColor;
+	public bool CanBuildHere {get; private set;}
+
 	private MeshRenderer[] childrenMR;
+
+	private float inLightToggleTime = 0.01f;
+	private DumbTimer inLightToggler;
+
+	private bool _isInLight;
+	private bool IsInLight{
+		get { return _isInLight;}
+
+		set { 
+			_isInLight = value;
+			if( value == true) inLightToggler.Reset();
+		}
+	}
 
 	//returns true if there is another building too close to this one
 	public bool IsBuildingNearby(){
@@ -48,14 +63,30 @@ public class IsBuildHologram : MonoBehaviour {
 		return true;
 	}
 
-	public void UpdateColor(){
-		Color newColor = defaultColor;
-		if( IsBuildingNearby()) newColor = cannotBuildColor;
 
+	
+	public void ChangeColors( Color theNewColor){
 		if( childrenMR != null)
 			foreach( MeshRenderer mr in childrenMR)
 				for( int i =0; i < mr.materials.Length; i++)
-					mr.materials[i].color = newColor;
+					mr.materials[i].color = theNewColor;
+	}
+
+
+
+	public void UpdateBuildStatus(){
+		Color newColor = Color.white;
+		if( IsBuildingNearby()){
+			CanBuildHere = false;
+			newColor = cannotBuildColor;
+		}
+		else{
+			CanBuildHere = true;
+			newColor = defaultColor;
+		}
+
+		ChangeColors( newColor);
+
 			
 	}
 
@@ -68,6 +99,8 @@ public class IsBuildHologram : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		UpdateBuildStatus();
 	}
+
+
 }

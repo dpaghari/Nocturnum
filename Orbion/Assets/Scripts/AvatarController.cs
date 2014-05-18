@@ -8,6 +8,8 @@ public class AvatarController : MonoBehaviour {
 	public EquipmentUser equipScript;
 	public hasOverdrive overdriveScript;
 	public CanUse useScript;
+	public CanBuild buildScript;
+	public CanResearch researchScript;
 
 	public AudioClip shotSound;
 	public AudioClip bgm;
@@ -46,6 +48,8 @@ public class AvatarController : MonoBehaviour {
 		equipScript = GetComponent<EquipmentUser>();
 		useScript = GetComponent<CanUse>();
 		overdriveScript = GetComponent<hasOverdrive>();
+		buildScript = GetComponent<CanBuild>();
+		researchScript = GetComponent<CanResearch>();
 
 		startingClipSize = shootScript.clipSize;
 	}
@@ -104,7 +108,7 @@ public class AvatarController : MonoBehaviour {
 
 		if(GameManager.KeysEnabled){
 			//Uses the CanShootReload component to shoot at the cursor
-			if( Input.GetMouseButton( 0) && !isPaused){
+			if( Input.GetMouseButton( 0) && !isPaused && !buildScript.inBuildingMode){
 				
 				if( shootScript.FinishCooldown()){
 					if(shootScript.reloading == false){
