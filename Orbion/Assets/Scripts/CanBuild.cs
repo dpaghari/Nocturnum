@@ -16,7 +16,7 @@ public class CanBuild : MonoBehaviour {
 
 
 	private bool isDragBuilding = false;
-	private float dragDelay = 0.15f; //note: the delay gets affected by build slow down
+	private float dragDelay = 0.05f; //note: the delay gets affected by build slow down
 	private DumbTimer dragTimer;
 
 	//Building prefab references
@@ -280,7 +280,7 @@ public class CanBuild : MonoBehaviour {
 					ResManager.RmEnergy(buildInfo.energyCost);
 						
 					if( toBuild == wallBuilding){
-						inBuildingMode = true;
+						SetConstruction( wallBuilding);
 						isDragBuilding = true;
 					}
 					else{
@@ -288,15 +288,14 @@ public class CanBuild : MonoBehaviour {
 						dragTimer.SetProgress(1.0f);
 					}
 
-				dragTimer.Reset();
+					dragTimer.Reset();
 				}
 
 			}
 			
 			//If we let go of the mouse, we shouldn't be building walls anymore
 			if( Input.GetMouseButtonUp(0) && isDragBuilding){
-				toBuild = null;
-				inBuildingMode = false;
+				CloseMenu();
 				isDragBuilding = false;
 				dragTimer.SetProgress(1.0f);
 			}
