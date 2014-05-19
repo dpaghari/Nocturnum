@@ -18,12 +18,15 @@ public class AB_TargetPlayer : AiBehavior {
 	//always attack the player if they're within PlayerPriorityRange
 	public float PlayerPriorityRange;
 
+	private IsEnemy enemyScript;
+
+
 	override public void OnBehaviorEnter(){
 		//Debug.Log("Entering chase");
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
-	
+		enemyScript = GetComponent<IsEnemy>();
 		CurrTarget = FindTarget(TargetSearchRadius);
 	}
 	
@@ -40,11 +43,25 @@ public class AB_TargetPlayer : AiBehavior {
 				moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
 
+				if(enemyScript.enemyType == EnemyType.luminotoad)
+					animation.CrossFade("Luminotoad_Hop");
+				
+				if(enemyScript.enemyType == EnemyType.alpha_wolf)
+					animation.CrossFade("WolfRunCycle");
+				
+				if(enemyScript.enemyType == EnemyType.wolf)
+					animation.CrossFade("WolfRunCycle");
+				
+				if(enemyScript.enemyType == EnemyType.zingbat)
+					animation.CrossFade("ZingBatGlide");
+
+				/*
 				if(this.tag == "Enemy")
 					animation.CrossFade("WolfRunCycle");
 
 				if(this.tag == "EnemyRanged")
 					animation.CrossFade("bat_fly");
+				*/
 			}
 		}
 	}
@@ -55,9 +72,24 @@ public class AB_TargetPlayer : AiBehavior {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
+				if(enemyScript.enemyType == EnemyType.luminotoad)
+					animation.CrossFade("Luminotoad_Bomb");
+				
+				if(enemyScript.enemyType == EnemyType.alpha_wolf)
+					animation.CrossFade("WolfAttack");
+				
+				if(enemyScript.enemyType == EnemyType.wolf)
+					animation.CrossFade("WolfAttack");
+				
+				if(enemyScript.enemyType == EnemyType.zingbat)
+					animation.CrossFade("ZingBatAttack");
+
+
+				/*
 				if(this.tag == "Enemy"){
 				animation.CrossFade("WolfAttack");
 				}
+				*/
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 				shootScript.Shoot(lookPosition);

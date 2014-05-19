@@ -17,12 +17,14 @@ public class AB_TargetAll : AiBehavior {
 	//Given that there are buildings and the player in range,
 	//always attack the player if they're within PlayerPriorityRange
 	public float PriorityRange;
+	private IsEnemy enemyScript;
 	
 	override public void OnBehaviorEnter(){
 		//Debug.Log("Entering chase");
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
+		enemyScript = GetComponent<IsEnemy>();
 		
 		CurrTarget = FindTarget(TargetSearchRadius);
 	}
@@ -39,12 +41,26 @@ public class AB_TargetAll : AiBehavior {
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 				moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
+				if(enemyScript.enemyType == EnemyType.luminotoad)
+					animation.CrossFade("Luminotoad_Hop");
 				
+				if(enemyScript.enemyType == EnemyType.alpha_wolf)
+					animation.CrossFade("WolfRunCycle");
+				
+				if(enemyScript.enemyType == EnemyType.wolf)
+					animation.CrossFade("WolfRunCycle");
+				
+				if(enemyScript.enemyType == EnemyType.zingbat)
+					animation.CrossFade("ZingBatGlide");
+
+
+				/*
 				if(this.tag == "Enemy")
 					animation.CrossFade("WolfRunCycle");
 				
 				if(this.tag == "EnemyRanged")
 					animation.CrossFade("bat_fly");
+				*/
 			}
 		}
 	}

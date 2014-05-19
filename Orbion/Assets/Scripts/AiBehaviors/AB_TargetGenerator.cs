@@ -19,6 +19,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 	
 	private float TargetSearchRadius = Mathf.Infinity;
 
+	private IsEnemy enemyScript;
 	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
 	
@@ -30,6 +31,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
+		enemyScript = GetComponent<IsEnemy>();
 		//Debug.Log("START OF BEHAVIOR");
 		CurrTarget = FindTarget(TargetSearchRadius);
 	}
@@ -44,12 +46,26 @@ public class AB_TargetGenerator : MonoBehaviour {
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 				moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
+
+				if(enemyScript.enemyType == EnemyType.luminotoad)
+					animation.CrossFade("Luminotoad_Hop");
 				
+				if(enemyScript.enemyType == EnemyType.alpha_wolf)
+					animation.CrossFade("WolfRunCycle");
+				
+				if(enemyScript.enemyType == EnemyType.wolf)
+					animation.CrossFade("WolfRunCycle");
+				
+				if(enemyScript.enemyType == EnemyType.zingbat)
+					animation.CrossFade("ZingBatGlide");
+
+				/*
 				if(this.tag == "Enemy")
 					animation.CrossFade("WolfRunCycle");
 				
 				if(this.tag == "EnemyRanged")
 					animation.CrossFade("ZingBatGlide");
+				*/
 			}
 		}
 	}
@@ -68,19 +84,50 @@ public class AB_TargetGenerator : MonoBehaviour {
 			if (distToTarget < AtkRange){
 
 				if( shootScript.FinishCooldown()){
+					if(enemyScript.enemyType == EnemyType.luminotoad)
+						animation.CrossFade("Luminotoad_Bomb");
+					
+					if(enemyScript.enemyType == EnemyType.alpha_wolf)
+						animation.CrossFade("WolfAttack");
+					
+					if(enemyScript.enemyType == EnemyType.wolf)
+						animation.CrossFade("WolfAttack");
+					
+					if(enemyScript.enemyType == EnemyType.zingbat)
+						animation.CrossFade("ZingBatAttack");
+
+
+					/*
 					if(this.tag == "Enemy")
 						animation.CrossFade("WolfAttack");
 					if(this.tag == "EnemyRanged")
 						animation.CrossFade("ZingBatAttack");
+					*/
 				}
 				
 				else{
+
 					if( animation.isPlaying == false){
-						if(this.tag == "Enemy")
+						if(enemyScript.enemyType == EnemyType.luminotoad)
+							animation.CrossFade("Luminotoad_Hop");
+						
+						if(enemyScript.enemyType == EnemyType.alpha_wolf)
 							animation.CrossFade("WolfRunCycle");
-						if(this.tag == "EnemyRanged")
+						
+						if(enemyScript.enemyType == EnemyType.wolf)
+							animation.CrossFade("WolfRunCycle");
+						
+						if(enemyScript.enemyType == EnemyType.zingbat)
 							animation.CrossFade("ZingBatGlide");
 					}
+
+					/*
+					if(this.tag == "Enemy")
+						animation.CrossFade("WolfRunCycle");
+					if(this.tag == "EnemyRanged")
+						animation.CrossFade("ZingBatGlide");
+					*/
+
 				}
 				
 
