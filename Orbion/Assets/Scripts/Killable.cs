@@ -53,8 +53,6 @@ public class Killable : MonoBehaviour {
 	// Updates HP based on damage taken, calls kill() on dead objects
 	public void damage (int dmg) {
 
-		this.GetComponent<IsEnemy>().explode();
-
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
 		if (currHP <= 0){
