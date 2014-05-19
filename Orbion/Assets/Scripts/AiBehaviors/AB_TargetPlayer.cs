@@ -72,8 +72,10 @@ public class AB_TargetPlayer : AiBehavior {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
-				if(enemyScript.enemyType == EnemyType.luminotoad)
+				if(enemyScript.enemyType == EnemyType.luminotoad){
 					animation.CrossFade("Luminotoad_Bomb");
+					this.GetComponent<Killable>().explode();
+				}
 				
 				if(enemyScript.enemyType == EnemyType.alpha_wolf)
 					animation.CrossFade("WolfAttack");

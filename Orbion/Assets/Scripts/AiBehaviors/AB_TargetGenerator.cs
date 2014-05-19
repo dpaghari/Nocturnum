@@ -84,8 +84,10 @@ public class AB_TargetGenerator : MonoBehaviour {
 			if (distToTarget < AtkRange){
 
 				if( shootScript.FinishCooldown()){
-					if(enemyScript.enemyType == EnemyType.luminotoad)
+					if(enemyScript.enemyType == EnemyType.luminotoad){
 						animation.CrossFade("Luminotoad_Bomb");
+						this.GetComponent<Killable>().explode();
+					}
 					
 					if(enemyScript.enemyType == EnemyType.alpha_wolf)
 						animation.CrossFade("WolfAttack");

@@ -64,7 +64,6 @@ public class Killable : MonoBehaviour {
 		}
 	}
 
-
 	// Kills enemy or player
 	public void kill () {
 		if(gameObject.tag == "Player"){
@@ -101,6 +100,10 @@ public class Killable : MonoBehaviour {
 		//make death object
 	}
 
+	public void explode(){
+		kill();
+		//explode dmg
+	}
 
 	/// <summary>
 	/// Heal the specified health.
