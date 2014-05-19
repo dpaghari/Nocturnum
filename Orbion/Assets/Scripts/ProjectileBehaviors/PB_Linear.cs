@@ -133,17 +133,22 @@ public class PB_Linear : ProjectileBehavior {
 			gameObject.rigidbody.velocity = Vector3.zero;
 			gameObject.rigidbody.angularVelocity = Vector3.zero;
 			GameObject targ = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.ricochet), IsEnemy);
+
+	
+
 			if(targ == null){
 				foreach( Transform child in transform){
 					if(child.gameObject.tag == "playerBullet"){
 						Destroy(child.gameObject);
 					}
 					else{
-						child.gameObject.GetComponent<ParticleSystem>().loop = false;
+						ParticleSystem childParticle = child.gameObject.GetComponent<ParticleSystem>(); 
+						if( childParticle){
+							childParticle.loop = false;
+							childParticle.transform.parent = null;
+						}
 					}
 				}
-
-				transform.DetachChildren ();
 				Destroy (gameObject);
 			}else{
 
@@ -158,11 +163,13 @@ public class PB_Linear : ProjectileBehavior {
 					Destroy(child.gameObject);
 				}
 				else{
-					child.gameObject.GetComponent<ParticleSystem>().loop = false;
+					ParticleSystem childParticle = child.gameObject.GetComponent<ParticleSystem>(); 
+					if( childParticle){
+						childParticle.loop = false;
+						childParticle.transform.parent = null;
+					}
 				}
 			}
-
-			transform.DetachChildren ();
 			Destroy (gameObject);
 		}
 	}

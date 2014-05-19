@@ -118,13 +118,28 @@ public class CanShoot : MonoBehaviour {
 	public virtual void Scattershot( Vector3 target, int numberOfShots){
 		if( FinishCooldown()){
 			Vector3 dir = target - transform.position;
+
+			if( numberOfShots == 1){
+				ShootDir( dir);
+				return;
+			}
+
 			Vector3 leftBound = Quaternion.Euler( 0, -spreadAngle/2, 0) * dir;
-			for ( int i = 1; i <= numberOfShots; i++){
-				float angleOffset = i * ( spreadAngle / ( numberOfShots + 1));
+			float bulletGap = spreadAngle / ( numberOfShots - 1);
+
+			//numberOfShots - 1 makes us shoot from the left side of the spread bound to the right
+			//but if we have a 360deg angle, both bounds of the spread are at the same place,
+			//causing 2 bullets to fire at the same spot
+			if( spreadAngle == 360) bulletGap = spreadAngle / ( numberOfShots);
+
+			for ( int i = 0; i < numberOfShots; i++){
+				float angleOffset = i * bulletGap;
 				Vector3 BulDir = Quaternion.Euler( 0, angleOffset, 0) * leftBound ;
 				SetFiringTimer( 1.0f);
 				ShootDir( BulDir);
 			}
+
+
 		}
 	}
 

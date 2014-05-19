@@ -11,12 +11,12 @@ public class CanBuild : MonoBehaviour {
 	private int menuCounter = 0;
 	private CanResearch researchScript;
 	public dfPanel _buildMenuPanel;
-	private GameObject currHologram;
+	private IsBuildHologram currHologram;
 
 
 
 	private bool isDragBuilding = false;
-	private float dragDelay = 0.15f; //note: the delay gets affected by build slow down
+	private float dragDelay = 0.05f; //note: the delay gets affected by build slow down
 	private DumbTimer dragTimer;
 
 	//Building prefab references
@@ -117,7 +117,8 @@ public class CanBuild : MonoBehaviour {
 			CloseMenu();
 			toBuild = buildingType;
 			inBuildingMode = true;
-			currHologram = Instantiate(buildInfo.hologram, Utility.GetMouseWorldPos(0), Quaternion.identity) as GameObject;
+			GameObject holoObj = Instantiate(buildInfo.hologram, Utility.GetMouseWorldPos(0), Quaternion.identity) as GameObject;
+			currHologram = holoObj.GetComponent<IsBuildHologram>();
 		}
 		
 	}
@@ -140,7 +141,7 @@ public class CanBuild : MonoBehaviour {
 		toBuild = null;
 		menuCounter = 50;
 		inBuildingMode = true;
-		if( currHologram) GameObject.Destroy( currHologram);
+		if( currHologram) GameObject.Destroy( currHologram.gameObject);
 	}
 
 	public void CloseMenu(){
@@ -148,6 +149,7 @@ public class CanBuild : MonoBehaviour {
 		_buildMenuPanel.IsVisible = false;
 		toBuild = null;
 		inBuildingMode = false;
+		if( currHologram) GameObject.Destroy( currHologram.gameObject);
 	}
 
 	
@@ -241,13 +243,9 @@ public class CanBuild : MonoBehaviour {
 			GetComponent<CanShoot>().ResetFiringTimer();
 		}
 
-		if( currHologram){
+		if( currHologram)
 			currHologram.transform.position = Utility.GetMouseWorldPos(0);
 
-			IsBuildHologram holoScript = currHologram.GetComponent<IsBuildHologram>();
-			if( holoScript) holoScript.UpdateColor();
-			
-		}
 
 		//   INPUT
 		//---------------------------------------------------------------------------------------------------//
@@ -259,14 +257,14 @@ public class CanBuild : MonoBehaviour {
 				}
 			}
 
-			if(Input.GetMouseButton(0) && toBuild != null){
+			if(Input.GetMouseButton(0) && toBuild != null && currHologram.CanBuildHere){
 
 				Vector3 mousePos = Utility.GetMouseWorldPos(5.25f);
 
 				if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
 					GetComponent<CanShoot>().ResetFiringTimer();
 
-					if( currHologram) GameObject.Destroy( currHologram);
+					if( currHologram) GameObject.Destroy( currHologram.gameObject);
 					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
 					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
 					// Slows down during placing building.
@@ -282,7 +280,7 @@ public class CanBuild : MonoBehaviour {
 					ResManager.RmEnergy(buildInfo.energyCost);
 						
 					if( toBuild == wallBuilding){
-						inBuildingMode = true;
+						SetConstruction( wallBuilding);
 						isDragBuilding = true;
 					}
 					else{
@@ -290,15 +288,14 @@ public class CanBuild : MonoBehaviour {
 						dragTimer.SetProgress(1.0f);
 					}
 
-				dragTimer.Reset();
+					dragTimer.Reset();
 				}
 
 			}
 			
 			//If we let go of the mouse, we shouldn't be building walls anymore
 			if( Input.GetMouseButtonUp(0) && isDragBuilding){
-				toBuild = null;
-				inBuildingMode = false;
+				CloseMenu();
 				isDragBuilding = false;
 				dragTimer.SetProgress(1.0f);
 			}
