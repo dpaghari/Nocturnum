@@ -6,12 +6,14 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	//private bool menuUp;
 	public GameObject canResearchRef;
 	public bool researchTimeOn;
+	public dfControl hudProgress;
 
 	// Use this for initialization
 	void Start () {
 		//menuUp = false;
 		//_panel.IsVisible = false;
 		canResearchRef = GameObject.Find ("player_prefab");
+
 	}
 	
 	// Update is called once per frame
@@ -90,9 +92,11 @@ public class UpgradeMenuButtons : MonoBehaviour {
 		
 		var sprite = GetComponent<dfControl>().Find( "Researching" ) as dfSprite;
 		sprite.IsVisible = true;
-		
+		var spriteHUD = hudProgress.Find("Researching") as dfSprite;
+		spriteHUD.IsVisible = true;
+
 		var startTime = Time.realtimeSinceStartup;
-		var endTime = startTime + t;
+		var endTime = startTime + t + 2;
 		
 		while( Time.realtimeSinceStartup < endTime )
 		{
@@ -101,6 +105,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 			var lerp = 1f - elapsed / t;
 			
 			sprite.FillAmount = lerp;
+			spriteHUD.FillAmount = lerp;
 			
 			yield return null;
 			
@@ -108,6 +113,8 @@ public class UpgradeMenuButtons : MonoBehaviour {
 		
 		sprite.FillAmount = 1f;
 		sprite.IsVisible = false;
+		spriteHUD.FillAmount = 1f;
+		spriteHUD.IsVisible = false;
 		
 		researchTimeOn = false;
 		
