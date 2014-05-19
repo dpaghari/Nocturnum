@@ -52,6 +52,7 @@ public class Killable : MonoBehaviour {
 
 	// Updates HP based on damage taken, calls kill() on dead objects
 	public void damage (int dmg) {
+
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
 		if (currHP <= 0){
@@ -65,7 +66,7 @@ public class Killable : MonoBehaviour {
 
 
 	// Kills enemy or player
-	void kill () {
+	public void kill () {
 		if(gameObject.tag == "Player"){
 			GameManager.PlayerDead = true;
 			GameManager.KeysEnabled = false;
@@ -74,9 +75,9 @@ public class Killable : MonoBehaviour {
 		else{
 			Destroy (gameObject);
 			MetricManager.AddEnemiesKilled(1);
-			if(gameObject.name != "base_enemy_prefab"){
-				MetricManager.AddEnemies(-1);
-			}
+			//if(gameObject.name != "base_enemy_prefab"){
+				//MetricManager.AddEnemies(-1);
+			//}
 
 			if(GetComponent<isBossEnemy>() != null)
 				TechManager.hasBeatenWolf = true;

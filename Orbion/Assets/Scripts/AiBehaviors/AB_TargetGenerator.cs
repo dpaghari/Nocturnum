@@ -104,19 +104,22 @@ public class AB_TargetGenerator : MonoBehaviour {
 						animation.CrossFade("ZingBatAttack");
 					*/
 				}
+				
 				else{
-					if(enemyScript.enemyType == EnemyType.luminotoad)
-						animation.CrossFade("Luminotoad_Hop");
-					
-					if(enemyScript.enemyType == EnemyType.alpha_wolf)
-						animation.CrossFade("WolfRunCycle");
-					
-					if(enemyScript.enemyType == EnemyType.wolf)
-						animation.CrossFade("WolfRunCycle");
-					
-					if(enemyScript.enemyType == EnemyType.zingbat)
-						animation.CrossFade("ZingBatGlide");
 
+					if( animation.isPlaying == false){
+						if(enemyScript.enemyType == EnemyType.luminotoad)
+							animation.CrossFade("Luminotoad_Hop");
+						
+						if(enemyScript.enemyType == EnemyType.alpha_wolf)
+							animation.CrossFade("WolfRunCycle");
+						
+						if(enemyScript.enemyType == EnemyType.wolf)
+							animation.CrossFade("WolfRunCycle");
+						
+						if(enemyScript.enemyType == EnemyType.zingbat)
+							animation.CrossFade("ZingBatGlide");
+					}
 
 					/*
 					if(this.tag == "Enemy")
@@ -124,7 +127,9 @@ public class AB_TargetGenerator : MonoBehaviour {
 					if(this.tag == "EnemyRanged")
 						animation.CrossFade("ZingBatGlide");
 					*/
+
 				}
+				
 
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
