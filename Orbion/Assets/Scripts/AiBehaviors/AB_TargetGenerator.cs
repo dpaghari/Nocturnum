@@ -73,12 +73,16 @@ public class AB_TargetGenerator : MonoBehaviour {
 					if(this.tag == "EnemyRanged")
 						animation.CrossFade("ZingBatAttack");
 				}
+				
 				else{
-					if(this.tag == "Enemy")
-						animation.CrossFade("WolfRunCycle");
-					if(this.tag == "EnemyRanged")
-						animation.CrossFade("ZingBatGlide");
+					if( animation.isPlaying == false){
+						if(this.tag == "Enemy")
+							animation.CrossFade("WolfRunCycle");
+						if(this.tag == "EnemyRanged")
+							animation.CrossFade("ZingBatGlide");
+					}
 				}
+				
 
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
