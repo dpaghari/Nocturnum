@@ -1,7 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum EnemyType{
+	none = 0,
+	wolf,
+	alpha_wolf,
+	luminotoad,
+	luminosaur,
+	zingbat,
+}
+
+
 public class IsEnemy : MonoBehaviour {
+
+	public EnemyType enemyType;
 	
 	void Start(){
 		
