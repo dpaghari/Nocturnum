@@ -87,6 +87,8 @@ public class CanShoot : MonoBehaviour {
 
 				if(rand > 0.0 && rand < 0.20)
 				audio.PlayOneShot(enemyShotSound,0.3f);
+		
+				/*
 				if(weakenScript.IsWeakened){
 					
 					if(clone.GetComponent<PB_Linear>() != null) clone.GetComponent<PB_Linear>().Damage = 5;
@@ -99,6 +101,8 @@ public class CanShoot : MonoBehaviour {
 					if(clone.GetComponent<PB_Melee>() != null) clone.GetComponent<PB_Melee>().Damage = 15;
 					//Debug.Log ("Weaken Faded");
 				}
+				*/
+
 			}
 			firingTimer = 0.0f;
 			clone = Instantiate(shootEffect, temp + dir * 2, Quaternion.AngleAxis(-90, Vector3.forward)) as Rigidbody;

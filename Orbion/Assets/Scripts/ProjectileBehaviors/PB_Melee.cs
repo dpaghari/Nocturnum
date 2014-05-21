@@ -12,36 +12,25 @@ using System.Collections;
 
 public class PB_Melee : ProjectileBehavior {
 	
-	//public ForceMode MoveType;
-	//public float MoveForce;
-	//public CanMove MoveScript;
-	public int Damage;
-	public int searingLevel;
-	public GameObject dot;
+
+	public int Damage = 1;
+	
 	public GameObject hitEffect;
 	private GameObject clone;
 	
 	private float lifeTime = 0.5F;
 	private float lifeCounter = 0.0F;
 
-	public void Update(){
-		if(lifeCounter > lifeTime){
-			Destroy(this.gameObject);
-		} else {
-			lifeCounter += Time.deltaTime;
-		}
-	}
 	
-	public override void Initialize(){
-		return;
-	}
+	public override void Initialize(){return;}
+	public override void FixedPerform(){ return;}
 
-	public override void FixedPerform(){
-		//MoveScript.Move(transform.forward, MoveType);
-		
+	public override void Perform(){
+		if(lifeCounter > lifeTime)
+			Destroy(this.gameObject);
+		else 
+			lifeCounter += Time.deltaTime;
 	}
-	
-	public override void Perform(){ return;}
 	
 	
 	
@@ -49,26 +38,11 @@ public class PB_Melee : ProjectileBehavior {
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
 		if( KillScript) {
 			KillScript.damage(Damage);
+			Debug.Log(Damage);
+			Debug.Log(this.gameObject.name);
 			clone = Instantiate(hitEffect, transform.position, new Quaternion()) as GameObject;
 		}
-		
-		//drop a DOT on target if searing is > 0
-		if(searingLevel > 0 && other.gameObject.tag == "Enemy"){
-			clone = Instantiate(dot, other.transform.position, new Quaternion()) as GameObject;
-			clone.GetComponent<IsSearingShot>().target = other.gameObject.GetComponent<Rigidbody>();
-		}
-		
-		foreach( Transform child in transform){
-			if(child.gameObject.tag == "playerBullet"){
-				Destroy(child.gameObject);
-			}
-			else{
-				child.gameObject.GetComponent<CFX_AutoDestructShuriken>().OnlyDeactivate = false;
-			}
-		}
-		
-		transform.DetachChildren();
-		Destroy (gameObject);
+		GameObject.Destroy(this.gameObject);
 	}
 	
 	public override void OnImpactStay( Collision other){ return;}
