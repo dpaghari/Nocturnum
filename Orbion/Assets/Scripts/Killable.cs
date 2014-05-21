@@ -74,9 +74,7 @@ public class Killable : MonoBehaviour {
 		else{
 			Destroy (gameObject);
 			MetricManager.AddEnemiesKilled(1);
-			//if(gameObject.name != "base_enemy_prefab"){
-				//MetricManager.AddEnemies(-1);
-			//}
+			MetricManager.AddEnemies(-1);
 
 			if(GetComponent<isBossEnemy>() != null)
 				TechManager.hasBeatenWolf = true;
