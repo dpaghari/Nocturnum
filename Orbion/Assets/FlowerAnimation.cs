@@ -74,6 +74,7 @@ public class FlowerAnimation : MonoBehaviour {
 				isActive = false;
 				collider.isTrigger = false;
 				animation.Play("RaflessiaOpen");
+				animation.PlayQueued("RaflessiaClose");
 				timerScript.Reset();
 			}
 		}
