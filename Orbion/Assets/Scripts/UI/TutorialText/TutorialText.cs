@@ -8,9 +8,11 @@ public class TutorialText : MonoBehaviour {
 	bool fiveSecPassed = false;
 	bool pressedV = false;
 	float delay;
+	public hasOverdrive overdriveScript;
 
 	// Use this for initialization
 	void Start () {
+		overdriveScript = GameManager.AvatarContr.GetComponent<hasOverdrive>();
 		tutorialLine.IsVisible = true;
 		delay = 0;
 	}
@@ -56,7 +58,17 @@ public class TutorialText : MonoBehaviour {
 			fiveSecPassed = true;
 			pressedV = true;
 			tutorialLine.Text = "";
-	}
+		}
+
+		if(overdriveScript.overdriveOn){
+			if(!overdriveScript.overdriveActive)
+			tutorialLine.Text = "Press SPACE to activate Overdrive!";
+
+			if(Input.GetKeyDown(KeyCode.Space)){
+
+				tutorialLine.Text = "";
+			}
+		}
 
 }
 }

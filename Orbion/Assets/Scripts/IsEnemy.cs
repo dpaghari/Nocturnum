@@ -7,7 +7,7 @@ public enum EnemyType{
 	alpha_wolf,
 	luminotoad,
 	luminosaur,
-	zingbat,
+	zingbat
 }
 
 
