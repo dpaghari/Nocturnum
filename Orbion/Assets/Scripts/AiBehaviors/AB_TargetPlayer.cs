@@ -54,6 +54,8 @@ public class AB_TargetPlayer : AiBehavior {
 				
 				if(enemyScript.enemyType == EnemyType.zingbat)
 					animation.CrossFade("ZingBatGlide");
+				if(enemyScript.enemyType == EnemyType.luminosaur)
+					animation.CrossFade("LuminosaurWalk");
 
 				/*
 				if(this.tag == "Enemy")
@@ -85,6 +87,8 @@ public class AB_TargetPlayer : AiBehavior {
 				
 				if(enemyScript.enemyType == EnemyType.zingbat)
 					animation.CrossFade("ZingBatAttack");
+				if(enemyScript.enemyType == EnemyType.luminosaur)
+					animation.CrossFade("ZingBatChomp");
 
 
 				/*

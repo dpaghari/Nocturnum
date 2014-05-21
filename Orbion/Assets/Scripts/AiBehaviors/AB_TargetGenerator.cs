@@ -58,6 +58,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 				
 				if(enemyScript.enemyType == EnemyType.zingbat)
 					animation.CrossFade("ZingBatGlide");
+				if(enemyScript.enemyType == EnemyType.luminosaur)
+					animation.CrossFade("LuminosaurWalk");
 
 				/*
 				if(this.tag == "Enemy")
@@ -88,7 +90,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 						animation.CrossFade("Luminotoad_Bomb");
 						this.GetComponent<Killable>().explode();
 					}
-					
+					if(enemyScript.enemyType == EnemyType.luminosaur)
+						animation.CrossFade("LuminosaurChomp");
 					if(enemyScript.enemyType == EnemyType.alpha_wolf)
 						animation.CrossFade("WolfAttack");
 					
@@ -110,6 +113,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 				else{
 
 					if( animation.isPlaying == false){
+						if(enemyScript.enemyType == EnemyType.luminosaur)
+							animation.CrossFade("LuminosaurWalk");	
 						if(enemyScript.enemyType == EnemyType.luminotoad)
 							animation.CrossFade("Luminotoad_Hop");
 						
