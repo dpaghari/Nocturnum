@@ -15,7 +15,12 @@ public class MetricManager : Singleton<MetricManager> {
 	public static void AddEnemiesKilled(int amt){ Instance._enemiesKilled += amt;}
 	public static int getEnemiesKilled{ get { return Instance._enemiesKilled;}}
 
-	public static void AddEnemies(int amt){ Instance._totalEnemies += amt;}
+	public static void AddEnemies(int amt){ 
+		Instance._totalEnemies += amt;
+		if(Instance._totalEnemies < 0){
+			Instance._totalEnemies = 0;
+		}
+	}
 	public static int getEnemies{ get { return Instance._totalEnemies;}}
 
 

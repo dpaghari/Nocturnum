@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CanSpawnUpdate : MonoBehaviour {
 
 	//Setup how many levels and at what intervals(Timeline)
-	private const int totalLevels = 5;
+	private const int totalLevels = 4;
 	private int currentLevel = 0;
 	private int levelInit = 0;
 	private float[] TimeLine = new float[totalLevels];	
@@ -15,6 +15,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	private float intervalCounter = 0.0F;
 	private int summonLimit = 8;
 	private int healthIncrease = 0;
+	private int healthIncreaseCounter;
 	//private Rigidbody clone;
 	public Rigidbody meleeEnemy;
 	public Rigidbody meleeFastEnemy;
@@ -32,7 +33,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public Vector3 bossVec = new Vector3(150.0F,0.0F,-140.0F);
 
 	//1-easy 2-med 3-hard
-	public int difficulty = 1;
+	public int difficulty = 2;
 	
 	public class LevelInfo{
 		public float timer;
@@ -50,8 +51,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 		//Debug.Log(difficulty);//0.75 2.0 4.0 8.0 12.0
-		addLevel (0.75F, 25.0F, 3); addLevel (2.0F, 20.0F, 4); addLevel (4.0F, 20.0F, 5);
-		addLevel (8.0F, 20.0F, 6); addLevel (12.0F, 15.0F, 7); 
+		addLevel (0.75F, 25.0F, 3); addLevel (3.0F, 25.0F, 4); addLevel (7.0F, 20.0F, 4);
+		addLevel (12.0F, 20.0F, 5); //addLevel (12.0F, 20.0F, 5); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = 1; i < totalLevels; i++){
 			TimeLine[i] = levels[i].timer - levels[i-1].timer;
@@ -61,6 +62,14 @@ public class CanSpawnUpdate : MonoBehaviour {
 			//Debug.Log("timeline" + i + ": " + TimeLine[i]);
 		}
 		currentTimer = TimeLine[currentLevel] * 60.0F;
+
+		if(difficulty == 1){
+			healthIncreaseCounter = 1;	
+		} else if(difficulty == 2){
+			healthIncreaseCounter = 3;		
+		} else {
+			healthIncreaseCounter = 5;
+		}
 	}
 	
 	void FixedUpdate(){
@@ -158,7 +167,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 				MetricManager.AddEnemies(1);
 			}
 		}
-		healthIncrease += 5;
+		healthIncrease += healthIncreaseCounter;
 	}
 	public void makeMelee(Vector3 _vec){
 		clone = Instantiate (meleeEnemy, _vec, Quaternion.identity) as Rigidbody;
