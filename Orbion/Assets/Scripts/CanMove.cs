@@ -9,6 +9,7 @@ public class CanMove : MonoBehaviour {
 	
 	protected float ForceScale;
 	protected float MaxSpeedScale;
+	
 
 	void Update() {
 	}
