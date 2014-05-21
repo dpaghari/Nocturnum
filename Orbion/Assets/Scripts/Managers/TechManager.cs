@@ -305,7 +305,7 @@ public class TechManager : Singleton<TechManager> {
 			
 			ResManager.Reset();
 			TechManager.Reset();
-			AutoFade.LoadLevel("scene1", 2.0f, 2.0f, Color.black);
+			AutoFade.LoadLevel("scene2", 2.0f, 2.0f, Color.black);
 			timerScript.Reset();
 	
 		}
