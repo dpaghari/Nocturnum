@@ -41,6 +41,8 @@ public class AB_TargetAll : AiBehavior {
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 				moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
+				//if(enemyScript.enemyType == EnemyType.environment)
+					//animation.CrossFade("Luminotoad_Hop");
 				if(enemyScript.enemyType == EnemyType.luminotoad)
 					animation.CrossFade("Luminotoad_Hop");
 				

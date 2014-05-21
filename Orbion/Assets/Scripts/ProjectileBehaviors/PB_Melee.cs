@@ -38,8 +38,8 @@ public class PB_Melee : ProjectileBehavior {
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
 		if( KillScript) {
 			KillScript.damage(Damage);
-			Debug.Log(Damage);
-			Debug.Log(this.gameObject.name);
+			//Debug.Log(Damage);
+			//Debug.Log(this.gameObject.name);
 			clone = Instantiate(hitEffect, transform.position, new Quaternion()) as GameObject;
 		}
 		GameObject.Destroy(this.gameObject);

@@ -15,7 +15,7 @@ public class AB_DoNothing : AiBehavior {
 	override public void FixedUpdateAB(){return;}
 	
 	override public void UpdateAB(){
-		if(GetComponent<IsEnemy>() != null)
+		if(GetComponent<IsEnemy>().enemyType != 0)
 		animation.CrossFade("Idle");
 	}
 }
