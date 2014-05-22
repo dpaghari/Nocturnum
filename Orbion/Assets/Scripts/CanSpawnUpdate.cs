@@ -19,6 +19,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 	//private Rigidbody clone;
 	public Rigidbody meleeEnemy;
 	public Rigidbody meleeFastEnemy;
+	public Rigidbody luminosaurEnemy;
+	public Rigidbody luminotoadEnemy;
 	public Rigidbody rangedEnemy;
 	public Rigidbody rangedMultiEnemy;
 	public Rigidbody bossEnemy;
@@ -156,11 +158,15 @@ public class CanSpawnUpdate : MonoBehaviour {
 				if(rand > 0.0 && rand < 0.3){
 					makeMelee(tempVec);
 					//SpawnManager.makeMelee(tempVec);
-				} else if(rand >= 0.3 && rand < 0.7){
+				} else if(rand >= 0.3 && rand < 0.5){
 					makeRanged(tempVec);
 					//SpawnManager.makeRanged(tempVec);
-				} else if(rand >= 0.7 && rand < 0.9){
+				} else if(rand >= 0.5 && rand < 0.7){
 					makeFastMelee(tempVec);
+				} else if(rand >= 0.7 && rand < 0.8){
+					makeLuminosaur(tempVec);
+				} else if(rand >= 0.8 && rand < 0.9){
+					makeLuminotoad(tempVec);
 				} else {
 					makeMultiRanged(tempVec);
 				}
@@ -175,6 +181,14 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 	public void makeFastMelee(Vector3 _vec){
 		clone = Instantiate (meleeFastEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
+	}
+	public void makeLuminosaur(Vector3 _vec){
+		clone = Instantiate (luminosaurEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
+	}
+	public void makeLuminotoad(Vector3 _vec){
+		clone = Instantiate (luminotoadEnemy, _vec, Quaternion.identity) as Rigidbody;
 		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
 	}
 	public void makeRanged(Vector3 _vec){
