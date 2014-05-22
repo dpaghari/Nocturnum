@@ -8,7 +8,7 @@ public class isPorcupinePlant : MonoBehaviour {
 	private DumbTimer timerScript;
 	// Use this for initialization
 	void Start () {
-		timerScript = DumbTimer.New(3.0f, 1.0f);
+		timerScript = DumbTimer.New(2.0f, 1.0f);
 
 	}
 	

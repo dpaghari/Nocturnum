@@ -8811,7 +8811,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -9032,6 +9032,10 @@ Prefab:
       propertyPath: _buildMenuPanel
       value: 
       objectReference: {fileID: 506195752}
+    - target: {fileID: 11400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: reloadCooldown
+      value: 1.79999995
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}
@@ -19924,8 +19928,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -28959,7 +28963,7 @@ MonoBehaviour:
   weakenScript: {fileID: 0}
   clipSize: 20
   currentAmmo: 20
-  reloadCooldown: 3
+  reloadCooldown: 1.79999995
   reloading: 0
 --- !u!114 &680245871
 MonoBehaviour:
@@ -29163,7 +29167,7 @@ Animation:
   - {fileID: 7400008, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400010, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400012, guid: 5a15b6d221ae451428f089594b078732, type: 3}
-  - {fileID: 7400014, guid: 5a15b6d221ae451428f089594b078732, type: 3}
+  - {fileID: 7400000, guid: bcd9ee1cefd1f3e4f9c2dbb10dbb6cc4, type: 3}
   - {fileID: 7400016, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400000, guid: a501272d765b93c46bde9a15b70a5ec4, type: 3}
   - {fileID: 7400000, guid: 5a15b6d221ae451428f089594b078732, type: 3}
@@ -38420,7 +38424,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -40834,7 +40838,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -45528,7 +45532,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -52499,7 +52503,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -57371,7 +57375,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
       propertyPath: lightValue
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
@@ -61838,7 +61842,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -66986,7 +66990,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -72183,7 +72187,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -85091,7 +85095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baeacc5f8a9d15245af6f6029ddd40c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightValue: 100
+  lightValue: 50
   collectSound: {fileID: 8300000, guid: a325284345d98014fbdc879d29edc168, type: 3}
 --- !u!54 &1895276953
 Rigidbody:
@@ -95365,7 +95369,7 @@ MonoBehaviour:
   bullet_speed: 100
   firingRate: 0
   spreadAngle: 360
-  numOfBulletShot: 8
+  numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
