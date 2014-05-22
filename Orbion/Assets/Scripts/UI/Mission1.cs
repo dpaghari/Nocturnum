@@ -8,6 +8,7 @@ public class Mission1 : MonoBehaviour {
 	public dfCheckbox _checkbox_4;
 	public dfCheckbox _checkbox_5;
 	public dfLabel _label_mission_clear;
+	public dfLabel _label_paused;
 	string collectString;
 	public bool questComplete;
 	public bool bossDefeated;
@@ -54,6 +55,11 @@ public class Mission1 : MonoBehaviour {
 		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true /*&& ResManager.Collectible >= 30*/ && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
 			_label_mission_clear.IsVisible = true;
 		}
+		if(GameManager.AvatarContr.isPaused){
+			_label_paused.IsVisible = true;
+		}
+		else
+			_label_paused.IsVisible = false;
 	}
 
 

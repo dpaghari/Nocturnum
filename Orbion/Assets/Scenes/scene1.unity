@@ -1900,7 +1900,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 32258135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .369796753, y: -.015625, z: 0}
+  m_LocalPosition: {x: .369789124, y: -.015625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505619783}
@@ -16940,9 +16940,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorStyle: 261
-  isEnabled: 1
+  isEnabled: 0
   isVisible: 1
-  isInteractive: 1
+  isInteractive: 0
   tooltip: 
   pivot: 0
   zindex: 4
@@ -19897,6 +19897,7 @@ Transform:
   m_LocalPosition: {x: -100, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 754472603}
   - {fileID: 1795139430}
   - {fileID: 511493111}
   - {fileID: 505619783}
@@ -19928,8 +19929,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -20637,9 +20638,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorStyle: 261
-  isEnabled: 1
+  isEnabled: 0
   isVisible: 0
-  isInteractive: 1
+  isInteractive: 0
   tooltip: 
   pivot: 0
   zindex: 2
@@ -21212,7 +21213,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 505619782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.471359253, y: .828125, z: 0}
+  m_LocalPosition: {x: -.6171875, y: .828125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 32258136}
@@ -21263,9 +21264,9 @@ MonoBehaviour:
   layout:
     anchorStyle: 271
     margins:
-      left: .323242188
+      left: .268554688
       top: .0859375
-      right: .635742188
+      right: .581054688
       bottom: .12890625
     owner: {fileID: 505619785}
   renderOrder: 189
@@ -21628,7 +21629,7 @@ MonoBehaviour:
       right: .0498046875
       bottom: .111979164
     owner: {fileID: 511493114}
-  renderOrder: 193
+  renderOrder: 194
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -32028,6 +32029,126 @@ Transform:
   m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
   m_Children: []
   m_Father: {fileID: 1816150008}
+--- !u!1 &754472602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 754472603}
+  - 114: {fileID: 754472605}
+  - 65: {fileID: 754472604}
+  m_Layer: 17
+  m_Name: Label_MissionClear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754472603
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754472602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.536460876, y: .078125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 475972224}
+--- !u!65 &754472604
+BoxCollider:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754472602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.07552087, y: .15625, z: .00100000005}
+  m_Center: {x: .537760437, y: -.078125, z: 0}
+--- !u!114 &754472605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754472602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e3359ffaefe124a992e17c8830875c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorStyle: 448
+  isEnabled: 1
+  isVisible: 0
+  isInteractive: 1
+  tooltip: 
+  pivot: 0
+  zindex: 9
+  color:
+    serializedVersion: 2
+    rgba: 4294967295
+  disabledColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  size: {x: 413, y: 60}
+  minSize: {x: 0, y: 0}
+  maxSize: {x: 0, y: 0}
+  clipChildren: 0
+  tabIndex: -1
+  canFocus: 0
+  autoFocus: 0
+  layout:
+    anchorStyle: 448
+    margins:
+      left: .298828125
+      top: .4609375
+      right: .702148438
+      bottom: .5390625
+    owner: {fileID: 754472605}
+  renderOrder: 192
+  isLocalized: 0
+  hotZoneScale: {x: 1, y: 1}
+  atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
+  font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
+  backgroundSprite: 
+  backgroundColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  autoSize: 1
+  autoHeight: 0
+  wordWrap: 0
+  text: MISSION  CLEAR!
+  bottomColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  align: 1
+  vertAlign: 1
+  textScale: 3.75
+  textScaleMode: 2
+  charSpacing: 2
+  colorizeSymbols: 0
+  processMarkup: 0
+  outline: 0
+  outlineWidth: 1
+  enableGradient: 0
+  outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadow: 1
+  shadowColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  shadowOffset: {x: 3, y: -3}
+  padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  tabSize: 48
+  tabStops: 
 --- !u!1001 &756660519
 Prefab:
   m_ObjectHideFlags: 0
@@ -58274,7 +58395,8 @@ MonoBehaviour:
   _checkbox_3: {fileID: 1861685740}
   _checkbox_4: {fileID: 1841703673}
   _checkbox_5: {fileID: 488994559}
-  _label_mission_clear: {fileID: 1317046649}
+  _label_mission_clear: {fileID: 754472605}
+  _label_paused: {fileID: 1317046649}
   questComplete: 0
   bossDefeated: 0
 --- !u!1 &1289364714
@@ -59685,7 +59807,7 @@ GameObject:
   - 114: {fileID: 1317046649}
   - 65: {fileID: 1317046648}
   m_Layer: 17
-  m_Name: Label_MissionClear
+  m_Name: Label_Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59698,7 +59820,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1317046645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.536460876, y: .078125, z: 0}
+  m_LocalPosition: {x: -.260421753, y: .078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475972224}
@@ -59712,8 +59834,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.07552087, y: .15625, z: .00100000005}
-  m_Center: {x: .537760437, y: -.078125, z: 0}
+  m_Size: {x: .5234375, y: .15625, z: .00100000005}
+  m_Center: {x: .26171875, y: -.078125, z: 0}
 --- !u!114 &1317046649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59738,7 +59860,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 413, y: 60}
+  size: {x: 201, y: 60}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -59753,7 +59875,7 @@ MonoBehaviour:
       right: .702148438
       bottom: .5390625
     owner: {fileID: 1317046649}
-  renderOrder: 192
+  renderOrder: 193
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
@@ -59765,7 +59887,7 @@ MonoBehaviour:
   autoSize: 1
   autoHeight: 0
   wordWrap: 0
-  text: MISSION  CLEAR!
+  text: PAUSED
   bottomColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -82767,9 +82889,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorStyle: 261
-  isEnabled: 1
+  isEnabled: 0
   isVisible: 1
-  isInteractive: 1
+  isInteractive: 0
   tooltip: 
   pivot: 0
   zindex: 0
@@ -83580,9 +83702,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorStyle: 261
-  isEnabled: 1
+  isEnabled: 0
   isVisible: 1
-  isInteractive: 1
+  isInteractive: 0
   tooltip: 
   pivot: 0
   zindex: 3
@@ -96774,9 +96896,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorStyle: 261
-  isEnabled: 1
+  isEnabled: 0
   isVisible: 1
-  isInteractive: 1
+  isInteractive: 0
   tooltip: 
   pivot: 0
   zindex: 5
