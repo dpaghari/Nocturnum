@@ -16,6 +16,7 @@ public class Killable : MonoBehaviour {
 	private GameObject clone;
 	public DumbTimer timerScript;
 
+	public GameObject toadExplosion;
 
 	// Set HP to default
 	void Start () {
@@ -90,9 +91,20 @@ public class Killable : MonoBehaviour {
 	}
 
 	public void explode(){
-		kill();
+
+		StartCoroutine(ToadExplode(animation["Luminotoad_Bomb"].length));
+
 		//explode dmg
 	}
+	IEnumerator ToadExplode(float waitTime){
+		yield return new WaitForSeconds(waitTime); 
+		if(toadExplosion != null){
+			Instantiate(toadExplosion,transform.position, this.transform.rotation);
+		}
+		kill();
+	}
+
+
 
 	IEnumerator WaitAndCallback(float waitTime){
 		yield return new WaitForSeconds(waitTime + 1.5f); 

@@ -270,11 +270,11 @@ GameObject:
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400010}
-  - 114: {fileID: 11400006}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
   - 111: {fileID: 11100000}
+  - 114: {fileID: 11400004}
   m_Layer: 11
   m_Name: luminotoad
   m_TagString: Enemy
@@ -491,7 +491,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 16.1135578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400032}
@@ -636,10 +636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 12
-  MaxSpeed: 12
+  Force: 8
+  MaxSpeed: 8
   MoveScale: 1
---- !u!114 &11400006
+--- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -647,13 +647,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
+  m_Script: {fileID: 11500000, guid: 97f14317cdcfced439f3643253388e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4.5
-  CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 40
-  PlayerPriorityRange: 40
+  AtkRange: 10
+  CurrTarget: {fileID: 0}
+  PlayerPriorityRange: 15
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -706,6 +705,7 @@ MonoBehaviour:
   buildScript: {fileID: 0}
   healEffect: {fileID: 0}
   timerScript: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

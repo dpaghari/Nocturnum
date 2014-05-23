@@ -140,6 +140,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+				if(enemyScript.enemyType != EnemyType.luminotoad)
 				shootScript.Shoot(lookPosition);
 			}
 		}
