@@ -14,8 +14,8 @@ public class Orbit : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		amplitude = 1.0f;
-		speed = 1.0f;
-		currHeight = transform.position.y;
+		speed = 2.0f;
+		currHeight = transform.position.y + 1.3f;
 	}
 	
 	// Update is called once per frame
