@@ -42,7 +42,7 @@ public class Mission1 : MonoBehaviour {
 		if(TechManager.hasTurret){
 			_checkbox_3.IsChecked = true;
 		}
-		if(ResManager.Collectible >= 30){
+		if(ResManager.Collectible >= 25){
 			_checkbox_4.IsChecked = true;
 		}
 		if(TechManager.hasWolves){
