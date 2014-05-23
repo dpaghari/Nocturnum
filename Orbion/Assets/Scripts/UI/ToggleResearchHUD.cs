@@ -3,9 +3,11 @@ using System.Collections;
 
 public class ToggleResearchHUD : MonoBehaviour {
 	public dfTabContainer _tabContainer;
+	bool onHUD;
 
 	// Use this for initialization
 	void Start () {
+		onHUD = true;
 	}
 	
 	// Update is called once per frame
@@ -14,11 +16,7 @@ public class ToggleResearchHUD : MonoBehaviour {
 	}
 
 	public void ToggleHUD(){
-		if(!_tabContainer.IsVisible){
-			_tabContainer.IsVisible = true;
-		} else if(_tabContainer.IsVisible){
-			_tabContainer.IsVisible = false;
-		}
+		_tabContainer.IsVisible = !onHUD;
 
 	}
 }
