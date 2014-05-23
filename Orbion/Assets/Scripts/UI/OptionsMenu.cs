@@ -9,11 +9,13 @@ public class OptionsMenu : MonoBehaviour {
 	public dfPanel _upgradeMenuPanel;
 	public dfButton _optionsButton;
 	public dfButton _resetButton;
+	public dfPanel _allOptionsPanel;
 
 	// Use this for initialization
 	void Start () {
 		_optionsPanel.IsVisible = false;
 		_darkenPanel.IsVisible = false;
+		_allOptionsPanel.IsVisible = true;
 		_optionsPanel.BringToFront ();
 		_optionsButton.BringToFront ();
 		_resetButton.BringToFront ();
