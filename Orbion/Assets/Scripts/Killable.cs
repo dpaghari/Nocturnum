@@ -64,28 +64,37 @@ public class Killable : MonoBehaviour {
 			StartCoroutine(WaitAndCallback(animation["Dead"].length));
 		}
 		else{
-			Destroy (gameObject);
+
+			if(GetComponent<IsEnemy>().enemyType != EnemyType.luminotoad){
+					Destroy (gameObject);
+				if (deathTarget != null) {
+					Vector3 temp = transform.position;
+					temp.y += 4;
+					//if(deathTarget.GetComponent<IsCollectible>() != null){
+					float rand = Random.value;
+					//Debug.Log(rand);
+					if(rand > 0.0 && rand < 0.5){
+						Instantiate (collectTarget, temp, this.transform.rotation);
+						//	Debug.Log("creating collectible");
+					}
+					Instantiate(deathTarget,temp, this.transform.rotation);
+					//}
+					//else
+					//	Instantiate(deathTarget, temp, this.transform.rotation);
+					
+				}
+
+			}
+			else
+					explode();
+
+
 			MetricManager.AddEnemiesKilled(1);
 			MetricManager.AddEnemies(-1);
 
 			if(GetComponent<isBossEnemy>() != null)
 				TechManager.hasBeatenWolf = true;
-			if (deathTarget != null) {
-				Vector3 temp = transform.position;
-				temp.y += 4;
-				//if(deathTarget.GetComponent<IsCollectible>() != null){
-					float rand = Random.value;
-					//Debug.Log(rand);
-					if(rand > 0.0 && rand < 0.5){
-					Instantiate (collectTarget, temp, this.transform.rotation);
-					//	Debug.Log("creating collectible");
-					}
-				Instantiate(deathTarget,temp, this.transform.rotation);
-				//}
-				//else
-				//	Instantiate(deathTarget, temp, this.transform.rotation);
 
-			}
 		}
 		//make death object
 	}
@@ -101,7 +110,10 @@ public class Killable : MonoBehaviour {
 		if(toadExplosion != null){
 			Instantiate(toadExplosion,transform.position, this.transform.rotation);
 		}
-		kill();
+		Vector3 temp = transform.position;
+		temp.y += 4;
+		Instantiate(deathTarget,temp, this.transform.rotation);
+		Destroy(gameObject);
 	}
 
 
