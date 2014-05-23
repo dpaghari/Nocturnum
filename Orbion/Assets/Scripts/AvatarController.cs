@@ -50,7 +50,7 @@ public class AvatarController : MonoBehaviour {
 		overdriveScript = GetComponent<hasOverdrive>();
 		buildScript = GetComponent<CanBuild>();
 		researchScript = GetComponent<CanResearch>();
-
+		collider.enabled = true;
 		startingClipSize = shootScript.clipSize;
 	}
 

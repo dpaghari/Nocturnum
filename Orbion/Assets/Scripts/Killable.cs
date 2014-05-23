@@ -31,22 +31,8 @@ public class Killable : MonoBehaviour {
 	}
 
 	void Update () {
-		if(GameManager.PlayerDead){
-		timerScript.Update();
-		}
-		if(timerScript.Finished() == true){
-			ResManager.Reset();
-			TechManager.Reset();
-			MetricManager.Reset();
-			GameManager.KeysEnabled = true;
-			GameManager.PlayerDead = false;
-			timerScript.Reset();
-			AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
 
 
-			
-		}
-		//Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
 	}
 
 
@@ -67,9 +53,14 @@ public class Killable : MonoBehaviour {
 	// Kills enemy or player
 	public void kill () {
 		if(gameObject.tag == "Player"){
-			GameManager.PlayerDead = true;
+
 			GameManager.KeysEnabled = false;
+			if(!GameManager.PlayerDead){
 			animation.Play("Dead");
+			GameManager.PlayerDead = true;
+			}
+			collider.enabled = false;
+			StartCoroutine(WaitAndCallback(animation["Dead"].length));
 		}
 		else{
 			Destroy (gameObject);
@@ -101,6 +92,17 @@ public class Killable : MonoBehaviour {
 	public void explode(){
 		kill();
 		//explode dmg
+	}
+
+	IEnumerator WaitAndCallback(float waitTime){
+		yield return new WaitForSeconds(waitTime + 1.5f); 
+		ResManager.Reset();
+		TechManager.Reset();
+		MetricManager.Reset();
+		//GameManager.KeysEnabled = true;
+		GameManager.PlayerDead = false;
+
+		AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
 	}
 
 	/// <summary>
