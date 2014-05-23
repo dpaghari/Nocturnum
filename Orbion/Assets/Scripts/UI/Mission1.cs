@@ -9,6 +9,7 @@ public class Mission1 : MonoBehaviour {
 	public dfCheckbox _checkbox_5;
 	public dfLabel _label_mission_clear;
 	public dfLabel _label_paused;
+	public dfLabel _label_dead;
 	string collectString;
 	public bool questComplete;
 	public bool bossDefeated;
@@ -60,6 +61,13 @@ public class Mission1 : MonoBehaviour {
 		}
 		else
 			_label_paused.IsVisible = false;
+
+		if(GameManager.PlayerDead){
+			_label_dead.IsVisible = true;
+		}
+		else
+			_label_dead.IsVisible = false;
+
 	}
 
 
