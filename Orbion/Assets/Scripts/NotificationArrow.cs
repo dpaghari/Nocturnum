@@ -25,6 +25,9 @@ public class NotificationArrow : MonoBehaviour {
 	private Vector2 posOffset = Vector2.zero;
 	private DumbTimer durationTimer;
 
+
+
+
 	//Uses values that UpdateArrowTransform updates, should run after it
 	public bool ShouldDraw(){
 		//If it clamped, then it was forced to the edge and we should draw it
@@ -36,13 +39,14 @@ public class NotificationArrow : MonoBehaviour {
 
 		return !undrawableMargin.Overlaps( drawRect);
 	}
-
+/*
 	//Prevents the arrow from being drawn outside of the screen
 	void ClampPosToScreen() {
 		pos.x = Mathf.Clamp( posNoClamp.x, posOffset.x, Camera.main.pixelWidth - posOffset.x);
 		pos.y = Mathf.Clamp( posNoClamp.y, posOffset.y, Camera.main.pixelHeight - posOffset.y);
-	}
 
+	}
+*/
 	float FindRotation() {
 		Vector2 arrowDir;
 
@@ -58,6 +62,35 @@ public class NotificationArrow : MonoBehaviour {
 		return angleDegree - rotationOffset;
 	}
 
+
+	Vector2 ClampToScreen(){
+		//WorldToScreenPoint's gives a y is in the opposite direction that the draw expects
+		Vector2 screenDrawPos =  Camera.main.WorldToScreenPoint( transform.position);
+		screenDrawPos.y = Camera.main.pixelHeight - screenDrawPos.y;
+
+
+		//WorldToScreenPoint and WorldToViewportPoint don't give reliable values when out of bound for our camera
+		//So we only use them to check if we're out of bounds and then manually check the direction we're out of bound
+		//using the object and camera's 3d position
+		if( screenDrawPos.x < posOffset.x || screenDrawPos.x > Camera.main.pixelWidth - posOffset.x){
+			if( transform.position.x < Camera.main.transform.position.x)
+				screenDrawPos.x = posOffset.x;
+			else
+				screenDrawPos.x = Camera.main.pixelWidth - posOffset.x;
+		}
+			
+		if( screenDrawPos.y < posOffset.y || screenDrawPos.y > Camera.main.pixelHeight - posOffset.y){
+			if( transform.position.z < Camera.main.transform.position.z)
+				screenDrawPos.y = Camera.main.pixelHeight - posOffset.y;
+			else
+				screenDrawPos.y = posOffset.y;
+		}
+		
+
+		return screenDrawPos;
+	}
+
+
 	//updates the transformation of the arrow
 	void UpdateArrowTransform() {
 		posOffset.x = size.x / 2;
@@ -65,8 +98,8 @@ public class NotificationArrow : MonoBehaviour {
 
 		//WorldToScreenPoint's gives a y is in the opposite direction that the draw expects
 		posNoClamp =  Camera.main.WorldToScreenPoint( transform.position);
-		posNoClamp.y = Camera.main.pixelHeight - posNoClamp.y; 
-		ClampPosToScreen();
+		posNoClamp.y = Camera.main.pixelHeight - posNoClamp.y;
+		pos = ClampToScreen();
 
 		drawRect = new Rect( pos.x - posOffset.x, pos.y - posOffset.y, size.x, size.y);
 
