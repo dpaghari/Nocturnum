@@ -9,6 +9,10 @@ public class IsGenerator : MonoBehaviour {
 	public float PulseInterval = 5.0f;
 	private DumbTimer energyAddTimer;
 
+	public GameObject GeneratorRing;
+	public GameObject GeneratorSphere;
+	
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,9 +28,6 @@ public class IsGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		audio.PlayOneShot(genHum, 1.0f);
-		transform.GetChild(1).transform.Rotate(new Vector3(0, 0, 1));
-
-		transform.GetChild(transform.childCount - 3).transform.Rotate(new Vector3(0, 0, 1));
 
 		if(energyAddTimer.Finished()){
 			ResManager.AddEnergy( EnergyPerPulse);
@@ -36,4 +37,10 @@ public class IsGenerator : MonoBehaviour {
 			energyAddTimer.Update();
 
 	}
+
+	void FixedUpdate(){
+		GeneratorRing.transform.Rotate(new Vector3(0, 0, 1));
+		GeneratorSphere.transform.Rotate(new Vector3(0, 0, 1));
+	}
+
 }
