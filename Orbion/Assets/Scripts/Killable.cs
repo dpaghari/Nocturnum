@@ -40,6 +40,10 @@ public class Killable : MonoBehaviour {
 	// Updates HP based on damage taken, calls kill() on dead objects
 	public void damage (int dmg) {
 
+		if(gameObject.tag == "Player"){
+			animation.Play("GetHit");
+		}
+
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
 		if (currHP <= 0){
