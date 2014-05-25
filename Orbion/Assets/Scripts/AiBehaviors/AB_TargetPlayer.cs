@@ -42,8 +42,9 @@ public class AB_TargetPlayer : AiBehavior {
 				//transform.LookAt(CurrTarget.transform);
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				//moveScript.Move(CurrTarget.position - rigidbody.position);
+				moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
+				//moveScript.Move (meshScript.nextPosition*-1);
 
 				if(enemyScript.enemyType == EnemyType.luminotoad)
 					animation.CrossFade("Luminotoad_Hop");
@@ -75,7 +76,7 @@ public class AB_TargetPlayer : AiBehavior {
 		if(targetCheckCounter > targetCheckTimer){
 			CurrTarget = FindTarget(TargetSearchRadius);
 			targetCheckCounter = 0.0F;
-			meshScript.SetDestination(CurrTarget.position);
+			//meshScript.SetDestination(CurrTarget.position);
 		} else {
 			targetCheckCounter += Time.deltaTime;
 		}
