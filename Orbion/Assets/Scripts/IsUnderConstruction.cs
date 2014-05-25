@@ -36,6 +36,8 @@ public class IsUnderConstruction : MonoBehaviour {
 	//whether or not construction will continue if it is in the darkness
 	public bool canBuildOutOfLight = false;
 
+	public float BulletTimeReduction = 1/10f;
+
 
 
 	//Rotates and scales the object when we increase/decrease construction timer.
@@ -152,6 +154,6 @@ public class IsUnderConstruction : MonoBehaviour {
 
 
 	void OnCollisionEnter(Collision other){
-		if(other.gameObject.tag == "playerBullet") ChangeBuildProgess( -1f, 10f);
+		if(other.gameObject.tag == "playerBullet") ChangeBuildProgess( -BulletTimeReduction, 10f);
 	}
 }
