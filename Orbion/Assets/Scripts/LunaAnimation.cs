@@ -77,11 +77,12 @@ public class LunaAnimation : MonoBehaviour {
 			}
 
 
-			if (MoveKeyStay()){ 
-					//if(Input.GetMouseButtonDown(0))
-						animation.CrossFade("Run");
-					//else
-						//animation.CrossFade("ShootRun");
+			if (MoveKeyStay()){
+					if(!animation.IsPlaying("ShootRun"))
+						animation.Play("Run");
+			}
+			if(MoveKeyStay() && Input.GetMouseButton(0)){
+					animation.Play("ShootRun");
 			}
 			//only change our position if there is an update to it
 			if (newRotation != Vector3.zero) transform.forward = newRotation;
