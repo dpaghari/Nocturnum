@@ -54,7 +54,6 @@ public class Killable : MonoBehaviour {
 	// Kills enemy or player
 	public void kill () {
 		if(gameObject.tag == "Player"){
-
 			GameManager.KeysEnabled = false;
 			if(!GameManager.PlayerDead){
 			animation.Play("Dead");
@@ -62,49 +61,48 @@ public class Killable : MonoBehaviour {
 			}
 			collider.enabled = false;
 			StartCoroutine(WaitAndCallback(animation["Dead"].length));
-		}
-		else{
 
-			if(GetComponent<IsEnemy>().enemyType != EnemyType.luminotoad){
-					Destroy (gameObject);
+			return;
+		}
+
+
+		IsEnemy enemyScript = GetComponent<IsEnemy>();
+		if(enemyScript){
+			if(enemyScript.enemyType == EnemyType.luminotoad){
+				explode();
+			}
+			else{
+				Destroy (gameObject);
 				if (deathTarget != null) {
 					Vector3 temp = transform.position;
 					temp.y += 4;
-					//if(deathTarget.GetComponent<IsCollectible>() != null){
 					float rand = Random.value;
-					//Debug.Log(rand);
-					if(rand > 0.0 && rand < 0.5){
+					if(rand > 0.0 && rand < 0.5)
 						Instantiate (collectTarget, temp, this.transform.rotation);
-						//	Debug.Log("creating collectible");
-					}
+
 					Instantiate(deathTarget,temp, this.transform.rotation);
-					//}
-					//else
-					//	Instantiate(deathTarget, temp, this.transform.rotation);
-					
 				}
-
 			}
-			else
-					explode();
-
-
+			
 			MetricManager.AddEnemiesKilled(1);
 			MetricManager.AddEnemies(-1);
-
+			
 			if(GetComponent<isBossEnemy>() != null)
 				TechManager.hasBeatenWolf = true;
 
+			return;
 		}
-		//make death object
+		GameObject.Destroy(this.gameObject);
+
 	}
+
 
 	public void explode(){
-
 		StartCoroutine(ToadExplode(animation["Luminotoad_Bomb"].length));
-
 		//explode dmg
 	}
+
+
 	IEnumerator ToadExplode(float waitTime){
 		yield return new WaitForSeconds(waitTime); 
 		if(toadExplosion != null){
