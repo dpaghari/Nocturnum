@@ -13,7 +13,7 @@ public class ResManager : Singleton<ResManager> {
 	private int _MaxCollectible = 25;
 	private int _LGEnergy = 0;
 	private int _LGMaxEnergy = 300;
-	private int _LGCoreCharges = 9;
+	private int _LGCoreCharges = 0;
 	private int _LGCoreMaxCharges = 10;
 
 
