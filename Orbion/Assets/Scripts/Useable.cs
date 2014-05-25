@@ -5,6 +5,8 @@ using System.Collections;
 public enum UseType{
 	none,
 	rotateWithUser,
+	lightgeyserUse,
+	depositLGEnergy
 
 }
 
@@ -12,6 +14,10 @@ public class Useable : MonoBehaviour {
 
 	public UseType useBehaviorType = UseType.none;
 	public float rotationSpeed = 1;
+
+	public GameObject item;
+	private GameObject clone;
+
 	
 	
 	private bool IsToggling = false;
@@ -32,7 +38,23 @@ public class Useable : MonoBehaviour {
 		Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget); 
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
 	}
+	public void lightgeyserUse( GameObject user){
 
+		Vector3 pos = transform.position;
+		pos.y += 5;
+		if(ResManager.LGEnergy < ResManager.LGMaxEnergy)
+		clone = Instantiate(item, pos, Quaternion.identity) as GameObject;
+	
+	}
+
+	public void depositLGEnergy(GameObject user){
+		if(ResManager.LGEnergy >= ResManager.LGMaxEnergy){
+			//Debug.Log (ResManager.LGCoreCharges);
+			ResManager.AddLGCoreCharge(1);
+			ResManager.ResetLGContainer();
+		}
+
+	}
 
 	public void Activate(CanUse useScript){
 		userUseScript = useScript;
@@ -43,6 +65,14 @@ public class Useable : MonoBehaviour {
 			case UseType.rotateWithUser :
 				actionBehavior += RotateWithUser;
 				break;
+
+			case UseType.lightgeyserUse :
+				actionBehavior += lightgeyserUse;
+				break;
+
+			case UseType.depositLGEnergy :
+				actionBehavior += depositLGEnergy;
+				break;	
 
 			case UseType.none :
 				actionBehavior = null;
