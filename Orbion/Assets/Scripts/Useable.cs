@@ -16,10 +16,11 @@ public class Useable : MonoBehaviour {
 	public float rotationSpeed = 1;
 
 	public GameObject item;
+	public GameObject vfx;
 	private GameObject clone;
+	private int numEnergy = 0;
+	private int maxnumEnergy = 300;
 
-	
-	
 	private bool IsToggling = false;
 	
 	private GameObject user;
@@ -40,10 +41,17 @@ public class Useable : MonoBehaviour {
 	}
 	public void lightgeyserUse( GameObject user){
 
-		Vector3 pos = transform.position;
-		pos.y += 5;
-		if(ResManager.LGEnergy < ResManager.LGMaxEnergy)
-		clone = Instantiate(item, pos, Quaternion.identity) as GameObject;
+
+		if(numEnergy < maxnumEnergy){
+			Vector3 pos = transform.position;
+			pos.y += 5;
+			if(ResManager.LGEnergy < ResManager.LGMaxEnergy){
+				clone = Instantiate(item, pos, Quaternion.identity) as GameObject;
+				numEnergy++;
+			}
+		}
+		else
+			Destroy(vfx);
 	
 	}
 

@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
   - 135: {fileID: 13500000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: lunaship
   m_TagString: Untagged
@@ -59,6 +60,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300000, guid: f8be63edd520032488cf5b981351615d, type: 3}
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.63000011, y: 7.80999994, z: 15.3999996}
+  m_Center: {x: 0, y: -7.4505806e-08, z: 0}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -87,6 +100,7 @@ MonoBehaviour:
   useBehaviorType: 3
   rotationSpeed: 0
   item: {fileID: 0}
+  vfx: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
