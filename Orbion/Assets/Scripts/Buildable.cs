@@ -4,6 +4,7 @@ using System.Collections;
 public class Buildable : MonoBehaviour {
 	public int cost = 0;
 	public int energyCost = 0;
+	public float buildTime = 10f;
 	public Tech TechType = Tech.none;
 	public GameObject hologram;
 

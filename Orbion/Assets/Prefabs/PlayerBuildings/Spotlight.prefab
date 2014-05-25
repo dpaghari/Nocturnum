@@ -275,13 +275,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 500
-  baseHP: 500
+  currHP: 400
+  baseHP: 400
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
   healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
   timerScript: {fileID: 0}
+  toadExplosion: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,8 +294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1ad36c00ea69845b39339a0ea06ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 40
-  energyCost: 10
+  cost: 50
+  energyCost: 20
+  buildTime: 40
   TechType: 10
   hologram: {fileID: 100002, guid: 66866562e2046e0409c62ccdb9a40691, type: 2}
   contactRadius: 3
