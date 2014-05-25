@@ -36,8 +36,8 @@ public class Mission2 : MonoBehaviour {
 			_label_mission_clear.IsVisible = true;
 		}
 		
-		collectString = string.Format("{0}", ResManager.LGCoreCharges);
-		_checkbox_3.Label.Text = "Power Ship Cores " + collectString;
+		collectString = string.Format("{0} of {1}", ResManager.LGCoreCharges, ResManager.LGCoreMaxCharges);
+		_checkbox_3.Label.Text = "Power Ship Cores: " + collectString;
 		if(TechManager.hasGeyser){
 			_checkbox_1.IsChecked = true;
 		}
