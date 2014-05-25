@@ -152,5 +152,26 @@ public class CanShoot : MonoBehaviour {
 		Scattershot (target, numOfBulletShot);
 	}
 
+	
+	public virtual void ShootTarget( GameObject target){
+		Vector3 temp = transform.position;
+		temp.y += bulletHeight.y;
+
+		Vector3 dir = (target.transform.position - transform.position).normalized;
+
+		GameObject theBullet = Instantiate(bullet.gameObject, temp + dir * projectileStartPosition, Quaternion.identity) as GameObject;
+		PB_FollowTarget followScript;
+
+		if( theBullet){
+			followScript = theBullet.GetComponent<PB_FollowTarget>();
+			if( followScript) followScript.target = target;
+		}
+
+		if( shootEffect)
+			Instantiate(shootEffect, temp + dir* 2, Quaternion.AngleAxis(-90, Vector3.forward)) ;
+
+		firingTimer = 0.0f;
+	}
+
 
 }
