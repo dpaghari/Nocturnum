@@ -19,6 +19,8 @@ public class AB_TargetPlayer : AiBehavior {
 	public float PlayerPriorityRange;
 
 	private IsEnemy enemyScript;
+	private float targetCheckTimer = 1.0F;
+	private float targetCheckCounter = 0.0F;
 
 
 	override public void OnBehaviorEnter(){
@@ -40,7 +42,7 @@ public class AB_TargetPlayer : AiBehavior {
 				//transform.LookAt(CurrTarget.transform);
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				moveScript.Move(CurrTarget.position - rigidbody.position);
+				//moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
 
 				if(enemyScript.enemyType == EnemyType.luminotoad)
@@ -70,7 +72,13 @@ public class AB_TargetPlayer : AiBehavior {
 	
 
 	override public void UpdateAB(){
-		CurrTarget = FindTarget(TargetSearchRadius);
+		if(targetCheckCounter > targetCheckTimer){
+			CurrTarget = FindTarget(TargetSearchRadius);
+			targetCheckCounter = 0.0F;
+			meshScript.SetDestination(CurrTarget.position);
+		} else {
+			targetCheckCounter += Time.deltaTime;
+		}
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){

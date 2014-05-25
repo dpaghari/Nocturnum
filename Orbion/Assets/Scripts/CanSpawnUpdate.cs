@@ -34,6 +34,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 	
 	public Vector3 bossVec = new Vector3(150.0F,0.0F,-140.0F);
 
+	public float firstSpawnTimer = 0.75F;
+
 	//1-easy 2-med 3-hard
 	public int difficulty = 2;
 	
@@ -53,7 +55,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 		//Debug.Log(difficulty);//0.75 2.0 4.0 8.0 12.0
-		addLevel (0.75F, 25.0F, 3); addLevel (3.0F, 25.0F, 4); addLevel (7.0F, 20.0F, 4);
+		addLevel (firstSpawnTimer, 25.0F, 3); addLevel (3.0F, 25.0F, 4); addLevel (7.0F, 20.0F, 4);
 		addLevel (12.0F, 20.0F, 5); //addLevel (12.0F, 20.0F, 5); 
 		TimeLine[0] = levels[0].timer;
 		for(int i = 1; i < totalLevels; i++){

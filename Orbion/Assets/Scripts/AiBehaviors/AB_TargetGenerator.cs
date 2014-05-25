@@ -44,7 +44,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 				//transform.LookAt(CurrTarget.transform);
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				moveScript.Move(CurrTarget.position - rigidbody.position);
+				//moveScript.Move(CurrTarget.position - rigidbody.position);
 				//meshScript.SetDestination(CurrTarget.position);
 
 				if(enemyScript.enemyType == EnemyType.luminotoad)
@@ -77,6 +77,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 	protected virtual void Update () {
 		if(targetCheckCounter > targetCheckTimer){
 			CurrTarget = FindTarget(TargetSearchRadius);
+			meshScript.SetDestination(CurrTarget.position);
 			targetCheckCounter = 0.0F;
 		} else {
 			targetCheckCounter += Time.deltaTime;
