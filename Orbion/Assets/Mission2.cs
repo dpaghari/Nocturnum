@@ -30,36 +30,27 @@ public class Mission2 : MonoBehaviour {
 		
 		
 		
-		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true){
+		if(TechManager.hasGeyser == true && TechManager.haslightFist == true && _checkbox_3.IsChecked == true){
 			questComplete = true;
+			TechManager.missionComplete = true;
+			_label_mission_clear.IsVisible = true;
 		}
 		
 		collectString = string.Format("{0}", ResManager.LGCoreCharges);
 		_checkbox_3.Label.Text = "Power Ship Cores " + collectString;
-		if(TechManager.hasGenerator){
+		if(TechManager.hasGeyser){
 			_checkbox_1.IsChecked = true;
 		}
-		if(TechManager.hasScatter){
+		if(TechManager.haslightFist){
 			_checkbox_2.IsChecked = true;
 		}
-		if(TechManager.hasTurret){
+		if(ResManager.LGCoreCharges >= ResManager.LGCoreMaxCharges){
 			_checkbox_3.IsChecked = true;
 		}
-		if(ResManager.Collectible >= 25){
-			_checkbox_4.IsChecked = true;
-		}
-		/*if(TechManager.hasWolves){
-			_checkbox_5.IsVisible = true;
-			_checkbox_5.Label.Text = "Defeat the Alpha Wolf.";
-			if(TechManager.hasBeatenWolf)
-				_checkbox_5.IsChecked = true;
-			bossDefeated = true;
-		}
-		*/
-		
-		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true /*&& ResManager.Collectible >= 30*/ && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
-			_label_mission_clear.IsVisible = true;
-		}
+
+	
+
+
 		if(GameManager.AvatarContr.isPaused){
 			_label_paused.IsVisible = true;
 		}

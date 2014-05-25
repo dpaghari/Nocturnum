@@ -66,6 +66,10 @@ public class TechManager : Singleton<TechManager> {
 
 
 
+	public static bool missionComplete = false;
+	public static string currLevel;
+
+
 	//-----------Mission 1 variables------------//
 	// Temporary should be moved into a Questmanager 
 	public static bool hasGenerator = false;
@@ -74,10 +78,14 @@ public class TechManager : Singleton<TechManager> {
 	public static bool hasWolves = false;
 	public static bool hasBeatenWolf = false;
 	public static DumbTimer timerScript = DumbTimer.New(5.0f, 1.0f);
-	public static bool missionComplete = false;
 
 	//------------------------------------------//
 
+	//------------Mission 2 variables-----------//
+	public static bool haslightFist = false;
+	public static bool hasGeyser = false;
+	
+	//------------------------------------------//
 
 
 
@@ -227,9 +235,15 @@ public class TechManager : Singleton<TechManager> {
 	//Pass force = true to bypass this.
 	public static void Research( Tech upgrade, bool force = false){
 		if( CheckUpgrade( upgrade)){
+			// Mission 1 check for researching Scattershot
 			if(upgrade == Tech.scatter){
 				if(!hasScatter)
 				hasScatter = true;
+			}
+			// Mission 2 check for researching LightFist
+			if(upgrade == Tech.lightFist){
+				if(!haslightFist)
+					haslightFist = true;
 			}
 
 			if( !force){
@@ -246,10 +260,8 @@ public class TechManager : Singleton<TechManager> {
 				}
 			}
 			ResearchProgress().SetFinishTime( upgrade, Time.time + GetUpgradeTime( upgrade));
-			if(upgrade == Tech.scatter){
-				if(!hasScatter)
-					hasScatter = true;
-			}
+
+
 		}
 	}
 
@@ -267,6 +279,8 @@ public class TechManager : Singleton<TechManager> {
 		hasWolves = false;
 		hasScatter = false;
 		hasBeatenWolf = false;
+		haslightFist = false;
+		hasGeyser = false;
 	}
 
 
@@ -289,26 +303,51 @@ public class TechManager : Singleton<TechManager> {
 
 	}
 	
+	public static void CompleteMission(){
 
 
-	// Update is called once per frame
-	void Update () {
-		if(hasGenerator == true && hasScatter == true && hasTurret == true && hasWolves == true && hasBeatenWolf == true){
-			missionComplete = true;
-		}
-		if(missionComplete){
-			timerScript.Update();
-			
-		}
 		if(timerScript.Finished()){
 			
 			
 			ResManager.Reset();
 			TechManager.Reset();
-			AutoFade.LoadLevel("scene2", 2.0f, 2.0f, Color.black);
+			checkLevel();
 			timerScript.Reset();
-	
+			
 		}
+
+	}
+
+	public static void checkLevel(){
+		currLevel = Application.loadedLevelName;
+		//Debug.Log(currLevel);
+		switch(currLevel){
+		case "scene1" :
+			AutoFade.LoadLevel("scene2", 2.0f, 2.0f, Color.black);
+			break;
+			
+		case "scene2" :
+			AutoFade.LoadLevel("scene1", 2.0f, 2.0f, Color.black);
+			break;
+			
+		default:
+			//actionBehavior = null;
+			//Debug.LogError(string.Format("Unspecified useBeheaviorType for {0} in {1}.cs", gameObject.name, this.GetType()) );
+			break;
+
+
+		}
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+		if(missionComplete){
+			timerScript.Update();
+			CompleteMission();
+			
+		}
+	
 		ResearchProgress().UpdateStatus();
 	}
 

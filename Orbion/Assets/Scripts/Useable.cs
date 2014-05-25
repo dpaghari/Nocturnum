@@ -41,6 +41,10 @@ public class Useable : MonoBehaviour {
 	}
 	public void lightgeyserUse( GameObject user){
 
+		if(!TechManager.hasGeyser){
+			TechManager.hasGeyser = true;
+		}
+
 
 		if(numEnergy < maxnumEnergy){
 			Vector3 pos = transform.position;

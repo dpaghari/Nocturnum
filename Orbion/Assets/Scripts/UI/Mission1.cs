@@ -32,6 +32,7 @@ public class Mission1 : MonoBehaviour {
 
 			if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true){
 				questComplete = true;
+				
 			}
 
 			collectString = string.Format("{0}", ResManager.Collectible);
@@ -45,7 +46,7 @@ public class Mission1 : MonoBehaviour {
 			if(TechManager.hasTurret){
 				_checkbox_3.IsChecked = true;
 			}
-			if(ResManager.Collectible >= 25){
+			if(ResManager.Collectible >= ResManager.MaxCollectible){
 				_checkbox_4.IsChecked = true;
 			}
 			if(TechManager.hasWolves){
@@ -57,6 +58,7 @@ public class Mission1 : MonoBehaviour {
 			}
 
 			if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true /*&& ResManager.Collectible >= 30*/ && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
+				TechManager.missionComplete = true;
 				_label_mission_clear.IsVisible = true;
 			}
 			if(GameManager.AvatarContr.isPaused){

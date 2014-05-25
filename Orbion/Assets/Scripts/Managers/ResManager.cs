@@ -13,7 +13,7 @@ public class ResManager : Singleton<ResManager> {
 	private int _MaxCollectible = 25;
 	private int _LGEnergy = 0;
 	private int _LGMaxEnergy = 300;
-	private int _LGCoreCharges = 0;
+	private int _LGCoreCharges = 9;
 	private int _LGCoreMaxCharges = 10;
 
 
@@ -88,7 +88,7 @@ public class ResManager : Singleton<ResManager> {
 	public static void ResetLGContainer(){
 		if(ResManager.applicationIsQuitting) return;
 		Instance._LGEnergy = 0;
-		Debug.Log(Instance._LGCoreCharges);
+		//Debug.Log(Instance._LGCoreCharges);
 	}
 
 
