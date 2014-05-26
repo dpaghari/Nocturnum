@@ -10,11 +10,11 @@ public class ResManager : Singleton<ResManager> {
 	//private int _MaxEnergy = 0;
 	//private int _UsedEnergy = 0;
 	private int _Collectible = 0;
-	private int _MaxCollectible = 25;
+	private int _MaxCollectible = 20;
 	private int _LGEnergy = 0;
 	private int _LGMaxEnergy = 300;
 	private int _LGCoreCharges = 0;
-	private int _LGCoreMaxCharges = 10;
+	private int _LGCoreMaxCharges = 5;
 	private int _TurretCount = 0;
 	private int _QuestTurretCount = 3;
 

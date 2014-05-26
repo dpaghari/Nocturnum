@@ -36,7 +36,7 @@ public class Mission1 : MonoBehaviour {
 			}
 
 			collectString = string.Format("{0}", ResManager.Collectible);
-			_checkbox_4.Label.Text = "Collect 25 Enemy Specimens: " + collectString;
+			_checkbox_4.Label.Text = "Collect 20 Enemy Specimens: " + collectString;
 			if(TechManager.hasGenerator){
 				_checkbox_1.IsChecked = true;
 			}
