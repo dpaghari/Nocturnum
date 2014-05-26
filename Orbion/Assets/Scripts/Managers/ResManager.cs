@@ -15,6 +15,8 @@ public class ResManager : Singleton<ResManager> {
 	private int _LGMaxEnergy = 300;
 	private int _LGCoreCharges = 0;
 	private int _LGCoreMaxCharges = 10;
+	private int _TurretCount = 0;
+	private int _QuestTurretCount = 3;
 
 
 
@@ -27,6 +29,8 @@ public class ResManager : Singleton<ResManager> {
 	public static int LGMaxEnergy { get {return Instance._LGMaxEnergy;}}
 	public static int LGCoreCharges { get {return Instance._LGCoreCharges;}}
 	public static int LGCoreMaxCharges { get {return Instance._LGCoreMaxCharges;}}
+	public static int TurretCount { get {return Instance._TurretCount;}}
+	public static int QuestTurretCount { get {return Instance._QuestTurretCount;}}
 	//public static int MaxEnergy{ get { return Instance._MaxEnergy;}}
 	//public static int UsedEnergy{ get { return Instance._UsedEnergy;}}
 
@@ -57,6 +61,13 @@ public class ResManager : Singleton<ResManager> {
 		}
 
 		
+	}
+
+	public static void AddTurr(int amt) {
+		if(ResManager.applicationIsQuitting) return;
+		if(Instance._TurretCount < Instance._QuestTurretCount){
+			Instance._TurretCount += amt;
+		}
 	}
 
 	public static void AddEnergy(int amt) {
@@ -114,7 +125,7 @@ public class ResManager : Singleton<ResManager> {
 		Instance._Collectible = 0;
 		Instance._Lumen = 0;
 		Instance._Energy = 0;
-
+		Instance._TurretCount = 0;
 		Instance._LGEnergy = 0;
 		//Instance._LGMaxEnergy = 0;
 		Instance._LGCoreCharges = 0;

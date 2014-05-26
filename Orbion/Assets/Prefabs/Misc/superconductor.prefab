@@ -9,15 +9,15 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
+  - 65: {fileID: 6500000}
   - 23: {fileID: 2300000}
-  - 95: {fileID: 9500000}
+  - 54: {fileID: 5400000}
+  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 135: {fileID: 13500000}
-  - 65: {fileID: 6500000}
-  - 54: {fileID: 5400000}
-  - 114: {fileID: 11400002}
-  m_Layer: 0
-  m_Name: lunaship
+  m_Layer: 21
+  m_Name: superconductor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,9 +29,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: .0173233375, y: .64706701, z: .0405524522, w: .761156917}
-  m_LocalPosition: {x: -30.9740162, y: 2.23610473, z: -163.077698}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: .340313584, z: 0, w: .940312088}
+  m_LocalPosition: {x: 84.8606873, y: 2, z: 69.6073456}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -46,7 +46,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: cb94a76a729ceaa49a858777623169a3, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -61,7 +61,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: f8be63edd520032488cf5b981351615d, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -69,13 +69,13 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_Mass: 2
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
+  m_Interpolate: 1
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &6500000
 BoxCollider:
@@ -87,22 +87,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.63000011, y: 7.80999994, z: 15.3999996}
-  m_Center: {x: 0, y: -7.4505806e-08, z: 0}
---- !u!95 &9500000
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f8be63edd520032488cf5b981351615d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 1
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,13 +97,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32fe11121b4d5041bc2c729822f775d, type: 3}
+  m_Script: {fileID: 11500000, guid: 442265307b151cd45981208d58f1c566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useBehaviorType: 3
-  rotationSpeed: 0
-  item: {fileID: 0}
-  vfx: {fileID: 0}
+  CurrTarget: {fileID: 5400000, guid: 7772fe9d373f79847a7ac79db50f1648, type: 2}
+  AtkRange: 0
+  PlayerPriorityRange: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,9 +111,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e519c09c8a49a6f4286a5056d49f7204, type: 3}
+  m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Force: 1
+  MaxSpeed: 1
+  MoveScale: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currHP: 1000
+  baseHP: 1000
+  deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
+  collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
+  buildScript: {fileID: 0}
+  healEffect: {fileID: 0}
+  timerScript: {fileID: 0}
+  toadExplosion: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -139,8 +146,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 9.91160107
-  m_Center: {x: 0, y: -7.4505806e-08, z: 0}
+  m_Radius: 3
+  m_Center: {x: -9.53674316e-07, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

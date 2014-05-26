@@ -84,8 +84,15 @@ public class TechManager : Singleton<TechManager> {
 	//------------Mission 2 variables-----------//
 	public static bool haslightFist = false;
 	public static bool hasGeyser = false;
-	
 	//------------------------------------------//
+
+	//------------Mission 3 variables-----------//
+
+	public static bool foundSC = false;
+	public static bool transportedSC = false;
+	public static bool hasTurrets = false;
+
+	//-------------------------------------------//
 
 
 
@@ -281,6 +288,10 @@ public class TechManager : Singleton<TechManager> {
 		hasBeatenWolf = false;
 		haslightFist = false;
 		hasGeyser = false;
+		hasTurrets = false;
+		foundSC = false;
+		transportedSC = false;
+
 	}
 
 
@@ -327,6 +338,10 @@ public class TechManager : Singleton<TechManager> {
 			break;
 			
 		case "scene2" :
+			AutoFade.LoadLevel("scene3", 2.0f, 2.0f, Color.black);
+			break;
+
+		case "scene3" :
 			AutoFade.LoadLevel("scene1", 2.0f, 2.0f, Color.black);
 			break;
 			

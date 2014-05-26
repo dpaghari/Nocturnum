@@ -9,7 +9,7 @@ public class isTurret : MonoBehaviour {
 	public Rigidbody target;
 
 	void Start () {
-				
+		ResManager.AddTurr(1);	
 	}
 			
 
