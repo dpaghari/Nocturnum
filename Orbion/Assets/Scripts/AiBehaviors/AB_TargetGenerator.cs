@@ -87,16 +87,25 @@ public class AB_TargetGenerator : MonoBehaviour {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
+				float rand = Random.value;
 
 				if( shootScript.FinishCooldown()){
 					if(enemyScript.enemyType == EnemyType.luminotoad){
 						animation.CrossFade("Luminotoad_Bomb");
 						this.GetComponent<Killable>().explode();
 					}
-					if(enemyScript.enemyType == EnemyType.luminosaur)
+					if(enemyScript.enemyType == EnemyType.luminosaur){
 						animation.CrossFade("LuminosaurChomp");
-					if(enemyScript.enemyType == EnemyType.alpha_wolf)
+						if(rand > 0.0F && rand <= 0.2F){
+							this.GetComponent<CanShoot>().stun();
+						}
+					}
+					if(enemyScript.enemyType == EnemyType.alpha_wolf){
 						animation.CrossFade("WolfAttack");
+						if(rand > 0.0F && rand <= 0.2F){
+							this.GetComponent<CanShoot>().stun();
+						}
+					}
 					
 					if(enemyScript.enemyType == EnemyType.wolf)
 						animation.CrossFade("WolfAttack");
@@ -243,7 +252,6 @@ public class AB_TargetGenerator : MonoBehaviour {
 		if(distToBuilding < distToPlayer) closestTarget = building;
 		return closestTarget;
 		*/
-	}
-	
+	}	
 	
 }

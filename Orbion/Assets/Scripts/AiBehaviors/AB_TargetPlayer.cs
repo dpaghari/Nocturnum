@@ -83,22 +83,31 @@ public class AB_TargetPlayer : AiBehavior {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget < AtkRange){
+				float rand = Random.value;
+
 				if(enemyScript.enemyType == EnemyType.luminotoad){
 					animation.CrossFade("Luminotoad_Bomb");
 					this.GetComponent<Killable>().explode();
 				}
 				
-				if(enemyScript.enemyType == EnemyType.alpha_wolf)
+				if(enemyScript.enemyType == EnemyType.alpha_wolf){
 					animation.CrossFade("WolfAttack");
+					if(rand > 0.0F && rand <= 0.2F){
+						this.GetComponent<CanShoot>().stun();
+					}
+				}
 				
 				if(enemyScript.enemyType == EnemyType.wolf)
 					animation.CrossFade("WolfAttack");
 				
 				if(enemyScript.enemyType == EnemyType.zingbat)
 					animation.CrossFade("ZingBatAttack");
-				if(enemyScript.enemyType == EnemyType.luminosaur)
+				if(enemyScript.enemyType == EnemyType.luminosaur){
 					animation.CrossFade("ZingBatChomp");
-
+					if(rand > 0.0F && rand <= 0.2F){
+						this.GetComponent<CanShoot>().stun();
+					}
+				}
 
 				/*
 				if(this.tag == "Enemy"){
