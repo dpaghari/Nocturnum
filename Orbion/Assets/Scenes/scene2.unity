@@ -43900,8 +43900,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -63168,9 +63168,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1030785245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6440cc0ca31461f4599e3e291636e43d, type: 3}
+  m_Script: {fileID: 11500000, guid: 49084d113e87fd6488be507fb72466a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _checkbox_1: {fileID: 344137568}
+  _checkbox_2: {fileID: 162569769}
+  _checkbox_3: {fileID: 771962708}
+  _checkbox_4: {fileID: 1036119923}
+  _label_mission_clear: {fileID: 1386403097}
+  _label_paused: {fileID: 1936591992}
+  _label_dead: {fileID: 2004493953}
+  questComplete: 0
+  bossDefeated: 0
 --- !u!65 &1030785248
 BoxCollider:
   m_ObjectHideFlags: 2
