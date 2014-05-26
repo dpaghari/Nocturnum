@@ -119,6 +119,10 @@ public class CanShoot : MonoBehaviour {
 	}
 	*/
 
+	public virtual void stun(){
+	//stun the player
+	}
+
 	public virtual void Scattershot( Vector3 target, int numberOfShots){
 		if( FinishCooldown()){
 			Vector3 dir = target - transform.position;
