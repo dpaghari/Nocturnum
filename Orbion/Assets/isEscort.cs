@@ -39,7 +39,7 @@ public class isEscort : MonoBehaviour {
 			TechManager.foundSC = true;
 		if(other.GetComponent<isLunaShip>() != null){
 			TechManager.transportedSC = true;
-			other.collider.enabled = false;
+			//other.collider.enabled = false;
 
 		}
 	}
