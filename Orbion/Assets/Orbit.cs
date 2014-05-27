@@ -10,7 +10,6 @@ public class Orbit : MonoBehaviour {
 	float currHeight;
 	float amplitude;
 	float speed;
-
 	// Use this for initialization
 	void Start () {
 		amplitude = 1.0f;
@@ -20,9 +19,11 @@ public class Orbit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//transform.RotateAround (target.position, Vector3.up, degrees * Time.deltaTime * 10);
-	
 
+		if(ResManager.LGEnergy >= ResManager.LGMaxEnergy)
+			light.enabled = true;
+		else
+			light.enabled = false;
 
 	}
 
@@ -46,6 +47,8 @@ public class Orbit : MonoBehaviour {
 		transform.forward = direction - transform.position;
 		//transform.rotation = Quaternion.identity;
 	}
+
+
 
 }
 

@@ -60,11 +60,12 @@ public class Useable : MonoBehaviour {
 	}
 
 	public void depositLGEnergy(GameObject user){
-		if(ResManager.LGEnergy >= ResManager.LGMaxEnergy){
+		/*if(ResManager.LGEnergy >= ResManager.LGMaxEnergy){
 			//Debug.Log (ResManager.LGCoreCharges);
 			ResManager.AddLGCoreCharge(1);
 			ResManager.ResetLGContainer();
 		}
+		*/
 
 	}
 

@@ -1018,13 +1018,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db352abe52a3bfd499d55765db886a29, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkRange: 4.5
+  AtkRange: 5
   CurrTarget: {fileID: 0}
-  TargetSearchRadius: 10
-  PriorityRange: 10
+  TargetSearchRadius: 20
+  PlayerPriorityRange: 20
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 60
-  MaxSpeed: 10
+  MaxSpeed: 20
   MoveScale: 1
 --- !u!114 &11400010
 MonoBehaviour:
@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e22a5f01238594bb3afb3e5a6bcfd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 731730b21c0179b43aa28008632ea2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrBehavior: {fileID: 0}

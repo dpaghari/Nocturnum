@@ -31,6 +31,7 @@ public class ResManager : Singleton<ResManager> {
 	public static int LGCoreMaxCharges { get {return Instance._LGCoreMaxCharges;}}
 	public static int TurretCount { get {return Instance._TurretCount;}}
 	public static int QuestTurretCount { get {return Instance._QuestTurretCount;}}
+
 	//public static int MaxEnergy{ get { return Instance._MaxEnergy;}}
 	//public static int UsedEnergy{ get { return Instance._UsedEnergy;}}
 

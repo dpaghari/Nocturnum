@@ -12,4 +12,16 @@ public class isLunaShip : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnTriggerEnter(Collider other){
+		if(other.tag == "Player"){
+			if(ResManager.LGEnergy >= ResManager.LGMaxEnergy){
+				//Debug.Log (ResManager.LGCoreCharges);
+				ResManager.AddLGCoreCharge(1);
+				ResManager.ResetLGContainer();			
+			}
+		}
+
+
+	}
 }

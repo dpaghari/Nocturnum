@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mission2Help : MonoBehaviour {
+public class Mission3HelperText : MonoBehaviour {
 	public dfLabel tutorialLine;
 	bool gotLumen = false;
 	bool pressedB = false;
@@ -21,26 +21,7 @@ public class Mission2Help : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(!TechManager.hasGeyser){
-			tutorialLine.Text = "Press E on a Light Geyser to fill Energy Core";
-
-		}
-		else if(ResManager.LGEnergy >= ResManager.LGMaxEnergy){
-			tutorialLine.Text = "Deposit Charged Energy Core at Spacecraft";
-			timerScript.Update();
-		}
-		else if(TechManager.hasGeyser && timerScript.Finished() == false){
-			tutorialLine.Text = "Deposit Charged Energy Core at Spacecraft";
-			timerScript.Update();
-		}
-		else if(timerScript.Finished())
-			tutorialLine.Text = "";
-		
-
-
-
-
+	
 		if(overdriveScript.overdriveOn){
 			if(!overdriveScript.overdriveActive)
 				tutorialLine.Text = "Press SPACE to activate Overdrive!";
