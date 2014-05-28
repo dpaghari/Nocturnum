@@ -66,16 +66,17 @@ public class TechManager : Singleton<TechManager> {
 
 
 
+
 	public static bool missionComplete = false;
 	public static string currLevel;
 
 
 	//-----------Mission 1 variables------------//
 	// Temporary should be moved into a Questmanager 
-	public static bool hasGenerator = false;
-	public static bool hasScatter = false;
-	public static bool hasTurret = false;
-	public static bool hasWolves = false;
+	public static bool hasGenerator = true;
+	public static bool hasScatter = true;
+	public static bool hasTurret = true;
+	public static bool hasWolves = true;
 	public static bool hasBeatenWolf = false;
 	public static DumbTimer timerScript = DumbTimer.New(5.0f, 1.0f);
 
@@ -330,6 +331,8 @@ public class TechManager : Singleton<TechManager> {
 	}
 
 	public static void checkLevel(){
+
+		//audio.PlayOneShot(GameManager.AvatarContr.missioncompleteSound);
 		currLevel = Application.loadedLevelName;
 		//Debug.Log(currLevel);
 		switch(currLevel){

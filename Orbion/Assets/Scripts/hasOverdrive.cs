@@ -9,6 +9,8 @@ public class hasOverdrive : MonoBehaviour {
 	public DumbTimer timerScript;
 	public DumbTimer dwindleScript;
 
+	public AudioClip overdriveSound;
+
 
 
 	public GameObject overdriveEffect;
@@ -71,6 +73,7 @@ public class hasOverdrive : MonoBehaviour {
 			//Debug.Log ("You have OVERDRIVE! PRESS SPACE TO ACTIVATE!");
 			overdriveCount = overdriveLimit;
 			if(Input.GetKeyDown(KeyCode.Space)){
+				audio.PlayOneShot(overdriveSound);
 
 				overdriveActive = true;
 

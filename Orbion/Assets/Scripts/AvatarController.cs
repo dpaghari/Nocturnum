@@ -11,6 +11,7 @@ public class AvatarController : MonoBehaviour {
 	public CanBuild buildScript;
 	public CanResearch researchScript;
 
+	public AudioClip missioncompleteSound;
 	public AudioClip shotSound;
 	public AudioClip bgm;
 	//public AudioClip collectSound;
@@ -104,7 +105,9 @@ public class AvatarController : MonoBehaviour {
 		//audio.PlayOneShot(bgm, 0.5f);
 		//[Don't delete] debug code for showing our shooting angle
 		//Debug.DrawRay(transform.position, Utility.GetMouseWorldPos(transform.position.y) - transform.position);
-
+		if(TechManager.missionComplete){
+			audio.PlayOneShot(missioncompleteSound, 0.3f);
+		}
 
 		if(GameManager.KeysEnabled){
 			//Uses the CanShootReload component to shoot at the cursor

@@ -19365,8 +19365,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -27883,6 +27883,7 @@ GameObject:
   - 82: {fileID: 680245861}
   - 82: {fileID: 680245864}
   - 95: {fileID: 680245883}
+  - 81: {fileID: 680245884}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -28303,7 +28304,9 @@ MonoBehaviour:
   useScript: {fileID: 680245879}
   buildScript: {fileID: 680245873}
   researchScript: {fileID: 680245871}
-  shotSound: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
+  missioncompleteSound: {fileID: 8300000, guid: 2f580b8434dd7b249bd23a0801200190,
+    type: 3}
+  shotSound: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
@@ -28317,14 +28320,14 @@ AudioSource:
   m_GameObject: {fileID: 680245858}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 35633dbed665d594d9f3f687bd99c27d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .680000007
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 4.07000017
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -28452,6 +28455,7 @@ MonoBehaviour:
   moveScript: {fileID: 680245872}
   timerScript: {fileID: 0}
   dwindleScript: {fileID: 0}
+  overdriveSound: {fileID: 8300000, guid: 73ac49c11c9d88e41a52e0fc08be4274, type: 3}
   overdriveEffect: {fileID: 100000, guid: f0c70015ed0e510428268fcf4cdcf026, type: 2}
   overdriveOn: 0
   overdriveActive: 0
@@ -28501,6 +28505,14 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!81 &680245884
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1835793936}
+  m_GameObject: {fileID: 680245858}
+  m_Enabled: 1
 --- !u!1 &680475690
 GameObject:
   m_ObjectHideFlags: 0
@@ -63270,6 +63282,10 @@ Prefab:
       propertyPath: blurSpread
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
   m_RootGameObject: {fileID: 1662365998}
@@ -68786,11 +68802,11 @@ Prefab:
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
     - target: {fileID: 100072, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -74823,7 +74839,6 @@ GameObject:
   - 20: {fileID: 1662366003}
   - 92: {fileID: 1662366002}
   - 124: {fileID: 1662366001}
-  - 81: {fileID: 1662366000}
   - 114: {fileID: 1662365999}
   - 114: {fileID: 1662366005}
   - 114: {fileID: 1662366007}
@@ -74854,14 +74869,6 @@ MonoBehaviour:
   cameraFollowHeight: 1
   cameraHeight: 2.5
   velocity: {x: 0, y: 0, z: 0}
---- !u!81 &1662366000
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100000, guid: 848f18a564d2db34f958f3f5b88f4511,
-    type: 2}
-  m_PrefabInternal: {fileID: 1400419887}
-  m_GameObject: {fileID: 1662365998}
-  m_Enabled: 1
 --- !u!124 &1662366001
 Behaviour:
   m_ObjectHideFlags: 0
@@ -81186,6 +81193,10 @@ Prefab:
       propertyPath: _buildMenuPanel
       value: 
       objectReference: {fileID: 506195752}
+    - target: {fileID: 11400028, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: overdriveSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 73ac49c11c9d88e41a52e0fc08be4274, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   m_RootGameObject: {fileID: 680245858}

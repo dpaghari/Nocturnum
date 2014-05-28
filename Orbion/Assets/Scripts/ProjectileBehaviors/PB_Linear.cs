@@ -16,6 +16,8 @@ public class PB_Linear : ProjectileBehavior {
 	//public float MoveForce;
 	public CanMove MoveScript;
 
+	public AudioClip buildinghitSound;
+
 
 	public int Damage;
 	public int searingLevel;
@@ -96,7 +98,9 @@ public class PB_Linear : ProjectileBehavior {
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
 		if( KillScript) {
 			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){
+				audio.PlayOneShot(buildinghitSound);
 				if(KillScript.currHP < KillScript.baseHP){
+
 					KillScript.Heal(Damage);
 					if(other.gameObject.GetComponent<IsDamagedEffect>() != null){
 						other.gameObject.GetComponent<IsDamagedEffect>().removeDamage();
