@@ -148,6 +148,7 @@ public class AvatarController : MonoBehaviour {
 				//print("Paused");
 				Time.timeScale = 0.0f;
 				isPaused = true;
+
 			}
 			else if(Input.GetKeyDown(KeyCode.F10) && isPaused)
 			{

@@ -7,26 +7,38 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public GameObject canResearchRef;
 	public bool researchTimeOn;
 	public dfControl hudProgress;
-
+	public CanResearch researchScript;
 	// Use this for initialization
 	void Start () {
 		//menuUp = false;
 		//_panel.IsVisible = false;
 		canResearchRef = GameObject.Find ("player_prefab");
+		researchScript = GameManager.AvatarContr.GetComponent<CanResearch>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*if(Input.GetKeyDown(KeyCode.B)){
-				menuUp = !menuUp;
-		}
-		if(menuUp){
-			_panel.IsVisible = true;
-		} else {
-			_panel.IsVisible = false;
-		}*/
+	
+		if(researchScript.MenuUp){
+			if(Input.GetKeyDown(KeyCode.Alpha1)){
+				CallScattershot();
+			}
+			else if(Input.GetKeyDown(KeyCode.Alpha2))
+				CallClipSize();
+			
+			else if(Input.GetKeyDown(KeyCode.Alpha3))
+				CallLightFist();
 
+			else if(Input.GetKeyDown(KeyCode.Alpha4))
+				CallLightGrenade();
+			
+			else if(Input.GetKeyDown(KeyCode.Alpha5))
+				CallSeeker ();
+			
+			else if(Input.GetKeyDown(KeyCode.Alpha6))
+				CallRicochet();
+		}
 
 	}
 
