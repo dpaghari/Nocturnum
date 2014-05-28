@@ -73,10 +73,11 @@ public class TechManager : Singleton<TechManager> {
 
 	//-----------Mission 1 variables------------//
 	// Temporary should be moved into a Questmanager 
-	public static bool hasGenerator = true;
-	public static bool hasScatter = true;
-	public static bool hasTurret = true;
-	public static bool hasWolves = true;
+	public static bool hasTurret = false;
+	public static bool hasGenerator = false;
+	public static bool hasScatter = false;
+	public static bool hasMedbay = false;
+	public static bool hasWolves = false;
 	public static bool hasBeatenWolf = false;
 	public static DumbTimer timerScript = DumbTimer.New(5.0f, 1.0f);
 
@@ -274,7 +275,7 @@ public class TechManager : Singleton<TechManager> {
 	}
 
 
-
+	// Reset quest variables
 	public static void Reset(){
 		for( int techIndex = 0; techIndex < (int)Tech._upgradesEND + 1; techIndex++){
 			Instance.NumBuildings[techIndex] = 0;
@@ -282,7 +283,7 @@ public class TechManager : Singleton<TechManager> {
 		}
 		Instance.PlayerTech = TechTree.MakeDefault();
 		missionComplete = false;
-		hasTurret = false;
+		hasMedbay = false;
 		hasGenerator = false;
 		hasWolves = false;
 		hasScatter = false;
@@ -314,15 +315,14 @@ public class TechManager : Singleton<TechManager> {
 	void Start () {
 
 	}
-	
+
+
+	// Resets the Tech and the Resources
 	public static void CompleteMission(){
-
-
 		if(timerScript.Finished()){
-			
-			
 			ResManager.Reset();
 			TechManager.Reset();
+			MetricManager.Reset();
 			checkLevel();
 			timerScript.Reset();
 			
@@ -330,27 +330,29 @@ public class TechManager : Singleton<TechManager> {
 
 	}
 
+	//Checks the current level and moves to the next level in the sequence
 	public static void checkLevel(){
 
-		//audio.PlayOneShot(GameManager.AvatarContr.missioncompleteSound);
 		currLevel = Application.loadedLevelName;
-		//Debug.Log(currLevel);
 		switch(currLevel){
-		case "scene1" :
-			AutoFade.LoadLevel("scene2", 2.0f, 2.0f, Color.black);
+		case "tutorial" :
+			AutoFade.LoadLevel("level1", 2.0f, 2.0f, Color.black);
+			break;
+		
+		case "level1" :
+			AutoFade.LoadLevel("level2", 2.0f, 2.0f, Color.black);
 			break;
 			
-		case "scene2" :
-			AutoFade.LoadLevel("scene3", 2.0f, 2.0f, Color.black);
+		case "level2" :
+			AutoFade.LoadLevel("level3", 2.0f, 2.0f, Color.black);
 			break;
 
-		case "scene3" :
-			AutoFade.LoadLevel("scene1", 2.0f, 2.0f, Color.black);
+		case "level3" :
+			Application.Quit();
+			//AutoFade.LoadLevel("level1", 2.0f, 2.0f, Color.black);
 			break;
-			
+		
 		default:
-			//actionBehavior = null;
-			//Debug.LogError(string.Format("Unspecified useBeheaviorType for {0} in {1}.cs", gameObject.name, this.GetType()) );
 			break;
 
 

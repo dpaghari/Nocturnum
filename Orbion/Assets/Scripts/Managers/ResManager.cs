@@ -17,6 +17,9 @@ public class ResManager : Singleton<ResManager> {
 	private int _LGCoreMaxCharges = 5;
 	private int _TurretCount = 0;
 	private int _QuestTurretCount = 3;
+	
+	private int _MedbayCount = 0;
+	private int _QuestMedbayCount = 1;
 
 
 
@@ -29,6 +32,8 @@ public class ResManager : Singleton<ResManager> {
 	public static int LGMaxEnergy { get {return Instance._LGMaxEnergy;}}
 	public static int LGCoreCharges { get {return Instance._LGCoreCharges;}}
 	public static int LGCoreMaxCharges { get {return Instance._LGCoreMaxCharges;}}
+	public static int MedbayCount { get {return Instance._MedbayCount;}}
+	public static int QuestMedbayCount { get {return Instance._QuestMedbayCount;}}
 	public static int TurretCount { get {return Instance._TurretCount;}}
 	public static int QuestTurretCount { get {return Instance._QuestTurretCount;}}
 
@@ -68,6 +73,13 @@ public class ResManager : Singleton<ResManager> {
 		if(ResManager.applicationIsQuitting) return;
 		if(Instance._TurretCount < Instance._QuestTurretCount){
 			Instance._TurretCount += amt;
+		}
+	}
+
+	public static void AddMed(int amt) {
+		if(ResManager.applicationIsQuitting) return;
+		if(Instance._MedbayCount < Instance._QuestMedbayCount){
+			Instance._MedbayCount += amt;
 		}
 	}
 
@@ -126,6 +138,7 @@ public class ResManager : Singleton<ResManager> {
 		Instance._Collectible = 0;
 		Instance._Lumen = 0;
 		Instance._Energy = 0;
+		Instance._MedbayCount = 0;
 		Instance._TurretCount = 0;
 		Instance._LGEnergy = 0;
 		//Instance._LGMaxEnergy = 0;

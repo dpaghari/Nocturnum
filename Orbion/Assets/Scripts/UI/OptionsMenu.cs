@@ -9,6 +9,7 @@ public class OptionsMenu : MonoBehaviour {
 	public dfPanel _upgradeMenuPanel;
 	public dfButton _optionsButton;
 	public dfButton _resetButton;
+	//public dfButton _quitButton;
 	public dfPanel _allOptionsPanel;
 
 	// Use this for initialization
@@ -20,6 +21,8 @@ public class OptionsMenu : MonoBehaviour {
 		_optionsButton.BringToFront ();
 		_resetButton.BringToFront ();
 		_resetButton.Opacity = 1.0f;
+	//	_quitButton.BringToFront ();
+	//	_quitButton.Opacity = 1.0f;
 	}
 
 	// Update is called once per frame

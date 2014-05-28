@@ -9,15 +9,22 @@ public class TutorialMissionText : MonoBehaviour {
 	//public DumbTimer cleartextScript;
 	public Transform tutWolfpos;
 	public GameObject demoWolf;
+	public GameObject demoBat;
 	private GameObject clone;
 	bool gotLumen;
 	bool builtGenerator;
 	bool madeWolf;
+	bool madeBat;
+	bool moveHelp;
+	bool mouseHelp;
 	
 	// Use this for initialization
 	void Start () {
+		mouseHelp = false;
+		moveHelp = false;
+		madeBat = false;
 		madeWolf = false;
-		timerScript = DumbTimer.New(5.0f, 1.0f);
+		timerScript = DumbTimer.New(4.5f, 1.0f);
 		//cleartextScript = DumbTimer.New(5.0f, 1.0f);
 		overdriveScript = GameManager.AvatarContr.GetComponent<hasOverdrive>();
 		tutorialLine.IsVisible = true;
@@ -30,7 +37,26 @@ public class TutorialMissionText : MonoBehaviour {
 	void Update () {
 	//	cleartextScript.Update();
 
-		if(ResManager.Lumen <= 0 && gotLumen == false){
+		if(!moveHelp){
+			tutorialLine.Text = "Press W,A,S,D to move";
+			timerScript.Update();
+			if(timerScript.Finished()){
+				//tutorialLine.Text = "";
+				timerScript.Reset();
+				moveHelp = true;
+			}
+
+		}
+		if(moveHelp && !mouseHelp && ResManager.Lumen <= 0){
+			tutorialLine.Text = "Your Orbion's light shines toward your mouse";
+  			timerScript.Update();
+			if(timerScript.Finished()){
+				mouseHelp = true;
+				timerScript.Reset();
+			}
+
+		}
+		if(ResManager.Lumen <= 0 && gotLumen == false && mouseHelp == true){
 			tutorialLine.Text = "Collect Lumen to build structures";
 		}			
 		if(ResManager.Lumen > 0 && gotLumen == false){
@@ -44,7 +70,7 @@ public class TutorialMissionText : MonoBehaviour {
 				tutorialLine.Text = "Build a Generator to provide light and energy";
 				builtGenerator = true;
 			}
-			if(timerScript.Finished() == true){
+			if(timerScript.Finished() == true && MetricManager.getEnemiesKilled < 3){
 
 				tutorialLine.Text = "Shoot at the building under construction to speed it up";
 				timerScript.Reset();
@@ -57,8 +83,22 @@ public class TutorialMissionText : MonoBehaviour {
 			clone = Instantiate(demoWolf, pos, Quaternion.identity) as GameObject;
 			tutorialLine.Text = "Defeat Enemies to gain Lumen";
 			madeWolf = true;
+			//TechManager.missionComplete = true;
+		}
+		if(MetricManager.getEnemiesKilled == 2 && madeBat == false){
+			Vector3 pos = tutWolfpos.position;
+			clone = Instantiate(demoBat, pos, Quaternion.identity) as GameObject;
+			madeBat = true;
+			tutorialLine.Text = "Enemies are weaker and slower in your generator's light";
+			//clone = Instantiate(demoWolf, pos, Quaternion.identity) as GameObject;
+		}
+		if(MetricManager.getEnemiesKilled == 3){
+			tutorialLine.Text = "Good Luck!";
+			TechManager.missionComplete = true;
 
 		}
+
+
 		/*
 		if(cleartextScript.Finished() == true){
 			tutorialLine.Text = "";

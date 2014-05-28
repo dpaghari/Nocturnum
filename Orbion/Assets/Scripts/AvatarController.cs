@@ -137,6 +137,7 @@ public class AvatarController : MonoBehaviour {
 			if(Input.GetKeyDown(KeyCode.F9)){
 				ResManager.Reset();
 				TechManager.Reset();
+				MetricManager.Reset();
 				AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
 				//Application.LoadLevel(Application.loadedLevel);
 

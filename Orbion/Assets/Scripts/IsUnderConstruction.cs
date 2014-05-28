@@ -116,8 +116,8 @@ public class IsUnderConstruction : MonoBehaviour {
 				if(toBuild.GetComponent<IsGenerator>() != null){
 					TechManager.hasGenerator = true;
 				}
-				if(toBuild.GetComponent<isTurret>() != null){
-					TechManager.hasTurret = true;
+				if(toBuild.GetComponent<isMedbay>() != null){
+					TechManager.hasMedbay = true;
 				}
 
 				Destroy(this.gameObject);

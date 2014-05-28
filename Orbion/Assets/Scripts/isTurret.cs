@@ -10,6 +10,7 @@ public class isTurret : MonoBehaviour {
 
 	void Start () {
 		ResManager.AddTurr(1);	
+
 	}
 			
 

@@ -30,7 +30,7 @@ public class Mission1 : MonoBehaviour {
 
 
 
-			if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true){
+			if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasMedbay == true && TechManager.hasWolves == true){
 				questComplete = true;
 				
 			}
@@ -43,7 +43,7 @@ public class Mission1 : MonoBehaviour {
 			if(TechManager.hasScatter){
 				_checkbox_2.IsChecked = true;
 			}
-			if(TechManager.hasTurret){
+			if(TechManager.hasMedbay){
 				_checkbox_3.IsChecked = true;
 			}
 			if(ResManager.Collectible >= ResManager.MaxCollectible){
@@ -57,7 +57,7 @@ public class Mission1 : MonoBehaviour {
 					bossDefeated = true;
 			}
 
-			if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true /*&& ResManager.Collectible >= 30*/ && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
+			if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasMedbay == true /*&& ResManager.Collectible >= 30*/ && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
 				TechManager.missionComplete = true;
 				_label_mission_clear.IsVisible = true;
 			}
