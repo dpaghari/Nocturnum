@@ -23297,6 +23297,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 1284543446}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 1284543446}
 --- !u!114 &573074965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35603,7 +35604,7 @@ BoxCollider:
   m_GameObject: {fileID: 823764105}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: .0651041716, y: .104166672, z: .00100000005}
   m_Center: {x: .0325520858, y: -.0520833358, z: 0}
@@ -35621,7 +35622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorStyle: 271
   isEnabled: 1
-  isVisible: 1
+  isVisible: 0
   isInteractive: 1
   tooltip: 
   pivot: 0
@@ -69006,6 +69007,62 @@ Prefab:
       propertyPath: text
       value: Build a Medbay
       objectReference: {fileID: 0}
+    - target: {fileID: 11400414, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: _hudIcon
+      value: 
+      objectReference: {fileID: 1553142799}
+    - target: {fileID: 11400340, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: _hudIcon
+      value: 
+      objectReference: {fileID: 2036313725}
+    - target: {fileID: 11400354, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: _hudIcon
+      value: 
+      objectReference: {fileID: 499616969}
+    - target: {fileID: 11400456, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: _hudIcon
+      value: 
+      objectReference: {fileID: 2098402023}
+    - target: {fileID: 11400120, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: _hudIcon
+      value: 
+      objectReference: {fileID: 1284543446}
+    - target: {fileID: 11400438, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: _hudIcon
+      value: 
+      objectReference: {fileID: 2042322757}
+    - target: {fileID: 6500140, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500140, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Size.x
+      value: .0651041716
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500140, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Size.y
+      value: .104166672
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500140, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Size.z
+      value: .00100000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400168, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: isVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500216, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Size.x
+      value: .0651041716
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500216, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Size.y
+      value: .104166672
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500216, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Size.z
+      value: .00100000005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
   m_RootGameObject: {fileID: 475972223}
@@ -69534,6 +69591,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 2036313725}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 2036313725}
 --- !u!114 &1550414244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72192,6 +72250,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 499616969}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 499616969}
 --- !u!114 &1603750218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88445,6 +88504,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 1553142799}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 1553142799}
 --- !u!114 &1932357937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91741,6 +91801,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 2042322757}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 2042322757}
 --- !u!114 &1979354467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95392,6 +95453,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 2098402023}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 2098402023}
 --- !u!114 &2068820949
 MonoBehaviour:
   m_ObjectHideFlags: 0
