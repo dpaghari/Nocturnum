@@ -157,6 +157,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 			rand = Random.value;
 			//Debug.Log (MetricManager.getEnemies);
 			if(MetricManager.getEnemies < summonLimit){
+
 				if(rand > 0.0 && rand < 0.3){
 					makeMelee(tempVec);
 					//SpawnManager.makeMelee(tempVec);
