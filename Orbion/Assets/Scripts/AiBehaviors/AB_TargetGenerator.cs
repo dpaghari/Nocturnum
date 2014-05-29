@@ -13,6 +13,11 @@ public class AB_TargetGenerator : MonoBehaviour {
 	public CanShoot shootScript { get; protected set;}
 	public NavMeshAgent meshScript { get; protected set;}
 	
+	private NavMeshPath meshPath;
+	private Rigidbody clone;
+	public Rigidbody pinkBox;
+	
+
 	public float AtkRange;
 	
 	public Rigidbody CurrTarget;
@@ -22,6 +27,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 	private IsEnemy enemyScript;
 	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
+	private int counter = 1;
+	private int cornerIndex = 1;
 	
 	//Given that there are buildings and the player in range,
 	//always attack the player if they're within PlayerPriorityRange
@@ -32,10 +39,31 @@ public class AB_TargetGenerator : MonoBehaviour {
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
 		enemyScript = GetComponent<IsEnemy>();
+
+		meshPath = new NavMeshPath();
 		//Debug.Log("START OF BEHAVIOR");
 		CurrTarget = FindTarget(TargetSearchRadius);
+		//Debug.Log("Get target #" + counter); counter++;
+		
+		//meshScript.SetDestination(CurrTarget.position);
+		
+		if(CurrTarget != null && meshScript != null){
+			meshScript.CalculatePath(CurrTarget.position, meshPath);
+		}
+		/*
+		int i = 1;
+		if(meshPath != null){
+			while (i < meshPath.corners.Length) {
+				Vector3 currentCorner = meshPath.corners[i];
+				Debug.Log (meshPath.corners[i]);
+				clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
+				i++;
+			}
+		}
+		*/
+		
+
 	}
-	
 	
 	protected virtual void FixedUpdate () {
 		if(CurrTarget != null){
@@ -44,7 +72,23 @@ public class AB_TargetGenerator : MonoBehaviour {
 				//transform.LookAt(CurrTarget.transform);
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				moveScript.Move(CurrTarget.position - rigidbody.position);
+
+				if(meshPath.corners.Length > 0){
+					//closeToCorner(meshPath.corners[cornerIndex]);
+					//moveScript.Move(meshPath.corners[cornerIndex]);
+				}
+
+				//Debug.Log("# corners " + meshPath.corners.Length);
+					
+
+				if(meshPath.corners.Length < 3){
+					moveScript.Move(CurrTarget.position - rigidbody.position);
+					//Debug.Log("FUCK");
+				} else if(meshPath.corners.Length >= 3){
+					//closeToCorner(meshPath.corners[cornerIndex]);
+					//moveScript.Move(meshPath.corners[cornerIndex] - rigidbody.position);
+					moveScript.Move(meshPath.corners[1] - rigidbody.position);
+				}
 				//meshScript.SetDestination(CurrTarget.position);
 				//moveScript.Move (meshScript.nextPosition*-1);
 				
@@ -63,22 +107,34 @@ public class AB_TargetGenerator : MonoBehaviour {
 				if(enemyScript.enemyType == EnemyType.luminosaur)
 					animation.CrossFade("LuminosaurWalk");
 
-				/*
-				if(this.tag == "Enemy")
-					animation.CrossFade("WolfRunCycle");
-				
-				if(this.tag == "EnemyRanged")
-					animation.CrossFade("ZingBatGlide");
-				*/
 			}
 		}
 	}
 	
-	
+	private void closeToCorner(Vector3 vec){
+		float distance = Vector3.Distance (vec, this.transform.position);
+		if(distance < 1){
+			cornerIndex++;
+		}
+	}
 	
 	protected virtual void Update () {
 		if(targetCheckCounter > targetCheckTimer){
+			//Debug.Log("Get target #" + counter); counter++;
 			CurrTarget = FindTarget(TargetSearchRadius);
+			meshScript.CalculatePath(CurrTarget.position, meshPath);
+			cornerIndex = 1;
+			/*
+			int i = 1;
+			if(meshPath != null){
+				while (i < meshPath.corners.Length) {
+					Vector3 currentCorner = meshPath.corners[i];
+					Debug.Log (meshPath.corners[i]);
+					clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
+					i++;
+				}
+			}
+			*/
 			//meshScript.SetDestination(CurrTarget.position);
 			targetCheckCounter = 0.0F;
 		} else {
@@ -86,7 +142,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 		}
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
-			if (distToTarget < AtkRange){
+			if (distToTarget <= AtkRange){
 				float rand = Random.value;
 
 				if( shootScript.FinishCooldown()){
