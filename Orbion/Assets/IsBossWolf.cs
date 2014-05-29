@@ -20,33 +20,34 @@ public class IsBossWolf : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(killScript.currHP <= lowHP){
-
-			isLow = true;
-			timerScript.Update();
-		}
-		if(timerScript.Finished() == true){
-			if(isLow){
-
-				float rand = Random.value;
-				if(rand > 0.0f && rand < 0.05f){
-					Howl();
-					timerScript.Reset();
-				}
-
+		float rand = Random.value;
+		if(rand > 0.0f && rand < 0.05f){
+			if(killScript.currHP <= lowHP && killScript.currHP >= lowHP / 2){
+				Howl ();
+			}
+			if(killScript.currHP <= lowHP / 2){
+				Howl ();
 			}
 		}
+
 	}
 
 	public void Howl(){
 		Vector3 pos = transform.position;
 
-		Debug.Log ("HOWLING");
+
+		float rand = Random.value;
 		spawnerObj = GameObject.Find("spawner_prefab");
 		for(int i = 0;i < numWolves;i++) {
-			spawnerObj.GetComponent<CanSpawnUpdate>().makeMelee(pos);
-			Debug.Log("Spawning Wolf");
+
+			if(rand > 0.0f && rand < 0.5f){
+				spawnerObj.GetComponent<CanSpawnUpdate>().makeMelee(pos);
+			}
+			if(rand > 0.5f && rand < 1.0f){
+				spawnerObj.GetComponent<CanSpawnUpdate>().makeFastMelee(pos);
+			}
+
+		//	Debug.Log("Spawning Wolf");
 		}
 	
 	

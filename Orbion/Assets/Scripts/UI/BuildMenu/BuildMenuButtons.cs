@@ -5,50 +5,70 @@ public class BuildMenuButtons : MonoBehaviour {
 	//public dfPanel _panel;
 	//private bool menuUp;
 	public GameObject canBuildRef;
+	public CanBuild buildScript;
+	public CanResearch researchScript;
 
 	// Use this for initialization
 	void Start () {
+		buildScript = GameManager.AvatarContr.GetComponent<CanBuild>();
 		//menuUp = false;
 		//_panel.IsVisible = false;
-		canBuildRef = GameObject.Find ("player_prefab");
+		//canBuildRef = GameObject.Find ("player_prefab");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*if(Input.GetKeyDown(KeyCode.B)){
-				menuUp = !menuUp;
-		}
-		if(menuUp){
-			_panel.IsVisible = true;
-		} else {
-			_panel.IsVisible = false;
-		}*/
 
+			if(buildScript.MenuUp){
+				if(Input.GetKeyDown(KeyCode.Alpha1)){
+				CallBuildGenerator();
+				}
+				else if(Input.GetKeyDown(KeyCode.Alpha2))
+				CallBuildBallistics();
+
+				else if(Input.GetKeyDown(KeyCode.Alpha3))
+				CallBuildMedBay();
+
+				else if(Input.GetKeyDown(KeyCode.Alpha4))
+				CallBuildTurret();
+
+				else if(Input.GetKeyDown(KeyCode.Alpha5))
+				CallBuildIncendiary();
+
+				else if(Input.GetKeyDown(KeyCode.Alpha6))
+				CallBuildPhoton();
+
+				else if(Input.GetKeyDown(KeyCode.Alpha7))
+				CallBuildSpotlight();
+
+				else if(Input.GetKeyDown(KeyCode.Alpha8))
+				CallBuildWall();
+			}
 
 	}
 
 	public void CallBuildGenerator(){
-		canBuildRef.GetComponent<CanBuild>().ConstructGenerator();
+		buildScript.ConstructGenerator();
 	}
 	public void CallBuildBallistics(){
-		canBuildRef.GetComponent<CanBuild>().ConstructBallistics();
+		buildScript.ConstructBallistics();
 	}
 	public void CallBuildWall(){
-		canBuildRef.GetComponent<CanBuild>().ConstructWall();
+		buildScript.ConstructWall();
 	}
 	public void CallBuildMedBay(){
-		canBuildRef.GetComponent<CanBuild>().ConstructMedBay();
+		buildScript.ConstructMedBay();
 	}
 	public void CallBuildIncendiary(){
-		canBuildRef.GetComponent<CanBuild>().ConstructIncendiary();
+		buildScript.ConstructIncendiary();
 	}
 	public void CallBuildSpotlight(){
-		canBuildRef.GetComponent<CanBuild>().ConstructSpotlight();
+		buildScript.ConstructSpotlight();
 	}
 	public void CallBuildTurret(){
-		canBuildRef.GetComponent<CanBuild>().ConstructTurret();
+		buildScript.ConstructTurret();
 	}
 	public void CallBuildPhoton(){
-		canBuildRef.GetComponent<CanBuild>().ConstructPhoton();
+		buildScript.ConstructPhoton();
 	}
 }

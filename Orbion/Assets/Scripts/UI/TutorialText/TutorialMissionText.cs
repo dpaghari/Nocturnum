@@ -38,7 +38,7 @@ public class TutorialMissionText : MonoBehaviour {
 	//	cleartextScript.Update();
 
 		if(!moveHelp){
-			tutorialLine.Text = "Press W,A,S,D to move";
+			tutorialLine.Text = "Press  W   A   S   D  to move";
 			timerScript.Update();
 			if(timerScript.Finished()){
 				//tutorialLine.Text = "";
