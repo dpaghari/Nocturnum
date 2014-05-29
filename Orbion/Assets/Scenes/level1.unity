@@ -21666,8 +21666,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -34590,7 +34590,7 @@ Transform:
   m_PrefabInternal: {fileID: 1529374772}
   m_GameObject: {fileID: 754472602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0625, y: .078125, z: 0}
+  m_LocalPosition: {x: -.536460876, y: .078125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475972224}
@@ -57418,7 +57418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootScript: {fileID: 1188388859}
   target: {fileID: 0}
-  keepTargetTime: .75
 --- !u!114 &1188388859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72971,11 +72970,11 @@ Prefab:
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 100072, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -72990,7 +72989,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400244, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.0625
+      value: -.536460876
       objectReference: {fileID: 0}
     - target: {fileID: 400296, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_LocalPosition.y
@@ -106308,7 +106307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinkBox: {fileID: 0}
-  AtkRange: 4.5
+  AtkRange: 5
   CurrTarget: {fileID: 0}
   PlayerPriorityRange: 20
 --- !u!114 &2134172272
@@ -106327,6 +106326,7 @@ MonoBehaviour:
   spawnerObj: {fileID: 0}
   numWolves: 2
   timerScript: {fileID: 0}
+  howldelayScript: {fileID: 0}
   howlSound: {fileID: 8300000, guid: 09e3c3d8b8ce51141bcc67cca6e9c98e, type: 3}
 --- !u!114 &2134172273
 MonoBehaviour:
@@ -106408,17 +106408,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 2134172269}
   m_Enabled: 1
   m_Radius: .5
-  m_Speed: 10
-  m_Acceleration: 8
+  m_Speed: 40
+  m_Acceleration: 40
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 0
+  m_AutoRepath: 0
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 1
+  m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2134172276
 MonoBehaviour:
@@ -106445,8 +106445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 60
-  MaxSpeed: 20
+  Force: 40
+  MaxSpeed: 40
   MoveScale: 1
 --- !u!114 &2134172278
 MonoBehaviour:
@@ -106474,9 +106474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd85ed508beb0d47b00eae36bdde9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5400000, guid: 89e3d85fc5185a2419b6631beda7a6df, type: 2}
+  bullet: {fileID: 5400000, guid: 384c61b759d2f98489845d56abbe2d5f, type: 2}
   bullet_speed: 200
-  firingRate: .5
+  firingRate: 2
   spreadAngle: 45
   numOfBulletShot: 1
   projectileStartPosition: 3

@@ -1038,9 +1038,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd85ed508beb0d47b00eae36bdde9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5400000, guid: 89e3d85fc5185a2419b6631beda7a6df, type: 2}
+  bullet: {fileID: 5400000, guid: 384c61b759d2f98489845d56abbe2d5f, type: 2}
   bullet_speed: 200
-  firingRate: .5
+  firingRate: 2
   spreadAngle: 45
   numOfBulletShot: 1
   projectileStartPosition: 3
@@ -1072,8 +1072,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 60
-  MaxSpeed: 20
+  Force: 40
+  MaxSpeed: 40
   MoveScale: 1
 --- !u!114 &11400008
 MonoBehaviour:
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinkBox: {fileID: 0}
-  AtkRange: 4.5
+  AtkRange: 5
   CurrTarget: {fileID: 0}
   PlayerPriorityRange: 20
 --- !u!114 &11400010
@@ -1128,6 +1128,7 @@ MonoBehaviour:
   spawnerObj: {fileID: 0}
   numWolves: 3
   timerScript: {fileID: 0}
+  howldelayScript: {fileID: 0}
   howlSound: {fileID: 8300000, guid: 09e3c3d8b8ce51141bcc67cca6e9c98e, type: 3}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
@@ -1199,17 +1200,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Radius: .5
-  m_Speed: 10
-  m_Acceleration: 8
+  m_Speed: 40
+  m_Acceleration: 40
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 0
+  m_AutoRepath: 0
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 1
+  m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
