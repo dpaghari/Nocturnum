@@ -13,7 +13,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   - 96: {fileID: 9600000}
   m_Layer: 20
@@ -131,6 +131,26 @@ TrailRenderer:
       rgba: 16777215
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e1d4f428660394fa594664825f5b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveType: 0
+  MoveScript: {fileID: 0}
+  Damage: 3
+  lifeTime: 5
+  hitEffect: {fileID: 0}
+  target: {fileID: 0}
+  hitTimes: 3
+  hitDelay: .200000003
+  targetRef: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab831e380b4ab54796cbcb3f152bac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrBehavior: {fileID: 11400006}
+  CurrBehavior: {fileID: 11400000}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,23 +177,6 @@ MonoBehaviour:
   Force: 70
   MaxSpeed: 200
   MoveScale: 1
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ce56f5150d18554ca1e181e9915c2a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveType: 0
-  MoveScript: {fileID: 11400004}
-  Damage: 4
-  lifeTime: 4
-  hitEffect: {fileID: 0}
-  target: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

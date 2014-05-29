@@ -27,6 +27,7 @@ public class PB_FollowTarget : ProjectileBehavior {
 	
 	
 	public override void Initialize(){
+		MoveScript = GetComponent<CanMove>();
 		lifeTimer = DumbTimer.New( lifeTime);
 	}
 	
