@@ -9,9 +9,14 @@ public class IsBossWolf : MonoBehaviour {
 	private float lowHP;
 	private bool isLow;
 	public DumbTimer timerScript;
+	private int howlNum;
+	private int howlMax;
+	public AudioClip howlSound;
 	// Use this for initialization
 	void Start () {
-		timerScript = DumbTimer.New(5.0f, 1.0f);
+		howlNum = 0;
+		howlMax = 2;
+		timerScript = DumbTimer.New(7.0f, 1.0f);					// Howl Cooldown
 		isLow = false;
 		numWolves = 3;
 		killScript = GetComponent<Killable>();
@@ -20,34 +25,36 @@ public class IsBossWolf : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float rand = Random.value;
-		if(rand > 0.0f && rand < 0.05f){
-			if(killScript.currHP <= lowHP && killScript.currHP >= lowHP / 2){
-				Howl ();
-			}
-			if(killScript.currHP <= lowHP / 2){
+		timerScript.Update();
+		if(killScript.currHP <= lowHP && howlNum < howlMax){
+			if(timerScript.Finished()){
 				Howl ();
 			}
 		}
+			
+
 
 	}
 
 	public void Howl(){
+		audio.PlayOneShot(howlSound);
 		Vector3 pos = transform.position;
 
 
-		float rand = Random.value;
 		spawnerObj = GameObject.Find("spawner_prefab");
 		for(int i = 0;i < numWolves;i++) {
+			float rand = Random.value;
 
-			if(rand > 0.0f && rand < 0.5f){
+			if(rand < 0.5f){
 				spawnerObj.GetComponent<CanSpawnUpdate>().makeMelee(pos);
 			}
-			if(rand > 0.5f && rand < 1.0f){
+			else{
 				spawnerObj.GetComponent<CanSpawnUpdate>().makeFastMelee(pos);
 			}
+			howlNum++;
+			timerScript.Reset();
 
-		//	Debug.Log("Spawning Wolf");
+			Debug.Log("Spawning Wolf");
 		}
 	
 	
