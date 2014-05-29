@@ -29,22 +29,22 @@ public class isTurret : MonoBehaviour {
 		keepTargetTimer.Update();
 	}
 
-	void UpdateTarget(Rigidbody potentialTarget) {
-		if( potentialTarget == target)
+	void UpdateTarget(Collider potentialTarget) {
+		if( potentialTarget.rigidbody == target)
 			keepTargetTimer.Reset();
 
 		if( target != null) return;
 
 		IsEnemy enemyScript = potentialTarget.GetComponent<IsEnemy>();
 		if( enemyScript != null && enemyScript.enemyType != EnemyType.none)
-			target = potentialTarget;
+			target = potentialTarget.rigidbody;
 	}
 
 
 	void OnTriggerEnter(Collider other){
-		if( other.rigidbody != null) UpdateTarget( other.rigidbody);			
+		UpdateTarget( other);			
 	}
 	void OnTriggerStay(Collider other){
-		if( other.rigidbody != null) UpdateTarget( other.rigidbody);	
+		UpdateTarget( other);	
 	}
 }
