@@ -38,6 +38,8 @@ public class PB_TurretBullet : PB_FollowTarget {
 		if( target == null && hitDelayTimer.Finished())
 			target = targetRef;
 
+		if( targetRef == null) GameObject.Destroy( this.gameObject);
+
 		hitDelayTimer.Update();
 	}
 	
