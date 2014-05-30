@@ -70,8 +70,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if(distToTarget > AtkRange){
 				//transform.LookAt(CurrTarget.transform);
-				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
-				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+				//Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+				//transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 
 				if(meshPath.corners.Length > 0){
 					//closeToCorner(meshPath.corners[cornerIndex]);
@@ -82,9 +82,13 @@ public class AB_TargetGenerator : MonoBehaviour {
 					
 
 				if(meshPath.corners.Length < 3){
+					Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					moveScript.Move(CurrTarget.position - rigidbody.position);
 					//Debug.Log("FUCK");
 				} else if(meshPath.corners.Length >= 3){
+					Vector3 lookPosition = new Vector3(meshPath.corners[1].x, transform.position.y, meshPath.corners[1].z);
+					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					//closeToCorner(meshPath.corners[cornerIndex]);
 					//moveScript.Move(meshPath.corners[cornerIndex] - rigidbody.position);
 					moveScript.Move(meshPath.corners[1] - rigidbody.position);
@@ -154,14 +158,14 @@ public class AB_TargetGenerator : MonoBehaviour {
 					}
 					if(enemyScript.enemyType == EnemyType.luminosaur){
 						animation.CrossFade("LuminosaurChomp");
-						if(rand > 0.0F && rand <= 0.2F){
-							this.GetComponent<CanShoot>().stun();
+						if(rand > 0.0F && rand <= 1.0F){
+							//this.GetComponent<CanShoot>().stun();
 						}
 					}
 					if(enemyScript.enemyType == EnemyType.alpha_wolf){
 						animation.CrossFade("WolfAttack");
-						if(rand > 0.0F && rand <= 0.2F){
-							this.GetComponent<CanShoot>().stun();
+						if(rand > 0.0F && rand <= 1.0F){
+							//this.GetComponent<CanShoot>().stun();
 						}
 					}
 					

@@ -35,6 +35,10 @@ public class CanShoot : MonoBehaviour {
 
 	public WeakensInLight weakenScript;
 
+	//stun timer variables
+	private DumbTimer stunTimer;
+	public float stunInterval = 1.0F;
+
 
 
 	//sets the proportion of completion for the firingTimer
@@ -68,6 +72,20 @@ public class CanShoot : MonoBehaviour {
 	protected virtual void Update () {
 		//adding by Time.deltaTime otherwise our firerate is bullets/frame instead of bullets/second
 		if ( firingTimer <= firingRate) firingTimer += Time.deltaTime;
+
+		if(stunTimer != null){
+			if(stunTimer.Finished()){
+				Debug.Log("STUN DONE!!");
+				
+				stunTimer.Reset();
+				GameManager.KeysEnabled = true;
+				//Debug.Log("STUN DONE!!");
+				
+			}
+			else{
+				stunTimer.Update();
+			}
+		}
 		
 	}
 
@@ -121,6 +139,16 @@ public class CanShoot : MonoBehaviour {
 
 	public virtual void stun(){
 	//stun the player
+		GameManager.KeysEnabled = false;
+		
+		if(stunTimer != null){
+			stunTimer.Reset();
+		}
+		stunTimer = DumbTimer.New( stunInterval);
+
+		Debug.Log("STUN!!");
+		
+		
 	}
 
 	public virtual void Scattershot( Vector3 target, int numberOfShots){
