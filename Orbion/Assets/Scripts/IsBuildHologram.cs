@@ -18,6 +18,7 @@ public class IsBuildHologram : MonoBehaviour {
 
 	public bool IsInLight(){
 		bool inSomeLight = false;
+		if( IsLightSource.LightSources == null) return false;
 		foreach( KeyValuePair<int, IsLightSource> entry in IsLightSource.LightSources){
 			float lightRange = entry.Value.lightArea.radius;
 			float distFromLight = Utility.FindDistNoY( transform.position, entry.Value.transform.position);
