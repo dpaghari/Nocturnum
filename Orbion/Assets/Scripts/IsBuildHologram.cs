@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class IsBuildHologram : MonoBehaviour {
 
 	public Rigidbody RealBuilding;
+	public Buildable buildScript;
 	public Color defaultColor;
 	public Color cannotBuildColor;
 	public bool CanBuildHere {get; private set;}
@@ -13,20 +15,23 @@ public class IsBuildHologram : MonoBehaviour {
 	private float inLightToggleTime = 0.01f;
 	private DumbTimer inLightToggler;
 
-	private bool _isInLight;
-	private bool IsInLight{
-		get { return _isInLight;}
 
-		set { 
-			_isInLight = value;
-			if( value == true) inLightToggler.Reset();
+	public bool IsInLight(){
+		bool inSomeLight = false;
+		foreach( KeyValuePair<int, IsLightSource> entry in IsLightSource.LightSources){
+			float lightRange = entry.Value.lightArea.radius;
+			float distFromLight = Utility.FindDistNoY( transform.position, entry.Value.transform.position);
+			if( distFromLight <= lightRange) return true;
 		}
+		return inSomeLight;
 	}
+
+
 
 	//returns true if there is another building too close to this one
 	public bool IsBuildingNearby(){
 		
-		Buildable realBuildingBuildScript = RealBuilding.GetComponent<Buildable>();
+		
 
 		int searchLayers = Utility.Building_PLM | Utility.Environment_PLM | Utility.Quest_PLM | Utility.Plant_PLM;
 
@@ -46,7 +51,7 @@ public class IsBuildHologram : MonoBehaviour {
 		if( closestBuildScript) obstacleRadius = closestBuildScript.contactRadius;
 
 
-		float minimumDistance = realBuildingBuildScript.contactRadius + obstacleRadius;
+		float minimumDistance = buildScript.contactRadius + obstacleRadius;
 		float actualDistance = Utility.FindDistNoY( transform.position, closestBuilding.transform.position);
 
 		if (actualDistance < minimumDistance)
@@ -74,6 +79,11 @@ public class IsBuildHologram : MonoBehaviour {
 	}
 
 
+	public bool InValidBuildZone(){
+		bool inLight = IsInLight() || !buildScript.requiresLight;
+		return !IsBuildingNearby() && inLight;
+	}
+
 	
 	public void ChangeColors( Color theNewColor){
 		if( childrenMR != null)
@@ -86,13 +96,13 @@ public class IsBuildHologram : MonoBehaviour {
 
 	public void UpdateBuildStatus(){
 		Color newColor = Color.white;
-		if( IsBuildingNearby()){
-			CanBuildHere = false;
-			newColor = cannotBuildColor;
-		}
-		else{
+		if( InValidBuildZone()){
 			CanBuildHere = true;
 			newColor = defaultColor;
+		}
+		else{
+			CanBuildHere = false;
+			newColor = cannotBuildColor;
 		}
 
 		ChangeColors( newColor);
@@ -104,6 +114,7 @@ public class IsBuildHologram : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		buildScript = RealBuilding.GetComponent<Buildable>();
 		childrenMR = GetComponentsInChildren<MeshRenderer>();
 	}
 	
