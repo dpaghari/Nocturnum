@@ -27,4 +27,18 @@ public class Buildable : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnCollisionEnter( Collision other){
+		int otherLayerMask = 0;
+		otherLayerMask = 1 << other.gameObject.layer;
+		if( otherLayerMask == Utility.Player_PLM)
+			Physics.IgnoreCollision( this.collider, other.collider);
+	}
+
+	//void OnEnable(){
+	//	if( TechType = Tech.wall && GameManager.Player != null)
+		
+			
+	//}
+
 }
