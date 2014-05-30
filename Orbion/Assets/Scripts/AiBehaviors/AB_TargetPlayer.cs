@@ -150,7 +150,7 @@ public class AB_TargetPlayer : AiBehavior {
 				if(enemyScript.enemyType == EnemyType.alpha_wolf){
 					animation.CrossFade("WolfAttack");
 					if(rand > 0.0F && rand <= 1.0F){
-						this.GetComponent<CanShoot>().stun();
+						//this.GetComponent<CanShoot>().stun();
 					}
 				}
 				
@@ -161,8 +161,8 @@ public class AB_TargetPlayer : AiBehavior {
 					animation.CrossFade("ZingBatAttack");
 				if(enemyScript.enemyType == EnemyType.luminosaur){
 					animation.CrossFade("LuminosaurChomp");
-					if(rand > 0.0F && rand <= 0.2F){
-						this.GetComponent<CanShoot>().stun();
+					if(rand > 0.0F && rand <= 1.0F){
+						//this.GetComponent<CanShoot>().stun();
 					}
 				}
 
