@@ -47,22 +47,22 @@ public class IsBossWolf : MonoBehaviour {
 
 		spawnerObj = GameObject.Find("spawner_prefab");
 		if(howldelayScript.Finished()){
-		for(int i = 0;i < numWolves;i++) {
-				float rand = Random.value;
+			for(int i = 0;i < numWolves;i++) {
+					float rand = Random.value;
 
 
-				if(rand < 0.5f){
-					spawnerObj.GetComponent<CanSpawnUpdate>().makeMelee(pos);
-				}
-				else{
-					spawnerObj.GetComponent<CanSpawnUpdate>().makeFastMelee(pos);
-				}
-				howldelayScript.Reset();
-				howlNum++;
-				timerScript.Reset();
+					if(rand < 0.5f){
+						spawnerObj.GetComponent<CanSpawnUpdate>().makeMelee(pos);
+					}
+					else{
+						spawnerObj.GetComponent<CanSpawnUpdate>().makeFastMelee(pos);
+					}
+					howldelayScript.Reset();
+					howlNum++;
+					timerScript.Reset();
+					
+
 				
-
-			//	Debug.Log("Spawning Wolf");
 			}
 		}
 	

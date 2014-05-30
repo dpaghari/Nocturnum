@@ -24,6 +24,9 @@ public class AvatarController : MonoBehaviour {
 	//public AudioClip fistSound;
 
 	public bool isPaused;
+	public bool isDashing;
+	public float dashForce;
+	public DumbTimer dashCDScript;
 
 
 
@@ -43,6 +46,9 @@ public class AvatarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		dashForce = 60.0F;
+		dashCDScript = DumbTimer.New(3.0f);
+		isDashing = false;
 		isPaused = false;
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShootReload>();
@@ -66,31 +72,77 @@ public class AvatarController : MonoBehaviour {
 
 
 
+
 	void FixedUpdate() {
 
 
 		if(GameManager.KeysEnabled){
-			if( Input.GetKey( KeyCode.W) && !isPaused){
+
+
+			if( Input.GetKeyDown( KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
+				if(dashCDScript.Finished()){
+				isDashing = true;
+				animation.Play("Dash", PlayMode.StopAll);
+				moveScript.Force += dashForce;
+				moveScript.Move( Vector3.forward, ForceMode.Impulse);
+				dashCDScript.Reset();
+
+				}
+			}
+			else if( Input.GetKeyDown( KeyCode.A) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
+				if(dashCDScript.Finished()){
+				isDashing = true;
+				animation.Play("Dash", PlayMode.StopAll);
+				moveScript.Force += dashForce;
+				moveScript.Move( Vector3.left, ForceMode.Impulse);
+				dashCDScript.Reset();
+
+				}
+			}
+			else if( Input.GetKeyDown( KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
+				if(dashCDScript.Finished()){
+				isDashing = true;
+				animation.Play("Dash", PlayMode.StopAll);
+				moveScript.Force += dashForce;
+				moveScript.Move( Vector3.back, ForceMode.Impulse);
+				dashCDScript.Reset();
+
+				}
+			}
+			else if( Input.GetKeyDown( KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
+				if(dashCDScript.Finished()){
+
+				isDashing = true;
+				animation.Play("Dash", PlayMode.StopAll);
+				moveScript.Force += dashForce;
+				moveScript.Move( Vector3.right, ForceMode.Impulse);
+				dashCDScript.Reset();
+
+				}
+			}
+
+
+			if( Input.GetKey( KeyCode.W) && !isPaused && !isDashing){
 
 				moveScript.Move( Vector3.forward);
-				//animation.CrossFade("Run");
+
 			}
-			if( Input.GetKey( KeyCode.S) && !isPaused){
+			if( Input.GetKey( KeyCode.S) && !isPaused && !isDashing){
 
 				moveScript.Move( Vector3.back);
-				//animation.CrossFade("Run");
+
 
 			}
-			if( Input.GetKey( KeyCode.D) && !isPaused){
+			if( Input.GetKey( KeyCode.D) && !isPaused && !isDashing){
 
 				moveScript.Move( Vector3.right);
-				//animation.CrossFade("Run");
+
 
 			}
-			if( Input.GetKey( KeyCode.A) && !isPaused){
+			if( Input.GetKey( KeyCode.A) && !isPaused && !isDashing){
 
 				moveScript.Move( Vector3.left);
-				//animation.CrossFade("Run");
+
 
 			}
 		}
@@ -102,9 +154,16 @@ public class AvatarController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//audio.PlayOneShot(bgm, 0.5f);
+
 		//[Don't delete] debug code for showing our shooting angle
 		//Debug.DrawRay(transform.position, Utility.GetMouseWorldPos(transform.position.y) - transform.position);
+		dashCDScript.Update();
+		isDashing = false;
+		if(isDashing){
+
+			GameManager.KeysEnabled = false;
+		}
+
 		if(TechManager.missionComplete){
 			audio.PlayOneShot(missioncompleteSound, 0.3f);
 		}
@@ -115,12 +174,15 @@ public class AvatarController : MonoBehaviour {
 				
 				if( shootScript.FinishCooldown()){
 					if(shootScript.reloading == false){
+						//if(!animation.isPlaying)
 						animation.CrossFade("Shooting");
 						if(overdriveScript.overdriveActive == false){
 							audio.clip = shotSound;
 							audio.PlayOneShot(shotSound,1.0f);
 						}
 					}
+
+
 				}
 
 				shootScript.Shoot( Utility.GetMouseWorldPos( transform.position.y));
@@ -131,7 +193,7 @@ public class AvatarController : MonoBehaviour {
 			//use our current equipment
 			if(Input.GetMouseButtonDown(1) && !isPaused){
 				equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));
-				//Debug.Log(equipScript.GetCurrEquip());
+
 			}
 
 			if(Input.GetKeyDown(KeyCode.F9)){
@@ -139,20 +201,20 @@ public class AvatarController : MonoBehaviour {
 				TechManager.Reset();
 				MetricManager.Reset();
 				AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
-				//Application.LoadLevel(Application.loadedLevel);
+
 
 			}
 
 			if(Input.GetKeyDown(KeyCode.F10) && !isPaused)
 			{
-				//print("Paused");
+
 				Time.timeScale = 0.0f;
 				isPaused = true;
 
 			}
 			else if(Input.GetKeyDown(KeyCode.F10) && isPaused)
 			{
-				//print("Unpaused");
+
 				Time.timeScale = 1.0f;
 				isPaused = false;    
 			} 
@@ -171,7 +233,7 @@ public class AvatarController : MonoBehaviour {
 			}
 
 			if( Input.GetKeyDown(KeyCode.F11)){
-				//AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
+
 				Application.Quit();
 			}
 
