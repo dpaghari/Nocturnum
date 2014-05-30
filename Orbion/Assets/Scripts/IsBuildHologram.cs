@@ -28,39 +28,49 @@ public class IsBuildHologram : MonoBehaviour {
 		
 		Buildable realBuildingBuildScript = RealBuilding.GetComponent<Buildable>();
 
-		GameObject closestBuilding = Utility.GetClosestWith(transform.position, 10, IsBuilding, Utility.Building_PLM);
+		int searchLayers = Utility.Building_PLM | Utility.Environment_PLM | Utility.Quest_PLM | Utility.Plant_PLM;
+
+		GameObject closestBuilding = Utility.GetClosestWith(transform.position, 10, IsBuilding, searchLayers);
+		if (closestBuilding == null) return false;
+
 		Buildable closestBuildScript = null;
-		if( closestBuilding) closestBuildScript = closestBuilding.GetComponent<Buildable>();
+		IsUnderConstruction closestConstructionScript = null;
+		IsBuildingObstacle closestObstableScript = null;
+		closestBuildScript = closestBuilding.GetComponent<Buildable>();
+		closestConstructionScript = closestBuilding.GetComponent<IsUnderConstruction>();
+		closestObstableScript = closestBuilding.GetComponent<IsBuildingObstacle>();
+
+		float obstacleRadius = 0;
+		if( closestObstableScript) obstacleRadius = closestObstableScript.contactRadius;
+		if( closestConstructionScript) obstacleRadius = closestConstructionScript.toBuild.GetComponent<Buildable>().contactRadius;
+		if( closestBuildScript) obstacleRadius = closestBuildScript.contactRadius;
 
 
-		if (closestBuilding == null)
-			return false;
+		float minimumDistance = realBuildingBuildScript.contactRadius + obstacleRadius;
+		float actualDistance = Utility.FindDistNoY( transform.position, closestBuilding.transform.position);
 
-
-		float minimumDistance;
-		if(closestBuildScript != null){
-			minimumDistance = closestBuildScript.contactRadius + realBuildingBuildScript.contactRadius;
-		}else{
-			minimumDistance = closestBuilding.GetComponent<IsUnderConstruction>().toBuild.GetComponent<Buildable>().contactRadius + realBuildingBuildScript.contactRadius;
-		}
-		float actualDistance = Vector2.Distance (new Vector2(closestBuilding.transform.position.x, closestBuilding.transform.position.z), new Vector2(transform.position.x, transform.position.z));
-		if (actualDistance < minimumDistance) {
+		if (actualDistance < minimumDistance)
 			return true;
-		}
-		return false;
-		
 
+
+		return false;
 	}
 	
 	
 	//Returns true if given object is a building
 	bool IsBuilding(GameObject theBuilding){
-		if(theBuilding.GetComponent<Buildable>() == null && theBuilding.GetComponent<IsUnderConstruction>() == null) 
-			return false;
+
 		if (theBuilding == gameObject)
 			return false;
-		
-		return true;
+
+		if( theBuilding.GetComponent<Buildable>() != null)
+			return true;
+		if( theBuilding.GetComponent<IsUnderConstruction>() != null) 
+			return true;
+		if( theBuilding.GetComponent<IsBuildingObstacle>() != null)
+			return true;
+
+		return false;
 	}
 
 

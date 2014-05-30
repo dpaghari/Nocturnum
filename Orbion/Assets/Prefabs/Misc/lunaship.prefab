@@ -16,7 +16,8 @@ GameObject:
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  - 114: {fileID: 11400004}
+  m_Layer: 21
   m_Name: lunaship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +130,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e519c09c8a49a6f4286a5056d49f7204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 10
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
