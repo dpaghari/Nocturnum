@@ -7,6 +7,7 @@ public class Buildable : MonoBehaviour {
 	public float buildTime = 10f;
 	public Tech TechType = Tech.none;
 	public GameObject hologram;
+	public bool requiresLight = true;
 
 	//How close can an edge of an adjacent building be
 	public float contactRadius = 2.0f;
