@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager> {
 
 	public static bool KeysEnabled;
 	public static bool PlayerDead;
+	public static int GameDifficulty;
 
 	private GameObject _Player;
 

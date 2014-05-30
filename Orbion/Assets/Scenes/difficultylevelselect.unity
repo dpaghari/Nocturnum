@@ -84,6 +84,8 @@ GameObject:
   - 4: {fileID: 229995202}
   - 114: {fileID: 229995201}
   - 65: {fileID: 229995200}
+  - 114: {fileID: 229995204}
+  - 114: {fileID: 229995203}
   m_Layer: 17
   m_Name: Button_Master
   m_TagString: Untagged
@@ -210,6 +212,34 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456450072}
+--- !u!114 &229995203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 229995199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa65d1325a0df44f978cafd2164f2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &229995204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 229995199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4b6d41893ad6e499d2ffcefa532575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataSource:
+    Component: {fileID: 229995201}
+    MemberName: Click
+  DataTarget:
+    Component: {fileID: 229995203}
+    MemberName: setMaster
 --- !u!1 &572259872
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +318,8 @@ GameObject:
   - 4: {fileID: 631922525}
   - 114: {fileID: 631922527}
   - 65: {fileID: 631922526}
+  - 114: {fileID: 631922529}
+  - 114: {fileID: 631922528}
   m_Layer: 17
   m_Name: Button_Veteran
   m_TagString: Untagged
@@ -414,6 +446,34 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!114 &631922528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631922524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa65d1325a0df44f978cafd2164f2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &631922529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631922524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4b6d41893ad6e499d2ffcefa532575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataSource:
+    Component: {fileID: 631922527}
+    MemberName: Click
+  DataTarget:
+    Component: {fileID: 631922528}
+    MemberName: setVeteran
 --- !u!1 &1087368494
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +484,8 @@ GameObject:
   - 4: {fileID: 1087368495}
   - 114: {fileID: 1087368497}
   - 65: {fileID: 1087368496}
+  - 114: {fileID: 1087368499}
+  - 114: {fileID: 1087368498}
   m_Layer: 17
   m_Name: Button_Normal
   m_TagString: Untagged
@@ -550,6 +612,34 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!114 &1087368498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1087368494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa65d1325a0df44f978cafd2164f2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1087368499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1087368494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4b6d41893ad6e499d2ffcefa532575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataSource:
+    Component: {fileID: 1087368497}
+    MemberName: Click
+  DataTarget:
+    Component: {fileID: 1087368498}
+    MemberName: setNormal
 --- !u!1 &1342730888
 GameObject:
   m_ObjectHideFlags: 0
