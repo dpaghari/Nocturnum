@@ -496,7 +496,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 13834212}
   - 108: {fileID: 13834213}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +857,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 20548277}
   - 108: {fileID: 20548278}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,6 +950,7 @@ GameObject:
   - 65: {fileID: 22608826}
   - 114: {fileID: 22608825}
   - 95: {fileID: 22608823}
+  - 114: {fileID: 22608824}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -985,6 +986,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &22608824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 1215136078}
+  m_GameObject: {fileID: 22608821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &22608825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,7 +1303,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &26707042
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1427,6 +1441,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 26707046}
+  stunInterval: .100000001
 --- !u!114 &26707048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1650,7 +1665,8 @@ GameObject:
   - 33: {fileID: 28252828}
   - 23: {fileID: 28252827}
   - 64: {fileID: 28252826}
-  m_Layer: 0
+  - 114: {fileID: 28252829}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,6 +1728,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2109728559}
   m_GameObject: {fileID: 28252824}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &28252829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2109728559}
+  m_GameObject: {fileID: 28252824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &30153654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +1955,7 @@ GameObject:
   - 33: {fileID: 33944230}
   - 23: {fileID: 33944229}
   - 64: {fileID: 33944228}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2216,7 +2245,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 54650656}
   - 108: {fileID: 54650657}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2517,7 +2546,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &60854816
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2655,6 +2684,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 60854820}
+  stunInterval: .100000001
 --- !u!114 &60854822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3112,7 +3142,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 65304194}
   - 108: {fileID: 65304193}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3474,7 +3504,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &71705087
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3633,6 +3663,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 71705092}
+  stunInterval: .100000001
 --- !u!114 &71705094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4307,7 +4338,8 @@ GameObject:
   - 64: {fileID: 80856506}
   - 95: {fileID: 80856505}
   - 114: {fileID: 80856509}
-  m_Layer: 0
+  - 114: {fileID: 80856510}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4399,6 +4431,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &80856510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1349727393}
+  m_GameObject: {fileID: 80856503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &82225331
 GameObject:
   m_ObjectHideFlags: 0
@@ -4410,7 +4455,8 @@ GameObject:
   - 95: {fileID: 82225332}
   - 114: {fileID: 82225335}
   - 65: {fileID: 82225334}
-  m_Layer: 0
+  - 114: {fileID: 82225336}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4473,6 +4519,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &82225336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 797723240}
+  m_GameObject: {fileID: 82225331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &82635450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4789,8 @@ GameObject:
   - 33: {fileID: 93160389}
   - 23: {fileID: 93160388}
   - 64: {fileID: 93160387}
-  m_Layer: 0
+  - 114: {fileID: 93160391}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4792,6 +4852,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1887030199}
+--- !u!114 &93160391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1795081383}
+  m_GameObject: {fileID: 93160386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &95995867
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,7 +4996,7 @@ GameObject:
   - 33: {fileID: 96605747}
   - 23: {fileID: 96605746}
   - 64: {fileID: 96605745}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4994,7 +5067,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 96842708}
   - 108: {fileID: 96842707}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5266,7 +5339,7 @@ GameObject:
   - 33: {fileID: 108304012}
   - 23: {fileID: 108304011}
   - 64: {fileID: 108304010}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5772,7 +5845,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 117897864}
   - 108: {fileID: 117897865}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6161,7 +6234,7 @@ GameObject:
   - 33: {fileID: 129264918}
   - 23: {fileID: 129264917}
   - 64: {fileID: 129264916}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6545,7 +6618,8 @@ GameObject:
   - 33: {fileID: 140328867}
   - 23: {fileID: 140328866}
   - 64: {fileID: 140328865}
-  m_Layer: 0
+  - 114: {fileID: 140328868}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6607,6 +6681,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1661737099}
   m_GameObject: {fileID: 140328863}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &140328868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1661737099}
+  m_GameObject: {fileID: 140328863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &140548692
 GameObject:
   m_ObjectHideFlags: 0
@@ -7104,7 +7191,8 @@ GameObject:
   - 33: {fileID: 156604379}
   - 23: {fileID: 156604378}
   - 64: {fileID: 156604377}
-  m_Layer: 0
+  - 114: {fileID: 156604380}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7166,6 +7254,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 235877494}
   m_GameObject: {fileID: 156604375}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &156604380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 235877494}
+  m_GameObject: {fileID: 156604375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &156804249
 GameObject:
   m_ObjectHideFlags: 0
@@ -7373,7 +7474,8 @@ GameObject:
   - 95: {fileID: 161096710}
   - 114: {fileID: 161096712}
   - 65: {fileID: 161096711}
-  m_Layer: 0
+  - 114: {fileID: 161096713}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7436,6 +7538,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &161096713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1433497415}
+  m_GameObject: {fileID: 161096708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &161489451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8300,7 +8415,8 @@ GameObject:
   - 64: {fileID: 193462470}
   - 95: {fileID: 193462469}
   - 114: {fileID: 193462473}
-  m_Layer: 0
+  - 114: {fileID: 193462474}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8392,6 +8508,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &193462474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 111769387}
+  m_GameObject: {fileID: 193462467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &200697311
 GameObject:
   m_ObjectHideFlags: 0
@@ -8819,6 +8948,7 @@ GameObject:
   - 65: {fileID: 209060143}
   - 114: {fileID: 209060150}
   - 114: {fileID: 209060149}
+  - 114: {fileID: 209060151}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -8946,6 +9076,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &209060151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1662885727}
+  m_GameObject: {fileID: 209060142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &210901148
 GameObject:
   m_ObjectHideFlags: 0
@@ -9675,7 +9819,8 @@ GameObject:
   - 95: {fileID: 238030956}
   - 114: {fileID: 238030959}
   - 65: {fileID: 238030958}
-  m_Layer: 0
+  - 114: {fileID: 238030960}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9738,6 +9883,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &238030960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1213373647}
+  m_GameObject: {fileID: 238030955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &238664528
 GameObject:
   m_ObjectHideFlags: 0
@@ -9946,7 +10104,8 @@ GameObject:
   - 33: {fileID: 241920627}
   - 23: {fileID: 241920626}
   - 64: {fileID: 241920625}
-  m_Layer: 0
+  - 114: {fileID: 241920629}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10008,6 +10167,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993933042}
+--- !u!114 &241920629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 539818372}
+  m_GameObject: {fileID: 241920624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &243257061
 GameObject:
   m_ObjectHideFlags: 0
@@ -10568,7 +10740,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &263761430
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10706,6 +10878,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 263761434}
+  stunInterval: .100000001
 --- !u!114 &263761436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11547,7 +11720,8 @@ GameObject:
   - 33: {fileID: 285511887}
   - 23: {fileID: 285511886}
   - 64: {fileID: 285511885}
-  m_Layer: 0
+  - 114: {fileID: 285511888}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11609,6 +11783,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1303151622}
   m_GameObject: {fileID: 285511883}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &285511888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1303151622}
+  m_GameObject: {fileID: 285511883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &286440303
 GameObject:
   m_ObjectHideFlags: 0
@@ -11646,7 +11833,7 @@ GameObject:
   - 33: {fileID: 287709295}
   - 23: {fileID: 287709294}
   - 64: {fileID: 287709293}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11719,7 +11906,8 @@ GameObject:
   - 95: {fileID: 290157344}
   - 114: {fileID: 290157347}
   - 65: {fileID: 290157346}
-  m_Layer: 0
+  - 114: {fileID: 290157348}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11782,6 +11970,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &290157348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1303151622}
+  m_GameObject: {fileID: 290157343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &293133321
 GameObject:
   m_ObjectHideFlags: 0
@@ -12243,7 +12444,8 @@ GameObject:
   - 64: {fileID: 305479382}
   - 95: {fileID: 305479381}
   - 114: {fileID: 305479386}
-  m_Layer: 0
+  - 114: {fileID: 305479387}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12335,6 +12537,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &305479387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1110076877}
+  m_GameObject: {fileID: 305479380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &305671518
 GameObject:
   m_ObjectHideFlags: 0
@@ -12373,7 +12588,7 @@ GameObject:
   - 33: {fileID: 306017521}
   - 23: {fileID: 306017520}
   - 64: {fileID: 306017519}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13725,7 +13940,7 @@ GameObject:
   - 33: {fileID: 348111310}
   - 23: {fileID: 348111309}
   - 64: {fileID: 348111308}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13953,7 +14168,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 356384066}
   - 108: {fileID: 356384067}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14018,7 +14233,8 @@ GameObject:
   - 33: {fileID: 356452380}
   - 23: {fileID: 356452379}
   - 64: {fileID: 356452378}
-  m_Layer: 0
+  - 114: {fileID: 356452381}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14080,6 +14296,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1587451328}
   m_GameObject: {fileID: 356452376}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &356452381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1587451328}
+  m_GameObject: {fileID: 356452376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &356713681
 GameObject:
   m_ObjectHideFlags: 0
@@ -14467,7 +14696,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &360092233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14626,6 +14855,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 360092238}
+  stunInterval: .100000001
 --- !u!114 &360092240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15657,7 +15887,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 375715296}
   - 108: {fileID: 375715297}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15850,7 +16080,8 @@ GameObject:
   - 33: {fileID: 376518355}
   - 23: {fileID: 376518354}
   - 64: {fileID: 376518353}
-  m_Layer: 0
+  - 114: {fileID: 376518357}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15912,6 +16143,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 984703869}
+--- !u!114 &376518357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 593242578}
+  m_GameObject: {fileID: 376518352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &377203747
 GameObject:
   m_ObjectHideFlags: 0
@@ -16796,7 +17040,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &391874191
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16955,6 +17199,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 391874196}
+  stunInterval: .100000001
 --- !u!114 &391874198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17235,7 +17480,8 @@ GameObject:
   - 95: {fileID: 398879667}
   - 114: {fileID: 398879669}
   - 65: {fileID: 398879668}
-  m_Layer: 0
+  - 114: {fileID: 398879670}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17298,6 +17544,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &398879670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1688384953}
+  m_GameObject: {fileID: 398879665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &400035635
 GameObject:
   m_ObjectHideFlags: 0
@@ -17662,7 +17921,8 @@ GameObject:
   - 95: {fileID: 415424506}
   - 114: {fileID: 415424509}
   - 65: {fileID: 415424508}
-  m_Layer: 0
+  - 114: {fileID: 415424510}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17725,6 +17985,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &415424510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 808682016}
+  m_GameObject: {fileID: 415424505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &415560259
 GameObject:
   m_ObjectHideFlags: 0
@@ -17880,7 +18153,8 @@ GameObject:
   - 95: {fileID: 426745289}
   - 114: {fileID: 426745291}
   - 65: {fileID: 426745290}
-  m_Layer: 0
+  - 114: {fileID: 426745292}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17943,6 +18217,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &426745292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 590725390}
+  m_GameObject: {fileID: 426745287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &433664694
 GameObject:
   m_ObjectHideFlags: 0
@@ -20153,7 +20440,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486418291}
   - 108: {fileID: 486418290}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21380,7 +21667,8 @@ GameObject:
   - 33: {fileID: 516506267}
   - 23: {fileID: 516506266}
   - 64: {fileID: 516506265}
-  m_Layer: 0
+  - 114: {fileID: 516506268}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21442,6 +21730,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1929753822}
   m_GameObject: {fileID: 516506263}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &516506268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1929753822}
+  m_GameObject: {fileID: 516506263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &516698433
 GameObject:
   m_ObjectHideFlags: 0
@@ -21536,6 +21837,7 @@ GameObject:
   - 65: {fileID: 522775984}
   - 114: {fileID: 522775983}
   - 95: {fileID: 522775981}
+  - 114: {fileID: 522775982}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -21571,6 +21873,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &522775982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016439174}
+  m_GameObject: {fileID: 522775979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &522775983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22335,7 +22650,8 @@ GameObject:
   - 95: {fileID: 549130190}
   - 114: {fileID: 549130193}
   - 65: {fileID: 549130192}
-  m_Layer: 0
+  - 114: {fileID: 549130194}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22398,6 +22714,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &549130194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1929753822}
+  m_GameObject: {fileID: 549130189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &549354569
 GameObject:
   m_ObjectHideFlags: 0
@@ -22489,7 +22818,7 @@ GameObject:
   - 33: {fileID: 550262651}
   - 23: {fileID: 550262650}
   - 64: {fileID: 550262649}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22779,7 +23108,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 562267591}
   - 108: {fileID: 562267592}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23250,7 +23579,8 @@ GameObject:
   - 95: {fileID: 570753113}
   - 114: {fileID: 570753115}
   - 65: {fileID: 570753114}
-  m_Layer: 0
+  - 114: {fileID: 570753116}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23313,6 +23643,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &570753116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2109728559}
+  m_GameObject: {fileID: 570753111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &572944810
 GameObject:
   m_ObjectHideFlags: 0
@@ -23890,6 +24233,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 581379428}
+  - 114: {fileID: 581379430}
+  - 65: {fileID: 581379429}
   m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
@@ -23909,6 +24254,32 @@ Transform:
   m_Children:
   - {fileID: 1672417964}
   m_Father: {fileID: 1740757210}
+--- !u!65 &581379429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 646054768}
+  m_GameObject: {fileID: 581379427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 2}
+--- !u!114 &581379430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 646054768}
+  m_GameObject: {fileID: 581379427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1001 &582387772
 Prefab:
   m_ObjectHideFlags: 0
@@ -24271,7 +24642,7 @@ GameObject:
   - 33: {fileID: 596789981}
   - 23: {fileID: 596789980}
   - 64: {fileID: 596789979}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24896,7 +25267,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &609703988
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25055,6 +25426,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 609703993}
+  stunInterval: .100000001
 --- !u!114 &609703995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25278,7 +25650,7 @@ GameObject:
   - 33: {fileID: 611227801}
   - 23: {fileID: 611227800}
   - 64: {fileID: 611227799}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25431,7 +25803,7 @@ GameObject:
   - 33: {fileID: 615945550}
   - 23: {fileID: 615945549}
   - 64: {fileID: 615945548}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25778,7 +26150,8 @@ GameObject:
   - 33: {fileID: 621693790}
   - 23: {fileID: 621693789}
   - 64: {fileID: 621693788}
-  m_Layer: 0
+  - 114: {fileID: 621693791}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25840,6 +26213,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 487357657}
   m_GameObject: {fileID: 621693786}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &621693791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 487357657}
+  m_GameObject: {fileID: 621693786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &623838163
 GameObject:
   m_ObjectHideFlags: 0
@@ -26777,7 +27163,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &648490371
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26915,6 +27301,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 648490375}
+  stunInterval: .100000001
 --- !u!114 &648490377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27832,7 +28219,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 675344839}
   - 108: {fileID: 675344840}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28306,6 +28693,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: .100000001
   clipSize: 25
   currentAmmo: 25
   reloadCooldown: 1.79999995
@@ -29060,6 +29448,7 @@ GameObject:
   - 65: {fileID: 685081280}
   - 114: {fileID: 685081284}
   - 95: {fileID: 685081279}
+  - 114: {fileID: 685081285}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -29154,6 +29543,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc5538bd6c41e542a82a7d92eea8546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &685081285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 241892677}
+  m_GameObject: {fileID: 685081278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &685287564
 GameObject:
   m_ObjectHideFlags: 0
@@ -29468,7 +29870,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 697530253}
   - 108: {fileID: 697530254}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31405,7 +31807,8 @@ GameObject:
   - 95: {fileID: 725563269}
   - 114: {fileID: 725563271}
   - 65: {fileID: 725563270}
-  m_Layer: 0
+  - 114: {fileID: 725563272}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31468,6 +31871,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &725563272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 735028104}
+  m_GameObject: {fileID: 725563267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &725655181
 GameObject:
   m_ObjectHideFlags: 0
@@ -32001,7 +32417,7 @@ GameObject:
   - 33: {fileID: 745854669}
   - 23: {fileID: 745854668}
   - 64: {fileID: 745854667}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32664,7 +33080,8 @@ GameObject:
   - 33: {fileID: 757085064}
   - 23: {fileID: 757085063}
   - 64: {fileID: 757085062}
-  m_Layer: 0
+  - 114: {fileID: 757085066}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32726,6 +33143,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 905515742}
+--- !u!114 &757085066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1708051235}
+  m_GameObject: {fileID: 757085061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &757941335
 GameObject:
   m_ObjectHideFlags: 0
@@ -33026,6 +33456,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 772261644}
+  - 114: {fileID: 772261646}
+  - 65: {fileID: 772261645}
   m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
@@ -33045,6 +33477,32 @@ Transform:
   m_Children:
   - {fileID: 2012029412}
   m_Father: {fileID: 1686362262}
+--- !u!65 &772261645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1125650361}
+  m_GameObject: {fileID: 772261643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 2}
+--- !u!114 &772261646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1125650361}
+  m_GameObject: {fileID: 772261643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &772904819
 GameObject:
   m_ObjectHideFlags: 0
@@ -33992,6 +34450,7 @@ GameObject:
   - 65: {fileID: 793552821}
   - 114: {fileID: 793552820}
   - 95: {fileID: 793552818}
+  - 114: {fileID: 793552819}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -34027,6 +34486,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &793552819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 2140745053}
+  m_GameObject: {fileID: 793552816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &793552820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34347,7 +34819,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &801070006
 AudioSource:
   m_ObjectHideFlags: 0
@@ -34485,6 +34957,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 801070010}
+  stunInterval: .100000001
 --- !u!114 &801070012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35521,7 +35994,7 @@ GameObject:
   - 33: {fileID: 815320110}
   - 23: {fileID: 815320109}
   - 64: {fileID: 815320108}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35618,6 +36091,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 816147256}
+  - 114: {fileID: 816147258}
+  - 65: {fileID: 816147257}
   m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
@@ -35637,6 +36112,32 @@ Transform:
   m_Children:
   - {fileID: 641397325}
   m_Father: {fileID: 1339351363}
+--- !u!65 &816147257
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1902535869}
+  m_GameObject: {fileID: 816147255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 2}
+--- !u!114 &816147258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1902535869}
+  m_GameObject: {fileID: 816147255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &817441057
 GameObject:
   m_ObjectHideFlags: 0
@@ -35646,7 +36147,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 817441058}
   - 108: {fileID: 817441059}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36676,7 +37177,7 @@ GameObject:
   - 33: {fileID: 835839118}
   - 23: {fileID: 835839117}
   - 64: {fileID: 835839116}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38125,7 +38626,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &868769390
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38263,6 +38764,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 868769394}
+  stunInterval: .100000001
 --- !u!114 &868769396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38752,6 +39254,7 @@ GameObject:
   - 65: {fileID: 873574018}
   - 114: {fileID: 873574025}
   - 114: {fileID: 873574024}
+  - 114: {fileID: 873574026}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -38879,6 +39382,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &873574026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 331240284}
+  m_GameObject: {fileID: 873574017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &874097313
 GameObject:
   m_ObjectHideFlags: 0
@@ -39414,7 +39931,8 @@ GameObject:
   - 33: {fileID: 879731321}
   - 23: {fileID: 879731320}
   - 64: {fileID: 879731319}
-  m_Layer: 0
+  - 114: {fileID: 879731322}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39476,6 +39994,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1928413544}
   m_GameObject: {fileID: 879731317}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &879731322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1928413544}
+  m_GameObject: {fileID: 879731317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &881231657
 GameObject:
   m_ObjectHideFlags: 0
@@ -39603,7 +40134,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 882393665}
   - 108: {fileID: 882393666}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39668,7 +40199,7 @@ GameObject:
   - 33: {fileID: 882677897}
   - 23: {fileID: 882677896}
   - 64: {fileID: 882677895}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40047,7 +40578,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &886464197
 AudioSource:
   m_ObjectHideFlags: 0
@@ -40185,6 +40716,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 886464201}
+  stunInterval: .100000001
 --- !u!114 &886464203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40393,7 +40925,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 894040130}
   - 108: {fileID: 894040131}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41093,7 +41625,8 @@ GameObject:
   - 95: {fileID: 905515743}
   - 114: {fileID: 905515745}
   - 65: {fileID: 905515744}
-  m_Layer: 0
+  - 114: {fileID: 905515746}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41156,6 +41689,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &905515746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1708051235}
+  m_GameObject: {fileID: 905515741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &907845393
 GameObject:
   m_ObjectHideFlags: 0
@@ -41171,6 +41717,7 @@ GameObject:
   - 65: {fileID: 907845394}
   - 114: {fileID: 907845401}
   - 114: {fileID: 907845400}
+  - 114: {fileID: 907845402}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -41298,6 +41845,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &907845402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 766972345}
+  m_GameObject: {fileID: 907845393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &908718131
 GameObject:
   m_ObjectHideFlags: 0
@@ -41488,7 +42049,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &919076782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -41647,6 +42208,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 919076787}
+  stunInterval: .100000001
 --- !u!114 &919076789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42348,7 +42910,8 @@ GameObject:
   - 64: {fileID: 932322277}
   - 95: {fileID: 932322276}
   - 114: {fileID: 932322280}
-  m_Layer: 0
+  - 114: {fileID: 932322281}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42440,6 +43003,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &932322281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 871776178}
+  m_GameObject: {fileID: 932322274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &932661101
 GameObject:
   m_ObjectHideFlags: 0
@@ -43208,7 +43784,7 @@ GameObject:
   - 33: {fileID: 952122212}
   - 23: {fileID: 952122211}
   - 64: {fileID: 952122210}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43364,6 +43940,7 @@ GameObject:
   - 65: {fileID: 959480871}
   - 114: {fileID: 959480870}
   - 95: {fileID: 959480868}
+  - 114: {fileID: 959480869}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -43399,6 +43976,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &959480869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 926462065}
+  m_GameObject: {fileID: 959480866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &959480870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43672,7 +44262,8 @@ GameObject:
   - 33: {fileID: 964278338}
   - 23: {fileID: 964278337}
   - 64: {fileID: 964278336}
-  m_Layer: 0
+  - 114: {fileID: 964278339}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43734,6 +44325,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1221798731}
   m_GameObject: {fileID: 964278334}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &964278339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1221798731}
+  m_GameObject: {fileID: 964278334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &965113167
 GameObject:
   m_ObjectHideFlags: 0
@@ -43804,7 +44408,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &965113171
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43942,6 +44546,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 965113175}
+  stunInterval: .100000001
 --- !u!114 &965113177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44218,6 +44823,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 973839860}
+  - 114: {fileID: 973839862}
+  - 65: {fileID: 973839861}
   m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
@@ -44237,6 +44844,32 @@ Transform:
   m_Children:
   - {fileID: 300932841}
   m_Father: {fileID: 628540898}
+--- !u!65 &973839861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 928961640}
+  m_GameObject: {fileID: 973839859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 2}
+--- !u!114 &973839862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 928961640}
+  m_GameObject: {fileID: 973839859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &974285390
 GameObject:
   m_ObjectHideFlags: 0
@@ -44409,7 +45042,8 @@ GameObject:
   - 95: {fileID: 981622620}
   - 114: {fileID: 981622622}
   - 65: {fileID: 981622621}
-  m_Layer: 0
+  - 114: {fileID: 981622623}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44472,6 +45106,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &981622623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1339782420}
+  m_GameObject: {fileID: 981622618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &981878235
 GameObject:
   m_ObjectHideFlags: 0
@@ -44807,7 +45454,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 983204885}
   - 108: {fileID: 983204884}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44874,6 +45521,7 @@ GameObject:
   - 65: {fileID: 984682408}
   - 114: {fileID: 984682407}
   - 95: {fileID: 984682405}
+  - 114: {fileID: 984682406}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -44909,6 +45557,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &984682406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 1271493742}
+  m_GameObject: {fileID: 984682403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &984682407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44979,7 +45640,8 @@ GameObject:
   - 95: {fileID: 984703870}
   - 114: {fileID: 984703872}
   - 65: {fileID: 984703871}
-  m_Layer: 0
+  - 114: {fileID: 984703873}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45042,6 +45704,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &984703873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 593242578}
+  m_GameObject: {fileID: 984703868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &985427854
 GameObject:
   m_ObjectHideFlags: 0
@@ -45366,6 +46041,7 @@ GameObject:
   - 65: {fileID: 997800407}
   - 114: {fileID: 997800414}
   - 114: {fileID: 997800413}
+  - 114: {fileID: 997800415}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -45493,6 +46169,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &997800415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1314123955}
+  m_GameObject: {fileID: 997800406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &998281328
 GameObject:
   m_ObjectHideFlags: 0
@@ -45639,7 +46329,7 @@ GameObject:
   - 33: {fileID: 1004044189}
   - 23: {fileID: 1004044188}
   - 64: {fileID: 1004044187}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46472,7 +47162,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1023510373}
   - 108: {fileID: 1023510372}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46823,7 +47513,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1029873045
 AudioSource:
   m_ObjectHideFlags: 0
@@ -46982,6 +47672,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1029873050}
+  stunInterval: .100000001
 --- !u!114 &1029873052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47274,7 +47965,7 @@ GameObject:
   - 33: {fileID: 1044483194}
   - 23: {fileID: 1044483193}
   - 64: {fileID: 1044483192}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47347,7 +48038,8 @@ GameObject:
   - 95: {fileID: 1045553251}
   - 114: {fileID: 1045553254}
   - 65: {fileID: 1045553253}
-  m_Layer: 0
+  - 114: {fileID: 1045553255}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47410,6 +48102,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1045553255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1104696114}
+  m_GameObject: {fileID: 1045553250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1047135736
 GameObject:
   m_ObjectHideFlags: 0
@@ -47934,7 +48639,8 @@ GameObject:
   - 33: {fileID: 1057503157}
   - 23: {fileID: 1057503156}
   - 64: {fileID: 1057503155}
-  m_Layer: 0
+  - 114: {fileID: 1057503158}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47996,6 +48702,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 808682016}
   m_GameObject: {fileID: 1057503153}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1057503158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 808682016}
+  m_GameObject: {fileID: 1057503153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1058743022
 GameObject:
   m_ObjectHideFlags: 0
@@ -48152,7 +48871,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1065680388
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48290,6 +49009,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1065680392}
+  stunInterval: .100000001
 --- !u!114 &1065680394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48770,7 +49490,8 @@ GameObject:
   - 95: {fileID: 1072060983}
   - 114: {fileID: 1072060985}
   - 65: {fileID: 1072060984}
-  m_Layer: 0
+  - 114: {fileID: 1072060986}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48833,6 +49554,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1072060986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1446706466}
+  m_GameObject: {fileID: 1072060981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1073699291
 GameObject:
   m_ObjectHideFlags: 0
@@ -49199,7 +49933,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1092817405}
   - 108: {fileID: 1092817406}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50788,7 +51522,7 @@ GameObject:
   - 33: {fileID: 1123125697}
   - 23: {fileID: 1123125696}
   - 64: {fileID: 1123125695}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51071,7 +51805,8 @@ GameObject:
   - 33: {fileID: 1128489694}
   - 23: {fileID: 1128489693}
   - 64: {fileID: 1128489692}
-  m_Layer: 0
+  - 114: {fileID: 1128489695}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51133,6 +51868,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 960871593}
   m_GameObject: {fileID: 1128489690}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1128489695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 960871593}
+  m_GameObject: {fileID: 1128489690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1132043388
 GameObject:
   m_ObjectHideFlags: 0
@@ -51805,6 +52553,7 @@ GameObject:
   - 65: {fileID: 1155114894}
   - 114: {fileID: 1155114901}
   - 114: {fileID: 1155114900}
+  - 114: {fileID: 1155114902}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -51932,6 +52681,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &1155114902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 2083564244}
+  m_GameObject: {fileID: 1155114893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &1156016567
 GameObject:
   m_ObjectHideFlags: 0
@@ -52518,6 +53281,7 @@ GameObject:
   - 65: {fileID: 1162939491}
   - 114: {fileID: 1162939490}
   - 95: {fileID: 1162939488}
+  - 114: {fileID: 1162939489}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -52553,6 +53317,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1162939489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 2027132628}
+  m_GameObject: {fileID: 1162939486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &1162939490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53325,7 +54102,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1184559406}
   - 108: {fileID: 1184559407}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53388,7 +54165,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1185776949}
   - 108: {fileID: 1185776950}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53909,7 +54686,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1192564738}
   - 108: {fileID: 1192564739}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54156,7 +54933,8 @@ GameObject:
   - 33: {fileID: 1202337009}
   - 23: {fileID: 1202337008}
   - 64: {fileID: 1202337007}
-  m_Layer: 0
+  - 114: {fileID: 1202337010}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54218,6 +54996,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1607326460}
   m_GameObject: {fileID: 1202337005}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1202337010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1607326460}
+  m_GameObject: {fileID: 1202337005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1202905684
 GameObject:
   m_ObjectHideFlags: 0
@@ -54430,7 +55221,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1203068923
 AudioSource:
   m_ObjectHideFlags: 0
@@ -54568,6 +55359,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1203068927}
+  stunInterval: .100000001
 --- !u!114 &1203068929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54667,7 +55459,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1203847020}
   - 108: {fileID: 1203847019}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54734,6 +55526,7 @@ GameObject:
   - 65: {fileID: 1204229059}
   - 114: {fileID: 1204229058}
   - 95: {fileID: 1204229056}
+  - 114: {fileID: 1204229057}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -54769,6 +55562,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1204229057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 1128179151}
+  m_GameObject: {fileID: 1204229054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &1204229058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54837,7 +55643,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1205231768}
   - 108: {fileID: 1205231769}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55577,7 +56383,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1218680444}
   - 108: {fileID: 1218680445}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56179,7 +56985,8 @@ GameObject:
   - 64: {fileID: 1237824092}
   - 95: {fileID: 1237824091}
   - 114: {fileID: 1237824096}
-  m_Layer: 0
+  - 114: {fileID: 1237824097}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56271,6 +57078,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &1237824097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 883884631}
+  m_GameObject: {fileID: 1237824090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1240169858
 GameObject:
   m_ObjectHideFlags: 0
@@ -56413,7 +57233,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1255882771}
   - 108: {fileID: 1255882772}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56504,7 +57324,7 @@ GameObject:
   - 33: {fileID: 1256675465}
   - 23: {fileID: 1256675464}
   - 64: {fileID: 1256675463}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56579,7 +57399,8 @@ GameObject:
   - 64: {fileID: 1257815607}
   - 95: {fileID: 1257815606}
   - 114: {fileID: 1257815611}
-  m_Layer: 0
+  - 114: {fileID: 1257815612}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56671,6 +57492,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &1257815612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 897206574}
+  m_GameObject: {fileID: 1257815605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1260403769
 GameObject:
   m_ObjectHideFlags: 0
@@ -56682,7 +57516,7 @@ GameObject:
   - 33: {fileID: 1260403773}
   - 23: {fileID: 1260403772}
   - 64: {fileID: 1260403771}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57265,7 +58099,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1280336288}
   - 108: {fileID: 1280336287}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57676,7 +58510,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1289548529}
   - 108: {fileID: 1289548528}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58407,7 +59241,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1303670542}
   - 108: {fileID: 1303670541}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59250,7 +60084,8 @@ GameObject:
   - 95: {fileID: 1321253896}
   - 114: {fileID: 1321253898}
   - 65: {fileID: 1321253897}
-  m_Layer: 0
+  - 114: {fileID: 1321253899}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59313,6 +60148,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1321253899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1798067367}
+  m_GameObject: {fileID: 1321253894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1321629310
 GameObject:
   m_ObjectHideFlags: 0
@@ -59379,7 +60227,8 @@ GameObject:
   - 95: {fileID: 1323275739}
   - 114: {fileID: 1323275741}
   - 65: {fileID: 1323275740}
-  m_Layer: 0
+  - 114: {fileID: 1323275742}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59442,6 +60291,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1323275742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 938736589}
+  m_GameObject: {fileID: 1323275737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1324652977
 GameObject:
   m_ObjectHideFlags: 0
@@ -59518,7 +60380,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1325641511}
   - 108: {fileID: 1325641510}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59663,7 +60525,8 @@ GameObject:
   - 33: {fileID: 1328975206}
   - 23: {fileID: 1328975205}
   - 64: {fileID: 1328975204}
-  m_Layer: 0
+  - 114: {fileID: 1328975208}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59725,6 +60588,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1881012034}
+--- !u!114 &1328975208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 691973475}
+  m_GameObject: {fileID: 1328975203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1332956718
 GameObject:
   m_ObjectHideFlags: 0
@@ -60531,7 +61407,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1345768529}
   - 108: {fileID: 1345768530}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60698,7 +61574,8 @@ GameObject:
   - 95: {fileID: 1349728625}
   - 114: {fileID: 1349728627}
   - 65: {fileID: 1349728626}
-  m_Layer: 0
+  - 114: {fileID: 1349728628}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60761,6 +61638,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1349728628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1928413544}
+  m_GameObject: {fileID: 1349728623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1349997610
 GameObject:
   m_ObjectHideFlags: 0
@@ -61078,7 +61968,8 @@ GameObject:
   - 95: {fileID: 1362593751}
   - 114: {fileID: 1362593750}
   - 65: {fileID: 1362593749}
-  m_Layer: 0
+  - 114: {fileID: 1362593752}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61141,6 +62032,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1362593752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 235877494}
+  m_GameObject: {fileID: 1362593747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1363413199
 GameObject:
   m_ObjectHideFlags: 0
@@ -61156,6 +62060,7 @@ GameObject:
   - 65: {fileID: 1363413200}
   - 114: {fileID: 1363413207}
   - 114: {fileID: 1363413206}
+  - 114: {fileID: 1363413208}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -61283,6 +62188,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &1363413208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1993414900}
+  m_GameObject: {fileID: 1363413199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &1363602828
 GameObject:
   m_ObjectHideFlags: 0
@@ -61479,7 +62398,7 @@ GameObject:
   - 33: {fileID: 1371915612}
   - 23: {fileID: 1371915611}
   - 64: {fileID: 1371915610}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61720,7 +62639,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1374364428
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61879,6 +62798,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1374364433}
+  stunInterval: .100000001
 --- !u!114 &1374364435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62050,7 +62970,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1376185453}
   - 108: {fileID: 1376185454}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62239,7 +63159,8 @@ GameObject:
   - 33: {fileID: 1378134170}
   - 23: {fileID: 1378134169}
   - 64: {fileID: 1378134168}
-  m_Layer: 0
+  - 114: {fileID: 1378134171}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62301,6 +63222,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 735028104}
   m_GameObject: {fileID: 1378134166}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1378134171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 735028104}
+  m_GameObject: {fileID: 1378134166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1378536131
 GameObject:
   m_ObjectHideFlags: 0
@@ -62839,7 +63773,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1390976187}
   - 108: {fileID: 1390976188}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63070,7 +64004,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1399409631
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63208,6 +64142,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1399409635}
+  stunInterval: .100000001
 --- !u!114 &1399409637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63576,7 +64511,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1405859910
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63714,6 +64649,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1405859914}
+  stunInterval: .100000001
 --- !u!114 &1405859916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64236,7 +65172,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1416596940}
   - 108: {fileID: 1416596941}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64456,7 +65392,8 @@ GameObject:
   - 64: {fileID: 1422345612}
   - 95: {fileID: 1422345611}
   - 114: {fileID: 1422345616}
-  m_Layer: 0
+  - 114: {fileID: 1422345617}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64548,6 +65485,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &1422345617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 311650868}
+  m_GameObject: {fileID: 1422345610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1422363186
 GameObject:
   m_ObjectHideFlags: 0
@@ -65017,7 +65967,8 @@ GameObject:
   - 64: {fileID: 1440305471}
   - 95: {fileID: 1440305470}
   - 114: {fileID: 1440305474}
-  m_Layer: 0
+  - 114: {fileID: 1440305475}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65109,6 +66060,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &1440305475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 24541346}
+  m_GameObject: {fileID: 1440305468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1441070001
 GameObject:
   m_ObjectHideFlags: 0
@@ -65423,7 +66387,7 @@ GameObject:
   - 33: {fileID: 1447280410}
   - 23: {fileID: 1447280409}
   - 64: {fileID: 1447280408}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65641,7 +66605,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1449901714}
   - 108: {fileID: 1449901715}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65978,7 +66942,8 @@ GameObject:
   - 33: {fileID: 1457734014}
   - 23: {fileID: 1457734013}
   - 64: {fileID: 1457734012}
-  m_Layer: 0
+  - 114: {fileID: 1457734015}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66040,6 +67005,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1433497415}
   m_GameObject: {fileID: 1457734010}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1457734015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1433497415}
+  m_GameObject: {fileID: 1457734010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1462551084
 GameObject:
   m_ObjectHideFlags: 0
@@ -66055,6 +67033,7 @@ GameObject:
   - 65: {fileID: 1462551085}
   - 114: {fileID: 1462551092}
   - 114: {fileID: 1462551091}
+  - 114: {fileID: 1462551093}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -66182,6 +67161,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &1462551093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 656668486}
+  m_GameObject: {fileID: 1462551084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &1467760200
 GameObject:
   m_ObjectHideFlags: 0
@@ -66611,7 +67604,7 @@ GameObject:
   - 33: {fileID: 1477453951}
   - 23: {fileID: 1477453950}
   - 64: {fileID: 1477453949}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67478,7 +68471,8 @@ GameObject:
   - 95: {fileID: 1504166949}
   - 114: {fileID: 1504166951}
   - 65: {fileID: 1504166950}
-  m_Layer: 0
+  - 114: {fileID: 1504166952}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67541,6 +68535,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1504166952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1221798731}
+  m_GameObject: {fileID: 1504166947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1504399435
 GameObject:
   m_ObjectHideFlags: 0
@@ -67681,7 +68688,8 @@ GameObject:
   - 33: {fileID: 1506116212}
   - 23: {fileID: 1506116211}
   - 64: {fileID: 1506116210}
-  m_Layer: 0
+  - 114: {fileID: 1506116209}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67699,6 +68707,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 426745288}
+--- !u!114 &1506116209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 590725390}
+  m_GameObject: {fileID: 1506116207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!64 &1506116210
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67756,7 +68777,8 @@ GameObject:
   - 64: {fileID: 1506117875}
   - 95: {fileID: 1506117874}
   - 114: {fileID: 1506117879}
-  m_Layer: 0
+  - 114: {fileID: 1506117880}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67848,6 +68870,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &1506117880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1518747890}
+  m_GameObject: {fileID: 1506117873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1506977185
 GameObject:
   m_ObjectHideFlags: 0
@@ -68001,7 +69036,8 @@ GameObject:
   - 33: {fileID: 1510475150}
   - 23: {fileID: 1510475149}
   - 64: {fileID: 1510475148}
-  m_Layer: 0
+  - 114: {fileID: 1510475151}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68063,6 +69099,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1025975413}
   m_GameObject: {fileID: 1510475146}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1510475151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1025975413}
+  m_GameObject: {fileID: 1510475146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1510493995
 GameObject:
   m_ObjectHideFlags: 0
@@ -68570,7 +69619,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1518057202}
   - 108: {fileID: 1518057203}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70036,7 +71085,8 @@ GameObject:
   - 33: {fileID: 1551583871}
   - 23: {fileID: 1551583870}
   - 64: {fileID: 1551583869}
-  m_Layer: 0
+  - 114: {fileID: 1551583873}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70098,6 +71148,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1072060982}
+--- !u!114 &1551583873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1446706466}
+  m_GameObject: {fileID: 1551583868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1552112332
 GameObject:
   m_ObjectHideFlags: 0
@@ -70348,7 +71411,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1557767254}
   - 108: {fileID: 1557767253}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70911,7 +71974,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1574634211
 AudioSource:
   m_ObjectHideFlags: 0
@@ -71049,6 +72112,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1574634215}
+  stunInterval: .100000001
 --- !u!114 &1574634217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71310,6 +72374,7 @@ GameObject:
   - 65: {fileID: 1581310887}
   - 114: {fileID: 1581310894}
   - 114: {fileID: 1581310893}
+  - 114: {fileID: 1581310895}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -71437,6 +72502,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &1581310895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1991405660}
+  m_GameObject: {fileID: 1581310886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &1581751687
 GameObject:
   m_ObjectHideFlags: 0
@@ -72030,7 +73109,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1596725920}
   - 108: {fileID: 1596725921}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72957,7 +74036,8 @@ GameObject:
   - 95: {fileID: 1618681628}
   - 114: {fileID: 1618681627}
   - 65: {fileID: 1618681626}
-  m_Layer: 0
+  - 114: {fileID: 1618681629}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73020,6 +74100,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1618681629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 960871593}
+  m_GameObject: {fileID: 1618681624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1619380346
 GameObject:
   m_ObjectHideFlags: 0
@@ -73234,7 +74327,8 @@ GameObject:
   - 95: {fileID: 1625990646}
   - 114: {fileID: 1625990649}
   - 65: {fileID: 1625990648}
-  m_Layer: 0
+  - 114: {fileID: 1625990650}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73297,6 +74391,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1625990650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1607326460}
+  m_GameObject: {fileID: 1625990645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1629587037
 GameObject:
   m_ObjectHideFlags: 0
@@ -73306,7 +74413,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1629587038}
   - 108: {fileID: 1629587039}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73542,7 +74649,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &1634486182
 AudioSource:
   m_ObjectHideFlags: 0
@@ -73680,6 +74787,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 1634486186}
+  stunInterval: .100000001
 --- !u!114 &1634486188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73807,7 +74915,8 @@ GameObject:
   - 33: {fileID: 1637232376}
   - 23: {fileID: 1637232375}
   - 64: {fileID: 1637232374}
-  m_Layer: 0
+  - 114: {fileID: 1637232377}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73869,6 +74978,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1213373647}
   m_GameObject: {fileID: 1637232372}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1637232377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1213373647}
+  m_GameObject: {fileID: 1637232372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1637494070
 GameObject:
   m_ObjectHideFlags: 0
@@ -76224,7 +77346,8 @@ GameObject:
   - 33: {fileID: 1684484282}
   - 23: {fileID: 1684484281}
   - 64: {fileID: 1684484280}
-  m_Layer: 0
+  - 114: {fileID: 1684484284}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76286,6 +77409,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1323275738}
+--- !u!114 &1684484284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 938736589}
+  m_GameObject: {fileID: 1684484279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1686362257
 GameObject:
   m_ObjectHideFlags: 0
@@ -77311,7 +78447,8 @@ GameObject:
   - 33: {fileID: 1708187837}
   - 23: {fileID: 1708187836}
   - 64: {fileID: 1708187835}
-  m_Layer: 0
+  - 114: {fileID: 1708187838}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77373,6 +78510,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1798067367}
   m_GameObject: {fileID: 1708187833}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1708187838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1798067367}
+  m_GameObject: {fileID: 1708187833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1709671238
 GameObject:
   m_ObjectHideFlags: 0
@@ -78084,7 +79234,8 @@ GameObject:
   - 95: {fileID: 1731353864}
   - 114: {fileID: 1731353866}
   - 65: {fileID: 1731353865}
-  m_Layer: 0
+  - 114: {fileID: 1731353867}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78147,6 +79298,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1731353867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1587451328}
+  m_GameObject: {fileID: 1731353862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1732463726
 GameObject:
   m_ObjectHideFlags: 0
@@ -78238,7 +79402,8 @@ GameObject:
   - 95: {fileID: 1739645221}
   - 114: {fileID: 1739645220}
   - 65: {fileID: 1739645219}
-  m_Layer: 0
+  - 114: {fileID: 1739645222}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78301,6 +79466,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1739645222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1025975413}
+  m_GameObject: {fileID: 1739645217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1740757209
 GameObject:
   m_ObjectHideFlags: 0
@@ -78815,7 +79993,8 @@ GameObject:
   - 95: {fileID: 1756387981}
   - 114: {fileID: 1756387984}
   - 65: {fileID: 1756387983}
-  m_Layer: 0
+  - 114: {fileID: 1756387985}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78878,6 +80057,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1756387985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 487357657}
+  m_GameObject: {fileID: 1756387980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1759271332
 GameObject:
   m_ObjectHideFlags: 0
@@ -78991,7 +80183,8 @@ GameObject:
   - 33: {fileID: 1762444857}
   - 23: {fileID: 1762444856}
   - 64: {fileID: 1762444855}
-  m_Layer: 0
+  - 114: {fileID: 1762444858}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79053,6 +80246,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 208460494}
   m_GameObject: {fileID: 1762444853}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1762444858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 208460494}
+  m_GameObject: {fileID: 1762444853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1763989027
 GameObject:
   m_ObjectHideFlags: 0
@@ -79062,7 +80268,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1763989028}
   - 108: {fileID: 1763989029}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79473,7 +80679,7 @@ GameObject:
   - 33: {fileID: 1780632097}
   - 23: {fileID: 1780632096}
   - 64: {fileID: 1780632095}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79653,7 +80859,7 @@ GameObject:
   - 33: {fileID: 1787231885}
   - 23: {fileID: 1787231884}
   - 64: {fileID: 1787231883}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79980,7 +81186,7 @@ GameObject:
   - 33: {fileID: 1791583296}
   - 23: {fileID: 1791583295}
   - 64: {fileID: 1791583294}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81151,7 +82357,7 @@ GameObject:
   - 33: {fileID: 1824321995}
   - 23: {fileID: 1824321994}
   - 64: {fileID: 1824321993}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81899,7 +83105,8 @@ GameObject:
   - 95: {fileID: 1845010637}
   - 114: {fileID: 1845010636}
   - 65: {fileID: 1845010635}
-  m_Layer: 0
+  - 114: {fileID: 1845010638}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81962,6 +83169,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1845010638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 208460494}
+  m_GameObject: {fileID: 1845010633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1845328593
 GameObject:
   m_ObjectHideFlags: 0
@@ -82002,7 +83222,8 @@ GameObject:
   - 64: {fileID: 1848087741}
   - 95: {fileID: 1848087740}
   - 114: {fileID: 1848087744}
-  m_Layer: 0
+  - 114: {fileID: 1848087745}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82094,6 +83315,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &1848087745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 760364894}
+  m_GameObject: {fileID: 1848087738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1849915259
 GameObject:
   m_ObjectHideFlags: 0
@@ -85444,7 +86678,8 @@ GameObject:
   - 95: {fileID: 1881012035}
   - 114: {fileID: 1881012037}
   - 65: {fileID: 1881012036}
-  m_Layer: 0
+  - 114: {fileID: 1881012038}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85507,6 +86742,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1881012038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 691973475}
+  m_GameObject: {fileID: 1881012033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1881696846
 GameObject:
   m_ObjectHideFlags: 0
@@ -85809,7 +87057,8 @@ GameObject:
   - 95: {fileID: 1887030200}
   - 114: {fileID: 1887030202}
   - 65: {fileID: 1887030201}
-  m_Layer: 0
+  - 114: {fileID: 1887030203}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85872,6 +87121,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1887030203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1795081383}
+  m_GameObject: {fileID: 1887030198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1887542135
 GameObject:
   m_ObjectHideFlags: 0
@@ -87958,7 +89220,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1909070679}
   - 108: {fileID: 1909070680}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90711,7 +91973,8 @@ GameObject:
   - 33: {fileID: 1945159544}
   - 23: {fileID: 1945159543}
   - 64: {fileID: 1945159542}
-  m_Layer: 0
+  - 114: {fileID: 1945159545}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90773,6 +92036,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1104696114}
   m_GameObject: {fileID: 1945159540}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1945159545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1104696114}
+  m_GameObject: {fileID: 1945159540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1946519199
 GameObject:
   m_ObjectHideFlags: 0
@@ -90810,7 +92086,7 @@ GameObject:
   - 33: {fileID: 1947900193}
   - 23: {fileID: 1947900192}
   - 64: {fileID: 1947900191}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90883,7 +92159,8 @@ GameObject:
   - 33: {fileID: 1948709811}
   - 23: {fileID: 1948709810}
   - 64: {fileID: 1948709809}
-  m_Layer: 0
+  - 114: {fileID: 1948709812}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90945,6 +92222,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1688384953}
   m_GameObject: {fileID: 1948709807}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &1948709812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1688384953}
+  m_GameObject: {fileID: 1948709807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &1950868026
 GameObject:
   m_ObjectHideFlags: 0
@@ -92321,7 +93611,8 @@ GameObject:
   - 33: {fileID: 1983227331}
   - 23: {fileID: 1983227330}
   - 64: {fileID: 1983227329}
-  m_Layer: 0
+  - 114: {fileID: 1983227328}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92339,6 +93630,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 981622619}
+--- !u!114 &1983227328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1339782420}
+  m_GameObject: {fileID: 1983227326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!64 &1983227329
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -92396,7 +93700,8 @@ GameObject:
   - 64: {fileID: 1984377244}
   - 95: {fileID: 1984377243}
   - 114: {fileID: 1984377248}
-  m_Layer: 0
+  - 114: {fileID: 1984377249}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92488,6 +93793,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &1984377249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1048671468}
+  m_GameObject: {fileID: 1984377242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1988509994
 GameObject:
   m_ObjectHideFlags: 0
@@ -92767,7 +94085,8 @@ GameObject:
   - 95: {fileID: 1993933043}
   - 114: {fileID: 1993933045}
   - 65: {fileID: 1993933044}
-  m_Layer: 0
+  - 114: {fileID: 1993933046}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92830,6 +94149,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &1993933046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 539818372}
+  m_GameObject: {fileID: 1993933041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &1994051821
 GameObject:
   m_ObjectHideFlags: 0
@@ -92941,7 +94273,7 @@ GameObject:
   - 33: {fileID: 2001133570}
   - 23: {fileID: 2001133569}
   - 64: {fileID: 2001133568}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94103,7 +95435,8 @@ GameObject:
   - 64: {fileID: 2034462537}
   - 95: {fileID: 2034462536}
   - 114: {fileID: 2034462541}
-  m_Layer: 0
+  - 114: {fileID: 2034462542}
+  m_Layer: 15
   m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94195,6 +95528,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: 1
+--- !u!114 &2034462542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f1fb86f37ceccb441be0ff097054e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 115794862}
+  m_GameObject: {fileID: 2034462535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &2034833324
 GameObject:
   m_ObjectHideFlags: 0
@@ -94430,7 +95776,8 @@ GameObject:
   - 95: {fileID: 2038964167}
   - 114: {fileID: 2038964170}
   - 65: {fileID: 2038964169}
-  m_Layer: 0
+  - 114: {fileID: 2038964171}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94493,6 +95840,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
   hiddenDuration: .5
+--- !u!114 &2038964171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1661737099}
+  m_GameObject: {fileID: 2038964166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3
 --- !u!1 &2040746376
 GameObject:
   m_ObjectHideFlags: 0
@@ -96895,7 +98255,8 @@ GameObject:
   - 33: {fileID: 2087479444}
   - 23: {fileID: 2087479443}
   - 64: {fileID: 2087479442}
-  m_Layer: 0
+  - 114: {fileID: 2087479445}
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96957,6 +98318,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 797723240}
   m_GameObject: {fileID: 2087479440}
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!114 &2087479445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 797723240}
+  m_GameObject: {fileID: 2087479440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
 --- !u!1 &2088638483
 GameObject:
   m_ObjectHideFlags: 0
@@ -97176,6 +98550,7 @@ GameObject:
   - 65: {fileID: 2097507378}
   - 114: {fileID: 2097507385}
   - 114: {fileID: 2097507384}
+  - 114: {fileID: 2097507386}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -97303,6 +98678,20 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
+--- !u!114 &2097507386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 494219965}
+  m_GameObject: {fileID: 2097507377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &2097725852
 GameObject:
   m_ObjectHideFlags: 0
@@ -98262,6 +99651,7 @@ GameObject:
   - 65: {fileID: 2116047772}
   - 114: {fileID: 2116047771}
   - 95: {fileID: 2116047769}
+  - 114: {fileID: 2116047770}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -98297,6 +99687,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &2116047770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 1324696088}
+  m_GameObject: {fileID: 2116047767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!114 &2116047771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98365,7 +99768,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2116259261}
   - 108: {fileID: 2116259260}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98804,7 +100207,7 @@ MonoBehaviour:
   InitForce: 0
   MaxSpeed: 18
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 66
 --- !u!82 &2121416159
 AudioSource:
   m_ObjectHideFlags: 0
@@ -98942,6 +100345,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 2121416163}
+  stunInterval: .100000001
 --- !u!114 &2121416165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99339,7 +100743,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2126971093}
   - 108: {fileID: 2126971094}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100659,6 +102063,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2139090813}
+  - 114: {fileID: 2139090815}
+  - 65: {fileID: 2139090814}
   m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
@@ -100678,6 +102084,32 @@ Transform:
   m_Children:
   - {fileID: 282902059}
   m_Father: {fileID: 837572271}
+--- !u!65 &2139090814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 635745714}
+  m_GameObject: {fileID: 2139090812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 2}
+--- !u!114 &2139090815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 635745714}
+  m_GameObject: {fileID: 2139090812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &2139421307
 GameObject:
   m_ObjectHideFlags: 0
