@@ -78,6 +78,8 @@ public class AB_TargetPlayer : AiBehavior {
 					Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					moveScript.Move(CurrTarget.position - rigidbody.position);
+					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
+					
 					//Debug.Log("FUCK");
 				} else if(meshPath.corners.Length >= 3){
 					Vector3 lookPosition = new Vector3(meshPath.corners[1].x, transform.position.y, meshPath.corners[1].z);
@@ -85,6 +87,8 @@ public class AB_TargetPlayer : AiBehavior {
 					//closeToCorner(meshPath.corners[cornerIndex]);
 					//moveScript.Move(meshPath.corners[cornerIndex] - rigidbody.position);
 					moveScript.Move(meshPath.corners[1] - rigidbody.position);
+					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
+					
 				}
 
 				if(enemyScript.enemyType == EnemyType.luminotoad)
