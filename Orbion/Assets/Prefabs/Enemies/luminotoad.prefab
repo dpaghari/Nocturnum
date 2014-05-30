@@ -623,8 +623,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 8
+  InitForce: 0
   MaxSpeed: 8
   MoveScale: 1
+  MaxForce: 66
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -636,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f14317cdcfced439f3643253388e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinkBox: {fileID: 0}
+  pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
   AtkRange: 10
   CurrTarget: {fileID: 0}
   PlayerPriorityRange: 15
@@ -674,6 +676,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: .100000001
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
