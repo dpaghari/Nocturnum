@@ -6,7 +6,7 @@ using System;
 public static class Utility{
 
 	//Physics layers masks, if order is changed should change the number here
-	//Use   Debug.Log(LayerMask.NameToLayer("layerName")) to see the layer number 
+	//Use   Debug.Log(LayerMask.NameToLayer("layerName")) to verify layer number 
 	public const int Default_PLM = 0;
 	public const int TransparentFX_PLM = 1;
 	public const int IgnoreRaycast_PLM = -1;
@@ -21,6 +21,10 @@ public static class Utility{
 	public const int Environment_PLM = 1 << 15;
 	public const int Collectible_PLM = 1 << 16;
 	public const int GUI_PLM = 1 << 17;
+	public const int Plant_PLM = 1 << 18;
+	public const int PlantBullet_PlM = 1 << 19;
+	public const int TurretBullet_PLM = 1 << 20;
+	public const int Quest_PLM = 1 << 21;
 	
 
 
@@ -50,15 +54,23 @@ public static class Utility{
 
 
 
-	//Returns the difference between 2 vectors but ignores the Y value
-	//since we only need to use x and z for a top down.
-	public static Vector3 FindDirNoY(Vector3 origin, Vector3 target){
+	public static Vector3 FindDifNoY( Vector3 origin, Vector3 target){
 		Vector3 dir = target-origin;
 		dir.y = 0;
-		return dir.normalized;
+		return dir;
 	}
 
 
+	//Returns the difference between 2 vectors but ignores the Y value
+	//since we only need to use x and z for a top down.
+	public static Vector3 FindDirNoY(Vector3 origin, Vector3 target){
+		return FindDifNoY(origin, target).normalized;
+	}
+
+
+	public static float FindDistNoY( Vector3 origin, Vector3 target){
+		return FindDifNoY(origin, target).magnitude;
+	}
 
 
 
