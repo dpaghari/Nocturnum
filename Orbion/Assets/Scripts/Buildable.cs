@@ -29,10 +29,12 @@ public class Buildable : MonoBehaviour {
 	}
 
 	void OnCollisionEnter( Collision other){
-		int otherLayerMask = 0;
-		otherLayerMask = 1 << other.gameObject.layer;
-		if( otherLayerMask == Utility.Player_PLM)
-			Physics.IgnoreCollision( this.collider, other.collider);
+		if( TechType == Tech.wall){
+			int otherLayerMask = 0;
+			otherLayerMask = 1 << other.gameObject.layer;
+			if( otherLayerMask == Utility.Player_PLM)
+				Physics.IgnoreCollision( this.collider, other.collider);
+		}
 	}
 
 	//void OnEnable(){
