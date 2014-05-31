@@ -37,7 +37,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public float firstSpawnTimer = 0.75F;
 
 	//1-easy 2-med 3-hard
-	public int difficulty = 2;
+	public int difficulty;
 	
 	public class LevelInfo{
 		public float timer;
@@ -54,6 +54,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public LevelInfo[] levels = new LevelInfo[totalLevels];
 
 	void Start(){
+		difficulty = GameManager.GameDifficulty;
 		//Debug.Log(difficulty);//0.75 2.0 4.0 8.0 12.0
 		addLevel (firstSpawnTimer, 25.0F, 3); addLevel (3.0F, 25.0F, 4); addLevel (7.0F, 20.0F, 4);
 		addLevel (12.0F, 20.0F, 5); //addLevel (12.0F, 20.0F, 5); 
