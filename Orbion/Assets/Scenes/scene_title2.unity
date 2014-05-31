@@ -84,6 +84,8 @@ GameObject:
   - 4: {fileID: 448475956}
   - 20: {fileID: 448475955}
   - 114: {fileID: 448475957}
+  - 114: {fileID: 448475958}
+  - 114: {fileID: 448475959}
   m_Layer: 0
   m_Name: UI Camera
   m_TagString: Untagged
@@ -107,10 +109,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -1
+  near clip plane: .00999999978
   far clip plane: 5
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 1
   m_Depth: 1
   m_CullingMask:
@@ -127,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 448475954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.7320509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 762414949}
@@ -140,6 +142,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 365c41e0d51e92a42a3a628739c6386a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &448475958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448475954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934881ff622c9e498a85ee393acfdc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleCube: {fileID: 843286282}
+--- !u!114 &448475959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448475954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0621648ae4cc2a45b5ee88d96469204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &762414943
@@ -181,7 +206,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: bc251c5087ada964ca2a6a758769caac, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -321,7 +346,7 @@ MonoBehaviour:
   zindex: -1
   color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281019179
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295

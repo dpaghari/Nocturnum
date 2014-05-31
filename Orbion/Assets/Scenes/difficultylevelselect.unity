@@ -469,15 +469,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 31906a23494c19346a2386193413359f, type: 2}
       propertyPath: VelocityModule.x.maxCurve.m_Curve.Array.data[0].value
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 31906a23494c19346a2386193413359f, type: 2}
       propertyPath: VelocityModule.x.scalar
-      value: .970000029
+      value: .100000039
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 31906a23494c19346a2386193413359f, type: 2}
       propertyPath: VelocityModule.x.minCurve.m_Curve.Array.data[0].value
-      value: .103092819
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 31906a23494c19346a2386193413359f, type: 2}
+      propertyPath: EmissionModule.rate.scalar
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31906a23494c19346a2386193413359f, type: 2}
@@ -1282,7 +1286,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1000
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1523,12 +1527,12 @@ ParticleSystem:
   VelocityModule:
     enabled: 1
     x:
-      scalar: .970000029
+      scalar: .100000039
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: -1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1538,7 +1542,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .103092819
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0

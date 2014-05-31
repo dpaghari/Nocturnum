@@ -85,13 +85,12 @@ GameObject:
   - 33: {fileID: 7284224}
   - 23: {fileID: 7284223}
   - 64: {fileID: 7284222}
-  - 114: {fileID: 7284221}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7284220
 Transform:
@@ -110,14 +109,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
     type: 2}
   m_PrefabInternal: {fileID: 1207180150}
-  m_GameObject: {fileID: 7284219}
+  m_GameObject: {fileID: 762229344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3
 --- !u!64 &7284222
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -672,6 +670,7 @@ GameObject:
   - 65: {fileID: 99532173}
   - 114: {fileID: 99532172}
   - 114: {fileID: 99532171}
+  - 114: {fileID: 99532179}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -714,6 +713,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
 --- !u!65 &99532173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -799,6 +799,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &99532179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1163508865}
+  m_GameObject: {fileID: 99532170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &103698878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,12 +1776,12 @@ GameObject:
   - 23: {fileID: 152026186}
   - 64: {fileID: 152026185}
   - 114: {fileID: 152026184}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &152026183
 Transform:
@@ -1790,11 +1803,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 152026182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3.25
 --- !u!64 &152026185
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2312,6 +2324,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 1196489628}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 0}
 --- !u!114 &196288056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4184,12 +4197,15 @@ GameObject:
   m_Component:
   - 4: {fileID: 328629179}
   - 95: {fileID: 328629178}
-  m_Layer: 0
+  - 114: {fileID: 328629181}
+  - 65: {fileID: 328629180}
+  - 114: {fileID: 485148716}
+  m_Layer: 15
   m_Name: giant_tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!95 &328629178
 Animator:
@@ -4220,6 +4236,33 @@ Transform:
   - {fileID: 152026183}
   - {fileID: 485148715}
   m_Father: {fileID: 0}
+--- !u!65 &328629180
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 761105303}
+  m_GameObject: {fileID: 328629177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 16}
+  m_Center: {x: 5, y: 0, z: 2.5}
+--- !u!114 &328629181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 761105303}
+  m_GameObject: {fileID: 328629177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
+  hiddenDuration: .5
 --- !u!1 &330572290
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,12 +4909,12 @@ GameObject:
   - 23: {fileID: 371648640}
   - 64: {fileID: 371648639}
   - 114: {fileID: 371648638}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &371648637
 Transform:
@@ -4893,11 +4936,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 371648636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3.25
 --- !u!64 &371648639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6067,12 +6109,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 444351265}
   - 108: {fileID: 444351266}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &444351265
 Transform:
@@ -6136,6 +6178,7 @@ GameObject:
   - 65: {fileID: 446133641}
   - 114: {fileID: 446133640}
   - 114: {fileID: 446133639}
+  - 114: {fileID: 446133647}
   m_Layer: 18
   m_Name: porcupineplant
   m_TagString: Untagged
@@ -6178,6 +6221,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 5
 --- !u!65 &446133641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6263,6 +6307,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &446133647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fc46c3ee4cd1f6c46bb9df746c27b9ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1788669921}
+  m_GameObject: {fileID: 446133638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &448474124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6274,13 +6331,12 @@ GameObject:
   - 33: {fileID: 448474128}
   - 23: {fileID: 448474127}
   - 64: {fileID: 448474126}
-  - 114: {fileID: 448474125}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &448474125
 MonoBehaviour:
@@ -6288,14 +6344,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
     type: 2}
   m_PrefabInternal: {fileID: 1306512616}
-  m_GameObject: {fileID: 448474124}
+  m_GameObject: {fileID: 1962962524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3
 --- !u!64 &448474126
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6603,12 +6658,12 @@ GameObject:
   - 23: {fileID: 457047024}
   - 64: {fileID: 457047023}
   - 114: {fileID: 457047022}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &457047021
 Transform:
@@ -6630,11 +6685,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 457047020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3.25
 --- !u!64 &457047023
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6887,6 +6941,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 1992148121}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 0}
 --- !u!114 &482902670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7026,13 +7081,12 @@ GameObject:
   - 33: {fileID: 485148719}
   - 23: {fileID: 485148718}
   - 64: {fileID: 485148717}
-  - 114: {fileID: 485148716}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &485148715
 Transform:
@@ -7051,14 +7105,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
     type: 2}
   m_PrefabInternal: {fileID: 761105303}
-  m_GameObject: {fileID: 485148714}
+  m_GameObject: {fileID: 328629177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3
 --- !u!64 &485148717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7232,12 +7285,12 @@ GameObject:
   - 23: {fileID: 495279744}
   - 64: {fileID: 495279743}
   - 114: {fileID: 495279742}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &495279741
 Transform:
@@ -7259,11 +7312,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 495279740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3.25
 --- !u!64 &495279743
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9437,12 +9489,15 @@ GameObject:
   m_Component:
   - 4: {fileID: 594838667}
   - 95: {fileID: 594838666}
-  m_Layer: 0
+  - 114: {fileID: 594838669}
+  - 65: {fileID: 594838668}
+  - 114: {fileID: 1973347587}
+  m_Layer: 15
   m_Name: giant_tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!95 &594838666
 Animator:
@@ -9473,6 +9528,33 @@ Transform:
   - {fileID: 371648637}
   - {fileID: 1973347586}
   m_Father: {fileID: 0}
+--- !u!65 &594838668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 641252461}
+  m_GameObject: {fileID: 594838665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 16}
+  m_Center: {x: 5, y: 0, z: 2.5}
+--- !u!114 &594838669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 641252461}
+  m_GameObject: {fileID: 594838665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
+  hiddenDuration: .5
 --- !u!1 &597227299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11741,6 +11823,7 @@ GameObject:
   - 65: {fileID: 750387805}
   - 114: {fileID: 750387804}
   - 95: {fileID: 750387803}
+  - 114: {fileID: 750387808}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -11835,6 +11918,19 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &750387808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 563287524}
+  m_GameObject: {fileID: 750387801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &751077167
 GameObject:
   m_ObjectHideFlags: 0
@@ -12108,12 +12204,15 @@ GameObject:
   m_Component:
   - 4: {fileID: 762229346}
   - 95: {fileID: 762229345}
-  m_Layer: 0
+  - 114: {fileID: 762229348}
+  - 65: {fileID: 762229347}
+  - 114: {fileID: 7284221}
+  m_Layer: 15
   m_Name: giant_tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!95 &762229345
 Animator:
@@ -12144,6 +12243,33 @@ Transform:
   - {fileID: 495279741}
   - {fileID: 7284220}
   m_Father: {fileID: 0}
+--- !u!65 &762229347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1207180150}
+  m_GameObject: {fileID: 762229344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 16}
+  m_Center: {x: 5, y: 0, z: 2.5}
+--- !u!114 &762229348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1207180150}
+  m_GameObject: {fileID: 762229344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
+  hiddenDuration: .5
 --- !u!1 &764301116
 GameObject:
   m_ObjectHideFlags: 0
@@ -15150,7 +15276,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 662b4ef57135d99469f6cce3272be7f8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -19367,6 +19493,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1116167535}
+  - 114: {fileID: 1116167537}
+  - 65: {fileID: 1116167536}
   m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
@@ -19386,6 +19514,32 @@ Transform:
   m_Children:
   - {fileID: 1805895196}
   m_Father: {fileID: 1389690966}
+--- !u!65 &1116167536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2136919726}
+  m_GameObject: {fileID: 1116167534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 2}
+--- !u!114 &1116167537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 703fff19d415b134dba5c04375156fa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2136919726}
+  m_GameObject: {fileID: 1116167534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 2
 --- !u!1 &1123201784
 GameObject:
   m_ObjectHideFlags: 0
@@ -19543,12 +19697,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 1125948676}
   - 108: {fileID: 1125948677}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1125948676
 Transform:
@@ -20667,6 +20821,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 1361216503}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 0}
 --- !u!114 &1222634062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22484,6 +22639,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 330572293}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 0}
 --- !u!114 &1278212614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23871,6 +24027,7 @@ GameObject:
   - 65: {fileID: 1355387494}
   - 114: {fileID: 1355387493}
   - 95: {fileID: 1355387492}
+  - 114: {fileID: 1355387497}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -23965,6 +24122,19 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &1355387497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 137c016af0de03642bb762ec8c5ad378,
+    type: 2}
+  m_PrefabInternal: {fileID: 1808750112}
+  m_GameObject: {fileID: 1355387490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!1 &1355940373
 GameObject:
   m_ObjectHideFlags: 0
@@ -24384,12 +24554,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 1366268827}
   - 108: {fileID: 1366268828}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1366268827
 Transform:
@@ -28517,6 +28687,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 890889973}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 0}
 --- !u!114 &1571009175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28806,6 +28977,7 @@ GameObject:
   - 65: {fileID: 1595756978}
   - 54: {fileID: 1595756979}
   - 114: {fileID: 1595756980}
+  - 114: {fileID: 1595756981}
   m_Layer: 21
   m_Name: lunaship
   m_TagString: Untagged
@@ -28939,6 +29111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e519c09c8a49a6f4286a5056d49f7204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1595756981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 7772fe9d373f79847a7ac79db50f1648,
+    type: 2}
+  m_PrefabInternal: {fileID: 816348327}
+  m_GameObject: {fileID: 1595756971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 10
 --- !u!1 &1596543013
 GameObject:
   m_ObjectHideFlags: 0
@@ -30595,6 +30780,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 1
   clipSize: 25
   currentAmmo: 25
   reloadCooldown: 1.79999995
@@ -30633,8 +30819,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 175
+  InitForce: 0
   MaxSpeed: 20
   MoveScale: 1
+  MaxForce: 26
 --- !u!114 &1693228735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30694,9 +30882,13 @@ MonoBehaviour:
     type: 3}
   shotSound: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
+  dashSound: {fileID: 8300000, guid: 60a5d539767523a408fdad45e6bc10bd, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
   isPaused: 0
+  isDashing: 0
+  dashForce: 0
+  dashCDScript: {fileID: 0}
 --- !u!65 &1693228737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30739,7 +30931,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 5450c1d023288fb46917a3bfa91d3061, type: 3}
   - {fileID: 7400002, guid: 5a15b6d221ae451428f089594b078732, type: 3}
-  - {fileID: 7400000, guid: 5c06663df70499a4684f7749a5095bb1, type: 3}
+  - {fileID: 7400004, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400006, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400008, guid: 5a15b6d221ae451428f089594b078732, type: 3}
   - {fileID: 7400010, guid: 5a15b6d221ae451428f089594b078732, type: 3}
@@ -32828,6 +33020,7 @@ MonoBehaviour:
   researchTimeOn: 0
   hudProgress: {fileID: 493835196}
   researchScript: {fileID: 0}
+  _hudIcon: {fileID: 0}
 --- !u!114 &1829331106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32995,12 +33188,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 1853388047}
   - 108: {fileID: 1853388048}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1853388047
 Transform:
@@ -35676,12 +35869,15 @@ GameObject:
   m_Component:
   - 4: {fileID: 1962962525}
   - 95: {fileID: 1962962526}
-  m_Layer: 0
+  - 114: {fileID: 1962962528}
+  - 65: {fileID: 1962962527}
+  - 114: {fileID: 448474125}
+  m_Layer: 15
   m_Name: giant_tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1962962525
 Transform:
@@ -35712,6 +35908,33 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!65 &1962962527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1306512616}
+  m_GameObject: {fileID: 1962962524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 16}
+  m_Center: {x: 5, y: 0, z: 2.5}
+--- !u!114 &1962962528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fbff719d08ff5bf49955eaf8b9000a7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1306512616}
+  m_GameObject: {fileID: 1962962524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
+  hiddenDuration: .5
 --- !u!1 &1965147641
 GameObject:
   m_ObjectHideFlags: 0
@@ -37129,13 +37352,12 @@ GameObject:
   - 33: {fileID: 1973347590}
   - 23: {fileID: 1973347589}
   - 64: {fileID: 1973347588}
-  - 114: {fileID: 1973347587}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1973347586
 Transform:
@@ -37154,14 +37376,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: fbff719d08ff5bf49955eaf8b9000a7f,
     type: 2}
   m_PrefabInternal: {fileID: 641252461}
-  m_GameObject: {fileID: 1973347585}
+  m_GameObject: {fileID: 594838665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3
 --- !u!64 &1973347588
 MeshCollider:
   m_ObjectHideFlags: 0
