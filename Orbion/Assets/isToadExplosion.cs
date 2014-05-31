@@ -20,11 +20,18 @@ public class isToadExplosion : MonoBehaviour {
 		Killable killScript = other.GetComponent<Killable>();
 
 		if(killScript != null){
+
+			if(other.tag == "Player"){
 			killScript.damage(dmg);
 			Vector3 dir = (other.transform.position - transform.position).normalized;
 			//Debug.Log("Should push things");
 			
 			other.rigidbody.AddForce (dir * pushForce, pushForceMode);
+			}
+			if(other.GetComponent<Buildable>() != null){
+				killScript.damage(dmg * 2);
+
+			}
 
 		}
 	}
