@@ -94,6 +94,11 @@ public class CanBuild : MonoBehaviour {
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
 		}
+
+		if ( ResManager.Energy < buildInfo.energyCost){
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+		}
 		/*
 		if ( ResManager.Energy + buildInfo.energyCost > ResManager.MaxEnergy){
 			if( buildingType != generatorBuilding){
