@@ -45351,8 +45351,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -90753,7 +90753,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456491916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00130208337, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
@@ -127489,10 +127489,10 @@ MonoBehaviour:
   rangedEnemy: {fileID: 5400000, guid: 6c7fd8c02254ffb4fa8eb35173f6d52c, type: 2}
   rangedMultiEnemy: {fileID: 5400000, guid: efb0957f5005ba84c9d8de3db74464cd, type: 2}
   bossEnemy: {fileID: 5400000, guid: 1f29113d880b4994989b7a78de81a29e, type: 2}
-  Vec1: {x: 150, y: 0, z: -140}
+  Vec1: {x: 140, y: 0, z: -140}
   Vec2: {x: 150, y: 0, z: 50}
   Vec3: {x: 40, y: 0, z: 140}
-  bossVec: {x: 150, y: 0, z: -140}
+  bossVec: {x: 140, y: 0, z: -140}
   firstSpawnTimer: .75
   difficulty: 2
 --- !u!108 &2024540464
@@ -128607,6 +128607,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: Vec3.z
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: Vec1.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: bossVec.x
       value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
