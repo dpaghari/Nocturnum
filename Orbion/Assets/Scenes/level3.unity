@@ -11010,7 +11010,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
     - target: {fileID: 400270, guid: e76905836c54a8b4dad921ee6d76cf45, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .00130208337
       objectReference: {fileID: 0}
     - target: {fileID: 11400026, guid: e76905836c54a8b4dad921ee6d76cf45, type: 2}
       propertyPath: text
@@ -60435,7 +60435,7 @@ Transform:
   m_PrefabInternal: {fileID: 265676617}
   m_GameObject: {fileID: 1456491916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00130208337, y: 0, z: 0}
+  m_LocalPosition: {x: .00130208337, y: .00130208337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
@@ -85974,10 +85974,10 @@ MonoBehaviour:
   rangedEnemy: {fileID: 5400000, guid: 6c7fd8c02254ffb4fa8eb35173f6d52c, type: 2}
   rangedMultiEnemy: {fileID: 5400000, guid: efb0957f5005ba84c9d8de3db74464cd, type: 2}
   bossEnemy: {fileID: 5400000, guid: 1f29113d880b4994989b7a78de81a29e, type: 2}
-  Vec1: {x: 150, y: 0, z: -140}
-  Vec2: {x: 200, y: 0, z: 50}
-  Vec3: {x: 40, y: 0, z: 160}
-  bossVec: {x: 150, y: 0, z: -140}
+  Vec1: {x: 140, y: 0, z: -140}
+  Vec2: {x: 140, y: 0, z: 50}
+  Vec3: {x: 40, y: 0, z: 130}
+  bossVec: {x: 140, y: 0, z: -140}
   firstSpawnTimer: .75
   difficulty: 2
 --- !u!108 &2024540464
@@ -87104,6 +87104,26 @@ Prefab:
     - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
       propertyPath: difficulty
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: Vec1.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: Vec2.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: Vec3.z
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: bossVec.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}
+      propertyPath: firstSpawnTimer
+      value: .75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 251b879d0f55315468a257f670d6d1a8, type: 2}

@@ -129,7 +129,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 		if(targetCheckCounter > targetCheckTimer){
 			//Debug.Log("Get target #" + counter); counter++;
 			CurrTarget = FindTarget(TargetSearchRadius);
-			if(CurrTarget != null){
+			if(CurrTarget != null && meshScript != null){
 				meshScript.CalculatePath(CurrTarget.position, meshPath);
 				cornerIndex = 1;
 			}
