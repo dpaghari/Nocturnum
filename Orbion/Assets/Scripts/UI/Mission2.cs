@@ -11,8 +11,10 @@ public class Mission2 : MonoBehaviour {
 	public dfLabel _label_paused;
 	public dfLabel _label_dead;
 	string collectString;
+	string punchemString;
 	public bool questComplete;
 	public bool bossDefeated;
+	public int numFistHits = 3;
 	
 	// Use this for initialization
 	void Start () {
@@ -30,18 +32,20 @@ public class Mission2 : MonoBehaviour {
 		
 		
 		
-		if(TechManager.hasGeyser == true && TechManager.haslightFist == true && _checkbox_3.IsChecked == true){
+		if(_checkbox_1.IsChecked == true && _checkbox_2.IsChecked == true && _checkbox_3.IsChecked == true){
 			questComplete = true;
 			TechManager.missionComplete = true;
 			_label_mission_clear.IsVisible = true;
 		}
-		
+
+		punchemString = string.Format("{0} of {1}",  TechManager.hitByFist, numFistHits);
+		_checkbox_2.Label.Text = "Hit 3 Enemies with LightFist: " + punchemString;
 		collectString = string.Format("{0} of {1}", ResManager.LGCoreCharges, ResManager.LGCoreMaxCharges);
 		_checkbox_3.Label.Text = "Power Ship Cores: " + collectString;
 		if(TechManager.hasGeyser){
 			_checkbox_1.IsChecked = true;
 		}
-		if(TechManager.haslightFist){
+		if(TechManager.haslightFist && TechManager.hitByFist >= numFistHits){
 			_checkbox_2.IsChecked = true;
 		}
 		if(ResManager.LGCoreCharges >= ResManager.LGCoreMaxCharges){

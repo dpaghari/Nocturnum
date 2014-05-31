@@ -28,6 +28,11 @@ public class isToadExplosion : MonoBehaviour {
 			
 			other.rigidbody.AddForce (dir * pushForce, pushForceMode);
 			}
+			if(other.GetComponent<IsEnemy>() != null){
+				killScript.damage(dmg);
+				Vector3 dir = (other.transform.position - transform.position).normalized;
+				other.rigidbody.AddForce(dir * pushForce, pushForceMode);
+			}
 			if(other.GetComponent<Buildable>() != null){
 				killScript.damage(dmg * 2);
 

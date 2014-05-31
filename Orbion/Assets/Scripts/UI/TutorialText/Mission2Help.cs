@@ -26,6 +26,15 @@ public class Mission2Help : MonoBehaviour {
 			tutorialLine.Text = "Press E on a Light Geyser to fill Energy Core";
 
 		}
+		else if(TechManager.haslightFist){
+			tutorialLine.Text = "Press Right Click to use [LightFist]";
+			timerScript.Update();
+
+		}
+		else if(ResManager.LGCoreCharges > 0){
+			tutorialLine.Text = "You can only carry one core at a time";
+			timerScript.Update();
+		}
 		else if(ResManager.LGEnergy >= ResManager.LGMaxEnergy){
 			tutorialLine.Text = "Deposit Charged Energy Core at Spacecraft";
 			timerScript.Update();

@@ -8,7 +8,7 @@ public class CanMove : MonoBehaviour {
 	public float InitForce;
 	public float MaxSpeed = 20;
 	public float MoveScale = 1.0f;
-	public float MaxForce = 66.0F;
+	public float MaxForce = 100.0F;
 	protected float ForceScale;
 	protected float MaxSpeedScale;
 

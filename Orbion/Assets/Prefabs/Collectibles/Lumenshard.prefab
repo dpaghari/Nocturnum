@@ -14,11 +14,11 @@ GameObject:
   - 122: {fileID: 12200000}
   - 135: {fileID: 13500002}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400000}
   - 96: {fileID: 9600000}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11400000}
   m_Layer: 16
-  m_Name: collectible
+  m_Name: Lumenshard
   m_TagString: lightShard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,10 +216,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebe53afe3e82f2e43a30c8db74bcc5b3, type: 3}
+  m_Script: {fileID: 11500000, guid: baeacc5f8a9d15245af6f6029ddd40c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightValue: 1
+  lightValue: 10
   collectSound: {fileID: 8300000, guid: a325284345d98014fbdc879d29edc168, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -242,8 +242,8 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4291853791
-  m_Size: 1
+    rgba: 4291875024
+  m_Size: .5
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -44,6 +44,7 @@ public class isFistShockwave : MonoBehaviour {
 					if (other.tag == "Enemy" || other.tag == "EnemyRanged") {
 								
 							if(killScript) killScript.damage(fistDamage);
+							TechManager.hitByFist++;
 
 							Vector3 dir = (other.transform.position - transform.position).normalized;
 							//Debug.Log("Should push things");

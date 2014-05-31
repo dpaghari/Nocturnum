@@ -36,16 +36,16 @@ public class Mission3 : MonoBehaviour {
 			_label_mission_clear.IsVisible = true;
 		}
 		collectString = string.Format("{0} of {1}", ResManager.TurretCount, ResManager.QuestTurretCount);
-		_checkbox_3.Label.Text = "Build 3 Turrets: " + collectString;
+		_checkbox_1.Label.Text = "Build 3 Turrets: " + collectString;
 
 		if(TechManager.foundSC){
-			_checkbox_1.IsChecked = true;
-		}
-		if(TechManager.transportedSC){
 			_checkbox_2.IsChecked = true;
 		}
-		if(ResManager.TurretCount >= ResManager.QuestTurretCount){
+		if(TechManager.transportedSC){
 			_checkbox_3.IsChecked = true;
+		}
+		if(ResManager.TurretCount >= ResManager.QuestTurretCount){
+			_checkbox_1.IsChecked = true;
 		}
 		
 		

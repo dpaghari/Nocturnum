@@ -85,6 +85,7 @@ public class TechManager : Singleton<TechManager> {
 
 	//------------Mission 2 variables-----------//
 	public static bool haslightFist = false;
+	public static int hitByFist = 0;
 	public static bool hasGeyser = false;
 	//------------------------------------------//
 
@@ -293,6 +294,7 @@ public class TechManager : Singleton<TechManager> {
 		hasTurrets = false;
 		foundSC = false;
 		transportedSC = false;
+		hitByFist = 0;
 
 	}
 

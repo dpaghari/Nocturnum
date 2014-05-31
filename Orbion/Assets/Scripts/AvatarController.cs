@@ -86,7 +86,7 @@ public class AvatarController : MonoBehaviour {
 					audio.PlayOneShot(dashSound);
 				isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce;
+				moveScript.Force += dashForce * 2;
 				moveScript.Move( Vector3.forward, ForceMode.Impulse);
 				dashCDScript.Reset();
 
@@ -97,7 +97,7 @@ public class AvatarController : MonoBehaviour {
 					audio.PlayOneShot(dashSound);
 					isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce;
+				moveScript.Force += dashForce * 2;
 				moveScript.Move( Vector3.left, ForceMode.Impulse);
 				dashCDScript.Reset();
 
@@ -108,7 +108,7 @@ public class AvatarController : MonoBehaviour {
 					audio.PlayOneShot(dashSound);
 					isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce;
+				moveScript.Force += dashForce * 2;
 				moveScript.Move( Vector3.back, ForceMode.Impulse);
 				dashCDScript.Reset();
 
@@ -119,7 +119,7 @@ public class AvatarController : MonoBehaviour {
 					audio.PlayOneShot(dashSound);
 				isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce;
+				moveScript.Force += dashForce * 2;
 				moveScript.Move( Vector3.right, ForceMode.Impulse);
 				dashCDScript.Reset();
 
