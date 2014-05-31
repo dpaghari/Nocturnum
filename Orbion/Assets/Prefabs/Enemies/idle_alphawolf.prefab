@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinkBox: {fileID: 0}
+  pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
   AtkRange: 5
   CurrTarget: {fileID: 0}
   TargetSearchRadius: 20
@@ -1041,6 +1041,7 @@ MonoBehaviour:
   spawnerObj: {fileID: 0}
   numWolves: 2
   timerScript: {fileID: 0}
+  howldelayScript: {fileID: 0}
   howlSound: {fileID: 8300000, guid: 09e3c3d8b8ce51141bcc67cca6e9c98e, type: 3}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -1077,8 +1078,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 60
+  InitForce: 0
   MaxSpeed: 20
   MoveScale: 1
+  MaxForce: 66
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1113,6 +1116,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 11400010}
+  stunInterval: .100000001
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1

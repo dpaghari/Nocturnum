@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinkBox: {fileID: 0}
+  pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
   AtkRange: 25
   CurrTarget: {fileID: 0}
   TargetSearchRadius: 28
@@ -1400,8 +1400,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 11
+  InitForce: 0
   MaxSpeed: 11
   MoveScale: 1
+  MaxForce: 66
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1436,6 +1438,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 0, z: 0}
   shootEffect: {fileID: 100000, guid: 0a8f0138979026948830f1a9dbe60763, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: .100000001
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1

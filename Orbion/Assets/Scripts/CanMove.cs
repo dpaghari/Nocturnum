@@ -12,6 +12,9 @@ public class CanMove : MonoBehaviour {
 	protected float ForceScale;
 	protected float MaxSpeedScale;
 
+	public float getForce(){
+		return Force;
+	}
 	
 	void Start(){
 	
