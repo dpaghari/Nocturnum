@@ -14,6 +14,8 @@ public class AvatarController : MonoBehaviour {
 	public AudioClip missioncompleteSound;
 	public AudioClip shotSound;
 	public AudioClip bgm;
+	public AudioClip dashSound;
+
 	//public AudioClip collectSound;
 	private Rigidbody clone;
 
@@ -81,6 +83,7 @@ public class AvatarController : MonoBehaviour {
 
 			if( Input.GetKeyDown( KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
 				if(dashCDScript.Finished()){
+					audio.PlayOneShot(dashSound);
 				isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
 				moveScript.Force += dashForce;
@@ -91,7 +94,8 @@ public class AvatarController : MonoBehaviour {
 			}
 			else if( Input.GetKeyDown( KeyCode.A) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
 				if(dashCDScript.Finished()){
-				isDashing = true;
+					audio.PlayOneShot(dashSound);
+					isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
 				moveScript.Force += dashForce;
 				moveScript.Move( Vector3.left, ForceMode.Impulse);
@@ -101,7 +105,8 @@ public class AvatarController : MonoBehaviour {
 			}
 			else if( Input.GetKeyDown( KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
 				if(dashCDScript.Finished()){
-				isDashing = true;
+					audio.PlayOneShot(dashSound);
+					isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
 				moveScript.Force += dashForce;
 				moveScript.Move( Vector3.back, ForceMode.Impulse);
@@ -111,7 +116,7 @@ public class AvatarController : MonoBehaviour {
 			}
 			else if( Input.GetKeyDown( KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
 				if(dashCDScript.Finished()){
-
+					audio.PlayOneShot(dashSound);
 				isDashing = true;
 				animation.Play("Dash", PlayMode.StopAll);
 				moveScript.Force += dashForce;

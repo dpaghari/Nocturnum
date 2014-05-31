@@ -2539,6 +2539,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: 1
   clipSize: 25
   currentAmmo: 25
   reloadCooldown: 1.79999995
@@ -2635,9 +2636,13 @@ MonoBehaviour:
     type: 3}
   shotSound: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
+  dashSound: {fileID: 8300000, guid: 60a5d539767523a408fdad45e6bc10bd, type: 3}
   normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
   orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
   isPaused: 0
+  isDashing: 0
+  dashForce: 0
+  dashCDScript: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
