@@ -81,9 +81,11 @@ public class Killable : MonoBehaviour {
 					Vector3 temp = transform.position;
 					temp.y += 4;
 					float rand = Random.value;
-					if(rand > 0.0 && rand < 0.5)
+					if(rand > 0.0 && rand < 0.5){
+						if(collectTarget != null){
 						Instantiate (collectTarget, temp, this.transform.rotation);
-
+						}
+					}
 					Instantiate(deathTarget,temp, this.transform.rotation);
 				}
 			}
