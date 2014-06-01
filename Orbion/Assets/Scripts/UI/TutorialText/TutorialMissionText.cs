@@ -53,8 +53,9 @@ public class TutorialMissionText : MonoBehaviour {
 			tutorialLine.Text = "Your Orbion's light shines toward your mouse";
   			timerScript.Update();
 			if(timerScript.Finished()){
-				mouseHelp = true;
 				timerScript.Reset();
+
+				mouseHelp = true;
 			}
 
 		}

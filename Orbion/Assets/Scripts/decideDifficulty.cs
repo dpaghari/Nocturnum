@@ -14,14 +14,14 @@ public class decideDifficulty : MonoBehaviour {
 	}
 	public void setNormal(){
 		GameManager.GameDifficulty = 1;
-		AutoFade.LoadLevel(2, 2.0f, 2.0f, Color.black);
+		AutoFade.LoadLevel("IntroStory", 2.0f, 2.0f, Color.black);
 	}
 	public void setVeteran(){
 		GameManager.GameDifficulty = 2;
-		AutoFade.LoadLevel(2, 2.0f, 2.0f, Color.black);
+		AutoFade.LoadLevel("IntroStory", 2.0f, 2.0f, Color.black);
 	}
 	public void setMaster(){
 		GameManager.GameDifficulty = 3;
-		AutoFade.LoadLevel(2, 2.0f, 2.0f, Color.black);
+		AutoFade.LoadLevel("IntroStory", 2.0f, 2.0f, Color.black);
 	}
 }
