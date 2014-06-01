@@ -501,6 +501,7 @@ GameObject:
   - 95: {fileID: 39836004}
   - 114: {fileID: 39836006}
   - 114: {fileID: 39836005}
+  - 65: {fileID: 39836007}
   m_Layer: 0
   m_Name: mushroom3
   m_TagString: Untagged
@@ -562,8 +563,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
+  hideShader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
   hiddenDuration: 1
+--- !u!65 &39836007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: be55df1a63227574b94c6f486f70ca69,
+    type: 2}
+  m_PrefabInternal: {fileID: 392254489}
+  m_GameObject: {fileID: 39836002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &59827085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,6 +2169,7 @@ GameObject:
   - 95: {fileID: 154723714}
   - 114: {fileID: 154723716}
   - 114: {fileID: 154723715}
+  - 65: {fileID: 154723717}
   m_Layer: 0
   m_Name: mushroom3
   m_TagString: Untagged
@@ -2216,8 +2231,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
+  hideShader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
   hiddenDuration: 1
+--- !u!65 &154723717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: be55df1a63227574b94c6f486f70ca69,
+    type: 2}
+  m_PrefabInternal: {fileID: 426324271}
+  m_GameObject: {fileID: 154723712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &156286907
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,13 +7351,13 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 8900000, guid: 71649408ae6277146906354813b4dc73, type: 3}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
@@ -11876,6 +11904,7 @@ GameObject:
   - 95: {fileID: 631489442}
   - 114: {fileID: 631489445}
   - 114: {fileID: 631489444}
+  - 65: {fileID: 631489446}
   m_Layer: 0
   m_Name: mushroom3
   m_TagString: Untagged
@@ -11937,8 +11966,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
+  hideShader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
   hiddenDuration: 1
+--- !u!65 &631489446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: be55df1a63227574b94c6f486f70ca69,
+    type: 2}
+  m_PrefabInternal: {fileID: 1201730135}
+  m_GameObject: {fileID: 631489441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &632667321
 GameObject:
   m_ObjectHideFlags: 0
@@ -22372,13 +22414,13 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 8900000, guid: 71649408ae6277146906354813b4dc73, type: 3}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
@@ -28025,13 +28067,13 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 8900000, guid: 71649408ae6277146906354813b4dc73, type: 3}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
@@ -28504,7 +28546,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1378765995}
   - 95: {fileID: 1378765996}
-  - 114: {fileID: 1378765998}
   - 114: {fileID: 1378765997}
   m_Layer: 0
   m_Name: mushroom3
@@ -28555,20 +28596,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
---- !u!114 &1378765998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: be55df1a63227574b94c6f486f70ca69,
-    type: 2}
-  m_PrefabInternal: {fileID: 1542030423}
-  m_GameObject: {fileID: 1378765994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hideShader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
-  hiddenDuration: 1
 --- !u!1 &1380519591
 GameObject:
   m_ObjectHideFlags: 0
@@ -31771,7 +31798,9 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: be55df1a63227574b94c6f486f70ca69, type: 2}
+    - {fileID: 6500000, guid: be55df1a63227574b94c6f486f70ca69, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: be55df1a63227574b94c6f486f70ca69, type: 2}
   m_RootGameObject: {fileID: 1378765994}
   m_IsPrefabParent: 0
@@ -37285,6 +37314,7 @@ MonoBehaviour:
   tutorialLine: {fileID: 1982264740}
   overdriveScript: {fileID: 0}
   timerScript: {fileID: 0}
+  nextlevelScript: {fileID: 0}
   tutWolfpos: {fileID: 1240497326}
   demoWolf: {fileID: 100050, guid: 752bb7fe9d0e32441b75088d42fc3d8e, type: 2}
   demoBat: {fileID: 100000, guid: 6c7fd8c02254ffb4fa8eb35173f6d52c, type: 2}
@@ -37704,13 +37734,13 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 8900000, guid: 71649408ae6277146906354813b4dc73, type: 3}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}

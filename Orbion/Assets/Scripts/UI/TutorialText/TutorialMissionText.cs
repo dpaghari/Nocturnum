@@ -6,6 +6,7 @@ public class TutorialMissionText : MonoBehaviour {
 
 	public hasOverdrive overdriveScript;
 	public DumbTimer timerScript;
+	public DumbTimer nextlevelScript;
 	//public DumbTimer cleartextScript;
 	public Transform tutWolfpos;
 	public GameObject demoWolf;
@@ -25,6 +26,7 @@ public class TutorialMissionText : MonoBehaviour {
 		madeBat = false;
 		madeWolf = false;
 		timerScript = DumbTimer.New(4.5f, 1.0f);
+		nextlevelScript = DumbTimer.New(10.0f);
 		//cleartextScript = DumbTimer.New(5.0f, 1.0f);
 		overdriveScript = GameManager.AvatarContr.GetComponent<hasOverdrive>();
 		tutorialLine.IsVisible = true;
@@ -92,9 +94,14 @@ public class TutorialMissionText : MonoBehaviour {
 			tutorialLine.Text = "Enemies are weaker and slower in your generator's light";
 			//clone = Instantiate(demoWolf, pos, Quaternion.identity) as GameObject;
 		}
-		if(MetricManager.getEnemiesKilled == 3){
+		if(MetricManager.getEnemiesKilled >= 2){
 			tutorialLine.Text = "Good Luck!";
-			TechManager.missionComplete = true;
+
+			nextlevelScript.Update();
+			if(nextlevelScript.Finished()){
+				TechManager.missionComplete = true;
+				nextlevelScript.Reset();
+			}
 
 		}
 
