@@ -362,8 +362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 200
+  InitForce: 0
   MaxSpeed: 200
   MoveScale: 3
+  MaxForce: 100
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,7 +380,7 @@ MonoBehaviour:
   MoveType: 0
   MoveScript: {fileID: 11400002}
   buildinghitSound: {fileID: 8300000, guid: f9ca1f2d4090e5a47bfa5ff9b0ba11a9, type: 3}
-  Damage: 15
+  Damage: 10
   searingLevel: 0
   dot: {fileID: 100000, guid: adbcd9ae3042b1c47836e1b25f2a25e5, type: 2}
   hitEffect: {fileID: 100002, guid: c0e7ce85a51dbe44fae56401e38f365b, type: 2}

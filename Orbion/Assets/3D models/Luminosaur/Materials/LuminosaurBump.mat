@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Material__Grid
-  m_Shader: {fileID: 52, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: LuminosaurBump
+  m_Shader: {fileID: 4800000, guid: 28d2def317f0faf4bb923ccfd34643db, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -27,13 +27,6 @@ Material:
           m_Texture: {fileID: 2800000, guid: 4e8c76cf21ee1234bbcc3e73a5fa8e0f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Illum
-        second:
-          m_Texture: {fileID: 2800000, guid: f01cfec955b5aed48947d714074cb72d, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -45,8 +38,16 @@ Material:
         second: .078125
       data:
         first:
-          name: _EmissionLM
+          name: _Distortion
+        second: .0500000007
+      data:
+        first:
+          name: _WTHScaling
         second: 0
+      data:
+        first:
+          name: _LitOpacityFactor
+        second: 1
     m_Colors:
       data:
         first:
@@ -55,4 +56,4 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .5, g: .5, b: .5, a: 1}
+        second: {r: .5, g: .5, b: .5, a: 0}
