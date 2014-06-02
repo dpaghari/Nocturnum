@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//PURPOSE:  functions to be called by the onClick event for the buttons in the Difficulty Screen
+// sets the difficulty of the spawner to the selected difficulty.
+using UnityEngine;
 using System.Collections;
 
 public class decideDifficulty : MonoBehaviour {

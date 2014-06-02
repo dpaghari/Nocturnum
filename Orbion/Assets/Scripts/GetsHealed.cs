@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Checks if object this script is attached to is within a Medbay's Trigger Area of Effect Radius.  If it is it calls the Heal function
+// in the object's <Killable> script incrementing the health of the object by a fixed number over time controlled by a cooldown timer.
+
+using UnityEngine;
 using System.Collections;
 
 public class GetsHealed : MonoBehaviour {

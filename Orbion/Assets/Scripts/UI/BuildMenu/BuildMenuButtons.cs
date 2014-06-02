@@ -5,8 +5,8 @@ public class BuildMenuButtons : MonoBehaviour {
 	//public dfPanel _panel;
 	//private bool menuUp;
 	public GameObject canBuildRef;
-	public CanBuild buildScript;
-	public CanResearch researchScript;
+	public CanBuild buildScript; //Ref. to the build script.
+	public CanResearch researchScript; //Ref. to the research script.
 
 	public AudioClip buttonSound;
 
@@ -21,6 +21,7 @@ public class BuildMenuButtons : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//Shortcuts
 			if(buildScript.MenuUp){
 				if(Input.GetKeyDown(KeyCode.Alpha1)){
 				CallBuildGenerator();
@@ -49,6 +50,7 @@ public class BuildMenuButtons : MonoBehaviour {
 
 	}
 
+	//Methods to call for Buildings.
 	public void CallBuildGenerator(){
 		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.generatorBuilding);

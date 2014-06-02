@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Mission UI reflected from Tech Manager for Mission 3.  Throws the player in an interesting divide between protecting the base
+// and moving the mission objective back to the base.
+
+using UnityEngine;
 using System.Collections;
 
 public class Mission3 : MonoBehaviour {
