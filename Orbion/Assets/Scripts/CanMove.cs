@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Purpose: Objects that move should use this script
+//          Provides a central point of manipulation on movement for other scripts
+
+using UnityEngine;
 using System.Collections;
 
 
@@ -9,8 +12,7 @@ public class CanMove : MonoBehaviour {
 	public float MaxSpeed = 20;
 	public float MoveScale = 1.0f;
 	public float MaxForce = 100.0F;
-	protected float ForceScale;
-	protected float MaxSpeedScale;
+
 
 	public float getForce(){
 		return Force;
