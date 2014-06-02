@@ -39,7 +39,7 @@ public class CanShoot : MonoBehaviour {
 
 	//stun timer variables
 	private DumbTimer stunTimer;
-	public float stunInterval = 0.1F;
+	public float stunInterval;
 	private bool stunFinished = false;
 
 
@@ -49,13 +49,14 @@ public class CanShoot : MonoBehaviour {
 	public void ResetFiringTimer() { firingTimer.Reset(); }
 	public bool FinishCooldown() { return firingTimer.Finished(); }
 	
-
+	private int counter = 0;
 
 	
 	protected virtual void Start () {
 		//weakenScript = GetComponent<WeakensInLight>();
 		firingTimer = DumbTimer.New( firingRate);
 		firingTimer.SetProgress(1.0f);
+
 	}
 
 
@@ -127,11 +128,15 @@ public class CanShoot : MonoBehaviour {
 		if(stunTimer == null){
 			//stunTimer.Reset();
 			stunTimer = DumbTimer.New( stunInterval);
-			Debug.Log("STUN!!");
+			counter++;
+				
+			Debug.Log("STUN!! #" + counter);
 		} else if(stunFinished){
 			stunTimer.Reset();
 			stunFinished = false;
-			Debug.Log("STUN!!");
+			counter++;
+			
+			Debug.Log("STUN!! #" + counter);
 		}
 		
 		

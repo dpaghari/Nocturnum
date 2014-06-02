@@ -26,6 +26,8 @@ public class AB_TargetPlayer : AiBehavior {
 	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
 
+	private int indexCounter = 1;
+
 	override public void OnBehaviorEnter(){
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
@@ -39,6 +41,7 @@ public class AB_TargetPlayer : AiBehavior {
 		
 		if(CurrTarget != null && meshScript != null){
 			meshScript.CalculatePath(CurrTarget.position, meshPath);
+			indexCounter = 1;			
 		}
 		
 		//showPinkCubes();
@@ -97,6 +100,7 @@ public class AB_TargetPlayer : AiBehavior {
 			CurrTarget = FindTarget(TargetSearchRadius);
 			if(CurrTarget != null && meshScript != null){
 				meshScript.CalculatePath(CurrTarget.position, meshPath);
+				indexCounter = 1;
 				//showPinkCubes();
 			}
 			targetCheckCounter = 0.0F;
@@ -211,6 +215,15 @@ public class AB_TargetPlayer : AiBehavior {
 				i++;
 			}
 		}
+	}
+
+	private float distanceToTarget(Vector3 vec){
+		
+		float deltaX = this.transform.position.x - vec.x;
+		float deltaZ = this.transform.position.z - vec.z;
+		
+		return Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ);
+		
 	}
 	
 	
