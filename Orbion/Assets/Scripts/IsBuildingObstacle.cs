@@ -1,18 +1,10 @@
-﻿using UnityEngine;
+﻿//Purpose: Attach to an object to prevent building near/on this object
+
+using UnityEngine;
 using System.Collections;
 
 public class IsBuildingObstacle : MonoBehaviour {
 
-	//How close can a building be
+	//Radius of the circular region that buildings cannot be built in
 	public float contactRadius = 2.0f;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

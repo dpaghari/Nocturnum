@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Script in charge of Screen Text after selecting the Difficulty Settings.  Checks if the player presses enter and moves to the next 
+// string.  It also moves to the next string after a timer.
+
+using UnityEngine;
 using System.Collections;
 
 public class StoryText : MonoBehaviour {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Checks if the player presses Enter and moves to level 1
+using UnityEngine;
 using System.Collections;
 
 public class isLoadScreen : MonoBehaviour {

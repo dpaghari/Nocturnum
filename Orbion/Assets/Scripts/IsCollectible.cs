@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Script similar to the LightShard Script.  Moves towards player when player gets in range.
+// Mission 1 Collectible for Specimen
+
+using UnityEngine;
 using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class IsCollectible : MonoBehaviour {

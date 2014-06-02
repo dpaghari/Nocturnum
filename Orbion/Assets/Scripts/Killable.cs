@@ -1,43 +1,44 @@
-﻿using UnityEngine;
+﻿//Purpose: Gives object hit points and allows them to die
+
+using UnityEngine;
 using System.Collections;
 
 public class Killable : MonoBehaviour {
-	/*
-	Gives prefabs HP, they can take damage, and die
-	*/
-	//currHP tracks health, baseHP is given unless changed in the prefab
+
+	//current hp, gets set to baseHP at start
 	public int currHP = 100; 
+	//the normal/max hp 
 	public int baseHP = 100;
+
+	//Special effect whe bullet heals
+	public GameObject healEffect;
+
+	//Variables for making toad explosion
+	public GameObject toadExplosion;
 	public GameObject deathTarget;
 	public GameObject collectTarget;
-	//used to check if we should call the event when a building is hurt
-	public Buildable buildScript;
-	public GameObject healEffect;
-	private GameObject clone;
-	public DumbTimer timerScript;
 
-	public GameObject toadExplosion;
+	//used to check if we should call the event when a building is hurt
+	private Buildable buildScript;
+
+
+
 
 	// Set HP to default
 	void Start () {
-		timerScript = DumbTimer.New(1.2f, 1.0f);
 		buildScript = gameObject.GetComponent<Buildable>();
 		currHP = baseHP;
 
 	}
+
 
 	public void increaseHealth(int temp){
 		baseHP += temp;
 		currHP += temp;
 	}
 
-	void Update () {
 
-
-	}
-
-
-	// Updates HP based on damage taken, calls kill() on dead objects
+	// Updates HP based on damage taken, calls kill() on dying objects
 	public void damage (int dmg) {
 
 		if(gameObject.tag == "Player"){
@@ -46,16 +47,16 @@ public class Killable : MonoBehaviour {
 
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
-		if (currHP <= 0){
 
-			kill();
-		}
+		if (currHP <= 0) kill();
+
 		if(gameObject.GetComponent<IsDamagedEffect>() != null){
 			gameObject.GetComponent<IsDamagedEffect>().addDamage();
 		}
 	}
 
-	// Kills enemy or player
+
+	// Kills the object
 	public void kill () {
 		if(gameObject.tag == "Player"){
 			GameManager.KeysEnabled = false;
@@ -121,7 +122,7 @@ public class Killable : MonoBehaviour {
 	}
 
 
-
+	//Resets the level if the player dies
 	IEnumerator WaitAndCallback(float waitTime){
 		yield return new WaitForSeconds(waitTime + 1.5f); 
 		ResManager.Reset();
@@ -132,6 +133,7 @@ public class Killable : MonoBehaviour {
 
 		AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
 	}
+
 
 	/// <summary>
 	/// Heal the specified health.
@@ -148,6 +150,6 @@ public class Killable : MonoBehaviour {
 		if(currHP > baseHP)
 			currHP = baseHP;
 		else
-			clone = Instantiate(healEffect, transform.position, Quaternion.identity) as GameObject;
+			Instantiate(healEffect, transform.position, Quaternion.identity);
 	}
 }

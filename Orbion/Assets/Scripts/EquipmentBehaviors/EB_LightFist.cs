@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//PURPOSE:  Equipment Behavior function that plays the animation, sound and creates the invisible instance of the fist shockwave of the groundpunch
+// Upon Pressing the Right Mouse Button this will Instantiate the fistShockwave gameobject that pushes back enemies and applies damage.
+
+using UnityEngine;
 using System.Collections;
 
 public class EB_LightFist : EquipmentBehavior {
@@ -41,6 +44,7 @@ public class EB_LightFist : EquipmentBehavior {
 	}
 	
 	public override void OnSwitchExit (){return;}
+	//Coroutine to create the fistshockwave object that pushes back enemies at the player's position
 	IEnumerator WaitAndCallback(float waitTime){
 		yield return new WaitForSeconds(waitTime - 0.6f); 
 		Vector3 temp = transform.position;

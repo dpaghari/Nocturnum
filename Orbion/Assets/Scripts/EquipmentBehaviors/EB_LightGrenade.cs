@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Equipment Behavior that handles the Light Grenade Equipment.  Lobs a grenade object towards the mouse cursor.
+// Grenade Object destroys itself upon hitting the ground and creates a trigger that pulls enemies towards the center of the grenade's area of effect.
+// Also deals damage.
+using UnityEngine;
 using System.Collections;
 
 public class EB_LightGrenade : EquipmentBehavior {

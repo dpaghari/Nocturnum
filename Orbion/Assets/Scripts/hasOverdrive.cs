@@ -101,8 +101,8 @@ public class hasOverdrive : MonoBehaviour {
 		if (overdriveActive) {
 			clone = Instantiate(overdriveEffect, transform.position, Quaternion.identity) as GameObject;
 			//timerScript.Update ();
-			shootScript.reloadCooldown = 0;
-			shootScript.firingRate = odfireRate;
+			shootScript.SetReloadCooldown(0);
+			shootScript.SetFiringRate(odfireRate);
 			moveScript.MoveScale = odmoveRate;
 		}
 
@@ -112,8 +112,8 @@ public class hasOverdrive : MonoBehaviour {
 	void turnoffOverdrive(){
 		//Debug.Log ("Turning off overdrive");
 		if (overdriveActive) {
-			shootScript.reloadCooldown = 1.8f;
-			shootScript.firingRate = fireRate;
+			shootScript.SetReloadCooldown(1.8f);
+			shootScript.SetFiringRate(fireRate);
 			moveScript.MoveScale = moveRate;
 			overdriveActive = false;
 

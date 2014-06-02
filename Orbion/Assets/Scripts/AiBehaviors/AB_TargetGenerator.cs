@@ -7,6 +7,8 @@ using System.Collections;
 //Derive more advanced controllers from this class.
 
 //AiControllers should contain logic to manage behaviors
+
+//Priority - Player in range -> generator -> other buildings
 public class AB_TargetGenerator : MonoBehaviour {
 	
 	public CanMove moveScript { get; protected set;}
@@ -17,7 +19,6 @@ public class AB_TargetGenerator : MonoBehaviour {
 	private Rigidbody clone;
 	public Rigidbody pinkBox;
 	
-
 	public float AtkRange;
 	
 	public Rigidbody CurrTarget;
@@ -27,41 +28,27 @@ public class AB_TargetGenerator : MonoBehaviour {
 	private IsEnemy enemyScript;
 	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
-	private int counter = 1;
-	private int cornerIndex = 1;
+
+	private int indexCounter = 1;
 	
 	//Given that there are buildings and the player in range,
 	//always attack the player if they're within PlayerPriorityRange
 	public float PlayerPriorityRange;
 	
 	protected virtual void Start () {
+		//Debug.Log("START OF BEHAVIOR");
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
 		enemyScript = GetComponent<IsEnemy>();
-
 		meshPath = new NavMeshPath();
-		//Debug.Log("START OF BEHAVIOR");
-		CurrTarget = FindTarget(TargetSearchRadius);
-		//Debug.Log("Get target #" + counter); counter++;
-		
-		//meshScript.SetDestination(CurrTarget.position);
-		
+
+		CurrTarget = FindTarget(TargetSearchRadius);	
 		if(CurrTarget != null && meshScript != null){
 			meshScript.CalculatePath(CurrTarget.position, meshPath);
-		}
-		/*
-		int i = 1;
-		if(meshPath != null){
-			while (i < meshPath.corners.Length) {
-				Vector3 currentCorner = meshPath.corners[i];
-				Debug.Log (meshPath.corners[i]);
-				clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
-				i++;
-			}
-		}
-		*/
-		
+			indexCounter = 1;
+			showPinkCubes();
+		}		
 
 	}
 	
@@ -69,37 +56,29 @@ public class AB_TargetGenerator : MonoBehaviour {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if(distToTarget > AtkRange){
-				//transform.LookAt(CurrTarget.transform);
-				//Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
-				//transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-
-				if(meshPath.corners.Length > 0){
-					//closeToCorner(meshPath.corners[cornerIndex]);
-					//moveScript.Move(meshPath.corners[cornerIndex]);
-				}
-
-				//Debug.Log("# corners " + meshPath.corners.Length);
 					
 
 				if(meshPath.corners.Length < 3){
 					Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					moveScript.Move(CurrTarget.position - rigidbody.position);
-					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
-					//Debug.Log("FUCK");
 				} else if(meshPath.corners.Length >= 3){
-					Vector3 lookPosition = new Vector3(meshPath.corners[1].x, transform.position.y, meshPath.corners[1].z);
-					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-					//closeToCorner(meshPath.corners[cornerIndex]);
-					//moveScript.Move(meshPath.corners[cornerIndex] - rigidbody.position);
-					moveScript.Move(meshPath.corners[1] - rigidbody.position);
-					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
-					
-				}
-				//meshScript.SetDestination(CurrTarget.position);
-				//moveScript.Move (meshScript.nextPosition*-1);
-				
 
+					if(distanceToTarget(meshPath.corners[indexCounter]) < 0.5F){
+						indexCounter++;
+					}
+					if(indexCounter < meshPath.corners.Length){
+						Vector3 lookPosition = new Vector3(meshPath.corners[indexCounter].x, transform.position.y, meshPath.corners[1].z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(meshPath.corners[indexCounter] - rigidbody.position);
+					} else {
+						Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(CurrTarget.position - rigidbody.position);
+					}				
+				}
+				
+				//animation
 				if(enemyScript.enemyType == EnemyType.luminotoad)
 					animation.CrossFade("Luminotoad_Hop");
 				
@@ -118,37 +97,21 @@ public class AB_TargetGenerator : MonoBehaviour {
 		}
 	}
 	
-	private void closeToCorner(Vector3 vec){
-		float distance = Vector3.Distance (vec, this.transform.position);
-		if(distance < 1){
-			cornerIndex++;
-		}
-	}
 	
 	protected virtual void Update () {
+		//Timer to get a new target
 		if(targetCheckCounter > targetCheckTimer){
-			//Debug.Log("Get target #" + counter); counter++;
 			CurrTarget = FindTarget(TargetSearchRadius);
 			if(CurrTarget != null && meshScript != null){
 				meshScript.CalculatePath(CurrTarget.position, meshPath);
-				cornerIndex = 1;
+				indexCounter = 1;
+				showPinkCubes();
 			}
-			/*
-			int i = 1;
-			if(meshPath != null){
-				while (i < meshPath.corners.Length) {
-					Vector3 currentCorner = meshPath.corners[i];
-					Debug.Log (meshPath.corners[i]);
-					clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
-					i++;
-				}
-			}
-			*/
-			//meshScript.SetDestination(CurrTarget.position);
 			targetCheckCounter = 0.0F;
 		} else {
 			targetCheckCounter += Time.deltaTime;
 		}
+		//Attack target if in range and not on cooldown
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if (distToTarget <= AtkRange){
@@ -178,13 +141,6 @@ public class AB_TargetGenerator : MonoBehaviour {
 					if(enemyScript.enemyType == EnemyType.zingbat)
 						animation.CrossFade("ZingBatAttack");
 
-
-					/*
-					if(this.tag == "Enemy")
-						animation.CrossFade("WolfAttack");
-					if(this.tag == "EnemyRanged")
-						animation.CrossFade("ZingBatAttack");
-					*/
 				}
 				
 				else{
@@ -204,14 +160,6 @@ public class AB_TargetGenerator : MonoBehaviour {
 						if(enemyScript.enemyType == EnemyType.zingbat)
 							animation.CrossFade("ZingBatGlide");
 					}
-
-					/*
-					if(this.tag == "Enemy")
-						animation.CrossFade("WolfRunCycle");
-					if(this.tag == "EnemyRanged")
-						animation.CrossFade("ZingBatGlide");
-					*/
-
 				}
 				
 
@@ -241,9 +189,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 	}
 	
 	
-	//Not implemented
+	//Returns nearest prefab that contains Buildable script
 	public Rigidbody FindNearestBuilding(float searchRadius){
-		//return GameManager.Player.rigidbody;
 		Collider[] hitColliders = Physics.OverlapSphere(rigidbody.position, searchRadius);
 		Rigidbody closestBuilding = null;
 		float closestBuildingDist = Mathf.Infinity;
@@ -259,64 +206,58 @@ public class AB_TargetGenerator : MonoBehaviour {
 		return closestBuilding;
 	}
 	
+	//Test navmesh corner locations
+	private void showPinkCubes(){
+		int i = 1;
+		if(meshPath != null){
+
+			//Debug.Log (meshPath.corners.Length);
+
+			while (i < meshPath.corners.Length) {
+				Vector3 currentCorner = meshPath.corners[i];
+				//Debug.Log (meshPath.corners[i]);
+				clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
+				i++;
+			}
+		}
+	}
+
+	private float distanceToTarget(Vector3 vec){
+	
+		float deltaX = this.transform.position.x - vec.x;
+		float deltaZ = this.transform.position.z - vec.z;
+		
+		return Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ);
+
+	}
 	
 	//Finds a target within the range
 	//
 	//If the player is in the PlayerPriorityRange, returns the player
-	//otherwise, the target is the closest building/player 
+	//otherwise, the target is the closest generator
 	//Returns null if nothing is in range
 	public Rigidbody FindTarget(float range){
-		//Debug.Log("FINDTARGET");
-		
 		//If player is within the priority range, no need to search further
 		Rigidbody player = GetPlayerInRange( range);
 		if(player !=null && PlayerInRange( PlayerPriorityRange)){
-			//Debug.Log("return player priority");
 		 	return FindPlayer();
 		}
-		
-		
-		//Rigidbody building = FindNearestBuilding( range);
 		//Check for closest generator
 		GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<IsGenerator>);
 		Rigidbody building;
-		//if no generator check for closest building
+		//if no generator return player
 		if(GObuilding != null){ 
 			building = GObuilding.rigidbody;
-			//Debug.Log("return generator");
 			return building;
 		} else {
-			//building = FindNearestBuilding (range);
-			//Debug.Log("return nearest building");
-			//return building;
-			//Debug.Log("return player");
-			return FindPlayer();		
-		}
-		
-		//If we can't find a player or building, return the other
-		//If we can't find either, this returns null
+			building = FindNearestBuilding( range);
 
-		/*
-		if(player == null){ 
-			Debug.Log("return building 3");
-			return building;
-		}
-		if(building == null){
-			Debug.Log("return player 2");
-		 return player;
-		}
-
-		return FindPlayer();
-		
-		
-		//If we have both a player(not withing the priority range) and a building,
-		//target the closest one. If they are the same distance, target player.
-		Rigidbody closestTarget = player;
-		float distToPlayer = Vector3.Distance(rigidbody.position, player.position);
-		float distToBuilding = Vector3.Distance(rigidbody.position, building.position);
-		if(distToBuilding < distToPlayer) closestTarget = building;
-		return closestTarget;
-		*/
+			if(building != null){
+				return building;
+			} else {
+				return FindPlayer();
+			}		
+		}	
 	}	
 	
 }

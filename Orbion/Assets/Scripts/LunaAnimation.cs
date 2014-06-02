@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Script Handling Player Character Animations
+// Keeps track of player input and created states that determine the animation of the character
+
+
+using UnityEngine;
 using System.Collections;
 
 public class LunaAnimation : MonoBehaviour {
@@ -38,6 +42,8 @@ public class LunaAnimation : MonoBehaviour {
 	IEnumerator WaitAndRun(float waitTime){
 		yield return new WaitForSeconds(waitTime); 
 		animation.CrossFade("Run");
+		GameManager.KeysEnabled = true;
+
 
 
 	}
@@ -86,7 +92,7 @@ public class LunaAnimation : MonoBehaviour {
 
 				}
 			}
-
+			// Sets the rotation of the player character towards the mouse cursor
 			if (Input.GetMouseButton(0)){
 				
 				//animation.CrossFade("Shooting");
@@ -97,12 +103,12 @@ public class LunaAnimation : MonoBehaviour {
 				}
 			}
 
-
+			// Plays Run animation if player is holding down a movement key(WASD)
+			// Checks for other possible animations that are playing and calls a coroutine function that waits till that animation is finished playing.
 			if (MoveKeyStay()){
 					if(animation.IsPlaying("Dash")){
 
 						StartCoroutine(WaitAndRun(animation["Dash"].length)); 
-						GameManager.KeysEnabled = true;
 
 						//animation.CrossFade("Run");
 					}
@@ -123,7 +129,7 @@ public class LunaAnimation : MonoBehaviour {
 			if (newRotation != Vector3.zero) transform.forward = newRotation;
 			}
 
-
+			// If not pressing any movement keys or shooting play the Idle Animation
 			if (! MoveKeyStay() && ! Input.GetMouseButton(0)){
 
 				if(animation.IsPlaying("Groundpunch")){

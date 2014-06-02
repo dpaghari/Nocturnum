@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Grenade Effect that gets created when the grenade object from the Equipment behavior: Light Grenade, hits the ground. 
+// Pulls enemies towards where the grenade landed.
+
+
+using UnityEngine;
 using System.Collections;
 
 public class GrenadeEffect : MonoBehaviour {

@@ -17,6 +17,7 @@ public class PB_Linear : ProjectileBehavior {
 	public CanMove MoveScript;
 
 	public AudioClip buildinghitSound;
+	public AudioClip enemyhitSound;
 
 
 	public int Damage;
@@ -97,6 +98,10 @@ public class PB_Linear : ProjectileBehavior {
 	public override void OnImpactEnter( Collision other){
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
 		if( KillScript) {
+			if(other.gameObject.GetComponent<IsEnemy>() != null){
+				audio.PlayOneShot(enemyhitSound);
+			}
+
 			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){
 				audio.PlayOneShot(buildinghitSound);
 				if(KillScript.currHP < KillScript.baseHP){

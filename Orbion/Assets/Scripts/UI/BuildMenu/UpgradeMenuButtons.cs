@@ -6,9 +6,11 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	//private bool menuUp;
 	public GameObject canResearchRef;
 	public bool researchTimeOn;
-	public dfControl hudProgress;
-	public CanResearch researchScript;
-	public dfSprite _hudIcon;
+	public dfControl hudProgress; //dfControl for the HUD progress.
+	public CanResearch researchScript; //to handle shortcuts.
+	public dfSprite _hudIcon; //Sprite on the HUD.
+
+	public AudioClip buttonSound;
 	// Use this for initialization
 	void Start () {
 		//menuUp = false;
@@ -22,30 +24,38 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		//Shortcuts.
 		if(researchScript.MenuUp){
 			if(Input.GetKeyDown(KeyCode.Alpha1)){
 				CallScattershot();
 			}
-			else if(Input.GetKeyDown(KeyCode.Alpha2))
+			else if(Input.GetKeyDown(KeyCode.Alpha2)){
 				CallClipSize();
+			}
 			
-			else if(Input.GetKeyDown(KeyCode.Alpha3))
+			else if(Input.GetKeyDown(KeyCode.Alpha3)){
 				CallLightFist();
+			}
 
-			else if(Input.GetKeyDown(KeyCode.Alpha4))
+			else if(Input.GetKeyDown(KeyCode.Alpha4)){
 				CallLightGrenade();
+			}
 			
-			else if(Input.GetKeyDown(KeyCode.Alpha5))
+			else if(Input.GetKeyDown(KeyCode.Alpha5)){
 				CallSeeker ();
+			}
 			
-			else if(Input.GetKeyDown(KeyCode.Alpha6))
+			else if(Input.GetKeyDown(KeyCode.Alpha6)){
 				CallRicochet();
+			}
 		}
 
 	}
 
+	//Different call methods for upgrades.
 	public void CallScattershot(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.scatter)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.scatter)) );
@@ -56,6 +66,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallClipSize(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.clipSize)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetClipSize();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.clipSize)) );
@@ -66,6 +77,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallLightFist(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightFist)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetLightFist();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightFist)) );
@@ -76,6 +88,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallLightGrenade(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightGrenade)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetLightGrenade();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightGrenade)) );
@@ -86,6 +99,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallSeeker(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.seeker)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetSeeker();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.seeker)) );
@@ -93,8 +107,10 @@ public class UpgradeMenuButtons : MonoBehaviour {
 			canResearchRef.GetComponent<CanResearch>().GetSeeker();
 		}
 	}
+
 	public void CallRicochet(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.ricochet)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetRicochet();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.ricochet)) );
@@ -103,15 +119,19 @@ public class UpgradeMenuButtons : MonoBehaviour {
 		}
 	}
 
+	//Code from the example for the radial upgrade time.
+	//Visual to show upgrade time.
 	private IEnumerator showCooldown(float t)
 	{
 		
 		researchTimeOn = true;
 		
 		//var assignedSpell = SpellDefinition.FindByName( this.Spell );
-		
+
+		//Sprite on Upgrade menu
 		var sprite = GetComponent<dfControl>().Find( "Researching" ) as dfSprite;
 		sprite.IsVisible = true;
+		//Sprite on HUD
 		var spriteHUD = hudProgress.Find("Researching") as dfSprite;
 		spriteHUD.IsVisible = true;
 

@@ -25,11 +25,10 @@ public class AB_TargetPlayer : AiBehavior {
 	private IsEnemy enemyScript;
 	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
-	private int counter = 1;
-	private int cornerIndex = 1;
+
+	private int indexCounter = 1;
 
 	override public void OnBehaviorEnter(){
-		//Debug.Log("Entering chase");
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
@@ -39,25 +38,13 @@ public class AB_TargetPlayer : AiBehavior {
 		meshPath = new NavMeshPath();
 		//Debug.Log("START OF BEHAVIOR");
 		CurrTarget = FindTarget(TargetSearchRadius);
-		//Debug.Log("Get target #" + counter); counter++;
-		
-		//meshScript.SetDestination(CurrTarget.position);
 		
 		if(CurrTarget != null && meshScript != null){
 			meshScript.CalculatePath(CurrTarget.position, meshPath);
+			indexCounter = 1;			
 		}
 		
-		/*
-		int i = 1;
-		if(meshPath != null){
-			while (i < meshPath.corners.Length) {
-				Vector3 currentCorner = meshPath.corners[i];
-				Debug.Log (meshPath.corners[i]);
-				clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
-				i++;
-			}
-		}
-		*/
+		//showPinkCubes();
 	}
 	
 	override public void OnBehaviorExit(){return;}
@@ -67,28 +54,26 @@ public class AB_TargetPlayer : AiBehavior {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if(distToTarget > AtkRange){
-				//transform.LookAt(CurrTarget.transform);
-				//Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
-				//transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				//moveScript.Move(CurrTarget.position - rigidbody.position);
-				//meshScript.SetDestination(CurrTarget.position);
-				//moveScript.Move (meshScript.nextPosition*-1);
+
 
 				if(meshPath.corners.Length < 3){
 					Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					moveScript.Move(CurrTarget.position - rigidbody.position);
-					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
-					
-					//Debug.Log("FUCK");
 				} else if(meshPath.corners.Length >= 3){
-					Vector3 lookPosition = new Vector3(meshPath.corners[1].x, transform.position.y, meshPath.corners[1].z);
-					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-					//closeToCorner(meshPath.corners[cornerIndex]);
-					//moveScript.Move(meshPath.corners[cornerIndex] - rigidbody.position);
-					moveScript.Move(meshPath.corners[1] - rigidbody.position);
-					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
 					
+					if(distanceToTarget(meshPath.corners[indexCounter]) < 0.5F){
+						indexCounter++;
+					}
+					if(indexCounter < meshPath.corners.Length){
+						Vector3 lookPosition = new Vector3(meshPath.corners[indexCounter].x, transform.position.y, meshPath.corners[1].z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(meshPath.corners[indexCounter] - rigidbody.position);
+					} else {
+						Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(CurrTarget.position - rigidbody.position);
+					}				
 				}
 
 				if(enemyScript.enemyType == EnemyType.luminotoad)
@@ -105,13 +90,6 @@ public class AB_TargetPlayer : AiBehavior {
 				if(enemyScript.enemyType == EnemyType.luminosaur)
 					animation.CrossFade("LuminosaurWalk");
 
-				/*
-				if(this.tag == "Enemy")
-					animation.CrossFade("WolfRunCycle");
-
-				if(this.tag == "EnemyRanged")
-					animation.CrossFade("bat_fly");
-				*/
 			}
 		}
 	}
@@ -119,25 +97,13 @@ public class AB_TargetPlayer : AiBehavior {
 
 	override public void UpdateAB(){
 		if(targetCheckCounter > targetCheckTimer){
-			//Debug.Log("Get target #" + counter); counter++;
 			CurrTarget = FindTarget(TargetSearchRadius);
 			if(CurrTarget != null && meshScript != null){
 				meshScript.CalculatePath(CurrTarget.position, meshPath);
-				cornerIndex = 1;
+				indexCounter = 1;
+				//showPinkCubes();
 			}
-			/*
-			int i = 1;
-			if(meshPath != null){
-				while (i < meshPath.corners.Length) {
-					Vector3 currentCorner = meshPath.corners[i];
-					Debug.Log (meshPath.corners[i]);
-					clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
-					i++;
-				}
-			}
-			*/
 			targetCheckCounter = 0.0F;
-			//meshScript.SetDestination(CurrTarget.position);
 		} else {
 			targetCheckCounter += Time.deltaTime;
 		}
@@ -170,11 +136,7 @@ public class AB_TargetPlayer : AiBehavior {
 					}
 				}
 
-				/*
-				if(this.tag == "Enemy"){
-				animation.CrossFade("WolfAttack");
-				}
-				*/
+
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 				if(enemyScript.enemyType != EnemyType.luminotoad)
@@ -240,6 +202,28 @@ public class AB_TargetPlayer : AiBehavior {
 		float distToBuilding = Vector3.Distance(rigidbody.position, building.position);
 		if(distToBuilding < distToPlayer) closestTarget = building;
 		return closestTarget;
+	}
+
+	//Test navmesh corner locations
+	private void showPinkCubes(){
+		int i = 1;
+		if(meshPath != null){
+			while (i < meshPath.corners.Length) {
+				Vector3 currentCorner = meshPath.corners[i];
+				Debug.Log (meshPath.corners[i]);
+				clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
+				i++;
+			}
+		}
+	}
+
+	private float distanceToTarget(Vector3 vec){
+		
+		float deltaX = this.transform.position.x - vec.x;
+		float deltaZ = this.transform.position.z - vec.z;
+		
+		return Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ);
+		
 	}
 	
 	

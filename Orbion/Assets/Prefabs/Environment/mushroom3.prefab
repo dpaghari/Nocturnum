@@ -54,6 +54,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 137: {fileID: 13700000}
+  - 65: {fileID: 6500002}
+  - 65: {fileID: 6500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: mushroom-2
   m_TagString: Untagged
@@ -85,9 +88,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 95: {fileID: 9500000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: mushroom3
   m_TagString: Untagged
@@ -164,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.299572, z: -15.773613}
+  m_LocalPosition: {x: -95.2336578, y: 13.299572, z: -243.944931}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -199,13 +200,25 @@ BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100010}
+  m_GameObject: {fileID: 100006}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 17, z: 5}
+  m_Center: {x: 4.27879333, y: -4.06423903, z: 18.8578167}
+--- !u!65 &6500002
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 1, z: 15}
+  m_Center: {x: 3.88000011, y: 1.5, z: 18.1599998}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -229,13 +242,13 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 0
-  m_Color: {r: .295847714, g: .332609326, b: .705882311, a: 1}
+  m_Color: {r: .48788926, g: .50611496, b: .691176474, a: 1}
   m_Intensity: 8
-  m_Range: 79.8199997
-  m_SpotAngle: 55.0999985
+  m_Range: 37.9900017
+  m_SpotAngle: 66.5
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
@@ -260,13 +273,13 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100010}
+  m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
+  hideShader: {fileID: 4800000, guid: 6562ed1722964fc4fa4eba1d756e19b7, type: 3}
   hiddenDuration: 1
 --- !u!114 &11400002
 MonoBehaviour:

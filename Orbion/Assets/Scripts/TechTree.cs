@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Purpose: Holds the prerequisites of Techs
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,7 +17,7 @@ public class TechTree : ScriptableObject {
 	protected Dictionary<Tech, PreReqSet> PreReqs;
 
 
-
+	//Creates and return a new empty tech tree
 	public static TechTree InitTree(){
 		TechTree newTree = ScriptableObject.CreateInstance<TechTree>();
 		newTree.PreReqs = new Dictionary<Tech, PreReqSet>();
@@ -33,8 +35,6 @@ public class TechTree : ScriptableObject {
 	}
 
 
-
-
 	//helper function for HasLoop
 	protected bool HasLoopRecur ( Tech startingTech, Tech theTech){
 		if (startingTech == theTech) return true;
@@ -46,7 +46,8 @@ public class TechTree : ScriptableObject {
 		return false;
 	}
 
-	//checks whether there is a loop of requirements
+
+	//Checks whether there is a circular loop of requirements
 	protected bool HasLoop( Tech theTech){
 
 		PreReqSet SetOfPreReqs = GetReq(theTech);
@@ -57,12 +58,10 @@ public class TechTree : ScriptableObject {
 	}
 
 
-
-	//removes the thePreReq off of theTech
+	//Removes the thePreReq off of theTech
 	public void RmReq( Tech theTech, Tech thePreReq){
 		GetReq(theTech).Remove(thePreReq);
 	}
-
 
 
 	//Adds thePreReq onto theTech
@@ -79,8 +78,7 @@ public class TechTree : ScriptableObject {
 	}
 
 
-
-	//the default techtree we want for our game
+	//The default techtree we want for our game
 	public static TechTree MakeDefault(){
 		
 		TechTree defaultTree = InitTree();
@@ -135,7 +133,7 @@ public class TechTree : ScriptableObject {
 
 
 
-//A set of Techs used to store the set of prerequisites needed for some Tech
+//The set of Techs used to store a group of prerequisites needed for some Tech
 public class PreReqSet : HashSet<Tech> {
 	
 	public bool IsEmpty(){

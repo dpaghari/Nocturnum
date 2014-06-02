@@ -1,15 +1,25 @@
-﻿using UnityEngine;
+﻿//Purpose: Attach to objects that should fade when inbetween player and camera
+
+//Note: This script only swaps shaders
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 [RequireComponent (typeof (Collider))]
 
 public class IsInvisibleOntopObjects : MonoBehaviour {
 
+	//Shader to use when hiding the object
 	public Shader hideShader;
+
+	//Duration that the object is hidden after it no longer blocks the player
 	public float hiddenDuration = 1;
+
 	public bool IsHidden {get; private set;}
 
 	private DumbTimer hiddenDurationTimer;
+
+	//Store references and original shaders to revert to
 	private Renderer[] theRenderers;
 	private Shader[] originalShaders;
 

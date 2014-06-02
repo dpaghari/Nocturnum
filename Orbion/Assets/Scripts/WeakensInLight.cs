@@ -1,70 +1,58 @@
-﻿using UnityEngine;
+﻿//Purpose: Objects with this script have their combat abilities weakened when in the light
+
+using UnityEngine;
 using System.Collections;
 
 public class WeakensInLight : MonoBehaviour {
 
-
+	//How long it stays weakened after leaving the light
 	public float WeakenDuration;
+	
+	//Whether the object is currently weakend
 	public bool IsWeakened {get; protected set;}
+
+	//Ratio that the movement is slowed down by
 	public float SlowedRatio;
 
 	protected CanMove moveScript;
 	protected CanShoot shootScript;
-	protected float WeakenTimer = 0;
+	protected DumbTimer WeakenTimer;
 
 
-	//returns if we're done being weakened
-	public bool FinishWeakenDuration(){
-		return WeakenTimer <= 0;
-	}
-	
-
-	//sets the duration to (ratio * 100)% progress
-	public void SetWeakenDuration(float ratio){
-		WeakenTimer = ratio * WeakenDuration;
-	}
-	
-
-	//Resets the duration back to 100%
-	public void ResetWeakenDuration(){
-		SetWeakenDuration(1.0f);
-	}
-	
 
 	public void Weaken(){
-		ResetWeakenDuration();
+		WeakenTimer.Reset();
 		
 		//Do not slow down again if we are already weakened
 		if(! IsWeakened){
 			moveScript.MoveScale -= SlowedRatio;
-			shootScript.firingRate  += 0.2f;
+			shootScript.SetFiringRate( shootScript.firingTimer.MaxTime + 0.2f);
 			IsWeakened = true;
 		}
 	}
 
+
 	public void UndoWeaken(){
 		moveScript.MoveScale += SlowedRatio;
-		shootScript.firingRate -= 0.2f;
+		shootScript.SetFiringRate( shootScript.firingTimer.MaxTime - 0.2f);
 		IsWeakened = false;
 	}
 
 
-	// Use this for initialization
 	void Start () {
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();
 		IsWeakened = false;
+		WeakenTimer = DumbTimer.New( WeakenDuration);
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
-		if (FinishWeakenDuration()){
+		if (WeakenTimer.Finished()){
 			if( IsWeakened )
 				UndoWeaken();
 		}
-		else
-			WeakenTimer -= Time.deltaTime;
 
-	
+		WeakenTimer.Update();
 	}
 }

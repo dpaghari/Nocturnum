@@ -9,7 +9,8 @@ public class HelperText : MonoBehaviour {
 	public GameObject timerRef;
 	public GameObject isBuilt;
 
-
+	public bool builtBallistics = false;
+	public bool builtGenerator = false;
 	//public bool wait = false;
 	
 	// Use this for initialization
@@ -22,7 +23,10 @@ public class HelperText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if( TechManager.GetNumBuilding( Tech.ballistics) > 0)
+			builtBallistics = true;
+		if( TechManager.GetNumBuilding( Tech.generator) > 0 )
+			builtGenerator = true;
 		
 	}
 	
@@ -39,10 +43,10 @@ public class HelperText : MonoBehaviour {
 			} else if(ResManager.Lumen > 0 && ResManager.Energy == 0){
 				makeMiddle = Screen.width/2-130;
 				tutorialText = "Press B to access Build Grid.";
-			} else if(/*ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 &&*/ isBuilt.GetComponent<CanBuild>().builtGenerator && TechManager.GetNumBuilding(Tech.ballistics) == 0){
+			} else if(/*ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 &&*/ builtGenerator && TechManager.GetNumBuilding(Tech.ballistics) == 0){
 				makeMiddle = Screen.width/2-150;
 				tutorialText = "You can only build in the Generator's light.";
-			} else if(/*ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 &&*/ isBuilt.GetComponent<CanBuild>().builtGenerator && TechManager.GetNumBuilding(Tech.ballistics) > 0 /*&& isBuilt.GetComponent<CanBuild>().MeetsRequirement(isBuilt.GetComponent<CanBuild>().ballisticsBuilding)*/){
+			} else if(/*ResManager.Lumen > 0 && ResManager.MaxEnergy > 0 &&*/ builtGenerator && TechManager.GetNumBuilding(Tech.ballistics) > 0 /*&& isBuilt.GetComponent<CanBuild>().MeetsRequirement(isBuilt.GetComponent<CanBuild>().ballisticsBuilding)*/){
 				makeMiddle = Screen.width/2-160;
 				tutorialText = "Press V to open the Upgrade Grid.";
 			}

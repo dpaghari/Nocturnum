@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Script that is in charge of the Raflessia Snare Plant.  It starts as Inactive, and upon getting hit by a bullet(player or enemies) it becomes active.
+// Upon activation, the plant will change it's collider to be a trigger allowing objects to pass through the collider and effectively triggering a snaring effect
+// which simply locks the object in the flower's position and releases them after a short duration.
+
+using UnityEngine;
 using System.Collections;
 
 public class FlowerAnimation : MonoBehaviour {
@@ -8,7 +12,7 @@ public class FlowerAnimation : MonoBehaviour {
 	private DumbTimer timerScript;
 	// Use this for initialization
 	void Start () {
-		timerScript = DumbTimer.New(3.0f, 1.0f);
+		timerScript = DumbTimer.New(3.0f, 1.0f);				// Duration of Raflessia Snare
 		isActive = false;
 		isHolding = false;
 	}
@@ -48,18 +52,21 @@ public class FlowerAnimation : MonoBehaviour {
 				//other.transform.position = transform.position;
 				GameManager.KeysEnabled = false;
 				animation.Play("RaflessiaClose");
+				other.animation.Play("Idle");
 				isHolding = true;
 			}
 			if(other.GetComponent<IsEnemy>() != null && isHolding == false){
 				//other.transform.position = transform.position;
 				other.GetComponent<CanMove>().MoveScale -= 1;
+				other.animation.Play("Idle");
 				animation.Play("RaflessiaClose");
 				isHolding = true;
 
 			}
 			if(isHolding){
-
+				if(other.GetComponent<IsEnemy>() != null || other.tag == "Player"){
 				other.transform.position = transform.position;
+				}
 			}
 
 			if(timerScript.Finished() == true){
