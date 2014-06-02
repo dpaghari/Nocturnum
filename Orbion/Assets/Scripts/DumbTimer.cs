@@ -33,7 +33,8 @@ public class DumbTimer : ScriptableObject {
 	}
 
 
-
+	//Creates a new DumbTimer. Note that it is used DumbTimer.New(...),
+	//not new DumbTimer(...)
 	public static DumbTimer New( float maxTime, float timeScale = 1.0f){
 		DumbTimer newTimer = ScriptableObject.CreateInstance<DumbTimer>();
 
@@ -55,6 +56,7 @@ public class DumbTimer : ScriptableObject {
 		SetProgress(0);
 	}
 
+	//This is not automatic and must be manually called in your script's update
 	public void Update(){
 		CurrTime -= (Time.deltaTime * TimeScale);
 		if( CurrTime < 0) CurrTime = 0;

@@ -1,21 +1,32 @@
-﻿using UnityEngine;
+﻿//Purpose: UI object that acts as a cursor for building
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class IsBuildHologram : MonoBehaviour {
 
+	//The building that this is a hologram of
 	public Rigidbody RealBuilding;
-	public Buildable buildScript;
+
+	//The binary colors the hologram should have
 	public Color defaultColor;
 	public Color cannotBuildColor;
+
+	//Whether we can build at the last position UpdateBuildStatus() was called on
 	public bool CanBuildHere {get; private set;}
 
+	//Autofilled array of renderers that we use to change colors
 	private MeshRenderer[] childrenMR;
 
-	private float inLightToggleTime = 0.01f;
-	private DumbTimer inLightToggler;
+	//Need to know the obstacle radius of the real building we want to build
+	private Buildable buildScript;
 
 
+
+	//Detects whether something is in light
+	//Cannot use the lightsource's trigger because the physics is slowed down
+	//when in build mode, making the status update very unreliable
 	public bool IsInLight(){
 		bool inSomeLight = false;
 		if( IsLightSource.LightSources == null) return false;
@@ -29,14 +40,14 @@ public class IsBuildHologram : MonoBehaviour {
 
 
 
-	//returns true if there is another building too close to this one
-	public bool IsBuildingNearby(){
+	//returns true if there is another building, construction, or obstacle
+	public bool IsObstacleNearby(){
 		
 		
 
 		int searchLayers = Utility.Building_PLM | Utility.Environment_PLM | Utility.Quest_PLM | Utility.Plant_PLM;
 
-		GameObject closestBuilding = Utility.GetClosestWith(transform.position, 10, IsBuilding, searchLayers);
+		GameObject closestBuilding = Utility.GetClosestWith(transform.position, 10, IsObstacle, searchLayers);
 		if (closestBuilding == null) return false;
 
 		Buildable closestBuildScript = null;
@@ -63,8 +74,8 @@ public class IsBuildHologram : MonoBehaviour {
 	}
 	
 	
-	//Returns true if given object is a building
-	bool IsBuilding(GameObject theBuilding){
+	//Returns true if given object is an obstacle of building
+	bool IsObstacle(GameObject theBuilding){
 
 		if (theBuilding == gameObject)
 			return false;
@@ -82,10 +93,11 @@ public class IsBuildHologram : MonoBehaviour {
 
 	public bool InValidBuildZone(){
 		bool inLight = IsInLight() || !buildScript.requiresLight;
-		return !IsBuildingNearby() && inLight;
+		return !IsObstacleNearby() && inLight;
 	}
 
 	
+	//Changes the colors of all of this children's materials
 	public void ChangeColors( Color theNewColor){
 		if( childrenMR != null)
 			foreach( MeshRenderer mr in childrenMR)
@@ -94,7 +106,8 @@ public class IsBuildHologram : MonoBehaviour {
 	}
 
 
-
+	//Detects whether the hologram is in a buildable location
+	//and changes colors accordingly
 	public void UpdateBuildStatus(){
 		Color newColor = Color.white;
 		if( InValidBuildZone()){
@@ -106,20 +119,16 @@ public class IsBuildHologram : MonoBehaviour {
 			newColor = cannotBuildColor;
 		}
 
-		ChangeColors( newColor);
-
-			
+		ChangeColors( newColor);	
 	}
 
 	
-
-	// Use this for initialization
 	void Start () {
 		buildScript = RealBuilding.GetComponent<Buildable>();
 		childrenMR = GetComponentsInChildren<MeshRenderer>();
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		UpdateBuildStatus();
 	}
