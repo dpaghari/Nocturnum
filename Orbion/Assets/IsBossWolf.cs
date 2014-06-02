@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Script that is attached to the Alpha Wolf.  Checks if the Alpha Wolf is below 40% HP and performs a HOWL action which simply instantiates
+// a random wolf near the alpha wolf for help.  Maximum of two howls.  
+
+using UnityEngine;
 using System.Collections;
 
 public class IsBossWolf : MonoBehaviour {
@@ -38,7 +41,7 @@ public class IsBossWolf : MonoBehaviour {
 
 
 	}
-
+	// Howl Function:  Plays Audioclip of the howl sound.  Also creates a set number of wolves(numWolves) which are determined by a random number
 	public void Howl(){
 		audio.PlayOneShot(howlSound);
 		Vector3 pos = transform.position;

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Creates an invisible PoisonBall Object after a short delay which releases a number of poison clouds after a delay which chases after
+// the player or enemies.
+
+using UnityEngine;
 using System.Collections;
 
 public class isPoisonPlant : MonoBehaviour {

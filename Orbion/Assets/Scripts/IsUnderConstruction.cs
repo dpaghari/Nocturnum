@@ -1,42 +1,51 @@
-﻿using UnityEngine;
+﻿//Purpose: Regulates the progress of a building under construction
+
+using UnityEngine;
 using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class IsUnderConstruction : MonoBehaviour {
 
-	//Time remaining until building is done
-	float constructionCountdown;
-
-	//Total time in seconds to build
-	public float totalConstruction = 60;
+	//Special effects for building
+	public GameObject vfx1;
+	public GameObject vfx2;
 
 	//public AudioClip finBuild;
 	public AudioClip errBuild;
 
-	//The building that we want to create when finished construction timer
-	public Rigidbody toBuild;
+	//The Y-scale of the construction pillar at 0% completion
+	public float heightScale = 5;
+	
+	//How fast we rotate when naturally changing build progress
+	public float rotationSpeed = 20f;
 
-	public GameObject vfx1;
-	public GameObject vfx2;
+	//Scales how fast we rotate when changing build progress from a bullet
+	public float bulletRotationSpeed = 10f;
+
+	//How  much construction time a player's bullet reduces when hitting
+	public float BulletTimeReduction = 1/10f;
+
+
+
+	//These three are set in CanBuild when prefab is made
+	//The building that we want to create when finished construction timer
+	public Rigidbody toBuild {get; set;}
+	//Total time in seconds to build
+	public float totalConstruction {get; set;}
+	//Whether or not construction will continue if it is in the darkness
+	public bool canBuildOutOfLight {get; set;}
+
+
+
+	//Time remaining until building is done
+	float constructionCountdown;
 
 	//Used to determine if we're in light
 	private bool lit = false;
-
-	private Rigidbody clone;
-
-	//How tall the construction pillar should be at max
-	private float heightScale = 5;
-
-	//Scales how fast we rotate when changing build progress
-	private int rotationSpeed = 20;
 
 	//on some occasions, the construction will think it's not lit when built on light
 	//so we give it an extra time delay before we make it expire
 	private float lightExpireDelay = 0.1f;
 
-	//whether or not construction will continue if it is in the darkness
-	public bool canBuildOutOfLight = false;
-
-	public float BulletTimeReduction = 1/10f;
 
 
 
@@ -58,6 +67,28 @@ public class IsUnderConstruction : MonoBehaviour {
 	}
 
 
+	void CreateBuilding(){
+		//Placement of building is slightly offsetted up to
+		//   prevent buildings from being built in the floor
+		Vector3 temp = this.transform.position;
+		temp.y -= 2;
+		Rigidbody clone = Instantiate(toBuild, temp, Quaternion.identity) as Rigidbody;
+
+		//audio.clip = finBuild;
+		//audio.PlayOneShot(finBuild, 1.0f);
+
+		Destroy(this.gameObject);	
+	}
+
+
+	//Gives back the player resources
+	void RefundBuilding(){
+		Buildable buildInfo = toBuild.gameObject.GetComponent<Buildable>();
+		ResManager.AddLumen(buildInfo.lumenCost);
+		ResManager.AddEnergy(buildInfo.energyCost);
+		Destroy(this.gameObject);	
+	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -65,86 +96,21 @@ public class IsUnderConstruction : MonoBehaviour {
 		constructionCountdown = totalConstruction;
 	}
 
-	//returns true if there is another building too close to this one
-	bool IsBuildingNearby(){
-		GameObject closestBuilding = Utility.GetClosestWith(transform.position, 10, IsBuilding);
-
-		if (closestBuilding == null)
-			return false;
-
-
-		float minimumDistance;
-		if(closestBuilding.GetComponent<Buildable>() != null){
-			minimumDistance = closestBuilding.GetComponent<Buildable>().contactRadius + toBuild.GetComponent<Buildable>().contactRadius;
-		}else{
-			minimumDistance = closestBuilding.GetComponent<IsUnderConstruction>().toBuild.GetComponent<Buildable>().contactRadius + toBuild.GetComponent<Buildable>().contactRadius;
-		}
-		float actualDistance = Vector2.Distance (new Vector2(closestBuilding.transform.position.x, closestBuilding.transform.position.z), new Vector2(transform.position.x, transform.position.z));
-//		Debug.Log (actualDistance);
-//		Debug.Log (minimumDistance);
-
-		if (actualDistance < minimumDistance) {
-			return true;
-		}
-		return false;
-	}
-
-	//Returns true if given object is a building
-	public bool IsBuilding(GameObject theBuilding){
-		if(theBuilding.GetComponent<Buildable>() == null && theBuilding.GetComponent<IsUnderConstruction>() == null) 
-			return false;
-		if (theBuilding == gameObject)
-			return false;
-		
-		return true;
-	}
-
+	
 
 	void Update () {
-		if((lit || canBuildOutOfLight) && !IsBuildingNearby()){
-
+		if( lit || canBuildOutOfLight){
 			if(constructionCountdown <= 0){
-
-				Vector3 temp = this.transform.position;
-				temp.y -= 2;
-			
-				clone = Instantiate(toBuild, temp, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-				/*
-				audio.clip = finBuild;
-				audio.PlayOneShot(finBuild, 1.0f);
-				*/
-				if(toBuild.GetComponent<IsGenerator>() != null){
-					TechManager.hasGenerator = true;
-				}
-				if(toBuild.GetComponent<isMedbay>() != null){
-					TechManager.hasMedbay = true;
-				}
-
-				Destroy(this.gameObject);
-
+				CreateBuilding();
 			}
-
-
 			ChangeBuildProgess( -Time.deltaTime);
 		}
 		else{
 			if(constructionCountdown > totalConstruction + lightExpireDelay){
-
-
-
-				ResManager.AddLumen(toBuild.gameObject.GetComponent<Buildable>().lumenCost);
-				ResManager.AddEnergy(toBuild.gameObject.GetComponent<Buildable>().energyCost);
-				Destroy(this.gameObject);	
-					
-
+				RefundBuilding();
 			}
-
 			ChangeBuildProgess( Time.deltaTime);
-
-
-
 		}
-
 	}
 
 
@@ -154,6 +120,6 @@ public class IsUnderConstruction : MonoBehaviour {
 
 
 	void OnCollisionEnter(Collision other){
-		if(other.gameObject.tag == "playerBullet") ChangeBuildProgess( -BulletTimeReduction, 10f);
+		if(other.gameObject.tag == "playerBullet") ChangeBuildProgess( -BulletTimeReduction, bulletRotationSpeed);
 	}
 }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Purpose: Class for general helpful functions 
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -53,7 +55,8 @@ public static class Utility{
 
 
 
-
+	//Returns the difference vector with the Y value set as 0
+	//since we only need to use x and z for a top down game.
 	public static Vector3 FindDifNoY( Vector3 origin, Vector3 target){
 		Vector3 dir = target-origin;
 		dir.y = 0;
@@ -61,13 +64,14 @@ public static class Utility{
 	}
 
 
-	//Returns the difference between 2 vectors but ignores the Y value
-	//since we only need to use x and z for a top down.
+	//Returns the direction from origin to target without a Y component
+	//since we only need to use x and z for a top down game.
 	public static Vector3 FindDirNoY(Vector3 origin, Vector3 target){
 		return FindDifNoY(origin, target).normalized;
 	}
 
-
+	//Returns the distance between 2vectors ignoring the y-value
+	//since we only need to use x and z for a top down game.
 	public static float FindDistNoY( Vector3 origin, Vector3 target){
 		return FindDifNoY(origin, target).magnitude;
 	}
@@ -86,7 +90,7 @@ public static class Utility{
 		return false;
 	}
 	
-
+	//*** Can be an expensive function, espeically if no layer mask is specified, use sparingly ***
 	//Returns the clostest GameObject (must have a collider), within radius of the origin, 
 	//   and fulfilling the requirements in Condition
 	//Returns null if no GameObjects are found.

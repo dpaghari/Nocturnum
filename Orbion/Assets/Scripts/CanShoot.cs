@@ -27,7 +27,7 @@ public class CanShoot : MonoBehaviour {
 
 	//used to keep track of our shooting cooldown
 	//protected float firingTimer = 0.0F;
-	protected DumbTimer firingTimer;
+	public DumbTimer firingTimer;
 
 	// Variable bullet spawn height for diff users
 	public Vector3 bulletHeight;
@@ -39,7 +39,7 @@ public class CanShoot : MonoBehaviour {
 
 	//stun timer variables
 	private DumbTimer stunTimer;
-	public float stunInterval;
+	public float stunInterval = 0.1F;
 	private bool stunFinished = false;
 
 
@@ -48,15 +48,14 @@ public class CanShoot : MonoBehaviour {
 	public void SetFiringTimer(float ratio) { firingTimer.SetProgress( ratio);}
 	public void ResetFiringTimer() { firingTimer.Reset(); }
 	public bool FinishCooldown() { return firingTimer.Finished(); }
-	
-	private int counter = 0;
+	public void SetFiringRate( float newFireRate) { firingTimer.MaxTime = newFireRate;}
+
 
 	
 	protected virtual void Start () {
 		//weakenScript = GetComponent<WeakensInLight>();
 		firingTimer = DumbTimer.New( firingRate);
 		firingTimer.SetProgress(1.0f);
-
 	}
 
 
@@ -128,15 +127,11 @@ public class CanShoot : MonoBehaviour {
 		if(stunTimer == null){
 			//stunTimer.Reset();
 			stunTimer = DumbTimer.New( stunInterval);
-			counter++;
-				
-			Debug.Log("STUN!! #" + counter);
+			Debug.Log("STUN!!");
 		} else if(stunFinished){
 			stunTimer.Reset();
 			stunFinished = false;
-			counter++;
-			
-			Debug.Log("STUN!! #" + counter);
+			Debug.Log("STUN!!");
 		}
 		
 		

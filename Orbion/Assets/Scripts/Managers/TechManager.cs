@@ -162,6 +162,8 @@ public class TechManager : Singleton<TechManager> {
 
 	public static void AddNumBuilding( Tech building, int amt){
 		SetNumBuilding(building, GetNumBuilding(building) + amt);
+		if( building == Tech.generator) hasGenerator = true;
+		if( building == Tech.medbay) hasMedbay = true;
 	}
 
 
