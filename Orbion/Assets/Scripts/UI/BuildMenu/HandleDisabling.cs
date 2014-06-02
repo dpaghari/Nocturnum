@@ -39,7 +39,7 @@ public class HandleDisabling : MonoBehaviour
 		if (buildingType != null && TechManager.IsBuilding (name)) {
 						Buildable buildInfo = buildingType.GetComponent<Buildable> ();
 						neededMaxEnergyBuilding = buildInfo.energyCost;
-						neededLumenCost = buildInfo.cost;
+						neededLumenCost = buildInfo.lumenCost;
 				}
 		if (TechManager.IsUpgrade (name)) {
 			neededMaxEnergyUpgrades = TechManager.GetUpgradeEnergyCost (name);

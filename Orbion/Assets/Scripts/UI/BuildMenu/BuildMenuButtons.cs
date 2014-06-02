@@ -48,27 +48,31 @@ public class BuildMenuButtons : MonoBehaviour {
 	}
 
 	public void CallBuildGenerator(){
-		buildScript.ConstructGenerator();
+		buildScript.SetConstruction(buildScript.generatorBuilding);
 	}
 	public void CallBuildBallistics(){
-		buildScript.ConstructBallistics();
+		buildScript.SetConstruction(buildScript.ballisticsBuilding);
 	}
 	public void CallBuildWall(){
-		buildScript.ConstructWall();
+		buildScript.SetConstruction(buildScript.wallBuilding);
 	}
 	public void CallBuildMedBay(){
-		buildScript.ConstructMedBay();
+		buildScript.SetConstruction(buildScript.medBayBuilding);
 	}
 	public void CallBuildIncendiary(){
-		buildScript.ConstructIncendiary();
+		buildScript.SetConstruction(buildScript.incindiaryBuilding);
 	}
 	public void CallBuildSpotlight(){
-		buildScript.ConstructSpotlight();
+		buildScript.SetConstruction(buildScript.turretBuilding);
 	}
 	public void CallBuildTurret(){
-		buildScript.ConstructTurret();
+		buildScript.SetConstruction(buildScript.photonBuilding);
 	}
 	public void CallBuildPhoton(){
-		buildScript.ConstructPhoton();
+		buildScript.SetConstruction(buildScript.spotlightBuilding);
 	}
+
+
+
+
 }

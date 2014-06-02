@@ -1,46 +1,52 @@
-﻿using UnityEngine;
+﻿//Purpose: Adds ammo and reload functionality to CanShoot
+
+using UnityEngine;
 using System.Collections;
 
 public class CanShootReload : CanShoot {
-	// Variables for UI
+	
+	//Max clip size
 	public int clipSize = 30;
+
+	//Current ammo in the clip
 	public int currentAmmo = 30;									
 
 	public float reloadCooldown = 3.0F;
 	public bool reloading = false;
 
-	protected float reloadTime = 0.0F;
+	//protected float reloadTime = 0.0F;
+	protected DumbTimer reloadTimer;
 
 
 	protected override void Start (){
 		base.Start ();
-		reloadTime = reloadCooldown;
+		reloadTimer = DumbTimer.New (reloadCooldown);
 	}
 
-	// Update is called once per frame
+
 	protected override void Update () {
 		//the base classes' update isn't called in a child class
 		base.Update();
 		
 
-		if( FinishReloadCooldown()) {
-			reloadTime = 0;
+		if( reloadTimer.Finished()) {
+			reloadTimer.Reset();
 			currentAmmo = clipSize;
 			reloading = false;
 		}
 
 
 		if( reloading)
-			reloadTime += Time.deltaTime;
+			reloadTimer.Update();
 
 	}
 
 
 
-	//if you try to fire with no ammo and you're not realoding, it will reload for you
+	//Uses ammo per shot and reloads if empty
 	public override void ShootDir (Vector3 dir)
 	{
-		if(FinishCooldown() && !reloading){
+		if(!reloading){
 			if(currentAmmo > 0 ){
 				base.ShootDir(dir);
 				currentAmmo--;
@@ -56,12 +62,13 @@ public class CanShootReload : CanShoot {
 	}
 
 
+	//If you try to fire with no ammo and you're not reloading, it will reload for you
 	public override void Shoot( Vector3 target){
 		if (currentAmmo <= 0)
 			Reload ();
 		else {
 			int adjustedBulletCount = Mathf.Min(numOfBulletShot, currentAmmo);
-			Scattershot( target, adjustedBulletCount);
+			Scattershot( target, adjustedBulletCount, spreadAngle);
 		}
 	}
 
@@ -70,12 +77,9 @@ public class CanShootReload : CanShoot {
 		if (reloading || currentAmmo == clipSize) return;
 
 		reloading = true;
-		reloadTime = 0;
+		reloadTimer.Reset();
 
 	}
 
-	protected bool FinishReloadCooldown(){
-		return reloadTime >= reloadCooldown;
-	}
 
 }

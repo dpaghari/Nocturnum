@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Purpose: Functionality for shooting objects at other objects
+
+using UnityEngine;
 using System.Collections;
 
 public class CanShoot : MonoBehaviour {
@@ -12,20 +14,20 @@ public class CanShoot : MonoBehaviour {
 	//the cooldown in seconds between shots
 	public float firingRate = 1F;
 
+	//the angular spread (deg), if we're shooting more than one bullet
 	public float spreadAngle = 45f;
 
+	//number of bullets per shot
 	public int numOfBulletShot = 1;
 
-	//range of attack
+	//positional offset of attack
 	public float projectileStartPosition = 1.0F;	
 
 	public AudioClip enemyShotSound;
 
 	//used to keep track of our shooting cooldown
-	protected float firingTimer = 0.0F;
-	
-	//holds a reference to the bullet that will be made
-	private Rigidbody clone;
+	//protected float firingTimer = 0.0F;
+	protected DumbTimer firingTimer;
 
 	// Variable bullet spawn height for diff users
 	public Vector3 bulletHeight;
@@ -33,7 +35,7 @@ public class CanShoot : MonoBehaviour {
 	// effect to play when you shoot
 	public GameObject shootEffect;
 
-	public WeakensInLight weakenScript;
+	//public WeakensInLight weakenScript;
 
 	//stun timer variables
 	private DumbTimer stunTimer;
@@ -41,38 +43,24 @@ public class CanShoot : MonoBehaviour {
 	private bool stunFinished = false;
 
 
-
-	//sets the proportion of completion for the firingTimer
-	//e.g. 0.5 = 50% finished with cooldown
-	public void SetFiringTimer(float ratio){
-		firingTimer = firingRate * ratio;
-	}
 	
-	//Sets the FiringTimer to the beginning of the cooldown count
-	public void ResetFiringTimer(){
-		SetFiringTimer(0);
-	}
+	//Public wrappers to simplify external calls
+	public void SetFiringTimer(float ratio) { firingTimer.SetProgress( ratio);}
+	public void ResetFiringTimer() { firingTimer.Reset(); }
+	public bool FinishCooldown() { return firingTimer.Finished(); }
 	
-	//returns if we have elapsed the firing cooldown
-	public bool FinishCooldown(){
-		return firingTimer >= firingRate;
-	}
-
 
 
 	
 	protected virtual void Start () {
-		weakenScript = GetComponent<WeakensInLight>();
-
-		//we want to be able to shoot when created
-		firingTimer = firingRate;
+		//weakenScript = GetComponent<WeakensInLight>();
+		firingTimer = DumbTimer.New( firingRate);
+		firingTimer.SetProgress(1.0f);
 	}
 
 
 	// Update is called once per frame
 	protected virtual void Update () {
-		//adding by Time.deltaTime otherwise our firerate is bullets/frame instead of bullets/second
-		if ( firingTimer <= firingRate) firingTimer += Time.deltaTime;
 
 		if(stunTimer != null && !stunFinished){
 			if(stunTimer.Finished()){
@@ -87,6 +75,8 @@ public class CanShoot : MonoBehaviour {
 				stunTimer.Update();
 			}
 		}
+
+		firingTimer.Update();
 		
 	}
 
@@ -98,7 +88,7 @@ public class CanShoot : MonoBehaviour {
 
 			Vector3 temp = transform.position;
 			temp.y += bulletHeight.y;
-			clone = Instantiate(bullet, temp + dir * projectileStartPosition, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
+			Rigidbody clone = Instantiate(bullet, temp + dir * projectileStartPosition, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
 		
 			if(tag == "Enemy" || tag == "EnemyRanged"){
 				//audio.clip = enemyShotSound;
@@ -123,21 +113,13 @@ public class CanShoot : MonoBehaviour {
 				*/
 
 			}
-			firingTimer = 0.0f;
+			firingTimer.Reset();
 			clone = Instantiate(shootEffect, temp + dir * 2, Quaternion.AngleAxis(-90, Vector3.forward)) as Rigidbody;
 		}
 	}
 
 
-
-	//shoots a bullet from the object's position to the target point: targ
-	/*
-	public virtual void Shoot(Vector3 targ){
-	
-		ShootDir( targ - transform.position );
-	}
-	*/
-
+	//Why is stun code in CanShoot?
 	public virtual void stun(){
 	//stun the player
 		GameManager.KeysEnabled = false;
@@ -155,7 +137,10 @@ public class CanShoot : MonoBehaviour {
 		
 	}
 
-	public virtual void Scattershot( Vector3 target, int numberOfShots){
+
+	//Shoots multiple bullets at position target, evenly split through the spread(deg)
+	//The center of the spread is target
+	public virtual void Scattershot( Vector3 target, int numberOfShots, float spread){
 		if( FinishCooldown()){
 			Vector3 dir = target - transform.position;
 
@@ -164,13 +149,13 @@ public class CanShoot : MonoBehaviour {
 				return;
 			}
 
-			Vector3 leftBound = Quaternion.Euler( 0, -spreadAngle/2, 0) * dir;
-			float bulletGap = spreadAngle / ( numberOfShots - 1);
+			Vector3 leftBound = Quaternion.Euler( 0, -spread/2, 0) * dir;
+			float bulletGap = spread / ( numberOfShots - 1);
 
 			//numberOfShots - 1 makes us shoot from the left side of the spread bound to the right
 			//but if we have a 360deg angle, both bounds of the spread are at the same place,
 			//causing 2 bullets to fire at the same spot
-			if( spreadAngle == 360) bulletGap = spreadAngle / ( numberOfShots);
+			if( spread == 360) bulletGap = spread / ( numberOfShots);
 
 			for ( int i = 0; i < numberOfShots; i++){
 				float angleOffset = i * bulletGap;
@@ -184,11 +169,13 @@ public class CanShoot : MonoBehaviour {
 	}
 
 
+	//default shooting method
 	public virtual void Shoot(Vector3 target){
-		Scattershot (target, numOfBulletShot);
+		Scattershot (target, numOfBulletShot, spreadAngle);
 	}
 
 	
+	//special shooting method for seeking bullets that keep track of a game object
 	public virtual void ShootTarget( GameObject target){
 		Vector3 temp = transform.position;
 		temp.y += bulletHeight.y;
@@ -206,7 +193,7 @@ public class CanShoot : MonoBehaviour {
 		if( shootEffect)
 			Instantiate(shootEffect, temp + dir* 2, Quaternion.AngleAxis(-90, Vector3.forward)) ;
 
-		firingTimer = 0.0f;
+		ResetFiringTimer();
 	}
 
 

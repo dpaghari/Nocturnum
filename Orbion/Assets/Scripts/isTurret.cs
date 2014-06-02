@@ -1,14 +1,21 @@
-﻿using UnityEngine;
+﻿//Purpose: Turret targetting and shooting
+
+using UnityEngine;
 using System.Collections;
 
 public class isTurret : MonoBehaviour {
+
 	
 			
 	public GameObject TurretRing;
-	public CanShoot shootScript;
+
+
 	public Rigidbody target;
 
+	private CanShoot shootScript;
+
 	void Start () {
+		shootScript = GetComponent<CanShoot>();
 		ResManager.AddTurr(1);	
 	}
 			
@@ -22,6 +29,8 @@ public class isTurret : MonoBehaviour {
 
 	}
 
+	//Only switches target if its curret target is out of range / dead
+	//and a new target is withing range
 	void UpdateTarget(Collider potentialTarget) {
 		if( target != null) return;
 
@@ -37,6 +46,8 @@ public class isTurret : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		UpdateTarget( other);	
 	}
+
+	//Removing target when out of range, otherwise it could have infinite range
 	void OnTriggerExit(Collider other){
 		if(other.rigidbody == target) target = null;
 	}
