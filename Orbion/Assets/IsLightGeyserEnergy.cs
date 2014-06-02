@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Purpose:  Script for each LightGeyserEnergy lumen to act like Regular Lumen and move towards the player when they player is within range.
+
+
+using UnityEngine;
 using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class IsLightGeyserEnergy : MonoBehaviour {

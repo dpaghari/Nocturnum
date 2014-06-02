@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Function that checks if objects that are Killable are within the toad explosion's radius.  Pushes back objects that are and deals damage to
+// them.
+
+using UnityEngine;
 using System.Collections;
 
 public class isToadExplosion : MonoBehaviour {

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  In charge of changing the color of the player's light when their health goes below certain thresholds.  
+// Changes When less than 75%, 50%, 30% health
+
+using UnityEngine;
 using System.Collections;
 
 public class HPLight : MonoBehaviour {

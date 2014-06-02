@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// FUNCTION:  PoisonPlant "Projectile" checks if it collides with something with the <Killable> script.  If so deal damage to it.
+using UnityEngine;
 using System.Collections;
 
 public class isPoisonCloud : MonoBehaviour {

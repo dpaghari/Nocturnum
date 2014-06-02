@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//FUNCTION:  Is "projectile" released by the Poison Mushroom Plant.  Is invisible and creates a number of Poison Cloud Objects after a certain delay.
+
+
+using UnityEngine;
 using System.Collections;
 
 public class isPoisonBall : MonoBehaviour {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// Level 2 Mission Functionality, checks if player is within range of the Ship and deposits the full core that the player harvested from Light Geysers.
+using UnityEngine;
 using System.Collections;
 
 public class isLunaShip : MonoBehaviour {
