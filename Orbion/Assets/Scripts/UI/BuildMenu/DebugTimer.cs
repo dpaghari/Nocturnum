@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class DebugTimer : MonoBehaviour {
+	//Timer for debugging purposes.
 	public dfLabel _dfTimer;
 
 	public double gameTimeSec = 0.0;
