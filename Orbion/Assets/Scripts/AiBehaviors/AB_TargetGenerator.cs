@@ -47,7 +47,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 		if(CurrTarget != null && meshScript != null){
 			meshScript.CalculatePath(CurrTarget.position, meshPath);
 			indexCounter = 1;
-			showPinkCubes();
+			//showPinkCubes();
 		}		
 
 	}
@@ -105,7 +105,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 			if(CurrTarget != null && meshScript != null){
 				meshScript.CalculatePath(CurrTarget.position, meshPath);
 				indexCounter = 1;
-				showPinkCubes();
+				//showPinkCubes();
 			}
 			targetCheckCounter = 0.0F;
 		} else {
