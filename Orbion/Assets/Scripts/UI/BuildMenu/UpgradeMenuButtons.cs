@@ -6,9 +6,9 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	//private bool menuUp;
 	public GameObject canResearchRef;
 	public bool researchTimeOn;
-	public dfControl hudProgress;
-	public CanResearch researchScript;
-	public dfSprite _hudIcon;
+	public dfControl hudProgress; //dfControl for the HUD progress.
+	public CanResearch researchScript; //to handle shortcuts.
+	public dfSprite _hudIcon; //Sprite on the HUD.
 
 	public AudioClip buttonSound;
 	// Use this for initialization
@@ -24,6 +24,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		//Shortcuts.
 		if(researchScript.MenuUp){
 			if(Input.GetKeyDown(KeyCode.Alpha1)){
 				CallScattershot();
@@ -51,6 +52,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	}
 
+	//Different call methods for upgrades.
 	public void CallScattershot(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.scatter)){
 			audio.PlayOneShot(buttonSound, 0.2f);
@@ -105,6 +107,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 			canResearchRef.GetComponent<CanResearch>().GetSeeker();
 		}
 	}
+
 	public void CallRicochet(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.ricochet)){
 			audio.PlayOneShot(buttonSound, 0.2f);
@@ -116,15 +119,19 @@ public class UpgradeMenuButtons : MonoBehaviour {
 		}
 	}
 
+	//Code from the example for the radial upgrade time.
+	//Visual to show upgrade time.
 	private IEnumerator showCooldown(float t)
 	{
 		
 		researchTimeOn = true;
 		
 		//var assignedSpell = SpellDefinition.FindByName( this.Spell );
-		
+
+		//Sprite on Upgrade menu
 		var sprite = GetComponent<dfControl>().Find( "Researching" ) as dfSprite;
 		sprite.IsVisible = true;
+		//Sprite on HUD
 		var spriteHUD = hudProgress.Find("Researching") as dfSprite;
 		spriteHUD.IsVisible = true;
 

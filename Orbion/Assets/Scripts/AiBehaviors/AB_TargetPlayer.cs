@@ -57,12 +57,20 @@ public class AB_TargetPlayer : AiBehavior {
 					Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					moveScript.Move(CurrTarget.position - rigidbody.position);
-					
 				} else if(meshPath.corners.Length >= 3){
-					Vector3 lookPosition = new Vector3(meshPath.corners[1].x, transform.position.y, meshPath.corners[1].z);
-					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-					moveScript.Move(meshPath.corners[1] - rigidbody.position);
 					
+					if(distanceToTarget(meshPath.corners[indexCounter]) < 0.5F){
+						indexCounter++;
+					}
+					if(indexCounter < meshPath.corners.Length){
+						Vector3 lookPosition = new Vector3(meshPath.corners[indexCounter].x, transform.position.y, meshPath.corners[1].z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(meshPath.corners[indexCounter] - rigidbody.position);
+					} else {
+						Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(CurrTarget.position - rigidbody.position);
+					}				
 				}
 
 				if(enemyScript.enemyType == EnemyType.luminotoad)
