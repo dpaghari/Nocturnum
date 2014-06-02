@@ -23,6 +23,9 @@ public class CanShootReload : CanShoot {
 		reloadTimer = DumbTimer.New (reloadCooldown);
 	}
 
+	public void SetReloadCooldown( float newCooldown){
+		reloadTimer.MaxTime = newCooldown;
+	}
 
 	protected override void Update () {
 		//the base classes' update isn't called in a child class

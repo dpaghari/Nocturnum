@@ -11,7 +11,7 @@ using System.Collections;
 public class DumbTimer : ScriptableObject {
 
 	//The time to count down from or count up to
-	public float MaxTime { get; protected set; }
+	public float MaxTime { get; set; }
 
 	public float CurrTime { get; set; }
 

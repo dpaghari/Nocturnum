@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Purpose: Creatures the GUI notifcation and handles its positioning + drawing
+
+using UnityEngine;
 using System.Collections;
 /*
 TODO: 
@@ -9,25 +11,41 @@ Make a delayed death and have it turn invisible
 
 public class NotificationArrow : MonoBehaviour {
 
+	//The sprite for the arrow
 	public Texture2D arrowTexture;
+
+	//Draw size of the sprite
 	public Vector2 size = new Vector2(64, 64);
-	public Vector2 pos = new Vector2(0, 0);
-	public float rotationOffset = 0; //if the base image is not pointing to the right
+
+	//Set if the base image is not pointing to the right
+	public float rotationOffset = 0;
+
+	//The lifetime(sec) of the notifcation
 	public float duration = 1f;
+
+	//Sets the  visible area of the screen that the notification will show up
 	public float visibleMarginRatio = 1; //should at least be 1
 
 	//World Range that prevents this object from instantiating if it is too close to another arrow
 	//public float duplicateRange;
 
+	//Position of the arrow on screen
+	private Vector2 pos = new Vector2(0, 0);
 
+	//Raw screen position of the arrow, translated from 3d space
 	private Vector2 posNoClamp = Vector2.zero;
+
+	//Used to draw the sprite with unity API
 	private Rect drawRect = new Rect(0, 0, 0, 0);
+
+	//Center of the sprite, set in UpdateArrowTransform
 	private Vector2 posOffset = Vector2.zero;
+
 	private DumbTimer durationTimer;
 
 
 
-
+	//Determines if the notification should be drawn on the screen
 	//Uses values that UpdateArrowTransform updates, should run after it
 	public bool ShouldDraw(){
 		//If it clamped, then it was forced to the edge and we should draw it
@@ -39,14 +57,9 @@ public class NotificationArrow : MonoBehaviour {
 
 		return !undrawableMargin.Overlaps( drawRect);
 	}
-/*
-	//Prevents the arrow from being drawn outside of the screen
-	void ClampPosToScreen() {
-		pos.x = Mathf.Clamp( posNoClamp.x, posOffset.x, Camera.main.pixelWidth - posOffset.x);
-		pos.y = Mathf.Clamp( posNoClamp.y, posOffset.y, Camera.main.pixelHeight - posOffset.y);
 
-	}
-*/
+
+	//Calculate which direction the arrow should point towards
 	float FindRotation() {
 		Vector2 arrowDir;
 
@@ -63,6 +76,7 @@ public class NotificationArrow : MonoBehaviour {
 	}
 
 
+	//Makes out of screen notifcations clamp to the edge of it
 	Vector2 ClampToScreen(){
 		//WorldToScreenPoint's gives a y is in the opposite direction that the draw expects
 		Vector2 screenDrawPos =  Camera.main.WorldToScreenPoint( transform.position);
@@ -91,7 +105,7 @@ public class NotificationArrow : MonoBehaviour {
 	}
 
 
-	//updates the transformation of the arrow
+	//Updates the transformation of the arrow
 	void UpdateArrowTransform() {
 		posOffset.x = size.x / 2;
 		posOffset.y = size.y / 2;
@@ -106,17 +120,17 @@ public class NotificationArrow : MonoBehaviour {
 	}
 
 
-	// Use this for initialization
 	void Start () {
 		durationTimer = DumbTimer.New(duration);
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		if( durationTimer.Finished()) GameObject.Destroy(gameObject);
 
 		durationTimer.Update();
 	}
+
 
 	void OnGUI() {
 		UpdateArrowTransform();

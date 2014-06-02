@@ -27,7 +27,7 @@ public class CanShoot : MonoBehaviour {
 
 	//used to keep track of our shooting cooldown
 	//protected float firingTimer = 0.0F;
-	protected DumbTimer firingTimer;
+	public DumbTimer firingTimer;
 
 	// Variable bullet spawn height for diff users
 	public Vector3 bulletHeight;
@@ -48,7 +48,7 @@ public class CanShoot : MonoBehaviour {
 	public void SetFiringTimer(float ratio) { firingTimer.SetProgress( ratio);}
 	public void ResetFiringTimer() { firingTimer.Reset(); }
 	public bool FinishCooldown() { return firingTimer.Finished(); }
-	
+	public void SetFiringRate( float newFireRate) { firingTimer.MaxTime = newFireRate;}
 
 
 	
