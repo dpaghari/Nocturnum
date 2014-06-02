@@ -1440,7 +1440,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 26707046}
   stunInterval: .100000001
 --- !u!114 &26707048
 MonoBehaviour:
@@ -2683,7 +2682,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 60854820}
   stunInterval: .100000001
 --- !u!114 &60854822
 MonoBehaviour:
@@ -3662,7 +3660,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 71705092}
   stunInterval: .100000001
 --- !u!114 &71705094
 MonoBehaviour:
@@ -9075,7 +9072,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &209060151
 MonoBehaviour:
@@ -10877,7 +10873,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 263761434}
   stunInterval: .100000001
 --- !u!114 &263761436
 MonoBehaviour:
@@ -11995,6 +11990,7 @@ GameObject:
   - 65: {fileID: 293133323}
   - 114: {fileID: 293133326}
   - 114: {fileID: 293133325}
+  - 82: {fileID: 293133327}
   m_Layer: 17
   m_Name: Button_Ballistics
   m_TagString: Untagged
@@ -12142,6 +12138,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
 --- !u!114 &293133326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12160,6 +12157,64 @@ MonoBehaviour:
   DataTarget:
     Component: {fileID: 293133325}
     MemberName: CallBuildBallistics
+--- !u!82 &293133327
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 293133321}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &293611401
 GameObject:
   m_ObjectHideFlags: 0
@@ -12889,6 +12944,7 @@ GameObject:
   - 65: {fileID: 318833557}
   - 114: {fileID: 318833556}
   - 114: {fileID: 318833555}
+  - 82: {fileID: 318833559}
   m_Layer: 17
   m_Name: Button_Spotlight
   m_TagString: Untagged
@@ -12926,6 +12982,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
 --- !u!114 &318833556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13054,6 +13111,64 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!82 &318833559
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318833553}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &319888558
 GameObject:
   m_ObjectHideFlags: 0
@@ -14858,7 +14973,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 360092238}
   stunInterval: .100000001
 --- !u!114 &360092240
 MonoBehaviour:
@@ -17202,7 +17316,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 391874196}
   stunInterval: .100000001
 --- !u!114 &391874198
 MonoBehaviour:
@@ -23834,6 +23947,7 @@ MonoBehaviour:
   hudProgress: {fileID: 1284543446}
   researchScript: {fileID: 0}
   _hudIcon: {fileID: 1284543446}
+  buttonSound: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
 --- !u!114 &573074965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25429,7 +25543,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 609703993}
   stunInterval: .100000001
 --- !u!114 &609703995
 MonoBehaviour:
@@ -27304,7 +27417,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 648490375}
   stunInterval: .100000001
 --- !u!114 &648490377
 MonoBehaviour:
@@ -28696,7 +28808,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 1
   clipSize: 25
   currentAmmo: 25
@@ -28714,13 +28825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e447f4afbcca314795410d6872ec953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
-  button_clipSize: {fileID: 2800000, guid: bfbceae9c8d62dd48a6dc1f423c167a8, type: 3}
-  button_lightGrenade: {fileID: 2800000, guid: a9c14c5f89710c749a1a3aac0b4b0d90, type: 3}
-  button_scatterShot: {fileID: 2800000, guid: f4ea26635c32cf94b88583bf89684eab, type: 3}
-  button_seekerShot: {fileID: 2800000, guid: 0ed0a8dd93e052f4798d9d7571856843, type: 3}
-  button_ricochetShot: {fileID: 2800000, guid: 2e3d396a839fed441b68e5933fb67a51, type: 3}
-  button_lightFist: {fileID: 2800000, guid: 001d1524b9b52424c809928bcc7ba368, type: 3}
   errBuild: {fileID: 8300000, guid: 19965041cf999894589a7d3709e5768b, type: 3}
   _upgradeWheelPanel: {fileID: 777941628}
 --- !u!114 &680245872
@@ -28752,7 +28856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b72249153613934ab5e17905b67cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildMenuPanel: {fileID: 506195752}
   generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
   ballisticsBuilding: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
   underConstructionBuilding: {fileID: 5400000, guid: 2ac5e63ddc7dddd4980ad9af353ffff8,
@@ -28765,17 +28868,7 @@ MonoBehaviour:
   spotlightBuilding: {fileID: 5400000, guid: b1ea8356d7acaf849929962787c373d1, type: 2}
   initBuild: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
   errBuild: {fileID: 8300000, guid: 19965041cf999894589a7d3709e5768b, type: 3}
-  buildWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
-  button_incendiary: {fileID: 2800000, guid: 39578d898366e8e4cbecce0ff7c6f67d, type: 3}
-  button_wall: {fileID: 2800000, guid: 1b1cdd26f177a9d438e19f345d5bc105, type: 3}
-  button_generator: {fileID: 2800000, guid: c8ba5c492e2f43c459ec7ac5db8081dd, type: 3}
-  button_ballistics: {fileID: 2800000, guid: 587628a34fb4f284e812bd1cc4d8be42, type: 3}
-  button_medbay: {fileID: 2800000, guid: 368bd042d8e1c8d4e81bc599763605cd, type: 3}
-  button_turret: {fileID: 2800000, guid: 98cf072b762e6454ea7ecf607ba7bad4, type: 3}
-  button_photon: {fileID: 2800000, guid: f268aeb61a1ef7e4d894102b5dc657d9, type: 3}
-  button_spotlight: {fileID: 2800000, guid: 6d96b721dfe534e4cbdfc21b33154f78, type: 3}
-  builtBallistics: 0
-  builtGenerator: 0
+  _buildMenuPanel: {fileID: 506195752}
 --- !u!114 &680245874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34961,7 +35054,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 801070010}
   stunInterval: .100000001
 --- !u!114 &801070012
 MonoBehaviour:
@@ -38768,7 +38860,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 868769394}
   stunInterval: .100000001
 --- !u!114 &868769396
 MonoBehaviour:
@@ -39386,7 +39477,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &873574026
 MonoBehaviour:
@@ -39717,7 +39807,7 @@ GameObject:
   - 65: {fileID: 877740566}
   - 114: {fileID: 877740565}
   - 114: {fileID: 877740564}
-  - 114: {fileID: 877740568}
+  - 82: {fileID: 877740568}
   m_Layer: 17
   m_Name: Button_Generator
   m_TagString: Untagged
@@ -39755,6 +39845,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
 --- !u!114 &877740565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39883,21 +39974,64 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
---- !u!114 &877740568
-MonoBehaviour:
+--- !u!82 &877740568
+AudioSource:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400194, guid: 0c2b6a79aa9131446ab4cbf675fc12be,
-    type: 2}
-  m_PrefabInternal: {fileID: 1529374772}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 877740562}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fbab9e20039e43aacbd93e0ba3a2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBuildRef: {fileID: 0}
-  buildScript: {fileID: 0}
-  researchScript: {fileID: 0}
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &878473522
 GameObject:
   m_ObjectHideFlags: 0
@@ -40720,7 +40854,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 886464201}
   stunInterval: .100000001
 --- !u!114 &886464203
 MonoBehaviour:
@@ -41849,7 +41982,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &907845402
 MonoBehaviour:
@@ -42212,7 +42344,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 919076787}
   stunInterval: .100000001
 --- !u!114 &919076789
 MonoBehaviour:
@@ -44550,7 +44681,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 965113175}
   stunInterval: .100000001
 --- !u!114 &965113177
 MonoBehaviour:
@@ -46173,7 +46303,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &997800415
 MonoBehaviour:
@@ -47676,7 +47805,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1029873050}
   stunInterval: .100000001
 --- !u!114 &1029873052
 MonoBehaviour:
@@ -49013,7 +49141,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1065680392}
   stunInterval: .100000001
 --- !u!114 &1065680394
 MonoBehaviour:
@@ -52685,7 +52812,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &1155114902
 MonoBehaviour:
@@ -52893,6 +53019,7 @@ GameObject:
   - 65: {fileID: 1159756666}
   - 114: {fileID: 1159756665}
   - 114: {fileID: 1159756664}
+  - 82: {fileID: 1159756668}
   m_Layer: 17
   m_Name: Button_Wall
   m_TagString: Untagged
@@ -52930,6 +53057,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
 --- !u!114 &1159756665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53058,6 +53186,64 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!82 &1159756668
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159756662}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1160498818
 GameObject:
   m_ObjectHideFlags: 0
@@ -55363,7 +55549,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1203068927}
   stunInterval: .100000001
 --- !u!114 &1203068929
 MonoBehaviour:
@@ -60672,6 +60857,7 @@ GameObject:
   - 65: {fileID: 1333784481}
   - 114: {fileID: 1333784480}
   - 114: {fileID: 1333784479}
+  - 82: {fileID: 1333784483}
   m_Layer: 17
   m_Name: Button_Photon
   m_TagString: Untagged
@@ -60709,6 +60895,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
 --- !u!114 &1333784480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60837,6 +61024,64 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!82 &1333784483
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1333784477}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1335317975
 GameObject:
   m_ObjectHideFlags: 0
@@ -62192,7 +62437,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &1363413208
 MonoBehaviour:
@@ -62802,7 +63046,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1374364433}
   stunInterval: .100000001
 --- !u!114 &1374364435
 MonoBehaviour:
@@ -64146,7 +64389,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1399409635}
   stunInterval: .100000001
 --- !u!114 &1399409637
 MonoBehaviour:
@@ -64653,7 +64895,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1405859914}
   stunInterval: .100000001
 --- !u!114 &1405859916
 MonoBehaviour:
@@ -67165,7 +67406,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &1462551093
 MonoBehaviour:
@@ -67463,18 +67703,18 @@ Transform:
   m_LocalPosition: {x: 78.3353882, y: 112.862488, z: 10.5700378}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1440305469}
   - {fileID: 193462468}
+  - {fileID: 2034462540}
+  - {fileID: 1422345615}
+  - {fileID: 1848087739}
+  - {fileID: 932322275}
+  - {fileID: 1237824095}
+  - {fileID: 1257815610}
+  - {fileID: 1984377247}
+  - {fileID: 305479385}
   - {fileID: 80856504}
   - {fileID: 1506117878}
-  - {fileID: 1984377247}
-  - {fileID: 1848087739}
-  - {fileID: 1237824095}
-  - {fileID: 1440305469}
-  - {fileID: 1422345615}
-  - {fileID: 2034462540}
-  - {fileID: 932322275}
-  - {fileID: 1257815610}
-  - {fileID: 305479385}
   m_Father: {fileID: 0}
 --- !u!1 &1473759035
 GameObject:
@@ -70306,7 +70546,64 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -.260421753
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400044, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
+    - target: {fileID: 11400188, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
+    - target: {fileID: 11400462, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
+    - target: {fileID: 11400424, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
+    - target: {fileID: 11400294, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
+    - target: {fileID: 11400050, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
+    - target: {fileID: 11400362, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
+    - target: {fileID: 11400250, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
+    - target: {fileID: 11400414, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
+    - target: {fileID: 11400340, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
+    - target: {fileID: 11400354, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
+    - target: {fileID: 11400456, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
+    - target: {fileID: 11400438, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
+    - target: {fileID: 11400120, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
+    m_RemovedComponents:
+    - {fileID: 11400194, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
   m_RootGameObject: {fileID: 475972223}
   m_IsPrefabParent: 0
@@ -70835,6 +71132,7 @@ MonoBehaviour:
   hudProgress: {fileID: 2036313725}
   researchScript: {fileID: 0}
   _hudIcon: {fileID: 2036313725}
+  buttonSound: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
 --- !u!114 &1550414244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72116,7 +72414,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1574634215}
   stunInterval: .100000001
 --- !u!114 &1574634217
 MonoBehaviour:
@@ -72506,7 +72803,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &1581310895
 MonoBehaviour:
@@ -73512,6 +73808,7 @@ MonoBehaviour:
   hudProgress: {fileID: 499616969}
   researchScript: {fileID: 0}
   _hudIcon: {fileID: 499616969}
+  buttonSound: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
 --- !u!114 &1603750218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74791,7 +75088,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 1634486186}
   stunInterval: .100000001
 --- !u!114 &1634486188
 MonoBehaviour:
@@ -75008,6 +75304,7 @@ GameObject:
   - 65: {fileID: 1637494074}
   - 114: {fileID: 1637494073}
   - 114: {fileID: 1637494072}
+  - 82: {fileID: 1637494076}
   m_Layer: 17
   m_Name: Button_Turret
   m_TagString: Untagged
@@ -75045,6 +75342,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
 --- !u!114 &1637494073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75173,6 +75471,64 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!82 &1637494076
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637494070}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1637974228
 GameObject:
   m_ObjectHideFlags: 0
@@ -90170,6 +90526,7 @@ MonoBehaviour:
   hudProgress: {fileID: 1553142799}
   researchScript: {fileID: 0}
   _hudIcon: {fileID: 1553142799}
+  buttonSound: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
 --- !u!114 &1932357937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92252,6 +92609,7 @@ GameObject:
   - 65: {fileID: 1950868030}
   - 114: {fileID: 1950868029}
   - 114: {fileID: 1950868028}
+  - 82: {fileID: 1950868032}
   m_Layer: 17
   m_Name: Button_MedBay
   m_TagString: Untagged
@@ -92289,6 +92647,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
 --- !u!114 &1950868029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92417,6 +92776,64 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!82 &1950868032
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1950868026}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1951653731
 GameObject:
   m_ObjectHideFlags: 0
@@ -93450,6 +93867,7 @@ MonoBehaviour:
   hudProgress: {fileID: 2042322757}
   researchScript: {fileID: 0}
   _hudIcon: {fileID: 2042322757}
+  buttonSound: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
 --- !u!114 &1979354467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97288,6 +97706,7 @@ MonoBehaviour:
   hudProgress: {fileID: 2098402023}
   researchScript: {fileID: 0}
   _hudIcon: {fileID: 2098402023}
+  buttonSound: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
 --- !u!114 &2068820949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97454,6 +97873,7 @@ GameObject:
   - 65: {fileID: 2072568061}
   - 114: {fileID: 2072568060}
   - 114: {fileID: 2072568059}
+  - 82: {fileID: 2072568063}
   m_Layer: 17
   m_Name: Button_Incendiary
   m_TagString: Untagged
@@ -97491,6 +97911,7 @@ MonoBehaviour:
   canBuildRef: {fileID: 0}
   buildScript: {fileID: 0}
   researchScript: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 0f4f475e86361ae4e82adfdc7879463a, type: 3}
 --- !u!114 &2072568060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97619,6 +98040,64 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 1
   clickWhenSpacePressed: 1
+--- !u!82 &2072568063
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2072568057}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &2073709282
 GameObject:
   m_ObjectHideFlags: 0
@@ -98682,7 +99161,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 5
 --- !u!114 &2097507386
 MonoBehaviour:
@@ -100349,7 +100827,6 @@ MonoBehaviour:
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 2121416163}
   stunInterval: .100000001
 --- !u!114 &2121416165
 MonoBehaviour:

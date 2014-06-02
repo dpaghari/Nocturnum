@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400004}
   m_Layer: 12
   m_Name: PhotonArsenal
   m_TagString: WeaponLab
@@ -79,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.048665, y: 0, z: 0}
+  m_LocalPosition: {x: 35.373661, y: 1.1848617e-14, z: -128.859741}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -131,7 +132,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 31d704ecf09c2e442af43127b98ecf18, type: 2}
+  - {fileID: 2100000, guid: 7dca5dff796eb47908302d505dcb19b0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -152,7 +153,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 31d704ecf09c2e442af43127b98ecf18, type: 2}
+  - {fileID: 2100000, guid: 38a7e6e59d558904fb91bf6291309760, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1ad36c00ea69845b39339a0ea06ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lumenCost: 35
+  lumenCost: 0
   energyCost: 35
   buildTime: 60
   TechType: 8
@@ -339,6 +340,18 @@ MonoBehaviour:
   healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
   timerScript: {fileID: 0}
   toadExplosion: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3be78f284f935047a327b1e1bb256ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonGrid: {fileID: 100004}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

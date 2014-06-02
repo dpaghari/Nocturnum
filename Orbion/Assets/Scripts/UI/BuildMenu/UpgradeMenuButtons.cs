@@ -9,6 +9,8 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public dfControl hudProgress;
 	public CanResearch researchScript;
 	public dfSprite _hudIcon;
+
+	public AudioClip buttonSound;
 	// Use this for initialization
 	void Start () {
 		//menuUp = false;
@@ -26,26 +28,32 @@ public class UpgradeMenuButtons : MonoBehaviour {
 			if(Input.GetKeyDown(KeyCode.Alpha1)){
 				CallScattershot();
 			}
-			else if(Input.GetKeyDown(KeyCode.Alpha2))
+			else if(Input.GetKeyDown(KeyCode.Alpha2)){
 				CallClipSize();
+			}
 			
-			else if(Input.GetKeyDown(KeyCode.Alpha3))
+			else if(Input.GetKeyDown(KeyCode.Alpha3)){
 				CallLightFist();
+			}
 
-			else if(Input.GetKeyDown(KeyCode.Alpha4))
+			else if(Input.GetKeyDown(KeyCode.Alpha4)){
 				CallLightGrenade();
+			}
 			
-			else if(Input.GetKeyDown(KeyCode.Alpha5))
+			else if(Input.GetKeyDown(KeyCode.Alpha5)){
 				CallSeeker ();
+			}
 			
-			else if(Input.GetKeyDown(KeyCode.Alpha6))
+			else if(Input.GetKeyDown(KeyCode.Alpha6)){
 				CallRicochet();
+			}
 		}
 
 	}
 
 	public void CallScattershot(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.scatter)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.scatter)) );
@@ -56,6 +64,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallClipSize(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.clipSize)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetClipSize();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.clipSize)) );
@@ -66,6 +75,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallLightFist(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightFist)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetLightFist();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightFist)) );
@@ -76,6 +86,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallLightGrenade(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightGrenade)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetLightGrenade();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightGrenade)) );
@@ -86,6 +97,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public void CallSeeker(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.seeker)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetSeeker();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.seeker)) );
@@ -95,6 +107,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	}
 	public void CallRicochet(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.ricochet)){
+			audio.PlayOneShot(buttonSound, 0.2f);
 			canResearchRef.GetComponent<CanResearch>().GetRicochet();
 			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.ricochet)) );

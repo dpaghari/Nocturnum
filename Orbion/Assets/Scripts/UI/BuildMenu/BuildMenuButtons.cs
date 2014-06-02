@@ -8,6 +8,8 @@ public class BuildMenuButtons : MonoBehaviour {
 	public CanBuild buildScript;
 	public CanResearch researchScript;
 
+	public AudioClip buttonSound;
+
 	// Use this for initialization
 	void Start () {
 		buildScript = GameManager.AvatarContr.GetComponent<CanBuild>();
@@ -48,27 +50,35 @@ public class BuildMenuButtons : MonoBehaviour {
 	}
 
 	public void CallBuildGenerator(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.generatorBuilding);
 	}
 	public void CallBuildBallistics(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.ballisticsBuilding);
 	}
 	public void CallBuildWall(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.wallBuilding);
 	}
 	public void CallBuildMedBay(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.medBayBuilding);
 	}
 	public void CallBuildIncendiary(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.incindiaryBuilding);
 	}
 	public void CallBuildSpotlight(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.turretBuilding);
 	}
 	public void CallBuildTurret(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.photonBuilding);
 	}
 	public void CallBuildPhoton(){
+		audio.PlayOneShot(buttonSound, 0.2f);
 		buildScript.SetConstruction(buildScript.spotlightBuilding);
 	}
 

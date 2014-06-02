@@ -48,18 +48,21 @@ public class FlowerAnimation : MonoBehaviour {
 				//other.transform.position = transform.position;
 				GameManager.KeysEnabled = false;
 				animation.Play("RaflessiaClose");
+				other.animation.Play("Idle");
 				isHolding = true;
 			}
 			if(other.GetComponent<IsEnemy>() != null && isHolding == false){
 				//other.transform.position = transform.position;
 				other.GetComponent<CanMove>().MoveScale -= 1;
+				other.animation.Play("Idle");
 				animation.Play("RaflessiaClose");
 				isHolding = true;
 
 			}
 			if(isHolding){
-
+				if(other.GetComponent<IsEnemy>() != null || other.tag == "Player"){
 				other.transform.position = transform.position;
+				}
 			}
 
 			if(timerScript.Finished() == true){

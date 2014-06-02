@@ -175,7 +175,7 @@ public class AvatarController : MonoBehaviour {
 		}
 
 		if(TechManager.missionComplete){
-			audio.PlayOneShot(missioncompleteSound, 0.3f);					// play Mission Complete sound
+			audio.PlayOneShot(missioncompleteSound, 0.2f);					// play Mission Complete sound
 		}
 
 		if(GameManager.KeysEnabled){
