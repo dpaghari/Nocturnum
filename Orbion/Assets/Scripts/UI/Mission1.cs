@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Handles the checking of Mission Objectives from Tech Manager and reflects that on the User Interface.  
+// Mission 1:  Tutorial part two, walks player through standard core loop of the game of building a base and getting upgrades.  
+using UnityEngine;
 using System.Collections;
 
 public class Mission1 : MonoBehaviour {

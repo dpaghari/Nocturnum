@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Mission 2 encourages the player to explore more by checking how many Light Geysers they have extracted energy from and power up the ship's core.
+// Checks for Using Light Fist on enemies 3 times(teaching player to use equipment), teaches players pressing E is Use and upon using the Light Geyser completing the quest.
+
+using UnityEngine;
 using System.Collections;
 
 public class Mission2 : MonoBehaviour {

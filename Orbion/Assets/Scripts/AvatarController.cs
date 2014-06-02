@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Player Character Script.  In charge of Player Character Movement, Shooting, Dashing, Pause, Quit, Restart Level.  
+// Also in charge of using Equipment Behaviors(Active Abilities) using Right Mouse Button.
+
+
+using UnityEngine;
 using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class AvatarController : MonoBehaviour {

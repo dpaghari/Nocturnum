@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿// PURPOSE:  Keeps track of Tech functions.  Also in charge of keeping track of completion of Mission Objectives and moving on to the next level.  
+
+
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

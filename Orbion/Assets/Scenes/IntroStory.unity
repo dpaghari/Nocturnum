@@ -1194,8 +1194,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1360,7 +1359,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948452798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.880208373, y: .34375, z: 0}
+  m_LocalPosition: {x: .579999983, y: -.0598320961, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1101379557}
@@ -1374,8 +1373,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.76302087, y: .6875, z: .00100000005}
-  m_Center: {x: .881510437, y: -.34375, z: 0}
+  m_Size: {x: 1.76302087, y: .687500119, z: .00100000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1948452801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,12 +1386,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e3359ffaefe124a992e17c8830875c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchorStyle: 192
+  anchorStyle: 271
   isEnabled: 1
   isVisible: 1
   isInteractive: 0
   tooltip: 
-  pivot: 0
+  pivot: 4
   zindex: -1
   color:
     serializedVersion: 2
@@ -1400,7 +1399,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 677, y: 264}
+  size: {x: 677, y: 264.000031}
   minSize: {x: 0, y: 0}
   maxSize: {x: 840, y: 417}
   clipChildren: 0
@@ -1408,12 +1407,12 @@ MonoBehaviour:
   canFocus: 0
   autoFocus: 0
   layout:
-    anchorStyle: 192
+    anchorStyle: 271
     margins:
-      left: 174
-      top: 252
-      right: 173
-      bottom: 252
+      left: .38671875
+      top: .358072907
+      right: 1.04785156
+      bottom: .701822937
     owner: {fileID: 1948452801}
   renderOrder: 1
   isLocalized: 1
@@ -1427,11 +1426,7 @@ MonoBehaviour:
   autoSize: 0
   autoHeight: 0
   wordWrap: 0
-  text: "Earth has become too overpopulated that world leaders\nhave decided to look
-    at alternative living in space. \nBecause of how lucrative real estate has become\ndue
-    to the high demand of land and the limited availability,\ncorporations from around
-    the world race to find habitable\nplanets for mankind,\nwith sole ownership of
-    a planet going to whichever \ncorporation finds and terraforms it first. "
+  text: 
   bottomColor:
     serializedVersion: 2
     rgba: 4294967295
