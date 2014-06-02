@@ -4,7 +4,7 @@ using System.Collections;
 public class isTurret : MonoBehaviour {
 	
 			
-
+	public GameObject TurretRing;
 	public CanShoot shootScript;
 	public Rigidbody target;
 
@@ -16,6 +16,10 @@ public class isTurret : MonoBehaviour {
 	void Update () {
 		if(target != null && shootScript.FinishCooldown() )
 			shootScript.ShootTarget(target.gameObject);
+	}
+	void FixedUpdate(){
+		TurretRing.transform.Rotate(new Vector3(0, 0, 1));
+
 	}
 
 	void UpdateTarget(Collider potentialTarget) {

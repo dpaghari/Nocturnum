@@ -375,7 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5400000, guid: c487befd69637a040973b932898f73d5, type: 2}
   bullet_speed: 300
-  firingRate: .400000006
+  firingRate: .699999988
   spreadAngle: 45
   numOfBulletShot: 1
   projectileStartPosition: 1
@@ -383,6 +383,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 5, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: .100000001
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dabb999fadd35e49804d6fb42968456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurretRing: {fileID: 100002}
   shootScript: {fileID: 11400000}
   target: {fileID: 0}
 --- !u!114 &11400004
@@ -412,6 +414,7 @@ MonoBehaviour:
   buildTime: 30
   TechType: 11
   hologram: {fileID: 100056, guid: b7665e22ac7e90a408b7a4a13cea22fd, type: 2}
+  requiresLight: 1
   contactRadius: 3
 --- !u!114 &11400006
 MonoBehaviour:
@@ -424,8 +427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 500
-  baseHP: 500
+  currHP: 200
+  baseHP: 200
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
