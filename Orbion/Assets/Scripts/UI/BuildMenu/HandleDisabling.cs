@@ -36,6 +36,11 @@ public class HandleDisabling : MonoBehaviour
 				neededLumenCost = 0.0f;
 		neededMaxEnergyUpgrades = 0.0f;
 		neededLumenCostUpgrade = 0.0f;
+
+		//Checks if it's a building or an upgrade button (that way we
+		//only have one script for handling the disabling of both).
+		//Grab the necessary information after determining if it's a
+		//building or an upgrade.
 		if (buildingType != null && TechManager.IsBuilding (name)) {
 						Buildable buildInfo = buildingType.GetComponent<Buildable> ();
 						neededMaxEnergyBuilding = buildInfo.energyCost;
@@ -52,6 +57,8 @@ public class HandleDisabling : MonoBehaviour
 // Update is called once per frame
 		void Update ()
 		{
+		//Continuously check if the prerequisites are met for the
+		//building/upgrade, and alter the button states as needed.
 				if (!TechManager.IsTechAvaliable (name)) {
 						preReqsNotMet.IsVisible = true;
 						buttonDisabled.Disable ();
@@ -64,6 +71,7 @@ public class HandleDisabling : MonoBehaviour
 
 		}
 
+		//Handles what text appears if a button is disabled.
 		if (ResManager.Lumen < neededLumenCost || ResManager.Lumen < neededLumenCostUpgrade) {
 								notEnoughLumen.IsVisible = true;
 								buttonDisabled.Disable ();
