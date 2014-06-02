@@ -14,18 +14,32 @@ public class LunaAnimation : MonoBehaviour {
 	}
 	
 	bool MoveKeyDown(){
-		//if(!GetComponent<AvatarController>().isPaused)
+
 		return Input.GetKeyDown( KeyCode.W) || Input.GetKeyDown( KeyCode.S) || Input.GetKeyDown( KeyCode.A) || Input.GetKeyDown( KeyCode.D);
 	}
 
 	bool MoveKeyUp(){
-		//if(!GetComponent<AvatarController>().isPaused)
+
 		return Input.GetKeyUp( KeyCode.W) || Input.GetKeyUp( KeyCode.S) || Input.GetKeyUp( KeyCode.A) || Input.GetKeyUp( KeyCode.D);
 	}
 
 	bool MoveKeyStay(){
-		//if(!GetComponent<AvatarController>().isPaused)
+
 		return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||  Input.GetKey(KeyCode.S) ||  Input.GetKey(KeyCode.D);
+	}
+
+	IEnumerator WaitAndIdle(float waitTime){
+		yield return new WaitForSeconds(waitTime); 
+		animation.CrossFade("Idle");
+		
+
+	}
+
+	IEnumerator WaitAndRun(float waitTime){
+		yield return new WaitForSeconds(waitTime); 
+		animation.CrossFade("Run");
+
+
 	}
 
 	// Update is called once per frame
@@ -37,33 +51,40 @@ public class LunaAnimation : MonoBehaviour {
 			if ( MoveKeyDown() || MoveKeyUp() || Input.GetMouseButton(0) || Input.GetMouseButtonUp(0)){
 			Vector3 newRotation = Vector3.zero;
 
-			if (Input.GetKey(KeyCode.W)){
-				if(!GetComponent<AvatarController>().isPaused)
-				newRotation += Vector3.forward;
+			if(!GameManager.AvatarContr.isPaused){
+
+				if (Input.GetKey(KeyCode.W)){
+					
+						if(!GameManager.AvatarContr.isDashing)
+						newRotation += Vector3.forward;
+					
+
+				}
+				if (Input.GetKey(KeyCode.S)){
+					
+						if(!GameManager.AvatarContr.isDashing)
+						newRotation += Vector3.back;
+					
+
+
+				}
 				
-					//animation.CrossFade("Run");
-			}
-			if (Input.GetKey(KeyCode.S)){
-				if(!GetComponent<AvatarController>().isPaused)
-				newRotation += Vector3.back;
-				
-					//animation.CrossFade("Run");
+				if (Input.GetKey(KeyCode.A)){
+					
+						if(!GameManager.AvatarContr.isDashing)
+						newRotation += Vector3.left;
 
-			}
-			
-			if (Input.GetKey(KeyCode.A)){
-				if(!GetComponent<AvatarController>().isPaused)
-				newRotation += Vector3.left;
 
-					//animation.CrossFade("Run");
 
-			}
-			if (Input.GetKey(KeyCode.D)){
-				if(!GetComponent<AvatarController>().isPaused)
-				newRotation += Vector3.right;
+				}
+				if (Input.GetKey(KeyCode.D)){
+					
+						if(!GameManager.AvatarContr.isDashing)
+						newRotation += Vector3.right;
 
-					//animation.CrossFade("Run");
 
+
+				}
 			}
 
 			if (Input.GetMouseButton(0)){
@@ -77,16 +98,45 @@ public class LunaAnimation : MonoBehaviour {
 			}
 
 
-			if (MoveKeyStay()) animation.CrossFade("Run");
+			if (MoveKeyStay()){
+					if(animation.IsPlaying("Dash")){
 
+						StartCoroutine(WaitAndRun(animation["Dash"].length)); 
+						GameManager.KeysEnabled = true;
+
+						//animation.CrossFade("Run");
+					}
+					else if(animation.IsPlaying("ShootRun")){
+						StartCoroutine(WaitAndRun(animation["ShootRun"].length));
+						//animation.CrossFade("Run");
+					}
+					else
+						animation.CrossFade("Run");
+
+			}
+
+			if(MoveKeyStay() && Input.GetMouseButton(0)){
+					//if(!animation.isPlaying)
+					animation.CrossFade("ShootRun");
+			}
 			//only change our position if there is an update to it
 			if (newRotation != Vector3.zero) transform.forward = newRotation;
 			}
 
 
 			if (! MoveKeyStay() && ! Input.GetMouseButton(0)){
-				if(!animation.IsPlaying("Groundpunch"))
-				animation.CrossFade("Idle");
+
+				if(animation.IsPlaying("Groundpunch")){
+					StartCoroutine(WaitAndIdle(animation["Groundpunch"].length));
+				}
+				else if(animation.IsPlaying("Dash")){
+					StartCoroutine(WaitAndIdle(animation["Dash"].length));
+					GameManager.KeysEnabled = true;
+
+					
+				}
+				else
+					animation.CrossFade("Idle");
 		 	}
 		}
 

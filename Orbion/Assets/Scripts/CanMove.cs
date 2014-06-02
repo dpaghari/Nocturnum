@@ -3,14 +3,30 @@ using System.Collections;
 
 
 public class CanMove : MonoBehaviour {
+
 	public float Force = 6.0F;
+	public float InitForce;
 	public float MaxSpeed = 20;
 	public float MoveScale = 1.0f;
-	
+	public float MaxForce = 100.0F;
 	protected float ForceScale;
 	protected float MaxSpeedScale;
 
+	public float getForce(){
+		return Force;
+	}
+	
+	void Start(){
+	
+		InitForce = Force;
+	}
+
+
 	void Update() {
+
+		if(Force >= MaxForce){
+			Force = InitForce;
+		}
 	}
 
 	void LateUpdate() {
@@ -18,10 +34,13 @@ public class CanMove : MonoBehaviour {
 	}
 
 	public void Move(Vector3 dir, ForceMode mode = ForceMode.Force){
-		rigidbody.AddForce(dir * Force * MoveScale, mode);
+		float adjustedMoveScale = MoveScale;
+		if( adjustedMoveScale < 0) adjustedMoveScale = 0;
 
-		if( rigidbody.velocity.magnitude > MaxSpeed * MoveScale)
-			rigidbody.velocity = rigidbody.velocity.normalized * MaxSpeed * MoveScale;
+		rigidbody.AddForce(dir * Force * adjustedMoveScale, mode);
+
+		if( rigidbody.velocity.magnitude > MaxSpeed * adjustedMoveScale)
+			rigidbody.velocity = rigidbody.velocity.normalized * MaxSpeed * adjustedMoveScale;
 					
 	}
 

@@ -434,6 +434,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
   - 95: {fileID: 9500000}
+  - 114: {fileID: 11400002}
   m_Layer: 18
   m_Name: raflessia
   m_TagString: Untagged
@@ -841,7 +842,7 @@ Animation:
   m_Animations:
   - {fileID: 7400004, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
   - {fileID: 7400008, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
-  - {fileID: 7400006, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
+  - {fileID: 7400002, guid: d63c49d4ac906db43b155cf9f16a7f8f, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -857,7 +858,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc5538bd6c41e542a82a7d92eea8546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantScript: {fileID: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.5
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

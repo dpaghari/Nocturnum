@@ -13,6 +13,11 @@ public class AB_TargetGenerator : MonoBehaviour {
 	public CanShoot shootScript { get; protected set;}
 	public NavMeshAgent meshScript { get; protected set;}
 	
+	private NavMeshPath meshPath;
+	private Rigidbody clone;
+	public Rigidbody pinkBox;
+	
+
 	public float AtkRange;
 	
 	public Rigidbody CurrTarget;
@@ -22,6 +27,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 	private IsEnemy enemyScript;
 	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
+	private int counter = 1;
+	private int cornerIndex = 1;
 	
 	//Given that there are buildings and the player in range,
 	//always attack the player if they're within PlayerPriorityRange
@@ -32,20 +39,66 @@ public class AB_TargetGenerator : MonoBehaviour {
 		shootScript = GetComponent<CanShoot>();
 		meshScript = GetComponent<NavMeshAgent>();
 		enemyScript = GetComponent<IsEnemy>();
+
+		meshPath = new NavMeshPath();
 		//Debug.Log("START OF BEHAVIOR");
 		CurrTarget = FindTarget(TargetSearchRadius);
+		//Debug.Log("Get target #" + counter); counter++;
+		
+		//meshScript.SetDestination(CurrTarget.position);
+		
+		if(CurrTarget != null && meshScript != null){
+			meshScript.CalculatePath(CurrTarget.position, meshPath);
+		}
+		/*
+		int i = 1;
+		if(meshPath != null){
+			while (i < meshPath.corners.Length) {
+				Vector3 currentCorner = meshPath.corners[i];
+				Debug.Log (meshPath.corners[i]);
+				clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
+				i++;
+			}
+		}
+		*/
+		
+
 	}
-	
 	
 	protected virtual void FixedUpdate () {
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
 			if(distToTarget > AtkRange){
 				//transform.LookAt(CurrTarget.transform);
-				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
-				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-				moveScript.Move(CurrTarget.position - rigidbody.position);
+				//Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+				//transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+
+				if(meshPath.corners.Length > 0){
+					//closeToCorner(meshPath.corners[cornerIndex]);
+					//moveScript.Move(meshPath.corners[cornerIndex]);
+				}
+
+				//Debug.Log("# corners " + meshPath.corners.Length);
+					
+
+				if(meshPath.corners.Length < 3){
+					Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+					moveScript.Move(CurrTarget.position - rigidbody.position);
+					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
+					//Debug.Log("FUCK");
+				} else if(meshPath.corners.Length >= 3){
+					Vector3 lookPosition = new Vector3(meshPath.corners[1].x, transform.position.y, meshPath.corners[1].z);
+					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+					//closeToCorner(meshPath.corners[cornerIndex]);
+					//moveScript.Move(meshPath.corners[cornerIndex] - rigidbody.position);
+					moveScript.Move(meshPath.corners[1] - rigidbody.position);
+					//Debug.Log("Speed " + this.GetComponent<CanMove>().getForce());
+					
+				}
 				//meshScript.SetDestination(CurrTarget.position);
+				//moveScript.Move (meshScript.nextPosition*-1);
+				
 
 				if(enemyScript.enemyType == EnemyType.luminotoad)
 					animation.CrossFade("Luminotoad_Hop");
@@ -58,39 +111,66 @@ public class AB_TargetGenerator : MonoBehaviour {
 				
 				if(enemyScript.enemyType == EnemyType.zingbat)
 					animation.CrossFade("ZingBatGlide");
+				if(enemyScript.enemyType == EnemyType.luminosaur)
+					animation.CrossFade("LuminosaurWalk");
 
-				/*
-				if(this.tag == "Enemy")
-					animation.CrossFade("WolfRunCycle");
-				
-				if(this.tag == "EnemyRanged")
-					animation.CrossFade("ZingBatGlide");
-				*/
 			}
 		}
 	}
 	
-	
+	private void closeToCorner(Vector3 vec){
+		float distance = Vector3.Distance (vec, this.transform.position);
+		if(distance < 1){
+			cornerIndex++;
+		}
+	}
 	
 	protected virtual void Update () {
 		if(targetCheckCounter > targetCheckTimer){
+			//Debug.Log("Get target #" + counter); counter++;
 			CurrTarget = FindTarget(TargetSearchRadius);
+			if(CurrTarget != null && meshScript != null){
+				meshScript.CalculatePath(CurrTarget.position, meshPath);
+				cornerIndex = 1;
+			}
+			/*
+			int i = 1;
+			if(meshPath != null){
+				while (i < meshPath.corners.Length) {
+					Vector3 currentCorner = meshPath.corners[i];
+					Debug.Log (meshPath.corners[i]);
+					clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
+					i++;
+				}
+			}
+			*/
+			//meshScript.SetDestination(CurrTarget.position);
 			targetCheckCounter = 0.0F;
 		} else {
 			targetCheckCounter += Time.deltaTime;
 		}
 		if(CurrTarget != null){
 			float distToTarget = Vector3.Distance(rigidbody.position, CurrTarget.position);
-			if (distToTarget < AtkRange){
+			if (distToTarget <= AtkRange){
+				float rand = Random.value;
 
 				if( shootScript.FinishCooldown()){
 					if(enemyScript.enemyType == EnemyType.luminotoad){
 						animation.CrossFade("Luminotoad_Bomb");
 						this.GetComponent<Killable>().explode();
 					}
-					
-					if(enemyScript.enemyType == EnemyType.alpha_wolf)
+					if(enemyScript.enemyType == EnemyType.luminosaur){
+						animation.CrossFade("LuminosaurChomp");
+						if(rand > 0.0F && rand <= 1.0F){
+							//this.GetComponent<CanShoot>().stun();
+						}
+					}
+					if(enemyScript.enemyType == EnemyType.alpha_wolf){
 						animation.CrossFade("WolfAttack");
+						if(rand > 0.0F && rand <= 1.0F){
+							//this.GetComponent<CanShoot>().stun();
+						}
+					}
 					
 					if(enemyScript.enemyType == EnemyType.wolf)
 						animation.CrossFade("WolfAttack");
@@ -110,6 +190,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 				else{
 
 					if( animation.isPlaying == false){
+						if(enemyScript.enemyType == EnemyType.luminosaur)
+							animation.CrossFade("LuminosaurWalk");	
 						if(enemyScript.enemyType == EnemyType.luminotoad)
 							animation.CrossFade("Luminotoad_Hop");
 						
@@ -135,6 +217,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 
 				Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 				transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+				if(enemyScript.enemyType != EnemyType.luminotoad)
 				shootScript.Shoot(lookPosition);
 			}
 		}
@@ -234,7 +317,6 @@ public class AB_TargetGenerator : MonoBehaviour {
 		if(distToBuilding < distToPlayer) closestTarget = building;
 		return closestTarget;
 		*/
-	}
-	
+	}	
 	
 }

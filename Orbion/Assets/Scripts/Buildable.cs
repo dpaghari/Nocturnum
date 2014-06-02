@@ -4,10 +4,10 @@ using System.Collections;
 public class Buildable : MonoBehaviour {
 	public int cost = 0;
 	public int energyCost = 0;
+	public float buildTime = 10f;
 	public Tech TechType = Tech.none;
 	public GameObject hologram;
-	public int isPoweredTimer = 0;
-	public bool isPowered = true;
+	public bool requiresLight = true;
 
 	//How close can an edge of an adjacent building be
 	public float contactRadius = 2.0f;
@@ -25,20 +25,9 @@ public class Buildable : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		isPoweredTimer--;
-		if (isPoweredTimer < 0) {
-			isPowered = false;
-			TechManager.RmNumBuilding( TechType, 1);
-		}
+	
 	}
 
-	public void power(){
-		isPoweredTimer = 5;
-		if (!isPowered) {
-			TechManager.AddNumBuilding( TechType, 1);
-			isPowered = true;
-		}
-	}
 
 
 }

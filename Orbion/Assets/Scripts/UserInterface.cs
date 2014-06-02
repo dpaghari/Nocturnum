@@ -57,10 +57,11 @@ public class UserInterface : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasTurret == true && TechManager.hasWolves == true){
 			questComplete = true;
 		}
-
+	
 	}
 
 	void OnGUI () {

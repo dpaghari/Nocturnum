@@ -94,6 +94,11 @@ public class CanBuild : MonoBehaviour {
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
 		}
+
+		if ( ResManager.Energy < buildInfo.energyCost){
+			audio.PlayOneShot(errBuild, 0.5f);
+			return false;
+		}
 		/*
 		if ( ResManager.Energy + buildInfo.energyCost > ResManager.MaxEnergy){
 			if( buildingType != generatorBuilding){
@@ -266,7 +271,13 @@ public class CanBuild : MonoBehaviour {
 
 					if( currHologram) GameObject.Destroy( currHologram.gameObject);
 					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-					clone.GetComponent<IsUnderConstruction>().toBuild = toBuild;
+
+					IsUnderConstruction constructScript = clone.GetComponent<IsUnderConstruction>();
+					Buildable buildInfo = toBuild.GetComponent<Buildable>();
+
+					constructScript.toBuild = toBuild;
+					constructScript.totalConstruction = buildInfo.buildTime;
+
 					// Slows down during placing building.
 					inBuildingMode = false;
 
@@ -275,7 +286,6 @@ public class CanBuild : MonoBehaviour {
 						builtGenerator = true;
 					}
 
-					Buildable buildInfo = toBuild.GetComponent<Buildable>();
 					ResManager.RmLumen(buildInfo.cost);
 					ResManager.RmEnergy(buildInfo.energyCost);
 						

@@ -13,12 +13,12 @@ public class TitleText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown ("return") || Input.GetKeyDown ("enter")){
-			AutoFade.LoadLevel("scene1" ,1.0f,1.0f,Color.black);
+			AutoFade.LoadLevel("difficultylevelselect" ,1.0f,1.0f,Color.black);
 		}
 	}
 
 	void OnGUI(){
 		GUI.skin = titleSkin;
-		GUI.Label(new Rect(Screen.width/2-70,Screen.height/2+100,300,128), "Press Enter.");
+		GUI.Label(new Rect(Screen.width/2-70,Screen.height/2+120,300,128), "Press Enter.");
 	}
 }

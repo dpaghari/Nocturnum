@@ -9,12 +9,15 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 95: {fileID: 9500000}
-  m_Layer: 0
+  - 114: {fileID: 11400004}
+  - 65: {fileID: 6500000}
+  - 114: {fileID: 11400000}
+  m_Layer: 15
   m_Name: giant_tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &100002
 GameObject:
@@ -27,13 +30,12 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 64: {fileID: 6400000}
-  - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTreeBranches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &100004
 GameObject:
@@ -47,12 +49,12 @@ GameObject:
   - 23: {fileID: 2300002}
   - 64: {fileID: 6400002}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: StringyTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &100006
 GameObject:
@@ -63,12 +65,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 108: {fileID: 10800000}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967263
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &400000
 Transform:
@@ -77,7 +79,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.2076092, y: 3, z: -33.7570496}
+  m_LocalPosition: {x: -37.349308, y: -109.862488, z: -33.9376144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -199,6 +201,18 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 95f414bf1fe774c49803d95d5ce0d95b, type: 3}
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 16}
+  m_Center: {x: 5, y: 0, z: 2.5}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -228,13 +242,13 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 8900000, guid: 71649408ae6277146906354813b4dc73, type: 3}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
@@ -253,14 +267,13 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
+  m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  contactRadius: 3
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,11 +282,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfd78214cbdaef48be77f6e147e5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 3.25
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 400a69e5e0ddc724aabd140404387e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hideShader: {fileID: 4800000, guid: bc5c65c64d948bf438dd916daa892958, type: 3}
-  hiddenDuration: 1
+  hiddenDuration: .5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

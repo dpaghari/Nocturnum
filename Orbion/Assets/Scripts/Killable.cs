@@ -16,6 +16,7 @@ public class Killable : MonoBehaviour {
 	private GameObject clone;
 	public DumbTimer timerScript;
 
+	public GameObject toadExplosion;
 
 	// Set HP to default
 	void Start () {
@@ -31,27 +32,17 @@ public class Killable : MonoBehaviour {
 	}
 
 	void Update () {
-		if(GameManager.PlayerDead){
-		timerScript.Update();
-		}
-		if(timerScript.Finished() == true){
-			ResManager.Reset();
-			TechManager.Reset();
-			MetricManager.Reset();
-			GameManager.KeysEnabled = true;
-			GameManager.PlayerDead = false;
-			timerScript.Reset();
-			AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
 
 
-			
-		}
-		//Debug.Log("Obj: " + this.gameObject.name + "CurrHP = " + currHP);
 	}
 
 
 	// Updates HP based on damage taken, calls kill() on dead objects
 	public void damage (int dmg) {
+
+		if(gameObject.tag == "Player"){
+			animation.Play("GetHit");
+		}
 
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
 		currHP -= dmg;
@@ -67,42 +58,79 @@ public class Killable : MonoBehaviour {
 	// Kills enemy or player
 	public void kill () {
 		if(gameObject.tag == "Player"){
-			GameManager.PlayerDead = true;
 			GameManager.KeysEnabled = false;
+			if(!GameManager.PlayerDead){
 			animation.Play("Dead");
-		}
-		else{
-			Destroy (gameObject);
-			MetricManager.AddEnemiesKilled(1);
-			//if(gameObject.name != "base_enemy_prefab"){
-				//MetricManager.AddEnemies(-1);
-			//}
+			GameManager.PlayerDead = true;
+			}
+			collider.enabled = false;
+			StartCoroutine(WaitAndCallback(animation["Dead"].length));
 
+			return;
+		}
+
+
+		IsEnemy enemyScript = GetComponent<IsEnemy>();
+		if(enemyScript){
+			if(enemyScript.enemyType == EnemyType.luminotoad){
+				explode();
+			}
+			else{
+				Destroy (gameObject);
+				if (deathTarget != null) {
+					Vector3 temp = transform.position;
+					temp.y += 4;
+					float rand = Random.value;
+					if(rand > 0.0 && rand < 0.5){
+						if(collectTarget != null){
+						Instantiate (collectTarget, temp, this.transform.rotation);
+						}
+					}
+					Instantiate(deathTarget,temp, this.transform.rotation);
+				}
+			}
+			
+			MetricManager.AddEnemiesKilled(1);
+			MetricManager.AddEnemies(-1);
+			
 			if(GetComponent<isBossEnemy>() != null)
 				TechManager.hasBeatenWolf = true;
-			if (deathTarget != null) {
-				Vector3 temp = transform.position;
-				temp.y += 4;
-				//if(deathTarget.GetComponent<IsCollectible>() != null){
-					float rand = Random.value;
-					//Debug.Log(rand);
-					if(rand > 0.0 && rand < 0.5){
-					Instantiate (collectTarget, temp, this.transform.rotation);
-					//	Debug.Log("creating collectible");
-					}
-				Instantiate(deathTarget,temp, this.transform.rotation);
-				//}
-				//else
-				//	Instantiate(deathTarget, temp, this.transform.rotation);
 
-			}
+			return;
 		}
-		//make death object
+		GameObject.Destroy(this.gameObject);
+
 	}
 
+
 	public void explode(){
-		kill();
+		StartCoroutine(ToadExplode(animation["Luminotoad_Bomb"].length));
 		//explode dmg
+	}
+
+
+	IEnumerator ToadExplode(float waitTime){
+		yield return new WaitForSeconds(waitTime); 
+		if(toadExplosion != null){
+			Instantiate(toadExplosion,transform.position, this.transform.rotation);
+		}
+		Vector3 temp = transform.position;
+		temp.y += 4;
+		Instantiate(deathTarget,temp, this.transform.rotation);
+		Destroy(gameObject);
+	}
+
+
+
+	IEnumerator WaitAndCallback(float waitTime){
+		yield return new WaitForSeconds(waitTime + 1.5f); 
+		ResManager.Reset();
+		TechManager.Reset();
+		MetricManager.Reset();
+		//GameManager.KeysEnabled = true;
+		GameManager.PlayerDead = false;
+
+		AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
 	}
 
 	/// <summary>

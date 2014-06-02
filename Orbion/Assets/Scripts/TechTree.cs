@@ -85,43 +85,22 @@ public class TechTree : ScriptableObject {
 		
 		TechTree defaultTree = InitTree();
 
-
-
 		//================ Set our prereqs here ================
-		//Some  Prereqs disabled since we can't build everything yet
 
 		//Ballistics
 		defaultTree.AddReq( Tech.ballistics, Tech.generator);
 		defaultTree.AddReq( Tech.clipSize, Tech.ballistics);
 		defaultTree.AddReq( Tech.scatter, Tech.ballistics);
-		defaultTree.AddReq( Tech.reloadSpeed, Tech.ballistics);
-
-
-
-		//fortification
-		//defaultTree.AddReq( Tech.fortification, Tech.generator);
-		//defaultTree.AddReq( Tech.bulletAbsorber, Tech.fortification);
-		//defaultTree.AddReq( Tech.buildingHp, Tech.fortification);
-		//defaultTree.AddReq( Tech.spotlightResearch, Tech.fortification);
-		//defaultTree.AddReq( Tech.turretResearch, Tech.fortification);
+		//defaultTree.AddReq( Tech.reloadSpeed, Tech.ballistics);
 
 
 		//Generator has no Prereq
 
 
-		//Genome
-		//defaultTree.AddReq( Tech.genome, Tech.medbay);
-		//defaultTree.AddReq( Tech.mindControl, Tech.genome);
-		//defaultTree.AddReq( Tech.moveSpeed, Tech.genome);
-		//defaultTree.AddReq( Tech.playerHp, Tech.genome);
-		//defaultTree.AddReq( Tech.stealth, Tech.genome);
-
-
 		//Incendiary
 		defaultTree.AddReq( Tech.incendiary, Tech.ballistics);
-		defaultTree.AddReq( Tech.searing, Tech.incendiary);
+		defaultTree.AddReq( Tech.seeker, Tech.incendiary);
 		defaultTree.AddReq( Tech.lightGrenade, Tech.incendiary);
-
 
 
 		//Medbay
@@ -129,28 +108,17 @@ public class TechTree : ScriptableObject {
 
 
 		//Photon
-		//defaultTree.AddReq( Tech.photon, Tech.fortification);
-		defaultTree.AddReq(Tech.photon, Tech.generator);
+		defaultTree.AddReq( Tech.photon, Tech.generator);
 		defaultTree.AddReq( Tech.lightFist, Tech.photon);
-		//defaultTree.AddReq( Tech.orbshot, Tech.photon);
-		//defaultTree.AddReq( Tech.lightPath, Tech.photon);
-
-
-		//Refraction
-		//defaultTree.AddReq( Tech.refraction, Tech.generator);
-		//defaultTree.AddReq( Tech.seeker, Tech.refraction);
-		//defaultTree.AddReq( Tech.buildingLightRange, Tech.refraction);
-		//defaultTree.AddReq( Tech.lightFist, Tech.refraction);
-
-
-
-		//Spotlight
-		//defaultTree.AddReq( Tech.spotlight, Tech.refraction);
-		//defaultTree.AddReq( Tech.spotlight, Tech.spotlightResearch);
+		defaultTree.AddReq( Tech.ricochet, Tech.photon);
 
 
 		//Turret
-		//defaultTree.AddReq( Tech.turret, Tech.turretResearch);
+		defaultTree.AddReq( Tech.turret, Tech.photon);
+
+
+		//Spotlight
+		defaultTree.AddReq( Tech.spotlight, Tech.photon);
 
 
 		//Wall has no Prereq

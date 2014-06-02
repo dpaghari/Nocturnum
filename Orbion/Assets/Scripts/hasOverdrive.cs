@@ -9,12 +9,15 @@ public class hasOverdrive : MonoBehaviour {
 	public DumbTimer timerScript;
 	public DumbTimer dwindleScript;
 
+	public AudioClip overdriveSound;
+
 
 
 	public GameObject overdriveEffect;
 	private GameObject clone;
 	private GameObject trailClone;
 
+	public bool overdriveOn;
 	public bool overdriveActive;
 	public float odtime;
 
@@ -26,6 +29,7 @@ public class hasOverdrive : MonoBehaviour {
 	private float odmoveRate;
 	// Use this for initialization
 	void Start () {
+		overdriveOn = false;
 		overdriveLimit = 50.0f;
 		fireRate = shootScript.firingRate;
 		moveRate = moveScript.MoveScale;
@@ -65,10 +69,11 @@ public class hasOverdrive : MonoBehaviour {
 	void checkOverdrive(){
 
 		if (overdriveCount >= overdriveLimit) {
-
-			Debug.Log ("You have OVERDRIVE! PRESS SPACE TO ACTIVATE!");
+			overdriveOn = true;
+			//Debug.Log ("You have OVERDRIVE! PRESS SPACE TO ACTIVATE!");
 			overdriveCount = overdriveLimit;
 			if(Input.GetKeyDown(KeyCode.Space)){
+				audio.PlayOneShot(overdriveSound);
 
 				overdriveActive = true;
 
@@ -76,7 +81,7 @@ public class hasOverdrive : MonoBehaviour {
 			}
 		}
 
-		if(overdriveCount > 0.0f && !overdriveActive){
+		if(overdriveCount > 0.0f && !overdriveOn){
 			//Debug.Log (overdriveCount);
 			dwindleScript.Update();
 			if(dwindleScript.Finished() == true){
@@ -91,11 +96,12 @@ public class hasOverdrive : MonoBehaviour {
 	}
 
 	void activateOverdrive(){
-		Debug.Log ("Overdrive!");
+		//Debug.Log ("Overdrive!");
 
 		if (overdriveActive) {
 			clone = Instantiate(overdriveEffect, transform.position, Quaternion.identity) as GameObject;
 			//timerScript.Update ();
+			shootScript.reloadCooldown = 0;
 			shootScript.firingRate = odfireRate;
 			moveScript.MoveScale = odmoveRate;
 		}
@@ -104,13 +110,15 @@ public class hasOverdrive : MonoBehaviour {
 	}
 
 	void turnoffOverdrive(){
-		Debug.Log ("Turning off overdrive");
+		//Debug.Log ("Turning off overdrive");
 		if (overdriveActive) {
+			shootScript.reloadCooldown = 1.8f;
 			shootScript.firingRate = fireRate;
 			moveScript.MoveScale = moveRate;
 			overdriveActive = false;
 
 		}
+		overdriveOn = false;
 		overdriveCount = 0.0f;
 		timerScript.Reset();
 		

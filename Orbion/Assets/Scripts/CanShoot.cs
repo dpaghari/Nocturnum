@@ -35,6 +35,11 @@ public class CanShoot : MonoBehaviour {
 
 	public WeakensInLight weakenScript;
 
+	//stun timer variables
+	private DumbTimer stunTimer;
+	public float stunInterval = 0.1F;
+	private bool stunFinished = false;
+
 
 
 	//sets the proportion of completion for the firingTimer
@@ -68,6 +73,20 @@ public class CanShoot : MonoBehaviour {
 	protected virtual void Update () {
 		//adding by Time.deltaTime otherwise our firerate is bullets/frame instead of bullets/second
 		if ( firingTimer <= firingRate) firingTimer += Time.deltaTime;
+
+		if(stunTimer != null && !stunFinished){
+			if(stunTimer.Finished()){
+				Debug.Log("STUN DONE!!");
+				stunFinished = true;
+				//stunTimer.Reset();
+				GameManager.KeysEnabled = true;
+				//Debug.Log("STUN DONE!!");
+				
+			}
+			else{
+				stunTimer.Update();
+			}
+		}
 		
 	}
 
@@ -87,6 +106,8 @@ public class CanShoot : MonoBehaviour {
 
 				if(rand > 0.0 && rand < 0.20)
 				audio.PlayOneShot(enemyShotSound,0.3f);
+		
+				/*
 				if(weakenScript.IsWeakened){
 					
 					if(clone.GetComponent<PB_Linear>() != null) clone.GetComponent<PB_Linear>().Damage = 5;
@@ -99,6 +120,8 @@ public class CanShoot : MonoBehaviour {
 					if(clone.GetComponent<PB_Melee>() != null) clone.GetComponent<PB_Melee>().Damage = 15;
 					//Debug.Log ("Weaken Faded");
 				}
+				*/
+
 			}
 			firingTimer = 0.0f;
 			clone = Instantiate(shootEffect, temp + dir * 2, Quaternion.AngleAxis(-90, Vector3.forward)) as Rigidbody;
@@ -114,6 +137,23 @@ public class CanShoot : MonoBehaviour {
 		ShootDir( targ - transform.position );
 	}
 	*/
+
+	public virtual void stun(){
+	//stun the player
+		GameManager.KeysEnabled = false;
+		
+		if(stunTimer == null){
+			//stunTimer.Reset();
+			stunTimer = DumbTimer.New( stunInterval);
+			Debug.Log("STUN!!");
+		} else if(stunFinished){
+			stunTimer.Reset();
+			stunFinished = false;
+			Debug.Log("STUN!!");
+		}
+		
+		
+	}
 
 	public virtual void Scattershot( Vector3 target, int numberOfShots){
 		if( FinishCooldown()){
@@ -146,6 +186,27 @@ public class CanShoot : MonoBehaviour {
 
 	public virtual void Shoot(Vector3 target){
 		Scattershot (target, numOfBulletShot);
+	}
+
+	
+	public virtual void ShootTarget( GameObject target){
+		Vector3 temp = transform.position;
+		temp.y += bulletHeight.y;
+
+		Vector3 dir = (target.transform.position - transform.position).normalized;
+
+		GameObject theBullet = Instantiate(bullet.gameObject, temp + dir * projectileStartPosition, Quaternion.identity) as GameObject;
+		PB_FollowTarget followScript;
+
+		if( theBullet){
+			followScript = theBullet.GetComponent<PB_FollowTarget>();
+			if( followScript) followScript.target = target;
+		}
+
+		if( shootEffect)
+			Instantiate(shootEffect, temp + dir* 2, Quaternion.AngleAxis(-90, Vector3.forward)) ;
+
+		firingTimer = 0.0f;
 	}
 
 

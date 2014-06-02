@@ -1,0 +1,569 @@
+fileFormatVersion: 2
+guid: f18b6bf1c10b7924b88a4347d558a3ed
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Angler
+    100002: AnglerBase
+    100004: Ankle_L
+    100006: Ankle_R
+    100008: ArmUpper_L
+    100010: ArmUpper_R
+    100012: ArmWrist_L
+    100014: ArmWrist_R
+    100016: Bulb
+    100018: Chest
+    100020: Claw_L
+    100022: Claw_R
+    100024: Foot_L
+    100026: Foot_R
+    100028: Head
+    100030: Hips
+    100032: Jaw
+    100034: Knee_L
+    100036: Knee_R
+    100038: Leg_L
+    100040: Leg_R
+    100042: Luminosaur
+    100044: //RootNode
+    100046: LuminosaurRig
+    100048: Neck
+    100050: Root
+    100052: Shoulder_L
+    100054: Shoulder_R
+    100056: Spine
+    100058: Tail
+    100060: TailTip
+    400000: Angler
+    400002: AnglerBase
+    400004: Ankle_L
+    400006: Ankle_R
+    400008: ArmUpper_L
+    400010: ArmUpper_R
+    400012: ArmWrist_L
+    400014: ArmWrist_R
+    400016: Bulb
+    400018: Chest
+    400020: Claw_L
+    400022: Claw_R
+    400024: Foot_L
+    400026: Foot_R
+    400028: Head
+    400030: Hips
+    400032: Jaw
+    400034: Knee_L
+    400036: Knee_R
+    400038: Leg_L
+    400040: Leg_R
+    400042: Luminosaur
+    400044: //RootNode
+    400046: LuminosaurRig
+    400048: Neck
+    400050: Root
+    400052: Shoulder_L
+    400054: Shoulder_R
+    400056: Spine
+    400058: Tail
+    400060: TailTip
+    4300000: Luminosaur
+    7400000: Idle
+    7400002: LuminosaurChomp
+    7400004: LuminosaurDeath
+    7400006: LuminosaurWalk
+    7400008: PoseLib
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Luminosaur
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: LuminosaurChomp
+      firstFrame: .200000003
+      lastFrame: .300000012
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Luminosaur
+        weight: 1
+      - path: LuminosaurRig
+        weight: 1
+      - path: LuminosaurRig/Root
+        weight: 1
+      - path: LuminosaurRig/Root/Hips
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L/Foot_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R/Foot_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail/TailTip
+        weight: 1
+      - path: LuminosaurRig/Root/Spine
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler/Bulb
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L/Claw_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R/Claw_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LuminosaurChomp
+      takeName: LuminosaurChomp
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Luminosaur
+        weight: 1
+      - path: LuminosaurRig
+        weight: 1
+      - path: LuminosaurRig/Root
+        weight: 1
+      - path: LuminosaurRig/Root/Hips
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L/Foot_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R/Foot_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail/TailTip
+        weight: 1
+      - path: LuminosaurRig/Root/Spine
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler/Bulb
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L/Claw_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R/Claw_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LuminosaurDeath
+      takeName: LuminosaurDeath
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Luminosaur
+        weight: 1
+      - path: LuminosaurRig
+        weight: 1
+      - path: LuminosaurRig/Root
+        weight: 1
+      - path: LuminosaurRig/Root/Hips
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L/Foot_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R/Foot_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail/TailTip
+        weight: 1
+      - path: LuminosaurRig/Root/Spine
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler/Bulb
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L/Claw_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R/Claw_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LuminosaurWalk
+      takeName: LuminosaurWalk
+      firstFrame: -1
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Luminosaur
+        weight: 1
+      - path: LuminosaurRig
+        weight: 1
+      - path: LuminosaurRig/Root
+        weight: 1
+      - path: LuminosaurRig/Root/Hips
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L/Foot_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R/Foot_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail/TailTip
+        weight: 1
+      - path: LuminosaurRig/Root/Spine
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler/Bulb
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L/Claw_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R/Claw_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PoseLib
+      takeName: PoseLib
+      firstFrame: 0
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Luminosaur
+        weight: 1
+      - path: LuminosaurRig
+        weight: 1
+      - path: LuminosaurRig/Root
+        weight: 1
+      - path: LuminosaurRig/Root/Hips
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_L/Knee_L/Ankle_L/Foot_L
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Leg_R/Knee_R/Ankle_R/Foot_R
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail
+        weight: 1
+      - path: LuminosaurRig/Root/Hips/Tail/TailTip
+        weight: 1
+      - path: LuminosaurRig/Root/Spine
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/AnglerBase/Angler/Bulb
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_L/ArmUpper_L/ArmWrist_L/Claw_L
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R
+        weight: 1
+      - path: LuminosaurRig/Root/Spine/Chest/Shoulder_R/ArmUpper_R/ArmWrist_R/Claw_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -7,32 +7,47 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public GameObject canResearchRef;
 	public bool researchTimeOn;
 	public dfControl hudProgress;
-
+	public CanResearch researchScript;
+	public dfSprite _hudIcon;
 	// Use this for initialization
 	void Start () {
 		//menuUp = false;
 		//_panel.IsVisible = false;
 		canResearchRef = GameObject.Find ("player_prefab");
+		researchScript = GameManager.AvatarContr.GetComponent<CanResearch>();
+		_hudIcon.IsVisible = false;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*if(Input.GetKeyDown(KeyCode.B)){
-				menuUp = !menuUp;
-		}
-		if(menuUp){
-			_panel.IsVisible = true;
-		} else {
-			_panel.IsVisible = false;
-		}*/
+	
+		if(researchScript.MenuUp){
+			if(Input.GetKeyDown(KeyCode.Alpha1)){
+				CallScattershot();
+			}
+			else if(Input.GetKeyDown(KeyCode.Alpha2))
+				CallClipSize();
+			
+			else if(Input.GetKeyDown(KeyCode.Alpha3))
+				CallLightFist();
 
+			else if(Input.GetKeyDown(KeyCode.Alpha4))
+				CallLightGrenade();
+			
+			else if(Input.GetKeyDown(KeyCode.Alpha5))
+				CallSeeker ();
+			
+			else if(Input.GetKeyDown(KeyCode.Alpha6))
+				CallRicochet();
+		}
 
 	}
 
 	public void CallScattershot(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.scatter)){
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
+			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.scatter)) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetScattershot();
@@ -42,6 +57,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public void CallClipSize(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.clipSize)){
 			canResearchRef.GetComponent<CanResearch>().GetClipSize();
+			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.clipSize)) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetClipSize();
@@ -51,6 +67,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public void CallLightFist(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightFist)){
 			canResearchRef.GetComponent<CanResearch>().GetLightFist();
+			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightFist)) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetLightFist();
@@ -60,6 +77,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public void CallLightGrenade(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.lightGrenade)){
 			canResearchRef.GetComponent<CanResearch>().GetLightGrenade();
+			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.lightGrenade)) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetLightGrenade();
@@ -69,6 +87,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public void CallSeeker(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.seeker)){
 			canResearchRef.GetComponent<CanResearch>().GetSeeker();
+			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.seeker)) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetSeeker();
@@ -77,6 +96,7 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	public void CallRicochet(){
 		if(canResearchRef.GetComponent<CanResearch>().MeetsRequirement(Tech.ricochet)){
 			canResearchRef.GetComponent<CanResearch>().GetRicochet();
+			_hudIcon.IsVisible = true;
 			StartCoroutine( showCooldown(TechManager.GetUpgradeTime( Tech.ricochet)) );
 		} else {
 			canResearchRef.GetComponent<CanResearch>().GetRicochet();

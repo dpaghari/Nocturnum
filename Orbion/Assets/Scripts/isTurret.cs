@@ -4,38 +4,37 @@ using System.Collections;
 public class isTurret : MonoBehaviour {
 	
 			
-	//public isPlant plantScript;
+
 	public CanShoot shootScript;
 	public Rigidbody target;
-	// Use this for initialization
-	void Start () {
-				
-	}
-			
-	// Update is called once per frame
-	void Update () {
-		//Debug.Log(target);
-			
-	//	if(plantScript.isActive == true){
-		if(target != null)
-			shootScript.Shoot(target.position);
 
+	void Start () {
+		ResManager.AddTurr(1);	
 	}
+			
+
+	void Update () {
+		if(target != null && shootScript.FinishCooldown() )
+			shootScript.ShootTarget(target.gameObject);
+	}
+
+	void UpdateTarget(Collider potentialTarget) {
+		if( target != null) return;
+
+		IsEnemy enemyScript = potentialTarget.GetComponent<IsEnemy>();
+		if( enemyScript != null && enemyScript.enemyType != EnemyType.none)
+			target = potentialTarget.rigidbody;
+	}
+
 
 	void OnTriggerEnter(Collider other){
-
-		if(other.GetComponent<IsEnemy>() != null){
-			target = other.rigidbody;
-		}
-			
-				
+		UpdateTarget( other);			
 	}
 	void OnTriggerStay(Collider other){
-		
-		if(other.GetComponent<IsEnemy>() != null){
-			target = other.rigidbody;
-		}
-
-		
+		UpdateTarget( other);	
 	}
+	void OnTriggerExit(Collider other){
+		if(other.rigidbody == target) target = null;
+	}
+
 }

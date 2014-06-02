@@ -21,7 +21,7 @@ public class dfGUICamera : MonoBehaviour
 	public void Start()
 	{
 
-		camera.transparencySortMode = TransparencySortMode.Orthographic;
+		camera.transparencySortMode = TransparencySortMode.Perspective;
 		camera.useOcclusionCulling = false;
 
 		// Disable built-in OnMouse* messages - http://unity3d.com/unity/whats-new/unity-4.1

@@ -97,7 +97,7 @@ ModelImporter:
     400090: //RootNode
     4300000: Plane_002
     4300002: Cube
-    7400000: Default Take
+    7400000: Idle
     7400002: ZingBatAttack
     7400004: ZingBatDeath
     7400006: ZingBatHover
@@ -120,7 +120,597 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Default Take
+      firstFrame: 16
+      lastFrame: 54
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Hips
+        weight: 1
+      - path: Armature/Root/Hips/TailBase
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02/TailEnd
+        weight: 1
+      - path: Armature/Root/Ribs
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02/Head
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003/LowerArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003/MidArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003/UpperArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003/LowerArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003/MidArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003/UpperArmEnd_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Plane_002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ZingBatAttack
+      takeName: ZingBatAttack
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Hips
+        weight: 1
+      - path: Armature/Root/Hips/TailBase
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02/TailEnd
+        weight: 1
+      - path: Armature/Root/Ribs
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02/Head
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003/LowerArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003/MidArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003/UpperArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003/LowerArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003/MidArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003/UpperArmEnd_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Plane_002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ZingBatDeath
+      takeName: ZingBatDeath
+      firstFrame: -1
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Hips
+        weight: 1
+      - path: Armature/Root/Hips/TailBase
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02/TailEnd
+        weight: 1
+      - path: Armature/Root/Ribs
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02/Head
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003/LowerArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003/MidArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003/UpperArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003/LowerArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003/MidArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003/UpperArmEnd_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Plane_002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ZingBatHover
+      takeName: ZingBatHover
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Hips
+        weight: 1
+      - path: Armature/Root/Hips/TailBase
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02/TailEnd
+        weight: 1
+      - path: Armature/Root/Ribs
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02/Head
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003/LowerArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003/MidArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003/UpperArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003/LowerArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003/MidArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003/UpperArmEnd_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Plane_002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ZingBatPoses
+      takeName: ZingBatPoses
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Hips
+        weight: 1
+      - path: Armature/Root/Hips/TailBase
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02
+        weight: 1
+      - path: Armature/Root/Hips/TailBase/Tail01/Tail02/TailEnd
+        weight: 1
+      - path: Armature/Root/Ribs
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02
+        weight: 1
+      - path: Armature/Root/Ribs/NeckBase/Neck02/Head
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/LowerArm_L/LowerArm_L_001/LowerArm_L_002/LowerArm_L_003/LowerArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/MidArm_L/MidArm_L_001/MidArm_L_002/MidArm_L_003/MidArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_L/UpperArm_L/UpperArm_L_001/UpperArm_L_002/UpperArm_L_003/UpperArmEnd_L
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/LowerArm_R/LowerArm_R_001/LowerArm_R_002/LowerArm_R_003/LowerArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/MidArm_R/MidArm_R_001/MidArm_R_002/MidArm_R_003/MidArmEnd_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003
+        weight: 1
+      - path: Armature/Root/Ribs/Shoulder_R/UpperArm_R/UpperArm_R_001/UpperArm_R_002/UpperArm_R_003/UpperArmEnd_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Plane_002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

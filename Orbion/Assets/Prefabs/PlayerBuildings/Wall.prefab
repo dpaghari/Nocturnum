@@ -8,10 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
+  - 136: {fileID: 13600000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   - 82: {fileID: 8200000}
   m_Layer: 12
   m_Name: Wall
@@ -56,8 +57,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.49712229, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 2.89271927, z: 0}
+  m_LocalScale: {x: 5.0999999, y: 5, z: 5.0999999}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!23 &2300000
@@ -72,7 +73,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44bdc8820a98eac40b16580374548f58, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -87,7 +88,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -103,18 +104,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!65 &6500000
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 1}
-  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -185,9 +174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 5
-  energyCost: 0
+  energyCost: 3
+  buildTime: 20
   TechType: 12
   hologram: {fileID: 100000, guid: d24890ab1bc52bb4d8335a2313438d22, type: 2}
+  requiresLight: 1
   contactRadius: 2
 --- !u!114 &11400002
 MonoBehaviour:
@@ -200,13 +191,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 300
-  baseHP: 300
+  currHP: 600
+  baseHP: 600
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
   healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
   timerScript: {fileID: 0}
+  toadExplosion: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22bd92839f83b1242b46c308165ceefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: {x: 0, y: .699999988, z: 0}
+  model: {fileID: 100002}
+--- !u!136 &13600000
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.5
+  m_Height: 8
+  m_Direction: 1
+  m_Center: {x: 0, y: 4, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

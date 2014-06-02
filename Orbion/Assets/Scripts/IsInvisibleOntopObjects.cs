@@ -1,37 +1,69 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+[RequireComponent (typeof (Collider))]
 
 public class IsInvisibleOntopObjects : MonoBehaviour {
 
-	private Shader originalShader;
 	public Shader hideShader;
-	private DumbTimer hiddenDurationTimer;
 	public float hiddenDuration = 1;
 	public bool IsHidden {get; private set;}
 
+	private DumbTimer hiddenDurationTimer;
+	private Renderer[] theRenderers;
+	private Shader[] originalShaders;
+
+
+
 	public void Hide(){
-		//Debug.Log(string.Format("Should hide {0}.", name));
-		renderer.material.shader = hideShader;
+		for(int i = 0; i < theRenderers.Length; i++){
+			Material theMat = theRenderers[i].material;
+			if( theMat != null) theMat.shader = hideShader;
+			if( theMat != null) theRenderers[i].material.shader = hideShader;
+		}
+
 		IsHidden = true;
 		hiddenDurationTimer.Reset();
 	}
 
+
+
 	public void Show(){
-		renderer.material.shader = originalShader;
+		for(int i = 0; i < theRenderers.Length; i++){
+			Material theMat = theRenderers[i].material;
+			if( theMat != null) theMat.shader = originalShaders[i];
+		}
 		IsHidden = false;
 		hiddenDurationTimer.Reset();
 	}
 
-	// Use this for initialization
+
+
+	private void GetShaderAndRenderers( ){
+		theRenderers = GetComponentsInChildren<Renderer>();
+		originalShaders = new Shader[theRenderers.Length];
+		
+		for(int i = 0; i < theRenderers.Length; i++){
+			Material theMat = theRenderers[i].material;
+			if( theMat != null) originalShaders[i] = theMat.shader;
+		}
+
+	}
+
+
+
 	void Start () {
-		originalShader = renderer.material.shader;
 		hiddenDurationTimer = DumbTimer.New( hiddenDuration);
-		hiddenDurationTimer.Reset();
+		GetShaderAndRenderers( );
 	}
 	
-	// Update is called once per frame
+
+
 	void Update () {
 		if( hiddenDurationTimer.Finished()) Show();
 		hiddenDurationTimer.Update();
 	}
+
+
+
 }

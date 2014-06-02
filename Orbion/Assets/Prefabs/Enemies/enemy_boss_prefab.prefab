@@ -14,15 +14,13 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400016}
-  - 114: {fileID: 11400014}
-  - 114: {fileID: 11400008}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400010}
   - 195: {fileID: 19500000}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400018}
+  - 114: {fileID: 11400008}
   m_Layer: 11
   m_Name: enemy_boss_prefab
   m_TagString: Enemy
@@ -913,8 +911,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_Mass: 2
-  m_Drag: 1
+  m_Mass: 10
+  m_Drag: 3
   m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1023,11 +1021,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 1000
   baseHP: 1000
-  deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
-  collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
+  deathTarget: {fileID: 100002, guid: 1e7ec6767c7625a47834b135ca0926f9, type: 2}
+  collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
   healEffect: {fileID: 0}
   timerScript: {fileID: 0}
+  toadExplosion: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1039,16 +1038,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd85ed508beb0d47b00eae36bdde9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5400000, guid: 89e3d85fc5185a2419b6631beda7a6df, type: 2}
+  bullet: {fileID: 5400000, guid: 384c61b759d2f98489845d56abbe2d5f, type: 2}
   bullet_speed: 200
-  firingRate: .5
+  firingRate: 2
   spreadAngle: 45
   numOfBulletShot: 1
   projectileStartPosition: 3
-  enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 11400004}
+  stunInterval: .100000001
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1060,8 +1060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d783894cac44b4f9cdd6bfe47f9678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeakenDuration: .100000001
-  SlowedRatio: .100000001
+  WeakenDuration: 0
+  SlowedRatio: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1073,9 +1073,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 12
-  MaxSpeed: 12
+  Force: 50
+  InitForce: 0
+  MaxSpeed: 50
   MoveScale: 1
+  MaxForce: 66
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1084,10 +1086,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 731730b21c0179b43aa28008632ea2de, type: 3}
+  m_Script: {fileID: 11500000, guid: 97f14317cdcfced439f3643253388e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrBehavior: {fileID: 11400016}
+  pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
+  AtkRange: 5
+  CurrTarget: {fileID: 0}
+  PlayerPriorityRange: 20
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1111,32 +1116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b221dd1b21390348b645409b19897bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e73505f5ed37e54388a755dff78cc83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AtkRange: 4.5
-  CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
-  TargetSearchRadius: 40
-  PlayerPriorityRange: 40
---- !u!114 &11400016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dce4e28fae57034fadb8fff8c68cf7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1152,6 +1131,8 @@ MonoBehaviour:
   spawnerObj: {fileID: 0}
   numWolves: 3
   timerScript: {fileID: 0}
+  howldelayScript: {fileID: 0}
+  howlSound: {fileID: 8300000, guid: 09e3c3d8b8ce51141bcc67cca6e9c98e, type: 3}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1164,7 +1145,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: f470118333d982148bdd467105f55efa, type: 2}
+  - {fileID: 2100000, guid: 58a3a3360eaad3d46bbfdd67b92e147f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1220,19 +1201,19 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: .5
-  m_Speed: 10
-  m_Acceleration: 8
+  m_Speed: 40
+  m_Acceleration: 40
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 0
+  m_AutoRepath: 0
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 1
+  m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:

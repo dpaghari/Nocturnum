@@ -16,7 +16,7 @@ public class ToggleResearchHUD : MonoBehaviour {
 	}
 
 	public void ToggleHUD(){
-		_tabContainer.IsVisible = !onHUD;
+		_tabContainer.IsVisible = !_tabContainer.IsVisible;
 
 	}
 }

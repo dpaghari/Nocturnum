@@ -1017,6 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f14317cdcfced439f3643253388e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
   AtkRange: 4.5
   CurrTarget: {fileID: 0}
   PlayerPriorityRange: 15
@@ -1031,9 +1032,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 12
-  MaxSpeed: 12
+  Force: 25
+  InitForce: 0
+  MaxSpeed: 25
   MoveScale: 1
+  MaxForce: 66
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1057,8 +1060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d783894cac44b4f9cdd6bfe47f9678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeakenDuration: .200000003
-  SlowedRatio: .300000012
+  WeakenDuration: .5
+  SlowedRatio: .5
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,14 +1075,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5400000, guid: 89e3d85fc5185a2419b6631beda7a6df, type: 2}
   bullet_speed: 200
-  firingRate: 1
+  firingRate: 1.5
   spreadAngle: 45
   numOfBulletShot: 1
   projectileStartPosition: 3
-  enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   weakenScript: {fileID: 11400008}
+  stunInterval: .100000001
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1091,13 +1095,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 75
-  baseHP: 75
+  currHP: 80
+  baseHP: 80
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
   buildScript: {fileID: 0}
   healEffect: {fileID: 0}
   timerScript: {fileID: 0}
+  toadExplosion: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1166,7 +1171,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100050}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: .5
   m_Speed: 10
   m_Acceleration: 8

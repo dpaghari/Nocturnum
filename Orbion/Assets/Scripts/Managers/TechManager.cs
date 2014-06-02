@@ -66,18 +66,36 @@ public class TechManager : Singleton<TechManager> {
 
 
 
+
+	public static bool missionComplete = false;
+	public static string currLevel;
+
+
 	//-----------Mission 1 variables------------//
 	// Temporary should be moved into a Questmanager 
+	public static bool hasTurret = false;
 	public static bool hasGenerator = false;
 	public static bool hasScatter = false;
-	public static bool hasTurret = false;
+	public static bool hasMedbay = false;
 	public static bool hasWolves = false;
 	public static bool hasBeatenWolf = false;
 	public static DumbTimer timerScript = DumbTimer.New(5.0f, 1.0f);
-	public static bool missionComplete = false;
 
 	//------------------------------------------//
 
+	//------------Mission 2 variables-----------//
+	public static bool haslightFist = false;
+	public static int hitByFist = 0;
+	public static bool hasGeyser = false;
+	//------------------------------------------//
+
+	//------------Mission 3 variables-----------//
+
+	public static bool foundSC = false;
+	public static bool transportedSC = false;
+	public static bool hasTurrets = false;
+
+	//-------------------------------------------//
 
 
 
@@ -227,9 +245,15 @@ public class TechManager : Singleton<TechManager> {
 	//Pass force = true to bypass this.
 	public static void Research( Tech upgrade, bool force = false){
 		if( CheckUpgrade( upgrade)){
+			// Mission 1 check for researching Scattershot
 			if(upgrade == Tech.scatter){
 				if(!hasScatter)
 				hasScatter = true;
+			}
+			// Mission 2 check for researching LightFist
+			if(upgrade == Tech.lightFist){
+				if(!haslightFist)
+					haslightFist = true;
 			}
 
 			if( !force){
@@ -246,15 +270,13 @@ public class TechManager : Singleton<TechManager> {
 				}
 			}
 			ResearchProgress().SetFinishTime( upgrade, Time.time + GetUpgradeTime( upgrade));
-			if(upgrade == Tech.scatter){
-				if(!hasScatter)
-					hasScatter = true;
-			}
+
+
 		}
 	}
 
 
-
+	// Reset quest variables
 	public static void Reset(){
 		for( int techIndex = 0; techIndex < (int)Tech._upgradesEND + 1; techIndex++){
 			Instance.NumBuildings[techIndex] = 0;
@@ -262,11 +284,18 @@ public class TechManager : Singleton<TechManager> {
 		}
 		Instance.PlayerTech = TechTree.MakeDefault();
 		missionComplete = false;
-		hasTurret = false;
+		hasMedbay = false;
 		hasGenerator = false;
 		hasWolves = false;
 		hasScatter = false;
 		hasBeatenWolf = false;
+		haslightFist = false;
+		hasGeyser = false;
+		hasTurrets = false;
+		foundSC = false;
+		transportedSC = false;
+		hitByFist = 0;
+
 	}
 
 
@@ -288,27 +317,64 @@ public class TechManager : Singleton<TechManager> {
 	void Start () {
 
 	}
-	
 
+
+	// Resets the Tech and the Resources
+	public static void CompleteMission(){
+		if(timerScript.Finished()){
+			ResManager.Reset();
+			TechManager.Reset();
+			MetricManager.Reset();
+			checkLevel();
+			timerScript.Reset();
+			
+		}
+
+	}
+
+	//Checks the current level and moves to the next level in the sequence
+	public static void checkLevel(){
+
+		currLevel = Application.loadedLevelName;
+		switch(currLevel){
+		
+		case "tutorial" :
+			AutoFade.LoadLevel("loadscreen", 2.0f, 2.0f, Color.black);
+			break;
+
+		case "loadscreen" :
+			AutoFade.LoadLevel("level1", 2.0f, 2.0f, Color.black);
+			break;
+		
+		case "level1" :
+			AutoFade.LoadLevel("level2", 2.0f, 2.0f, Color.black);
+			break;
+			
+		case "level2" :
+			AutoFade.LoadLevel("level3", 2.0f, 2.0f, Color.black);
+			break;
+
+		case "level3" :
+			Application.Quit();
+			//AutoFade.LoadLevel("level1", 2.0f, 2.0f, Color.black);
+			break;
+		
+		default:
+			break;
+
+
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {
-		if(hasGenerator == true && hasScatter == true && hasTurret == true && hasWolves == true && hasBeatenWolf == true){
-			missionComplete = true;
-		}
+
 		if(missionComplete){
 			timerScript.Update();
+			CompleteMission();
 			
 		}
-		if(timerScript.Finished()){
-			
-			
-			ResManager.Reset();
-			TechManager.Reset();
-			AutoFade.LoadLevel("scene1", 2.0f, 2.0f, Color.black);
-			timerScript.Reset();
 	
-		}
 		ResearchProgress().UpdateStatus();
 	}
 

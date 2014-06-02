@@ -246,6 +246,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400028}
+  - 33: {fileID: 3300006}
+  - 23: {fileID: 2300006}
+  m_Layer: 0
+  m_Name: LightRing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -262,6 +279,7 @@ Transform:
   - {fileID: 400026}
   - {fileID: 400002}
   - {fileID: 400020}
+  - {fileID: 400028}
   m_Father: {fileID: 0}
 --- !u!4 &400002
 Transform:
@@ -374,7 +392,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 4.68229914, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -412,6 +430,17 @@ Transform:
   m_Children:
   - {fileID: 400024}
   - {fileID: 400022}
+  m_Father: {fileID: 400000}
+--- !u!4 &400028
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
   m_Father: {fileID: 400000}
 --- !u!23 &2300000
 Renderer:
@@ -476,6 +505,27 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!23 &2300006
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: eeda264d5d681784cbb5c6b6d27f9842, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -497,6 +547,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_Mesh: {fileID: 4300002, guid: 3b0998152553f244c938fd4957a722f7, type: 3}
+--- !u!33 &3300006
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_Mesh: {fileID: 4300000, guid: c726904fa8f939f45a1a8fd1f9d3f8d6, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -749,7 +806,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
-  m_Range: 22
+  m_Range: 25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -856,8 +913,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 30
   energyCost: 0
+  buildTime: 45
   TechType: 4
   hologram: {fileID: 100000, guid: d91afd3d423c83d4cb1b35f699cc496f, type: 2}
+  requiresLight: 0
   contactRadius: 4
 --- !u!114 &11400002
 MonoBehaviour:
@@ -872,6 +931,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyGeneration: 20
   genHum: {fileID: 8300000, guid: ba54065e27574364fad9d66362499c74, type: 3}
+  EnergyPerPulse: 1
+  PulseInterval: 6
+  GeneratorRing: {fileID: 100006}
+  GeneratorSphere: {fileID: 100004}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -883,6 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e22308fe93cd8343b1e9f77ec6d1ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightArea: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -894,13 +958,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f851c9e7a8844982745c0d887f0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 300
-  baseHP: 300
+  currHP: 250
+  baseHP: 250
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
   buildScript: {fileID: 0}
   healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
   timerScript: {fileID: 0}
+  toadExplosion: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
