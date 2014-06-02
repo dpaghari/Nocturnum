@@ -28,6 +28,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 	private IsEnemy enemyScript;
 	private float targetCheckTimer = 1.0F;
 	private float targetCheckCounter = 0.0F;
+
+	private int indexCounter = 1;
 	
 	//Given that there are buildings and the player in range,
 	//always attack the player if they're within PlayerPriorityRange
@@ -44,7 +46,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 		CurrTarget = FindTarget(TargetSearchRadius);	
 		if(CurrTarget != null && meshScript != null){
 			meshScript.CalculatePath(CurrTarget.position, meshPath);
-			//showPinkCubes();
+			indexCounter = 1;
+			showPinkCubes();
 		}		
 
 	}
@@ -60,9 +63,19 @@ public class AB_TargetGenerator : MonoBehaviour {
 					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					moveScript.Move(CurrTarget.position - rigidbody.position);
 				} else if(meshPath.corners.Length >= 3){
-					Vector3 lookPosition = new Vector3(meshPath.corners[1].x, transform.position.y, meshPath.corners[1].z);
-					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-					moveScript.Move(meshPath.corners[1] - rigidbody.position);				
+
+					if(distanceToTarget(meshPath.corners[indexCounter]) < 0.5F){
+						indexCounter++;
+					}
+					if(indexCounter < meshPath.corners.Length){
+						Vector3 lookPosition = new Vector3(meshPath.corners[indexCounter].x, transform.position.y, meshPath.corners[1].z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(meshPath.corners[indexCounter] - rigidbody.position);
+					} else {
+						Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
+						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						moveScript.Move(CurrTarget.position - rigidbody.position);
+					}				
 				}
 				
 				//animation
@@ -91,7 +104,8 @@ public class AB_TargetGenerator : MonoBehaviour {
 			CurrTarget = FindTarget(TargetSearchRadius);
 			if(CurrTarget != null && meshScript != null){
 				meshScript.CalculatePath(CurrTarget.position, meshPath);
-				//showPinkCubes();
+				indexCounter = 1;
+				showPinkCubes();
 			}
 			targetCheckCounter = 0.0F;
 		} else {
@@ -196,13 +210,25 @@ public class AB_TargetGenerator : MonoBehaviour {
 	private void showPinkCubes(){
 		int i = 1;
 		if(meshPath != null){
+
+			//Debug.Log (meshPath.corners.Length);
+
 			while (i < meshPath.corners.Length) {
 				Vector3 currentCorner = meshPath.corners[i];
-				Debug.Log (meshPath.corners[i]);
+				//Debug.Log (meshPath.corners[i]);
 				clone = Instantiate (pinkBox, currentCorner, Quaternion.identity) as Rigidbody;
 				i++;
 			}
 		}
+	}
+
+	private float distanceToTarget(Vector3 vec){
+	
+		float deltaX = this.transform.position.x - vec.x;
+		float deltaZ = this.transform.position.z - vec.z;
+		
+		return Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ);
+
 	}
 	
 	//Finds a target within the range
@@ -224,7 +250,13 @@ public class AB_TargetGenerator : MonoBehaviour {
 			building = GObuilding.rigidbody;
 			return building;
 		} else {
-			return FindPlayer();		
+			building = FindNearestBuilding( range);
+
+			if(building != null){
+				return building;
+			} else {
+				return FindPlayer();
+			}		
 		}	
 	}	
 	
