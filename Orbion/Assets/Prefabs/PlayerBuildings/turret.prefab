@@ -383,6 +383,7 @@ MonoBehaviour:
   bulletHeight: {x: 0, y: 5, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   weakenScript: {fileID: 0}
+  stunInterval: .100000001
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -407,10 +408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1ad36c00ea69845b39339a0ea06ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 20
+  lumenCost: 20
   energyCost: 20
   buildTime: 30
   TechType: 11
+  requiresLight: 1
   hologram: {fileID: 100056, guid: b7665e22ac7e90a408b7a4a13cea22fd, type: 2}
   contactRadius: 3
 --- !u!114 &11400006

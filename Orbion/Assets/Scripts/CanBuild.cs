@@ -1,24 +1,12 @@
-﻿using UnityEngine;
+﻿//Purpose: Allows player to bring up and interact with the build menu
+
+using UnityEngine;
 using System.Collections;
 
-public enum Buildings {none, generator, ballistics, wall, medBay, incindiary};
+
 [RequireComponent(typeof(AudioSource))]
 public class CanBuild : MonoBehaviour {
 	
-	public bool MenuUp { get; private set;}
-	private Rigidbody clone;
-	public Rigidbody toBuild {get; private set;}
-	private int menuCounter = 0;
-	private CanResearch researchScript;
-	public dfPanel _buildMenuPanel;
-	private IsBuildHologram currHologram;
-
-
-
-	private bool isDragBuilding = false;
-	private float dragDelay = 0.05f; //note: the delay gets affected by build slow down
-	private DumbTimer dragTimer;
-
 	//Building prefab references
 	public Rigidbody generatorBuilding;
 	public Rigidbody ballisticsBuilding;
@@ -29,36 +17,30 @@ public class CanBuild : MonoBehaviour {
 	public Rigidbody turretBuilding;
 	public Rigidbody photonBuilding;
 	public Rigidbody spotlightBuilding;
+
+	//Build and ErrorBuild sounds
 	public AudioClip initBuild;
 	public AudioClip errBuild;
+	
+	//
+	public dfPanel _buildMenuPanel;
 
 
-	//UI Stuff
-	public GUISkin buildWheelSkin;
-	private float rotAngle = 40;
-	private Vector2 pivotPoint;
-	public Texture2D button_incendiary;
-	public Texture2D button_wall;
-	public Texture2D button_generator;
-	public Texture2D button_ballistics;
-	public Texture2D button_medbay;
-	public Texture2D button_turret;
-	public Texture2D button_photon;
-	public Texture2D button_spotlight;
+	//If the build menu is activated
+	public bool MenuUp { get; private set;}
+	
+	//The building we are about to construct
+	public Rigidbody toBuild {get; private set;}
+	
 
-
-	//Checks (temporary until we have metrics manager working.
-	public bool builtBallistics = false;
-	public bool builtGenerator = false;
-
-
-	//Setting inBuildingMode will slowdown/restore time
+	//BuildingMode occurs when the player has bought a building but has yet to place it onto the map.
+	//Setting inBuildingMode true/false will slowdown/restore time
 	private float slowDownRatio = 0.5f;
 	private float originalFixedUpdate = 0.02f;
 	private bool _inBuildingMode = false;
 	public bool inBuildingMode{
 		get{ return _inBuildingMode;}
-
+		
 		set{
 			if( value == true){
 				Time.timeScale = slowDownRatio;
@@ -74,10 +56,29 @@ public class CanBuild : MonoBehaviour {
 	}
 
 
+
+	//If the player is currently doing a multi building placement by dragging the mouse
+	private bool isDragBuilding = false;
+
+	//The time (secs) inbetween each placement of a new building while dragging
+	//*** The delay gets affected by build slow down ***
+	private float dragDelay = 0.05f; 
+	private DumbTimer dragTimer;
+
+	//The gameobject we're using as a cursor for building
+	private IsBuildHologram currHologram;
+
+	private CanResearch researchScript;
+
 	
 
-	// Use this for initialization
+	void Awake(){
+		originalFixedUpdate = Time.fixedDeltaTime;
+	}
+
+
 	void Start () {
+		toBuild = null;
 		MenuUp = false;
 		_buildMenuPanel.IsVisible = false;
 		researchScript = GetComponent<CanResearch>();
@@ -86,11 +87,9 @@ public class CanBuild : MonoBehaviour {
 
 
 	//Returns true only if we have enough lumen, energy, and we satisfy the prereqs
-	//Don't have restrictions on energy if we're making a generator because
-	//it won't let you build another one if you're UsedEnergy > MaxEnergy
-	bool MeetsRequirement(Rigidbody buildingType){
+	public bool MeetsRequirement(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
-		if ( ResManager.Lumen < buildInfo.cost){
+		if ( ResManager.Lumen < buildInfo.lumenCost){
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
 		}
@@ -99,24 +98,18 @@ public class CanBuild : MonoBehaviour {
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
 		}
-		/*
-		if ( ResManager.Energy + buildInfo.energyCost > ResManager.MaxEnergy){
-			if( buildingType != generatorBuilding){
-				audio.PlayOneShot(errBuild, 0.5f);
-				return false;
-			}
 
-		}
-		*/
 		if ( !TechManager.IsTechAvaliable( buildInfo.TechType)) {
 			audio.PlayOneShot(errBuild, 0.5f);
 			return false;
 		}
+
 		return true;
 	}
 
 
-	void SetConstruction(Rigidbody buildingType){
+	//Sets buildingType as the structure to build if requirements are met
+	public void SetConstruction(Rigidbody buildingType){
 		Buildable buildInfo = buildingType.GetComponent<Buildable>();
 		if ( MeetsRequirement( buildingType)){
 			CloseMenu();
@@ -128,26 +121,18 @@ public class CanBuild : MonoBehaviour {
 		
 	}
 
-	// Grabs Lumen and Energy.
-	int getLumen(Rigidbody buildingType){
-		Buildable buildInfo = buildingType.GetComponent<Buildable>();
-		return buildInfo.cost;
-	}
-	
-	int getEnergy(Rigidbody buildingType){
-		Buildable buildInfo = buildingType.GetComponent<Buildable>();
-		return buildInfo.energyCost;
-	}
-
 
 	public void OpenMenu(){
+		//Prevents having both menus up at once
+		if( researchScript != null && researchScript.MenuUp) return;
+
 		MenuUp = true;
 		_buildMenuPanel.IsVisible = true;
 		toBuild = null;
-		menuCounter = 50;
 		inBuildingMode = true;
 		if( currHologram) GameObject.Destroy( currHologram.gameObject);
 	}
+
 
 	public void CloseMenu(){
 		MenuUp = false;
@@ -157,183 +142,89 @@ public class CanBuild : MonoBehaviour {
 		if( currHologram) GameObject.Destroy( currHologram.gameObject);
 	}
 
-	
-	void Awake(){
-		originalFixedUpdate = Time.fixedDeltaTime;
-		toBuild = null;
-	}
 
-	public void ConstructGenerator(){
-		SetConstruction(generatorBuilding);
-	}
+	//If requirements are met, creates the chosen building at the mouse position
+	private void Construct(){
+		Vector3 mousePos = Utility.GetMouseWorldPos(5.25f);
+		
+		if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
 
-	public void ConstructBallistics(){
-		SetConstruction(ballisticsBuilding);
-	}
-
-	public void ConstructWall(){
-		SetConstruction(wallBuilding);
-	}
-
-	public void ConstructMedBay(){
-		SetConstruction(medBayBuilding);
-	}
-
-	public void ConstructIncendiary(){
-		SetConstruction(incindiaryBuilding);
-	}
-
-	public void ConstructTurret(){
-		SetConstruction(turretBuilding);
-	}
-
-	public void ConstructPhoton(){
-		SetConstruction(photonBuilding);
-	}
-
-	public void ConstructSpotlight(){
-		SetConstruction(spotlightBuilding);
-	}
-
-
-/*	void OnGUI() {
-		GUI.skin = buildWheelSkin;
-		if(MenuUp){
+			//Stops player from shooting when pressing mouse to construct
 			GetComponent<CanShoot>().ResetFiringTimer();
+			
+			if( currHologram) GameObject.Destroy( currHologram.gameObject);
+			Rigidbody clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
+			audio.PlayOneShot(initBuild, 1.0f);			
 
-			// Generator Button
-			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2-192,128,128), button_generator)){
-				SetConstruction(generatorBuilding);
-				//TechManager.hasGenerator = true;
+			//Passing building info to the under-construction object
+			IsUnderConstruction constructScript = clone.GetComponent<IsUnderConstruction>();
+			Buildable buildInfo = toBuild.GetComponent<Buildable>();
+			constructScript.toBuild = toBuild;
+			constructScript.totalConstruction = buildInfo.buildTime;
+			constructScript.canBuildOutOfLight = !buildInfo.requiresLight;
+			
+			inBuildingMode = false;
+			
+			
+			ResManager.RmLumen(buildInfo.lumenCost);
+			ResManager.RmEnergy(buildInfo.energyCost);
+			
+			if( toBuild == wallBuilding){
+				SetConstruction( wallBuilding);
+				isDragBuilding = true;
+			}
+			else{
+				toBuild = null;
+				dragTimer.SetProgress(1.0f);
 			}
 			
-			// Ballistics Button 
-			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-192,128,128), button_ballistics))
-				SetConstruction(ballisticsBuilding);
-			
-			// Wall Button
-			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-192,128,128), button_wall))
-				SetConstruction(wallBuilding);
-			
-			// Medbay Button
-			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2-64,128,128), button_medbay))
-				SetConstruction(medBayBuilding);
-
-			//Incendiary Button
-			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2-64,128,128), button_incendiary))
-				SetConstruction(incindiaryBuilding);
-
-			// Turret Button
-			if( GUI.Button(new Rect(Screen.width/2+64,Screen.height/2+92,128,128), button_turret))
-				SetConstruction(turretBuilding);
-
-			// Photon Button
-			if( GUI.Button(new Rect(Screen.width/2-64,Screen.height/2+92,128,128), button_photon))
-				SetConstruction(photonBuilding);
-
-			// Spotlight Button
-			if( GUI.Button(new Rect(Screen.width/2-192,Screen.height/2+92,128,128), button_spotlight))
-				SetConstruction(spotlightBuilding);
-
+			dragTimer.Reset();
 		}
+	}
 
-	}*/
 
-	// Update is called once per frame
 	void Update () {
-		dragTimer.Update();
 
-
-		if(MenuUp){
-			GetComponent<CanShoot>().ResetFiringTimer();
-		}
 
 		if( currHologram)
 			currHologram.transform.position = Utility.GetMouseWorldPos(0);
 
 
-		//   INPUT
-		//---------------------------------------------------------------------------------------------------//
-
 		if(GameManager.KeysEnabled){
-			if(Input.GetMouseButtonDown(0) && toBuild != null){
-				if(MeetsRequirement(toBuild)){
-				audio.PlayOneShot(initBuild, 1.0f);
-				}
+
+			//Open/Close build menu
+			if(Input.GetKeyDown(KeyCode.Escape))
+				CloseMenu ();
+			
+			if (Input.GetKeyDown(KeyCode.B)){
+				if( MenuUp)
+					CloseMenu();
+				else
+					OpenMenu();
+			}
+			
+			//Switch from build menu to research menu
+			if ( Input.GetKeyDown( KeyCode.V) && MenuUp && researchScript != null){
+				CloseMenu();
+				researchScript.OpenMenu();
 			}
 
 			if(Input.GetMouseButton(0) && toBuild != null && currHologram.CanBuildHere){
-
-				Vector3 mousePos = Utility.GetMouseWorldPos(5.25f);
-
-				if (MeetsRequirement(toBuild) && dragTimer.Finished() ) {
-					GetComponent<CanShoot>().ResetFiringTimer();
-
-					if( currHologram) GameObject.Destroy( currHologram.gameObject);
-					clone = Instantiate(underConstructionBuilding, mousePos, Quaternion.LookRotation(Vector3.forward, Vector3.up)) as Rigidbody;
-
-					IsUnderConstruction constructScript = clone.GetComponent<IsUnderConstruction>();
-					Buildable buildInfo = toBuild.GetComponent<Buildable>();
-
-					constructScript.toBuild = toBuild;
-					constructScript.totalConstruction = buildInfo.buildTime;
-
-					// Slows down during placing building.
-					inBuildingMode = false;
-
-					if( toBuild == generatorBuilding){
-						clone.GetComponent<IsUnderConstruction>().canBuildOutOfLight = true;
-						builtGenerator = true;
-					}
-
-					ResManager.RmLumen(buildInfo.cost);
-					ResManager.RmEnergy(buildInfo.energyCost);
-						
-					if( toBuild == wallBuilding){
-						SetConstruction( wallBuilding);
-						isDragBuilding = true;
-					}
-					else{
-						toBuild = null;
-						dragTimer.SetProgress(1.0f);
-					}
-
-					dragTimer.Reset();
-				}
-
+				if( currHologram.CanBuildHere)
+					Construct();
 			}
-			
-			//If we let go of the mouse, we shouldn't be building walls anymore
+
+
+			//If we let go of the mouse, we shouldn't be drag building anymore
 			if( Input.GetMouseButtonUp(0) && isDragBuilding){
 				CloseMenu();
 				isDragBuilding = false;
 				dragTimer.SetProgress(1.0f);
 			}
 
-			if(Input.GetKeyDown(KeyCode.Escape))
-				CloseMenu ();
-
-
-
-			if (Input.GetKeyDown(KeyCode.B) && !MenuUp)
-				if( researchScript != null && !researchScript.MenuUp)
-					OpenMenu();
-			
-				
-			// Check for if the player just opens and closes.
-			if (Input.GetKeyDown(KeyCode.B) && menuCounter <= 0)
-				CloseMenu();
-
-			if (menuCounter > 0)
-				menuCounter --;
-
-
-			if ( Input.GetKeyDown( KeyCode.V) && MenuUp && researchScript != null){
-				CloseMenu();
-				researchScript.OpenMenu();
-			}
 		}
 
+		dragTimer.Update();
 		
 	}
 	

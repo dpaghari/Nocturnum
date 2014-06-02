@@ -564,10 +564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1ad36c00ea69845b39339a0ea06ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 50
+  lumenCost: 50
   energyCost: 20
   buildTime: 40
   TechType: 10
+  requiresLight: 1
   hologram: {fileID: 100002, guid: 66866562e2046e0409c62ccdb9a40691, type: 2}
   contactRadius: 3
 --- !u!114 &11400006
@@ -581,6 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e22308fe93cd8343b1e9f77ec6d1ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightArea: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
