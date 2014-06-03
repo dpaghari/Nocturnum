@@ -20006,9 +20006,10 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: dda333be8fe9b17498c630feb4347e19, type: 2}
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -21047,8 +21048,8 @@ MonoBehaviour:
   renderOrder: 192
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
-  atlas: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4, type: 2}
-  spriteName: white-frame-thick
+  atlas: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc, type: 2}
+  spriteName: GrenadeIcon
   flip: 0
   fillDirection: 0
   fillAmount: 1
@@ -36666,8 +36667,8 @@ MonoBehaviour:
   renderOrder: 188
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
-  atlas: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4, type: 2}
-  spriteName: white-frame-thick
+  atlas: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc, type: 2}
+  spriteName: FlameshotIcon
   flip: 0
   fillDirection: 0
   fillAmount: 1
@@ -70185,7 +70186,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400072, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_LocalPosition.x
@@ -70226,11 +70227,11 @@ Prefab:
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dda333be8fe9b17498c630feb4347e19, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 100072, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -71003,7 +71004,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6500096, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: m_Size.x
       value: .1640625
@@ -73454,11 +73455,11 @@ Prefab:
     - target: {fileID: 11400346, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: atlas
       value: 
-      objectReference: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4,
+      objectReference: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc,
         type: 2}
     - target: {fileID: 11400346, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: spriteName
-      value: white-frame-thick
+      value: ClipIncreaseIcon
       objectReference: {fileID: 0}
     - target: {fileID: 11400448, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: atlas
@@ -73472,38 +73473,38 @@ Prefab:
     - target: {fileID: 11400094, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: atlas
       value: 
-      objectReference: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4,
+      objectReference: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc,
         type: 2}
     - target: {fileID: 11400094, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: spriteName
-      value: white-frame-thick
+      value: GrenadeIcon
       objectReference: {fileID: 0}
     - target: {fileID: 11400474, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: atlas
       value: 
-      objectReference: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4,
+      objectReference: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc,
         type: 2}
     - target: {fileID: 11400474, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: spriteName
-      value: white-frame-thick
+      value: BounceshotIcon
       objectReference: {fileID: 0}
     - target: {fileID: 11400454, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: atlas
       value: 
-      objectReference: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4,
+      objectReference: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc,
         type: 2}
     - target: {fileID: 11400454, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: spriteName
-      value: white-frame-thick
+      value: Scattershot-icon
       objectReference: {fileID: 0}
     - target: {fileID: 11400168, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: atlas
       value: 
-      objectReference: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4,
+      objectReference: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc,
         type: 2}
     - target: {fileID: 11400168, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: spriteName
-      value: white-frame-thick
+      value: FlameshotIcon
       objectReference: {fileID: 0}
     - target: {fileID: 11400278, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: atlas
@@ -73867,6 +73868,10 @@ Prefab:
     - target: {fileID: 11400514, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
       propertyPath: backgroundColor.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400194, guid: 0c2b6a79aa9131446ab4cbf675fc12be, type: 2}
@@ -74927,8 +74932,8 @@ MonoBehaviour:
   renderOrder: 184
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
-  atlas: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4, type: 2}
-  spriteName: white-frame-thick
+  atlas: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc, type: 2}
+  spriteName: ClipIncreaseIcon
   flip: 0
   fillDirection: 0
   fillAmount: 1
@@ -100158,8 +100163,8 @@ MonoBehaviour:
   renderOrder: 196
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
-  atlas: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4, type: 2}
-  spriteName: white-frame-thick
+  atlas: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc, type: 2}
+  spriteName: Scattershot-icon
   flip: 0
   fillDirection: 0
   fillAmount: 1
@@ -102850,8 +102855,8 @@ MonoBehaviour:
   renderOrder: 186
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
-  atlas: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4, type: 2}
-  spriteName: white-frame-thick
+  atlas: {fileID: 11400000, guid: 89b3401e304085a44bfe5bd168dd18dc, type: 2}
+  spriteName: BounceshotIcon
   flip: 0
   fillDirection: 0
   fillAmount: 1
