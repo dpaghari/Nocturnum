@@ -42,7 +42,7 @@ public class LunaAnimation : MonoBehaviour {
 	IEnumerator WaitAndRun(float waitTime){
 		yield return new WaitForSeconds(waitTime); 
 		animation.CrossFade("Run");
-		GameManager.KeysEnabled = true;
+		//GameManager.KeysEnabled = true;
 
 
 
