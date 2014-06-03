@@ -12,7 +12,6 @@ public class IsVisibleUnderObjects : MonoBehaviour {
 	void Update () {
 		Vector3 direction =  transform.position - Camera.main.transform.position;
 		RaycastHit[] hits = Physics.RaycastAll(Camera.main.transform.position, direction);
-		Debug.DrawRay(Camera.main.transform.position, direction, Color.green);
 
 
 		for( int i=0; i<hits.Length; i++){
