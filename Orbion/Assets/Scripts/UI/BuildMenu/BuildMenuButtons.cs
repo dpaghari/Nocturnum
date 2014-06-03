@@ -73,15 +73,15 @@ public class BuildMenuButtons : MonoBehaviour {
 	}
 	public void CallBuildSpotlight(){
 		audio.PlayOneShot(buttonSound, 0.2f);
-		buildScript.SetConstruction(buildScript.turretBuilding);
+		buildScript.SetConstruction(buildScript.spotlightBuilding);
 	}
 	public void CallBuildTurret(){
 		audio.PlayOneShot(buttonSound, 0.2f);
-		buildScript.SetConstruction(buildScript.photonBuilding);
+		buildScript.SetConstruction(buildScript.turretBuilding);
 	}
 	public void CallBuildPhoton(){
 		audio.PlayOneShot(buttonSound, 0.2f);
-		buildScript.SetConstruction(buildScript.spotlightBuilding);
+		buildScript.SetConstruction(buildScript.photonBuilding);
 	}
 
 

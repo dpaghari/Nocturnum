@@ -50,7 +50,8 @@ public class FlowerAnimation : MonoBehaviour {
 		if(isActive){
 			if(other.tag == "Player" && isHolding == false){
 				//other.transform.position = transform.position;
-				GameManager.KeysEnabled = false;
+				//GameManager.KeysEnabled = false;
+				other.GetComponent<CanMove>().MoveScale -= 1;
 				animation.Play("RaflessiaClose");
 				other.animation.Play("Idle");
 				isHolding = true;
@@ -58,7 +59,7 @@ public class FlowerAnimation : MonoBehaviour {
 			if(other.GetComponent<IsEnemy>() != null && isHolding == false){
 				//other.transform.position = transform.position;
 				other.GetComponent<CanMove>().MoveScale -= 1;
-				other.animation.Play("Idle");
+				//other.animation.Play("Idle");
 				animation.Play("RaflessiaClose");
 				isHolding = true;
 
@@ -72,7 +73,8 @@ public class FlowerAnimation : MonoBehaviour {
 			if(timerScript.Finished() == true){
 				isHolding = false;
 				if(other.tag == "Player"){
-					GameManager.KeysEnabled = true;
+					//GameManager.KeysEnabled = true;
+					other.GetComponent<CanMove>().MoveScale += 1;
 
 				}
 				if(other.GetComponent<IsEnemy>() != null){
