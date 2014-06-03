@@ -33,7 +33,7 @@ public class IsLightSource : MonoBehaviour {
 		if(weakenScript) weakenScript.Weaken();
 
 		Buildable buildableScript = other.GetComponent<Buildable> ();
-		if (buildableScript)
-						buildableScript.power ();
+		//if (buildableScript)
+					//	buildableScript.power ();
 	}
 }

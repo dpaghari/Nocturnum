@@ -79,8 +79,11 @@ public class AB_TargetPlayer : AiBehavior {
 				if(enemyScript.enemyType == EnemyType.luminotoad)
 					animation.CrossFade("Luminotoad_Hop");
 				
-				if(enemyScript.enemyType == EnemyType.alpha_wolf)
+				if(enemyScript.enemyType == EnemyType.alpha_wolf){
+					if(!animation.IsPlaying("WolfHowl"))
 					animation.CrossFade("WolfRunCycle");
+
+				}
 				
 				if(enemyScript.enemyType == EnemyType.wolf)
 					animation.CrossFade("WolfRunCycle");
@@ -118,9 +121,11 @@ public class AB_TargetPlayer : AiBehavior {
 				}
 				
 				if(enemyScript.enemyType == EnemyType.alpha_wolf){
+					if(!animation.IsPlaying("WolfHowl"))
 					animation.CrossFade("WolfAttack");
+
 					if(rand > 0.0F && rand <= 1.0F){
-						//this.GetComponent<CanShoot>().stun();
+						this.GetComponent<CanShoot>().stun();
 					}
 				}
 				

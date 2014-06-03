@@ -1001,7 +1001,7 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400008, guid: ebc0d4cc8625ec44482ad800eab8ea01, type: 3}
   m_Animations:
-  - {fileID: 7400000, guid: ebc0d4cc8625ec44482ad800eab8ea01, type: 3}
+  - {fileID: 7400008, guid: e1d9a1eb35e061549a608f312c4ab3e1, type: 3}
   - {fileID: 7400002, guid: ebc0d4cc8625ec44482ad800eab8ea01, type: 3}
   - {fileID: 7400004, guid: ebc0d4cc8625ec44482ad800eab8ea01, type: 3}
   - {fileID: 7400006, guid: ebc0d4cc8625ec44482ad800eab8ea01, type: 3}
@@ -1041,6 +1041,7 @@ MonoBehaviour:
   spawnerObj: {fileID: 0}
   numWolves: 2
   timerScript: {fileID: 0}
+  timer2Script: {fileID: 0}
   howldelayScript: {fileID: 0}
   howlSound: {fileID: 8300000, guid: 09e3c3d8b8ce51141bcc67cca6e9c98e, type: 3}
 --- !u!114 &11400004
@@ -1113,9 +1114,9 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 11400010}
   stunInterval: .100000001
 --- !u!114 &11400014
 MonoBehaviour:
@@ -1130,12 +1131,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 800
   baseHP: 800
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100002, guid: 1e7ec6767c7625a47834b135ca0926f9, type: 2}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1

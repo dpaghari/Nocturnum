@@ -82,8 +82,10 @@ public class AB_TargetGenerator : MonoBehaviour {
 				if(enemyScript.enemyType == EnemyType.luminotoad)
 					animation.CrossFade("Luminotoad_Hop");
 				
-				if(enemyScript.enemyType == EnemyType.alpha_wolf)
+				if(enemyScript.enemyType == EnemyType.alpha_wolf){
+					if(!animation.IsPlaying("WolfHowl"))
 					animation.CrossFade("WolfRunCycle");
+				}
 				
 				if(enemyScript.enemyType == EnemyType.wolf)
 					animation.CrossFade("WolfRunCycle");

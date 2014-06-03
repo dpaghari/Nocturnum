@@ -911,6 +911,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -7096,6 +7097,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -7368,6 +7370,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -8119,6 +8122,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -13170,6 +13174,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -32680,6 +32685,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -34875,12 +34881,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 125
   baseHP: 125
+  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!95 &1693228717
 Animator:
   serializedVersion: 2
@@ -35242,6 +35246,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 4
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 1
