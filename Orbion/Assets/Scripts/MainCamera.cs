@@ -26,6 +26,7 @@ public class MainCamera : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+
 		if (cameraFollowX)
 		{
 			thisTransform.position = new Vector3(Mathf.SmoothDamp(thisTransform.position.x, cameraTarget.transform.position.x, ref velocity.x, smoothTime), thisTransform.position.y, thisTransform.position.z);
@@ -38,5 +39,6 @@ public class MainCamera : MonoBehaviour
 		{
 			// to do
 		}
+
 	}
 }
