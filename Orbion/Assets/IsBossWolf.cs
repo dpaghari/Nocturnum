@@ -12,6 +12,7 @@ public class IsBossWolf : MonoBehaviour {
 	private float lowHP;
 	private bool isLow;
 	public DumbTimer timerScript;
+	public DumbTimer timer2Script;
 	public DumbTimer howldelayScript;
 	private int howlNum;
 	private int howlMax;
@@ -21,6 +22,7 @@ public class IsBossWolf : MonoBehaviour {
 		howlNum = 0;
 		howlMax = 2;
 		timerScript = DumbTimer.New(7.0f, 1.0f);					// Howl Cooldown
+		timer2Script = DumbTimer.New(1.5f, 1.0f);
 		howldelayScript = DumbTimer.New(1.5f, 1.0f);					// Howl Spawn Wolves Delay
 		isLow = false;
 		numWolves = 3;
@@ -37,6 +39,7 @@ public class IsBossWolf : MonoBehaviour {
 				Howl ();
 			}
 		}
+
 			
 
 
@@ -45,11 +48,16 @@ public class IsBossWolf : MonoBehaviour {
 	public void Howl(){
 		audio.PlayOneShot(howlSound);
 		Vector3 pos = transform.position;
+		animation.Play("WolfHowl");
+
 
 		howldelayScript.Update();
-
+		timer2Script.Update();
 		spawnerObj = GameObject.Find("spawner_prefab");
 		if(howldelayScript.Finished()){
+			this.GetComponent<CanMove>().MoveScale -= 1;
+
+
 			for(int i = 0;i < numWolves;i++) {
 					float rand = Random.value;
 
@@ -60,14 +68,17 @@ public class IsBossWolf : MonoBehaviour {
 					else{
 						spawnerObj.GetComponent<CanSpawnUpdate>().makeFastMelee(pos);
 					}
-					howldelayScript.Reset();
-					howlNum++;
-					timerScript.Reset();
 					
 
 				
 			}
+			howlNum++;
+			howldelayScript.Reset();
+			timerScript.Reset();
+			if(timer2Script.Finished()){ this.GetComponent<CanMove>().MoveScale += 1;}
+			timer2Script.Reset();
 		}
+
 	
 	
 	}

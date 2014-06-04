@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1ad36c00ea69845b39339a0ea06ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lumenCost: 0
+  lumenCost: 35
   energyCost: 35
   buildTime: 60
   TechType: 8
@@ -334,12 +334,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 400
   baseHP: 400
+  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

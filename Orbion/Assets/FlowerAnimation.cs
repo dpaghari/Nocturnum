@@ -20,7 +20,7 @@ public class FlowerAnimation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(isHolding){
+		if(isActive){
 
 			timerScript.Update();
 
@@ -30,7 +30,7 @@ public class FlowerAnimation : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter(Collision other){
+	void OnTriggerEnter(Collider other){
 
 
 		if(!isActive){
@@ -38,6 +38,7 @@ public class FlowerAnimation : MonoBehaviour {
 		
 				animation.Play("RaflessiaOpen");
 				StartCoroutine(WaitAndCallback(animation["RaflessiaOpen"].length));
+				Destroy(other.gameObject);
 		
 			}
 		}
@@ -50,36 +51,32 @@ public class FlowerAnimation : MonoBehaviour {
 		if(isActive){
 			if(other.tag == "Player" && isHolding == false){
 				//other.transform.position = transform.position;
-				GameManager.KeysEnabled = false;
+				//GameManager.KeysEnabled = false;
+				other.GetComponent<CanMove>().MoveScale -= 1;
 				animation.Play("RaflessiaClose");
 				other.animation.Play("Idle");
+				other.transform.position = transform.position;
+
 				isHolding = true;
 			}
-			if(other.GetComponent<IsEnemy>() != null && isHolding == false){
+			else if(other.GetComponent<IsEnemy>() != null && isHolding == false){
 				//other.transform.position = transform.position;
 				other.GetComponent<CanMove>().MoveScale -= 1;
-				other.animation.Play("Idle");
+				//other.animation.Play("Idle");
 				animation.Play("RaflessiaClose");
+				other.transform.position = transform.position;
+
 				isHolding = true;
 
 			}
-			if(isHolding){
-				if(other.GetComponent<IsEnemy>() != null || other.tag == "Player"){
-				other.transform.position = transform.position;
-				}
-			}
-
+		
 			if(timerScript.Finished() == true){
 				isHolding = false;
-				if(other.tag == "Player"){
-					GameManager.KeysEnabled = true;
+			
+				other.GetComponent<CanMove>().MoveScale += 1;
 
-				}
-				if(other.GetComponent<IsEnemy>() != null){
-					other.GetComponent<CanMove>().MoveScale += 1;
-				}
 				isActive = false;
-				collider.isTrigger = false;
+				//collider.isTrigger = false;
 				animation.Play("RaflessiaOpen");
 				animation.PlayQueued("RaflessiaClose");
 				timerScript.Reset();
@@ -90,7 +87,7 @@ public class FlowerAnimation : MonoBehaviour {
 
 	IEnumerator WaitAndCallback(float waitTime){
 		yield return new WaitForSeconds(waitTime); 
-		collider.isTrigger = true;
+		//collider.isTrigger = true;
 		isActive = true;
 		animation.Play("RaflessiaActive");
 	}

@@ -75,6 +75,10 @@ public class AutoFade : MonoBehaviour
 		m_Fading = true;
 		StartCoroutine(Fade(aFadeOutTime, aFadeInTime, aColor));
 	}
+	public static void FadeInLevel(float aFadeOutTime, float aFadeInTime, Color aColor){
+
+	}
+
 	
 	public static void LoadLevel(string aLevelName,float aFadeOutTime, float aFadeInTime, Color aColor)
 	{

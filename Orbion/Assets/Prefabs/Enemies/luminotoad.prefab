@@ -641,7 +641,7 @@ MonoBehaviour:
   pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
   AtkRange: 10
   CurrTarget: {fileID: 0}
-  PlayerPriorityRange: 15
+  PlayerPriorityRange: 40
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -673,9 +673,9 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: .100000001
 --- !u!114 &11400014
 MonoBehaviour:
@@ -690,12 +690,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

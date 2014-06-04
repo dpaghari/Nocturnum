@@ -17,7 +17,7 @@ public class isLevel4QuestItem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(numCharges);
+		//Debug.Log(numCharges);
 		numCharges += Time.deltaTime;
 	
 	}

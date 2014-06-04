@@ -94,9 +94,12 @@ public class CanShoot : MonoBehaviour {
 				//audio.clip = enemyShotSound;
 				float rand = Random.value;
 
-				if(rand > 0.0 && rand < 0.20)
-				audio.PlayOneShot(enemyShotSound,0.3f);
-		
+				if(rand > 0.0 && rand < 0.20){
+					if(enemyShotSound != null){
+					audio.PlayOneShot(enemyShotSound,0.3f);
+					}
+				
+				}
 				/*
 				if(weakenScript.IsWeakened){
 					

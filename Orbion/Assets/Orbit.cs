@@ -27,12 +27,11 @@ public class Orbit : MonoBehaviour {
 
 	}
 
-	void FixedUpdate(){
+	void LateUpdate(){
 		//position = target.transform.position;
 		//position.y += 2;
 		//position.z -= 2;
 		//position.x -= 2;
-
 		Vector3 pos = target.transform.position;
 		pos.y = currHeight+amplitude*Mathf.Sin(speed*Time.time);
 		pos.z -= 2;
@@ -40,12 +39,10 @@ public class Orbit : MonoBehaviour {
 		
 		transform.position = pos;
 
-		//transform.position = position;
-
-		//transform.position = target.transform.position;
 		direction = Utility.GetMouseWorldPos(transform.position.y);
 		transform.forward = direction - transform.position;
-		//transform.rotation = Quaternion.identity;
+
+
 	}
 
 

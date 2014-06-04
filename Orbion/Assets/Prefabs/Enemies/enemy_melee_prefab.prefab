@@ -1080,9 +1080,9 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
-  weakenScript: {fileID: 11400008}
   stunInterval: .100000001
 --- !u!114 &11400012
 MonoBehaviour:
@@ -1097,12 +1097,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

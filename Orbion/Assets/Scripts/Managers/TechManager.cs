@@ -101,6 +101,14 @@ public class TechManager : Singleton<TechManager> {
 
 	//-------------------------------------------//
 
+	//------------Mission 4 variables------------//
+	public static bool isCharged = false;
+
+
+
+
+	//-------------------------------------------//
+
 
 
 
@@ -301,6 +309,7 @@ public class TechManager : Singleton<TechManager> {
 		foundSC = false;
 		transportedSC = false;
 		hitByFist = 0;
+		isCharged = false;
 
 	}
 
