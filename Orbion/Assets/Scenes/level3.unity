@@ -5504,6 +5504,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -5521,12 +5522,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!65 &89647178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5818,6 +5817,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -9107,6 +9107,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -9124,12 +9125,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &160471243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11337,6 +11336,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -18645,6 +18645,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -19207,6 +19208,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -19534,6 +19536,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -19551,12 +19554,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!65 &350405844
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24722,6 +24723,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -32895,6 +32897,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -32912,12 +32915,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 800
   baseHP: 800
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100002, guid: 1e7ec6767c7625a47834b135ca0926f9, type: 2}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &539087790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37632,6 +37633,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -38829,6 +38831,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -38846,12 +38849,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 300
   baseHP: 300
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &671369462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40460,6 +40461,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -40477,12 +40479,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 300
   baseHP: 300
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &710324959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48312,6 +48312,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -52189,6 +52190,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -52206,12 +52208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!65 &920606494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53969,6 +53969,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 1
   enemyShotSound: {fileID: 8300000, guid: f6f90b0197d80694c9e8ada47e8c844b, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 0, z: 0}
   shootEffect: {fileID: 100000, guid: 0a8f0138979026948830f1a9dbe60763, type: 2}
   stunInterval: .100000001
@@ -53986,12 +53987,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 70
   baseHP: 70
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!95 &946039818
 Animator:
   serializedVersion: 2
@@ -54405,6 +54404,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -59060,12 +59060,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 250
   baseHP: 250
+  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!114 &1045580147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61578,6 +61576,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 1
   enemyShotSound: {fileID: 8300000, guid: f6f90b0197d80694c9e8ada47e8c844b, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 0, z: 0}
   shootEffect: {fileID: 100000, guid: 0a8f0138979026948830f1a9dbe60763, type: 2}
   stunInterval: .100000001
@@ -61595,12 +61594,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 70
   baseHP: 70
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!95 &1106539433
 Animator:
   serializedVersion: 2
@@ -61991,6 +61988,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 1
   enemyShotSound: {fileID: 8300000, guid: f6f90b0197d80694c9e8ada47e8c844b, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 0, z: 0}
   shootEffect: {fileID: 100000, guid: 0a8f0138979026948830f1a9dbe60763, type: 2}
   stunInterval: .100000001
@@ -62008,12 +62006,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 70
   baseHP: 70
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!95 &1112836204
 Animator:
   serializedVersion: 2
@@ -63340,6 +63336,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -63357,12 +63354,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1145140451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66178,6 +66173,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -66195,12 +66191,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1178015390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67322,6 +67316,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -70758,6 +70753,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -70775,12 +70771,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1247039810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74477,6 +74471,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -74494,12 +74489,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 300
   baseHP: 300
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1318260559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83838,6 +83831,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -83855,12 +83849,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 50
   baseHP: 50
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1433851205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89468,6 +89460,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -89485,12 +89478,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1540157570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98805,6 +98796,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -99689,12 +99681,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 125
   baseHP: 125
+  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!95 &1693228717
 Animator:
   serializedVersion: 2
@@ -100056,6 +100046,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 4
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 1
@@ -100529,6 +100520,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -100546,12 +100538,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1696007500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -100656,6 +100646,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -101566,6 +101557,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -101583,12 +101575,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 300
   baseHP: 300
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1706134281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101896,6 +101886,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -101913,12 +101904,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 800
   baseHP: 800
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100002, guid: 1e7ec6767c7625a47834b135ca0926f9, type: 2}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1706218346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102485,6 +102474,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -102502,12 +102492,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 300
   baseHP: 300
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1721227429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103303,6 +103291,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -103320,12 +103309,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!65 &1734477065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104954,6 +104941,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -104971,12 +104959,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!65 &1753094371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105484,6 +105470,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -112323,6 +112310,7 @@ MonoBehaviour:
   numOfBulletShot: 16
   projectileStartPosition: 3
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
   stunInterval: 5
@@ -115153,12 +115141,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 1000
   baseHP: 1000
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!54 &1943651649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115496,6 +115482,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -115513,12 +115500,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &1945616900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -115991,6 +115976,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -116008,12 +115994,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!65 &1948290879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119136,6 +119120,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 01de8f66e53418846921a1a22726f085, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -119153,12 +119138,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 75
   baseHP: 75
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 100002, guid: b4ab16cdcffd1964d8f03936662a4384, type: 2}
 --- !u!65 &2007092060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121186,6 +121169,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -121203,12 +121187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &2047583251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122474,6 +122456,7 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 3
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
   stunInterval: .100000001
@@ -122491,12 +122474,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 80
   baseHP: 80
+  healEffect: {fileID: 0}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 0}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!65 &2068017857
 BoxCollider:
   m_ObjectHideFlags: 0
