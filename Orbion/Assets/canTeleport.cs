@@ -21,13 +21,14 @@ public class canTeleport : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log(teleportCharge);
+
 		if(Input.GetKeyDown(KeyCode.H)){
 			isTeleporting = true;
 		}
 
 
 		if(Input.GetKey(KeyCode.H)){
-			Debug.Log(teleportCharge);
 			if(TechManager.IsTechAvaliable(Tech.spotlight)){
 				teleportCharge += Time.deltaTime;
 			}
@@ -38,6 +39,7 @@ public class canTeleport : MonoBehaviour {
 
 		}
 
+
 		if(teleportCharge >= teleportThresh){
 			if(TechManager.IsTechAvaliable(Tech.spotlight)){
 				transform.position = spotlightPos.transform.position;
@@ -46,7 +48,15 @@ public class canTeleport : MonoBehaviour {
 
 		}
 
-
-	
 	}
+	void OnCollisionEnter(Collision other){
+		int otherLayerMask = 1 << other.gameObject.layer;
+		if( otherLayerMask == Utility.EnemyBullets_PLM	|| otherLayerMask == Utility.PlantBullet_PlM){
+			//Physics.IgnoreCollision( this.collider, other.collider);
+			isTeleporting = false;
+			teleportCharge = 0;
+		}
+	}
+
+
 }
