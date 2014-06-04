@@ -18,6 +18,10 @@ public class Killable : MonoBehaviour {
 	public GameObject deathTarget;
 	public GameObject collectTarget;
 
+	//public GUITexture screenflashTexture;
+	private Material m_Material;
+	private bool m_Fading;
+
 	//used to check if we should call the event when a building is hurt
 	private Buildable buildScript;
 
@@ -26,9 +30,10 @@ public class Killable : MonoBehaviour {
 
 	// Set HP to default
 	void Start () {
+		m_Material = new Material("Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }");
+		m_Fading = false;
 		buildScript = gameObject.GetComponent<Buildable>();
 		currHP = baseHP;
-
 	}
 
 
@@ -42,6 +47,7 @@ public class Killable : MonoBehaviour {
 	public void damage (int dmg) {
 
 		if(gameObject.tag == "Player"){
+			StartCoroutine(FlashWhenHit());
 			animation.Play("GetHit");
 		}
 
@@ -155,4 +161,53 @@ public class Killable : MonoBehaviour {
 		else
 			Instantiate(healEffect, transform.position, Quaternion.identity);
 	}
+
+	private void DrawQuad(Color aColor,float aAlpha)
+	{
+		aColor.a = aAlpha;
+		m_Material.SetPass(0);
+		GL.Color(aColor);
+		GL.PushMatrix();
+		GL.LoadOrtho();
+		GL.Begin(GL.QUADS);
+		GL.Vertex3(0, 0, -1);
+		GL.Vertex3(0, 1, -1);
+		GL.Vertex3(1, 1, -1);
+		GL.Vertex3(1, 0, -1);
+		GL.End();
+		GL.PopMatrix();
+	}
+	
+	private IEnumerator Fade(float aFadeOutTime, float aFadeInTime, Color aColor)
+	{
+		float t = 0.0f;
+		while (t<1.0f)
+		{
+			yield return new WaitForEndOfFrame();
+			t = Mathf.Clamp01(t + Time.deltaTime / aFadeOutTime);
+			DrawQuad(aColor,t);
+		}
+
+		while (t>0.0f)
+		{
+			yield return new WaitForEndOfFrame();
+			t = Mathf.Clamp01(t - Time.deltaTime / aFadeInTime);
+			DrawQuad(aColor,t);
+		}
+		m_Fading = false;
+	}
+	private void StartFade(float aFadeOutTime, float aFadeInTime, Color aColor)
+	{
+		m_Fading = true;
+		StartCoroutine(Fade(aFadeOutTime, aFadeInTime, aColor));
+	}
+	
+	IEnumerator FlashWhenHit (){
+		StartFade(0.0f, 0.2f, Color.red/2);
+		yield return new WaitForSeconds (.01f);
+		//StartFade (0.8f, 0.0f, Color.red);
+		//Debug.Log("FLASH");
+	}
+
+
 }
