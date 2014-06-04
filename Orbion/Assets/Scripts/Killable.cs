@@ -63,11 +63,9 @@ public class Killable : MonoBehaviour {
 			if(!GameManager.PlayerDead){
 			animation.Play("Dead");
 			GameManager.PlayerDead = true;
-			}
 			collider.enabled = false;
 			StartCoroutine(WaitAndCallback(animation["Dead"].length));
-
-			return;
+			}
 		}
 
 

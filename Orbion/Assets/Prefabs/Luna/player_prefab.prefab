@@ -32,6 +32,7 @@ GameObject:
   - 82: {fileID: 8200006}
   - 95: {fileID: 9500002}
   - 81: {fileID: 8100000}
+  - 114: {fileID: 11400036}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -2536,9 +2537,9 @@ MonoBehaviour:
   numOfBulletShot: 1
   projectileStartPosition: 4
   enemyShotSound: {fileID: 0}
+  firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 4, z: 0}
   shootEffect: {fileID: 100000, guid: 91a952a331b5b414bac677ea864adb0b, type: 2}
-  weakenScript: {fileID: 0}
   stunInterval: 1
   clipSize: 25
   currentAmmo: 25
@@ -2573,12 +2574,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 125
   baseHP: 125
+  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
+  toadExplosion: {fileID: 0}
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
-  buildScript: {fileID: 0}
-  healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
-  timerScript: {fileID: 0}
-  toadExplosion: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2590,7 +2589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b72249153613934ab5e17905b67cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildMenuPanel: {fileID: 0}
   generatorBuilding: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
   ballisticsBuilding: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
   underConstructionBuilding: {fileID: 5400000, guid: 2ac5e63ddc7dddd4980ad9af353ffff8,
@@ -2603,17 +2601,7 @@ MonoBehaviour:
   spotlightBuilding: {fileID: 5400000, guid: b1ea8356d7acaf849929962787c373d1, type: 2}
   initBuild: {fileID: 8300000, guid: bf66affa77a8ecb479f5bafcc7b12dd2, type: 3}
   errBuild: {fileID: 8300000, guid: 19965041cf999894589a7d3709e5768b, type: 3}
-  buildWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
-  button_incendiary: {fileID: 2800000, guid: 39578d898366e8e4cbecce0ff7c6f67d, type: 3}
-  button_wall: {fileID: 2800000, guid: 1b1cdd26f177a9d438e19f345d5bc105, type: 3}
-  button_generator: {fileID: 2800000, guid: c8ba5c492e2f43c459ec7ac5db8081dd, type: 3}
-  button_ballistics: {fileID: 2800000, guid: 587628a34fb4f284e812bd1cc4d8be42, type: 3}
-  button_medbay: {fileID: 2800000, guid: 368bd042d8e1c8d4e81bc599763605cd, type: 3}
-  button_turret: {fileID: 2800000, guid: 98cf072b762e6454ea7ecf607ba7bad4, type: 3}
-  button_photon: {fileID: 2800000, guid: f268aeb61a1ef7e4d894102b5dc657d9, type: 3}
-  button_spotlight: {fileID: 2800000, guid: 6d96b721dfe534e4cbdfc21b33154f78, type: 3}
-  builtBallistics: 0
-  builtGenerator: 0
+  _buildMenuPanel: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2654,13 +2642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e447f4afbcca314795410d6872ec953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeWheelSkin: {fileID: 11400000, guid: 53f3b2d7dd3d2b249b4f9c2f375051ad, type: 2}
-  button_clipSize: {fileID: 2800000, guid: bfbceae9c8d62dd48a6dc1f423c167a8, type: 3}
-  button_lightGrenade: {fileID: 2800000, guid: a9c14c5f89710c749a1a3aac0b4b0d90, type: 3}
-  button_scatterShot: {fileID: 2800000, guid: f4ea26635c32cf94b88583bf89684eab, type: 3}
-  button_seekerShot: {fileID: 2800000, guid: 0ed0a8dd93e052f4798d9d7571856843, type: 3}
-  button_ricochetShot: {fileID: 2800000, guid: 2e3d396a839fed441b68e5933fb67a51, type: 3}
-  button_lightFist: {fileID: 2800000, guid: 001d1524b9b52424c809928bcc7ba368, type: 3}
   errBuild: {fileID: 8300000, guid: 19965041cf999894589a7d3709e5768b, type: 3}
   _upgradeWheelPanel: {fileID: 0}
 --- !u!114 &11400012
@@ -2828,6 +2809,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffcf9511edc3cc4f9aefa7b39d5026a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportCharge: 0
+  teleportThresh: 0
+  spotlightPos: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
