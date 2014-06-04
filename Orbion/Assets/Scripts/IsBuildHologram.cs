@@ -22,6 +22,8 @@ public class IsBuildHologram : MonoBehaviour {
 	//Need to know the obstacle radius of the real building we want to build
 	private Buildable buildScript;
 
+	private const float NO_OBSTACLE = 0;
+
 
 
 	//Detects whether something is in light
@@ -39,38 +41,39 @@ public class IsBuildHologram : MonoBehaviour {
 	}
 
 
+	float GetObstacleRadius( Collider castHit){
+		GameObject go = castHit.gameObject;		
+
+		Buildable buildScript = go.GetComponent<Buildable>();
+		if(buildScript != null) return buildScript.contactRadius;
+
+		IsUnderConstruction constructScript = go.GetComponent<IsUnderConstruction>();
+		if(constructScript != null) return constructScript.toBuild.GetComponent<Buildable>().contactRadius;
+
+		IsBuildingObstacle obstableScript = go.GetComponent<IsBuildingObstacle>();
+		if( obstableScript != null) return obstableScript.contactRadius;
+
+		return NO_OBSTACLE;
+	}
+	
+
 
 	//returns true if there is another building, construction, or obstacle
 	public bool IsObstacleNearby(){
-		
-		
 
 		int searchLayers = Utility.Building_PLM | Utility.Environment_PLM | Utility.Quest_PLM | Utility.Plant_PLM;
+		
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10, searchLayers);
 
-		GameObject closestBuilding = Utility.GetClosestWith(transform.position, 10, IsObstacle, searchLayers);
-		if (closestBuilding == null) return false;
+		for (int i=0; i < hitColliders.Length; i++) {
+			float obstacleRadius = GetObstacleRadius( hitColliders[i]);
+			if( obstacleRadius == NO_OBSTACLE) continue;
 
-		Buildable closestBuildScript = null;
-		IsUnderConstruction closestConstructionScript = null;
-		IsBuildingObstacle closestObstableScript = null;
-		closestBuildScript = closestBuilding.GetComponent<Buildable>();
-		closestConstructionScript = closestBuilding.GetComponent<IsUnderConstruction>();
-		closestObstableScript = closestBuilding.GetComponent<IsBuildingObstacle>();
-
-		float obstacleRadius = 0;
-		if( closestObstableScript) obstacleRadius = closestObstableScript.contactRadius;
-		if( closestConstructionScript) obstacleRadius = closestConstructionScript.toBuild.GetComponent<Buildable>().contactRadius;
-		if( closestBuildScript) obstacleRadius = closestBuildScript.contactRadius;
-
-
-		float minimumDistance = buildScript.contactRadius + obstacleRadius;
-		float actualDistance = Utility.FindDistNoY( transform.position, closestBuilding.transform.position);
-
-		if (actualDistance < minimumDistance)
-			return true;
-
-
-		return false;
+         	float minimumDistance = buildScript.contactRadius + obstacleRadius;
+         	float actualDistance = Utility.FindDistNoY( transform.position, hitColliders[i].gameObject.transform.position);
+        	if (actualDistance < minimumDistance) return true;			
+		}
+		return false;		
 	}
 	
 	

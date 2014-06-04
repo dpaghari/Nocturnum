@@ -121,5 +121,6 @@ public class IsUnderConstruction : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.tag == "playerBullet") ChangeBuildProgess( -BulletTimeReduction, bulletRotationSpeed);
+		if(other.gameObject.GetComponent<IsUnderConstruction>() != null) Physics.IgnoreCollision( this.collider, other.collider); 
 	}
 }
