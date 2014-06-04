@@ -14042,7 +14042,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 563287524}
   m_GameObject: {fileID: 750387801}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5, y: 5, z: 5}
@@ -15461,10 +15461,10 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 98623e7f4c59e9247ae9afa838217c53, type: 2}
+  - {fileID: 2100000, guid: dda333be8fe9b17498c630feb4347e19, type: 2}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -27725,7 +27725,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 1808750112}
   m_GameObject: {fileID: 1355387490}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5, y: 5, z: 5}
@@ -34879,6 +34879,7 @@ GameObject:
   - 82: {fileID: 1693228718}
   - 95: {fileID: 1693228717}
   - 81: {fileID: 1693228740}
+  - 114: {fileID: 1693228720}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -35051,6 +35052,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1693228720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400036, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 525282049}
+  m_GameObject: {fileID: 1693228714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffcf9511edc3cc4f9aefa7b39d5026a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportCharge: 0
+  teleportThresh: 0
+  spotlightPos: {fileID: 0}
 --- !u!82 &1693228721
 AudioSource:
   m_ObjectHideFlags: 0
