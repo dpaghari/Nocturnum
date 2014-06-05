@@ -11,6 +11,6 @@ public class ShowLumenCollected : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		string lumenString = string.Format("{0}", ResManager.Lumen);
-		_label.Text = "Lumen: " + lumenString;
+		_label.Text = lumenString;
 	}
 }

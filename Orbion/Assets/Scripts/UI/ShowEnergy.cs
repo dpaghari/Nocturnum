@@ -13,7 +13,7 @@ public class ShowEnergy : MonoBehaviour {
 	void Update () {
 		energyString = string.Format("{0}", ResManager.Energy);
 		//string energyString = string.Format(ResManager.Energy);
-		_label.Text = "Energy: " + energyString;
+		_label.Text = energyString;
 		//Debug.Log(ResManager.Energy);
 	}
 }
