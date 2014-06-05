@@ -38,6 +38,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	//1-easy 2-med 3-hard
 	public int difficulty;
+
+	private int numSpawn = 0;
 	
 	public class LevelInfo{
 		public float timer;
@@ -54,6 +56,10 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public LevelInfo[] levels = new LevelInfo[totalLevels];
 
 	void Start(){
+
+		FindAllSpawners(1000);
+		//Debug.Log (numSpawn);
+
 		difficulty = GameManager.GameDifficulty;
 		//Debug.Log(difficulty);//0.75 2.0 4.0 8.0 12.0
 		addLevel (firstSpawnTimer, 25.0F, 3); addLevel (3.0F, 25.0F, 4); addLevel (7.0F, 20.0F, 4);
@@ -79,6 +85,18 @@ public class CanSpawnUpdate : MonoBehaviour {
 	
 	void FixedUpdate(){
 	}
+
+	public void FindAllSpawners(float searchRadius){
+		Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, searchRadius);
+		//Transform closestBuilding = null;
+		//float closestBuildingDist = Mathf.Infinity;
+		for (int i=0; i < hitColliders.Length; i++) {
+			if( hitColliders[i].GetComponent<IsSpawn>() == null) continue;
+			
+			numSpawn++;
+		}
+	}
+		
 	
 	void Update(){
 		if(!bossSummon && TechManager.hasWolves){
