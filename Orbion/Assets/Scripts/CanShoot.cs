@@ -117,7 +117,8 @@ public class CanShoot : MonoBehaviour {
 
 			}
 			firingTimer.Reset();
-			clone = Instantiate(shootEffect, temp + dir * 2, Quaternion.AngleAxis(-90, Vector3.forward)) as Rigidbody;
+			if( shootEffect)
+				clone = Instantiate(shootEffect, temp + dir * 2, Quaternion.AngleAxis(-90, Vector3.forward)) as Rigidbody;
 		}
 	}
 
