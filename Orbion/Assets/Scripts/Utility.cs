@@ -62,18 +62,38 @@ public static class Utility{
 		dir.y = 0;
 		return dir;
 	}
+	public static Vector3 FindDifNoY( GameObject origin, Vector3 target){
+		return FindDifNoY( origin.transform.position, target);
+	}
+	public static Vector3 FindDifNoY( GameObject origin, GameObject target){
+		return FindDifNoY( origin.transform.position, target.transform.position);
+	}
+
 
 
 	//Returns the direction from origin to target without a Y component
 	//since we only need to use x and z for a top down game.
 	public static Vector3 FindDirNoY(Vector3 origin, Vector3 target){
-		return FindDifNoY(origin, target).normalized;
+		return FindDifNoY( origin, target).normalized;
 	}
+	public static Vector3 FindDirNoY(GameObject origin, Vector3 target){
+		return FindDirNoY( origin.transform.position, target);
+	}
+	public static Vector3 FindDirNoY(GameObject origin, GameObject target){
+		return FindDirNoY( origin.transform.position, target.transform.position);
+	}
+
 
 	//Returns the distance between 2vectors ignoring the y-value
 	//since we only need to use x and z for a top down game.
 	public static float FindDistNoY( Vector3 origin, Vector3 target){
 		return FindDifNoY(origin, target).magnitude;
+	}
+	public static float FindDistNoY( GameObject origin, Vector3 target){
+		return FindDistNoY( origin.transform.position, target);
+	}
+	public static float FindDistNoY( GameObject origin, GameObject target){
+		return FindDistNoY( origin.transform.position, target.transform.position);
 	}
 
 

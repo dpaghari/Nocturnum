@@ -8,13 +8,19 @@ public class AB_ZingbatBoss_Default : AiBehavior {
 	public CanShoot defaultShoot;
 
 	public float attackRange = 7f;
+	public float rotationSpeed = 10f;
 
 
 	IEnumerator DelayedShot(){
 		yield return new WaitForSeconds(0.35f);
 		defaultShoot.Shoot( target.transform.position);
+		controller.currDefaultHits++;
+		StopCoroutine("DelayedShot");
 	}
 
+	public bool IsAttacking(){
+		return animation.IsPlaying("ZingBatAttack");
+	}
 
 	//initialization of the behavior
 	override public void OnBehaviorEnter(){
@@ -23,14 +29,15 @@ public class AB_ZingbatBoss_Default : AiBehavior {
 	}
 	
 	//cleanup/transitions when leaving this behavior
-	override public void OnBehaviorExit(){ return;}
+	override public void OnBehaviorExit(){
+		controller.currDefaultHits = 0;
+	}
 	
 	//Stuff we run on FixedUpdate when this is the current behavior
 	override public void FixedUpdateAB(){
 		if( target != null){
-			transform.LookAt(target.transform.position);
-			transform.forward = -transform.forward;
-			if(!animation.IsPlaying("ZingBatAttack")){
+			Utility.LerpLook( this.gameObject, target, rotationSpeed);
+			if( !IsAttacking()){
 				controller.moveScript.Move( target.transform.position - transform.position);
 				animation.CrossFade("ZingBatGlide");
 			}
