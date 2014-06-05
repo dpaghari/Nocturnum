@@ -62,7 +62,7 @@ public class AB_TargetPlayer : AiBehavior {
 					moveScript.Move(CurrTarget.position - rigidbody.position);
 				} else if(meshPath.corners.Length >= 3){
 					
-					if(distanceToTarget(meshPath.corners[indexCounter]) < 0.5F){
+					if(distanceToTarget(meshPath.corners[indexCounter]) < 0.5F && indexCounter < meshPath.corners.Length-1){
 						indexCounter++;
 					}
 					if(indexCounter < meshPath.corners.Length){
