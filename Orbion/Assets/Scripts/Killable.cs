@@ -48,7 +48,9 @@ public class Killable : MonoBehaviour {
 
 		if(gameObject.tag == "Player"){
 			StartCoroutine(FlashWhenHit());
+			if(!animation.IsPlaying("Groundpunch")){
 			animation.Play("GetHit");
+			}
 		}
 
 		if (buildScript != null) EventManager.OnDamagingBuilding(this);
