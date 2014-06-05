@@ -181,7 +181,7 @@ public class Killable : MonoBehaviour {
 	private IEnumerator Fade(float aFadeOutTime, float aFadeInTime, Color aColor)
 	{
 		float t = 0.0f;
-		while (t<1.0f)
+		while (t<0.1f)
 		{
 			yield return new WaitForEndOfFrame();
 			t = Mathf.Clamp01(t + Time.deltaTime / aFadeOutTime);
@@ -203,9 +203,9 @@ public class Killable : MonoBehaviour {
 	}
 	
 	IEnumerator FlashWhenHit (){
-		StartFade(0.0f, 0.2f, Color.red/2);
+		//StartFade(0.0f, 0.2f, Color.red/2);
 		yield return new WaitForSeconds (.01f);
-		//StartFade (0.8f, 0.0f, Color.red);
+		StartFade (0.8f, 0.0f, Color.red);
 		//Debug.Log("FLASH");
 	}
 
