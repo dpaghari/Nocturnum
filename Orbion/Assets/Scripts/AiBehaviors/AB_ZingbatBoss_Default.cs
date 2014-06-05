@@ -42,7 +42,7 @@ public class AB_ZingbatBoss_Default : AiBehavior {
 		if( target == null) return;
 
 		if( defaultShoot.FinishCooldown()){
-			Debug.Log(Utility.FindDistNoY( transform.position, target.transform.position));
+			//Debug.Log(Utility.FindDistNoY( transform.position, target.transform.position));
 			if( Utility.FindDistNoY( transform.position, target.transform.position) <= attackRange){
 				animation.CrossFade("ZingBatAttack");
 				StartCoroutine("DelayedShot");

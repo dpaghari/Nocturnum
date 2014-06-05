@@ -72,7 +72,8 @@ public class FlowerAnimation : MonoBehaviour {
 		
 			if(timerScript.Finished() == true){
 				isHolding = false;
-			
+
+				if(other.GetComponent<IsEnemy>() !=  null || other.tag == "Player")
 				other.GetComponent<CanMove>().MoveScale += 1;
 
 				isActive = false;
