@@ -121,4 +121,16 @@ public static class Utility{
 	}
 
 
+	public static void LerpLook( GameObject viewer, Vector3 position, float speed = 1, bool flipForward = true){
+		Vector3 relativePos = position - viewer.transform.position;
+		if( flipForward) relativePos = -relativePos;
+		Quaternion newRotation = Quaternion.LookRotation( relativePos);
+		viewer.transform.rotation = Quaternion.Lerp( viewer.transform.rotation, newRotation, Time.deltaTime * speed);
+	} 
+
+	public static void LerpLook( GameObject viewer, GameObject target, float speed = 1, bool flipForward = true){
+		LerpLook( viewer, target.transform.position, speed, flipForward);
+	}
+
+
 }

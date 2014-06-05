@@ -40,6 +40,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public int difficulty;
 
 	private int numSpawn = 0;
+	private Vector3[] spawnLocations;
 	
 	public class LevelInfo{
 		public float timer;
@@ -57,7 +58,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 
-		FindAllSpawners(1000);
+		//FindAllSpawners(Mathf.Infinity);
 		//Debug.Log (numSpawn);
 
 		difficulty = GameManager.GameDifficulty;
@@ -87,16 +88,33 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 
 	public void FindAllSpawners(float searchRadius){
-		Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, searchRadius);
-		//Transform closestBuilding = null;
-		//float closestBuildingDist = Mathf.Infinity;
-		for (int i=0; i < hitColliders.Length; i++) {
-			if( hitColliders[i].GetComponent<IsSpawn>() == null) continue;
-			
+
+		//Debug.Log ("Find all spawners!");
+		/*
+		spawn_location[] spawns = FindObjectsOfType(typeof(spawn_location)) as spawn_location[];
+		foreach (spawn_location spawn in spawns) {
+			Debug.Log ("Found Spawner!");
 			numSpawn++;
 		}
-	}
+		*/
+		IsSpawn[] spawns = FindObjectsOfType(typeof(IsSpawn)) as IsSpawn[];
+		Debug.Log ("num spawns: " + spawns.Length);
+		spawnLocations = new Vector3[spawns.Length];
+		int i = 0;
+		foreach (IsSpawn spawn in spawns) {
+			Debug.Log ("Found Spawner!");
+			numSpawn++;
+			spawnLocations[i] = spawn.transform.position;
+			i++;
+			//Debug.Log (spawn.transform.position);
+			
+		}
+		for (int j = 0; j < spawnLocations.Length; i++){
+			//Debug.Log("Spawn Location " + j + ": " + spawnLocations[j]);
+		}
 		
+	}
+	
 	
 	void Update(){
 		if(!bossSummon && TechManager.hasWolves){
