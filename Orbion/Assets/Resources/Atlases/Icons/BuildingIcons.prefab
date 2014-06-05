@@ -1,14 +1,193 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: BuildingIcons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f514313262e3d141ad017b60809752a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: b344914b83cfb684ba4d4eb6741928f5, type: 2}
+  items:
+  - name: icon_ballistics
+    region:
+      serializedVersion: 2
+      x: .452991486
+      y: .339743555
+      width: .252136767
+      height: .346153855
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 118, y: 162}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  - name: icon_generator
+    region:
+      serializedVersion: 2
+      x: .709401727
+      y: .326923043
+      width: .286324799
+      height: .358974367
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 134, y: 168}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  - name: icon_incendiary
+    region:
+      serializedVersion: 2
+      x: .587606847
+      y: .690170944
+      width: .267094016
+      height: .305555582
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 124.999992, y: 143}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  - name: icon_medbay
+    region:
+      serializedVersion: 2
+      x: .183760688
+      y: .764957249
+      width: .226495743
+      height: .230769247
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 106, y: 108}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  - name: icon_photon
+    region:
+      serializedVersion: 2
+      x: .414529949
+      y: .754273474
+      width: .168803424
+      height: .241453007
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 79, y: 113}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  - name: icon_spotlight
+    region:
+      serializedVersion: 2
+      x: .00427350448
+      y: .79273504
+      width: .17521368
+      height: .202991456
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 82, y: 95}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  - name: icon_turret
+    region:
+      serializedVersion: 2
+      x: .00427350448
+      y: .37179485
+      width: .239316255
+      height: .31410259
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 112, y: 147}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  - name: icon_wall
+    region:
+      serializedVersion: 2
+      x: .247863263
+      y: .354700834
+      width: .200854704
+      height: .331196606
+    border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    rotated: 0
+    sizeInPixels: {x: 94, y: 155}
+    textureGUID: 
+    deleted: 0
+    texture: {fileID: 0}
+  generator: 1
+  imageFileGUID: c04732bbc3b481f46bf29b8f53973210
+  dataFileGUID: 42c1b5beceb52394492ba764f18924dc
 --- !u!1001 &100100000
 Prefab:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
   m_IsExploded: 1
