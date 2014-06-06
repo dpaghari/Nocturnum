@@ -50,8 +50,29 @@ public class BuildMenuButtons : MonoBehaviour {
 			case Tech.ballistics:
 				theBuilding = buildScript.ballisticsBuilding;
 				break;
-			default:
+			case Tech.generator:
+				theBuilding = buildScript.generatorBuilding;
 				break;
+			case Tech.incendiary:
+				theBuilding = buildScript.incindiaryBuilding;
+				break;
+			case Tech.medbay:
+				theBuilding = buildScript.medBayBuilding;
+				break;
+			case Tech.photon:
+				theBuilding = buildScript.photonBuilding;
+				break;
+			case Tech.spotlight:
+				theBuilding = buildScript.spotlightBuilding;
+				break;
+			case Tech.turret:
+				theBuilding = buildScript.turretBuilding;
+				break;
+			case Tech.wall:
+				theBuilding = buildScript.wallBuilding;
+				break;
+			default:
+					break;
 		}
 
 		if( theBuilding == null){
