@@ -16,9 +16,12 @@ public class Mission4 : MonoBehaviour {
 	string collectString;
 	public bool questComplete;
 	public bool bossDefeated;
+
+	public GameObject questItem;
 	
 	// Use this for initialization
 	void Start () {
+		questItem = GameObject.Find("mission4superconductor");
 		questComplete = false;
 		bossDefeated = false;
 		_checkbox_1.IsChecked = false;
@@ -39,8 +42,12 @@ public class Mission4 : MonoBehaviour {
 			_label_mission_clear.IsVisible = true;
 		}
 		
-		collectString = string.Format("{0} of {1}", ResManager.TurretCount, ResManager.QuestTurretCount);
-		_checkbox_1.Label.Text = "Build 3 Turrets: " + collectString;
+		//collectString = string.Format("{0} of {1}", ResManager.TurretCount, ResManager.QuestTurretCount);
+		_checkbox_1.Label.Text = "Survive till the Superconductor charges";
+		_checkbox_2.Label.Text = "SuperConductor Charge: " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().numCharges) + " of " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().maxCharges);
+		//_checkbox_3.Label.Text = "Survive till the Superconductor charges";
+
+
 		
 		if(TechManager.foundSC){
 			_checkbox_2.IsChecked = true;
