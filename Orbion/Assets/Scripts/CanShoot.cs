@@ -39,7 +39,7 @@ public class CanShoot : MonoBehaviour {
 
 	//stun timer variables
 	private DumbTimer stunTimer;
-	public float stunInterval = 0.1F;
+	public float stunInterval = 1.0F;
 	private bool stunFinished = false;
 
 
@@ -64,7 +64,7 @@ public class CanShoot : MonoBehaviour {
 
 		if(stunTimer != null && !stunFinished){
 			if(stunTimer.Finished()){
-				Debug.Log("STUN DONE!!");
+				//Debug.Log("STUN DONE!!");
 				stunFinished = true;
 				//stunTimer.Reset();
 				GameManager.KeysEnabled = true;
@@ -131,11 +131,11 @@ public class CanShoot : MonoBehaviour {
 		if(stunTimer == null){
 			//stunTimer.Reset();
 			stunTimer = DumbTimer.New( stunInterval);
-			Debug.Log("STUN!!");
+			//Debug.Log("STUN!!");
 		} else if(stunFinished){
 			stunTimer.Reset();
 			stunFinished = false;
-			Debug.Log("STUN!!");
+			//Debug.Log("STUN!!");
 		}
 		
 		
