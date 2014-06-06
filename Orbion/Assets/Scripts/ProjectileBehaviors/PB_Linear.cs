@@ -44,7 +44,7 @@ public class PB_Linear : ProjectileBehavior {
 	public IEnumerator FindSeekerTarget(){
 		while( true){
 			if(seekerTarget == null && TechManager.GetNumBuilding(Tech.incendiary) > 0)
-				seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy, Utility.Enemy_PLM);
+				seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsTarget, Utility.Enemy_PLM);
 			yield return new WaitForSeconds(seekerFindTargetRate);
 		}
 	}
@@ -52,6 +52,7 @@ public class PB_Linear : ProjectileBehavior {
 
 	public override void Initialize(){
 		StartCoroutine( FindSeekerTarget());
+		health = TechManager.GetUpgradeLv (Tech.ricochet);
 	}
 
 	public void Update(){
@@ -86,8 +87,8 @@ public class PB_Linear : ProjectileBehavior {
 	public override void Perform(){ return;}
 
 
-	public bool IsEnemy(GameObject enemy){
-		if(enemy.GetComponent<IsEnemy>() == null) return false;
+	public bool IsTarget(GameObject enemy){
+		if(enemy.GetComponent<IsEnemy>() == null && enemy.GetComponent<Buildable>() == null) return false;
 		if (enemy == lastHitTarget)
 						return false;
 
@@ -134,14 +135,15 @@ public class PB_Linear : ProjectileBehavior {
 			target.GetComponent<hasOverdrive>().overdriveCount += 1.0f;
 			//ebug.Log(target.GetComponent<hasOverdrive>().overdriveCount);
 		}
-		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0 && TechManager.GetNumBuilding(Tech.photon) > 0) {
+		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0 && TechManager.GetNumBuilding(Tech.photon) > 0 && health > 0) {
+			health--;
 			Physics.IgnoreCollision(gameObject.collider, other.collider);
-			//if(lastHitTarget != null)
-			//	Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);
+			if(lastHitTarget != null)
+				Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);
 			lastHitTarget = other.gameObject;
 			gameObject.rigidbody.velocity = Vector3.zero;
 			gameObject.rigidbody.angularVelocity = Vector3.zero;
-			GameObject targ = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.ricochet), IsEnemy);
+			GameObject targ = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.ricochet), IsTarget);
 
 	
 
