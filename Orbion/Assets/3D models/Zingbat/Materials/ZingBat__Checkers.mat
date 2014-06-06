@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ZingBat__Checkers
-  m_Shader: {fileID: 11, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: b052747d888a9774b9e065f154730fd5, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -39,8 +39,24 @@ Material:
         first:
           name: _EmissionLM
         second: 0
+      data:
+        first:
+          name: _Shininess
+        second: .078125
+      data:
+        first:
+          name: _Distortion
+        second: .0500000007
+      data:
+        first:
+          name: _LitOpacityFactor
+        second: 1
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}
