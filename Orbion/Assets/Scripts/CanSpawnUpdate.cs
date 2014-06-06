@@ -58,8 +58,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 	void Start(){
 
-		//FindAllSpawners(Mathf.Infinity);
-		//Debug.Log (numSpawn);
+		FindAllSpawners(Mathf.Infinity);
 
 		difficulty = GameManager.GameDifficulty;
 		//Debug.Log(difficulty);//0.75 2.0 4.0 8.0 12.0
@@ -88,28 +87,19 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 
 	public void FindAllSpawners(float searchRadius){
-
-		//Debug.Log ("Find all spawners!");
-		/*
-		spawn_location[] spawns = FindObjectsOfType(typeof(spawn_location)) as spawn_location[];
-		foreach (spawn_location spawn in spawns) {
-			Debug.Log ("Found Spawner!");
-			numSpawn++;
-		}
-		*/
+		
 		IsSpawn[] spawns = FindObjectsOfType(typeof(IsSpawn)) as IsSpawn[];
-		Debug.Log ("num spawns: " + spawns.Length);
+		//Debug.Log ("num spawns: " + spawns.Length);
 		spawnLocations = new Vector3[spawns.Length];
 		int i = 0;
 		foreach (IsSpawn spawn in spawns) {
-			Debug.Log ("Found Spawner!");
+			//Debug.Log ("Found Spawner!");
 			numSpawn++;
 			spawnLocations[i] = spawn.transform.position;
-			i++;
-			//Debug.Log (spawn.transform.position);
-			
+			i++;			
 		}
-		for (int j = 0; j < spawnLocations.Length; i++){
+		
+		for (int j = 0; j < spawnLocations.Length; j++){
 			//Debug.Log("Spawn Location " + j + ": " + spawnLocations[j]);
 		}
 		
@@ -173,6 +163,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 		//Debug.Log("Spawn Wave " + currentLevel);
 		float rand = Random.value;
 		Vector3 tempVec;
+
+		
 		if(rand > 0.0 && rand < 0.33){
 			tempVec = Vec1;
 		} else if(rand >= 0.33 && rand < 0.66){
@@ -180,6 +172,12 @@ public class CanSpawnUpdate : MonoBehaviour {
 		} else {
 			tempVec = Vec3;
 		}
+		
+		/*
+		int randIndex = (int)Mathf.Ceil(rand * spawnLocations.Length) - 1;
+		if(randIndex == -1) randIndex = 0;
+		tempVec = spawnLocations[randIndex];
+		*/
 		int numSpawn;
 
 		if(difficulty == 1){
