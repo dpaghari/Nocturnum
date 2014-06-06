@@ -245,20 +245,16 @@ public class AB_TargetGenerator : MonoBehaviour {
 		 	return FindPlayer();
 		}
 		//Check for closest generator
-		GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<IsGenerator>);
+		//GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<IsGenerator>);
+		GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<Buildable>);
+		
 		Rigidbody building;
 		//if no generator return player
 		if(GObuilding != null){ 
 			building = GObuilding.rigidbody;
 			return building;
 		} else {
-			building = FindNearestBuilding( range);
-
-			if(building != null){
-				return building;
-			} else {
-				return FindPlayer();
-			}		
+			return FindPlayer();			
 		}	
 	}	
 	
