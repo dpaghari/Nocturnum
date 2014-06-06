@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//TODO: doesn't automatically correct changes on prereq information
+
 public class UpgradeMenuButtons : MonoBehaviour {
 	//public dfPanel _panel;
 	//private bool menuUp;
@@ -12,6 +14,39 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 	public AudioClip buttonSound;
 	// Use this for initialization
+
+	public Tech techType = Tech.none;
+
+	private dfLabel descriptionLabel;
+	private dfLabel energyLabel;
+	private dfLabel lumenLabel;
+	//private dfLabel nameLabel;
+
+	
+	
+	
+	void SetLabel(){
+		foreach( Transform child in transform){
+			switch( child.name){
+			case "Description":
+				descriptionLabel = child.GetComponent<dfLabel>();
+				break;
+				
+			case "Energy":
+				energyLabel = child.GetComponent<dfLabel>();
+				break;
+				
+			case "Lumen":
+				lumenLabel = child.GetComponent<dfLabel>();
+				break;
+				
+			default:
+				break;
+			}
+		}
+	}
+
+
 	void Start () {
 		//menuUp = false;
 		//_panel.IsVisible = false;
@@ -19,6 +54,15 @@ public class UpgradeMenuButtons : MonoBehaviour {
 		researchScript = GameManager.AvatarContr.GetComponent<CanResearch>();
 		_hudIcon.IsVisible = false;
 
+		SetLabel();
+
+		if( TechManager.IsUpgrade( techType)){
+			UpgradeCostStruct upgradeInfo = TechManager.GetUpgradeCosts( techType);
+			energyLabel.Text = string.Format("{0}: {1}", energyLabel.name, upgradeInfo.energy);
+			lumenLabel.Text =  string.Format("{0}: {1}", lumenLabel.name, upgradeInfo.lumen);
+			}
+		else 
+			Debug.LogWarning( string.Format( "{0} has non upgrade techType: {1}", this.name, techType)); 
 	}
 	
 	// Update is called once per frame
