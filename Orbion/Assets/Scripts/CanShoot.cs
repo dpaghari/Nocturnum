@@ -148,7 +148,7 @@ public class CanShoot : MonoBehaviour {
 		if( FinishCooldown()){
 			Vector3 dir = target - transform.position;
 
-			if( numberOfShots == 1){
+			if( numberOfShots == 1 || (tag == "Player" && TechManager.GetNumBuilding(Tech.ballistics) == 0)){
 				ShootDir( dir);
 				return;
 			}

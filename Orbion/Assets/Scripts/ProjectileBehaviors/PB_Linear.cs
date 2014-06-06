@@ -43,7 +43,7 @@ public class PB_Linear : ProjectileBehavior {
 	
 	public IEnumerator FindSeekerTarget(){
 		while( true){
-			if(seekerTarget == null)
+			if(seekerTarget == null && TechManager.GetNumBuilding(Tech.incendiary) > 0)
 				seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsEnemy, Utility.Enemy_PLM);
 			yield return new WaitForSeconds(seekerFindTargetRate);
 		}
@@ -134,7 +134,7 @@ public class PB_Linear : ProjectileBehavior {
 			target.GetComponent<hasOverdrive>().overdriveCount += 1.0f;
 			//ebug.Log(target.GetComponent<hasOverdrive>().overdriveCount);
 		}
-		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0) {
+		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0 && TechManager.GetNumBuilding(Tech.photon) > 0) {
 			Physics.IgnoreCollision(gameObject.collider, other.collider);
 			//if(lastHitTarget != null)
 			//	Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);
