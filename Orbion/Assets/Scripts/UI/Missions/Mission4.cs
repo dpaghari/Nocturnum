@@ -8,7 +8,7 @@ public class Mission4 : MonoBehaviour {
 	public dfCheckbox _checkbox_1;
 	public dfCheckbox _checkbox_2;
 	public dfCheckbox _checkbox_3;
-	//public dfCheckbox _checkbox_4;
+	public dfCheckbox _checkbox_4;
 	//public dfCheckbox _checkbox_5;
 	public dfLabel _label_mission_clear;
 	public dfLabel _label_paused;
@@ -27,7 +27,7 @@ public class Mission4 : MonoBehaviour {
 		_checkbox_1.IsChecked = false;
 		_checkbox_2.IsChecked = false;
 		_checkbox_3.IsChecked = false;
-		//_checkbox_4.IsChecked = false;
+		_checkbox_4.IsChecked = false;
 		//_checkbox_5.IsChecked = false;
 	}
 	
@@ -36,7 +36,8 @@ public class Mission4 : MonoBehaviour {
 		
 		
 		
-		if(_checkbox_1.IsChecked == true && _checkbox_2.IsChecked == true && _checkbox_3.IsChecked == true){
+		if(_checkbox_2.IsChecked == true && _checkbox_3.IsChecked == true && _checkbox_4.IsChecked == true){
+			_checkbox_1.IsChecked = true;
 			questComplete = true;
 			TechManager.missionComplete = true;
 			_label_mission_clear.IsVisible = true;
@@ -45,19 +46,21 @@ public class Mission4 : MonoBehaviour {
 		//collectString = string.Format("{0} of {1}", ResManager.TurretCount, ResManager.QuestTurretCount);
 		_checkbox_1.Label.Text = "Survive till the Superconductor charges";
 		_checkbox_2.Label.Text = "SuperConductor Charge: " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().numCharges) + " of " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().maxCharges);
-		//_checkbox_3.Label.Text = "Survive till the Superconductor charges";
+		_checkbox_3.Label.Text = "Find Zingbat Youngling";
+		_checkbox_4.Label.Text = "Bring Zingbat youngling back to ship";
 
 
 		
-		if(TechManager.foundSC){
-			_checkbox_2.IsChecked = true;
-		}
-		if(TechManager.transportedSC){
+		if(TechManager.foundBat){
 			_checkbox_3.IsChecked = true;
 		}
-		if(ResManager.TurretCount >= ResManager.QuestTurretCount){
-			_checkbox_1.IsChecked = true;
+		if(TechManager.transportedBat){
+			_checkbox_4.IsChecked = true;
 		}
+		if(TechManager.isCharged){
+			_checkbox_2.IsChecked = true;
+		}
+
 		
 		
 		

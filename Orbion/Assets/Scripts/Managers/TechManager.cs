@@ -103,9 +103,12 @@ public class TechManager : Singleton<TechManager> {
 
 	//------------Mission 4 variables------------//
 	public static bool isCharged = false;
+	public static bool transportedBat = false;
+	public static bool foundBat = false;
+	//-------------------------------------------//
 
-
-
+	//------------Bat Boss Battle----------------//
+	public static bool defeatedMotherBat = false;
 
 	//-------------------------------------------//
 
@@ -310,7 +313,9 @@ public class TechManager : Singleton<TechManager> {
 		transportedSC = false;
 		hitByFist = 0;
 		isCharged = false;
-
+		transportedBat = false;
+		foundBat = false;
+		defeatedMotherBat = false;
 	}
 
 
@@ -370,9 +375,17 @@ public class TechManager : Singleton<TechManager> {
 			break;
 
 		case "level3" :
-			Application.Quit();
-			//AutoFade.LoadLevel("level1", 2.0f, 2.0f, Color.black);
+			AutoFade.LoadLevel("level4", 2.0f, 2.0f, Color.black);
 			break;
+
+		case "level4" :
+			AutoFade.LoadLevel("BatBossBattle", 2.0f, 2.0f, Color.black);
+			break;
+
+		case "BatBossBattle" :
+			AutoFade.LoadLevel("scene_title", 2.0f, 2.0f, Color.white);
+			break;
+		
 		
 		default:
 			break;

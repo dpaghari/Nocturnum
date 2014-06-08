@@ -8,7 +8,8 @@ public enum UseType{
 	none,
 	rotateWithUser,
 	lightgeyserUse,
-	depositLGEnergy
+	depositLGEnergy,
+	transportBat
 
 }
 
@@ -28,6 +29,8 @@ public class Useable : MonoBehaviour {
 	
 	private GameObject user;
 	private CanUse userUseScript;
+	public GameObject cagedBat;
+	private GameObject clone;
 
 	//Event for when object is used
 	private delegate void ActionHandler( GameObject user);
@@ -44,6 +47,14 @@ public class Useable : MonoBehaviour {
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
 	}
 
+	public void transportBat(GameObject user){
+
+
+		TechManager.foundBat = true;
+		Destroy(gameObject);
+		clone = Instantiate(cagedBat, user.transform.position, Quaternion.identity) as GameObject;
+
+	}
 
 	public void lightgeyserUse( GameObject user){
 
@@ -93,6 +104,10 @@ public class Useable : MonoBehaviour {
 			case UseType.depositLGEnergy :
 				actionBehavior += depositLGEnergy;
 				break;	
+
+			case UseType.transportBat :
+				actionBehavior += transportBat;
+				break;
 
 			case UseType.none :
 				actionBehavior = null;

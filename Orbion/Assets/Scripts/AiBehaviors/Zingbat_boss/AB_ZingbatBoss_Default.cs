@@ -24,6 +24,7 @@ public class AB_ZingbatBoss_Default : AiBehavior {
 
 	//initialization of the behavior
 	override public void OnBehaviorEnter(){
+
 		controller = GetComponent<AC_ZingbatBoss>();
 		target = GameManager.Player;
 	}
@@ -46,6 +47,8 @@ public class AB_ZingbatBoss_Default : AiBehavior {
 	
 	//Stuff we run on Update when this behavior is the current running
 	override public void UpdateAB(){
+
+
 		if( target == null) return;
 
 		if( defaultShoot.FinishCooldown()){

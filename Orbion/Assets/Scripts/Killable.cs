@@ -17,7 +17,8 @@ public class Killable : MonoBehaviour {
 	public GameObject toadExplosion;
 	public GameObject deathTarget;
 	public GameObject collectTarget;
-
+	public GameObject deathFX;
+	private GameObject clone;
 	//public GUITexture screenflashTexture;
 	private Material m_Material;
 	private bool m_Fading;
@@ -107,6 +108,13 @@ public class Killable : MonoBehaviour {
 			
 			if(GetComponent<isBossEnemy>() != null)
 				TechManager.hasBeatenWolf = true;
+
+			if(GetComponent<AC_ZingbatBoss>() != null){
+					TechManager.defeatedMotherBat = true;
+					clone = Instantiate(deathFX, transform.position, Quaternion.identity) as GameObject;
+					
+			}
+
 
 			return;
 		}
