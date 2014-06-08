@@ -164,7 +164,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 		float rand = Random.value;
 		Vector3 tempVec;
 
-		
+		/*		
 		if(rand > 0.0 && rand < 0.33){
 			tempVec = Vec1;
 		} else if(rand >= 0.33 && rand < 0.66){
@@ -172,12 +172,12 @@ public class CanSpawnUpdate : MonoBehaviour {
 		} else {
 			tempVec = Vec3;
 		}
+		*/
 		
-		/*
 		int randIndex = (int)Mathf.Ceil(rand * spawnLocations.Length) - 1;
 		if(randIndex == -1) randIndex = 0;
 		tempVec = spawnLocations[randIndex];
-		*/
+		
 		int numSpawn;
 
 		if(difficulty == 1){
