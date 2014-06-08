@@ -58,6 +58,7 @@ public class Mission4 : MonoBehaviour {
 			_checkbox_4.IsChecked = true;
 		}
 		if(TechManager.isCharged){
+			_checkbox_2.Label.Text = "SuperConductor Charge: Complete!";
 			_checkbox_2.IsChecked = true;
 		}
 

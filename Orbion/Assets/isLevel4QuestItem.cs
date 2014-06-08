@@ -26,6 +26,10 @@ public class isLevel4QuestItem : MonoBehaviour {
 	void Update () {
 		//Debug.Log(numCharges);
 		numCharges += Time.deltaTime;
+
+		if(numCharges >= maxCharges){
+			TechManager.isCharged = true;
+		}
 	
 	}
 }
