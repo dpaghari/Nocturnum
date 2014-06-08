@@ -383,9 +383,12 @@ public class TechManager : Singleton<TechManager> {
 			break;
 
 		case "BatBossBattle" :
+			AutoFade.LoadLevel("Credits", 2.0f, 2.0f, Color.white);
+			break;
+
+		case "Credits"	:
 			AutoFade.LoadLevel("scene_title", 2.0f, 2.0f, Color.white);
 			break;
-		
 		
 		default:
 			break;
