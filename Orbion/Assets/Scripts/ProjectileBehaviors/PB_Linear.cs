@@ -100,12 +100,12 @@ public class PB_Linear : ProjectileBehavior {
 		Killable KillScript = other.gameObject.GetComponent<Killable>();
 		if( KillScript) {
 			if(other.gameObject.GetComponent<IsEnemy>() != null){
-				audio.PlayOneShot(enemyhitSound);
+				audio.PlayOneShot(enemyhitSound, 0.2f);
 			}
 
 			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){
-				audio.PlayOneShot(buildinghitSound);
 				if(KillScript.currHP < KillScript.baseHP){
+					audio.PlayOneShot(buildinghitSound, 0.2f);
 
 					KillScript.Heal(Damage);
 					if(other.gameObject.GetComponent<IsDamagedEffect>() != null){

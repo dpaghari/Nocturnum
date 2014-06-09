@@ -12,6 +12,7 @@ public class Killable : MonoBehaviour {
 
 	//Special effect whe bullet heals
 	public GameObject healEffect;
+	public AudioClip toadSFX;
 
 	//Variables for making toad explosion
 	public GameObject toadExplosion;
@@ -134,6 +135,8 @@ public class Killable : MonoBehaviour {
 		if(toadExplosion != null){
 			Instantiate(toadExplosion,transform.position, this.transform.rotation);
 		}
+
+		audio.PlayOneShot(toadSFX, 0.5f);
 		Vector3 temp = transform.position;
 		temp.y += 4;
 		Instantiate(deathTarget,temp, this.transform.rotation);

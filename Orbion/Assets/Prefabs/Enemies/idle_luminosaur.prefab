@@ -885,7 +885,7 @@ AudioSource:
   m_GameObject: {fileID: 100058}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 5c7139d8c3bc2774e95a650a7bcbb463, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3032190b53831449b912af48c5e0b18, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   spreadAngle: 45
   numOfBulletShot: 1
   projectileStartPosition: 3
-  enemyShotSound: {fileID: 0}
+  enemyShotSound: {fileID: 8300000, guid: a3032190b53831449b912af48c5e0b18, type: 3}
   firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
   shootEffect: {fileID: 100000, guid: f22946c7020a16641bb5665f6d7cdc26, type: 2}
@@ -1047,9 +1047,11 @@ MonoBehaviour:
   currHP: 300
   baseHP: 300
   healEffect: {fileID: 0}
+  toadSFX: {fileID: 0}
   toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
+  deathFX: {fileID: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
