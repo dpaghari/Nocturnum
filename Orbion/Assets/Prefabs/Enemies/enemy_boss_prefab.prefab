@@ -515,8 +515,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: .388258249, z: 0, w: .921550691}
-  m_LocalPosition: {x: 123.636612, y: -1, z: -134.497147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 400002}
@@ -929,8 +929,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.65999997, y: 3, z: 4.53999996}
-  m_Center: {x: 0, y: 2, z: .75999999}
+  m_Size: {x: 1.65999997, y: 3.5999999, z: 4.53999996}
+  m_Center: {x: 0, y: 1.79999995, z: .75999999}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1022,9 +1022,11 @@ MonoBehaviour:
   currHP: 1000
   baseHP: 1000
   healEffect: {fileID: 0}
+  toadSFX: {fileID: 0}
   toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100002, guid: 1e7ec6767c7625a47834b135ca0926f9, type: 2}
   collectTarget: {fileID: 0}
+  deathFX: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1041,7 +1043,7 @@ MonoBehaviour:
   firingRate: 2
   spreadAngle: 45
   numOfBulletShot: 1
-  projectileStartPosition: 3
+  projectileStartPosition: 3.5
   enemyShotSound: {fileID: 8300000, guid: 72e681d233cf79944aad8acd61baf5d1, type: 3}
   firingTimer: {fileID: 0}
   bulletHeight: {x: 0, y: 2, z: 0}
@@ -1088,7 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
-  AtkRange: 5
+  AtkRange: 6
   CurrTarget: {fileID: 0}
   PlayerPriorityRange: 40
 --- !u!114 &11400010
