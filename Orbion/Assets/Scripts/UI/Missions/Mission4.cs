@@ -44,8 +44,8 @@ public class Mission4 : MonoBehaviour {
 		}
 		
 		//collectString = string.Format("{0} of {1}", ResManager.TurretCount, ResManager.QuestTurretCount);
-		_checkbox_1.Label.Text = "Survive till the Superconductor charges";
-		_checkbox_2.Label.Text = "SuperConductor Charge: " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().numCharges) + " of " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().maxCharges);
+		_checkbox_1.Label.Text = "Survive till the Lustre Rover charges";
+		_checkbox_2.Label.Text = "Lustre Rover Charge: " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().numCharges) + " of " + Mathf.Round(questItem.GetComponent<isLevel4QuestItem>().maxCharges);
 		_checkbox_3.Label.Text = "Find Zingbat Youngling";
 		_checkbox_4.Label.Text = "Bring Zingbat youngling back to ship";
 
@@ -58,7 +58,7 @@ public class Mission4 : MonoBehaviour {
 			_checkbox_4.IsChecked = true;
 		}
 		if(TechManager.isCharged){
-			_checkbox_2.Label.Text = "SuperConductor Charge: Complete!";
+			_checkbox_2.Label.Text = "Lustre Rover Charge: Complete!";
 			_checkbox_2.IsChecked = true;
 		}
 
