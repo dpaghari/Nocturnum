@@ -1375,9 +1375,11 @@ MonoBehaviour:
   currHP: 120
   baseHP: 120
   healEffect: {fileID: 0}
+  toadSFX: {fileID: 0}
   toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
+  deathFX: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1410,7 +1412,7 @@ MonoBehaviour:
   projectileStartPosition: 1
   enemyShotSound: {fileID: 8300000, guid: f6f90b0197d80694c9e8ada47e8c844b, type: 3}
   firingTimer: {fileID: 0}
-  bulletHeight: {x: 0, y: 0, z: 0}
+  bulletHeight: {x: 0, y: 1, z: 0}
   shootEffect: {fileID: 100000, guid: 0a8f0138979026948830f1a9dbe60763, type: 2}
   stunInterval: .100000001
 --- !u!114 &11400008
