@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HandleDisabling : MonoBehaviour
+public class HandleButtonRequirements : MonoBehaviour
 {
 	public dfLabel notEnoughLumen;
 	public dfLabel notEnoughEnergy;
-	public dfLabel preReqsNotMet;
-	public dfLabel preReqsList;
-	public dfButton buttonDisabled;
+	public dfLabel nameLabel;
+	public dfTextureSprite redBack;
+	public dfSprite requireSprite;
 	public GameObject canResearchRef;
 	public GameObject canBuildRef;
 	public Tech name;
@@ -40,7 +40,7 @@ public class HandleDisabling : MonoBehaviour
 		neededLumenCost = 0.0f;
 		neededMaxEnergyUpgrades = 0.0f;
 		neededLumenCostUpgrade = 0.0f;
-		redText = new Color(255, 255, 0, 1);
+		redText = new Color(255, 0, 0, 1);
 		whiteText = new Color(255, 255, 255, 1);
 		
 		//Checks if it's a building or an upgrade button (that way we
@@ -68,12 +68,15 @@ public class HandleDisabling : MonoBehaviour
 		if (!TechManager.IsTechAvaliable (name)) {
 			//preReqsNotMet.IsVisible = true;
 			//preReqsNotMet.BackgroundColor = redText;
-			buttonDisabled.Disable ();
+			//buttonDisabled.Disable ();
 			havePreReqs = false;
-			preReqsList.IsVisible = true;
+			//preReqsList.IsVisible = true;
+			redBack.IsVisible = true;
+			nameLabel.Color = redText;
 		} else {
 			//preReqsNotMet.IsVisible = false;
 			//preReqsList.IsVisible = false;
+			redBack.IsVisible = false;
 			havePreReqs = true;
 			
 		}
@@ -83,6 +86,7 @@ public class HandleDisabling : MonoBehaviour
 			//notEnoughLumen.IsVisible = true;
 			notEnoughLumen.Color = redText;
 			//buttonDisabled.Disable ();
+			nameLabel.Color = redText;
 			haveLumen = false;
 			
 		} else {
@@ -97,6 +101,7 @@ public class HandleDisabling : MonoBehaviour
 			//notEnoughEnergy.IsVisible = true;
 			notEnoughEnergy.Color = redText;
 			//buttonDisabled.Disable ();
+			nameLabel.Color = redText;
 			haveEnergy = false;
 		}
 		else {
@@ -107,11 +112,13 @@ public class HandleDisabling : MonoBehaviour
 		
 		
 		if (haveLumen && haveEnergy && havePreReqs) {
-			buttonDisabled.Enable ();
+			//buttonDisabled.Enable ();
 			//notEnoughLumen.IsVisible = false;
 			notEnoughLumen.Color = whiteText;
 			//notEnoughEnergy.IsVisible = false;
 			notEnoughEnergy.Color = whiteText;
+			redBack.IsVisible = false;
+			nameLabel.Color = whiteText;
 			//preReqsNotMet.IsVisible = false;
 		}
 		
