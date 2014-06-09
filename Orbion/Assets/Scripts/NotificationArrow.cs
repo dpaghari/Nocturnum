@@ -27,6 +27,12 @@ public class NotificationArrow : MonoBehaviour {
 	//The lifetime(sec) of the notifcation
 	public float duration = 1f;
 
+	//Color to tint when blinking, set to Color.white to have no blink
+	public Color blinkTint = Color.red;
+
+	//number of times to blink before duration ends
+	public int blinkNum = 5;
+
 	//Used to draw the sprite with unity API
 	private Rect drawRect = new Rect(0, 0, 0, 0);
 
@@ -72,10 +78,12 @@ public class NotificationArrow : MonoBehaviour {
 
 	void OnGUI() {
 		if( GameManager.Player == null) return;
-
+		
 		if( Utility.FindDistNoY( this.gameObject, GameManager.Player) > minDrawDist){
 			drawRect = new Rect( GetInitialDrawWidth(), GetIntialDrawHeight(), size.x, size.y);
 			GUIUtility.RotateAroundPivot( FindRotation(), new Vector2( Screen.width/2, Screen.height/2));
+			float blinkProgress = (float)(durationTimer.GetProgress() % Mathf.Pow(blinkNum, -1)) * blinkNum;
+			GUI.color = Color.Lerp(Color.white, blinkTint, blinkProgress);
 			GUI.DrawTexture( drawRect, arrowTexture);
 		}
 	}
