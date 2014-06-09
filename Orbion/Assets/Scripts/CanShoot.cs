@@ -125,8 +125,9 @@ public class CanShoot : MonoBehaviour {
 
 	//Why is stun code in CanShoot?
 	public virtual void stun(){
+		
 	//stun the player
-		GameManager.KeysEnabled = false;
+		//GameManager.KeysEnabled = false;
 		
 		if(stunTimer == null){
 			//stunTimer.Reset();
