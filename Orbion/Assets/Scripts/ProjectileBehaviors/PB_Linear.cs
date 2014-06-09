@@ -39,10 +39,14 @@ public class PB_Linear : ProjectileBehavior {
 	//gap in time before we can find another target to home into
 	private const float seekerFindTargetRate = 0.25f;
 	private GameObject seekerTarget;
+	//private GameObject YCorrectionTarget;
 
 	
 	public IEnumerator FindSeekerTarget(){
 		while( true){
+			/*if(YCorrectionTarget == null){
+				YCorrectionTarget = Utility.GetClosestWith(transform.position, 30, IsTarget, Utility.Enemy_PLM);
+			}*/
 			if(seekerTarget == null && TechManager.GetNumBuilding(Tech.incendiary) > 0)
 				seekerTarget = Utility.GetClosestWith(transform.position, 15*TechManager.GetUpgradeLv(Tech.seeker), IsTarget, Utility.Enemy_PLM);
 			yield return new WaitForSeconds(seekerFindTargetRate);
@@ -65,6 +69,36 @@ public class PB_Linear : ProjectileBehavior {
 
 	public override void FixedPerform(){
 		MoveScript.Move(transform.forward, MoveType);
+
+
+		/* Trying to offset bullet y-value for shorter targets
+		 * doesn't work, plaese ignore
+		float targetY = 0;
+
+		if (YCorrectionTarget != null) {
+			foreach( Transform child in YCorrectionTarget.transform){
+
+				if( child.GetComponent<MeshRenderer>() != null){
+					targetY = child.GetComponent<MeshRenderer>().bounds.center.y;
+				}
+			}
+
+
+
+			float targAngle = targetY - transform.position.y;
+
+			Debug.Log(targAngle);
+
+			if(targAngle < 0){
+				MoveScript.TurnLeft(Vector3.right, MoveType);
+				//MoveScript.TurnLeft(Vector3.right, MoveType);
+			}else if(targAngle > 0){
+				MoveScript.TurnRight(Vector3.right, MoveType);
+				//MoveScript.TurnRight(Vector3.right, MoveType);
+			}
+
+		}
+		*/
 
 		if( seekerTarget != null){
 			Vector3 targDir = transform.InverseTransformPoint(seekerTarget.transform.position);
@@ -101,6 +135,28 @@ public class PB_Linear : ProjectileBehavior {
 		if( KillScript) {
 			if(other.gameObject.GetComponent<IsEnemy>() != null){
 				audio.PlayOneShot(enemyhitSound, 0.2f);
+				foreach( Transform child in transform){
+				
+					ParticleSystem childParticle = child.gameObject.GetComponent<ParticleSystem>(); 
+					if( childParticle){
+
+						foreach(Transform mesh in other.transform){
+							SkinnedMeshRenderer otherMeshR = mesh.gameObject.GetComponent<SkinnedMeshRenderer>();
+							if(otherMeshR){
+								Mesh otherMesh = otherMeshR.sharedMesh;
+								int vertexIndex = Random.Range(0, otherMesh.vertexCount);
+
+								Debug.Log(vertexIndex);
+								Debug.Log(otherMesh);
+
+								Vector3 chosenVertex = new Vector3(otherMesh.vertices[vertexIndex].x + other.transform.position.x - (mesh.localPosition.x * mesh.localScale.x), otherMesh.vertices[vertexIndex].y + other.transform.position.y - (mesh.localPosition.y * mesh.localScale.y), otherMesh.vertices[vertexIndex].z + other.transform.position.z - (mesh.localPosition.z * mesh.localScale.z));
+								childParticle.transform.position = chosenVertex;
+								childParticle.transform.LookAt(otherMesh.bounds.center + other.transform.position);
+							}
+						}
+						childParticle.transform.parent = other.gameObject.transform;
+					}
+				}
 			}
 
 			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){

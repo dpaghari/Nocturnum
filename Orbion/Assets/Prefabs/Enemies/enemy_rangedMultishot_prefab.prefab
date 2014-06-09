@@ -17,7 +17,6 @@ GameObject:
   - 114: {fileID: 11400004}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400014}
-  - 114: {fileID: 11400010}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400008}
   - 195: {fileID: 19500000}
@@ -1375,9 +1374,11 @@ MonoBehaviour:
   currHP: 120
   baseHP: 120
   healEffect: {fileID: 0}
+  toadSFX: {fileID: 0}
   toadExplosion: {fileID: 0}
   deathTarget: {fileID: 100000, guid: 719942d30563ef241885a255cb8a8bf7, type: 2}
   collectTarget: {fileID: 100000, guid: 6c8864902e728db4083894287c39f180, type: 2}
+  deathFX: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1425,18 +1426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 5
---- !u!114 &11400010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5655fce3b104f664e96e4036ab62918e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageEffect: {fileID: 100000, guid: e9c1f344782fe81429b6e31ba556b2c1, type: 2}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
