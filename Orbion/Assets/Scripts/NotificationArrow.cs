@@ -13,131 +13,72 @@ public class NotificationArrow : MonoBehaviour {
 
 	//The sprite for the arrow
 	public Texture2D arrowTexture;
-
+	
 	//Draw size of the sprite
 	public Vector2 size = new Vector2(64, 64);
 
-	//Set if the base image is not pointing to the right
-	public float rotationOffset = 0;
+	//distance away from the center of the screen
+	//based on a fraction of 1/2 of the smallest dimension of the screen
+	public float radiusRatio = 0.3f;
+
+	//Object must be at or greater than this dist to draw the arrow
+	public float minDrawDist = 10;
 
 	//The lifetime(sec) of the notifcation
 	public float duration = 1f;
 
-	//Sets the  visible area of the screen that the notification will show up
-	public float visibleMarginRatio = 1; //should at least be 1
-
-	//World Range that prevents this object from instantiating if it is too close to another arrow
-	//public float duplicateRange;
-
-	//Position of the arrow on screen
-	private Vector2 pos = new Vector2(0, 0);
-
-	//Raw screen position of the arrow, translated from 3d space
-	private Vector2 posNoClamp = Vector2.zero;
-
 	//Used to draw the sprite with unity API
 	private Rect drawRect = new Rect(0, 0, 0, 0);
-
-	//Center of the sprite, set in UpdateArrowTransform
-	private Vector2 posOffset = Vector2.zero;
 
 	private DumbTimer durationTimer;
 
 
 
-	//Determines if the notification should be drawn on the screen
-	//Uses values that UpdateArrowTransform updates, should run after it
-	public bool ShouldDraw(){
-		//If it clamped, then it was forced to the edge and we should draw it
-		if( posNoClamp != pos) return true;
-
-		float undrawableWidth = Camera.main.pixelWidth - 2 * visibleMarginRatio * size.x;
-		float undrawableHeight = Camera.main.pixelHeight - 2 * visibleMarginRatio * size.y;
-		Rect undrawableMargin = new Rect( visibleMarginRatio * size.x,  visibleMarginRatio * size.y , undrawableWidth, undrawableHeight);
-
-		return !undrawableMargin.Overlaps( drawRect);
-	}
-
-
-	//Calculate which direction the arrow should point towards
-	float FindRotation() {
-		Vector2 arrowDir;
-
-		if( posNoClamp == pos){
-			Vector2 playerPos =  Camera.main.WorldToScreenPoint( GameManager.Player.transform.position);
-			playerPos.y =  Camera.main.pixelHeight - playerPos.y;
-			arrowDir = posNoClamp - playerPos;
-		}
-		else 
-			arrowDir = posNoClamp - pos;
-
-		float angleDegree = Mathf.Atan2(arrowDir.y, arrowDir.x) * Mathf.Rad2Deg;
-		return angleDegree - rotationOffset;
-	}
-
-
-	//Makes out of screen notifcations clamp to the edge of it
-	Vector2 ClampToScreen(){
-		//WorldToScreenPoint's gives a y is in the opposite direction that the draw expects
-		Vector2 screenDrawPos =  Camera.main.WorldToScreenPoint( transform.position);
-		screenDrawPos.y = Camera.main.pixelHeight - screenDrawPos.y;
-
-
-		//WorldToScreenPoint and WorldToViewportPoint don't give reliable values when out of bound for our camera
-		//So we only use them to check if we're out of bounds and then manually check the direction we're out of bound
-		//using the object and camera's 3d position
-		if( screenDrawPos.x < posOffset.x || screenDrawPos.x > Camera.main.pixelWidth - posOffset.x){
-			if( transform.position.x < Camera.main.transform.position.x)
-				screenDrawPos.x = posOffset.x;
-			else
-				screenDrawPos.x = Camera.main.pixelWidth - posOffset.x;
-		}
-			
-		if( screenDrawPos.y < posOffset.y || screenDrawPos.y > Camera.main.pixelHeight - posOffset.y){
-			if( transform.position.z < Camera.main.transform.position.z)
-				screenDrawPos.y = Camera.main.pixelHeight - posOffset.y;
-			else
-				screenDrawPos.y = posOffset.y;
-		}
-		
-
-		return screenDrawPos;
-	}
-
-
-	//Updates the transformation of the arrow
-	void UpdateArrowTransform() {
-		posOffset.x = size.x / 2;
-		posOffset.y = size.y / 2;
-
-		//WorldToScreenPoint's gives a y is in the opposite direction that the draw expects
-		posNoClamp =  Camera.main.WorldToScreenPoint( transform.position);
-		posNoClamp.y = Camera.main.pixelHeight - posNoClamp.y;
-		pos = ClampToScreen();
-
-		drawRect = new Rect( pos.x - posOffset.x, pos.y - posOffset.y, size.x, size.y);
-
-	}
-
-
-	void Start () {
+	void Start(){
 		durationTimer = DumbTimer.New(duration);
 	}
-	
 
-	void Update () {
+
+	void Update(){
 		if( durationTimer.Finished()) GameObject.Destroy(gameObject);
+		
 
 		durationTimer.Update();
 	}
 
 
+	float GetIntialDrawHeight(){
+		return Screen.height/2 - size.y/2;
+	}
+
+
+	float GetInitialDrawWidth(){
+		float smallestDimension = Mathf.Min( Screen.height, Screen.width);
+		return Screen.width/2 + smallestDimension/2*radiusRatio - size.x/2;
+		
+	}
+
+
+	//If player is not found, returns 0deg
+	//Reversing the z direction because screen space goes from top,down 0-> positive
+	float FindRotation(){
+		if( GameManager.Player == null) return 0;
+		Vector3 direction = this.transform.position - GameManager.Player.transform.position;
+		float angleRad = Mathf.Atan2( -direction.z, direction.x);
+		return angleRad * Mathf.Rad2Deg;
+		
+	}
+
+
 	void OnGUI() {
-		UpdateArrowTransform();
-		if ( ShouldDraw()) {
-			GUIUtility.RotateAroundPivot( FindRotation(), pos);
+		if( GameManager.Player == null) return;
+
+		if( Utility.FindDistNoY( this.gameObject, GameManager.Player) > minDrawDist){
+			drawRect = new Rect( GetInitialDrawWidth(), GetIntialDrawHeight(), size.x, size.y);
+			GUIUtility.RotateAroundPivot( FindRotation(), new Vector2( Screen.width/2, Screen.height/2));
 			GUI.DrawTexture( drawRect, arrowTexture);
 		}
 	}
+
 
 }
