@@ -58,8 +58,8 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 		if( TechManager.IsUpgrade( techType)){
 			UpgradeCostStruct upgradeInfo = TechManager.GetUpgradeCosts( techType);
-			energyLabel.Text = string.Format("{0}: {1}", energyLabel.name, upgradeInfo.energy);
-			lumenLabel.Text =  string.Format("{0}: {1}", lumenLabel.name, upgradeInfo.lumen);
+			energyLabel.Text = string.Format("{0}", upgradeInfo.energy);
+			lumenLabel.Text =  string.Format("{0}", upgradeInfo.lumen);
 			}
 		else 
 			Debug.LogWarning( string.Format( "{0} has non upgrade techType: {1}", this.name, techType)); 

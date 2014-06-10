@@ -55,11 +55,7 @@ public class Mission3 : MonoBehaviour {
 		
 		
 		
-		if(GameManager.AvatarContr.isPaused){
-			_label_paused.IsVisible = true;
-		}
-		else
-			_label_paused.IsVisible = false;
+		_label_paused.IsVisible = GameManager.paused;
 		
 		if(GameManager.PlayerDead){
 			_label_dead.IsVisible = true;
