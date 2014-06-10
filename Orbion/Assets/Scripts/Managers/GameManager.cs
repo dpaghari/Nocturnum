@@ -50,6 +50,17 @@ public class GameManager : Singleton<GameManager> {
 	public static void PauseToggle(){ paused = !paused;}
 
 
+	public static void ResetLevel(){
+		ResManager.Reset();
+		TechManager.Reset();
+		MetricManager.Reset();
+		GameManager.KeysEnabled = true;
+		GameManager.PlayerDead = false;
+		
+		AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
+	}
+
+
 	//sticking it here for now
 	private GameObject ArrowPrefab;
 	private static void BuildingAttack( Killable killableScript){

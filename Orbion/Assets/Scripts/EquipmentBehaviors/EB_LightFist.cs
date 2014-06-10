@@ -13,61 +13,46 @@ public class EB_LightFist : EquipmentBehavior {
 	public GameObject vfx;
 	public AudioClip fistSound;
 
+	private bool isPlayingAudio = false;
 
 	public override void Action ( Vector3 cursor){
-		GetComponent<CanMove>().MoveScale -= 1;
-		//GameManager.KeysEnabled = false;
-		//Vector3 temp = transform.position;
-		//temp.y += 4;
+		animation.CrossFade("Groundpunch"); 
 		audio.PlayOneShot(fistSound, 0.2f);
-		animation.Play("Groundpunch"); 
-		StartCoroutine(WaitAndCallback(animation["Groundpunch"].length));
-		//animation.CrossFade("Groundpunch");	
-
-
-
-
-	}
-	public override void FixedUpdateEB (){
-	
-	}
-	
-	
-	public override void UpdateEB ()
-	{
-	
-		
+		StartCoroutine(DelayedPunch());
 	}
 
-	public override void OnSwitchEnter ()
-	{
 
-	}
-	
-	public override void OnSwitchExit (){return;}
-	//Coroutine to create the fistshockwave object that pushes back enemies at the player's position
-	IEnumerator WaitAndCallback(float waitTime){
-		yield return new WaitForSeconds(waitTime - 0.6f); 
+	public void Shockwave(){
+
 		Vector3 temp = transform.position;
 		temp.y += 0.5f;
 		clone = Instantiate (punchObj, transform.position, Quaternion.identity) as Rigidbody;
 		Instantiate(flare, temp, Quaternion.identity);
 		Instantiate(vfx, temp, Quaternion.identity);
-		GetComponent<CanMove>().MoveScale += 1;
-		//GameManager.KeysEnabled = true;
-		//Debug.Log("Thishappened");
+		isPlayingAudio = false;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public override void FixedUpdateEB (){}
+	public override void UpdateEB (){}
+	public override void OnSwitchEnter (){
+	}
+	public override void OnSwitchExit (){return;}
+
+	IEnumerator DelayedPunch(){
+		for(;;){
+			if( animation.IsPlaying("Groundpunch") == false ) break;
+
+			if( animation["Groundpunch"].normalizedTime > 0.55 ){
+				Shockwave();
+				break;
+			}
+
+			yield return new WaitForFixedUpdate();
+			
+		}
+	}
+
+
 	
 	
 	
