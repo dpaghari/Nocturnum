@@ -55,7 +55,6 @@ public class GameManager : Singleton<GameManager> {
 		TechManager.Reset();
 		MetricManager.Reset();
 		GameManager.KeysEnabled = true;
-		GameManager.PlayerDead = false;
 		
 		AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
 	}
@@ -85,6 +84,7 @@ public class GameManager : Singleton<GameManager> {
 		TechManager.Reset();
 		MetricManager.Reset();
 		KeysEnabled = true;
+		GameManager.PlayerDead = false;
 		
 	}
 
