@@ -34,6 +34,7 @@ public class AvatarController : MonoBehaviour {
 	public CanResearch researchScript {get; set;}
 
 	private int startingClipSize;
+	private Material m_Material;
 
 	public DumbTimer dashCDScript;
 
@@ -56,6 +57,7 @@ public class AvatarController : MonoBehaviour {
 	void Start () {
 		collider.enabled = true;
 		dashCDScript = DumbTimer.New(3.0f);
+		m_Material = new Material("Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }");
 
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShootReload>();
@@ -79,6 +81,78 @@ public class AvatarController : MonoBehaviour {
 
 
 
+	IEnumerator DelayedReset(){
+		yield return new WaitForSeconds(animation["Dead"].length + 1.5f); 
+		GameManager.ResetLevel();
+	}
+
+
+	private void DrawQuad(Color aColor,float aAlpha)
+	{
+		aColor.a = aAlpha;
+		m_Material.SetPass(0);
+		GL.Color(aColor);
+		GL.PushMatrix();
+		GL.LoadOrtho();
+		GL.Begin(GL.QUADS);
+		GL.Vertex3(0, 0, -1);
+		GL.Vertex3(0, 1, -1);
+		GL.Vertex3(1, 1, -1);
+		GL.Vertex3(1, 0, -1);
+		GL.End();
+		GL.PopMatrix();
+	}
+
+
+	private IEnumerator Fade(float aFadeOutTime, float aFadeInTime, Color aColor){
+		float t = 0.0f;
+		while (t<0.1f)
+		{
+			yield return new WaitForEndOfFrame();
+			t = Mathf.Clamp01(t + Time.deltaTime / aFadeOutTime);
+			DrawQuad(aColor, t);
+		}
+		
+		while (t>0.0f)
+		{
+			yield return new WaitForEndOfFrame();
+			t = Mathf.Clamp01(t - Time.deltaTime / aFadeInTime);
+			DrawQuad(aColor, t);
+		}
+
+	}
+
+	private void StartFade(float aFadeOutTime, float aFadeInTime, Color aColor){
+		StartCoroutine(Fade(aFadeOutTime, aFadeInTime, aColor));
+	}
+	
+	IEnumerator FlashWhenHit (){
+		yield return new WaitForSeconds (.01f);
+		StartFade (0.8f, 0.0f, Color.red);
+	}
+
+
+
+	public void OnHit(){
+
+		StartCoroutine(FlashWhenHit());
+		if(!animation.IsPlaying("Groundpunch")){
+			animation.Play("GetHit");
+		}
+
+	}
+
+	public void Die(){
+		if(!GameManager.PlayerDead){
+			animation.CrossFade("Dead");
+			GameManager.PlayerDead = true;	
+		}
+		collider.enabled = false;
+
+		StartCoroutine("DelayedReset");
+		return;
+	}
+
 
 	public void Run( Vector3 direction){
 		if( direction.magnitude > 0){
@@ -98,6 +172,7 @@ public class AvatarController : MonoBehaviour {
 			if( animation.IsPlaying("Dash") == false) break;
 
 			if( animation["Dash"].normalizedTime > 0.35 ){	
+				//audio.PlayOneShot( dashSound, 0.5f);
 				StartCoroutine( "EaseOutDash", direction);
 				break;
 			}
