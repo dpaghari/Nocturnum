@@ -136,29 +136,21 @@ public class AvatarController : MonoBehaviour {
 			}
 
 			// Player Input for Basic Movement (WASD)
+			Vector3 moveDirection = Vector3.zero;
 			if( Input.GetKey( KeyCode.W) && !isPaused && !isDashing){			// Move up
-
-				moveScript.Move( Vector3.forward);
-
+				moveDirection += Vector3.forward;
 			}
 			if( Input.GetKey( KeyCode.S) && !isPaused && !isDashing){			// Move Down
-
-				moveScript.Move( Vector3.back);
-
-
+				moveDirection += Vector3.back;
 			}
 			if( Input.GetKey( KeyCode.D) && !isPaused && !isDashing){			// Move Right
-
-				moveScript.Move( Vector3.right);
-
-
+				moveDirection += Vector3.right;
 			}
 			if( Input.GetKey( KeyCode.A) && !isPaused && !isDashing){			// Move left
-
-				moveScript.Move( Vector3.left);
-
-
+				moveDirection += Vector3.left;
 			}
+			moveScript.Move( moveDirection.normalized );
+
 		}
 
 
