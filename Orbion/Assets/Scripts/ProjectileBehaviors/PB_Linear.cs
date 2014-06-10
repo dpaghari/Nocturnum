@@ -135,7 +135,7 @@ public class PB_Linear : ProjectileBehavior {
 		if( KillScript) {
 			if(other.gameObject.GetComponent<IsEnemy>() != null){
 				audio.PlayOneShot(enemyhitSound, 0.2f);
-				foreach( Transform child in transform){
+				/*foreach( Transform child in transform){
 				
 					ParticleSystem childParticle = child.gameObject.GetComponent<ParticleSystem>(); 
 					if( childParticle){
@@ -149,14 +149,15 @@ public class PB_Linear : ProjectileBehavior {
 								Debug.Log(vertexIndex);
 								Debug.Log(otherMesh);
 
-								Vector3 chosenVertex = new Vector3(otherMesh.vertices[vertexIndex].x + other.transform.position.x - (mesh.localPosition.x * mesh.localScale.x), otherMesh.vertices[vertexIndex].y + other.transform.position.y - (mesh.localPosition.y * mesh.localScale.y), otherMesh.vertices[vertexIndex].z + other.transform.position.z - (mesh.localPosition.z * mesh.localScale.z));
+								Vector3 chosenVertex = new Vector3(otherMesh.vertices[vertexIndex].x + other.transform.position.x , otherMesh.vertices[vertexIndex].y + other.transform.position.y, otherMesh.vertices[vertexIndex].z + other.transform.position.z);
 								childParticle.transform.position = chosenVertex;
-								childParticle.transform.LookAt(otherMesh.bounds.center + other.transform.position);
+								//childParticle.transform.LookAt(otherMesh.bounds.center + other.transform.position);
+								childParticle.transform.parent = mesh;
 							}
 						}
-						childParticle.transform.parent = other.gameObject.transform;
+
 					}
-				}
+				}*/
 			}
 
 			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){
