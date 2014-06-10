@@ -44,7 +44,7 @@ public class MainCamera : MonoBehaviour
 			transform.LookAt(cameraTarget.transform.position);
 		}
 		
-		//gameObject.transform.position += velocity;
+		gameObject.transform.position += velocity;
 
 	}
 }

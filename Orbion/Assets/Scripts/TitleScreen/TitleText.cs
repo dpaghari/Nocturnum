@@ -13,7 +13,7 @@ public class TitleText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown ("return") || Input.GetKeyDown ("enter")){
-			AutoFade.LoadLevel("difficultylevelselect" ,1.0f,1.0f,Color.black);
+			AutoFade.LoadLevel("MainMenu" ,1.0f,1.0f,Color.black);
 		}
 	}
 

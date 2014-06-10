@@ -20,11 +20,15 @@ public class MainMenu : MonoBehaviour {
 	}
 	public void golevelSelect(){
 
-		//GameManager.GameDifficulty = 2;
-		//AutoFade.LoadLevel("", 2.0f, 2.0f, Color.black);
+
+		AutoFade.LoadLevel("LevelSelect", 1.0f, 2.0f, Color.black);
 	}
 	public void goOptions(){
 		//GameManager.GameDifficulty = 3;
-		AutoFade.LoadLevel("Options", 2.0f, 2.0f, Color.black);
+		AutoFade.LoadLevel("Options", 1.0f, 2.0f, Color.black);
+	}
+	public void goExit(){
+		//GameManager.GameDifficulty = 3;
+		Application.Quit();
 	}
 }
