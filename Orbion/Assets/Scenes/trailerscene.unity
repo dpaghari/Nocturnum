@@ -43324,6 +43324,7 @@ GameObject:
   - 54: {fileID: 1693228738}
   - 65: {fileID: 1693228737}
   - 114: {fileID: 1693228736}
+  - 114: {fileID: 1693228723}
   - 114: {fileID: 1693228735}
   - 114: {fileID: 1693228734}
   - 114: {fileID: 1693228733}
@@ -43337,7 +43338,6 @@ GameObject:
   - 114: {fileID: 1693228726}
   - 114: {fileID: 1693228725}
   - 114: {fileID: 1693228724}
-  - 114: {fileID: 1693228723}
   - 114: {fileID: 1693228722}
   - 82: {fileID: 1693228721}
   - 82: {fileID: 1693228719}
@@ -43608,17 +43608,15 @@ MonoBehaviour:
 --- !u!114 &1693228723
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400024, guid: 46919a12be9002d4886347f9a0e8b98d,
+  m_PrefabParentObject: {fileID: 11400038, guid: 46919a12be9002d4886347f9a0e8b98d,
     type: 2}
   m_PrefabInternal: {fileID: 525282049}
   m_GameObject: {fileID: 1693228714}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b2eda5d8e39f64cbd4702727fcc550, type: 3}
+  m_Script: {fileID: 11500000, guid: 8042754ccf24964499e211f0cbba6f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootScript: {fileID: 1693228732}
-  overdriveScript: {fileID: 1693228725}
 --- !u!114 &1693228724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43838,23 +43836,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e15180069558e547a5cb76bcea6c40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveScript: {fileID: 1693228734}
-  shootScript: {fileID: 1693228732}
-  equipScript: {fileID: 1693228728}
-  overdriveScript: {fileID: 1693228725}
-  useScript: {fileID: 1693228726}
-  buildScript: {fileID: 1693228735}
-  researchScript: {fileID: 1693228733}
   missioncompleteSound: {fileID: 8300000, guid: 2f580b8434dd7b249bd23a0801200190,
     type: 3}
   shotSound: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   dashSound: {fileID: 8300000, guid: 60a5d539767523a408fdad45e6bc10bd, type: 3}
-  normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
-  orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
-  isPaused: 0
-  isDashing: 0
-  dashForce: 0
+  dashSpeedRatio: 12
+  dashEaseOutRatio: .5
+  buildScript: {fileID: 1693228735}
   dashCDScript: {fileID: 0}
 --- !u!65 &1693228737
 BoxCollider:

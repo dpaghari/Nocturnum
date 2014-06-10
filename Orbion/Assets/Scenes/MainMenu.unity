@@ -809,6 +809,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -.142396852
       objectReference: {fileID: 0}
+    - target: {fileID: 11400038, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
     - {fileID: 6500000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
@@ -6416,6 +6420,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1537102702}
   - 111: {fileID: 1537102727}
+  - 114: {fileID: 1537102703}
   m_Layer: 13
   m_Name: player_prefab
   m_TagString: Player
@@ -6438,6 +6443,18 @@ Transform:
   - {fileID: 1301298370}
   - {fileID: 656118457}
   m_Father: {fileID: 1456450072}
+--- !u!114 &1537102703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400038, guid: 46919a12be9002d4886347f9a0e8b98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 494549214}
+  m_GameObject: {fileID: 1537102701}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8042754ccf24964499e211f0cbba6f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!111 &1537102727
 Animation:
   m_ObjectHideFlags: 0
