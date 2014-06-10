@@ -433,8 +433,21 @@ Transform:
 --- !u!114 &229995203
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400002, guid: 2ae57d8fc242bb7449a4d4dfce978df2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358128167}
+  m_GameObject: {fileID: 229995199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa65d1325a0df44f978cafd2164f2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &229995204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 2ae57d8fc242bb7449a4d4dfce978df2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358128167}
   m_GameObject: {fileID: 229995199}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -445,19 +458,8 @@ MonoBehaviour:
     Component: {fileID: 229995201}
     MemberName: Click
   DataTarget:
-    Component: {fileID: 631922528}
-    MemberName: goOptions
---- !u!114 &229995204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 229995199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51acd514a6af21478accb25cec69613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    Component: {fileID: 229995203}
+    MemberName: setMaster
 --- !u!1 &293687178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,8 +1046,9 @@ GameObject:
   - 4: {fileID: 631922525}
   - 114: {fileID: 631922527}
   - 65: {fileID: 631922526}
-  - 114: {fileID: 631922528}
   - 114: {fileID: 631922529}
+  - 114: {fileID: 631922528}
+  - 114: {fileID: 631922530}
   m_Layer: 17
   m_Name: Button_LevelSelect
   m_TagString: Untagged
@@ -1177,19 +1180,21 @@ MonoBehaviour:
 --- !u!114 &631922528
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400010, guid: 2ae57d8fc242bb7449a4d4dfce978df2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358128167}
   m_GameObject: {fileID: 631922524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51acd514a6af21478accb25cec69613, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fa65d1325a0df44f978cafd2164f2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &631922529
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400012, guid: 2ae57d8fc242bb7449a4d4dfce978df2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358128167}
   m_GameObject: {fileID: 631922524}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1201,7 +1206,18 @@ MonoBehaviour:
     MemberName: Click
   DataTarget:
     Component: {fileID: 631922528}
-    MemberName: golevelSelect
+    MemberName: setVeteran
+--- !u!114 &631922530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631922524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51acd514a6af21478accb25cec69613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &656118456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,8 +1956,21 @@ MonoBehaviour:
 --- !u!114 &1087368498
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400016, guid: 2ae57d8fc242bb7449a4d4dfce978df2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358128167}
+  m_GameObject: {fileID: 1087368494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa65d1325a0df44f978cafd2164f2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1087368499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400018, guid: 2ae57d8fc242bb7449a4d4dfce978df2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358128167}
   m_GameObject: {fileID: 1087368494}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1952,19 +1981,8 @@ MonoBehaviour:
     Component: {fileID: 1087368497}
     MemberName: Click
   DataTarget:
-    Component: {fileID: 631922528}
-    MemberName: gostartGame
---- !u!114 &1087368499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1087368494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51acd514a6af21478accb25cec69613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    Component: {fileID: 1087368498}
+    MemberName: setNormal
 --- !u!1 &1087739766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,7 +3522,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
     - target: {fileID: 400006, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.0390625
@@ -3844,21 +3862,7 @@ Prefab:
       propertyPath: pressedSprite
       value: black-callout
       objectReference: {fileID: 0}
-    - target: {fileID: 11400012, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
-      propertyPath: DataTarget.Component
-      value: 
-      objectReference: {fileID: 631922527}
-    - target: {fileID: 11400012, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
-      propertyPath: DataTarget.MemberName
-      value: BringToFront
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11400010, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
-    - {fileID: 11400012, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
-    - {fileID: 11400018, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
-    - {fileID: 11400016, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
-    - {fileID: 11400004, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
-    - {fileID: 11400002, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
   m_RootGameObject: {fileID: 1456450066}
   m_IsPrefabParent: 0
@@ -5120,7 +5124,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
