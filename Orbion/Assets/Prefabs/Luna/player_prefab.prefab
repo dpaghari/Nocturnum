@@ -26,7 +26,6 @@ GameObject:
   - 114: {fileID: 11400026}
   - 114: {fileID: 11400028}
   - 114: {fileID: 11400030}
-  - 114: {fileID: 11400024}
   - 114: {fileID: 11400032}
   - 82: {fileID: 8200000}
   - 82: {fileID: 8200004}
@@ -2621,12 +2620,9 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: e3c3fe5d3cd3d7b419790e01eecbdb40, type: 3}
   bgm: {fileID: 8300000, guid: 55ca9821b0254d74898f014d11a7eb19, type: 3}
   dashSound: {fileID: 8300000, guid: 60a5d539767523a408fdad45e6bc10bd, type: 3}
-  normalBullet: {fileID: 5400000, guid: b63d17f55f6dbf04f8c85797d8c370e2, type: 2}
-  orbBullet: {fileID: 5400000, guid: 99aa51995c32d9d49a19465355435650, type: 2}
+  dashSpeedRatio: 12
+  dashEaseOutRatio: .5
   buildScript: {fileID: 11400006}
-  isPaused: 0
-  isDashing: 0
-  dashForce: 0
   dashCDScript: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
@@ -2720,19 +2716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerScript: {fileID: 0}
---- !u!114 &11400024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b2eda5d8e39f64cbd4702727fcc550, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootScript: {fileID: 11400000}
-  overdriveScript: {fileID: 11400028}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1

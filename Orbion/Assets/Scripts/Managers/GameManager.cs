@@ -33,6 +33,33 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 
+	private bool _paused;
+	public static bool paused {
+		get { return Instance._paused;}
+		set{
+			if( value == true)
+				Time.timeScale = 0;
+			else
+				Time.timeScale = 1;
+			Instance._paused = value;
+		}
+	}
+
+	public static void Pause(){ paused = true;}
+	public static void Unpause(){ paused = false;}
+	public static void PauseToggle(){ paused = !paused;}
+
+
+	public static void ResetLevel(){
+		ResManager.Reset();
+		TechManager.Reset();
+		MetricManager.Reset();
+		GameManager.KeysEnabled = true;
+		
+		AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
+	}
+
+
 	//sticking it here for now
 	private GameObject ArrowPrefab;
 	private static void BuildingAttack( Killable killableScript){
@@ -57,11 +84,13 @@ public class GameManager : Singleton<GameManager> {
 		TechManager.Reset();
 		MetricManager.Reset();
 		KeysEnabled = true;
+		GameManager.PlayerDead = false;
 		
 	}
 
 	// Use this for initialization
 	void Start () {
+		paused = false;
 		PlayerDead = false;
 		KeysEnabled = true;
 		ArrowPrefab =  Resources.Load( "ArrowNotification", typeof(GameObject)) as GameObject;

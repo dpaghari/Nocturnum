@@ -31,12 +31,6 @@ public class PlayerInputHandler : MonoBehaviour {
 	}
 
 
-	void ResetLevel(){
-		ResManager.Reset();
-		TechManager.Reset();
-		MetricManager.Reset();
-		AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
-	}
 
 
 	// Use this for initialization
@@ -46,7 +40,9 @@ public class PlayerInputHandler : MonoBehaviour {
 	
 
 	void FixedUpdate(){
+		if( GameManager.PlayerDead == true) return;
 		if( animation.IsPlaying("Dash")) return;
+		if( animation.IsPlaying("Groundpunch")) return;
 		DetectMovement();
 	}
 
@@ -54,15 +50,16 @@ public class PlayerInputHandler : MonoBehaviour {
 	void Update () {
 
 
-		if( Input.GetKeyDown( KeyCode.F9)) ResetLevel();
-
+		if( Input.GetKeyDown( KeyCode.F9)) GameManager.ResetLevel();
+		if( Input.GetKeyDown(KeyCode.F10)) GameManager.PauseToggle();
 
 		//Quit Game
 		if( Input.GetKeyDown( KeyCode.F11)) Application.Quit();
 
-
-
+		
+		if( GameManager.PlayerDead == true) return;
 		if( animation.IsPlaying("Dash")) return;
+		if( animation.IsPlaying("Groundpunch")) return;
 		if( Input.GetMouseButton( 0)) ac.Shoot( Utility.GetMouseWorldPos( transform.position.y));
 		if( Input.GetMouseButtonDown(1)) ac.ActivateEquip( Utility.GetMouseWorldPos( transform.position.y));
 		if( Input.GetKeyDown( KeyCode.R)) ac.Reload();

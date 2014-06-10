@@ -14,12 +14,15 @@ public class AvatarController : MonoBehaviour {
 	public AudioClip bgm;
 	public AudioClip dashSound;
 
-	private Rigidbody clone;
+	//Our dash speed: MoveSpeed * dashSpeedRatio = dash speed
+	public float dashSpeedRatio = 12f;
 
-	public Rigidbody normalBullet;
-	public Rigidbody orbBullet;
+	//The fraction of our regular movement speed to travel
+	//at the ending parts of our dash
+	public float dashEaseOutRatio = 0.5f;
 
-	private int startingClipSize;
+
+
 
 
 	public CanMove moveScript {get; set;}
@@ -30,11 +33,9 @@ public class AvatarController : MonoBehaviour {
 	public CanBuild buildScript;
 	public CanResearch researchScript {get; set;}
 
+	private int startingClipSize;
+	private Material m_Material;
 
-
-	public bool isPaused;
-	public bool isDashing;
-	public float dashForce;
 	public DumbTimer dashCDScript;
 
 
@@ -54,10 +55,10 @@ public class AvatarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		dashForce = 60.0F;
+		collider.enabled = true;
 		dashCDScript = DumbTimer.New(3.0f);
-		isDashing = false;
-		isPaused = false;
+		m_Material = new Material("Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }");
+
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShootReload>();
 		equipScript = GetComponent<EquipmentUser>();
@@ -65,7 +66,7 @@ public class AvatarController : MonoBehaviour {
 		overdriveScript = GetComponent<hasOverdrive>();
 		buildScript = GetComponent<CanBuild>();
 		researchScript = GetComponent<CanResearch>();
-		collider.enabled = true;
+
 		startingClipSize = shootScript.clipSize;
 	}
 
@@ -76,6 +77,80 @@ public class AvatarController : MonoBehaviour {
 
 	void OnDisable(){
 		EventManager.ResearchedUpgrade -= UpdateUpgrades;
+	}
+
+
+
+	IEnumerator DelayedReset(){
+		yield return new WaitForSeconds(animation["Dead"].length + 1.5f); 
+		GameManager.ResetLevel();
+	}
+
+
+	private void DrawQuad(Color aColor,float aAlpha)
+	{
+		aColor.a = aAlpha;
+		m_Material.SetPass(0);
+		GL.Color(aColor);
+		GL.PushMatrix();
+		GL.LoadOrtho();
+		GL.Begin(GL.QUADS);
+		GL.Vertex3(0, 0, -1);
+		GL.Vertex3(0, 1, -1);
+		GL.Vertex3(1, 1, -1);
+		GL.Vertex3(1, 0, -1);
+		GL.End();
+		GL.PopMatrix();
+	}
+
+
+	private IEnumerator Fade(float aFadeOutTime, float aFadeInTime, Color aColor){
+		float t = 0.0f;
+		while (t<0.1f)
+		{
+			yield return new WaitForEndOfFrame();
+			t = Mathf.Clamp01(t + Time.deltaTime / aFadeOutTime);
+			DrawQuad(aColor, t);
+		}
+		
+		while (t>0.0f)
+		{
+			yield return new WaitForEndOfFrame();
+			t = Mathf.Clamp01(t - Time.deltaTime / aFadeInTime);
+			DrawQuad(aColor, t);
+		}
+
+	}
+
+	private void StartFade(float aFadeOutTime, float aFadeInTime, Color aColor){
+		StartCoroutine(Fade(aFadeOutTime, aFadeInTime, aColor));
+	}
+	
+	IEnumerator FlashWhenHit (){
+		yield return new WaitForSeconds (.01f);
+		StartFade (0.8f, 0.0f, Color.red);
+	}
+
+
+
+	public void OnHit(){
+
+		StartCoroutine(FlashWhenHit());
+		if(!animation.IsPlaying("Groundpunch")){
+			animation.Play("GetHit");
+		}
+
+	}
+
+	public void Die(){
+		if(!GameManager.PlayerDead){
+			animation.CrossFade("Dead");
+			GameManager.PlayerDead = true;	
+		}
+		collider.enabled = false;
+
+		StartCoroutine("DelayedReset");
+		return;
 	}
 
 
@@ -90,35 +165,40 @@ public class AvatarController : MonoBehaviour {
 	}
 
 
-	//Need to add in check for paused game since this doesn't use game update
-	//or multiply by game scale
+	//Includes time with no movement, then a burst of speed
+	//and transitions to EaseOutDash
 	IEnumerator EaseInDash(Vector3 direction) {
 		for(;;){
 			if( animation.IsPlaying("Dash") == false) break;
 
 			if( animation["Dash"].normalizedTime > 0.35 ){	
+				//audio.PlayOneShot( dashSound, 0.5f);
 				StartCoroutine( "EaseOutDash", direction);
 				break;
 			}
 
 			if( animation["Dash"].normalizedTime > 0.15)
-				moveScript.Move( direction * 12);
+				moveScript.Move( direction * dashSpeedRatio);
 
 			yield return new WaitForFixedUpdate();
 				
 		}
 	}
-	
+
+
+
+	//Slowly moves the player at the ending parts of the dash
 	IEnumerator EaseOutDash(Vector3 direction) {
 		for(;;){
 			if( animation["Dash"].normalizedTime >= 0.95 || animation.IsPlaying("Dash") == false)
 				break;
 
-			moveScript.Move( direction * 0.5f);
+			moveScript.Move( direction * dashEaseOutRatio);
 			yield return new WaitForFixedUpdate();
-
 		}
 	}
+
+
 
 	public void Dash( Vector3 direction){
 		if( direction.magnitude > 0){
@@ -130,6 +210,8 @@ public class AvatarController : MonoBehaviour {
 			animation.CrossFade("Idle");
 
 	}
+
+
 
 	public void Shoot( Vector3 position){
 		if( shootScript.reloading) return;
@@ -152,9 +234,11 @@ public class AvatarController : MonoBehaviour {
 	}
 
 
+
 	public void ActivateEquip( Vector3 position){
 		equipScript.UseEquip( position);
 	}
+
 
 
 	public void Reload(){
@@ -162,9 +246,8 @@ public class AvatarController : MonoBehaviour {
 	}
 
 
+
 	void FixedUpdate() {
-
-
 	}
 	
 
@@ -172,62 +255,36 @@ public class AvatarController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//[Don't delete] debug code for showing our shooting angle
-		//Debug.DrawRay(transform.position, Utility.GetMouseWorldPos(transform.position.y) - transform.position);
 		dashCDScript.Update();
-		isDashing = false;
-		if(isDashing){
 
-			GameManager.KeysEnabled = false;								// disable keys when dashing
+
+		if( TechManager.missionComplete){
+			audio.PlayOneShot(missioncompleteSound, 0.2f);
 		}
 
-		if(TechManager.missionComplete){
-			audio.PlayOneShot(missioncompleteSound, 0.2f);					// play Mission Complete sound
-		}
-
-		if(GameManager.KeysEnabled){
 
 
-			//Pause
-			if(Input.GetKeyDown(KeyCode.F10) && !isPaused)
-			{
 
-				Time.timeScale = 0.0f;
-				isPaused = true;
+		//swaps to the next equipment for testing purposes
+		//has a little more logic since not all the equipment are implemented yet
+		//Switch Equipment
+		if( Input.GetKeyDown(KeyCode.T)){
+			EquipType nextEquip = equipScript.CurrEquipType;
+			int typeIterator = (int) equipScript.CurrEquipType;
 
+			do{
+			typeIterator ++;
+			if (typeIterator >= (int)EquipType._length)
+				typeIterator = 0;
+			nextEquip = (EquipType) typeIterator;
 			}
-			//Unpause
-			else if(Input.GetKeyDown(KeyCode.F10) && isPaused)
-			{
-
-				Time.timeScale = 1.0f;
-				isPaused = false;    
-			} 
-
-
-
-
-			//swaps to the next equipment for testing purposes
-			//has a little more logic since not all the equipment are implemented yet
-			//Switch Equipment
-			if(Input.GetKeyDown(KeyCode.T) && !isPaused){
-				EquipType nextEquip = equipScript.CurrEquipType;
-				int typeIterator = (int) equipScript.CurrEquipType;
-
-				do{
-				typeIterator ++;
-				if (typeIterator >= (int)EquipType._length)
-					typeIterator = 0;
-				nextEquip = (EquipType) typeIterator;
-				}
-				while (equipScript.GetEquip(nextEquip) == null);
-				
-				Debug.Log(string.Format("Equip switched from {0} to {1}.", equipScript.CurrEquipType, nextEquip));
-				equipScript.ChangeEquip(nextEquip);
-				
-			}
-
+			while (equipScript.GetEquip(nextEquip) == null);
+			
+			Debug.Log(string.Format("Equip switched from {0} to {1}.", equipScript.CurrEquipType, nextEquip));
+			equipScript.ChangeEquip(nextEquip);
+			
 		}
+
 
 
 
