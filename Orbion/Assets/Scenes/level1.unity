@@ -43765,6 +43765,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .866025388
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: cameraTarget
+      value: 
+      objectReference: {fileID: 680245858}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
   m_RootGameObject: {fileID: 1662365998}
@@ -76151,7 +76159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc8f5f7b0814a64c87933503aca136a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTarget: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+  cameraTarget: {fileID: 680245858}
   smoothTime: .100000001
   cameraFollowX: 1
   cameraFollowZ: 1
@@ -76192,7 +76200,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 4
-  far clip plane: 60
+  far clip plane: 1000
   field of view: 75
   orthographic: 0
   orthographic size: 20

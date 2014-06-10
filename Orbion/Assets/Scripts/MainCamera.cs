@@ -39,11 +39,12 @@ public class MainCamera : MonoBehaviour
 		{
 			// to do
 		}
+
 		if (cameraTarget) {
 			transform.LookAt(cameraTarget.transform.position);
 		}
 		
-		gameObject.transform.position += velocity;
+		//gameObject.transform.position += velocity;
 
 	}
 }

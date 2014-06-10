@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3
+  applyScale: 0
 --- !u!23 &7284223
 Renderer:
   m_ObjectHideFlags: 0
@@ -219,7 +220,7 @@ Transform:
   m_Father: {fileID: 1487709335}
 --- !u!65 &10249312
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500024, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -578,7 +579,7 @@ MonoBehaviour:
     m_Bottom: 0
 --- !u!65 &32947596
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500038, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -648,6 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
+  applyScale: 0
 --- !u!1 &42598183
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +680,7 @@ Transform:
   m_Father: {fileID: 1764273282}
 --- !u!65 &42598185
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500066, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -910,7 +912,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &60221535
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500022, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -1161,7 +1163,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &75571618
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500082, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -1202,7 +1204,7 @@ Transform:
   m_Father: {fileID: 661653559}
 --- !u!65 &75622830
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500026, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -1324,7 +1326,7 @@ Transform:
   m_Father: {fileID: 1764273282}
 --- !u!65 &82557925
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500032, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -1446,7 +1448,7 @@ Transform:
   m_Father: {fileID: 491523012}
 --- !u!65 &93115218
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500000, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -1723,6 +1725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!1 &100351516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1756,7 @@ Transform:
   m_Father: {fileID: 1135095194}
 --- !u!65 &100351518
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500116, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -2000,7 +2003,7 @@ MonoBehaviour:
   buildingType: {fileID: 0}
 --- !u!65 &111924953
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500034, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -2094,7 +2097,7 @@ Transform:
   m_Father: {fileID: 1747058850}
 --- !u!65 &115177285
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500018, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -2591,7 +2594,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &138021756
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500002, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -2632,7 +2635,7 @@ Transform:
   m_Father: {fileID: 1487204322}
 --- !u!65 &142344650
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500072, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -2794,6 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.25
+  applyScale: 0
 --- !u!64 &152026185
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2897,6 +2901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
+  applyScale: 0
 --- !u!1 &156286907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,7 +3273,7 @@ Transform:
   m_Father: {fileID: 791447315}
 --- !u!65 &172031389
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500140, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -3516,6 +3521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &185615838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,6 +3576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &187592855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3708,7 +3715,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &187599726
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500020, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -3749,7 +3756,7 @@ Transform:
   m_Father: {fileID: 1590243705}
 --- !u!65 &190556101
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500052, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -3890,7 +3897,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &194049280
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500116, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -3980,7 +3987,7 @@ Transform:
   m_Father: {fileID: 491523012}
 --- !u!65 &194116399
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500108, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -4306,7 +4313,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &205864822
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500092, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -4449,7 +4456,7 @@ Transform:
   m_Father: {fileID: 1590243705}
 --- !u!65 &226033273
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500006, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -4571,7 +4578,7 @@ Transform:
   m_Father: {fileID: 1776604588}
 --- !u!65 &226840730
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500140, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -4776,6 +4783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 80
+  applyScale: 0
 --- !u!1 &244343728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4859,7 +4867,7 @@ Transform:
   m_Father: {fileID: 1652806356}
 --- !u!65 &260877935
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500088, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -5009,7 +5017,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: d7b803cf43d702d4eb3d00d36e2088c1, type: 2}
 --- !u!65 &265825340
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500076, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -5166,7 +5174,7 @@ Transform:
   m_Father: {fileID: 1309752206}
 --- !u!65 &271728855
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500022, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -5342,7 +5350,7 @@ Transform:
   m_Father: {fileID: 287590345}
 --- !u!65 &283044635
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500060, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -5594,7 +5602,7 @@ MonoBehaviour:
     MemberName: CallLightGrenade
 --- !u!65 &287590349
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500112, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -5784,7 +5792,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: c49ac2272127d664fae21b8c3ea5cfe1, type: 2}
 --- !u!65 &311567699
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500054, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -5902,6 +5910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &316926988
 GameObject:
   m_ObjectHideFlags: 0
@@ -6794,6 +6803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1001 &370811966
 Prefab:
   m_ObjectHideFlags: 0
@@ -6877,6 +6887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.25
+  applyScale: 0
 --- !u!64 &371648639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7060,7 +7071,7 @@ Transform:
   m_Father: {fileID: 1088550683}
 --- !u!65 &389595657
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500154, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -7511,7 +7522,7 @@ Transform:
   m_Father: {fileID: 1652806356}
 --- !u!65 &429443941
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500046, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -7660,7 +7671,7 @@ Transform:
   m_Father: {fileID: 1590243705}
 --- !u!65 &432015328
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500134, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -7801,6 +7812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!114 &433027911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8273,6 +8285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!1 &447164353
 GameObject:
   m_ObjectHideFlags: 0
@@ -8327,6 +8340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &448474124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8357,6 +8371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3
+  applyScale: 0
 --- !u!23 &448474127
 Renderer:
   m_ObjectHideFlags: 0
@@ -8559,6 +8574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.25
+  applyScale: 0
 --- !u!64 &457047023
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8735,7 +8751,7 @@ Transform:
   m_Father: {fileID: 1915379286}
 --- !u!65 &457681217
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500056, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -8930,6 +8946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!114 &465759470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9082,7 +9099,7 @@ Transform:
   m_Father: {fileID: 311567697}
 --- !u!65 &467532767
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500078, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -9493,7 +9510,7 @@ MonoBehaviour:
     MemberName: CallBuildMedBay
 --- !u!65 &475951122
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500164, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -9534,7 +9551,7 @@ Transform:
   m_Father: {fileID: 1846389468}
 --- !u!65 &479962674
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500010, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -9635,6 +9652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3
+  applyScale: 0
 --- !u!23 &485148718
 Renderer:
   m_ObjectHideFlags: 0
@@ -9825,7 +9843,7 @@ MonoBehaviour:
     MemberName: CallClipSize
 --- !u!65 &491523016
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500128, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -9963,7 +9981,7 @@ Transform:
   m_Father: {fileID: 1764273282}
 --- !u!65 &492897591
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500016, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -10191,6 +10209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.25
+  applyScale: 0
 --- !u!64 &495279743
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10265,7 +10284,7 @@ Transform:
   m_Father: {fileID: 661653559}
 --- !u!65 &497544547
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500068, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -10355,7 +10374,7 @@ Transform:
   m_Father: {fileID: 311567697}
 --- !u!65 &504398888
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500064, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -10602,7 +10621,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &517827317
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500150, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -10643,7 +10662,7 @@ Transform:
   m_Father: {fileID: 791447315}
 --- !u!65 &518678990
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500050, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -10813,7 +10832,7 @@ Transform:
   m_Father: {fileID: 1135095194}
 --- !u!65 &528176989
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500012, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -11016,7 +11035,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &528425839
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500160, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -11223,6 +11242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &554465427
 GameObject:
   m_ObjectHideFlags: 0
@@ -11387,7 +11407,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &554790817
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500046, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -11453,6 +11473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
+  applyScale: 0
 --- !u!114 &556950123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11495,7 +11516,7 @@ Transform:
   m_Father: {fileID: 1776604588}
 --- !u!65 &557000966
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500044, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -11799,7 +11820,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: 9c552460856e1b64d878dbe3ecb9bc77, type: 2}
 --- !u!65 &570970137
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500112, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -11893,7 +11914,7 @@ Transform:
   m_Father: {fileID: 1668156916}
 --- !u!65 &572153506
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500086, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -12139,7 +12160,7 @@ Transform:
   m_Father: {fileID: 811724124}
 --- !u!65 &578773204
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500044, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -12380,7 +12401,7 @@ Transform:
   m_Father: {fileID: 811724124}
 --- !u!65 &583619184
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500016, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -12470,7 +12491,7 @@ Transform:
   m_Father: {fileID: 1487709335}
 --- !u!65 &587102978
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500066, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -12592,7 +12613,7 @@ Transform:
   m_Father: {fileID: 945227038}
 --- !u!65 &592675567
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500080, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -12816,7 +12837,7 @@ Transform:
   m_Father: {fileID: 1846389468}
 --- !u!65 &596067729
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500030, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -13524,7 +13545,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &608563082
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500122, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -13565,7 +13586,7 @@ Transform:
   m_Father: {fileID: 1764273282}
 --- !u!65 &612770252
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500102, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -13726,6 +13747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
+  applyScale: 0
 --- !u!1 &632667321
 GameObject:
   m_ObjectHideFlags: 0
@@ -13783,7 +13805,7 @@ Transform:
   m_Father: {fileID: 1747058850}
 --- !u!65 &633993998
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500002, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -13954,7 +13976,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &635517738
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500012, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -14119,7 +14141,7 @@ Transform:
   m_Father: {fileID: 1537210728}
 --- !u!65 &653233118
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500082, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -14440,7 +14462,7 @@ MonoBehaviour:
     MemberName: CallBuildPhoton
 --- !u!65 &661653564
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500128, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -14634,7 +14656,7 @@ Transform:
   m_Father: {fileID: 1537210728}
 --- !u!65 &694208898
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500114, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -14781,6 +14803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &699238009
 GameObject:
   m_ObjectHideFlags: 0
@@ -14953,7 +14976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc8f5f7b0814a64c87933503aca136a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTarget: {fileID: 100000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
+  cameraTarget: {fileID: 1693228714}
   smoothTime: .100000001
   cameraFollowX: 1
   cameraFollowZ: 1
@@ -15093,6 +15116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!114 &711455862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15636,7 +15660,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &739545923
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500090, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -15836,6 +15860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!1 &751077167
 GameObject:
   m_ObjectHideFlags: 0
@@ -15968,7 +15993,7 @@ Transform:
   m_Father: {fileID: 1915379286}
 --- !u!65 &751857218
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500086, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -16375,7 +16400,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: d529b7fddc4217c4f90144ad12c3ad6c, type: 2}
 --- !u!65 &768350344
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500032, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -16786,7 +16811,7 @@ MonoBehaviour:
     MemberName: CallBuildSpotlight
 --- !u!65 &791447320
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500020, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -16827,7 +16852,7 @@ Transform:
   m_Father: {fileID: 111924951}
 --- !u!65 &798343652
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500114, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -17246,6 +17271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
+  applyScale: 0
 --- !u!1 &811724123
 GameObject:
   m_ObjectHideFlags: 0
@@ -17475,7 +17501,7 @@ MonoBehaviour:
     MemberName: CallBuildWall
 --- !u!65 &811724129
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500106, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -17733,7 +17759,7 @@ Transform:
   m_Father: {fileID: 1537210728}
 --- !u!65 &823892760
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500130, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -17937,7 +17963,7 @@ Transform:
   m_Father: {fileID: 791447315}
 --- !u!65 &844382945
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500146, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -18167,7 +18193,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &847188407
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500000, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -18234,7 +18260,7 @@ Transform:
   m_Father: {fileID: 1402811381}
 --- !u!65 &852440298
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500000, guid: dd463e9247aad024e9c9ac0837c5e76c,
     type: 2}
   m_PrefabInternal: {fileID: 356615098}
@@ -18771,7 +18797,7 @@ Transform:
   m_Father: {fileID: 287590345}
 --- !u!65 &910841768
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500038, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -19093,7 +19119,7 @@ Transform:
   m_Father: {fileID: 811724124}
 --- !u!65 &925800385
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500034, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -19242,7 +19268,7 @@ Transform:
   m_Father: {fileID: 287590345}
 --- !u!65 &931109656
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500050, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -20492,7 +20518,7 @@ MonoBehaviour:
   buildingType: {fileID: 0}
 --- !u!65 &942714689
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500094, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -20612,7 +20638,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: 6cb3d67fbf45d614c8b12dda813ec6e2, type: 2}
 --- !u!65 &945227040
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500108, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -20733,7 +20759,7 @@ Transform:
   m_Father: {fileID: 768350342}
 --- !u!65 &951644663
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500072, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -20944,7 +20970,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: c75a8e6eb7c779e4f871ab221fa3c2d3, type: 2}
 --- !u!65 &962031600
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500028, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -21484,7 +21510,7 @@ Transform:
   m_Father: {fileID: 475951117}
 --- !u!65 &1026156753
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500004, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -22048,7 +22074,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1054144772
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500064, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -22089,7 +22115,7 @@ Transform:
   m_Father: {fileID: 1309752206}
 --- !u!65 &1057557171
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500058, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -22204,6 +22230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &1058797058
 GameObject:
   m_ObjectHideFlags: 0
@@ -22234,7 +22261,7 @@ Transform:
   m_Father: {fileID: 1747058850}
 --- !u!65 &1058797060
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500130, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -22324,7 +22351,7 @@ Transform:
   m_Father: {fileID: 311567697}
 --- !u!65 &1065108545
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500060, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -22446,7 +22473,7 @@ Transform:
   m_Father: {fileID: 287590345}
 --- !u!65 &1069483301
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500110, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -22568,7 +22595,7 @@ Transform:
   m_Father: {fileID: 811724124}
 --- !u!65 &1070221667
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500042, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -22690,7 +22717,7 @@ Transform:
   m_Father: {fileID: 1846389468}
 --- !u!65 &1070805199
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500148, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -23115,7 +23142,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: b1ea8356d7acaf849929962787c373d1, type: 2}
 --- !u!65 &1088550685
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500132, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -23277,7 +23304,7 @@ Transform:
   m_Father: {fileID: 1776604588}
 --- !u!65 &1094070803
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500142, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -23530,7 +23557,7 @@ Transform:
   m_Father: {fileID: 111924951}
 --- !u!65 &1104831480
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500122, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -23667,7 +23694,7 @@ MonoBehaviour:
   _label: {fileID: 1105275601}
 --- !u!65 &1105275600
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500002, guid: 69ae408bc1d18ad4b8af9668adc877f2,
     type: 2}
   m_PrefabInternal: {fileID: 1758003728}
@@ -23872,7 +23899,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1109872699
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500008, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -23913,7 +23940,7 @@ Transform:
   m_Father: {fileID: 1846389468}
 --- !u!65 &1110738442
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500168, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -24120,7 +24147,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1112545501
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500098, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -24186,6 +24213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
+  applyScale: 0
 --- !u!1 &1125868760
 GameObject:
   m_ObjectHideFlags: 0
@@ -24331,7 +24359,7 @@ MonoBehaviour:
   buildingType: {fileID: 0}
 --- !u!65 &1135095196
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500080, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -24805,7 +24833,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1155539778
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500124, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -24916,7 +24944,7 @@ Transform:
   m_Father: {fileID: 1487709335}
 --- !u!65 &1166998016
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500144, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -25033,7 +25061,7 @@ Transform:
   m_Father: {fileID: 475951117}
 --- !u!65 &1175182955
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500176, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -25259,7 +25287,7 @@ Transform:
   m_Father: {fileID: 1915379286}
 --- !u!65 &1183943379
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500014, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -25685,6 +25713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 43
+  applyScale: 0
 --- !u!4 &1210316154
 Transform:
   m_ObjectHideFlags: 0
@@ -25726,7 +25755,7 @@ Transform:
   m_Father: {fileID: 1668156916}
 --- !u!65 &1212910238
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500056, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -26029,7 +26058,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1233212785
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500144, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -26263,7 +26292,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1243398488
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500084, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -26566,7 +26595,7 @@ Transform:
   m_Father: {fileID: 661653559}
 --- !u!65 &1257205113
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500152, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -26690,7 +26719,7 @@ Transform:
   m_Father: {fileID: 1668156916}
 --- !u!65 &1259007334
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500076, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -27941,7 +27970,7 @@ Transform:
   m_Father: {fileID: 1309752206}
 --- !u!65 &1276909269
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500008, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -28468,7 +28497,7 @@ Transform:
   m_Father: {fileID: 768350342}
 --- !u!65 &1305389699
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500126, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -28630,7 +28659,7 @@ Transform:
   m_Father: {fileID: 265825338}
 --- !u!65 &1308714364
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500162, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -28856,7 +28885,7 @@ MonoBehaviour:
     MemberName: CallScattershot
 --- !u!65 &1309752210
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500132, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -29101,7 +29130,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1321951016
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500118, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -29286,7 +29315,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1332783093
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500166, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -29540,6 +29569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 40
+  applyScale: 0
 --- !u!1 &1350985051
 GameObject:
   m_ObjectHideFlags: 0
@@ -29791,6 +29821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!1 &1361216501
 GameObject:
   m_ObjectHideFlags: 0
@@ -29993,7 +30024,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1363336149
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500052, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -30460,6 +30491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 2
+  applyScale: 0
 --- !u!1 &1380519591
 GameObject:
   m_ObjectHideFlags: 0
@@ -31011,7 +31043,7 @@ MonoBehaviour:
   _label: {fileID: 1402811384}
 --- !u!65 &1402811383
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500002, guid: dd463e9247aad024e9c9ac0837c5e76c,
     type: 2}
   m_PrefabInternal: {fileID: 356615098}
@@ -31292,6 +31324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 80
+  applyScale: 0
 --- !u!1 &1407571261
 GameObject:
   m_ObjectHideFlags: 0
@@ -31339,7 +31372,7 @@ MonoBehaviour:
   killScript: {fileID: 0}
 --- !u!65 &1407571264
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500000, guid: 1c717ebd1daaf4e448908eda09c99686,
     type: 2}
   m_PrefabInternal: {fileID: 1499565186}
@@ -31520,7 +31553,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1407884029
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500120, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -31642,7 +31675,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1407969961
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500014, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -31740,6 +31773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &1417354654
 GameObject:
   m_ObjectHideFlags: 0
@@ -31978,7 +32012,7 @@ Transform:
   m_Father: {fileID: 791447315}
 --- !u!65 &1445739916
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500100, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -32171,7 +32205,7 @@ Transform:
   m_Father: {fileID: 661653559}
 --- !u!65 &1452193391
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500006, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -32287,7 +32321,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456491916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00130208337, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
@@ -32481,7 +32515,7 @@ Transform:
   m_Father: {fileID: 491523012}
 --- !u!65 &1480194644
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500138, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -32755,7 +32789,7 @@ MonoBehaviour:
   buildingType: {fileID: 0}
 --- !u!65 &1487204324
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500126, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -33048,7 +33082,7 @@ MonoBehaviour:
     MemberName: CallBuildIncendiary
 --- !u!65 &1487709340
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500172, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -33228,7 +33262,7 @@ MonoBehaviour:
   buildingType: {fileID: 5400000, guid: ab55e9521cba25a439e2d460263b9b51, type: 2}
 --- !u!65 &1494018800
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500134, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -33346,6 +33380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1001 &1499565186
 Prefab:
   m_ObjectHideFlags: 0
@@ -33952,7 +33987,7 @@ Transform:
   m_Father: {fileID: 1652806356}
 --- !u!65 &1502017073
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500092, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -34176,7 +34211,7 @@ Transform:
   m_Father: {fileID: 942714687}
 --- !u!65 &1511316349
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500078, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -34760,7 +34795,7 @@ MonoBehaviour:
     MemberName: CallBuildTurret
 --- !u!65 &1537210733
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500142, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -34828,7 +34863,7 @@ Transform:
   m_Father: {fileID: 1846389468}
 --- !u!65 &1547306899
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500058, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -35007,6 +35042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 80
+  applyScale: 0
 --- !u!1 &1564490491
 GameObject:
   m_ObjectHideFlags: 0
@@ -35037,7 +35073,7 @@ Transform:
   m_Father: {fileID: 1487709335}
 --- !u!65 &1564490493
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500096, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -35273,6 +35309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3.5
+  applyScale: 0
 --- !u!114 &1568611565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35475,6 +35512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &1576676472
 GameObject:
   m_ObjectHideFlags: 0
@@ -35626,7 +35664,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1586118040
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500074, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -35868,7 +35906,7 @@ MonoBehaviour:
     MemberName: CallRicochet
 --- !u!65 &1590243710
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500136, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -35898,7 +35936,7 @@ GameObject:
   m_IsActive: 1
 --- !u!65 &1595501130
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500120, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -36133,6 +36171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 10
+  applyScale: 0
 --- !u!1 &1596543013
 GameObject:
   m_ObjectHideFlags: 0
@@ -36190,7 +36229,7 @@ Transform:
   m_Father: {fileID: 942714687}
 --- !u!65 &1599201893
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500074, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -36312,7 +36351,7 @@ Transform:
   m_Father: {fileID: 1590243705}
 --- !u!65 &1611857976
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500042, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -36484,7 +36523,7 @@ Transform:
   m_Father: {fileID: 768350342}
 --- !u!65 &1625874002
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500088, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -36640,7 +36679,7 @@ Transform:
   m_Father: {fileID: 962031598}
 --- !u!65 &1630629372
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500170, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -36764,7 +36803,7 @@ Transform:
   m_Father: {fileID: 791447315}
 --- !u!65 &1632559909
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500110, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -37036,6 +37075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 12
+  applyScale: 0
 --- !u!1 &1637382499
 GameObject:
   m_ObjectHideFlags: 0
@@ -37252,6 +37292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &1652806355
 GameObject:
   m_ObjectHideFlags: 0
@@ -37308,7 +37349,7 @@ MonoBehaviour:
   buildingType: {fileID: 0}
 --- !u!65 &1652806358
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500096, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -37581,7 +37622,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1665580642
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500104, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -37674,7 +37715,7 @@ MonoBehaviour:
   buildingType: {fileID: 0}
 --- !u!65 &1668156918
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500010, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -38065,7 +38106,7 @@ Transform:
   m_Father: {fileID: 491523012}
 --- !u!65 &1692232526
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500100, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -38226,6 +38267,7 @@ MonoBehaviour:
   currHP: 125
   baseHP: 125
   healEffect: {fileID: 100000, guid: 9ffbfe34223b97d48b0f7428b5f87127, type: 2}
+  toadSFX: {fileID: 0}
   toadExplosion: {fileID: 0}
   deathTarget: {fileID: 0}
   collectTarget: {fileID: 0}
@@ -38254,7 +38296,7 @@ AudioSource:
   m_GameObject: {fileID: 1693228714}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 3b9e113143429b54ba2426452862a9ad, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 07e0ae96b81b4124db901b7a3d01f4f7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -38793,7 +38835,7 @@ Transform:
   m_Father: {fileID: 475951117}
 --- !u!65 &1693399212
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500070, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -39237,7 +39279,7 @@ Transform:
   m_Father: {fileID: 1309752206}
 --- !u!65 &1717231531
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500068, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -39634,7 +39676,7 @@ Transform:
   m_Father: {fileID: 1537210728}
 --- !u!65 &1740791636
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500136, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -39933,7 +39975,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1745388129
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500048, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -40072,7 +40114,7 @@ MonoBehaviour:
     m_Bottom: 0
 --- !u!65 &1747058852
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500048, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -40170,6 +40212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &1752327649
 GameObject:
   m_ObjectHideFlags: 0
@@ -40200,7 +40243,7 @@ Transform:
   m_Father: {fileID: 265825338}
 --- !u!65 &1752327651
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500094, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -40378,7 +40421,7 @@ Transform:
   m_Father: {fileID: 1537210728}
 --- !u!65 &1756843301
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500040, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -41366,7 +41409,7 @@ MonoBehaviour:
     MemberName: CallLightFist
 --- !u!65 &1764273287
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500104, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -41578,7 +41621,7 @@ MonoBehaviour:
     MemberName: CallSeeker
 --- !u!65 &1776604592
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500040, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -41716,7 +41759,7 @@ Transform:
   m_Father: {fileID: 475951117}
 --- !u!65 &1779934160
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500158, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -41882,7 +41925,7 @@ Transform:
   m_Father: {fileID: 1590243705}
 --- !u!65 &1794203979
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500070, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -42558,6 +42601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &1824820915
 GameObject:
   m_ObjectHideFlags: 0
@@ -42727,6 +42771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 43
+  applyScale: 0
 --- !u!1 &1826769618
 GameObject:
   m_ObjectHideFlags: 0
@@ -42757,7 +42802,7 @@ Transform:
   m_Father: {fileID: 287590345}
 --- !u!65 &1826769620
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500106, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -42879,7 +42924,7 @@ Transform:
   m_Father: {fileID: 475951117}
 --- !u!65 &1840710698
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500036, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -43257,7 +43302,7 @@ MonoBehaviour:
     MemberName: CallBuildGenerator
 --- !u!65 &1846389473
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500084, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -43488,7 +43533,7 @@ Transform:
   m_Father: {fileID: 811724124}
 --- !u!65 &1862160429
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500156, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -43787,7 +43832,7 @@ Transform:
   m_Father: {fileID: 1747058850}
 --- !u!65 &1898332764
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500004, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -43877,7 +43922,7 @@ Transform:
   m_Father: {fileID: 1776604588}
 --- !u!65 &1899057129
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500098, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -44494,7 +44539,7 @@ MonoBehaviour:
     MemberName: CallBuildBallistics
 --- !u!65 &1915379291
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500018, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -45958,7 +46003,7 @@ Transform:
   m_Father: {fileID: 1747058850}
 --- !u!65 &1958457583
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500024, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -46363,7 +46408,7 @@ Transform:
   m_Father: {fileID: 1487709335}
 --- !u!65 &1966991273
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500138, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -46512,7 +46557,7 @@ Transform:
   m_Father: {fileID: 942714687}
 --- !u!65 &1969249533
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500030, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -46634,7 +46679,7 @@ Transform:
   m_Father: {fileID: 1776604588}
 --- !u!65 &1970637095
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500026, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -47918,7 +47963,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &1972839795
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500062, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -48092,6 +48137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 3
+  applyScale: 0
 --- !u!23 &1973347589
 Renderer:
   m_ObjectHideFlags: 0
@@ -49857,7 +49903,7 @@ Transform:
   m_Father: {fileID: 962031598}
 --- !u!65 &2013729789
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500124, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -50308,7 +50354,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &2025970668
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500174, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -50349,7 +50395,7 @@ Transform:
   m_Father: {fileID: 1105275598}
 --- !u!65 &2027776699
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500000, guid: 69ae408bc1d18ad4b8af9668adc877f2,
     type: 2}
   m_PrefabInternal: {fileID: 1758003728}
@@ -50515,6 +50561,10 @@ Prefab:
       propertyPath: m_OcclusionCulling
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
+      propertyPath: cameraTarget
+      value: 
+      objectReference: {fileID: 1693228714}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848f18a564d2db34f958f3f5b88f4511, type: 2}
   m_RootGameObject: {fileID: 705958694}
@@ -52066,7 +52116,7 @@ Transform:
   m_Father: {fileID: 1135095194}
 --- !u!65 &2057283463
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500036, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -52308,7 +52358,7 @@ Transform:
   m_Father: {fileID: 661653559}
 --- !u!65 &2067724372
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500090, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -52487,6 +52537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 32
+  applyScale: 0
 --- !u!1 &2069347430
 GameObject:
   m_ObjectHideFlags: 0
@@ -52544,7 +52595,7 @@ Transform:
   m_Father: {fileID: 491523012}
 --- !u!65 &2071971689
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500062, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -52749,7 +52800,7 @@ MonoBehaviour:
   tabStops: 
 --- !u!65 &2082687409
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500054, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -52994,7 +53045,7 @@ Transform:
   m_Father: {fileID: 1915379286}
 --- !u!65 &2117403105
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500102, guid: 1f0c2bee4907ef94bb3f9f8e2b1d148e,
     type: 2}
   m_PrefabInternal: {fileID: 1762957254}
@@ -53209,7 +53260,7 @@ Transform:
   m_Father: {fileID: 1764273282}
 --- !u!65 &2134067702
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500028, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -53402,7 +53453,7 @@ Transform:
   m_Father: {fileID: 1309752206}
 --- !u!65 &2139772294
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500118, guid: aca7a28b07db90743a59ab36b107287d,
     type: 2}
   m_PrefabInternal: {fileID: 1499757268}
@@ -53710,3 +53761,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactRadius: 80
+  applyScale: 0
