@@ -39,15 +39,20 @@ public class CanSpawnUpdate : MonoBehaviour {
 	//holds vector locations of all spawn_location prefabs in the scene
 	private Vector3[] spawnLocations;
 
-	void Start(){
+	private float[] enemySpawnPercents;
 
-		startTime = 10.0f;
-		waveTime = 20.0f;
-		levelTime = 20.0f;
+	private int level = 0;
+
+	void Start(){
+		startTime = 20.0f;
+		waveTime = 25.0f;
+		levelTime = 75.0f;
 		startScript = DumbTimer.New (startTime, 1.0f);
 		waveScript = DumbTimer.New (waveTime, 1.0f);
 		levelScript = DumbTimer.New (levelTime, 1.0f);
-		FindAllSpawners(Mathf.Infinity);	
+		FindAllSpawners(Mathf.Infinity);
+		enemySpawnPercents = new float[6];
+		setEnemyPercents();	
 		setDifficulty ();	
 	}
 	
@@ -76,10 +81,18 @@ public class CanSpawnUpdate : MonoBehaviour {
 		spawnLocations = new Vector3[spawns.Length];
 		int i = 0;
 		foreach (IsSpawn spawn in spawns) {
-			numSpawn++;
 			spawnLocations[i] = spawn.transform.position;
 			i++;			
 		}		
+	}
+
+	public void setEnemyPercents(){		
+		enemySpawnPercents[0] = 0.80f;
+		enemySpawnPercents[1] = 0.20f;	
+		enemySpawnPercents[2] = 0.0f;	
+		enemySpawnPercents[3] = 0.0f;	
+		enemySpawnPercents[4] = 0.0f;	
+		enemySpawnPercents[5] = 0.0f;		
 	}
 	
 	
@@ -94,17 +107,10 @@ public class CanSpawnUpdate : MonoBehaviour {
 		}
 		if(startScript.Finished() == true){
 			waveStatus = true;
-			//Debug.Log ("waves started");
 		}			
 
 		if(waveScript != null && waveStatus){
 			waveScript.Update ();
-		}
-
-		if (waveScript.Finished() == true) {
-			spawnWave();
-			Debug.Log ("spawn wave");
-			waveScript.Reset();	
 		}
 
 		if(levelScript != null && waveStatus){
@@ -113,17 +119,58 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 		if (levelScript.Finished() == true) {
 			numSpawn++;
-			Debug.Log ("wave leveled up");
-			//setWaveTime(waveTime -= 1.0f);
-			waveScript.MaxTime = waveTime -= 10.0f;
-			if(waveTime < 1.0f){
-				waveScript.MaxTime = 5.0f;
+			level++;
+			if(level == 1){
+				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.2f;
+				enemySpawnPercents[1] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[2] = enemySpawnPercents[0] + 0.1f;
+			} else if(level == 2){
+				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.3f;
+				enemySpawnPercents[1] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[2] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[3] = enemySpawnPercents[0] + 0.1f;					
+			} else if(level == 3){
+				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.1f;
+				enemySpawnPercents[1] = enemySpawnPercents[0] - 0.1f;
+				enemySpawnPercents[2] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[3] = enemySpawnPercents[0] + 0.1f;						
+			} else if(level == 4){
+				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.1f;
+				enemySpawnPercents[1] = enemySpawnPercents[0] - 0.1f;
+				enemySpawnPercents[3] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[4] = enemySpawnPercents[0] + 0.1f;		
+			} else if(level == 5){
+				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.1f;
+				enemySpawnPercents[2] = enemySpawnPercents[0] - 0.1f;
+				enemySpawnPercents[4] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[5] = enemySpawnPercents[0] + 0.1f;		
+			} else if(level == 6){
+				enemySpawnPercents[2] = enemySpawnPercents[0] - 0.2f;
+				enemySpawnPercents[4] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[5] = enemySpawnPercents[0] + 0.1f;				
+				
 			}
-			levelScript.Reset();	
+			//Debug.Log ("wave leveled up");
+			//setWaveTime(waveTime -= 1.0f);
+			waveScript.MaxTime = waveTime -= 1.0f;
+			if(waveTime < 20.0f){
+				waveScript.MaxTime = 20.0f;
+			}
+			levelScript.MaxTime = levelTime -= 3.0f;
+			if(levelTime < 60.0f){
+				levelScript.MaxTime = 60.0f;
+			}
+			levelScript.Reset();
+			
+		}
+		if (waveScript.Finished() == true) {
+			spawnWave();
+			waveScript.Reset();	
 		}
 	}
 
 	public void spawnWave(){
+		//Debug.Log("wave");
 		MetricManager.AddWaves(1);
 		float rand = Random.value;
 		Vector3 tempVec;
@@ -131,26 +178,40 @@ public class CanSpawnUpdate : MonoBehaviour {
 		if(randIndex == -1) randIndex = 0;
 		tempVec = spawnLocations[randIndex];
 
+		int j;
 		for(int i = 0; i < numSpawn; i++){
 			rand = Random.value;
-				if(rand > 0.0 && rand < 0.3){
-					makeMelee(tempVec);
-					//SpawnManager.makeMelee(tempVec);
-				} else if(rand >= 0.3 && rand < 0.5){
-					makeRanged(tempVec);
-					//SpawnManager.makeRanged(tempVec);
-				} else if(rand >= 0.5 && rand < 0.7){
-					makeFastMelee(tempVec);
-				} else if(rand >= 0.7 && rand < 0.8){
-					makeLuminosaur(tempVec);
-				} else if(rand >= 0.8 && rand < 0.9){
-					makeLuminotoad(tempVec);
+			j = 0;			
+			while(j < enemySpawnPercents.Length){
+				if(enemySpawnPercents[j] == 0.0f){
+					j++;
+				} else if(rand < enemySpawnPercents[j]){
+					spawn (tempVec, j);
+					j += 100;
 				} else {
-					makeMultiRanged(tempVec);
+					rand -= enemySpawnPercents[j];
+					j++;
 				}
-				MetricManager.AddEnemies(1);
 			}
+			MetricManager.AddEnemies(1);
+		}
 		healthIncrease += healthIncreaseCounter;
+	}
+
+	public void spawn(Vector3 _vec, int i){
+		if(i == 0){
+			makeMelee (_vec);
+		} else if(i == 1){
+			makeFastMelee (_vec);
+		} else if(i == 2){
+			makeRanged (_vec);
+		} else if(i == 3){
+			makeMultiRanged (_vec);
+		} else if(i == 4){
+			makeLuminotoad (_vec);
+		} else if(i == 5){
+			makeLuminosaur (_vec);
+		}
 	}
 
 	public void makeMelee(Vector3 _vec){
