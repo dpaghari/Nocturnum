@@ -329,7 +329,7 @@ public class TechManager : Singleton<TechManager> {
 
 	// Reset quest variables
 	public static void Reset(){
-		for( int techIndex = 0; techIndex < (int)Tech._upgradesEND + 1; techIndex++){
+		for( int techIndex = 0; techIndex < (int)Tech._upgradesEND - 1; techIndex++){
 			Instance.NumBuildings[techIndex] = 0;
 			Instance.BuildingsDestroyed[techIndex] = 0;
 			Instance.TotalBuildings[techIndex] = 0;
@@ -362,7 +362,8 @@ public class TechManager : Singleton<TechManager> {
 		//For now, would rather reduce code error potential than memory usage
 		UpgrLevels = new int[ (int)Tech._upgradesEND + 1];
 		NumBuildings = new int[ (int)Tech._upgradesEND + 1];
-
+		BuildingsDestroyed = new int[ (int)Tech._upgradesEND + 1];
+		TotalBuildings = new int[ (int)Tech._upgradesEND + 1];
 		PlayerTech = TechTree.MakeDefault();
 		UpgradeCosts = UpgradeCostTable.InitTable();
 		researchProgress = ResearchingInfo.New();

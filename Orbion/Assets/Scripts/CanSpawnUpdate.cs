@@ -43,7 +43,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 
 		startTime = 10.0f;
 		waveTime = 20.0f;
-		levelTime = 60.0f;
+		levelTime = 20.0f;
 		startScript = DumbTimer.New (startTime, 1.0f);
 		waveScript = DumbTimer.New (waveTime, 1.0f);
 		levelScript = DumbTimer.New (levelTime, 1.0f);
@@ -117,7 +117,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 			//setWaveTime(waveTime -= 1.0f);
 			waveScript.MaxTime = waveTime -= 10.0f;
 			if(waveTime < 1.0f){
-				waveTime = 5.0f;
+				waveScript.MaxTime = 5.0f;
 			}
 			levelScript.Reset();	
 		}
