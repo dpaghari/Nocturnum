@@ -93,8 +93,8 @@ public class BuildMenuButtons : MonoBehaviour {
 
 		if( TechManager.IsBuilding( techType)){
 			buildInfo = GetBuildInfo();
-			energyLabel.Text = string.Format("{0}: {1}", energyLabel.name, buildInfo.energyCost);
-			lumenLabel.Text =  string.Format("{0}: {1}", lumenLabel.name, buildInfo.lumenCost);
+			energyLabel.Text = string.Format("{0}", buildInfo.energyCost);
+			lumenLabel.Text =  string.Format("{0}", buildInfo.lumenCost);
 		}
 		else
 			Debug.LogWarning( string.Format( "{0} has non building techType: {1}", this.name, techType)); 

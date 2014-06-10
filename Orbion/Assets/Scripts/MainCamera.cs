@@ -19,7 +19,7 @@ public class MainCamera : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		cameraTarget = GameObject.Find("player_prefab");
+		//cameraTarget = GameObject.Find("player_prefab");
 		thisTransform = transform;
 	}
 	
@@ -39,6 +39,11 @@ public class MainCamera : MonoBehaviour
 		{
 			// to do
 		}
+		if (cameraTarget) {
+			transform.LookAt(cameraTarget.transform.position);
+		}
+		
+		gameObject.transform.position += velocity;
 
 	}
 }
