@@ -68,7 +68,7 @@ public class TechManager : Singleton<TechManager> {
 	protected UpgradeCostTable UpgradeCosts;
 	protected ResearchingInfo researchProgress;
 
-
+	
 
 
 	public static bool missionComplete = false;

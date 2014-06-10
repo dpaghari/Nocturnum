@@ -67,9 +67,12 @@ public class PB_Linear : ProjectileBehavior {
 		}
 	}
 
+	void Start () {
+		MetricManager.AddShots(1);	
+	}
+
 	public override void FixedPerform(){
 		MoveScript.Move(transform.forward, MoveType);
-
 
 		/* Trying to offset bullet y-value for shorter targets
 		 * doesn't work, plaese ignore

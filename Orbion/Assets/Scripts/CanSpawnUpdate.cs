@@ -161,6 +161,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 	public void runLevel(){
 		//Debug.Log("Spawn Wave " + currentLevel);
+		MetricManager.AddWaves(1);
 		float rand = Random.value;
 		Vector3 tempVec;
 

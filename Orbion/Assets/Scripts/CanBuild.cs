@@ -208,7 +208,7 @@ public class CanBuild : MonoBehaviour {
 				CloseMenu();
 				researchScript.OpenMenu();
 			}
-
+			//create the inunderconstruction building
 			if(Input.GetMouseButton(0) && toBuild != null && currHologram.CanBuildHere){
 				if( currHologram.CanBuildHere)
 					Construct();
