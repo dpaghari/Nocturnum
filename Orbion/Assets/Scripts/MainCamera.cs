@@ -41,7 +41,7 @@ public class MainCamera : MonoBehaviour
 		}
 
 		if (cameraTarget) {
-			Utility.LerpLook( this.gameObject, cameraTarget, 1, false);
+			Utility.LerpLook( this.gameObject, cameraTarget, 10, false);
 		}
 		
 		//gameObject.transform.position += velocity;
