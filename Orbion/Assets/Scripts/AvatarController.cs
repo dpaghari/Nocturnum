@@ -7,13 +7,7 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class AvatarController : MonoBehaviour {
 
-	public CanMove moveScript;
-	public CanShootReload shootScript;
-	public EquipmentUser equipScript;
-	public hasOverdrive overdriveScript;
-	public CanUse useScript;
-	public CanBuild buildScript;
-	public CanResearch researchScript;
+
 
 	public AudioClip missioncompleteSound;
 	public AudioClip shotSound;
@@ -27,11 +21,21 @@ public class AvatarController : MonoBehaviour {
 
 	private int startingClipSize;
 
+
+	public CanMove moveScript {get; set;}
+	public CanShootReload shootScript {get; set;}
+	public EquipmentUser equipScript {get; set;}
+	public hasOverdrive overdriveScript {get; set;}
+	public CanUse useScript {get; set;}
+	public CanBuild buildScript;
+	public CanResearch researchScript {get; set;}
+
+
+
 	public bool isPaused;
 	public bool isDashing;
 	public float dashForce;
 	public DumbTimer dashCDScript;
-
 
 
 
@@ -75,83 +79,90 @@ public class AvatarController : MonoBehaviour {
 	}
 
 
+	public void Run( Vector3 direction){
+		if( direction.magnitude > 0){
+			animation.CrossFade("Run");
+			Utility.LerpLook(this.gameObject, transform.position + direction, 10, false);
+			moveScript.Move( direction);
+		}
+		else 
+			animation.CrossFade("Idle");
+	}
+
+
+	//Need to add in check for paused game since this doesn't use game update
+	//or multiply by game scale
+	IEnumerator EaseInDash(Vector3 direction) {
+		for(;;){
+			if( animation.IsPlaying("Dash") == false) break;
+
+			if( animation["Dash"].normalizedTime > 0.35 ){	
+				StartCoroutine( "EaseOutDash", direction);
+				break;
+			}
+
+			if( animation["Dash"].normalizedTime > 0.15)
+				moveScript.Move( direction * 12);
+
+			yield return new WaitForFixedUpdate();
+				
+		}
+	}
+	
+	IEnumerator EaseOutDash(Vector3 direction) {
+		for(;;){
+			if( animation["Dash"].normalizedTime >= 0.95 || animation.IsPlaying("Dash") == false)
+				break;
+
+			moveScript.Move( direction * 0.5f);
+			yield return new WaitForFixedUpdate();
+
+		}
+	}
+
+	public void Dash( Vector3 direction){
+		if( direction.magnitude > 0){
+			animation.CrossFade("Dash");
+			Utility.LerpLook(this.gameObject, transform.position + direction, 100, false);
+			StartCoroutine( "EaseInDash", direction);
+		}
+		else 
+			animation.CrossFade("Idle");
+
+	}
+
+	public void Shoot( Vector3 position){
+		if( shootScript.reloading) return;
+		Utility.LerpLook(this.gameObject, position, 100, false);
+
+		if( animation.IsPlaying( "Run"))
+			animation.CrossFade( "ShootRun");
+		
+		else
+			animation.CrossFade( "Shooting");
+
+		if( shootScript.FinishCooldown()){
+			if( overdriveScript.overdriveActive == false){
+				audio.clip = shotSound;
+				audio.PlayOneShot(shotSound,1.0f);
+				shootScript.Shoot( position);
+			}
+		}
+
+	}
+
+
+	public void ActivateEquip( Vector3 position){
+		equipScript.UseEquip( position);
+	}
+
+
+	public void Reload(){
+		shootScript.Reload();
+	}
 
 
 	void FixedUpdate() {
-
-
-		if(GameManager.KeysEnabled){						
-
-			//------------------------Dash Input------------------------------------------------------------//
-			/*Checks for player input for Dash functionality which is a quick burst of speed in the direction
-			of Input.
-
-			Use Shift + Direction(WASD) to use
-			*/
-
-
-			if( Input.GetKeyDown( KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
-				if(dashCDScript.Finished()){							// check for dash cooldown
-					audio.PlayOneShot(dashSound);						// play dash sound effect
-				isDashing = true;
-				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce * 2;
-				moveScript.Move( Vector3.forward, ForceMode.Impulse);
-				dashCDScript.Reset();
-
-				}
-			}
-			else if( Input.GetKeyDown( KeyCode.A) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
-				if(dashCDScript.Finished()){
-					audio.PlayOneShot(dashSound);
-					isDashing = true;
-				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce * 2;
-				moveScript.Move( Vector3.left, ForceMode.Impulse);
-				dashCDScript.Reset();
-
-				}
-			}
-			else if( Input.GetKeyDown( KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
-				if(dashCDScript.Finished()){
-					audio.PlayOneShot(dashSound);
-					isDashing = true;
-				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce * 2;
-				moveScript.Move( Vector3.back, ForceMode.Impulse);
-				dashCDScript.Reset();
-
-				}
-			}
-			else if( Input.GetKeyDown( KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !isPaused && !isDashing){
-				if(dashCDScript.Finished()){
-					audio.PlayOneShot(dashSound);
-				isDashing = true;
-				animation.Play("Dash", PlayMode.StopAll);
-				moveScript.Force += dashForce * 2;
-				moveScript.Move( Vector3.right, ForceMode.Impulse);
-				dashCDScript.Reset();
-
-				}
-			}
-
-			// Player Input for Basic Movement (WASD)
-			Vector3 moveDirection = Vector3.zero;
-			if( Input.GetKey( KeyCode.W) && !isPaused && !isDashing){			// Move up
-				moveDirection += Vector3.forward;
-			}
-			if( Input.GetKey( KeyCode.S) && !isPaused && !isDashing){			// Move Down
-				moveDirection += Vector3.back;
-			}
-			if( Input.GetKey( KeyCode.D) && !isPaused && !isDashing){			// Move Right
-				moveDirection += Vector3.right;
-			}
-			if( Input.GetKey( KeyCode.A) && !isPaused && !isDashing){			// Move left
-				moveDirection += Vector3.left;
-			}
-			moveScript.Move( moveDirection.normalized );
-
-		}
 
 
 	}
@@ -175,41 +186,8 @@ public class AvatarController : MonoBehaviour {
 		}
 
 		if(GameManager.KeysEnabled){
-			//Uses the CanShootReload component to shoot at the cursor
-			if( Input.GetMouseButton( 0) && !isPaused && !buildScript.inBuildingMode){
-				
-				if( shootScript.FinishCooldown()){
-					if(shootScript.reloading == false){						// make sure we're not reloading
-						//if(!animation.isPlaying)
-						animation.CrossFade("Shooting");					// play shooting animation
-						if(overdriveScript.overdriveActive == false){
-							audio.clip = shotSound;
-							audio.PlayOneShot(shotSound,1.0f);				// play shooting sound
-						}
-					}
 
 
-				}
-
-				shootScript.Shoot( Utility.GetMouseWorldPos( transform.position.y));			// call CanShootReload component to fire projectile towards mouse position
-			}
-
-
-
-			//use our current equipment(i.e LightFist, Light Grenade, etc.)
-			if(Input.GetMouseButtonDown(1) && !isPaused){
-				equipScript.UseEquip(Utility.GetMouseWorldPos( transform.position.y));
-
-			}
-			//Reset Level
-			if(Input.GetKeyDown(KeyCode.F9)){
-				ResManager.Reset();
-				TechManager.Reset();
-				MetricManager.Reset();
-				AutoFade.LoadLevel(Application.loadedLevel, 1.0f, 1.0f, Color.black);
-
-
-			}
 			//Pause
 			if(Input.GetKeyDown(KeyCode.F10) && !isPaused)
 			{
@@ -226,24 +204,8 @@ public class AvatarController : MonoBehaviour {
 				isPaused = false;    
 			} 
 
-		
 
-			//Reload function that calls Reload() in CanShootReload
-			if( Input.GetKeyDown( KeyCode.R) && !isPaused){
-				
-				shootScript.Reload();
-				
-			}
 
-			//Use function that checks what gameobject is in range that has Useable script and applies Action
-			if( Input.GetKeyDown( KeyCode.E) && !isPaused){
-				useScript.UseAction( useScript.useRange);
-			}
-			//Quit Game
-			if( Input.GetKeyDown(KeyCode.F11)){
-
-				Application.Quit();
-			}
 
 			//swaps to the next equipment for testing purposes
 			//has a little more logic since not all the equipment are implemented yet
@@ -264,9 +226,11 @@ public class AvatarController : MonoBehaviour {
 				equipScript.ChangeEquip(nextEquip);
 				
 			}
+
 		}
 
 
 
 	}
 }
+
