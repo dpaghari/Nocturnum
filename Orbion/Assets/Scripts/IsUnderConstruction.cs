@@ -66,14 +66,14 @@ public class IsUnderConstruction : MonoBehaviour {
 		transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.time);
 	}
 
-
+	//building complete
 	void CreateBuilding(){
 		//Placement of building is slightly offsetted up to
 		//   prevent buildings from being built in the floor
 		Vector3 temp = this.transform.position;
 		temp.y -= 2;
 		Rigidbody clone = Instantiate(toBuild, temp, Quaternion.identity) as Rigidbody;
-
+		
 		//audio.clip = finBuild;
 		//audio.PlayOneShot(finBuild, 1.0f);
 
