@@ -9,6 +9,7 @@ using System.Collections;
 
 public class AC_IdleChasePlayer : AiController {
 
+	private Killable killScript;
 
 	public AB_DoNothing Idle {get; protected set;}
 	public AB_TargetPlayer Chase {get; protected set;}
@@ -27,14 +28,23 @@ public class AC_IdleChasePlayer : AiController {
 	public bool ShouldGoChase( ){
 		if (CurrBehavior is AB_TargetPlayer) return false;
 		if (Chase.FindTarget(Chase.TargetSearchRadius) != null) return true;
+		if(killScript != null){
+			//Debug.Log("FUCK");
+			if (this.gameObject.GetComponent<Killable>().getCurrHP() < this.gameObject.GetComponent<Killable>().getBaseHP()){
+				//Debug.Log("FUCK");
+				if(Chase != null){
+					this.gameObject.GetComponent<AB_TargetPlayer>().setSearchRadius(Mathf.Infinity);
+				}
+			 	return true;
+			}
+		}
 		return false;
 	}
 
 
 	public IEnumerator UpdateBehavior(){
 		while(true){
-			if( ShouldGoIdle()) SwitchBehavior( Idle);
-			else if ( ShouldGoChase()) SwitchBehavior( Chase);
+			if ( ShouldGoChase()) SwitchBehavior( Chase);
 			
 			yield return new WaitForSeconds( updateBehaviorRate);
 		}
@@ -45,6 +55,7 @@ public class AC_IdleChasePlayer : AiController {
 	protected override void Start (){
 		Idle = GetComponent<AB_DoNothing>();
 		Chase = GetComponent<AB_TargetPlayer>();
+		killScript = this.gameObject.GetComponent<Killable>();
 		CurrBehavior = Idle;
 		base.Start();
 
