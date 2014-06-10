@@ -65,6 +65,10 @@ public class TechManager : Singleton<TechManager> {
 	protected TechTree PlayerTech;
 	protected int[] UpgrLevels;
 	protected int[] NumBuildings;
+		
+	protected int[] BuildingsDestroyed;
+	protected int[] TotalBuildings;
+
 	protected UpgradeCostTable UpgradeCosts;
 	protected ResearchingInfo researchProgress;
 
@@ -185,6 +189,36 @@ public class TechManager : Singleton<TechManager> {
 	}
 	
 
+	public static int GetTotalBuilding( Tech building){
+		if(TechManager.applicationIsQuitting) return int.MinValue;
+		if( CheckBuilding( building)) return Instance.TotalBuildings[(int)building];
+		return int.MinValue;
+	}
+	public static void SetTotalBuilding( Tech building, int amt){
+		if(TechManager.applicationIsQuitting) return;
+		if( CheckBuilding( building)) Instance.TotalBuildings[(int)building] = amt;
+	}
+	public static void AddTotalBuilding( Tech building, int amt){
+		SetTotalBuilding(building, GetTotalBuilding(building) + amt);
+	}
+
+	public static int GetTotalBuildingsDestroyed( Tech building){
+		if(TechManager.applicationIsQuitting) return int.MinValue;
+		if( CheckBuilding( building)) return Instance.BuildingsDestroyed[(int)building];
+		return int.MinValue;
+	}
+	public static void SetTotalBuildingsDestroyed( Tech building, int amt){
+		if(TechManager.applicationIsQuitting) return;
+		if( CheckBuilding( building)) Instance.BuildingsDestroyed[(int)building] = amt;
+	}
+	public static void AddTotalBuildingsDestroyed( Tech building, int amt){
+		SetTotalBuildingsDestroyed(building, GetTotalBuildingsDestroyed(building) + amt);
+	}
+	
+	
+	
+
+
 
 	public static int GetUpgradeLv( Tech upgrade){
 		if( CheckUpgrade( upgrade)) return Instance.UpgrLevels[(int)upgrade];
@@ -297,6 +331,8 @@ public class TechManager : Singleton<TechManager> {
 	public static void Reset(){
 		for( int techIndex = 0; techIndex < (int)Tech._upgradesEND + 1; techIndex++){
 			Instance.NumBuildings[techIndex] = 0;
+			Instance.BuildingsDestroyed[techIndex] = 0;
+			Instance.TotalBuildings[techIndex] = 0;
 			Instance.UpgrLevels[techIndex] = 0;
 		}
 		Instance.PlayerTech = TechTree.MakeDefault();

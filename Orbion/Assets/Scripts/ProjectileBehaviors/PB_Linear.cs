@@ -138,6 +138,7 @@ public class PB_Linear : ProjectileBehavior {
 		if( KillScript) {
 			if(other.gameObject.GetComponent<IsEnemy>() != null){
 				audio.PlayOneShot(enemyhitSound, 0.2f);
+				MetricManager.AddEnemiesHit(1);
 				/*foreach( Transform child in transform){
 				
 					ParticleSystem childParticle = child.gameObject.GetComponent<ParticleSystem>(); 
@@ -166,10 +167,11 @@ public class PB_Linear : ProjectileBehavior {
 			if(other.gameObject.GetComponent<Buildable>() != null && this.tag == "playerBullet"){
 				if(KillScript.currHP < KillScript.baseHP){
 					audio.PlayOneShot(buildinghitSound, 0.2f);
-
+					MetricManager.AddBuildingsHit(1);
 					KillScript.Heal(Damage);
 					if(other.gameObject.GetComponent<IsDamagedEffect>() != null){
 						other.gameObject.GetComponent<IsDamagedEffect>().removeDamage();
+						MetricManager.AddBuildingsHealed(1);
 					}
 				}else{
 					//Physics.IgnoreCollision(gameObject.collider, other.collider);

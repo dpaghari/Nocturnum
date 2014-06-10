@@ -30,10 +30,12 @@ public class Buildable : MonoBehaviour {
 
 	void OnEnable(){
 		TechManager.AddNumBuilding( TechType, 1);
+		TechManager.AddTotalBuilding( TechType, 1);		
 	}
 
 	void OnDisable(){
 		TechManager.RmNumBuilding( TechType, 1);
+		TechManager.AddTotalBuildingsDestroyed( TechType, 1);
 	}
 
 
