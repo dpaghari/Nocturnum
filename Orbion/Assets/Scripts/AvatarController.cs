@@ -172,6 +172,7 @@ public class AvatarController : MonoBehaviour {
 			if( animation.IsPlaying("Dash") == false) break;
 
 			if( animation["Dash"].normalizedTime > 0.35 ){	
+				//audio.PlayOneShot( dashSound, 0.5f);
 				StartCoroutine( "EaseOutDash", direction);
 				break;
 			}
