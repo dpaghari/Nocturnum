@@ -63,11 +63,8 @@ public class Mission1 : MonoBehaviour {
 				TechManager.missionComplete = true;
 				_label_mission_clear.IsVisible = true;
 			}
-			if(GameManager.AvatarContr.isPaused){
-				_label_paused.IsVisible = true;
-			}
-			else
-				_label_paused.IsVisible = false;
+
+			_label_paused.IsVisible = GameManager.paused;
 
 			if(GameManager.PlayerDead){
 				_label_dead.IsVisible = true;

@@ -55,7 +55,7 @@ public class PlayerInputHandler : MonoBehaviour {
 
 
 		if( Input.GetKeyDown( KeyCode.F9)) ResetLevel();
-
+		if( Input.GetKeyDown(KeyCode.F10)) GameManager.PauseToggle();
 
 		//Quit Game
 		if( Input.GetKeyDown( KeyCode.F11)) Application.Quit();
