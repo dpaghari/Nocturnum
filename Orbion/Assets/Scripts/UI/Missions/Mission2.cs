@@ -39,6 +39,8 @@ public class Mission2 : MonoBehaviour {
 			questComplete = true;
 			TechManager.missionComplete = true;
 			_label_mission_clear.IsVisible = true;
+			MetricManager.setCompletionTime(Time.time);
+			MetricManager.calculateScore();
 		}
 
 		punchemString = string.Format("{0} of {1}",  TechManager.hitByFist, numFistHits);
@@ -73,3 +75,4 @@ public class Mission2 : MonoBehaviour {
 	
 	
 }
+
