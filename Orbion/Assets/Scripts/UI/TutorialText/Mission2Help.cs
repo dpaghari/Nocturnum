@@ -46,19 +46,5 @@ public class Mission2Help : MonoBehaviour {
 		else if(timerScript.Finished())
 			tutorialLine.Text = "";
 		
-
-
-
-
-		if(overdriveScript.overdriveOn){
-			if(!overdriveScript.overdriveActive)
-				tutorialLine.Text = "Press SPACE to activate Overdrive!";
-			
-			if(Input.GetKeyDown(KeyCode.Space)){
-				
-				tutorialLine.Text = "";
-			}
-		}
-		
 	}
 }

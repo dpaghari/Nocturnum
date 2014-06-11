@@ -34,6 +34,8 @@ public class AvatarController : MonoBehaviour {
 	public CanResearch researchScript {get; set;}
 
 	private int startingClipSize;
+	private float startingSpread;
+
 	private Material m_Material;
 
 	public DumbTimer dashCDScript;
@@ -43,9 +45,10 @@ public class AvatarController : MonoBehaviour {
 	//Used for upgrades that need direct instructions to perform modifications
 	//As opposed to upgrades that can just read their level from tech maanger
 	//everytime it activates, and behave accordingly
-	private void UpdateUpgrades( Tech theUpgrade){
+	public void UpdateUpgrades( Tech theUpgrade){
 		shootScript.clipSize = startingClipSize + 10 * TechManager.GetUpgradeLv(Tech.clipSize);
 		shootScript.numOfBulletShot = 1 + TechManager.GetUpgradeLv( Tech.scatter);
+		shootScript.spreadAngle = startingSpread + 6 * TechManager.GetUpgradeLv( Tech.scatter);
 		//shootScript.bullet.gameObject.GetComponent<PB_Linear>().homingLevel = TechManager.GetUpgradeLv(Tech.seeker);
 		//shootScript.bullet.gameObject.GetComponent<PB_Linear>().ricochetLevel = TechManager.GetUpgradeLv(Tech.ricochet);
 	}
@@ -68,6 +71,7 @@ public class AvatarController : MonoBehaviour {
 		researchScript = GetComponent<CanResearch>();
 
 		startingClipSize = shootScript.clipSize;
+		startingSpread = shootScript.spreadAngle;
 	}
 
 

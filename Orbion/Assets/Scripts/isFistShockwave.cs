@@ -8,13 +8,11 @@ public class isFistShockwave : MonoBehaviour {
 
 	public float pushForce;
 	public ForceMode pushForceMode = ForceMode.Impulse;
-	public int fistDamage;
+	public int fistDamage {get; set;}
 	//public DumbTimer timerScript;
 	// Use this for initialization
 	void Start () {
 		//timerScript = DumbTimer.New(0.2f, 1.0f);
-
-		fistDamage = 50;
 	
 	}
 

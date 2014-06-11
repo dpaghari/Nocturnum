@@ -30,4 +30,7 @@ public class isLevelOption : MonoBehaviour {
 	public void golevel5(){
 		AutoFade.LoadLevel("BatBossBattle", 2.0f, 2.0f, Color.black);
 	}
+	public void goEndless(){
+		AutoFade.LoadLevel("EndlessMode", 2.0f, 2.0f, Color.white);
+	}
 }
