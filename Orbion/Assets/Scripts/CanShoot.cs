@@ -90,6 +90,11 @@ public class CanShoot : MonoBehaviour {
 			temp.y += bulletHeight.y;
 			Rigidbody clone = Instantiate(bullet, temp + dir * projectileStartPosition, Quaternion.LookRotation(dir, Vector3.down)) as Rigidbody;
 		
+			if(this.gameObject == GameManager.Player){
+				MetricManager.AddShots(1);
+				//Debug.Log("ADD SHOTS");	
+			}
+
 			if(tag == "Enemy" || tag == "EnemyRanged"){
 				//audio.clip = enemyShotSound;
 				float rand = Random.value;

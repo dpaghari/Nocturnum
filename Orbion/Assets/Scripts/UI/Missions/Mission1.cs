@@ -62,6 +62,8 @@ public class Mission1 : MonoBehaviour {
 			if(TechManager.hasGenerator == true && TechManager.hasScatter == true && TechManager.hasMedbay == true /*&& ResManager.Collectible >= 30*/ && TechManager.hasWolves == true && TechManager.hasBeatenWolf == true){
 				TechManager.missionComplete = true;
 				_label_mission_clear.IsVisible = true;
+				MetricManager.setCompletionTime(Time.time);
+				MetricManager.calculateScore();
 			}
 
 			_label_paused.IsVisible = GameManager.paused;

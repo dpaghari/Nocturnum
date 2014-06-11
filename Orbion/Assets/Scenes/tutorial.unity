@@ -12460,6 +12460,14 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -.0182342529
       objectReference: {fileID: 0}
+    - target: {fileID: 11400016, guid: e8047e45590db464586064ee541adcb0, type: 2}
+      propertyPath: hudProgress
+      value: 
+      objectReference: {fileID: 890889973}
+    - target: {fileID: 11400016, guid: e8047e45590db464586064ee541adcb0, type: 2}
+      propertyPath: _hudIcon
+      value: 
+      objectReference: {fileID: 890889973}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8047e45590db464586064ee541adcb0, type: 2}
   m_RootGameObject: {fileID: 1142796283}
@@ -15387,11 +15395,11 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: dda333be8fe9b17498c630feb4347e19, type: 2}
+  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 2100000, guid: 98623e7f4c59e9247ae9afa838217c53, type: 2}
+  - {fileID: 2100000, guid: b344914b83cfb684ba4d4eb6741928f5, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -23289,9 +23297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canResearchRef: {fileID: 0}
   researchTimeOn: 0
-  hudProgress: {fileID: 0}
+  hudProgress: {fileID: 890889973}
   researchScript: {fileID: 0}
-  _hudIcon: {fileID: 0}
+  _hudIcon: {fileID: 890889973}
   buttonSound: {fileID: 8300000, guid: 84b4791f993a7f2488c8e6eb33a36df3, type: 3}
   techType: 20
 --- !u!114 &1142796288
@@ -30428,7 +30436,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456491916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .00130208337, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
@@ -34998,7 +35006,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 525282049}
   m_GameObject: {fileID: 1693228714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ffcf9511edc3cc4f9aefa7b39d5026a, type: 3}
   m_Name: 
@@ -35154,6 +35162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26be2e5b903c93a449ec78024a718841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healAmount: 10
+  healFrequency: .5
   timerScript: {fileID: 0}
 --- !u!114 &1693228728
 MonoBehaviour:
