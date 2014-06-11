@@ -28,6 +28,10 @@ public class AB_TargetPlayer : AiBehavior {
 
 	private int indexCounter = 1;
 
+	public void setSearchRadius(float f){
+		TargetSearchRadius = f;
+	}
+
 	override public void OnBehaviorEnter(){
 		moveScript = GetComponent<CanMove>();
 		shootScript = GetComponent<CanShoot>();

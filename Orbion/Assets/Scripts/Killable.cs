@@ -28,7 +28,13 @@ public class Killable : MonoBehaviour {
 	//used to check if we should call the event when a building is hurt
 	private Buildable buildScript;
 
+	public int getCurrHP(){
+		return currHP;
+	}
 
+	public int getBaseHP(){
+		return baseHP;
+	}
 
 
 	// Set HP to default
