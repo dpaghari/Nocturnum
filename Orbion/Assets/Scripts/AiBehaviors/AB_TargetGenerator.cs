@@ -259,13 +259,14 @@ public class AB_TargetGenerator : MonoBehaviour {
 			if(PlayerInRange( PlayerPriorityRange)){
 				if(distanceToTarget(GameManager.Player.gameObject.transform.position) <= PlayerPriorityRange && 
 				  	distanceToTarget(GameManager.Player.gameObject.transform.position) >= (PlayerPriorityRange * 3 / 2)){
-					if(distanceToTarget(GObuilding.transform.position) < distanceToTarget(GameManager.Player.gameObject.transform.position)){
+					if(distanceToTarget(GObuilding.transform.position) < distanceToTarget(GameManager.Player.gameObject.transform.position) &&
+						GObuilding != null){
 						return GObuilding.rigidbody;
 					} else {
 						return FindPlayer();
 					}			
 				}
-			} else {
+			} else if(GObuilding != null){
 				return GObuilding.rigidbody;
 			}
 
