@@ -165,6 +165,7 @@ public class CanShoot : MonoBehaviour {
 			//numberOfShots - 1 makes us shoot from the left side of the spread bound to the right
 			//but if we have a 360deg angle, both bounds of the spread are at the same place,
 			//causing 2 bullets to fire at the same spot
+			if(spread > 360) spread = 360;
 			if( spread == 360) bulletGap = spread / ( numberOfShots);
 
 			for ( int i = 0; i < numberOfShots; i++){
