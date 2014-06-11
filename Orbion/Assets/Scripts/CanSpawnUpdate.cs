@@ -26,6 +26,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public Rigidbody rangedEnemy;
 	public Rigidbody rangedMultiEnemy;
 	public Rigidbody bossEnemy;
+	public Rigidbody bossBatEnemy;
 	private Rigidbody clone;
 	//boss stuff
 	private bool bossSummon = false;
@@ -52,7 +53,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 		waveScript = DumbTimer.New (waveTime, 1.0f);
 		levelScript = DumbTimer.New (levelTime, 1.0f);
 		FindAllSpawners(Mathf.Infinity);
-		enemySpawnPercents = new float[6];
+		enemySpawnPercents = new float[8];
 		setEnemyPercents();	
 		setDifficulty ();	
 	}
@@ -93,7 +94,9 @@ public class CanSpawnUpdate : MonoBehaviour {
 		enemySpawnPercents[2] = 0.0f;	
 		enemySpawnPercents[3] = 0.0f;	
 		enemySpawnPercents[4] = 0.0f;	
-		enemySpawnPercents[5] = 0.0f;		
+		enemySpawnPercents[5] = 0.0f;
+		enemySpawnPercents[6] = 0.0f;
+		enemySpawnPercents[7] = 0.0f;
 	}
 	
 	
@@ -126,34 +129,30 @@ public class CanSpawnUpdate : MonoBehaviour {
 				enemySpawnPercents[1] += 0.1f;
 				enemySpawnPercents[2] += 0.1f;
 			} else if(level == 2){
-				enemySpawnPercents[0] -= 0.3f;
-				enemySpawnPercents[1] += 0.1f;
-				enemySpawnPercents[2] += 0.1f;
+				enemySpawnPercents[0] -= 0.1f;
+				//enemySpawnPercents[1] += 0.1f;
+				//enemySpawnPercents[2] += 0.1f;
 				enemySpawnPercents[3] += 0.1f;					
 			} else if(level == 3){
 				enemySpawnPercents[0] -= 0.1f;
 				enemySpawnPercents[1] -= 0.1f;
 				enemySpawnPercents[2] += 0.1f;
-				enemySpawnPercents[3] += 0.1f;						
+				enemySpawnPercents[4] += 0.1f;						
 			} else if(level == 4){
 				enemySpawnPercents[0] -= 0.1f;
-				enemySpawnPercents[1] -= 0.1f;
-				enemySpawnPercents[3] += 0.1f;
-				enemySpawnPercents[4] += 0.1f;		
-			} else if(level == 5){
+				//enemySpawnPercents[1] -= 0.1f;
+				//enemySpawnPercents[3] += 0.1f;
+				enemySpawnPercents[5] += 0.1f;		
+			} else if(level == 8){
 				enemySpawnPercents[0] -= 0.1f;
 				enemySpawnPercents[2] -= 0.1f;
 				enemySpawnPercents[4] += 0.1f;
-				enemySpawnPercents[5] += 0.1f;		
-			} else if(level == 6){
-				enemySpawnPercents[2] -= 0.2f;
-				enemySpawnPercents[4] += 0.1f;
-				enemySpawnPercents[5] += 0.1f;
-
-				for(int i = 0; i < enemySpawnPercents.Length; i++){
-					//Debug.Log (enemySpawnPercents[i]);
-				}				
-				
+				enemySpawnPercents[6] += 0.1f;		
+			} else if(level == 15){
+				enemySpawnPercents[0] -= 0.1f;
+				enemySpawnPercents[1] -= 0.1f;
+				enemySpawnPercents[6] += 0.1f;
+				enemySpawnPercents[7] += 0.1f;		
 			}
 			//Debug.Log ("wave leveled up");
 			//setWaveTime(waveTime -= 1.0f);
@@ -218,6 +217,10 @@ public class CanSpawnUpdate : MonoBehaviour {
 			makeLuminotoad (_vec);
 		} else if(i == 5){
 			makeLuminosaur (_vec);
+		} else if(i == 6){
+			spawnBoss (_vec);
+		} else if(i == 7){
+			makeBatBoss (_vec);
 		}
 	}
 
@@ -231,7 +234,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 	public void makeLuminosaur(Vector3 _vec){
 		clone = Instantiate (luminosaurEnemy, _vec, Quaternion.identity) as Rigidbody;
-		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease * 2);
 	}
 	public void makeLuminotoad(Vector3 _vec){
 		clone = Instantiate (luminotoadEnemy, _vec, Quaternion.identity) as Rigidbody;
@@ -243,11 +246,15 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 	public void makeMultiRanged(Vector3 _vec){
 		clone = Instantiate (rangedMultiEnemy, _vec, Quaternion.identity) as Rigidbody;
-		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
+		clone.GetComponent<Killable>().increaseHealth((int)(healthIncrease * 1.5f));
 	}
 	public void spawnBoss(Vector3 _vec){
 		clone = Instantiate (bossEnemy, _vec, Quaternion.identity) as Rigidbody;
-		clone.GetComponent<Killable>().increaseHealth(healthIncrease);
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease * 3);
+	}
+	public void makeBatBoss(Vector3 _vec){
+		clone = Instantiate (bossBatEnemy, _vec, Quaternion.identity) as Rigidbody;
+		clone.GetComponent<Killable>().increaseHealth(healthIncrease * 4);
 	}
 
 }

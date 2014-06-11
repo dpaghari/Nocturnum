@@ -52,10 +52,7 @@ public class HandleButtonRequirements : MonoBehaviour
 			neededMaxEnergyBuilding = buildInfo.energyCost;
 			neededLumenCost = buildInfo.lumenCost;
 		}
-		if (TechManager.IsUpgrade (name)) {
-			neededMaxEnergyUpgrades = TechManager.GetUpgradeEnergyCost (name);
-			neededLumenCostUpgrade = TechManager.GetUpgradeLumenCost(name);
-		}
+
 	}
 	
 	
@@ -63,6 +60,11 @@ public class HandleButtonRequirements : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (TechManager.IsUpgrade (name)) {
+			neededMaxEnergyUpgrades = TechManager.GetUpgradeEnergyCost (name);
+			neededLumenCostUpgrade = TechManager.GetUpgradeLumenCost(name);
+		}
+
 		//Continuously check if the prerequisites are met for the
 		//building/upgrade, and alter the button states as needed.
 		if (!TechManager.IsTechAvaliable (name)) {
