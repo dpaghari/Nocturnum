@@ -44,6 +44,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	private int level = 0;
 
 	void Start(){
+		//20, 25, 75
 		startTime = 20.0f;
 		waveTime = 25.0f;
 		levelTime = 75.0f;
@@ -87,8 +88,8 @@ public class CanSpawnUpdate : MonoBehaviour {
 	}
 
 	public void setEnemyPercents(){		
-		enemySpawnPercents[0] = 0.80f;
-		enemySpawnPercents[1] = 0.20f;	
+		enemySpawnPercents[0] = 0.8f;
+		enemySpawnPercents[1] = 0.2f;	
 		enemySpawnPercents[2] = 0.0f;	
 		enemySpawnPercents[3] = 0.0f;	
 		enemySpawnPercents[4] = 0.0f;	
@@ -121,37 +122,42 @@ public class CanSpawnUpdate : MonoBehaviour {
 			numSpawn++;
 			level++;
 			if(level == 1){
-				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.2f;
-				enemySpawnPercents[1] = enemySpawnPercents[0] + 0.1f;
-				enemySpawnPercents[2] = enemySpawnPercents[0] + 0.1f;
+				enemySpawnPercents[0] -= 0.2f;
+				enemySpawnPercents[1] += 0.1f;
+				enemySpawnPercents[2] += 0.1f;
 			} else if(level == 2){
-				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.3f;
-				enemySpawnPercents[1] = enemySpawnPercents[0] + 0.1f;
-				enemySpawnPercents[2] = enemySpawnPercents[0] + 0.1f;
-				enemySpawnPercents[3] = enemySpawnPercents[0] + 0.1f;					
+				enemySpawnPercents[0] -= 0.3f;
+				enemySpawnPercents[1] += 0.1f;
+				enemySpawnPercents[2] += 0.1f;
+				enemySpawnPercents[3] += 0.1f;					
 			} else if(level == 3){
-				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.1f;
-				enemySpawnPercents[1] = enemySpawnPercents[0] - 0.1f;
-				enemySpawnPercents[2] = enemySpawnPercents[0] + 0.1f;
-				enemySpawnPercents[3] = enemySpawnPercents[0] + 0.1f;						
+				enemySpawnPercents[0] -= 0.1f;
+				enemySpawnPercents[1] -= 0.1f;
+				enemySpawnPercents[2] += 0.1f;
+				enemySpawnPercents[3] += 0.1f;						
 			} else if(level == 4){
-				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.1f;
-				enemySpawnPercents[1] = enemySpawnPercents[0] - 0.1f;
-				enemySpawnPercents[3] = enemySpawnPercents[0] + 0.1f;
-				enemySpawnPercents[4] = enemySpawnPercents[0] + 0.1f;		
+				enemySpawnPercents[0] -= 0.1f;
+				enemySpawnPercents[1] -= 0.1f;
+				enemySpawnPercents[3] += 0.1f;
+				enemySpawnPercents[4] += 0.1f;		
 			} else if(level == 5){
-				enemySpawnPercents[0] = enemySpawnPercents[0] - 0.1f;
-				enemySpawnPercents[2] = enemySpawnPercents[0] - 0.1f;
-				enemySpawnPercents[4] = enemySpawnPercents[0] + 0.1f;
-				enemySpawnPercents[5] = enemySpawnPercents[0] + 0.1f;		
+				enemySpawnPercents[0] -= 0.1f;
+				enemySpawnPercents[2] -= 0.1f;
+				enemySpawnPercents[4] += 0.1f;
+				enemySpawnPercents[5] += 0.1f;		
 			} else if(level == 6){
-				enemySpawnPercents[2] = enemySpawnPercents[0] - 0.2f;
-				enemySpawnPercents[4] = enemySpawnPercents[0] + 0.1f;
-				enemySpawnPercents[5] = enemySpawnPercents[0] + 0.1f;				
+				enemySpawnPercents[2] -= 0.2f;
+				enemySpawnPercents[4] += 0.1f;
+				enemySpawnPercents[5] += 0.1f;
+
+				for(int i = 0; i < enemySpawnPercents.Length; i++){
+					//Debug.Log (enemySpawnPercents[i]);
+				}				
 				
 			}
 			//Debug.Log ("wave leveled up");
 			//setWaveTime(waveTime -= 1.0f);
+			
 			waveScript.MaxTime = waveTime -= 1.0f;
 			if(waveTime < 20.0f){
 				waveScript.MaxTime = 20.0f;
@@ -160,6 +166,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 			if(levelTime < 60.0f){
 				levelScript.MaxTime = 60.0f;
 			}
+			
 			levelScript.Reset();
 			
 		}
