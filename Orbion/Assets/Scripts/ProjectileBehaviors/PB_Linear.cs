@@ -68,7 +68,7 @@ public class PB_Linear : ProjectileBehavior {
 	}
 
 	void Start () {
-		MetricManager.AddShots(1);	
+		
 	}
 
 	public override void FixedPerform(){
@@ -138,7 +138,7 @@ public class PB_Linear : ProjectileBehavior {
 		if( KillScript) {
 			if(other.gameObject.GetComponent<IsEnemy>() != null){
 				audio.PlayOneShot(enemyhitSound, 0.2f);
-				MetricManager.AddEnemiesHit(1);
+				if(this.tag == "playerBullet") MetricManager.AddEnemiesHit(1);
 				/*foreach( Transform child in transform){
 				
 					ParticleSystem childParticle = child.gameObject.GetComponent<ParticleSystem>(); 

@@ -41,6 +41,8 @@ public class Mission4 : MonoBehaviour {
 			questComplete = true;
 			TechManager.missionComplete = true;
 			_label_mission_clear.IsVisible = true;
+			MetricManager.setCompletionTime(Time.time);
+			MetricManager.calculateScore();
 		}
 		
 		//collectString = string.Format("{0} of {1}", ResManager.TurretCount, ResManager.QuestTurretCount);

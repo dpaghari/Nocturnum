@@ -189,30 +189,35 @@ public class TechManager : Singleton<TechManager> {
 	}
 	
 
-	public static int GetTotalBuilding( Tech building){
-		if(TechManager.applicationIsQuitting) return int.MinValue;
-		if( CheckBuilding( building)) return Instance.TotalBuildings[(int)building];
-		return int.MinValue;
+	public static int GetTotalBuildings(){
+		int total = 0;
+		for( int i = 0; i < Instance.TotalBuildings.Length; i++){
+			total += Instance.TotalBuildings[i];
+		}
+		return total;
+
 	}
 	public static void SetTotalBuilding( Tech building, int amt){
 		if(TechManager.applicationIsQuitting) return;
 		if( CheckBuilding( building)) Instance.TotalBuildings[(int)building] = amt;
 	}
 	public static void AddTotalBuilding( Tech building, int amt){
-		SetTotalBuilding(building, GetTotalBuilding(building) + amt);
+		SetTotalBuilding(building, GetTotalBuildings() + amt);
 	}
 
-	public static int GetTotalBuildingsDestroyed( Tech building){
-		if(TechManager.applicationIsQuitting) return int.MinValue;
-		if( CheckBuilding( building)) return Instance.BuildingsDestroyed[(int)building];
-		return int.MinValue;
+	public static int GetTotalBuildingsDestroyed(){
+		int total = 0;
+		for( int i = 0; i < Instance.BuildingsDestroyed.Length; i++){
+			total += Instance.BuildingsDestroyed[i];
+		}
+		return total;
 	}
 	public static void SetTotalBuildingsDestroyed( Tech building, int amt){
 		if(TechManager.applicationIsQuitting) return;
 		if( CheckBuilding( building)) Instance.BuildingsDestroyed[(int)building] = amt;
 	}
 	public static void AddTotalBuildingsDestroyed( Tech building, int amt){
-		SetTotalBuildingsDestroyed(building, GetTotalBuildingsDestroyed(building) + amt);
+		SetTotalBuildingsDestroyed(building, GetTotalBuildingsDestroyed() + amt);
 	}
 	
 	
