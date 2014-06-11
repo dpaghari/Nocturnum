@@ -32,27 +32,27 @@ public class UpgradeCostTable : ScriptableObject {
 
 		float tempLumen = 50;
 		int tempEnergy = 10;
-		float tempResrTime = 10;
+		float tempResrTime = 15;
 
 		newTable.costTable = new Dictionary<Tech, UpgradeCostStruct> (){
 			//{ Tech.buildingHp, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.buildingLightRange, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.bulletAbsorber, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.clipSize, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.lightFist, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.lightGrenade, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
+			{ Tech.clipSize, new UpgradeCostStruct( 40, 10, tempResrTime) },
+			{ Tech.lightFist, new UpgradeCostStruct( 35, 35, tempResrTime) },
+			{ Tech.lightGrenade, new UpgradeCostStruct( 50, 10, tempResrTime) },
 			//{ Tech.lightPath, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.mindControl, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.moveSpeed, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.orbshot, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.playerHp, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.scatter, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
+			{ Tech.scatter, new UpgradeCostStruct( 50, 15, tempResrTime) },
 			//{ Tech.searing, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.seeker, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
+			{ Tech.seeker, new UpgradeCostStruct( 25, 40, tempResrTime) },
 			//{ Tech.spotlightResearch, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.stealth, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 			//{ Tech.reloadSpeed, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
-			{ Tech.ricochet, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
+			{ Tech.ricochet, new UpgradeCostStruct( 40, 25, tempResrTime) },
 			//{ Tech.turretResearch, new UpgradeCostStruct( tempLumen, tempEnergy, tempResrTime) },
 		};
 
