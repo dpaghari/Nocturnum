@@ -190,6 +190,7 @@ public class TechManager : Singleton<TechManager> {
 	
 
 	public static int GetTotalBuildings(){
+		if(TechManager.applicationIsQuitting) return 0;
 		int total = 0;
 		for( int i = 0; i < Instance.TotalBuildings.Length; i++){
 			total += Instance.TotalBuildings[i];
@@ -206,6 +207,7 @@ public class TechManager : Singleton<TechManager> {
 	}
 
 	public static int GetTotalBuildingsDestroyed(){
+		if(TechManager.applicationIsQuitting) return 0;
 		int total = 0;
 		for( int i = 0; i < Instance.BuildingsDestroyed.Length; i++){
 			total += Instance.BuildingsDestroyed[i];

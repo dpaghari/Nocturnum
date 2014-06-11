@@ -3,7 +3,7 @@ using System.Collections;
 
 public class isLevelSelect : MonoBehaviour {
 
-	public dfButton tutButton, lvl1Butt, lvl2Butt, lvl3Butt, lvl4Butt, lvl5Butt;
+	public dfButton tutButton, lvl1Butt, lvl2Butt, lvl3Butt, lvl4Butt, lvl5Butt, endlessButt;
 
 	private int numLevelstoLoad;
 	// Use this for initialization
@@ -16,6 +16,7 @@ public class isLevelSelect : MonoBehaviour {
 		lvl3Butt.IsVisible = false;
 		lvl4Butt.IsVisible = false;
 		lvl5Butt.IsVisible = false;
+		endlessButt.IsVisible = false;
 
 
 		tutButton.IsEnabled = false;
@@ -24,6 +25,7 @@ public class isLevelSelect : MonoBehaviour {
 		lvl3Butt.IsEnabled = false;
 		lvl4Butt.IsEnabled = false;
 		lvl5Butt.IsEnabled = false;
+		endlessButt.IsVisible = false;
 
 	}
 	
@@ -53,6 +55,8 @@ public class isLevelSelect : MonoBehaviour {
 		if(numLevelstoLoad >= 6){
 			lvl5Butt.IsVisible = true;
 			lvl5Butt.IsEnabled = true;
+			endlessButt.IsVisible = true;
+			endlessButt.IsEnabled = true;
 		}
 		//Debug.Log(numLevelstoLoad)
 	}

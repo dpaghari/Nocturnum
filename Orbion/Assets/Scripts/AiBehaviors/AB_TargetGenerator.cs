@@ -240,22 +240,52 @@ public class AB_TargetGenerator : MonoBehaviour {
 	//Returns null if nothing is in range
 	public Rigidbody FindTarget(float range){
 		//If player is within the priority range, no need to search further
+		/*
 		Rigidbody player = GetPlayerInRange( range);
 		if(player !=null && PlayerInRange( PlayerPriorityRange)){
 		 	return FindPlayer();
 		}
+		*/
 		//Check for closest generator
 		//GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<IsGenerator>);
 		GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<Buildable>);
-		
 		Rigidbody building;
-		//if no generator return player
 		if(GObuilding != null){ 
 			building = GObuilding.rigidbody;
-			return building;
+		} 
+		if(GameManager.Player != null){
+			
+
+			if(PlayerInRange( PlayerPriorityRange)){
+				if(distanceToTarget(GameManager.Player.gameObject.transform.position) <= PlayerPriorityRange && 
+				  	distanceToTarget(GameManager.Player.gameObject.transform.position) >= (PlayerPriorityRange * 3 / 2)){
+					if(distanceToTarget(GObuilding.transform.position) < distanceToTarget(GameManager.Player.gameObject.transform.position)){
+						return GObuilding.rigidbody;
+					} else {
+						return FindPlayer();
+					}			
+				}
+			} else {
+				return GObuilding.rigidbody;
+			}
+
+		}
+		return FindPlayer();
+		/*
+		if(GObuilding != null){ 
+			building = GObuilding.rigidbody;
+			if(distanceToTarget(building.position) < (PlayerPriorityRange / 2)){
+				return building;
+			} else if(distanceToTarget(GameManager.Player.gameObject.transform.position) < PlayerPriorityRange && 
+						distanceToTarget(GameManager.Player.gameObject.transform.position) >= (PlayerPriorityRange / 2)){
+				return FindPlayer();
+			} else {
+				return building;
+			}
 		} else {
-			return FindPlayer();			
-		}	
+			return FindPlayer();
+		}
+		*/
 	}	
 	
 }
