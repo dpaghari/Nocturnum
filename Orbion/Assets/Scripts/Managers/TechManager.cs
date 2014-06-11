@@ -243,15 +243,26 @@ public class TechManager : Singleton<TechManager> {
 	}
 
 
+	static float CompoundCost( float principal, Tech theUpgrade ){
+		float rate = 0.2f;
+		int level = GetUpgradeLv( theUpgrade);
+		return principal * Mathf.Pow((1 + rate), level);
+	}
 
 	public static float GetUpgradeLumenCost( Tech upgrade){
-		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.costTable[upgrade].lumen;
+		if( CheckUpgrade( upgrade)){
+			float principalAmt = Instance.UpgradeCosts.costTable[upgrade].lumen; 
+			return Mathf.Round( CompoundCost( principalAmt, upgrade));
+		}
 		return 0;
 	}
 
 
 	public static int GetUpgradeEnergyCost( Tech upgrade){
-		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.costTable[upgrade].energy;
+		if( CheckUpgrade( upgrade)){
+			float principalAmt = Instance.UpgradeCosts.costTable[upgrade].energy; 
+			return Mathf.RoundToInt( CompoundCost( principalAmt, upgrade));
+		}
 		return 0;
 	}
 
@@ -263,7 +274,12 @@ public class TechManager : Singleton<TechManager> {
 
 
 	public static UpgradeCostStruct GetUpgradeCosts( Tech upgrade){
-		if( CheckUpgrade( upgrade)) return Instance.UpgradeCosts.costTable[upgrade];
+		if( CheckUpgrade( upgrade)){
+			UpgradeCostStruct costs = Instance.UpgradeCosts.costTable[upgrade];
+			costs.lumen = Mathf.Round( CompoundCost( costs.lumen, upgrade));
+			costs.energy = Mathf.RoundToInt( CompoundCost( costs.energy, upgrade));
+			return costs;
+		}
 		return new UpgradeCostStruct(0, 0, 0);
 	}
 

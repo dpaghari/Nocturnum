@@ -47,6 +47,16 @@ public class UpgradeMenuButtons : MonoBehaviour {
 	}
 
 
+	void UpdateCosts(){
+		if( TechManager.IsUpgrade( techType)){
+			UpgradeCostStruct upgradeInfo = TechManager.GetUpgradeCosts( techType);
+			energyLabel.Text = string.Format("{0}", upgradeInfo.energy);
+			lumenLabel.Text =  string.Format("{0}", upgradeInfo.lumen);
+		}
+		else 
+			Debug.LogWarning( string.Format( "{0} has non upgrade techType: {1}", this.name, techType)); 
+	}
+
 	void Start () {
 		//menuUp = false;
 		//_panel.IsVisible = false;
@@ -56,18 +66,13 @@ public class UpgradeMenuButtons : MonoBehaviour {
 
 		SetLabel();
 
-		if( TechManager.IsUpgrade( techType)){
-			UpgradeCostStruct upgradeInfo = TechManager.GetUpgradeCosts( techType);
-			energyLabel.Text = string.Format("{0}", upgradeInfo.energy);
-			lumenLabel.Text =  string.Format("{0}", upgradeInfo.lumen);
-			}
-		else 
-			Debug.LogWarning( string.Format( "{0} has non upgrade techType: {1}", this.name, techType)); 
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		UpdateCosts();
+
 		//Shortcuts.
 		if(researchScript.MenuUp){
 			if(Input.GetKeyDown(KeyCode.Alpha1)){
