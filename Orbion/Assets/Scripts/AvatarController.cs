@@ -224,6 +224,8 @@ public class AvatarController : MonoBehaviour {
 
 	public void Shoot( Vector3 position){
 		if( shootScript.reloading) return;
+		if( buildScript.MenuUp || researchScript.MenuUp) return;
+		if( buildScript.toBuild != null) return;
 		Utility.LerpLook(this.gameObject, position, 100, false);
 
 		if( animation.IsPlaying( "Run"))
