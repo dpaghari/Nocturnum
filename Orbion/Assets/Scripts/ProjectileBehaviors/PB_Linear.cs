@@ -199,9 +199,11 @@ public class PB_Linear : ProjectileBehavior {
 		}
 		if (TechManager.GetUpgradeLv(Tech.ricochet) > 0 && TechManager.GetNumBuilding(Tech.photon) > 0 && health > 0) {
 			health--;
-			Physics.IgnoreCollision(gameObject.collider, other.collider);
-			//if(lastHitTarget != null)
-			//	Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);
+			if(other.collider.enabled){
+				Physics.IgnoreCollision(gameObject.collider, other.collider);
+				if(lastHitTarget != null)
+					Physics.IgnoreCollision(gameObject.collider, lastHitTarget.collider, false);
+			}
 			lastHitTarget = other.gameObject;
 			gameObject.rigidbody.velocity = Vector3.zero;
 			gameObject.rigidbody.angularVelocity = Vector3.zero;
