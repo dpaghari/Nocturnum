@@ -6,7 +6,7 @@ public class TutorialMissionText : MonoBehaviour {
 
 	public hasOverdrive overdriveScript;
 	public DumbTimer timerScript;
-	public DumbTimer nextlevelScript;
+	public DumbTimer plantTutScript;
 	//public DumbTimer cleartextScript;
 	public Transform tutWolfpos;
 	public GameObject demoWolf;
@@ -18,17 +18,25 @@ public class TutorialMissionText : MonoBehaviour {
 	bool madeBat;
 	bool moveHelp;
 	bool mouseHelp;
-	
+	bool hasKilledtutWolves;
+	bool hastaughtPlants;
+	bool hastaughtStructures;
+	bool lastString;
+	bool hastaughtDash;
 	// Use this for initialization
 	void Start () {
+		hastaughtDash = false;
+		lastString = false;
+		hastaughtStructures = false;
+		hastaughtPlants = false;
+		hasKilledtutWolves = false;
 		mouseHelp = false;
 		moveHelp = false;
 		madeBat = false;
 		madeWolf = false;
 		timerScript = DumbTimer.New(4.5f, 1.0f);
-		nextlevelScript = DumbTimer.New(10.0f);
+		plantTutScript = DumbTimer.New(10.0f);
 		//cleartextScript = DumbTimer.New(5.0f, 1.0f);
-		overdriveScript = GameManager.AvatarContr.GetComponent<hasOverdrive>();
 		tutorialLine.IsVisible = true;
 		gotLumen = false;
 		builtGenerator = false;
@@ -40,10 +48,9 @@ public class TutorialMissionText : MonoBehaviour {
 	//	cleartextScript.Update();
 
 		if(!moveHelp){
-			tutorialLine.Text = "Press  W   A   S   D  to move";
+			tutorialLine.Text = "Move with W A S D";
 			timerScript.Update();
 			if(timerScript.Finished()){
-				//tutorialLine.Text = "";
 				timerScript.Reset();
 				moveHelp = true;
 			}
@@ -93,35 +100,38 @@ public class TutorialMissionText : MonoBehaviour {
 			clone = Instantiate(demoBat, pos, Quaternion.identity) as GameObject;
 			madeBat = true;
 			tutorialLine.Text = "Enemies are weaker and slower in your generator's light";
+			hasKilledtutWolves = true;
 			//clone = Instantiate(demoWolf, pos, Quaternion.identity) as GameObject;
 		}
-		if(MetricManager.getEnemiesKilled >= 2){
-			tutorialLine.Text = "Good Luck!";
-
-			nextlevelScript.Update();
-			if(nextlevelScript.Finished()){
-				TechManager.missionComplete = true;
-				nextlevelScript.Reset();
-			}
-
+		if(hasKilledtutWolves && !hastaughtStructures){
+			tutorialLine.Text = "Structures you build can unlock upgrades";
+			plantTutScript.Update();
+			hastaughtStructures = true;
+		}
+		if(hastaughtStructures){
+			plantTutScript.Update();
 		}
 
 
-		/*
-		if(cleartextScript.Finished() == true){
-			tutorialLine.Text = "";
-			cleartextScript.Reset();
+		if(plantTutScript.Finished() && !hastaughtDash){
+			tutorialLine.Text =  "Shift + Direction to [Dash]";
+			plantTutScript.Reset();
+			hastaughtDash = true;
 		}
-		*/
-		if(overdriveScript.overdriveOn){
-			if(!overdriveScript.overdriveActive)
-				tutorialLine.Text = "Press SPACE to activate Overdrive!";
-			
-			if(Input.GetKeyDown(KeyCode.Space)){
-				
-				tutorialLine.Text = "";
-			}
+
+		if(plantTutScript.Finished() && !hastaughtPlants){
+
+			tutorialLine.Text = "Shooting plants can activate them and be used to your advantage!";
+			hastaughtPlants = true;
+			plantTutScript.Reset();
+			lastString = true;
 		}
+		if(plantTutScript.Finished() && lastString){
+
+			tutorialLine.Text = "Good Luck Agent!";
+		}
+
+	
 		
 	}
 }

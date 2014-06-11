@@ -60,15 +60,6 @@ public class TutorialText : MonoBehaviour {
 			tutorialLine.Text = "";
 		}
 
-		if(overdriveScript.overdriveOn){
-			if(!overdriveScript.overdriveActive)
-			tutorialLine.Text = "Press SPACE to activate Overdrive!";
-
-			if(Input.GetKeyDown(KeyCode.Space)){
-
-				tutorialLine.Text = "";
-			}
-		}
-
+	
 }
 }
