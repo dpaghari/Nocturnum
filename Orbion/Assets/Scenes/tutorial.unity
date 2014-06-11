@@ -12666,7 +12666,7 @@ Transform:
   m_PrefabInternal: {fileID: 742644458}
   m_GameObject: {fileID: 392361908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.666671753, y: .078125, z: 0}
+  m_LocalPosition: {x: -.338546753, y: -.682289124, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
@@ -12681,8 +12681,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.3359375, y: .15625, z: .00100000005}
-  m_Center: {x: .66796875, y: -.078125, z: 0}
+  m_Size: {x: .6796875, y: .078125, z: .00100000005}
+  m_Center: {x: .33984375, y: -.0390625, z: 0}
 --- !u!114 &392361911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12695,7 +12695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e3359ffaefe124a992e17c8830875c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchorStyle: 448
+  anchorStyle: 256
   isEnabled: 1
   isVisible: 0
   isInteractive: 1
@@ -12708,7 +12708,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 513, y: 60}
+  size: {x: 261, y: 30}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -12716,12 +12716,12 @@ MonoBehaviour:
   canFocus: 0
   autoFocus: 0
   layout:
-    anchorStyle: 448
+    anchorStyle: 256
     margins:
-      left: .298828125
-      top: .4609375
-      right: .702148438
-      bottom: .5390625
+      left: .373046875
+      top: .841145813
+      right: .627929688
+      bottom: .880208313
     owner: {fileID: 392361911}
   renderOrder: 177
   isLocalized: 0
@@ -12741,7 +12741,7 @@ MonoBehaviour:
     rgba: 4294967295
   align: 1
   vertAlign: 1
-  textScale: 3.75
+  textScale: 1.875
   textScaleMode: 2
   charSpacing: 2
   colorizeSymbols: 0
@@ -28083,11 +28083,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.666671753
+      value: -.338546753
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .078125
+      value: -.682289124
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
       propertyPath: m_LocalPosition.z
@@ -28108,6 +28108,66 @@ Prefab:
     - target: {fileID: 400000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: size.x
+      value: 261
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: size.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: renderOrder
+      value: 177
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: textScale
+      value: 1.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Size.x
+      value: .6796875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Size.y
+      value: .078125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Center.x
+      value: .33984375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Center.y
+      value: -.0390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: layout.margins.left
+      value: .373046875
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: layout.margins.top
+      value: .841145813
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: layout.margins.right
+      value: .627929688
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: layout.margins.bottom
+      value: .880208313
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: vertAlign
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: anchorStyle
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: layout.anchorStyle
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
@@ -30877,11 +30937,11 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 98623e7f4c59e9247ae9afa838217c53, type: 2}
-  - {fileID: 2100000, guid: dda333be8fe9b17498c630feb4347e19, type: 2}
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
-  - {fileID: 2100000, guid: b344914b83cfb684ba4d4eb6741928f5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -58058,7 +58118,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456491916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00130208337, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
