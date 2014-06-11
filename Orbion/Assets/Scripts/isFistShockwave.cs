@@ -14,7 +14,7 @@ public class isFistShockwave : MonoBehaviour {
 	void Start () {
 		//timerScript = DumbTimer.New(0.2f, 1.0f);
 
-		fistDamage = 20;
+		fistDamage = 50;
 	
 	}
 

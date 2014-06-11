@@ -20,7 +20,7 @@ public class isPorcupinePlant : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 
 		if(timerScript.Finished() == true){
-			if(other.gameObject.tag == "playerBullet" || other.gameObject.tag == "enemyBullet"){
+			if(other.gameObject.tag == "playerBullet" || other.gameObject.tag == "enemy_bullet"){
 				shootScript.Shoot(transform.position + Vector3.right);
 				timerScript.Reset();
 			}
