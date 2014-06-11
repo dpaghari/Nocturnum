@@ -928,7 +928,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.65999997, y: 3.5999999, z: 4.53999996}
-  m_Center: {x: 0, y: 1.79999995, z: .75999999}
+  m_Center: {x: 0, y: 1.79999995, z: .899999976}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
-  AtkRange: 3.5
+  AtkRange: 4.5
   CurrTarget: {fileID: 0}
   PlayerPriorityRange: 15
 --- !u!114 &11400002
@@ -1172,7 +1172,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100050}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
