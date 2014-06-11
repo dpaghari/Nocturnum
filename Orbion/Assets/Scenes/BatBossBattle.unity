@@ -6326,7 +6326,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 76693834}
   m_GameObject: {fileID: 163422850}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -6395,7 +6395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinkBox: {fileID: 5400000, guid: 9b26768627389514db290c4eb764e4c7, type: 2}
-  AtkRange: 3.5
+  AtkRange: 4.5
   CurrTarget: {fileID: 5400000, guid: 46919a12be9002d4886347f9a0e8b98d, type: 2}
   TargetSearchRadius: 40
   PlayerPriorityRange: 40
@@ -6480,7 +6480,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.65999997, y: 3.5999999, z: 4.53999996}
-  m_Center: {x: 0, y: 1.79999995, z: .75999999}
+  m_Center: {x: 0, y: 1.79999995, z: .899999976}
 --- !u!54 &163422863
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10076,7 +10076,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 1368980071}
   m_GameObject: {fileID: 254759371}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -13832,7 +13832,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 744019357}
   m_GameObject: {fileID: 335329648}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -14686,7 +14686,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 183349226}
   m_GameObject: {fileID: 348239920}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -22995,7 +22995,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 1128162597}
   m_GameObject: {fileID: 543499534}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -30239,7 +30239,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 693176002}
   m_GameObject: {fileID: 702595809}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -33345,7 +33345,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.33984375
+      value: -.338546753
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
       propertyPath: m_LocalPosition.y
@@ -33410,6 +33410,22 @@ Prefab:
     - target: {fileID: 11400002, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
       propertyPath: layout.margins.bottom
       value: .86328125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Size.x
+      value: .6796875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Size.y
+      value: .078125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Center.x
+      value: .33984375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
+      propertyPath: m_Center.y
+      value: -.0390625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8742cbacf61ee7478df87cb9d49b908, type: 2}
@@ -34065,7 +34081,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 732680035}
   m_GameObject: {fileID: 786703081}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -34379,7 +34395,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 1366168426}
   m_GameObject: {fileID: 786764995}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -35373,11 +35389,11 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 98623e7f4c59e9247ae9afa838217c53, type: 2}
-  - {fileID: 2100000, guid: dda333be8fe9b17498c630feb4347e19, type: 2}
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
-  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
-  - {fileID: 2100000, guid: b344914b83cfb684ba4d4eb6741928f5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -39763,7 +39779,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 1306514142}
   m_GameObject: {fileID: 919415752}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -46198,7 +46214,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 1141876627}
   m_GameObject: {fileID: 1041988578}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -48108,7 +48124,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 907768914}
   m_GameObject: {fileID: 1079412110}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -53042,7 +53058,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 793399160}
   m_GameObject: {fileID: 1212751938}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -54689,7 +54705,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 1458005217}
   m_GameObject: {fileID: 1253271380}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -55684,7 +55700,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 957858612}
   m_GameObject: {fileID: 1272072855}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -64625,7 +64641,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456491916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00130208337, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
@@ -84447,7 +84463,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 773046735}
   m_GameObject: {fileID: 1950638668}
   m_Enabled: 1
-  m_Radius: .5
+  m_Radius: 1.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -93563,7 +93579,7 @@ Transform:
   m_PrefabInternal: {fileID: 774885937}
   m_GameObject: {fileID: 2082934488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.33984375, y: -.6484375, z: 0}
+  m_LocalPosition: {x: -.338546753, y: -.6484375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 809879358}
@@ -93592,8 +93608,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.3359375, y: .15625, z: .00100000005}
-  m_Center: {x: .66796875, y: -.078125, z: 0}
+  m_Size: {x: .6796875, y: .078125, z: .00100000005}
+  m_Center: {x: .33984375, y: -.0390625, z: 0}
 --- !u!114 &2082934492
 MonoBehaviour:
   m_ObjectHideFlags: 0

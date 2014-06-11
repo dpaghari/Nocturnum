@@ -9,6 +9,7 @@ public class SaveManager : Singleton<SaveManager> {
 
 	public int numLevelstoLoad;
 	public int levelIndex;
+	public int difficultySetting;
 	private string currLevel;
 	private bool lvl1, lvl2, lvl3, lvl4, lvl5, lvl6;
 	//private GameObject _Player;
@@ -35,6 +36,7 @@ public class SaveManager : Singleton<SaveManager> {
 	public static void SaveLevel(){
 		CheckCurrLevel();
 		PlayerPrefs.SetInt("SavedLevels",Instance.levelIndex);
+		PlayerPrefs.SetInt("SavedDifficulty", Instance.difficultySetting);
 
 	}
 
@@ -43,27 +45,33 @@ public class SaveManager : Singleton<SaveManager> {
 		switch(Instance.currLevel){
 		
 		case "tutorial" :
-			Instance.levelIndex = 1;
+			Instance.levelIndex = 2;
+			Instance.difficultySetting = GameManager.GameDifficulty;
 			break;
 			
 		case "level1" :
-			Instance.levelIndex = 2;
+			Instance.levelIndex = 3;
+			Instance.difficultySetting = GameManager.GameDifficulty;
 			break;
 			
 		case "level2" :
-			Instance.levelIndex = 3;
+			Instance.levelIndex = 4;
+			Instance.difficultySetting = GameManager.GameDifficulty;
 			break;
 			
 		case "level3" :
-			Instance.levelIndex = 4;
+			Instance.levelIndex = 5;
+			Instance.difficultySetting = GameManager.GameDifficulty;
 			break;
 
 		case "level4" :
-			Instance.levelIndex = 5;
+			Instance.levelIndex = 6;
+			Instance.difficultySetting = GameManager.GameDifficulty;
 			break;
 			
 		case "BatBossBattle" :
-			Instance.levelIndex = 6;
+			Instance.levelIndex = 7;
+			Instance.difficultySetting = GameManager.GameDifficulty;
 			break;
 
 		default:
