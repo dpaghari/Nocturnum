@@ -377,18 +377,22 @@ public class TechManager : Singleton<TechManager> {
 
 	// Use this for initialization
 	void Start () {
-
+		//int temp = SaveManager.Instance.numLevelstoLoad;
 	}
 
 
 	// Resets the Tech and the Resources
 	public static void CompleteMission(){
+
 		if(timerScript.Finished()){
+			SaveManager.SaveLevel();
+			Debug.Log(SaveManager.Instance.levelIndex);
 			ResManager.Reset();
 			TechManager.Reset();
 			MetricManager.Reset();
 			checkLevel();
 			timerScript.Reset();
+
 			
 		}
 

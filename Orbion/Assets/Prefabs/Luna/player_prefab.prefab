@@ -2556,11 +2556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e7b28c6b09094b84f90f8d615fe62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 175
+  Force: 210
   InitForce: 0
-  MaxSpeed: 20
+  MaxSpeed: 50
   MoveScale: 1
-  MaxForce: 26
+  MaxForce: 50
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2715,6 +2715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26be2e5b903c93a449ec78024a718841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healAmount: 10
+  healFrequency: .5
   timerScript: {fileID: 0}
 --- !u!114 &11400026
 MonoBehaviour:
@@ -2795,7 +2797,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ffcf9511edc3cc4f9aefa7b39d5026a, type: 3}
   m_Name: 

@@ -6,12 +6,12 @@ using System.Collections;
 
 public class GetsHealed : MonoBehaviour {
 
-
-
+	public int healAmount = 10;
+	public float healFrequency = 0.5f;
 	public DumbTimer timerScript;
 	// Use this for initialization
 	void Start () {
-		timerScript = DumbTimer.New(0.5f, 1.0f);
+		timerScript = DumbTimer.New(healFrequency);
 	}
 	
 	// Update is called once per frame
@@ -23,14 +23,10 @@ public class GetsHealed : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		if(timerScript.Finished() == true){
 			if(other.tag == "MedBay"){
-				this.gameObject.GetComponent<Killable>().Heal(10);
+				this.gameObject.GetComponent<Killable>().Heal(healAmount);
 				timerScript.Reset();
 			}	
 		}
-
-
-
-
 
 	}
 }
