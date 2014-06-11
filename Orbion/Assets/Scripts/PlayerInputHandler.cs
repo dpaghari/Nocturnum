@@ -63,7 +63,8 @@ public class PlayerInputHandler : MonoBehaviour {
 		if( Input.GetMouseButton( 0)) ac.Shoot( Utility.GetMouseWorldPos( transform.position.y));
 		if( Input.GetMouseButtonDown(1)) ac.ActivateEquip( Utility.GetMouseWorldPos( transform.position.y));
 		if( Input.GetKeyDown( KeyCode.R)) ac.Reload();
-		if( Input.GetKeyDown( KeyCode.E)) ac.ActivateEquip( Utility.GetMouseWorldPos( transform.position.y));
+		if( Input.GetKeyDown( KeyCode.E)) ac.UseObject();
+
 
 	}
 }

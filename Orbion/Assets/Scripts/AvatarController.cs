@@ -80,6 +80,11 @@ public class AvatarController : MonoBehaviour {
 	}
 
 
+	public void UseObject(){
+		useScript.UseAction(useScript.useRange);
+	}
+
+
 
 	IEnumerator DelayedReset(){
 		yield return new WaitForSeconds(animation["Dead"].length + 1.5f); 
@@ -224,11 +229,9 @@ public class AvatarController : MonoBehaviour {
 			animation.CrossFade( "Shooting");
 
 		if( shootScript.FinishCooldown()){
-			if( overdriveScript.overdriveActive == false){
-				audio.clip = shotSound;
-				audio.PlayOneShot(shotSound,1.0f);
-				shootScript.Shoot( position);
-			}
+			audio.clip = shotSound;
+			audio.PlayOneShot(shotSound,1.0f);
+			shootScript.Shoot( position);
 		}
 
 	}
