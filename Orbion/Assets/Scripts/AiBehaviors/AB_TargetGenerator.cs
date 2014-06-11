@@ -249,15 +249,35 @@ public class AB_TargetGenerator : MonoBehaviour {
 		//Check for closest generator
 		//GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<IsGenerator>);
 		GameObject GObuilding = Utility.GetClosestWith(transform.position, Mathf.Infinity, Utility.GoHasComponent<Buildable>);
-		
 		Rigidbody building;
-
 		if(GObuilding != null){ 
 			building = GObuilding.rigidbody;
-			if(distanceToTarget(building.position) < PlayerPriorityRange / 2){
+		} 
+		if(GameManager.Player != null){
+			
+
+			if(PlayerInRange( PlayerPriorityRange)){
+				if(distanceToTarget(GameManager.Player.gameObject.transform.position) <= PlayerPriorityRange && 
+				  	distanceToTarget(GameManager.Player.gameObject.transform.position) >= (PlayerPriorityRange * 3 / 2)){
+					if(distanceToTarget(GObuilding.transform.position) < distanceToTarget(GameManager.Player.gameObject.transform.position)){
+						return GObuilding.rigidbody;
+					} else {
+						return FindPlayer();
+					}			
+				}
+			} else {
+				return GObuilding.rigidbody;
+			}
+
+		}
+		return FindPlayer();
+		/*
+		if(GObuilding != null){ 
+			building = GObuilding.rigidbody;
+			if(distanceToTarget(building.position) < (PlayerPriorityRange / 2)){
 				return building;
 			} else if(distanceToTarget(GameManager.Player.gameObject.transform.position) < PlayerPriorityRange && 
-						distanceToTarget(GameManager.Player.gameObject.transform.position) >= PlayerPriorityRange / 2){
+						distanceToTarget(GameManager.Player.gameObject.transform.position) >= (PlayerPriorityRange / 2)){
 				return FindPlayer();
 			} else {
 				return building;
@@ -265,7 +285,7 @@ public class AB_TargetGenerator : MonoBehaviour {
 		} else {
 			return FindPlayer();
 		}
-
+		*/
 	}	
 	
 }
