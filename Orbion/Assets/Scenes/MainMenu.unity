@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &229995200
 BoxCollider:
   m_ObjectHideFlags: 2
@@ -372,7 +372,7 @@ MonoBehaviour:
   focusSprite: 
   font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
   pressedSprite: black-callout
-  state: 0
+  state: 4
   group: {fileID: 0}
   text: Options
   textAlign: 0
@@ -951,7 +951,7 @@ Transform:
   m_PrefabInternal: {fileID: 1358128167}
   m_GameObject: {fileID: 572259872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.7320509}
+  m_LocalPosition: {x: .00130208337, y: 0, z: -1.7320509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456450072}
@@ -3503,7 +3503,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: .00130208337
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -3867,6 +3867,10 @@ Prefab:
     - target: {fileID: 400006, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_LocalPosition.y
       value: .799479187
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400010, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
@@ -5394,7 +5398,7 @@ MonoBehaviour:
       right: .16796875
       bottom: .5625
     owner: {fileID: 1486030735}
-  renderOrder: 4
+  renderOrder: 3
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 470025f64be766a4ea466dbb1fce52d4, type: 2}
