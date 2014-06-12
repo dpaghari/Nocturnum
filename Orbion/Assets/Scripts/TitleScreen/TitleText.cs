@@ -3,8 +3,8 @@ using System.Collections;
 
 public class TitleText : MonoBehaviour {
 
-	public GUISkin titleSkin;
-
+	//public GUISkin titleSkin;
+	public dfLabel pressAnyKey;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,13 +12,15 @@ public class TitleText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown ("return") || Input.GetKeyDown ("enter")){
+		pressAnyKey.Text = "Press Any Key";
+		if(Input.anyKeyDown){
 			AutoFade.LoadLevel("MainMenu" ,1.0f,1.0f,Color.black);
 		}
 	}
-
+	/*
 	void OnGUI(){
-		GUI.skin = titleSkin;
-		GUI.Label(new Rect(Screen.width/2-70,Screen.height/2+120,300,128), "Press Enter.");
+		//GUI.skin = titleSkin;
+		//GUI.Label(new Rect(Screen.width/2-70,Screen.height/2+120,300,128), "Press Enter.");
 	}
+	*/
 }

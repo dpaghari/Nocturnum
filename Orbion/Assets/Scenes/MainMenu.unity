@@ -311,7 +311,7 @@ GameObject:
   m_IsActive: 0
 --- !u!65 &229995200
 BoxCollider:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6500000, guid: 2ae57d8fc242bb7449a4d4dfce978df2,
     type: 2}
   m_PrefabInternal: {fileID: 1358128167}
@@ -372,7 +372,7 @@ MonoBehaviour:
   focusSprite: 
   font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
   pressedSprite: black-callout
-  state: 4
+  state: 0
   group: {fileID: 0}
   text: Options
   textAlign: 0
@@ -951,7 +951,7 @@ Transform:
   m_PrefabInternal: {fileID: 1358128167}
   m_GameObject: {fileID: 572259872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00130208337, y: 0, z: -1.7320509}
+  m_LocalPosition: {x: 0, y: 0, z: -1.7320509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456450072}
@@ -1079,8 +1079,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .544270873, y: .130208343, z: .00100000005}
-  m_Center: {x: .272135437, y: -.0651041716, z: 0}
+  m_Size: {x: .606770873, y: .130208343, z: .00100000005}
+  m_Center: {x: .303385437, y: -.0651041716, z: 0}
 --- !u!114 &631922527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 209, y: 50}
+  size: {x: 233, y: 50}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -1118,7 +1118,7 @@ MonoBehaviour:
     margins:
       left: .099609375
       top: .229166672
-      right: .303710938
+      right: .327148438
       bottom: .294270843
     owner: {fileID: 631922527}
   renderOrder: 2
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   hoverSprite: black-button-hilite
   disabledSprite: 
   focusSprite: 
-  font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
+  font: {fileID: 11400000, guid: ee8301e0deee39045a8507cf884b18e6, type: 2}
   pressedSprite: black-callout
   state: 0
   group: {fileID: 0}
@@ -1842,8 +1842,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .520833373, y: .130208343, z: .00100000005}
-  m_Center: {x: .260416687, y: -.0651041716, z: 0}
+  m_Size: {x: .583333373, y: .130208343, z: .00100000005}
+  m_Center: {x: .291666687, y: -.0651041716, z: 0}
 --- !u!114 &1087368497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1869,7 +1869,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 200, y: 50}
+  size: {x: 224, y: 50}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -1881,7 +1881,7 @@ MonoBehaviour:
     margins:
       left: .100585938
       top: .100260414
-      right: .295898438
+      right: .319335938
       bottom: .165364578
     owner: {fileID: 1087368497}
   renderOrder: 1
@@ -1892,7 +1892,7 @@ MonoBehaviour:
   hoverSprite: black-button-hilite
   disabledSprite: 
   focusSprite: 
-  font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
+  font: {fileID: 11400000, guid: ee8301e0deee39045a8507cf884b18e6, type: 2}
   pressedSprite: black-callout
   state: 0
   group: {fileID: 0}
@@ -3503,12 +3503,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .00130208337
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+      objectReference: {fileID: 2100000, guid: 7593127d027077846a7dcd1560a1efde, type: 3}
     - target: {fileID: 400006, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.06510425
@@ -3519,7 +3519,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400014, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: layout.margins.right
-      value: .295898438
+      value: .319335938
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3559,7 +3559,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: layout.margins.right
-      value: .303710938
+      value: .327148438
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: layout.margins.left
@@ -3575,27 +3575,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6500004, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Size.x
-      value: .520833373
+      value: .583333373
       objectReference: {fileID: 0}
     - target: {fileID: 6500004, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Center.x
-      value: .260416687
+      value: .291666687
       objectReference: {fileID: 0}
     - target: {fileID: 11400014, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: size.x
-      value: 200
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 6500002, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Size.x
-      value: .544270873
+      value: .606770873
       objectReference: {fileID: 0}
     - target: {fileID: 6500002, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Center.x
-      value: .272135437
+      value: .303385437
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: size.x
-      value: 209
+      value: 233
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: text
@@ -3785,7 +3785,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+      objectReference: {fileID: 2100000, guid: 7593127d027077846a7dcd1560a1efde, type: 3}
     - target: {fileID: 2300000, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -3872,6 +3872,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 11400000, guid: ee8301e0deee39045a8507cf884b18e6,
+        type: 2}
+    - target: {fileID: 11400014, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 11400000, guid: ee8301e0deee39045a8507cf884b18e6,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 11400010, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
     - {fileID: 11400012, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
@@ -5140,7 +5150,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 5ddffabbcdbcb3240b185e41f59b6f69, type: 3}
+  - {fileID: 2100000, guid: 7593127d027077846a7dcd1560a1efde, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5356,8 +5366,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .169270843, y: .130208343, z: .00100000005}
-  m_Center: {x: .0846354216, y: -.0651041716, z: 0}
+  m_Size: {x: .1484375, y: .130208343, z: .00100000005}
+  m_Center: {x: .07421875, y: -.0651041716, z: 0}
 --- !u!114 &1486030735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5383,7 +5393,7 @@ MonoBehaviour:
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
-  size: {x: 65, y: 50}
+  size: {x: 57, y: 50}
   minSize: {x: 0, y: 0}
   maxSize: {x: 0, y: 0}
   clipChildren: 0
@@ -5395,7 +5405,7 @@ MonoBehaviour:
     margins:
       left: .104492188
       top: .497395843
-      right: .16796875
+      right: .16015625
       bottom: .5625
     owner: {fileID: 1486030735}
   renderOrder: 3
@@ -5406,7 +5416,7 @@ MonoBehaviour:
   hoverSprite: black-button-hilite
   disabledSprite: 
   focusSprite: 
-  font: {fileID: 11400000, guid: 1bd74a2245f6f9546a7b717a474a36c2, type: 2}
+  font: {fileID: 11400000, guid: ee8301e0deee39045a8507cf884b18e6, type: 2}
   pressedSprite: black-callout
   state: 0
   group: {fileID: 0}
