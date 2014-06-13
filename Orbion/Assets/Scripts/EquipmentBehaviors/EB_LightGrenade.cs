@@ -13,14 +13,21 @@ public class EB_LightGrenade : EquipmentBehavior {
 	private Vector3 playerPos;
 
 	protected void GrenadeShot(Vector3 target){
+		animation.CrossFade("GrenadeThrow");
+		StartCoroutine(DelayedThrow(target));
+
+	}
+
+	public void ThrowGrenade(Vector3 target){
+
 		Vector3 dir = target - playerPos;
 		dir.Normalize();
-		//dir.y += 5;
 		Vector3 temp = playerPos;
-		//temp.Normalize();
 		temp.y += 5;
-
+		
 		clone = Instantiate(Grenade, temp + dir, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
+
+
 	}
 
 
@@ -30,9 +37,6 @@ public class EB_LightGrenade : EquipmentBehavior {
 	
 	public override void FixedUpdateEB() {
 		playerPos = transform.position;
-
-
-
 		return;
 	}
 
@@ -45,5 +49,18 @@ public class EB_LightGrenade : EquipmentBehavior {
 	
 	public override void OnSwitchExit() {return;}
 	
+		IEnumerator DelayedThrow(Vector3 target){
+			for(;;){
+				if( animation.IsPlaying("GrenadeThrow") == false ) break;
+				
+				if( animation["GrenadeThrow"].normalizedTime > 0.70 ){
+					ThrowGrenade(target);
+					break;
+				}
+				
+				yield return new WaitForFixedUpdate();
+				
+			}
+		}
 
 }

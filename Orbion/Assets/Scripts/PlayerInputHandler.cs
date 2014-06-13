@@ -43,6 +43,7 @@ public class PlayerInputHandler : MonoBehaviour {
 		if( GameManager.PlayerDead == true) return;
 		if( animation.IsPlaying("Dash")) return;
 		if( animation.IsPlaying("Groundpunch")) return;
+		if( animation.IsPlaying("GrenadeThrow")) return;
 		DetectMovement();
 	}
 
@@ -60,6 +61,7 @@ public class PlayerInputHandler : MonoBehaviour {
 		if( GameManager.PlayerDead == true) return;
 		if( animation.IsPlaying("Dash")) return;
 		if( animation.IsPlaying("Groundpunch")) return;
+		if( animation.IsPlaying("GrenadeThrow")) return;
 		if( Input.GetMouseButton( 0)) ac.Shoot( Utility.GetMouseWorldPos( transform.position.y));
 		if( Input.GetMouseButtonDown(1)) ac.ActivateEquip( Utility.GetMouseWorldPos( transform.position.y));
 		if( Input.GetKeyDown( KeyCode.R)) ac.Reload();
