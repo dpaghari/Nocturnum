@@ -12,7 +12,12 @@ public class EB_LightGrenade : EquipmentBehavior {
 	private Rigidbody clone;
 	private Vector3 playerPos;
 
+
 	protected void GrenadeShot(Vector3 target){
+		Vector3 dir =  target - playerPos;
+		dir.Normalize();
+		transform.forward = dir;
+
 		animation.CrossFade("GrenadeThrow");
 		StartCoroutine(DelayedThrow(target));
 
@@ -24,7 +29,6 @@ public class EB_LightGrenade : EquipmentBehavior {
 		dir.Normalize();
 		Vector3 temp = playerPos;
 		temp.y += 5;
-		
 		clone = Instantiate(Grenade, temp + dir, Quaternion.LookRotation(dir, Vector3.up)) as Rigidbody;
 
 

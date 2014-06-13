@@ -278,6 +278,14 @@ public class AvatarController : MonoBehaviour {
 		//has a little more logic since not all the equipment are implemented yet
 		//Switch Equipment
 		if( Input.GetKeyDown(KeyCode.T)){
+			Debug.Log(equipScript.CurrEquipType);
+			if(equipScript.CurrEquipType == EquipType.LightFist){
+				equipScript.CurrEquipType = EquipType.LightGrenade;
+			}
+			else if( equipScript.CurrEquipType == EquipType.LightGrenade ){
+				equipScript.CurrEquipType = EquipType.LightFist;
+			}
+			/*
 			EquipType nextEquip = equipScript.CurrEquipType;
 			int typeIterator = (int) equipScript.CurrEquipType;
 
@@ -291,7 +299,7 @@ public class AvatarController : MonoBehaviour {
 			
 			Debug.Log(string.Format("Equip switched from {0} to {1}.", equipScript.CurrEquipType, nextEquip));
 			equipScript.ChangeEquip(nextEquip);
-			
+			*/
 		}
 
 
