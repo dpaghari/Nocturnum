@@ -68,7 +68,7 @@ public class CanSpawnUpdate : MonoBehaviour {
 	public void setDifficulty(){
 		difficulty = GameManager.GameDifficulty;
 		if(difficulty == 1){
-			healthIncreaseCounter = 1;
+			healthIncreaseCounter = 0;
 			numSpawn-=1;
 		} else if(difficulty == 2){
 			healthIncreaseCounter = 3;	
