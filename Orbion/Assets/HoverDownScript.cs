@@ -16,14 +16,9 @@ public class HoverDownScript : MonoBehaviour {
 		moveonScript.Update();
 		if(moveonScript.Finished()){
 
-			AutoFade.LoadLevel("tutorial", 3.0f, 3.0f, Color.black);
+			AutoFade.LoadLevel("cutscene2", 3.0f, 3.0f, Color.black);
 			//moveonScript.Reset();
 		}
-		Vector3 temp = transform.position;
-		temp.y -= 1.5f / ((Time.time + 1) * 5);
-		transform.position = temp;
-
-
 		/*
 		timerScript.Update();
 		if(timerScript.Finished()){
@@ -36,5 +31,11 @@ public class HoverDownScript : MonoBehaviour {
 		*/
 
 
+	}
+	void LateUpdate(){
+
+		Vector3 temp = transform.position;
+		temp.y -= 1.5f / ((Time.time + 1) * 5);
+		transform.position = temp;
 	}
 }
