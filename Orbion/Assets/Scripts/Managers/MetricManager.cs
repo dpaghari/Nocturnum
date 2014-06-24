@@ -92,7 +92,7 @@ public class MetricManager : Singleton<MetricManager> {
 		Instance._completionTime = 0.0f;
 		Instance._buildingsHit = 0;
 		Instance._buildingsHealed = 0;
-		Instance._totalScore = 0.0f;
+		//Instance._totalScore = 0.0f;
 	}
 	/*
 	// Use this for initialization
