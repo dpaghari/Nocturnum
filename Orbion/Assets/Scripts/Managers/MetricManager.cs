@@ -17,7 +17,9 @@ public class MetricManager : Singleton<MetricManager> {
 	private int _buildingsHealed = 0;
 	private float _completionTime = 0.0f;
 	private float _totalScore = 0.0f;
+	private string _grade = "";
 
+	public static string getGrade{ get { return Instance._grade;}}
 	public static float getScore{ get { return Instance._totalScore;}}
 
 	public static void setCompletionTime(float amt){ Instance._completionTime = amt;}
@@ -66,10 +68,26 @@ public class MetricManager : Singleton<MetricManager> {
 		//return 1.0f;
 		//return getEnemiesHit; 
 	}
-
+	/*
+	public static void calculateGrade(){
+		Instance._grade = "";
+		if(Instance._totalScore >= 100.0f){
+			Instance._grade = "S";
+		} else if(Instance._totalScore >= 90.0f && Instance._totalScore < 100.0f){
+			Instance._grade = "A";
+		} else if(Instance._totalScore >= 80.0f && Instance._totalScore < 90.0f){
+			Instance._grade = "B";
+		} else if(Instance._totalScore >= 70.0f && Instance._totalScore < 80.0f){
+			Instance._grade = "C";
+		} else if(Instance._totalScore < 70.0f){
+			Instance._grade = "F";
+		}
+	}
+	*/
 	public static void calculateScore(){
 		Instance._totalScore = 0.0f;
-		float part1 = getAccuracy() * 33.3f;
+		float part1 = getAccuracy() * 66.6f;
+		if(part1 > 33.3) part1 = 33.3;
 		float part2;
 		if(Instance._completionTime < 600.0f){	
 			part2 = 33.3f;
@@ -80,6 +98,19 @@ public class MetricManager : Singleton<MetricManager> {
 		if(part3 < 0.0f) part3 = 0.0f;
 
 		Instance._totalScore = part1 + part2 + part3 + 1.0f;
+		
+		Instance._grade = "";
+		if(Instance._totalScore >= 100.0f){
+			Instance._grade = "S";
+		} else if(Instance._totalScore >= 90.0f && Instance._totalScore < 100.0f){
+			Instance._grade = "A";
+		} else if(Instance._totalScore >= 80.0f && Instance._totalScore < 90.0f){
+			Instance._grade = "B";
+		} else if(Instance._totalScore >= 70.0f && Instance._totalScore < 80.0f){
+			Instance._grade = "C";
+		} else if(Instance._totalScore < 70.0f){
+			Instance._grade = "F";
+		}
 		
 	}	
 
