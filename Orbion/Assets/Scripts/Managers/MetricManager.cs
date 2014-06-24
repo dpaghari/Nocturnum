@@ -87,7 +87,7 @@ public class MetricManager : Singleton<MetricManager> {
 	public static void calculateScore(){
 		Instance._totalScore = 0.0f;
 		float part1 = getAccuracy() * 66.6f;
-		if(part1 > 33.3) part1 = 33.3;
+		if(part1 > 33.3f) part1 = 33.3f;
 		float part2;
 		if(Instance._completionTime < 600.0f){	
 			part2 = 33.3f;
