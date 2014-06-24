@@ -17310,6 +17310,7 @@ MonoBehaviour:
   cameraFollowHeight: 0
   cameraHeight: 2.5
   velocity: {x: -.0299999993, y: 0, z: -1.49000001}
+  timerScript: {fileID: 0}
 --- !u!114 &705958698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39329,6 +39330,7 @@ GameObject:
   - 114: {fileID: 1595756980}
   - 114: {fileID: 1595756981}
   - 114: {fileID: 1595756982}
+  - 81: {fileID: 1595756983}
   m_Layer: 21
   m_Name: lunaship
   m_TagString: Untagged
@@ -39493,6 +39495,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveonScript: {fileID: 0}
   timerScript: {fileID: 0}
+--- !u!81 &1595756983
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595756971}
+  m_Enabled: 1
 --- !u!1 &1596543013
 GameObject:
   m_ObjectHideFlags: 0

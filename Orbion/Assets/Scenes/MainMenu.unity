@@ -951,7 +951,7 @@ Transform:
   m_PrefabInternal: {fileID: 1358128167}
   m_GameObject: {fileID: 572259872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.7320509}
+  m_LocalPosition: {x: 0, y: .00130208337, z: -1.7320509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456450072}
@@ -985,6 +985,7 @@ MonoBehaviour:
   cameraFollowHeight: 0
   cameraHeight: 2.5
   velocity: {x: 0, y: 0, z: 0}
+  timerScript: {fileID: 0}
 --- !u!1 &578124366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,6 +3883,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: ee8301e0deee39045a8507cf884b18e6,
         type: 2}
+    - target: {fileID: 400002, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .00130208337
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400010, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}
     - {fileID: 11400012, guid: 2ae57d8fc242bb7449a4d4dfce978df2, type: 2}

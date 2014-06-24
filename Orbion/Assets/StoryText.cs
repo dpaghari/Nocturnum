@@ -51,9 +51,10 @@ public class StoryText : MonoBehaviour {
 				count++;
 				timerScript.Reset();
 			}
-			else
-				AutoFade.LoadLevel("tutorial", 2.0f, 2.0f, Color.black);
-
+			else{
+				AutoFade.LoadLevel("cutscene1", 2.0f, 2.0f, Color.black);
+				//AutoFade.LoadLevel("tutorial", 2.0f, 2.0f, Color.black);
+			}
 
 		}
 		/*

@@ -15,12 +15,13 @@ public class MainCamera : MonoBehaviour
 	public Vector3 velocity; // speed of camera movement
 	
 	private Transform thisTransform; // camera Transform
-	
+	public DumbTimer timerScript;
 	// Use this for initialization
 	void Start()
 	{
 		//cameraTarget = GameObject.Find("player_prefab");
 		thisTransform = transform;
+		timerScript = DumbTimer.New(4.0f);
 	}
 	
 	// Update is called once per frame
@@ -43,8 +44,16 @@ public class MainCamera : MonoBehaviour
 		if (cameraTarget) {
 			Utility.LerpLook( this.gameObject, cameraTarget, 10, false);
 		}
-		
-		//gameObject.transform.position += velocity;
+		if(Application.loadedLevelName == "cutscene2"){
+			timerScript.Update();
+			if(timerScript.Finished()){
+
+				AutoFade.LoadLevel("tutorial", 2.0f, 2.0f, Color.black);
+				timerScript.Reset();
+
+			}
+			gameObject.transform.position += velocity;
+		}
 
 	}
 }
