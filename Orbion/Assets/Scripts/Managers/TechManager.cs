@@ -407,6 +407,7 @@ public class TechManager : Singleton<TechManager> {
 			Debug.Log(SaveManager.Instance.levelIndex);
 			ResManager.Reset();
 			TechManager.Reset();
+			MetricManager.calculateScore();
 			MetricManager.Reset();
 			checkLevel();
 			timerScript.Reset();
