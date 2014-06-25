@@ -423,7 +423,6 @@ public class TechManager : Singleton<TechManager> {
 		currLevel = Application.loadedLevelName;
 		switch(currLevel){
 
-
 		
 		case "tutorial" :
 			AutoFade.LoadLevel("loadscreen", 2.0f, 2.0f, Color.black);
@@ -432,11 +431,15 @@ public class TechManager : Singleton<TechManager> {
 		case "loadscreen" :
 			AutoFade.LoadLevel("level1", 2.0f, 2.0f, Color.black);
 			break;
-		
+
 		case "level1" :
+			AutoFade.LoadLevel("loadscreen2", 2.0f, 2.0f, Color.black);
+			break;
+
+		case "loadscreen2" :
 			AutoFade.LoadLevel("level2", 2.0f, 2.0f, Color.black);
 			break;
-			
+
 		case "level2" :
 			AutoFade.LoadLevel("level3", 2.0f, 2.0f, Color.black);
 			break;

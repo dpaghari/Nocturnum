@@ -13,7 +13,8 @@ public class isLoadScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown ("return") || Input.GetKeyDown ("enter")){
-			AutoFade.LoadLevel("level1" ,2.0f,2.0f,Color.black);
+			TechManager.checkLevel();
+			//AutoFade.LoadLevel("level1" ,2.0f,2.0f,Color.black);
 		}
 	}
 
