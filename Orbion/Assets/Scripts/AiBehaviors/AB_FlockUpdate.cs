@@ -54,7 +54,7 @@ public class AB_FlockUpdate : MonoBehaviour {
 			
 
 				//no midpoints to traverse and close to player go straight to them
-				if(meshPath.corners.Length < 3 && distanceToCurrentTarget() <= 10.5f){
+				if(meshPath.corners.Length < 3 && distanceToCurrentTarget() <= 6.5f){
 					Vector3 lookPosition = new Vector3(CurrTarget.position.x, transform.position.y, CurrTarget.position.z);
 					transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
 					moveScript.Move(CurrTarget.position - rigidbody.position);
@@ -72,9 +72,19 @@ public class AB_FlockUpdate : MonoBehaviour {
 						
 					
 					if(indexCounter < meshPath.corners.Length){
-						Vector3 lookPosition = new Vector3(meshPath.corners[indexCounter].x, transform.position.y, meshPath.corners[1].z);
-						transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
-						moveScript.Move(meshPath.corners[indexCounter] - rigidbody.position);
+						Vector3 lookPosition;
+						float deltaX = meshPath.corners[indexCounter].x - CurrTarget.transform.position.x;
+						float deltaZ = meshPath.corners[indexCounter].z - CurrTarget.transform.position.z;
+						if(Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ) > distanceToTarget(CurrTarget.transform.position)){ 
+							moveScript.Move(FindPlayerRigidBody().transform.position - rigidbody.position);
+							lookPosition = new Vector3(FindPlayerRigidBody().transform.position.x, transform.position.y, FindPlayerRigidBody().transform.position.z);
+							transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+						} else {
+							moveScript.Move(meshPath.corners[indexCounter] - rigidbody.position);
+							lookPosition = new Vector3(meshPath.corners[indexCounter].x, transform.position.y, meshPath.corners[indexCounter].z);
+							transform.rotation = Quaternion.LookRotation(transform.position - lookPosition);
+							
+						}
 					
 					} 
 					/*else {
