@@ -55,7 +55,7 @@ public class MetricManager : Singleton<MetricManager> {
 	}
 	public static int getEnemies{ get { return Instance._totalEnemies;}}
 
-	private static float getAccuracy(){
+	public static float getAccuracy(){
 		//Debug.Log("enemies hit " + getEnemiesHit);
 		//Debug.Log("buildings hit " + getBuildingsHit);
 		//Debug.Log("shots fired " + getShotsFired);
