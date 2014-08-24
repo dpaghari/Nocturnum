@@ -16,7 +16,7 @@ public class isQuestExit : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if(other.tag == "Player"){
 			AutoFade.LoadLevel("loadscreen", 2.0f, 2.0f, Color.black);
-			other.GetComponent<CanMove>().MoveScale -= 1;
+			//other.GetComponent<CanMove>().MoveScale -= 1;
 
 			//GameManager.KeysEnabled = false;
 		}
